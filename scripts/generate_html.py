@@ -77,14 +77,14 @@ class HTMLGenerator:
             tech = s.get("technical",{})
             trend = tech.get("trend","")
             tc = "bull" if "多頭" in trend else "bear" if "空頭" in trend else ""
-            lines.append(f'<tr onclick="location.href='stock_{s["stock_id"]}.html'" class="clickable"><td><strong>{s["stock_id"]}</strong></td><td>{s["stock_name"]}</td><td>{s["close"]:.2f}</td><td class="{"up" if s["change_pct"]>0 else "down"}">{s["change_pct"]:+.2f}%</td><td class="buy">{s["foreign_net"]:,}</td><td>{s["big_holder_pct"]:.2f}%</td><td class="{tc}">{trend}</td><td><span class="score">{s["score"]}</span></td></tr>')
+            lines.append(f'<tr onclick="location.href=\'stock_{s["stock_id"]}.html\'" class="clickable"><td><strong>{s["stock_id"]}</strong></td><td>{s["stock_name"]}</td><td>{s["close"]:.2f}</td><td class="{"up" if s["change_pct"]>0 else "down"}">{s["change_pct"]:+.2f}%</td><td class="buy">{s["foreign_net"]:,}</td><td>{s["big_holder_pct"]:.2f}%</td><td class="{tc}">{trend}</td><td><span class="score">{s["score"]}</span></td></tr>')
         lines.append('</tbody></table></div></div>')
 
         # 多頭排列
         lines.append('<div class="card"><h2>📈 多頭排列清單</h2><div class="table-responsive"><table class="data-table"><thead><tr><th>代號</th><th>名稱</th><th>收盤價</th><th>20MA</th><th>60MA</th><th>RSI</th><th>大戶%</th><th>外資連買</th></tr></thead><tbody>')
         for s in bull_stocks[:30]:
             tech = s.get("technical",{})
-            lines.append(f'<tr onclick="location.href='stock_{s["stock_id"]}.html'" class="clickable"><td><strong>{s["stock_id"]}</strong></td><td>{s["stock_name"]}</td><td>{s["close"]:.2f}</td><td>{tech.get("ma20","-")}</td><td>{tech.get("ma60","-")}</td><td>{tech.get("rsi","-")}</td><td>{s["big_holder_pct"]:.2f}%</td><td>{"✅" if s["foreign_consecutive_buy"] else "❌"}</td></tr>')
+            lines.append(f'<tr onclick="location.href=\'stock_{s["stock_id"]}.html\'" class="clickable"><td><strong>{s["stock_id"]}</strong></td><td>{s["stock_name"]}</td><td>{s["close"]:.2f}</td><td>{tech.get("ma20","-")}</td><td>{tech.get("ma60","-")}</td><td>{tech.get("rsi","-")}</td><td>{s["big_holder_pct"]:.2f}%</td><td>{"✅" if s["foreign_consecutive_buy"] else "❌"}</td></tr>')
         lines.append('</tbody></table></div></div>')
 
         # 大戶排名
@@ -130,7 +130,7 @@ class HTMLGenerator:
             margin = s.get("margin", {})
             trend = tech.get("trend", "")
             tc = "bull" if "多頭" in trend else "bear" if "空頭" in trend else "neutral"
-            lines.append(f'<tr onclick="location.href='stock_{s["stock_id"]}.html'" class="clickable"><td><strong>{s["stock_id"]}</strong></td><td>{s["stock_name"]}</td><td>{s["close"]:.2f}</td><td class="{"up" if s["change_pct"]>0 else "down"}">{s["change_pct"]:+.2f}%</td><td>{"✅" if s["foreign_consecutive_buy"] else "❌"}</td><td class="{"buy" if s["foreign_net"]>0 else "sell"}">{s["foreign_net"]:,}</td><td class="highlight">{s["big_holder_pct"]:.2f}%</td><td class="{"up" if s["big_holder_change"]>0 else "down"}">{s["big_holder_change"]:+.2f}%</td><td>{margin.get("ratio","-") if margin else "-"}</td><td>{tech.get("ma20","-")}</td><td>{tech.get("ma60","-")}</td><td>{tech.get("rsi","-")}</td><td class="{tc}">{trend}</td><td><span class="score">{s["score"]}</span></td></tr>')
+            lines.append(f'<tr onclick="location.href=\'stock_{s["stock_id"]}.html\'" class="clickable"><td><strong>{s["stock_id"]}</strong></td><td>{s["stock_name"]}</td><td>{s["close"]:.2f}</td><td class="{"up" if s["change_pct"]>0 else "down"}">{s["change_pct"]:+.2f}%</td><td>{"✅" if s["foreign_consecutive_buy"] else "❌"}</td><td class="{"buy" if s["foreign_net"]>0 else "sell"}">{s["foreign_net"]:,}</td><td class="highlight">{s["big_holder_pct"]:.2f}%</td><td class="{"up" if s["big_holder_change"]>0 else "down"}">{s["big_holder_change"]:+.2f}%</td><td>{margin.get("ratio","-") if margin else "-"}</td><td>{tech.get("ma20","-")}</td><td>{tech.get("ma60","-")}</td><td>{tech.get("rsi","-")}</td><td class="{tc}">{trend}</td><td><span class="score">{s["score"]}</span></td></tr>')
 
         lines.append('</tbody></table></div></div></div>')
         lines.append(self._footer())
