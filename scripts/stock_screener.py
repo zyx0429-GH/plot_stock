@@ -274,6 +274,7 @@ class StockScreener:
 
     def save_results(self, filename="screened_data.json"):
         """儲存選股結果"""
+        os.makedirs(DATA_DIR, exist_ok=True)
         filepath = os.path.join(DATA_DIR, filename)
         with open(filepath, "w", encoding="utf-8") as f:
             json.dump(self.results, f, ensure_ascii=False, indent=2, default=str)

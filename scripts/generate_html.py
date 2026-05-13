@@ -202,6 +202,7 @@ class HTMLGenerator:
         return filepath
 
     def generate_all(self):
+        os.makedirs(DOCS_DIR, exist_ok=True)
         self.generate_index()
         self.generate_watchlist()
         self.generate_etf_00981a()
