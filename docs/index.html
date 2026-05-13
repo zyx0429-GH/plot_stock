@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>籌碼監控｜首頁</title>
+<link rel="stylesheet" href="css/style.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<script src="js/app.js" defer></script>
+</head>
+<body>
+<nav class="navbar"><div class="nav-brand">🔥 智董籌碼選股站</div><div class="nav-links"><a href="index.html" class="active">📊 首頁</a><a href="watchlist.html" class="">⭐ 自選</a><a href="etf_00981a.html" class="">📈 00981A</a></div></nav>
+<div class="container"><div class="header-info"><h1>📊 籌碼監控儀表板</h1><p class="subtitle">共 0 支個股｜產出 2026-05-13 19:20</p></div>
+<div class="card"><h2>🔥 大戶持股% vs 週增減</h2><p class="chart-desc">X:大戶持股% Y:週增減% 點擊進入個股</p><div class="chart-container"><canvas id="scatterChart"></canvas></div></div>
+<div class="card"><h2>🌍 外資連買 3 天榜單</h2><div class="table-responsive"><table class="data-table"><thead><tr><th>代號</th><th>名稱</th><th>收盤價</th><th>漲跌%</th><th>外資淨買</th><th>大戶%</th><th>趨勢</th><th>評分</th></tr></thead><tbody>
+</tbody></table></div></div>
+<div class="card"><h2>📈 多頭排列清單</h2><div class="table-responsive"><table class="data-table"><thead><tr><th>代號</th><th>名稱</th><th>收盤價</th><th>20MA</th><th>60MA</th><th>RSI</th><th>大戶%</th><th>外資連買</th></tr></thead><tbody>
+</tbody></table></div></div>
+<div class="card"><h2>👑 大戶持股排名 (400張以上)</h2><div class="controls"><label>顯示前 <input type="number" id="rankLimit" value="50" min="10" max="200" onchange="updateRank()"> 名</label><label>最小持股% <input type="number" id="minPct" value="0" min="0" max="100" step="0.1" onchange="updateRank()"></label></div><div class="table-responsive"><table class="data-table" id="bigHolderTable"><thead><tr><th>排名</th><th>代號</th><th>名稱</th><th>大戶%</th><th>週增減%</th><th>收盤價</th><th>漲跌%</th></tr></thead><tbody>
+</tbody></table></div></div>
+</div>
+<footer class="footer"><p>📅 更新: 2026-05-13 19:20 | 來源: FinMind/Yahoo/證交所</p><p>⚠️ 僅供研究參考</p></footer>
+<script>
+const scatterData = [];
+const ctx = document.getElementById("scatterChart").getContext("2d");
+new Chart(ctx, {type:"scatter",data:{datasets:[{label:"個股籌碼分布",data:scatterData.map(d=>({x:d.x,y:d.y})),backgroundColor:scatterData.map(d=>d.y>0?"rgba(46,204,113,0.6)":"rgba(231,76,60,0.6)"),borderColor:scatterData.map(d=>d.y>0?"#27ae60":"#c0392b"),borderWidth:1,pointRadius:6,pointHoverRadius:10}]},options:{responsive:true,maintainAspectRatio:false,plugins:{tooltip:{callbacks:{label:function(c){const d=scatterData[c.dataIndex];return d.stock_id+" "+d.stock_name+": 大戶"+d.x.toFixed(2)+"%,週增減"+d.y.toFixed(2)+"%";}}}},scales:{x:{title:{display:true,text:"大戶持股 %"}},y:{title:{display:true,text:"本週增減 %"}}},onClick:(e,elements)=>{if(elements.length>0){const idx=elements[0].index;window.location.href="stock_"+scatterData[idx].stock_id+".html";}}}});
+function updateRank(){const limit=parseInt(document.getElementById("rankLimit").value)||50;const minPct=parseFloat(document.getElementById("minPct").value)||0;const rows=document.querySelectorAll("#bigHolderTable tbody tr");rows.forEach((row,idx)=>{const pct=parseFloat(row.dataset.pct);row.style.display=(idx<limit&&pct>=minPct)?"":"none";});}
+</script>
+</body></html>
