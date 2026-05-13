@@ -87,11 +87,14 @@ class TWStockDataFetcher:
         )
         if not df.empty:
             df["date"] = pd.to_datetime(df["date"])
-            # 計算券資比
-            df["margin_balance"] = pd.to_numeric(df["MarginPurchase"], errors="coerce")
-            df["short_balance"] = pd.to_numeric(df["ShortSale"], errors="coerce")
-            df["margin_short_ratio"] = df["short_balance"] / df["margin_balance"].replace(0, np.nan)
-            return df.sort_values("date")
+            # 安全訪問欄位（某些股票/ETF可能沒有融資融券數據）
+            margin_col = "MarginPurchase" if "MarginPurchase" in df.columns else "margin_purchase"
+            short_col = "ShortSale" if "ShortSale" in df.columns else "short_sale"
+            if margin_col in df.columns and short_col in df.columns:
+                df["margin_balance"] = pd.to_numeric(df[margin_col], errors="coerce")
+                df["short_balance"] = pd.to_numeric(df[short_col], errors="coerce")
+                df["margin_short_ratio"] = df["short_balance"] / df["margin_balance"].replace(0, np.nan)
+                return df.sort_values("date")
         return pd.DataFrame()
 
     def get_stock_holding(self, stock_id, days=30):
@@ -181,6 +184,8 @@ class TWStockDataFetcher:
 
     def save_to_json(self, data, filename="stock_data.json"):
         """儲存資料到 JSON"""
+        # 確保 data/ 目錄存在
+        os.makedirs(DATA_DIR, exist_ok=True)
         filepath = os.path.join(DATA_DIR, filename)
         with open(filepath, "w", encoding="utf-8") as f:
             json.dump(data, f, ensure_ascii=False, indent=2, default=str)
