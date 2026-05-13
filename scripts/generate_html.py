@@ -109,8 +109,7 @@ class HTMLGenerator:
 
         filepath = os.path.join(DOCS_DIR, "index.html")
         with open(filepath, "w", encoding="utf-8") as f:
-            f.write("
-".join(lines))
+            f.write("\n".join(lines))
         print(f"✅ 首頁: {filepath}")
         return filepath
 
@@ -200,8 +199,7 @@ class HTMLGenerator:
 
         filepath = os.path.join(DOCS_DIR, f"stock_{stock_id}.html")
         with open(filepath, "w", encoding="utf-8") as f:
-            f.write("
-".join(lines))
+            f.write("\n".join(lines))
         return filepath
 
     def generate_all(self):
