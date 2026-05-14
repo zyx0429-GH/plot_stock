@@ -89,9 +89,9 @@ class TWStockDataFetcher:
         )
         if not df.empty:
             df["date"] = pd.to_datetime(df["date"])
-            # 安全訪問欄位（某些股票/ETF可能沒有融資融券數據）
-            margin_col = "MarginPurchase" if "MarginPurchase" in df.columns else "margin_purchase"
-            short_col = "ShortSale" if "ShortSale" in df.columns else "short_sale"
+            # FinMind v4 欄位名稱：MarginPurchaseTodayBalance / ShortSaleTodayBalance
+            margin_col = "MarginPurchaseTodayBalance" if "MarginPurchaseTodayBalance" in df.columns else "margin_purchase"
+            short_col = "ShortSaleTodayBalance" if "ShortSaleTodayBalance" in df.columns else "short_sale"
             if margin_col in df.columns and short_col in df.columns:
                 df["margin_balance"] = pd.to_numeric(df[margin_col], errors="coerce")
                 df["short_balance"] = pd.to_numeric(df[short_col], errors="coerce")
@@ -100,7 +100,7 @@ class TWStockDataFetcher:
         return pd.DataFrame()
 
     def get_stock_holding(self, stock_id, days=30):
-        """抓取股權分散表 (大戶持股)"""
+        """抓取股權分散表 (大戶持股) - 免費版 FinMind 可能無此欄位"""
         end = datetime.now()
         start = end - timedelta(days=days)
         df = self._finmind_request(
@@ -111,7 +111,10 @@ class TWStockDataFetcher:
         )
         if not df.empty:
             df["date"] = pd.to_datetime(df["date"])
-            # 400張以上大戶 = HoldingSharesLevel 在 400張以上
+            # 免費版 FinMind 的 TaiwanStockShareholding 只有外資持股，沒有 HoldingSharesLevel
+            # 若欄位不存在則回傳空 DataFrame，不拋錯
+            if "HoldingSharesLevel" not in df.columns:
+                return pd.DataFrame()
             big_holder = df[df["HoldingSharesLevel"].str.contains("400", na=False)].copy()
             if not big_holder.empty:
                 big_holder["percent"] = pd.to_numeric(big_holder["percent"], errors="coerce")
@@ -166,11 +169,13 @@ class TWStockDataFetcher:
                         "holding": holding.to_dict("records") if not holding.empty else [],
                         "price": self._price_to_dict(price_df),
                     }
-                    print("✅")
+                    print("[OK]")
                 else:
-                    print("❌ 無資料")
+                    print("[NO DATA]")
             except Exception as e:
-                print(f"❌ 錯誤: {e}")
+                import traceback
+                print(f"[ERR] {e}")
+                traceback.print_exc()
 
             time.sleep(0.5)  # 避免 API 過載
 

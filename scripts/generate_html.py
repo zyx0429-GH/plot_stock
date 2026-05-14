@@ -74,24 +74,36 @@ class HTMLGenerator:
         # 外資連買
         lines.append(f'<div class="card"><h2>🌍 外資連買 {SCREEN_CONFIG["foreign_buy_days"]} 天榜單</h2><div class="table-responsive"><table class="data-table"><thead><tr><th>代號</th><th>名稱</th><th>收盤價</th><th>漲跌%</th><th>外資淨買</th><th>大戶%</th><th>趨勢</th><th>評分</th></tr></thead><tbody>')
         for s in foreign_buy[:30]:
-            tech = s.get("technical",{})
+            tech = s.get("technical",{}) or {}
             trend = tech.get("trend","")
             tc = "bull" if "多頭" in trend else "bear" if "空頭" in trend else ""
-            lines.append(f'<tr onclick="location.href=\'stock_{s["stock_id"]}.html\'" class="clickable"><td><strong>{s["stock_id"]}</strong></td><td>{s["stock_name"]}</td><td>{s["close"]:.2f}</td><td class="{"up" if s["change_pct"]>0 else "down"}">{s["change_pct"]:+.2f}%</td><td class="buy">{s["foreign_net"]:,}</td><td>{s["big_holder_pct"]:.2f}%</td><td class="{tc}">{trend}</td><td><span class="score">{s["score"]}</span></td></tr>')
+            close = s.get("close") if s.get("close") is not None else 0.0
+            change_pct = s.get("change_pct") if s.get("change_pct") is not None else 0.0
+            foreign_net = s.get("foreign_net") if s.get("foreign_net") is not None else 0
+            big_holder_pct = s.get("big_holder_pct") if s.get("big_holder_pct") is not None else 0.0
+            score = s.get("score") if s.get("score") is not None else 0
+            lines.append(f'<tr onclick="location.href=\'stock_{s.get("stock_id","-")}.html\'" class="clickable"><td><strong>{s.get("stock_id","-")}</strong></td><td>{s.get("stock_name","-")}</td><td>{close:.2f}</td><td class="{"up" if change_pct>0 else "down"}">{change_pct:+.2f}%</td><td class="buy">{foreign_net:,}</td><td>{big_holder_pct:.2f}%</td><td class="{tc}">{trend}</td><td><span class="score">{score}</span></td></tr>')
         lines.append('</tbody></table></div></div>')
 
         # 多頭排列
         lines.append('<div class="card"><h2>📈 多頭排列清單</h2><div class="table-responsive"><table class="data-table"><thead><tr><th>代號</th><th>名稱</th><th>收盤價</th><th>20MA</th><th>60MA</th><th>RSI</th><th>大戶%</th><th>外資連買</th></tr></thead><tbody>')
         for s in bull_stocks[:30]:
-            tech = s.get("technical",{})
-            lines.append(f'<tr onclick="location.href=\'stock_{s["stock_id"]}.html\'" class="clickable"><td><strong>{s["stock_id"]}</strong></td><td>{s["stock_name"]}</td><td>{s["close"]:.2f}</td><td>{tech.get("ma20","-")}</td><td>{tech.get("ma60","-")}</td><td>{tech.get("rsi","-")}</td><td>{s["big_holder_pct"]:.2f}%</td><td>{"✅" if s["foreign_consecutive_buy"] else "❌"}</td></tr>')
+            tech = s.get("technical",{}) or {}
+            close = s.get("close") if s.get("close") is not None else 0.0
+            big_holder_pct = s.get("big_holder_pct") if s.get("big_holder_pct") is not None else 0.0
+            foreign_consecutive = bool(s.get("foreign_consecutive_buy"))
+            lines.append(f'<tr onclick="location.href=\'stock_{s.get("stock_id","-")}.html\'" class="clickable"><td><strong>{s.get("stock_id","-")}</strong></td><td>{s.get("stock_name","-")}</td><td>{close:.2f}</td><td>{tech.get("ma20","-")}</td><td>{tech.get("ma60","-")}</td><td>{tech.get("rsi","-")}</td><td>{big_holder_pct:.2f}%</td><td>{"✅" if foreign_consecutive else "❌"}</td></tr>')
         lines.append('</tbody></table></div></div>')
 
         # 大戶排名
         lines.append('<div class="card"><h2>👑 大戶持股排名 (400張以上)</h2><div class="controls"><label>顯示前 <input type="number" id="rankLimit" value="50" min="10" max="200" onchange="updateRank()"> 名</label><label>最小持股% <input type="number" id="minPct" value="0" min="0" max="100" step="0.1" onchange="updateRank()"></label></div><div class="table-responsive"><table class="data-table" id="bigHolderTable"><thead><tr><th>排名</th><th>代號</th><th>名稱</th><th>大戶%</th><th>週增減%</th><th>收盤價</th><th>漲跌%</th></tr></thead><tbody>')
         for i, s in enumerate(top_big, 1):
-            cc = "up" if s["big_holder_change"]>0 else "down" if s["big_holder_change"]<0 else ""
-            lines.append(f'<tr data-pct="{s["big_holder_pct"]}"><td>{i}</td><td><strong>{s["stock_id"]}</strong></td><td>{s["stock_name"]}</td><td class="highlight">{s["big_holder_pct"]:.2f}%</td><td class="{cc}">{s["big_holder_change"]:+.2f}%</td><td>{s["close"]:.2f}</td><td class="{"up" if s["change_pct"]>0 else "down"}">{s["change_pct"]:+.2f}%</td></tr>')
+            big_holder_pct = s.get("big_holder_pct") if s.get("big_holder_pct") is not None else 0.0
+            big_holder_change = s.get("big_holder_change") if s.get("big_holder_change") is not None else 0.0
+            close = s.get("close") if s.get("close") is not None else 0.0
+            change_pct = s.get("change_pct") if s.get("change_pct") is not None else 0.0
+            cc = "up" if big_holder_change>0 else "down" if big_holder_change<0 else ""
+            lines.append(f'<tr data-pct="{big_holder_pct}"><td>{i}</td><td><strong>{s.get("stock_id","-")}</strong></td><td>{s.get("stock_name","-")}</td><td class="highlight">{big_holder_pct:.2f}%</td><td class="{cc}">{big_holder_change:+.2f}%</td><td>{close:.2f}</td><td class="{"up" if change_pct>0 else "down"}">{change_pct:+.2f}%</td></tr>')
         lines.append('</tbody></table></div></div>')
 
         lines.append('</div>')
