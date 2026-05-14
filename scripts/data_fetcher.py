@@ -248,6 +248,9 @@ class TWStockDataFetcher:
         """抓取 ETF 成分股資料"""
         if holdings is None:
             holdings = ETF_00981A_HOLDINGS
+        # 兼容 list 和 dict 两种格式
+        if isinstance(holdings, list):
+            holdings = {sid: 0.0 for sid in holdings}
         results = {}
         for stock_id, weight in holdings.items():
             df = self._yf_price(stock_id, days=30)
