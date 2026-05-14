@@ -213,8 +213,20 @@ class HTMLGenerator:
         lines.append('</div>')
         lines.append(self._footer())
 
-        price_labels = [p["Date"] for p in price_data[-60:]] if price_data else []
-        price_closes = [p["Close"] for p in price_data[-60:]] if price_data else []
+        # 兼容新舊 price_data 格式
+        if isinstance(price_data, dict):
+            # 新格式: {"Close": [...], "High": [...], ...}
+            closes = price_data.get("Close", [])
+            price_closes = closes[-60:] if closes else []
+            price_labels = [f"D-{i}" for i in range(len(price_closes), 0, -1)]
+        elif isinstance(price_data, list):
+            # 舊格式: [{"Date": ..., "Close": ...}, ...]
+            last_60 = price_data[-60:] if price_data else []
+            price_labels = [p.get("Date", "") for p in last_60]
+            price_closes = [p.get("Close", 0) for p in last_60]
+        else:
+            price_labels = []
+            price_closes = []
         foreign_dates = [f["date"][:10] for f in foreign[-20:]] if foreign else []
         foreign_nets = []
         for f in foreign[-20:]:
