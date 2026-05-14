@@ -136,7 +136,15 @@ class StockScreener:
     def check_technical(self, stock_id):
         """檢查技術指標 (MA + RSI)"""
         data = self.raw_data.get(stock_id, {})
-        price_data = data.get("price", [])
+        price_data = data.get("price", {})
+
+        # 兼容新舊格式：新格式是 dict {"Close": [...], ...}，舊格式是 list
+        if isinstance(price_data, dict):
+            close_list = price_data.get("Close", [])
+            if close_list:
+                price_data = [{"Close": c} for c in close_list]
+            else:
+                price_data = []
 
         if not price_data:
             return {}
