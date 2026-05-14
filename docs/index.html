@@ -10,17 +10,16 @@
 </head>
 <body>
 <nav class="navbar"><div class="nav-brand">🔥 智董籌碼選股站</div><div class="nav-links"><a href="index.html" class="active">📊 首頁</a><a href="watchlist.html" class="">⭐ 自選</a><a href="etf_00981a.html" class="">📈 00981A</a></div></nav>
-<div class="container"><div class="header-info"><h1>📊 籌碼監控儀表板</h1><p class="subtitle">共 1 支個股｜產出 2026-05-14 12:50</p></div>
+<div class="container"><div class="header-info"><h1>📊 籌碼監控儀表板</h1><p class="subtitle">共 1 支個股｜產出 2026-05-14 13:02</p></div>
 <div class="card"><h2>🔥 大戶持股% vs 週增減</h2><p class="chart-desc">X:大戶持股% Y:週增減% 點擊進入個股</p><div class="chart-container"><canvas id="scatterChart"></canvas></div></div>
 <div class="card"><h2>🌍 外資連買 3 天榜單</h2><div class="table-responsive"><table class="data-table"><thead><tr><th>代號</th><th>名稱</th><th>收盤價</th><th>漲跌%</th><th>外資淨買</th><th>大戶%</th><th>趨勢</th><th>評分</th></tr></thead><tbody>
 </tbody></table></div></div>
 <div class="card"><h2>📈 多頭排列清單</h2><div class="table-responsive"><table class="data-table"><thead><tr><th>代號</th><th>名稱</th><th>收盤價</th><th>20MA</th><th>60MA</th><th>RSI</th><th>大戶%</th><th>外資連買</th></tr></thead><tbody>
-<tr onclick="location.href='stock_3661.html'" class="clickable"><td><strong>3661</strong></td><td></td><td>4830.00</td><td>4224.25</td><td>3509.25</td><td>63.2</td><td>0.00%</td><td>❌</td></tr>
 </tbody></table></div></div>
 <div class="card"><h2>👑 大戶持股排名 (400張以上)</h2><div class="controls"><label>顯示前 <input type="number" id="rankLimit" value="50" min="10" max="200" onchange="updateRank()"> 名</label><label>最小持股% <input type="number" id="minPct" value="0" min="0" max="100" step="0.1" onchange="updateRank()"></label></div><div class="table-responsive"><table class="data-table" id="bigHolderTable"><thead><tr><th>排名</th><th>代號</th><th>名稱</th><th>大戶%</th><th>週增減%</th><th>收盤價</th><th>漲跌%</th></tr></thead><tbody>
 </tbody></table></div></div>
 </div>
-<footer class="footer"><p>📅 更新: 2026-05-14 12:50 | 來源: FinMind/Yahoo/證交所</p><p>⚠️ 僅供研究參考</p></footer>
+<footer class="footer"><p>📅 更新: 2026-05-14 13:02 | 來源: FinMind/Yahoo/證交所</p><p>⚠️ 僅供研究參考</p></footer>
 <script>
 const scatterData = [];
 const ctx = document.getElementById("scatterChart").getContext("2d");
