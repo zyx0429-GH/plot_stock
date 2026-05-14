@@ -22,8 +22,24 @@ class TWStockDataFetcher:
         self.api_token = api_token or FINMIND_API_TOKEN
         if not self.api_token:
             print("[WARN] FinMind API Token 為空！請設定環境變數 FINMIND_API_TOKEN")
+        else:
+            print(f"[INFO] FinMind API Token 長度: {len(self.api_token)}")
         self.base_url = "https://api.finmindtrade.com/api/v4/data"
         self.session = requests.Session()
+        # 測試 API 連線
+        try:
+            test_resp = self.session.get(
+                self.base_url,
+                params={
+                    "dataset": "TaiwanStockInfo",
+                    "data_id": "2330",
+                    "token": self.api_token,
+                },
+                timeout=10,
+            )
+            print(f"[INFO] FinMind API 測試連線: HTTP {test_resp.status_code}, 內容長度 {len(test_resp.text)}")
+        except Exception as e:
+            print(f"[ERR] FinMind API 測試連線失敗: {e}")
 
     def _finmind_request(self, dataset, data_id, start_date, end_date):
         """發送 FinMind API 請求"""
@@ -157,10 +173,15 @@ class TWStockDataFetcher:
             try:
                 info = self.get_stock_info(stock_id)
                 if info:
+                    print(f"info={info.get('stock_name','N/A')}", end=" | ")
                     foreign = self.get_foreign_investment(stock_id, days=14)
+                    print(f"外資={len(foreign)}筆", end=" | ")
                     margin = self.get_margin_trading(stock_id, days=14)
+                    print(f"融資={len(margin)}筆", end=" | ")
                     holding = self.get_stock_holding(stock_id, days=14)
+                    print(f"大戶={len(holding)}筆", end=" | ")
                     price_df = self.get_stock_price(stock_id, days=120)
+                    print(f"價格={len(price_df)}筆", end=" | ")
 
                     results[stock_id] = {
                         "info": info,
@@ -171,7 +192,7 @@ class TWStockDataFetcher:
                     }
                     print("[OK]")
                 else:
-                    print("[NO DATA]")
+                    print("[NO DATA - info is None]")
             except Exception as e:
                 import traceback
                 print(f"[ERR] {e}")
