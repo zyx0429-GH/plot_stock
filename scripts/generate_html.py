@@ -126,11 +126,23 @@ class HTMLGenerator:
         lines.append('<div class="card"><div class="table-responsive"><table class="data-table"><thead><tr><th>代號</th><th>名稱</th><th>收盤價</th><th>漲跌%</th><th>外資連買</th><th>外資淨買</th><th>大戶%</th><th>週增減</th><th>券資比</th><th>20MA</th><th>60MA</th><th>RSI</th><th>趨勢</th><th>評分</th></tr></thead><tbody>')
 
         for s in page_data:
-            tech = s.get("technical", {})
-            margin = s.get("margin", {})
+            # === None 安全補丁 (2026-05-14) ===
+            # data_fetcher 抓不到資料時，防止 f-string .2f 炸掉
+            sid = s.get("stock_id") or "-"
+            sname = s.get("stock_name") or "-"
+            close = s.get("close") if s.get("close") is not None else 0.0
+            change_pct = s.get("change_pct") if s.get("change_pct") is not None else 0.0
+            foreign_consecutive = bool(s.get("foreign_consecutive_buy"))
+            foreign_net = s.get("foreign_net") if s.get("foreign_net") is not None else 0
+            big_holder_pct = s.get("big_holder_pct") if s.get("big_holder_pct") is not None else 0.0
+            big_holder_change = s.get("big_holder_change") if s.get("big_holder_change") is not None else 0.0
+            score = s.get("score") if s.get("score") is not None else 0
+            tech = s.get("technical", {}) or {}
+            margin = s.get("margin", {}) or {}
             trend = tech.get("trend", "")
             tc = "bull" if "多頭" in trend else "bear" if "空頭" in trend else "neutral"
-            lines.append(f'<tr onclick="location.href=\'stock_{s["stock_id"]}.html\'" class="clickable"><td><strong>{s["stock_id"]}</strong></td><td>{s["stock_name"]}</td><td>{s["close"]:.2f}</td><td class="{"up" if s["change_pct"]>0 else "down"}">{s["change_pct"]:+.2f}%</td><td>{"✅" if s["foreign_consecutive_buy"] else "❌"}</td><td class="{"buy" if s["foreign_net"]>0 else "sell"}">{s["foreign_net"]:,}</td><td class="highlight">{s["big_holder_pct"]:.2f}%</td><td class="{"up" if s["big_holder_change"]>0 else "down"}">{s["big_holder_change"]:+.2f}%</td><td>{margin.get("ratio","-") if margin else "-"}</td><td>{tech.get("ma20","-")}</td><td>{tech.get("ma60","-")}</td><td>{tech.get("rsi","-")}</td><td class="{tc}">{trend}</td><td><span class="score">{s["score"]}</span></td></tr>')
+            lines.append(f'<tr onclick="location.href=\'stock_{sid}.html\'" class="clickable"><td><strong>{sid}</strong></td><td>{sname}</td><td>{close:.2f}</td><td class="{"up" if change_pct>0 else "down"}">{change_pct:+.2f}%</td><td>{"✅" if foreign_consecutive else "❌"}</td><td class="{"buy" if foreign_net>0 else "sell"}">{foreign_net:,}</td><td class="highlight">{big_holder_pct:.2f}%</td><td class="{"up" if big_holder_change>0 else "down"}">{big_holder_change:+.2f}%</td><td>{margin.get("ratio","-") if margin else "-"}</td><td>{tech.get("ma20","-")}</td><td>{tech.get("ma60","-")}</td><td>{tech.get("rsi","-")}</td><td class="{tc}">{trend}</td><td><span class="score">{score}</span></td></tr>')
+            # === 補丁結束 ===
 
         lines.append('</tbody></table></div></div></div>')
         lines.append(self._footer())
