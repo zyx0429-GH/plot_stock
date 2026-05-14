@@ -196,8 +196,16 @@ class HTMLGenerator:
         lines.append(f'<div class="container"><div class="stock-header"><h1>{stock_id} {info.get("stock_name","")}</h1><div class="stock-price"><span class="price">{info.get("close",0):.2f}</span><span class="change {"up" if info.get("change_pct",0)>0 else "down"}">{info.get("change_pct",0):+.2f}%</span></div></div>')
         lines.append('<div class="metrics-grid">')
         lines.append(f'<div class="metric-card"><h3>📊 技術面</h3><p>20MA: {tech.get("ma20","-")}</p><p>60MA: {tech.get("ma60","-")}</p><p>RSI: {tech.get("rsi","-")}</p><p class="trend">趨勢: {tech.get("trend","-")}</p></div>')
-        lines.append(f'<div class="metric-card"><h3>🌍 外資動向</h3><p>連買{SCREEN_CONFIG["foreign_buy_days"]}天: {"✅" if screened_item and screened_item["foreign_consecutive_buy"] else "❌"}</p><p>淨買超: {screened_item["foreign_net"]:, if screened_item else 0}</p></div>')
-        lines.append(f'<div class="metric-card"><h3>👑 籌碼面</h3><p>大戶持股: {screened_item["big_holder_pct"]:.2f if screened_item and screened_item["big_holder_pct"] else "-"}%</p><p>週增減: {screened_item["big_holder_change"]:+.2f if screened_item else "-"}%</p></div>')
+        # === None-safe patch for f-string formatting ===
+        foreign_consecutive = screened_item and screened_item.get("foreign_consecutive_buy")
+        foreign_net = screened_item["foreign_net"] if screened_item and screened_item.get("foreign_net") is not None else 0
+        big_holder_pct = screened_item["big_holder_pct"] if screened_item and screened_item.get("big_holder_pct") is not None else None
+        big_holder_change = screened_item["big_holder_change"] if screened_item and screened_item.get("big_holder_change") is not None else None
+        bh_pct_str = f"{big_holder_pct:.2f}" if big_holder_pct is not None else "-"
+        bh_chg_str = f"{big_holder_change:+.2f}" if big_holder_change is not None else "-"
+        # === patch end ===
+        lines.append(f'<div class="metric-card"><h3>🌍 外資動向</h3><p>連買{SCREEN_CONFIG["foreign_buy_days"]}天: {"✅" if foreign_consecutive else "❌"}</p><p>淨買超: {foreign_net:,}</p></div>')
+        lines.append(f'<div class="metric-card"><h3>👑 籌碼面</h3><p>大戶持股: {bh_pct_str}%</p><p>週增減: {bh_chg_str}%</p></div>')
         lines.append(f'<div class="metric-card"><h3>💰 融資融券</h3><p>券資比: {margin.get("ratio","-") if margin else "-"}</p><p>融資餘額: {margin.get("margin_balance","-") if margin else "-"}</p></div>')
         lines.append('</div>')
         lines.append('<div class="card"><h2>📈 股價走勢</h2><div class="chart-container"><canvas id="priceChart"></canvas></div></div>')
