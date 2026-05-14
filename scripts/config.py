@@ -3,7 +3,9 @@
 """
 
 # === 資料源配置 ===
-FINMIND_API_TOKEN = ""  # 請到 https://finmindtrade.com/ 申請免費 API Key
+import os
+FINMIND_API_TOKEN = os.environ.get("FINMIND_API_TOKEN", "")
+# 本地開發可覆蓋： export FINMIND_API_TOKEN="your_token"
 
 # === 選股條件 ===
 SCREEN_CONFIG = {

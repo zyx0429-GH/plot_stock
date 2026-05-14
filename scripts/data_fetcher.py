@@ -20,6 +20,8 @@ class TWStockDataFetcher:
 
     def __init__(self, api_token=None):
         self.api_token = api_token or FINMIND_API_TOKEN
+        if not self.api_token:
+            print("[WARN] FinMind API Token 為空！請設定環境變數 FINMIND_API_TOKEN")
         self.base_url = "https://api.finmindtrade.com/api/v4/data"
         self.session = requests.Session()
 
