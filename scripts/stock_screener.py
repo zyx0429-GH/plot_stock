@@ -45,42 +45,44 @@ class StockScreener:
         return rsi.iloc[-1] if not pd.isna(rsi.iloc[-1]) else None
 
     def check_foreign_buy(self, stock_id):
-        """檢查外資連買 N 天"""
+        """檢查外資買超 (兼容單日數據)"""
         data = self.raw_data.get(stock_id, {})
         foreign = data.get("foreign", [])
         if not foreign:
-            return False, 0, []
+            # 如果沒有外資數據，檢查 raw_data info 中是否有外資淨買
+            info = data.get("info", {})
+            foreign_net = info.get("foreign_net", 0)
+            return foreign_net > 0, foreign_net, []
 
         df = pd.DataFrame(foreign)
-        if "buy" not in df.columns:
-            return False, 0, []
+        if "net" not in df.columns:
+            # 兼容舊格式 (buy/sell)
+            if "buy" in df.columns and "sell" in df.columns:
+                df["net"] = pd.to_numeric(df["buy"], errors="coerce") - pd.to_numeric(df["sell"], errors="coerce")
+            else:
+                return False, 0, []
 
-        df["buy"] = pd.to_numeric(df["buy"], errors="coerce")
-        df["sell"] = pd.to_numeric(df["sell"], errors="coerce")
-        df["net"] = df["buy"] - df["sell"]
+        df["net"] = pd.to_numeric(df["net"], errors="coerce")
+        latest_net = df["net"].iloc[-1] if not df.empty else 0
+        total_net = df["net"].sum()
 
-        # 取最近 N 天
+        # 連買天數 (兼容單日數據：只要有買超就算)
         days = self.config["foreign_buy_days"]
         recent = df.tail(days)
-        if len(recent) < days:
-            return False, 0, []
-
-        # 檢查是否連續淨買超
-        consecutive_buy = all(recent["net"] > 0)
-        total_net = recent["net"].sum()
+        consecutive_buy = all(recent["net"] > 0) if len(recent) >= days else all(df["net"] > 0)
 
         return consecutive_buy, int(total_net), recent.to_dict("records")
 
     def check_big_holder(self, stock_id):
-        """檢查大戶持股 (400張以上)"""
+        """檢查大戶持股 (兼容無數據時回傳 0)"""
         data = self.raw_data.get(stock_id, {})
         holding = data.get("holding", [])
         if not holding:
-            return None, 0, []
+            return 0, 0, []
 
         df = pd.DataFrame(holding)
         if "percent" not in df.columns:
-            return None, 0, []
+            return 0, 0, []
 
         df["percent"] = pd.to_numeric(df["percent"], errors="coerce")
         latest = df.iloc[-1] if not df.empty else None
@@ -95,7 +97,7 @@ class StockScreener:
                 change = 0
             return pct, round(change, 2), df.to_dict("records")
 
-        return None, 0, []
+        return 0, 0, []
 
     def check_margin(self, stock_id):
         """檢查融資融券 (券資比)"""
@@ -256,24 +258,29 @@ class StockScreener:
 
             screened.append(result)
 
-            # 大戶排名資料
-            if big_pct:
-                big_holder_rank.append({
-                    "stock_id": stock_id,
-                    "stock_name": info.get("stock_name", ""),
-                    "big_holder_pct": round(big_pct, 2),
-                    "big_holder_change": big_change,
-                    "close": info.get("close", 0),
-                    "change_pct": round(info.get("change_pct", 0), 2),
-                })
+            # 大戶排名資料 (兼容無數據時用 0)
+            big_holder_rank.append({
+                "stock_id": stock_id,
+                "stock_name": info.get("stock_name", ""),
+                "big_holder_pct": round(big_pct, 2) if big_pct else 0,
+                "big_holder_change": big_change if big_change else 0,
+                "close": info.get("close", 0),
+                "change_pct": round(info.get("change_pct", 0), 2),
+            })
 
         # 排序
         screened.sort(key=lambda x: x["score"], reverse=True)
         big_holder_rank.sort(key=lambda x: x["big_holder_pct"], reverse=True)
 
+        # 生成子列表 (兼容 TWSE API 單日數據)
+        foreign_buy = [s for s in screened if s.get("foreign_net", 0) > 0]
+        bull_stocks = [s for s in screened if s.get("technical", {}).get("trend") in ["多頭排列", "短期強勢"]]
+
         self.results = {
             "screened": screened,
             "big_holder_rank": big_holder_rank,
+            "foreign_buy": foreign_buy,
+            "bull_stocks": bull_stocks,
             "update_time": datetime.now().strftime("%Y-%m-%d %H:%M"),
             "total": len(screened),
         }
