@@ -98,11 +98,17 @@ class TWStockDataFetcher:
         優先讀取完整 200 檔 JSON (-full.json)，其次回退到舊版 top100 JSON"""
         import glob
         # 本地開發路徑 (workspace/memory/)
-        local_dir = os.path.join(os.path.dirname(__file__), "..", "..", "memory", "chip-monitoring", "weekly")
+        local_dirs = [
+            os.path.join(os.path.dirname(__file__), "..", "..", "memory", "chip-monitoring", "weekly"),
+            os.path.join(os.path.dirname(__file__), "..", "..", "memory", "chip_monitoring", "weekly"),
+        ]
         # 線上路徑 (GitHub Actions 部署時用，與 scripts/ 同層的 data/)
-        repo_dir = os.path.join(os.path.dirname(__file__), "..", "data", "chip-monitoring", "weekly")
+        repo_dirs = [
+            os.path.join(os.path.dirname(__file__), "..", "data", "chip-monitoring", "weekly"),
+            os.path.join(os.path.dirname(__file__), "..", "data", "chip_monitoring", "weekly"),
+        ]
         
-        all_dirs = [local_dir, repo_dir]
+        all_dirs = local_dirs + repo_dirs
         all_files = []
         for d in all_dirs:
             if os.path.isdir(d):
