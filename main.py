@@ -16,23 +16,23 @@ from scripts.generate_html import generate
 
 def main():
     print("=" * 60)
-    print("🔥 智董籌碼選股站 - 每日更新開始")
+    print("[INFO] 智董籌碼選股站 - 每日更新開始")
     print("=" * 60)
 
     # Step 1: 抓取資料
-    print("\n📥 Step 1/3: 抓取台股資料...")
+    print("\n[INFO] Step 1/3: 抓取台股資料...")
     fetch_all()
 
     # Step 2: 選股篩選
-    print("\n🔍 Step 2/3: 執行選股邏輯...")
+    print("\n[INFO] Step 2/3: 執行選股邏輯...")
     run_screening()
 
     # Step 3: 生成網頁
-    print("\n🎨 Step 3/3: 生成靜態網頁...")
+    print("\n[INFO] Step 3/3: 生成靜態網頁...")
     generate()
 
     print("\n" + "=" * 60)
-    print("✅ 全部完成！請打開 docs/index.html 預覽")
+    print("[OK] 全部完成！請打開 docs/index.html 預覽")
     print("=" * 60)
 
 if __name__ == "__main__":

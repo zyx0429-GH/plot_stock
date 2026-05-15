@@ -71,8 +71,24 @@ class HTMLGenerator:
         # 散點圖
         lines.append('<div class="card"><h2>🔥 大戶持股% vs 週增減</h2><p class="chart-desc">X:大戶持股% Y:週增減% 點擊進入個股</p><div class="chart-container"><canvas id="scatterChart"></canvas></div></div>')
 
-        # 外資連買
-        lines.append(f'<div class="card"><h2>🌍 外資連買 {SCREEN_CONFIG["foreign_buy_days"]} 天榜單</h2><div class="table-responsive"><table class="data-table"><thead><tr><th>代號</th><th>名稱</th><th>收盤價</th><th>漲跌%</th><th>外資淨買</th><th>大戶%</th><th>趨勢</th><th>評分</th></tr></thead><tbody>')
+        lines.append('<div class="card"><h2>🔥 雙重認證榜單 (00981A + 大戶增倉 + 法人買超)</h2><div class="table-responsive"><table class="data-table"><thead><tr><th>代號</th><th>名稱</th><th>收盤價</th><th>漲跌%</th><th>外資淨買</th><th>投信淨買</th><th>大戶%</th><th>週增減</th><th>趨勢</th><th>評分</th></tr></thead><tbody>')
+        dual_certified = self.data.get("dual_certified", [])
+        for s in dual_certified[:30]:
+            tech = s.get("technical",{}) or {}
+            trend = tech.get("trend","")
+            tc = "bull" if "多頭" in trend else "bear" if "空頭" in trend else ""
+            close = s.get("close") if s.get("close") is not None else 0.0
+            change_pct = s.get("change_pct") if s.get("change_pct") is not None else 0.0
+            foreign_net = s.get("foreign_net") if s.get("foreign_net") is not None else 0
+            trust_net = s.get("trust_net") if s.get("trust_net") is not None else 0
+            big_holder_pct = s.get("big_holder_pct") if s.get("big_holder_pct") is not None else 0.0
+            big_holder_change = s.get("big_holder_change") if s.get("big_holder_change") is not None else 0.0
+            score = s.get("score") if s.get("score") is not None else 0
+            lines.append(f'<tr onclick="location.href=\'stock_{s.get("stock_id","-")}.html\'" class="clickable"><td><strong>{s.get("stock_id","-")}</strong></td><td>{s.get("stock_name","-")}</td><td>{close:.2f}</td><td class="{"up" if change_pct>0 else "down"}">{change_pct:+.2f}%</td><td class="{"buy" if foreign_net>0 else "sell"}">{foreign_net:,}</td><td class="{"buy" if trust_net>0 else "sell"}">{trust_net:,}</td><td class="highlight">{big_holder_pct:.2f}%</td><td class="{"up" if big_holder_change>0 else "down"}">{big_holder_change:+.2f}%</td><td class="{tc}">{trend}</td><td><span class="score">{score}</span></td></tr>')
+        lines.append('</tbody></table></div></div>')
+
+        # 外資買超
+        lines.append(f'<div class="card"><h2>🌍 外資買超榜單</h2><div class="table-responsive"><table class="data-table"><thead><tr><th>代號</th><th>名稱</th><th>收盤價</th><th>漲跌%</th><th>外資淨買</th><th>大戶%</th><th>趨勢</th><th>評分</th></tr></thead><tbody>')
         for s in foreign_buy[:30]:
             tech = s.get("technical",{}) or {}
             trend = tech.get("trend","")
@@ -94,6 +110,28 @@ class HTMLGenerator:
             foreign_consecutive = bool(s.get("foreign_consecutive_buy"))
             lines.append(f'<tr onclick="location.href=\'stock_{s.get("stock_id","-")}.html\'" class="clickable"><td><strong>{s.get("stock_id","-")}</strong></td><td>{s.get("stock_name","-")}</td><td>{close:.2f}</td><td>{tech.get("ma20","-")}</td><td>{tech.get("ma60","-")}</td><td>{tech.get("rsi","-")}</td><td>{big_holder_pct:.2f}%</td><td>{"✅" if foreign_consecutive else "❌"}</td></tr>')
         lines.append('</tbody></table></div></div>')
+
+        # 大戶門檻統計
+        watchlist_data = self.data.get("watchlist", [])
+        lines.append('<div class="card"><h2>🏛️ 大戶門檻統計 (200檔監控)</h2><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:15px;margin-top:10px;">')
+        threshold_stats = {"100": {"count": 0, "min": 999, "max": 0, "sum": 0},
+                           "200": {"count": 0, "min": 999, "max": 0, "sum": 0},
+                           "400": {"count": 0, "min": 999, "max": 0, "sum": 0},
+                           "1000": {"count": 0, "min": 999, "max": 0, "sum": 0}}
+        for s in watchlist_data:
+            th = s.get("big_holder_threshold", "")
+            bp = s.get("big_holder_pct", 0) or 0
+            if th and th in threshold_stats and bp > 0:
+                threshold_stats[th]["count"] += 1
+                threshold_stats[th]["min"] = min(threshold_stats[th]["min"], bp)
+                threshold_stats[th]["max"] = max(threshold_stats[th]["max"], bp)
+                threshold_stats[th]["sum"] += bp
+        for th, label in [("100", "💎 ≥100張 (高價股)"), ("200", "🔸 ≥200張"), ("400", "🔹 ≥400張"), ("1000", "📌 ≥1000張 (低價股)")]:
+            stats = threshold_stats[th]
+            if stats["count"] > 0:
+                avg = stats["sum"] / stats["count"]
+                lines.append(f'<div style="background:rgba(255,215,0,0.05);border:1px solid rgba(255,215,0,0.2);border-radius:8px;padding:12px;"><h4 style="color:#ffd700;margin:0 0 8px 0;">{label}</h4><p style="margin:4px 0;color:#ccc;font-size:0.9em;">自選覆蓋: {stats["count"]} 檔</p><p style="margin:4px 0;color:#ccc;font-size:0.9em;">大戶%: {stats["min"]:.1f}% ~ {stats["max"]:.1f}% (avg {avg:.1f}%)</p></div>')
+        lines.append('</div></div>')
 
         # 大戶排名
         lines.append('<div class="card"><h2>👑 大戶持股排名 (400張以上)</h2><div class="controls"><label>顯示前 <input type="number" id="rankLimit" value="50" min="10" max="200" onchange="updateRank()"> 名</label><label>最小持股% <input type="number" id="minPct" value="0" min="0" max="100" step="0.1" onchange="updateRank()"></label></div><div class="table-responsive"><table class="data-table" id="bigHolderTable"><thead><tr><th>排名</th><th>代號</th><th>名稱</th><th>大戶%</th><th>週增減%</th><th>收盤價</th><th>漲跌%</th></tr></thead><tbody>')
@@ -122,7 +160,7 @@ class HTMLGenerator:
         filepath = os.path.join(DOCS_DIR, "index.html")
         with open(filepath, "w", encoding="utf-8") as f:
             f.write("\n".join(lines))
-        print(f"✅ 首頁: {filepath}")
+        print(f"[OK] 首頁: {filepath}")
         return filepath
 
     def _generate_table_page(self, title, subtitle, page_key, stock_list):
@@ -135,7 +173,7 @@ class HTMLGenerator:
         lines.append('<body>')
         lines.append(self._nav(page_key))
         lines.append(f'<div class="container"><div class="header-info"><h1>{title.split("｜")[0]}</h1><p class="subtitle">{subtitle} 共 {len(page_data)} 檔</p></div>')
-        lines.append('<div class="card"><div class="table-responsive"><table class="data-table"><thead><tr><th>代號</th><th>名稱</th><th>收盤價</th><th>漲跌%</th><th>外資連買</th><th>外資淨買</th><th>大戶%</th><th>週增減</th><th>券資比</th><th>20MA</th><th>60MA</th><th>RSI</th><th>趨勢</th><th>評分</th></tr></thead><tbody>')
+        lines.append('<div class="card"><div class="table-responsive"><table class="data-table"><thead><tr><th>代號</th><th>名稱</th><th>收盤價</th><th>漲跌%</th><th>外資買超</th><th>外資淨買</th><th>大戶%</th><th>門檻</th><th>週增減</th><th>券資比</th><th>20MA</th><th>60MA</th><th>RSI</th><th>趨勢</th><th>評分</th></tr></thead><tbody>')
 
         for s in page_data:
             # === None 安全補丁 (2026-05-14) ===
@@ -147,13 +185,14 @@ class HTMLGenerator:
             foreign_consecutive = bool(s.get("foreign_consecutive_buy"))
             foreign_net = s.get("foreign_net") if s.get("foreign_net") is not None else 0
             big_holder_pct = s.get("big_holder_pct") if s.get("big_holder_pct") is not None else 0.0
+            big_holder_threshold = s.get("big_holder_threshold", "") or "—"
             big_holder_change = s.get("big_holder_change") if s.get("big_holder_change") is not None else 0.0
             score = s.get("score") if s.get("score") is not None else 0
             tech = s.get("technical", {}) or {}
             margin = s.get("margin", {}) or {}
             trend = tech.get("trend", "")
             tc = "bull" if "多頭" in trend else "bear" if "空頭" in trend else "neutral"
-            lines.append(f'<tr onclick="location.href=\'stock_{sid}.html\'" class="clickable"><td><strong>{sid}</strong></td><td>{sname}</td><td>{close:.2f}</td><td class="{"up" if change_pct>0 else "down"}">{change_pct:+.2f}%</td><td>{"✅" if foreign_consecutive else "❌"}</td><td class="{"buy" if foreign_net>0 else "sell"}">{foreign_net:,}</td><td class="highlight">{big_holder_pct:.2f}%</td><td class="{"up" if big_holder_change>0 else "down"}">{big_holder_change:+.2f}%</td><td>{margin.get("ratio","-") if margin else "-"}</td><td>{tech.get("ma20","-")}</td><td>{tech.get("ma60","-")}</td><td>{tech.get("rsi","-")}</td><td class="{tc}">{trend}</td><td><span class="score">{score}</span></td></tr>')
+            lines.append(f'<tr onclick="location.href=\'stock_{sid}.html\'" class="clickable"><td><strong>{sid}</strong></td><td>{sname}</td><td>{close:.2f}</td><td class="{"up" if change_pct>0 else "down"}">{change_pct:+.2f}%</td><td>{"✅" if foreign_consecutive else "❌"}</td><td class="{"buy" if foreign_net>0 else "sell"}">{foreign_net:,}</td><td class="highlight">{big_holder_pct:.2f}%</td><td>≥{big_holder_threshold}張</td><td class="{"up" if big_holder_change>0 else "down"}">{big_holder_change:+.2f}%</td><td>{margin.get("ratio","-") if margin else "-"}</td><td>{tech.get("ma20","-")}</td><td>{tech.get("ma60","-")}</td><td>{tech.get("rsi","-")}</td><td class="{tc}">{trend}</td><td><span class="score">{score}</span></td></tr>')
             # === 補丁結束 ===
 
         lines.append('</tbody></table></div></div></div>')
@@ -163,7 +202,7 @@ class HTMLGenerator:
         filepath = os.path.join(DOCS_DIR, f"{page_key}.html")
         with open(filepath, "w", encoding="utf-8") as f:
             f.write("".join(lines))
-        print(f"✅ {page_key}: {filepath}")
+        print(f"[OK] {page_key}: {filepath}")
         return filepath
 
     def generate_watchlist(self):
@@ -204,7 +243,7 @@ class HTMLGenerator:
         bh_pct_str = f"{big_holder_pct:.2f}" if big_holder_pct is not None else "-"
         bh_chg_str = f"{big_holder_change:+.2f}" if big_holder_change is not None else "-"
         # === patch end ===
-        lines.append(f'<div class="metric-card"><h3>🌍 外資動向</h3><p>連買{SCREEN_CONFIG["foreign_buy_days"]}天: {"✅" if foreign_consecutive else "❌"}</p><p>淨買超: {foreign_net:,}</p></div>')
+        lines.append(f'<div class="metric-card"><h3>🌍 外資動向</h3><p>今日買超: {"✅" if foreign_consecutive else "❌"}</p><p>淨買超: {foreign_net:,}</p></div>')
         lines.append(f'<div class="metric-card"><h3>👑 籌碼面</h3><p>大戶持股: {bh_pct_str}%</p><p>週增減: {bh_chg_str}%</p></div>')
         lines.append(f'<div class="metric-card"><h3>💰 融資融券</h3><p>券資比: {margin.get("ratio","-") if margin else "-"}</p><p>融資餘額: {margin.get("margin_balance","-") if margin else "-"}</p></div>')
         lines.append('</div>')
@@ -253,7 +292,7 @@ class HTMLGenerator:
         all_stocks = list(set(WATCHLIST + ETF_00981A_HOLDINGS))
         for stock_id in all_stocks:
             self.generate_stock_detail(stock_id)
-        print(f"✅ 全部完成！共 {len(all_stocks)} 檔個股看板")
+        print(f"[OK] 全部完成！共 {len(all_stocks)} 檔個股看板")
 
 
 def generate():

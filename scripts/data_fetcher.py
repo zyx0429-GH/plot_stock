@@ -1,6 +1,7 @@
 """
-台股資料抓取模組 — TWSE 官方 API 版本
+台股資料抓取模組 — TWSE 官方 API + TPEX 櫃買中心 API 版本
 免費、無額度限制
+上市(TWSE) + 上櫃(TPEX) 雙源覆蓋
 """
 
 import requests
@@ -11,6 +12,7 @@ from datetime import datetime, timedelta
 import time
 import json
 import os
+import re
 import warnings
 
 warnings.filterwarnings('ignore')
@@ -19,15 +21,16 @@ from config import DATA_DIR, WATCHLIST, ETF_00981A_HOLDINGS
 
 
 class TWStockDataFetcher:
-    """台股資料抓取器 — TWSE + Yahoo Finance"""
+    """台股資料抓取器 — TWSE + TPEX + Yahoo Finance"""
 
     def __init__(self, api_token=None):
         self.api_token = api_token
         self.twse_base = "https://www.twse.com.tw"
+        self.tpex_base = "https://www.tpex.org.tw"
         self.session = requests.Session()
         # 減少 SSL 驗證警告
         self.session.verify = False
-        print(f"[INFO] DataFetcher initialized (TWSE + Yahoo Finance mode)")
+        print(f"[INFO] DataFetcher initialized (TWSE + TPEX + Yahoo Finance mode)")
 
     def _twse_get(self, endpoint, params):
         """發送 TWSE API 請求"""
@@ -44,6 +47,154 @@ class TWStockDataFetcher:
         except Exception as e:
             print(f"[ERROR] TWSE API {endpoint}: {e}")
             return {}
+
+    def _tpex_get(self, endpoint, params):
+        """發送 TPEX API 請求 (櫃買中心)"""
+        url = f"{self.tpex_base}/{endpoint}"
+        try:
+            resp = self.session.get(url, params=params, timeout=30)
+            resp.raise_for_status()
+            return resp.json()
+        except Exception as e:
+            print(f"[ERROR] TPEX API {endpoint}: {e}")
+            return {}
+
+    @staticmethod
+    def _roc_date(gregorian_date_str):
+        """將西元日期 YYYYMMDD 轉為民國年格式 YYY/MM/DD"""
+        if not gregorian_date_str or len(gregorian_date_str) != 8:
+            return ""
+        year = int(gregorian_date_str[:4]) - 1911
+        month = gregorian_date_str[4:6]
+        day = gregorian_date_str[6:8]
+        return f"{year}/{month}/{day}"
+
+    @staticmethod
+    def _strip_html_tags(text):
+        """去除 HTML 標籤，提取純文字"""
+        if not text:
+            return ""
+        clean = re.sub(r'<[^>]+>', '', str(text))
+        return clean.strip()
+
+    @staticmethod
+    def _parse_tpex_change(change_field):
+        """解析 TPEX 漲跌欄位 (可能含 HTML) 提取數值"""
+        clean = TWStockDataFetcher._strip_html_tags(change_field)
+        if not clean:
+            return 0.0
+        # 去除 + - X 等非數字前綴後的數值
+        m = re.search(r'[+\-]?[\d,]+\.?\d*', clean.replace(",", ""))
+        if m:
+            try:
+                return float(m.group().replace(",", ""))
+            except:
+                return 0.0
+        return 0.0
+
+    @staticmethod
+    def _merge_chip_monitoring(results):
+        """合併大戶週報資料 (memory/chip-monitoring/weekly/*.json) 到 results
+        優先讀取完整 200 檔 JSON (-full.json)，其次回退到舊版 top100 JSON"""
+        import glob
+        # 本地開發路徑 (workspace/memory/)
+        local_dir = os.path.join(os.path.dirname(__file__), "..", "..", "memory", "chip-monitoring", "weekly")
+        # 線上路徑 (GitHub Actions 部署時用，與 data/ 同層)
+        repo_dir = os.path.join(os.path.dirname(__file__), "..", "..", "data", "chip-monitoring", "weekly")
+        
+        all_dirs = [local_dir, repo_dir]
+        all_files = []
+        for d in all_dirs:
+            if os.path.isdir(d):
+                all_files.extend(sorted(glob.glob(os.path.join(d, "*-full.json")), reverse=True))
+        # 如果沒有 -full.json，回退到舊版格式
+        for d in all_dirs:
+            if os.path.isdir(d):
+                all_files.extend(sorted(glob.glob(os.path.join(d, "[0-9]*-[0-9]*-[0-9]*.json")), reverse=True))
+        
+        weekly_files = []
+        seen = set()
+        for f in all_files:
+            if f not in seen:
+                seen.add(f)
+                weekly_files.append(f)
+        
+        if not weekly_files:
+            print("[INFO] No chip-monitoring weekly data found, skipping merge.")
+            return
+        
+        latest_file = weekly_files[0]
+        try:
+            with open(latest_file, "r", encoding="utf-8") as f:
+                chip_data = json.load(f)
+        except Exception as e:
+            print(f"[WARN] Failed to load chip monitoring data: {e}")
+            return
+        
+        chip_lookup = {}
+        is_full_format = "all_stocks" in chip_data
+        
+        if is_full_format:
+            # 新版完整 200 檔格式
+            for item in chip_data.get("all_stocks", []):
+                ticker = str(item.get("ticker", "")).lstrip("0") or "0"
+                if ticker:
+                    # 解析 price_str 提取門檻
+                    price_str = item.get("price_str", "")
+                    threshold = "未知"
+                    if "≥1000" in price_str:
+                        threshold = "1000"
+                    elif "≥400" in price_str:
+                        threshold = "400"
+                    elif "≥200" in price_str:
+                        threshold = "200"
+                    elif "≥100" in price_str:
+                        threshold = "100"
+                    
+                    chip_lookup[ticker] = {
+                        "big_holder_pct": item.get("bh_pct", 0.0),
+                        "big_holder_change_pct": item.get("bh_wow", 0.0),
+                        "threshold": threshold,
+                        "date": chip_data.get("date", ""),
+                    }
+        else:
+            # 舊版 top100 格式
+            for category in ["top100_increase", "top100_decrease"]:
+                for item in chip_data.get(category, []):
+                    ticker = str(item.get("ticker", "")).lstrip("0") or "0"
+                    if ticker:
+                        bh_pct_str = item.get("bh_pct", "0%").replace("%", "")
+                        bh_wow_str = item.get("bh_wow", "0%").replace("%", "")
+                        try:
+                            bh_pct = float(bh_pct_str)
+                        except:
+                            bh_pct = 0.0
+                        try:
+                            bh_wow = float(bh_wow_str)
+                        except:
+                            bh_wow = 0.0
+                        chip_lookup[ticker] = {
+                            "big_holder_pct": bh_pct,
+                            "big_holder_change_pct": bh_wow,
+                            "consecutive": item.get("consecutive", "—"),
+                            "signals": item.get("signals", []),
+                            "category": "increase" if category == "top100_increase" else "decrease",
+                            "date": chip_data.get("date", ""),
+                        }
+        
+        merged_count = 0
+        for sid in results:
+            if sid in chip_lookup:
+                chip = chip_lookup[sid]
+                results[sid]["holding"] = [{
+                    "date": chip.get("date", ""),
+                    "big_holder_pct": chip["big_holder_pct"],
+                    "big_holder_change_pct": chip["big_holder_change_pct"],
+                    "threshold": chip.get("threshold", "—"),
+                }]
+                merged_count += 1
+        
+        print(f"[INFO] Chip monitoring merged: {merged_count} stocks from {os.path.basename(latest_file)} (format: {'full' if is_full_format else 'legacy'})")
 
     def _yf_price(self, stock_id, days=60):
         """用 yfinance 抓股價歷史 — 嘗試 .TW 和 .TWO"""
@@ -84,25 +235,119 @@ class TWStockDataFetcher:
             "trend": trend,
         }
 
+    def _fetch_tpex_quotes(self, today_str, yesterday_str):
+        """抓取 TPEX 上櫃每日收盤行情"""
+        roc_today = self._roc_date(today_str)
+        roc_yesterday = self._roc_date(yesterday_str)
+        price_map = {}
+
+        for d in [roc_today, roc_yesterday]:
+            if not d:
+                continue
+            print(f"[INFO] Fetching TPEX quotes for {d}...")
+            data = self._tpex_get("web/stock/aftertrading/daily_close_quotes/stk_quote_result.php", {
+                "l": "zh-tw", "d": d, "_": "0"
+            })
+            tables = data.get("tables", [])
+            if tables and tables[0].get("data"):
+                table = tables[0]
+                rows = table.get("data", [])
+                print(f"[INFO] TPEX quotes: {len(rows)} stocks for {d}")
+                for row in rows:
+                    if len(row) < 11:
+                        continue
+                    sid = str(row[0]).lstrip("0") or "0"
+                    try:
+                        close_raw = str(row[2]).replace(",", "")
+                        close_val = float(close_raw) if close_raw != "--" else 0.0
+                        change_raw = str(row[3]) if row[3] is not None else ""
+                        change_val = self._parse_tpex_change(change_raw)
+                        open_raw = str(row[4]).replace(",", "")
+                        high_raw = str(row[5]).replace(",", "")
+                        low_raw = str(row[6]).replace(",", "")
+                        vol_raw = str(row[8]).replace(",", "")
+
+                        price_map[sid] = {
+                            "stock_name": str(row[1]).strip(),
+                            "close": close_val,
+                            "change": change_val,
+                            "open": float(open_raw) if open_raw != "--" else 0.0,
+                            "high": float(high_raw) if high_raw != "--" else 0.0,
+                            "low": float(low_raw) if low_raw != "--" else 0.0,
+                            "volume": int(vol_raw) if vol_raw else 0,
+                        }
+                    except Exception:
+                        pass
+                break  # 有資料就跳出
+            else:
+                print(f"[WARN] No TPEX quotes for {d}")
+        return price_map
+
+    def _fetch_tpex_institutional(self, today_str, yesterday_str):
+        """抓取 TPEX 上櫃三大法人買賣超 (外資 + 投信)"""
+        roc_today = self._roc_date(today_str)
+        roc_yesterday = self._roc_date(yesterday_str)
+        foreign_map = {}
+        trust_map = {}
+
+        for d in [roc_today, roc_yesterday]:
+            if not d:
+                continue
+            print(f"[INFO] Fetching TPEX institutional for {d}...")
+            data = self._tpex_get("web/stock/3insti/daily_trade/3itrade_hedge_result.php", {
+                "l": "zh-tw", "se": "AL", "t": "D", "d": d, "_": "0"
+            })
+            tables = data.get("tables", [])
+            if tables and tables[0].get("data"):
+                rows = tables[0].get("data", [])
+                print(f"[INFO] TPEX institutional: {len(rows)} stocks for {d}")
+                for row in rows:
+                    if len(row) < 11:
+                        continue
+                    sid = str(row[0]).lstrip("0") or "0"
+                    try:
+                        # 外陸資(不含外資自營商) net = idx 4, 外資自營商 net = idx 7
+                        f_net1 = int(str(row[4]).replace(",", "")) if len(row) > 4 else 0
+                        f_net2 = int(str(row[7]).replace(",", "")) if len(row) > 7 else 0
+                        f_buy1 = int(str(row[2]).replace(",", "")) if len(row) > 2 else 0
+                        f_sell1 = int(str(row[3]).replace(",", "")) if len(row) > 3 else 0
+                        f_buy2 = int(str(row[5]).replace(",", "")) if len(row) > 5 else 0
+                        f_sell2 = int(str(row[6]).replace(",", "")) if len(row) > 6 else 0
+                        foreign_net = f_net1 + f_net2
+                        foreign_buy = f_buy1 + f_buy2
+                        foreign_sell = f_sell1 + f_sell2
+
+                        # 投信 net = idx 10, buy = idx 8, sell = idx 9
+                        t_buy = int(str(row[8]).replace(",", "")) if len(row) > 8 else 0
+                        t_sell = int(str(row[9]).replace(",", "")) if len(row) > 9 else 0
+                        t_net = int(str(row[10]).replace(",", "")) if len(row) > 10 else 0
+
+                        foreign_map[sid] = {"buy": foreign_buy, "sell": foreign_sell, "net": foreign_net}
+                        trust_map[sid] = {"buy": t_buy, "sell": t_sell, "net": t_net}
+                    except Exception:
+                        pass
+                break
+            else:
+                print(f"[WARN] No TPEX institutional for {d}")
+        return foreign_map, trust_map
+
     def fetch_all_data(self, stock_list):
-        """批次抓取所有個股資料 — TWSE API + Yahoo Finance"""
+        """批次抓取所有個股資料 — TWSE API + TPEX API + Yahoo Finance"""
         results = {}
         today_str = datetime.now().strftime("%Y%m%d")
         yesterday = (datetime.now() - timedelta(days=1)).strftime("%Y%m%d")
-        print(f"[INFO] Fetching TWSE data for {len(stock_list)} stocks...")
+        print(f"[INFO] Fetching data for {len(stock_list)} stocks...")
         print(f"[INFO] Using date: {today_str}")
 
-        # === Step 1: 抓取全市場每日成交資料 (STOCK_DAY_ALL) ===
-        print("[INFO] Fetching STOCK_DAY_ALL...")
+        # === Step 1: 抓取上市每日成交資料 (STOCK_DAY_ALL) ===
+        print("[INFO] Fetching TWSE STOCK_DAY_ALL...")
         day_all = self._twse_get("exchangeReport/STOCK_DAY_ALL", {"response": "json", "date": today_str})
         if not day_all.get("data"):
-            # 若今天沒資料，試昨天
             print("[WARN] No data for today, trying yesterday...")
             day_all = self._twse_get("exchangeReport/STOCK_DAY_ALL", {"response": "json", "date": yesterday})
         price_map = {}
         if day_all.get("data"):
             for row in day_all["data"]:
-                # row: [證券代號, 證券名稱, 成交股數, 成交金額, 開盤價, 最高價, 最低價, 收盤價, 漲跌價差, 成交筆數]
                 sid = row[0]
                 try:
                     price_map[sid.lstrip("0") or "0"] = {
@@ -115,32 +360,55 @@ class TWStockDataFetcher:
                         "change": float(row[8].replace(",", "").replace("+", "").replace("X", "0")) if row[8] != "--" else 0,
                         "trades": int(row[9].replace(",", "")),
                     }
-                except Exception as e:
+                except Exception:
                     pass
-        print(f"[INFO] STOCK_DAY_ALL: {len(price_map)} stocks")
+        print(f"[INFO] TWSE STOCK_DAY_ALL: {len(price_map)} stocks")
 
-        # === Step 2: 抓取三大法人買賣超 (T86) ===
-        print("[INFO] Fetching T86 (institutional investors)...")
+        # === Step 1b: 抓取上櫃每日成交資料 (TPEX) ===
+        tpex_price_map = self._fetch_tpex_quotes(today_str, yesterday)
+        print(f"[INFO] TPEX quotes: {len(tpex_price_map)} stocks")
+        # 合併：以上市為主，上櫃補缺
+        for sid, pdata in tpex_price_map.items():
+            if sid not in price_map:
+                price_map[sid] = pdata
+
+        # === Step 2: 抓取上市三大法人買賣超 (T86) ===
+        print("[INFO] Fetching TWSE T86 (institutional investors)...")
         t86 = self._twse_get("fund/T86", {"response": "json", "date": today_str, "selectType": "ALLBUT0999"})
         if not t86.get("data"):
             t86 = self._twse_get("fund/T86", {"response": "json", "date": yesterday, "selectType": "ALLBUT0999"})
         foreign_map = {}
+        trust_map = {}
         if t86.get("data") and t86.get("fields"):
-            # fields: [證券代號, 證券名稱, 外資買進股數, 外資賣出股數, 外資買賣超股數, ...]
             fidx = {name: i for i, name in enumerate(t86["fields"])}
             for row in t86["data"]:
                 sid = row[fidx.get("證券代號", 0)]
                 try:
-                    buy = int(row[fidx.get("外資買進股數", 6)].replace(",", ""))
-                    sell = int(row[fidx.get("外資賣出股數", 7)].replace(",", ""))
-                    net = int(row[fidx.get("外資買賣超股數", 8)].replace(",", ""))
-                    foreign_map[sid.lstrip("0") or "0"] = {"buy": buy, "sell": sell, "net": net}
+                    f_buy = int(row[fidx.get("外資買進股數", 2)].replace(",", ""))
+                    f_sell = int(row[fidx.get("外資賣出股數", 3)].replace(",", ""))
+                    f_net = int(row[fidx.get("外資買賣超股數", 4)].replace(",", ""))
+                    foreign_map[sid.lstrip("0") or "0"] = {"buy": f_buy, "sell": f_sell, "net": f_net}
+                    t_buy = int(row[fidx.get("投信買進股數", 5)].replace(",", ""))
+                    t_sell = int(row[fidx.get("投信賣出股數", 6)].replace(",", ""))
+                    t_net = int(row[fidx.get("投信買賣超股數", 7)].replace(",", ""))
+                    trust_map[sid.lstrip("0") or "0"] = {"buy": t_buy, "sell": t_sell, "net": t_net}
                 except Exception:
                     pass
-        print(f"[INFO] T86: {len(foreign_map)} stocks")
+        print(f"[INFO] TWSE T86: 外資={len(foreign_map)} stocks, 投信={len(trust_map)} stocks")
 
-        # === Step 3: 抓取融資融券 (MI_MARGN) ===
-        print("[INFO] Fetching MI_MARGN (margin trading)...")
+        # === Step 2b: 抓取上櫃三大法人買賣超 (TPEX) ===
+        tpex_foreign_map, tpex_trust_map = self._fetch_tpex_institutional(today_str, yesterday)
+        print(f"[INFO] TPEX T86: 外資={len(tpex_foreign_map)} stocks, 投信={len(tpex_trust_map)} stocks")
+        # 合併：以上市為主，上櫃補缺
+        for sid, fdata in tpex_foreign_map.items():
+            if sid not in foreign_map:
+                foreign_map[sid] = fdata
+        for sid, tdata in tpex_trust_map.items():
+            if sid not in trust_map:
+                trust_map[sid] = tdata
+
+        # === Step 3: 抓取上市融資融券 (MI_MARGN) ===
+        print("[INFO] Fetching TWSE MI_MARGN (margin trading)...")
         margn = self._twse_get("exchangeReport/MI_MARGN", {"response": "json", "date": today_str, "selectType": "ALL"})
         if not margn.get("tables"):
             margn = self._twse_get("exchangeReport/MI_MARGN", {"response": "json", "date": yesterday, "selectType": "ALL"})
@@ -162,7 +430,8 @@ class TWStockDataFetcher:
                         }
                     except Exception:
                         pass
-        print(f"[INFO] MI_MARGN: {len(margin_map)} stocks")
+        print(f"[INFO] TWSE MI_MARGN: {len(margin_map)} stocks")
+        # NOTE: TPEX margin API 目前無穩定 JSON endpoint，暫不補上櫃融資融券
 
         # === Step 4: 用 yfinance 抓歷史價格算技術指標 ===
         print("[INFO] Fetching yfinance history for technical indicators...")
@@ -198,6 +467,18 @@ class TWStockDataFetcher:
                         "sell": foreign_data["sell"],
                         "net": foreign_data["net"],
                     }]
+                info["foreign_net"] = foreign_data.get("net", 0)
+
+                trust_data = trust_map.get(stock_id, {})
+                trust_list = []
+                if trust_data:
+                    trust_list = [{
+                        "date": today_str,
+                        "buy": trust_data["buy"],
+                        "sell": trust_data["sell"],
+                        "net": trust_data["net"],
+                    }]
+                info["trust_net"] = trust_data.get("net", 0)
 
                 margin_data = margin_map.get(stock_id, {})
                 margin_list = []
@@ -227,6 +508,7 @@ class TWStockDataFetcher:
                 results[stock_id] = {
                     "info": info,
                     "foreign": foreign_list,
+                    "trust": trust_list,
                     "margin": margin_list,
                     "holding": [],  # 大戶持股暫時不抓
                     "price": price_dict,
@@ -236,6 +518,9 @@ class TWStockDataFetcher:
                 print(f"[ERR] {e}")
 
             time.sleep(0.3)  # 避免 yfinance rate limit
+
+        # === Step 5: Merge 大戶週報資料 (如果有) ===
+        self._merge_chip_monitoring(results)
 
         # === Save ===
         os.makedirs(DATA_DIR, exist_ok=True)
@@ -281,7 +566,8 @@ class TWStockDataFetcher:
         }
 
 
-if __name__ == "__main__":
+def fetch_all():
+    """模組級入口：供 main.py 調用"""
     fetcher = TWStockDataFetcher()
     all_stocks = list(WATCHLIST) + [
         "2330", "2317", "2454", "2303", "2881", "2882", "1216", "1301", "3008", "0050", "0056",
@@ -298,3 +584,7 @@ if __name__ == "__main__":
     all_stocks = list(dict.fromkeys(all_stocks))
     fetcher.fetch_all_data(all_stocks)
     fetcher.fetch_etf_data()
+
+
+if __name__ == "__main__":
+    fetch_all()

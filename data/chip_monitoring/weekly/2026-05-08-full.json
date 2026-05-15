@@ -1,0 +1,1606 @@
+{
+  "date": "2026-05-08",
+  "total_stocks": 200,
+  "all_stocks": [
+    {
+      "ticker": "4951",
+      "name": "精拓科",
+      "market": "otc",
+      "bh_pct": 34.74,
+      "bh_wow": -10.42,
+      "price_str": "124元｜≥200張"
+    },
+    {
+      "ticker": "4989",
+      "name": "榮科",
+      "market": "tse",
+      "bh_pct": 35.53,
+      "bh_wow": -8.76,
+      "price_str": "95元｜≥400張"
+    },
+    {
+      "ticker": "6205",
+      "name": "詮欣",
+      "market": "tse",
+      "bh_pct": 48.56,
+      "bh_wow": -6.54,
+      "price_str": "85元｜≥400張"
+    },
+    {
+      "ticker": "3289",
+      "name": "宜特",
+      "market": "otc",
+      "bh_pct": 35.26,
+      "bh_wow": -6.17,
+      "price_str": "176元｜≥200張"
+    },
+    {
+      "ticker": "3689",
+      "name": "湧德",
+      "market": "otc",
+      "bh_pct": 32.66,
+      "bh_wow": -6.05,
+      "price_str": "126元｜≥200張"
+    },
+    {
+      "ticker": "3714",
+      "name": "富采",
+      "market": "tse",
+      "bh_pct": 41.74,
+      "bh_wow": -5,
+      "price_str": "71元｜≥400張"
+    },
+    {
+      "ticker": "6218",
+      "name": "豪勉",
+      "market": "otc",
+      "bh_pct": 35.56,
+      "bh_wow": -4.35,
+      "price_str": "39元｜≥1000張"
+    },
+    {
+      "ticker": "1727",
+      "name": "中華化",
+      "market": "tse",
+      "bh_pct": 59.31,
+      "bh_wow": -4.32,
+      "price_str": "72元｜≥400張"
+    },
+    {
+      "ticker": "4927",
+      "name": "泰鼎-KY",
+      "market": "tse",
+      "bh_pct": 32.58,
+      "bh_wow": -4.02,
+      "price_str": "54元｜≥400張"
+    },
+    {
+      "ticker": "8064",
+      "name": "東捷",
+      "market": "otc",
+      "bh_pct": 57.33,
+      "bh_wow": -3.82,
+      "price_str": "104元｜≥200張"
+    },
+    {
+      "ticker": "6805",
+      "name": "富世達",
+      "market": "tse",
+      "bh_pct": 76.85,
+      "bh_wow": -3.54,
+      "price_str": "1,980元｜≥100張"
+    },
+    {
+      "ticker": "3051",
+      "name": "力特",
+      "market": "tse",
+      "bh_pct": 25.31,
+      "bh_wow": -3.5,
+      "price_str": "26元｜≥1000張"
+    },
+    {
+      "ticker": "3105",
+      "name": "穩懋",
+      "market": "otc",
+      "bh_pct": 63.65,
+      "bh_wow": -3.36,
+      "price_str": "492元｜≥100張"
+    },
+    {
+      "ticker": "2486",
+      "name": "一詮",
+      "market": "tse",
+      "bh_pct": 58.6,
+      "bh_wow": -3.3,
+      "price_str": "282元｜≥100張"
+    },
+    {
+      "ticker": "2489",
+      "name": "瑞軒",
+      "market": "tse",
+      "bh_pct": 31.96,
+      "bh_wow": -3.17,
+      "price_str": "42元｜≥1000張"
+    },
+    {
+      "ticker": "8028",
+      "name": "昇陽半導體",
+      "market": "tse",
+      "bh_pct": 54.8,
+      "bh_wow": -3.14,
+      "price_str": "226元｜≥100張"
+    },
+    {
+      "ticker": "2337",
+      "name": "旺宏",
+      "market": "tse",
+      "bh_pct": 56.26,
+      "bh_wow": -3.09,
+      "price_str": "153元｜≥200張"
+    },
+    {
+      "ticker": "8147",
+      "name": "正淩",
+      "market": "otc",
+      "bh_pct": 57.78,
+      "bh_wow": -3.03,
+      "price_str": "154元｜≥200張"
+    },
+    {
+      "ticker": "8155",
+      "name": "博智",
+      "market": "otc",
+      "bh_pct": 66.64,
+      "bh_wow": -2.97,
+      "price_str": "444元｜≥100張"
+    },
+    {
+      "ticker": "3260",
+      "name": "威剛",
+      "market": "otc",
+      "bh_pct": 47.87,
+      "bh_wow": -2.91,
+      "price_str": "448元｜≥100張"
+    },
+    {
+      "ticker": "5475",
+      "name": "德宏",
+      "market": "otc",
+      "bh_pct": 50.58,
+      "bh_wow": -2.66,
+      "price_str": "325元｜≥100張"
+    },
+    {
+      "ticker": "1569",
+      "name": "濱川",
+      "market": "otc",
+      "bh_pct": 53.33,
+      "bh_wow": -2.57,
+      "price_str": "56元｜≥400張"
+    },
+    {
+      "ticker": "1815",
+      "name": "富喬",
+      "market": "otc",
+      "bh_pct": 42.95,
+      "bh_wow": -2.51,
+      "price_str": "107元｜≥200張"
+    },
+    {
+      "ticker": "3017",
+      "name": "奇鋐",
+      "market": "tse",
+      "bh_pct": 79.55,
+      "bh_wow": -2.47,
+      "price_str": "2,445元｜≥100張"
+    },
+    {
+      "ticker": "4577",
+      "name": "達航科技",
+      "market": "otc",
+      "bh_pct": 71.33,
+      "bh_wow": -2.4,
+      "price_str": "142元｜≥200張"
+    },
+    {
+      "ticker": "3455",
+      "name": "由田",
+      "market": "otc",
+      "bh_pct": 49.25,
+      "bh_wow": -2.37,
+      "price_str": "260元｜≥100張"
+    },
+    {
+      "ticker": "8027",
+      "name": "鈦昇",
+      "market": "otc",
+      "bh_pct": 50.07,
+      "bh_wow": -2.36,
+      "price_str": "203元｜≥100張"
+    },
+    {
+      "ticker": "2399",
+      "name": "映泰",
+      "market": "tse",
+      "bh_pct": 19.64,
+      "bh_wow": -2.34,
+      "price_str": "42元｜≥1000張"
+    },
+    {
+      "ticker": "3135",
+      "name": "凌航",
+      "market": "tse",
+      "bh_pct": 58.08,
+      "bh_wow": -2.34,
+      "price_str": "177元｜≥200張"
+    },
+    {
+      "ticker": "6456",
+      "name": "GIS-KY",
+      "market": "tse",
+      "bh_pct": 49.98,
+      "bh_wow": -2.3,
+      "price_str": "66元｜≥400張"
+    },
+    {
+      "ticker": "5243",
+      "name": "乙盛-KY",
+      "market": "tse",
+      "bh_pct": 66.42,
+      "bh_wow": -2.26,
+      "price_str": "107元｜≥200張"
+    },
+    {
+      "ticker": "6265",
+      "name": "方土昶",
+      "market": "otc",
+      "bh_pct": 37.99,
+      "bh_wow": -2.23,
+      "price_str": "44元｜≥1000張"
+    },
+    {
+      "ticker": "3013",
+      "name": "晟銘電",
+      "market": "tse",
+      "bh_pct": 49.5,
+      "bh_wow": -2.16,
+      "price_str": "107元｜≥200張"
+    },
+    {
+      "ticker": "3605",
+      "name": "宏致",
+      "market": "tse",
+      "bh_pct": 45.16,
+      "bh_wow": -2.13,
+      "price_str": "83元｜≥400張"
+    },
+    {
+      "ticker": "7749",
+      "name": "意騰-KY",
+      "market": "tse",
+      "bh_pct": 71.08,
+      "bh_wow": -2.06,
+      "price_str": "514元｜≥100張"
+    },
+    {
+      "ticker": "3167",
+      "name": "大量",
+      "market": "tse",
+      "bh_pct": 74.99,
+      "bh_wow": -2.02,
+      "price_str": "684元｜≥100張"
+    },
+    {
+      "ticker": "6187",
+      "name": "萬潤",
+      "market": "otc",
+      "bh_pct": 71.66,
+      "bh_wow": -2.01,
+      "price_str": "1,070元｜≥100張"
+    },
+    {
+      "ticker": "3374",
+      "name": "精材",
+      "market": "otc",
+      "bh_pct": 58.9,
+      "bh_wow": -1.98,
+      "price_str": "226元｜≥100張"
+    },
+    {
+      "ticker": "6168",
+      "name": "宏齊",
+      "market": "tse",
+      "bh_pct": 42.75,
+      "bh_wow": -1.97,
+      "price_str": "26元｜≥1000張"
+    },
+    {
+      "ticker": "6861",
+      "name": "睿生光電",
+      "market": "tse",
+      "bh_pct": 69.32,
+      "bh_wow": -1.9,
+      "price_str": "376元｜≥100張"
+    },
+    {
+      "ticker": "1708",
+      "name": "東鹼",
+      "market": "tse",
+      "bh_pct": 39.82,
+      "bh_wow": -1.87,
+      "price_str": "37元｜≥1000張"
+    },
+    {
+      "ticker": "6234",
+      "name": "高僑",
+      "market": "otc",
+      "bh_pct": 58.21,
+      "bh_wow": -1.87,
+      "price_str": "58元｜≥400張"
+    },
+    {
+      "ticker": "6165",
+      "name": "浪凡",
+      "market": "tse",
+      "bh_pct": 49.04,
+      "bh_wow": -1.85,
+      "price_str": "52元｜≥400張"
+    },
+    {
+      "ticker": "6739",
+      "name": "竹陞科技",
+      "market": "otc",
+      "bh_pct": 68.09,
+      "bh_wow": -1.84,
+      "price_str": "1,325元｜≥100張"
+    },
+    {
+      "ticker": "6271",
+      "name": "同欣電",
+      "market": "tse",
+      "bh_pct": 50.74,
+      "bh_wow": -1.69,
+      "price_str": "182元｜≥200張"
+    },
+    {
+      "ticker": "5340",
+      "name": "建榮",
+      "market": "otc",
+      "bh_pct": 66.14,
+      "bh_wow": -1.64,
+      "price_str": "112元｜≥200張"
+    },
+    {
+      "ticker": "3615",
+      "name": "安可",
+      "market": "otc",
+      "bh_pct": 28.19,
+      "bh_wow": -1.63,
+      "price_str": "34元｜≥1000張"
+    },
+    {
+      "ticker": "2402",
+      "name": "毅嘉",
+      "market": "tse",
+      "bh_pct": 46.02,
+      "bh_wow": -1.62,
+      "price_str": "68元｜≥400張"
+    },
+    {
+      "ticker": "6163",
+      "name": "華電網",
+      "market": "otc",
+      "bh_pct": 49.43,
+      "bh_wow": -1.62,
+      "price_str": "57元｜≥400張"
+    },
+    {
+      "ticker": "2467",
+      "name": "志聖",
+      "market": "tse",
+      "bh_pct": 77.15,
+      "bh_wow": -1.58,
+      "price_str": "537元｜≥100張"
+    },
+    {
+      "ticker": "4566",
+      "name": "時碩工業",
+      "market": "tse",
+      "bh_pct": 53.54,
+      "bh_wow": -1.58,
+      "price_str": "67元｜≥400張"
+    },
+    {
+      "ticker": "3701",
+      "name": "大眾控",
+      "market": "tse",
+      "bh_pct": 74.2,
+      "bh_wow": -1.57,
+      "price_str": "61元｜≥400張"
+    },
+    {
+      "ticker": "3535",
+      "name": "晶彩科",
+      "market": "tse",
+      "bh_pct": 32.3,
+      "bh_wow": -1.56,
+      "price_str": "128元｜≥200張"
+    },
+    {
+      "ticker": "6451",
+      "name": "訊芯-KY",
+      "market": "tse",
+      "bh_pct": 80.04,
+      "bh_wow": -1.56,
+      "price_str": "441元｜≥100張"
+    },
+    {
+      "ticker": "6530",
+      "name": "創威",
+      "market": "otc",
+      "bh_pct": 25.67,
+      "bh_wow": -1.56,
+      "price_str": "108元｜≥200張"
+    },
+    {
+      "ticker": "8103",
+      "name": "瀚荃",
+      "market": "tse",
+      "bh_pct": 60.91,
+      "bh_wow": -1.55,
+      "price_str": "116元｜≥200張"
+    },
+    {
+      "ticker": "3563",
+      "name": "牧德",
+      "market": "tse",
+      "bh_pct": 65.28,
+      "bh_wow": -1.53,
+      "price_str": "802元｜≥100張"
+    },
+    {
+      "ticker": "3324",
+      "name": "雙鴻",
+      "market": "otc",
+      "bh_pct": 61.22,
+      "bh_wow": -1.5,
+      "price_str": "1,065元｜≥100張"
+    },
+    {
+      "ticker": "6664",
+      "name": "群翊",
+      "market": "otc",
+      "bh_pct": 70.7,
+      "bh_wow": -1.49,
+      "price_str": "443元｜≥100張"
+    },
+    {
+      "ticker": "6438",
+      "name": "迅得",
+      "market": "tse",
+      "bh_pct": 40.04,
+      "bh_wow": -1.47,
+      "price_str": "170元｜≥200張"
+    },
+    {
+      "ticker": "3189",
+      "name": "景碩",
+      "market": "tse",
+      "bh_pct": 73.92,
+      "bh_wow": -1.4,
+      "price_str": "458元｜≥100張"
+    },
+    {
+      "ticker": "2236",
+      "name": "百達-KY",
+      "market": "tse",
+      "bh_pct": 83.53,
+      "bh_wow": -1.39,
+      "price_str": "135元｜≥200張"
+    },
+    {
+      "ticker": "2485",
+      "name": "兆赫",
+      "market": "tse",
+      "bh_pct": 20.58,
+      "bh_wow": -1.34,
+      "price_str": "69元｜≥400張"
+    },
+    {
+      "ticker": "4958",
+      "name": "臻鼎-KY",
+      "market": "tse",
+      "bh_pct": 81.64,
+      "bh_wow": -1.34,
+      "price_str": "401元｜≥100張"
+    },
+    {
+      "ticker": "6147",
+      "name": "頎邦",
+      "market": "otc",
+      "bh_pct": 76.44,
+      "bh_wow": -1.33,
+      "price_str": "198元｜≥200張"
+    },
+    {
+      "ticker": "6176",
+      "name": "瑞儀",
+      "market": "tse",
+      "bh_pct": 61.19,
+      "bh_wow": -1.29,
+      "price_str": "104元｜≥200張"
+    },
+    {
+      "ticker": "2464",
+      "name": "盟立",
+      "market": "tse",
+      "bh_pct": 49.62,
+      "bh_wow": -1.28,
+      "price_str": "122元｜≥200張"
+    },
+    {
+      "ticker": "5234",
+      "name": "達興材料",
+      "market": "tse",
+      "bh_pct": 79.2,
+      "bh_wow": -1.27,
+      "price_str": "408元｜≥100張"
+    },
+    {
+      "ticker": "4562",
+      "name": "穎漢",
+      "market": "tse",
+      "bh_pct": 50.04,
+      "bh_wow": -1.24,
+      "price_str": "38元｜≥1000張"
+    },
+    {
+      "ticker": "3081",
+      "name": "聯亞",
+      "market": "otc",
+      "bh_pct": 66.61,
+      "bh_wow": -1.19,
+      "price_str": "2,620元｜≥100張"
+    },
+    {
+      "ticker": "6788",
+      "name": "華景電",
+      "market": "otc",
+      "bh_pct": 45.69,
+      "bh_wow": -1.19,
+      "price_str": "454元｜≥100張"
+    },
+    {
+      "ticker": "1717",
+      "name": "長興",
+      "market": "tse",
+      "bh_pct": 64.57,
+      "bh_wow": -1.18,
+      "price_str": "78元｜≥400張"
+    },
+    {
+      "ticker": "5209",
+      "name": "新鼎",
+      "market": "otc",
+      "bh_pct": 56.29,
+      "bh_wow": -1.17,
+      "price_str": "164元｜≥200張"
+    },
+    {
+      "ticker": "3583",
+      "name": "辛耘",
+      "market": "tse",
+      "bh_pct": 68.6,
+      "bh_wow": -1.12,
+      "price_str": "788元｜≥100張"
+    },
+    {
+      "ticker": "3645",
+      "name": "達邁",
+      "market": "tse",
+      "bh_pct": 46.77,
+      "bh_wow": -1.11,
+      "price_str": "94元｜≥400張"
+    },
+    {
+      "ticker": "9960",
+      "name": "邁達康",
+      "market": "otc",
+      "bh_pct": 53.6,
+      "bh_wow": -1.1,
+      "price_str": "34元｜≥1000張"
+    },
+    {
+      "ticker": "1722",
+      "name": "台肥",
+      "market": "tse",
+      "bh_pct": 58.98,
+      "bh_wow": -1.06,
+      "price_str": "47元｜≥1000張"
+    },
+    {
+      "ticker": "3693",
+      "name": "營邦",
+      "market": "otc",
+      "bh_pct": 59.17,
+      "bh_wow": -0.9,
+      "price_str": "603元｜≥100張"
+    },
+    {
+      "ticker": "3149",
+      "name": "正達",
+      "market": "tse",
+      "bh_pct": 26.08,
+      "bh_wow": -0.89,
+      "price_str": "48元｜≥1000張"
+    },
+    {
+      "ticker": "4967",
+      "name": "十銓",
+      "market": "tse",
+      "bh_pct": 36.43,
+      "bh_wow": -0.89,
+      "price_str": "298元｜≥100張"
+    },
+    {
+      "ticker": "8240",
+      "name": "華宏",
+      "market": "otc",
+      "bh_pct": 53.96,
+      "bh_wow": -0.89,
+      "price_str": "68元｜≥400張"
+    },
+    {
+      "ticker": "6831",
+      "name": "邁科",
+      "market": "tse",
+      "bh_pct": 75.25,
+      "bh_wow": -0.86,
+      "price_str": "540元｜≥100張"
+    },
+    {
+      "ticker": "5392",
+      "name": "能率",
+      "market": "otc",
+      "bh_pct": 29.24,
+      "bh_wow": -0.85,
+      "price_str": "40元｜≥1000張"
+    },
+    {
+      "ticker": "3363",
+      "name": "上詮",
+      "market": "otc",
+      "bh_pct": 61.03,
+      "bh_wow": -0.82,
+      "price_str": "810元｜≥100張"
+    },
+    {
+      "ticker": "2340",
+      "name": "台亞",
+      "market": "tse",
+      "bh_pct": 32.47,
+      "bh_wow": -0.8,
+      "price_str": "37元｜≥1000張"
+    },
+    {
+      "ticker": "9949",
+      "name": "琉園",
+      "market": "otc",
+      "bh_pct": 58.4,
+      "bh_wow": -0.72,
+      "price_str": "24元｜≥1000張"
+    },
+    {
+      "ticker": "3665",
+      "name": "貿聯-KY",
+      "market": "tse",
+      "bh_pct": 80.78,
+      "bh_wow": -0.62,
+      "price_str": "2,750元｜≥100張"
+    },
+    {
+      "ticker": "3413",
+      "name": "京鼎",
+      "market": "tse",
+      "bh_pct": 53.57,
+      "bh_wow": -0.6,
+      "price_str": "316元｜≥100張"
+    },
+    {
+      "ticker": "4971",
+      "name": "IET-KY",
+      "market": "otc",
+      "bh_pct": 55.58,
+      "bh_wow": -0.45,
+      "price_str": "688元｜≥100張"
+    },
+    {
+      "ticker": "3675",
+      "name": "德微",
+      "market": "otc",
+      "bh_pct": 66.48,
+      "bh_wow": -0.43,
+      "price_str": "226元｜≥100張"
+    },
+    {
+      "ticker": "5289",
+      "name": "宜鼎",
+      "market": "otc",
+      "bh_pct": 59.46,
+      "bh_wow": -0.16,
+      "price_str": "1,600元｜≥100張"
+    },
+    {
+      "ticker": "8043",
+      "name": "蜜望實",
+      "market": "otc",
+      "bh_pct": 60.16,
+      "bh_wow": -0.02,
+      "price_str": "90元｜≥400張"
+    },
+    {
+      "ticker": "3236",
+      "name": "千如",
+      "market": "otc",
+      "bh_pct": 27.39,
+      "bh_wow": -0.01,
+      "price_str": "34元｜≥1000張"
+    },
+    {
+      "ticker": "3390",
+      "name": "旭軟",
+      "market": "otc",
+      "bh_pct": 19.53,
+      "bh_wow": -0.01,
+      "price_str": "27元｜≥1000張"
+    },
+    {
+      "ticker": "4556",
+      "name": "旭然",
+      "market": "otc",
+      "bh_pct": 73.43,
+      "bh_wow": -0.01,
+      "price_str": "42元｜≥1000張"
+    },
+    {
+      "ticker": "6150",
+      "name": "撼訊",
+      "market": "otc",
+      "bh_pct": 14.08,
+      "bh_wow": -0.01,
+      "price_str": "71元｜≥400張"
+    },
+    {
+      "ticker": "2444",
+      "name": "兆勁",
+      "market": "tse",
+      "bh_pct": 16.82,
+      "bh_wow": 0,
+      "price_str": "13元｜≥1000張"
+    },
+    {
+      "ticker": "3057",
+      "name": "喬鼎",
+      "market": "tse",
+      "bh_pct": 29.32,
+      "bh_wow": 0,
+      "price_str": "22元｜≥1000張"
+    },
+    {
+      "ticker": "3288",
+      "name": "點晶",
+      "market": "otc",
+      "bh_pct": 35.24,
+      "bh_wow": 0,
+      "price_str": "15元｜≥1000張"
+    },
+    {
+      "ticker": "3354",
+      "name": "律勝",
+      "market": "otc",
+      "bh_pct": 70.67,
+      "bh_wow": 0,
+      "price_str": "35元｜≥1000張"
+    },
+    {
+      "ticker": "3379",
+      "name": "彬台",
+      "market": "otc",
+      "bh_pct": 24.78,
+      "bh_wow": 0,
+      "price_str": "37元｜≥1000張"
+    },
+    {
+      "ticker": "4563",
+      "name": "百德",
+      "market": "otc",
+      "bh_pct": 49.6,
+      "bh_wow": 0,
+      "price_str": "49元｜≥1000張"
+    },
+    {
+      "ticker": "6113",
+      "name": "亞矽",
+      "market": "otc",
+      "bh_pct": 48.28,
+      "bh_wow": 0,
+      "price_str": "25元｜≥1000張"
+    },
+    {
+      "ticker": "6174",
+      "name": "安��",
+      "market": "otc",
+      "bh_pct": 57.01,
+      "bh_wow": 0,
+      "price_str": "41元｜≥1000張"
+    },
+    {
+      "ticker": "6432",
+      "name": "今展科",
+      "market": "otc",
+      "bh_pct": 15.61,
+      "bh_wow": 0,
+      "price_str": "44元｜≥1000張"
+    },
+    {
+      "ticker": "8071",
+      "name": "能率網通",
+      "market": "otc",
+      "bh_pct": 25.23,
+      "bh_wow": 0,
+      "price_str": "17元｜≥1000張"
+    },
+    {
+      "ticker": "8291",
+      "name": "尚茂",
+      "market": "otc",
+      "bh_pct": 71.94,
+      "bh_wow": 0,
+      "price_str": "32元｜≥1000張"
+    },
+    {
+      "ticker": "3131",
+      "name": "弘塑",
+      "market": "otc",
+      "bh_pct": 68.18,
+      "bh_wow": 0.01,
+      "price_str": "2,940元｜≥100張"
+    },
+    {
+      "ticker": "8487",
+      "name": "愛爾達-創",
+      "market": "tse",
+      "bh_pct": 55.76,
+      "bh_wow": 0.01,
+      "price_str": "79元｜≥400張"
+    },
+    {
+      "ticker": "6538",
+      "name": "倉和",
+      "market": "otc",
+      "bh_pct": 27.43,
+      "bh_wow": 0.04,
+      "price_str": "80元｜≥400張"
+    },
+    {
+      "ticker": "3444",
+      "name": "利機",
+      "market": "otc",
+      "bh_pct": 48.2,
+      "bh_wow": 0.07,
+      "price_str": "89元｜≥400張"
+    },
+    {
+      "ticker": "1595",
+      "name": "川寶",
+      "market": "otc",
+      "bh_pct": 51.92,
+      "bh_wow": 0.32,
+      "price_str": "98元｜≥400張"
+    },
+    {
+      "ticker": "3303",
+      "name": "岱稜",
+      "market": "otc",
+      "bh_pct": 46.28,
+      "bh_wow": 0.33,
+      "price_str": "52元｜≥400張"
+    },
+    {
+      "ticker": "3528",
+      "name": "安馳",
+      "market": "tse",
+      "bh_pct": 66.88,
+      "bh_wow": 0.36,
+      "price_str": "91元｜≥400張"
+    },
+    {
+      "ticker": "6207",
+      "name": "雷科",
+      "market": "otc",
+      "bh_pct": 17.87,
+      "bh_wow": 0.4,
+      "price_str": "64元｜≥400張"
+    },
+    {
+      "ticker": "6108",
+      "name": "競國",
+      "market": "tse",
+      "bh_pct": 44.66,
+      "bh_wow": 0.41,
+      "price_str": "22元｜≥1000張"
+    },
+    {
+      "ticker": "4760",
+      "name": "勤凱",
+      "market": "otc",
+      "bh_pct": 68.05,
+      "bh_wow": 0.52,
+      "price_str": "288元｜≥100張"
+    },
+    {
+      "ticker": "3479",
+      "name": "安勤",
+      "market": "otc",
+      "bh_pct": 44.66,
+      "bh_wow": 0.63,
+      "price_str": "96元｜≥400張"
+    },
+    {
+      "ticker": "4764",
+      "name": "雙鍵",
+      "market": "tse",
+      "bh_pct": 87.78,
+      "bh_wow": 0.66,
+      "price_str": "340元｜≥100張"
+    },
+    {
+      "ticker": "3661",
+      "name": "世芯-KY",
+      "market": "tse",
+      "bh_pct": 62.37,
+      "bh_wow": 0.85,
+      "price_str": "4,890元｜≥100張"
+    },
+    {
+      "ticker": "1809",
+      "name": "中釉",
+      "market": "tse",
+      "bh_pct": 47.61,
+      "bh_wow": 0.91,
+      "price_str": "36元｜≥1000張"
+    },
+    {
+      "ticker": "1591",
+      "name": "駿吉-KY",
+      "market": "otc",
+      "bh_pct": 20.01,
+      "bh_wow": 0.95,
+      "price_str": "64元｜≥400張"
+    },
+    {
+      "ticker": "3663",
+      "name": "鑫科",
+      "market": "otc",
+      "bh_pct": 63.07,
+      "bh_wow": 0.97,
+      "price_str": "72元｜≥400張"
+    },
+    {
+      "ticker": "2465",
+      "name": "麗臺",
+      "market": "tse",
+      "bh_pct": 36.28,
+      "bh_wow": 1.05,
+      "price_str": "80元｜≥400張"
+    },
+    {
+      "ticker": "4977",
+      "name": "眾達-KY",
+      "market": "tse",
+      "bh_pct": 32.18,
+      "bh_wow": 1.06,
+      "price_str": "228元｜≥100張"
+    },
+    {
+      "ticker": "4526",
+      "name": "東台",
+      "market": "tse",
+      "bh_pct": 40.15,
+      "bh_wow": 1.07,
+      "price_str": "34元｜≥1000張"
+    },
+    {
+      "ticker": "6197",
+      "name": "佳必琪",
+      "market": "tse",
+      "bh_pct": 61.41,
+      "bh_wow": 1.09,
+      "price_str": "218元｜≥100張"
+    },
+    {
+      "ticker": "6116",
+      "name": "彩晶",
+      "market": "tse",
+      "bh_pct": 43.47,
+      "bh_wow": 1.17,
+      "price_str": "9元｜≥1000張"
+    },
+    {
+      "ticker": "3231",
+      "name": "緯創",
+      "market": "tse",
+      "bh_pct": 64.78,
+      "bh_wow": 1.22,
+      "price_str": "146元｜≥200張"
+    },
+    {
+      "ticker": "5410",
+      "name": "國眾",
+      "market": "otc",
+      "bh_pct": 27.89,
+      "bh_wow": 1.22,
+      "price_str": "37元｜≥1000張"
+    },
+    {
+      "ticker": "3022",
+      "name": "威強電",
+      "market": "tse",
+      "bh_pct": 58.92,
+      "bh_wow": 1.28,
+      "price_str": "74元｜≥400張"
+    },
+    {
+      "ticker": "5309",
+      "name": "系統電",
+      "market": "otc",
+      "bh_pct": 39.67,
+      "bh_wow": 1.28,
+      "price_str": "64元｜≥400張"
+    },
+    {
+      "ticker": "3030",
+      "name": "德律",
+      "market": "tse",
+      "bh_pct": 72.34,
+      "bh_wow": 1.29,
+      "price_str": "390元｜≥100張"
+    },
+    {
+      "ticker": "5284",
+      "name": "jpp-KY",
+      "market": "tse",
+      "bh_pct": 70.12,
+      "bh_wow": 1.31,
+      "price_str": "360元｜≥100張"
+    },
+    {
+      "ticker": "6227",
+      "name": "茂綸",
+      "market": "otc",
+      "bh_pct": 74.59,
+      "bh_wow": 1.31,
+      "price_str": "100元｜≥200張"
+    },
+    {
+      "ticker": "2327",
+      "name": "國巨*",
+      "market": "tse",
+      "bh_pct": 78.96,
+      "bh_wow": 1.32,
+      "price_str": "389元｜≥100張"
+    },
+    {
+      "ticker": "4533",
+      "name": "協易機",
+      "market": "otc",
+      "bh_pct": 24.28,
+      "bh_wow": 1.33,
+      "price_str": "30元｜≥1000張"
+    },
+    {
+      "ticker": "2317",
+      "name": "鴻海",
+      "market": "tse",
+      "bh_pct": 73.74,
+      "bh_wow": 1.55,
+      "price_str": "250元｜≥100張"
+    },
+    {
+      "ticker": "6015",
+      "name": "宏遠證",
+      "market": "otc",
+      "bh_pct": 44.92,
+      "bh_wow": 1.57,
+      "price_str": "16元｜≥1000張"
+    },
+    {
+      "ticker": "2351",
+      "name": "順德",
+      "market": "tse",
+      "bh_pct": 76.5,
+      "bh_wow": 1.61,
+      "price_str": "183元｜≥200張"
+    },
+    {
+      "ticker": "6588",
+      "name": "東典光電",
+      "market": "otc",
+      "bh_pct": 40.54,
+      "bh_wow": 1.61,
+      "price_str": "143元｜≥200張"
+    },
+    {
+      "ticker": "2408",
+      "name": "南亞科",
+      "market": "tse",
+      "bh_pct": 84.85,
+      "bh_wow": 1.64,
+      "price_str": "274元｜≥100張"
+    },
+    {
+      "ticker": "2301",
+      "name": "光寶科",
+      "market": "tse",
+      "bh_pct": 84.84,
+      "bh_wow": 1.66,
+      "price_str": "204元｜≥100張"
+    },
+    {
+      "ticker": "3305",
+      "name": "昇貿",
+      "market": "tse",
+      "bh_pct": 47.83,
+      "bh_wow": 1.67,
+      "price_str": "115元｜≥200張"
+    },
+    {
+      "ticker": "8033",
+      "name": "雷虎",
+      "market": "tse",
+      "bh_pct": 43.73,
+      "bh_wow": 1.68,
+      "price_str": "159元｜≥200張"
+    },
+    {
+      "ticker": "4722",
+      "name": "國精化",
+      "market": "tse",
+      "bh_pct": 71.77,
+      "bh_wow": 1.71,
+      "price_str": "236元｜≥100張"
+    },
+    {
+      "ticker": "3094",
+      "name": "聯傑",
+      "market": "tse",
+      "bh_pct": 13.15,
+      "bh_wow": 1.73,
+      "price_str": "31元｜≥1000張"
+    },
+    {
+      "ticker": "2376",
+      "name": "技嘉",
+      "market": "tse",
+      "bh_pct": 74.84,
+      "bh_wow": 1.75,
+      "price_str": "317元｜≥100張"
+    },
+    {
+      "ticker": "6291",
+      "name": "沛亨",
+      "market": "otc",
+      "bh_pct": 81.34,
+      "bh_wow": 1.79,
+      "price_str": "468元｜≥100張"
+    },
+    {
+      "ticker": "2449",
+      "name": "京元電子",
+      "market": "tse",
+      "bh_pct": 76.56,
+      "bh_wow": 1.8,
+      "price_str": "311元｜≥100張"
+    },
+    {
+      "ticker": "6026",
+      "name": "福邦證",
+      "market": "otc",
+      "bh_pct": 42.47,
+      "bh_wow": 1.8,
+      "price_str": "17元｜≥1000張"
+    },
+    {
+      "ticker": "5386",
+      "name": "青雲",
+      "market": "otc",
+      "bh_pct": 50.48,
+      "bh_wow": 1.86,
+      "price_str": "470元｜≥100張"
+    },
+    {
+      "ticker": "6683",
+      "name": "雍智科技",
+      "market": "otc",
+      "bh_pct": 54.35,
+      "bh_wow": 1.86,
+      "price_str": "2,210元｜≥100張"
+    },
+    {
+      "ticker": "6104",
+      "name": "創惟",
+      "market": "otc",
+      "bh_pct": 22.65,
+      "bh_wow": 1.87,
+      "price_str": "102元｜≥200張"
+    },
+    {
+      "ticker": "1605",
+      "name": "華新",
+      "market": "tse",
+      "bh_pct": 69.33,
+      "bh_wow": 1.9,
+      "price_str": "34元｜≥1000張"
+    },
+    {
+      "ticker": "6244",
+      "name": "茂迪",
+      "market": "otc",
+      "bh_pct": 29.32,
+      "bh_wow": 1.96,
+      "price_str": "30元｜≥1000張"
+    },
+    {
+      "ticker": "6488",
+      "name": "環球晶",
+      "market": "otc",
+      "bh_pct": 88.06,
+      "bh_wow": 1.97,
+      "price_str": "802元｜≥100張"
+    },
+    {
+      "ticker": "3016",
+      "name": "嘉晶",
+      "market": "tse",
+      "bh_pct": 80.57,
+      "bh_wow": 1.98,
+      "price_str": "117元｜≥200張"
+    },
+    {
+      "ticker": "3162",
+      "name": "精確",
+      "market": "otc",
+      "bh_pct": 64.01,
+      "bh_wow": 2.02,
+      "price_str": "91元｜≥400張"
+    },
+    {
+      "ticker": "3591",
+      "name": "艾笛森",
+      "market": "tse",
+      "bh_pct": 45.74,
+      "bh_wow": 2.05,
+      "price_str": "24元｜≥1000張"
+    },
+    {
+      "ticker": "8016",
+      "name": "矽創",
+      "market": "tse",
+      "bh_pct": 57.55,
+      "bh_wow": 2.06,
+      "price_str": "273元｜≥100張"
+    },
+    {
+      "ticker": "2355",
+      "name": "敬鵬",
+      "market": "tse",
+      "bh_pct": 45.66,
+      "bh_wow": 2.07,
+      "price_str": "52元｜≥400張"
+    },
+    {
+      "ticker": "5347",
+      "name": "世界",
+      "market": "otc",
+      "bh_pct": 89.37,
+      "bh_wow": 2.07,
+      "price_str": "168元｜≥200張"
+    },
+    {
+      "ticker": "8086",
+      "name": "宏捷科",
+      "market": "otc",
+      "bh_pct": 60.98,
+      "bh_wow": 2.25,
+      "price_str": "160元｜≥200張"
+    },
+    {
+      "ticker": "2338",
+      "name": "光罩",
+      "market": "tse",
+      "bh_pct": 49.37,
+      "bh_wow": 2.31,
+      "price_str": "52元｜≥400張"
+    },
+    {
+      "ticker": "2233",
+      "name": "宇隆",
+      "market": "tse",
+      "bh_pct": 70.15,
+      "bh_wow": 2.37,
+      "price_str": "292元｜≥100張"
+    },
+    {
+      "ticker": "3006",
+      "name": "晶豪科",
+      "market": "tse",
+      "bh_pct": 61.28,
+      "bh_wow": 2.56,
+      "price_str": "202元｜≥100張"
+    },
+    {
+      "ticker": "3691",
+      "name": "碩禾",
+      "market": "otc",
+      "bh_pct": 68.02,
+      "bh_wow": 2.6,
+      "price_str": "135元｜≥200張"
+    },
+    {
+      "ticker": "4906",
+      "name": "正文",
+      "market": "tse",
+      "bh_pct": 21.3,
+      "bh_wow": 2.64,
+      "price_str": "40元｜≥1000張"
+    },
+    {
+      "ticker": "2455",
+      "name": "全新",
+      "market": "tse",
+      "bh_pct": 61.65,
+      "bh_wow": 2.67,
+      "price_str": "337元｜≥100張"
+    },
+    {
+      "ticker": "6285",
+      "name": "啟��",
+      "market": "tse",
+      "bh_pct": 73.44,
+      "bh_wow": 2.72,
+      "price_str": "248元｜≥100張"
+    },
+    {
+      "ticker": "3715",
+      "name": "定穎投控",
+      "market": "tse",
+      "bh_pct": 42.54,
+      "bh_wow": 2.85,
+      "price_str": "180元｜≥200張"
+    },
+    {
+      "ticker": "6155",
+      "name": "鈞寶",
+      "market": "tse",
+      "bh_pct": 61.15,
+      "bh_wow": 2.85,
+      "price_str": "53元｜≥400張"
+    },
+    {
+      "ticker": "4973",
+      "name": "廣穎",
+      "market": "otc",
+      "bh_pct": 33.54,
+      "bh_wow": 2.89,
+      "price_str": "100元｜≥400張"
+    },
+    {
+      "ticker": "3141",
+      "name": "晶宏",
+      "market": "otc",
+      "bh_pct": 19.77,
+      "bh_wow": 2.98,
+      "price_str": "55元｜≥400張"
+    },
+    {
+      "ticker": "2344",
+      "name": "華邦電",
+      "market": "tse",
+      "bh_pct": 70.31,
+      "bh_wow": 3.02,
+      "price_str": "107元｜≥200張"
+    },
+    {
+      "ticker": "8227",
+      "name": "巨有科技",
+      "market": "otc",
+      "bh_pct": 40.87,
+      "bh_wow": 3.04,
+      "price_str": "219元｜≥100張"
+    },
+    {
+      "ticker": "3090",
+      "name": "日電貿",
+      "market": "tse",
+      "bh_pct": 67.36,
+      "bh_wow": 3.25,
+      "price_str": "114元｜≥200張"
+    },
+    {
+      "ticker": "6770",
+      "name": "力積電",
+      "market": "tse",
+      "bh_pct": 47.1,
+      "bh_wow": 3.27,
+      "price_str": "61元｜≥400張"
+    },
+    {
+      "ticker": "5351",
+      "name": "鈺創",
+      "market": "otc",
+      "bh_pct": 32.37,
+      "bh_wow": 3.37,
+      "price_str": "75元｜≥400張"
+    },
+    {
+      "ticker": "3680",
+      "name": "家登",
+      "market": "otc",
+      "bh_pct": 71.68,
+      "bh_wow": 3.4,
+      "price_str": "560元｜≥100張"
+    },
+    {
+      "ticker": "6672",
+      "name": "騰輝電子-KY",
+      "market": "tse",
+      "bh_pct": 41.56,
+      "bh_wow": 3.52,
+      "price_str": "208元｜≥100張"
+    },
+    {
+      "ticker": "2406",
+      "name": "國碩",
+      "market": "tse",
+      "bh_pct": 31.17,
+      "bh_wow": 3.53,
+      "price_str": "33元｜≥1000張"
+    },
+    {
+      "ticker": "3033",
+      "name": "威健",
+      "market": "tse",
+      "bh_pct": 33.39,
+      "bh_wow": 3.77,
+      "price_str": "44元｜≥1000張"
+    },
+    {
+      "ticker": "6224",
+      "name": "聚鼎",
+      "market": "tse",
+      "bh_pct": 40.13,
+      "bh_wow": 3.77,
+      "price_str": "79元｜≥400張"
+    },
+    {
+      "ticker": "6261",
+      "name": "久元",
+      "market": "otc",
+      "bh_pct": 50.17,
+      "bh_wow": 3.83,
+      "price_str": "120元｜≥200張"
+    },
+    {
+      "ticker": "6209",
+      "name": "今國光",
+      "market": "tse",
+      "bh_pct": 50.9,
+      "bh_wow": 3.96,
+      "price_str": "66元｜≥400張"
+    },
+    {
+      "ticker": "2369",
+      "name": "菱生",
+      "market": "tse",
+      "bh_pct": 29.61,
+      "bh_wow": 4.05,
+      "price_str": "31元｜≥1000張"
+    },
+    {
+      "ticker": "1597",
+      "name": "直得",
+      "market": "tse",
+      "bh_pct": 70.62,
+      "bh_wow": 4.1,
+      "price_str": "173元｜≥200張"
+    },
+    {
+      "ticker": "8358",
+      "name": "金居",
+      "market": "otc",
+      "bh_pct": 67.12,
+      "bh_wow": 4.26,
+      "price_str": "454元｜≥100張"
+    },
+    {
+      "ticker": "2492",
+      "name": "華新科",
+      "market": "tse",
+      "bh_pct": 65.33,
+      "bh_wow": 4.27,
+      "price_str": "156元｜≥200張"
+    },
+    {
+      "ticker": "5464",
+      "name": "霖宏",
+      "market": "otc",
+      "bh_pct": 66.57,
+      "bh_wow": 4.3,
+      "price_str": "52元｜≥400張"
+    },
+    {
+      "ticker": "2342",
+      "name": "茂矽",
+      "market": "tse",
+      "bh_pct": 37.95,
+      "bh_wow": 4.74,
+      "price_str": "44元｜≥1000張"
+    },
+    {
+      "ticker": "5328",
+      "name": "華容",
+      "market": "otc",
+      "bh_pct": 42.29,
+      "bh_wow": 4.79,
+      "price_str": "27元｜≥1000張"
+    },
+    {
+      "ticker": "8150",
+      "name": "南茂",
+      "market": "tse",
+      "bh_pct": 77.98,
+      "bh_wow": 5.15,
+      "price_str": "93元｜≥400張"
+    },
+    {
+      "ticker": "3450",
+      "name": "聯鈞",
+      "market": "tse",
+      "bh_pct": 48.92,
+      "bh_wow": 5.21,
+      "price_str": "410元｜≥100張"
+    },
+    {
+      "ticker": "6173",
+      "name": "信昌電",
+      "market": "otc",
+      "bh_pct": 67.76,
+      "bh_wow": 5.28,
+      "price_str": "122元｜≥200張"
+    },
+    {
+      "ticker": "3481",
+      "name": "群創",
+      "market": "tse",
+      "bh_pct": 42.34,
+      "bh_wow": 6.91,
+      "price_str": "29元｜≥1000張"
+    },
+    {
+      "ticker": "8042",
+      "name": "金山電",
+      "market": "otc",
+      "bh_pct": 73.43,
+      "bh_wow": 7.8,
+      "price_str": "84元｜≥400張"
+    },
+    {
+      "ticker": "6182",
+      "name": "合晶",
+      "market": "otc",
+      "bh_pct": 30.6,
+      "bh_wow": 8.02,
+      "price_str": "57元｜≥400張"
+    }
+  ]
+}
