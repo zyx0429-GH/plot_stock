@@ -525,8 +525,49 @@ class TWStockDataFetcher:
 
             time.sleep(0.3)  # 避免 yfinance rate limit
 
-        # === Step 5: Merge 大戶週報資料 (如果有) ===
-        self._merge_chip_monitoring(results)
+    def _merge_mndtas(self, results):
+        """抓取集保持股人數分級統計 (MNDTAS)，計算籌碼集中度"""
+        print("[INFO] Fetching MNDTAS (shareholder count by level)...")
+        for stock_id in list(results.keys())[:20]:  # 先抓前20檔測試
+            try:
+                data = self._twse_get("exchangeReport/MNDTAS", {"response": "json", "stockNo": stock_id})
+                if not data.get("data") or not data.get("fields"):
+                    continue
+                fidx = {name: i for i, name in enumerate(data["fields"])}
+                rows = data["data"]
+                if not rows:
+                    continue
+                # 取最新一期
+                latest = rows[-1]
+                date_str = latest[fidx.get("日期", 0)]
+                # 計算大戶人數 (400張以上 = 400,000股以上)
+                big_holder_levels = []
+                for level_name, idx in fidx.items():
+                    if "400,001~600,000" in level_name or "600,001~800,000" in level_name or "800,001~1,000,000" in level_name or "1,000,001" in level_name:
+                        try:
+                            big_holder_levels.append(int(latest[idx].replace(",", "")))
+                        except:
+                            pass
+                big_holder_count = sum(big_holder_levels)
+                # 總人數
+                try:
+                    total_count = int(latest[fidx.get("合計", len(latest)-2)].replace(",", ""))
+                except:
+                    total_count = 0
+                # 大戶集中度 = 大戶人數 / 總人數
+                concentration = round(big_holder_count / total_count * 100, 2) if total_count > 0 else 0
+                # 存到 results
+                results[stock_id]["shareholder"] = [{
+                    "date": date_str,
+                    "total_count": total_count,
+                    "big_holder_count": big_holder_count,
+                    "concentration": concentration,
+                    "raw": {k: latest[v] for k, v in fidx.items()},
+                }]
+                print(f"[INFO] MNDTAS {stock_id}: 總人數={total_count}, 大戶人數={big_holder_count}, 集中度={concentration}%")
+            except Exception as e:
+                print(f"[WARN] MNDTAS {stock_id}: {e}")
+                continue
 
         # === Save ===
         os.makedirs(DATA_DIR, exist_ok=True)

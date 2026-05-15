@@ -253,6 +253,14 @@ class HTMLGenerator:
         change_color = "#16a34a" if change_val >= 0 else "#dc2626"
         change_sign = "+" if change_val >= 0 else ""
         lines.append(f'<div class="metric-card"><h3>📊 開盤價</h3><p>{open_val:.2f}</p><p style="color:{change_color};">{change_sign}{change_val:.2f}</p></div>')
+        # === patch: add bias rate metric card ===
+        bias20 = tech.get("bias20", "-")
+        bias60 = tech.get("bias60", "-")
+        dual_bear = tech.get("dual_bear", False)
+        bias20_color = "#16a34a" if isinstance(bias20, (int, float)) and bias20 >= 0 else "#dc2626" if isinstance(bias20, (int, float)) and bias20 < 0 else "#64748b"
+        bias60_color = "#16a34a" if isinstance(bias60, (int, float)) and bias60 >= 0 else "#dc2626" if isinstance(bias60, (int, float)) and bias60 < 0 else "#64748b"
+        dual_bear_badge = f'<span style="background:#dc2626;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.75rem;margin-left:8px;">⚠️ 双破线</span>' if dual_bear else ''
+        lines.append(f'<div class="metric-card"><h3>📐 乖离率{dual_bear_badge}</h3><p>20MA乖离: <span style="color:{bias20_color};font-weight:600;">{bias20:+.2f}%</span></p><p>60MA乖离: <span style="color:{bias60_color};font-weight:600;">{bias60:+.2f}%</span></p></div>')
         # === patch end ===
         lines.append('</div>')
         lines.append('<div class="card"><h2>📈 股價走勢 + 均線 + 成交量</h2><div class="chart-container"><canvas id="priceChart"></canvas></div></div>')
