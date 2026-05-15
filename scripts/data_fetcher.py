@@ -99,8 +99,8 @@ class TWStockDataFetcher:
         import glob
         # 本地開發路徑 (workspace/memory/)
         local_dir = os.path.join(os.path.dirname(__file__), "..", "..", "memory", "chip-monitoring", "weekly")
-        # 線上路徑 (GitHub Actions 部署時用，與 data/ 同層)
-        repo_dir = os.path.join(os.path.dirname(__file__), "..", "..", "data", "chip-monitoring", "weekly")
+        # 線上路徑 (GitHub Actions 部署時用，與 scripts/ 同層的 data/)
+        repo_dir = os.path.join(os.path.dirname(__file__), "..", "data", "chip-monitoring", "weekly")
         
         all_dirs = [local_dir, repo_dir]
         all_files = []
