@@ -1,17 +1,19 @@
-/* ===== 智董籌碼選股站 - 主題樣式 ===== */
+/* ===== 智董籌碼選股站 - 亮色白底主題 ===== */
 :root {
-    --bg: #0f172a;
-    --card-bg: #1e293b;
-    --text: #f1f5f9;
-    --text-muted: #94a3b8;
-    --accent: #3b82f6;
-    --accent-glow: rgba(59,130,246,0.3);
-    --up: #10b981;
-    --down: #ef4444;
-    --buy: #10b981;
-    --sell: #ef4444;
-    --border: #334155;
-    --hover: #2563eb;
+    --bg: #f8fafc;
+    --card-bg: #ffffff;
+    --text: #1e293b;
+    --text-muted: #64748b;
+    --accent: #1d4ed8;
+    --accent-glow: rgba(29,78,216,0.12);
+    --up: #16a34a;
+    --down: #dc2626;
+    --buy: #16a34a;
+    --sell: #dc2626;
+    --border: #e2e8f0;
+    --hover: #1d4ed8;
+    --shadow: rgba(0,0,0,0.08);
+    --shadow-hover: rgba(29,78,216,0.15);
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -26,8 +28,8 @@ body {
 
 /* ===== 導航列 ===== */
 .navbar {
-    background: linear-gradient(90deg, #1e293b 0%, #0f172a 100%);
-    border-bottom: 1px solid var(--border);
+    background: linear-gradient(90deg, #1e3a5f 0%, #0f172a 100%);
+    border-bottom: 1px solid #334155;
     padding: 0 2rem;
     display: flex;
     justify-content: space-between;
@@ -42,12 +44,12 @@ body {
 .nav-brand {
     font-size: 1.3rem;
     font-weight: 700;
-    color: var(--accent);
-    text-shadow: 0 0 10px var(--accent-glow);
+    color: #fbbf24;
+    text-shadow: 0 0 10px rgba(251,191,36,0.3);
 }
 
 .nav-links a {
-    color: var(--text-muted);
+    color: #94a3b8;
     text-decoration: none;
     padding: 0.5rem 1rem;
     border-radius: 6px;
@@ -56,9 +58,9 @@ body {
 }
 
 .nav-links a:hover, .nav-links a.active {
-    color: var(--text);
-    background: var(--accent);
-    box-shadow: 0 0 15px var(--accent-glow);
+    color: #fff;
+    background: #1d4ed8;
+    box-shadow: 0 0 15px rgba(29,78,216,0.3);
 }
 
 /* ===== 容器 ===== */
@@ -72,15 +74,16 @@ body {
     text-align: center;
     margin-bottom: 2rem;
     padding: 1.5rem;
-    background: linear-gradient(135deg, var(--card-bg) 0%, rgba(59,130,246,0.1) 100%);
+    background: linear-gradient(135deg, #fff 0%, rgba(29,78,216,0.05) 100%);
     border-radius: 12px;
     border: 1px solid var(--border);
+    box-shadow: 0 2px 8px var(--shadow);
 }
 
 .header-info h1 {
     font-size: 2rem;
     margin-bottom: 0.5rem;
-    background: linear-gradient(90deg, var(--accent), #8b5cf6);
+    background: linear-gradient(90deg, #1d4ed8, #7c3aed);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -97,19 +100,19 @@ body {
     padding: 1.5rem;
     margin-bottom: 1.5rem;
     border: 1px solid var(--border);
-    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    box-shadow: 0 2px 8px var(--shadow);
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .card:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(59,130,246,0.15);
+    box-shadow: 0 8px 25px var(--shadow-hover);
 }
 
 .card h2 {
     font-size: 1.2rem;
     margin-bottom: 1rem;
-    color: var(--accent);
+    color: #1e3a5f;
     display: flex;
     align-items: center;
     gap: 0.5rem;
@@ -131,6 +134,7 @@ body {
 .table-responsive {
     overflow-x: auto;
     border-radius: 8px;
+    border: 1px solid var(--border);
 }
 
 .data-table {
@@ -140,8 +144,8 @@ body {
 }
 
 .data-table thead {
-    background: linear-gradient(90deg, var(--accent), #6366f1);
-    color: white;
+    background: linear-gradient(90deg, #1e3a5f, #334155);
+    color: #f1f5f9;
 }
 
 .data-table th {
@@ -149,6 +153,7 @@ body {
     text-align: center;
     font-weight: 600;
     white-space: nowrap;
+    border-bottom: 2px solid #1e3a5f;
 }
 
 .data-table td {
@@ -158,8 +163,12 @@ body {
     transition: background 0.2s;
 }
 
+.data-table tbody tr:nth-child(even) {
+    background: rgba(241,245,249,0.5);
+}
+
 .data-table tbody tr:hover {
-    background: rgba(59,130,246,0.08);
+    background: rgba(29,78,216,0.06);
 }
 
 .data-table tbody tr.clickable {
@@ -174,10 +183,10 @@ body {
 .bull { color: var(--up); font-weight: 600; }
 .bear { color: var(--down); font-weight: 600; }
 .neutral { color: var(--text-muted); }
-.highlight { color: #fbbf24; font-weight: 700; }
+.highlight { color: #d97706; font-weight: 700; }
 
 .score {
-    background: linear-gradient(135deg, var(--accent), #8b5cf6);
+    background: linear-gradient(135deg, #1d4ed8, #7c3aed);
     color: white;
     padding: 0.2rem 0.6rem;
     border-radius: 20px;
@@ -202,7 +211,7 @@ body {
 }
 
 .controls input {
-    background: var(--bg);
+    background: #fff;
     border: 1px solid var(--border);
     color: var(--text);
     padding: 0.3rem 0.5rem;
@@ -215,15 +224,17 @@ body {
 .stock-header {
     text-align: center;
     padding: 2rem;
-    background: linear-gradient(135deg, var(--card-bg), rgba(59,130,246,0.1));
+    background: linear-gradient(135deg, #fff, rgba(29,78,216,0.05));
     border-radius: 12px;
     margin-bottom: 1.5rem;
     border: 1px solid var(--border);
+    box-shadow: 0 2px 8px var(--shadow);
 }
 
 .stock-header h1 {
     font-size: 1.8rem;
     margin-bottom: 0.5rem;
+    color: #1e3a5f;
 }
 
 .stock-price {
@@ -236,14 +247,14 @@ body {
 .stock-price .price {
     font-size: 2.5rem;
     font-weight: 700;
-    color: var(--text);
+    color: #1e293b;
 }
 
 .stock-price .change {
     font-size: 1.2rem;
     padding: 0.3rem 0.8rem;
     border-radius: 20px;
-    background: rgba(0,0,0,0.3);
+    background: rgba(0,0,0,0.06);
 }
 
 .metrics-grid {
@@ -258,6 +269,7 @@ body {
     border-radius: 10px;
     padding: 1.2rem;
     border: 1px solid var(--border);
+    box-shadow: 0 2px 8px var(--shadow);
     transition: all 0.3s;
 }
 
@@ -267,7 +279,7 @@ body {
 }
 
 .metric-card h3 {
-    color: var(--accent);
+    color: #1e3a5f;
     margin-bottom: 0.8rem;
     font-size: 1rem;
 }

@@ -251,7 +251,15 @@ class StockScreener:
                 "margin": margin,
             })
 
-        watchlist_data.sort(key=lambda x: x["score"], reverse=True)
+        # 主排序: score 降序, 次排序: 大戶門檻數字降序 (1000>400>200>100>1), 三排序: 大戶%降序
+        def _watchlist_sort_key(x):
+            th = x.get("big_holder_threshold", "") or "0"
+            try:
+                th_val = int(th)
+            except:
+                th_val = 0
+            return (-x["score"], -th_val, -(x.get("big_holder_pct", 0) or 0))
+        watchlist_data.sort(key=_watchlist_sort_key)
         return watchlist_data
 
     def screen_all(self):

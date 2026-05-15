@@ -248,24 +248,24 @@ class HTMLGenerator:
         lines.append(f'<div class="metric-card"><h3>💰 融資融券</h3><p>券資比: {margin.get("ratio","-") if margin else "-"}</p><p>融資餘額: {margin.get("margin_balance","-") if margin else "-"}</p></div>')
         lines.append('</div>')
         lines.append('<div class="card"><h2>📈 股價走勢</h2><div class="chart-container"><canvas id="priceChart"></canvas></div></div>')
-        lines.append('<div class="card"><h2>🌍 外資買賣超</h2><div class="chart-container"><canvas id="foreignChart"></canvas></div></div>')
+        lines.append('<div class="card"><h2>🌍 外資買賣超</h2><div id="foreignChartWrap"><canvas id="foreignChart"></canvas></div></div>')
         lines.append('</div>')
         lines.append(self._footer())
 
         # 兼容新舊 price_data 格式
         if isinstance(price_data, dict):
-            # 新格式: {"Close": [...], "High": [...], ...}
             closes = price_data.get("Close", [])
             price_closes = closes[-60:] if closes else []
             price_labels = [f"D-{i}" for i in range(len(price_closes), 0, -1)]
         elif isinstance(price_data, list):
-            # 舊格式: [{"Date": ..., "Close": ...}, ...]
             last_60 = price_data[-60:] if price_data else []
             price_labels = [p.get("Date", "") for p in last_60]
             price_closes = [p.get("Close", 0) for p in last_60]
         else:
             price_labels = []
             price_closes = []
+
+        # 外資數據
         foreign_dates = [f["date"][:10] for f in foreign[-20:]] if foreign else []
         foreign_nets = []
         for f in foreign[-20:]:
@@ -274,8 +274,24 @@ class HTMLGenerator:
             foreign_nets.append(buy - sell)
 
         lines.append('<script>')
-        lines.append(f'new Chart(document.getElementById("priceChart").getContext("2d"),{{type:"line",data:{{labels:{json.dumps(price_labels)},datasets:[{{label:"收盤價",data:{json.dumps(price_closes)},borderColor:"#3498db",backgroundColor:"rgba(52,152,219,0.1)",fill:true,tension:0.4}}]}},options:{{responsive:true,maintainAspectRatio:false,scales:{{y:{{title:{{display:true,text:"價格"}}}}}}}}}});')
-        lines.append(f'new Chart(document.getElementById("foreignChart").getContext("2d"),{{type:"bar",data:{{labels:{json.dumps(foreign_dates)},datasets:[{{label:"外資淨買超",data:{json.dumps(foreign_nets)},backgroundColor:{json.dumps(foreign_nets)}.map(v=>v>0?"rgba(46,204,113,0.7)":"rgba(231,76,60,0.7)"),borderColor:{json.dumps(foreign_nets)}.map(v=>v>0?"#27ae60":"#c0392b"),borderWidth:1}}]}},options:{{responsive:true,maintainAspectRatio:false,scales:{{y:{{title:{{display:true,text:"張數"}}}}}}}}}});')
+        # 股價走勢圖
+        if len(price_closes) >= 5:
+            lines.append(f'new Chart(document.getElementById("priceChart").getContext("2d"),{{type:"line",data:{{labels:{json.dumps(price_labels)},datasets:[{{label:"收盤價",data:{json.dumps(price_closes)},borderColor:"#1d4ed8",backgroundColor:"rgba(29,78,216,0.1)",fill:true,tension:0.4}}]}},options:{{responsive:true,maintainAspectRatio:false,scales:{{y:{{title:{{display:true,text:"價格"}}}}}}}}}});')
+        else:
+            lines.append('document.getElementById("priceChart").parentElement.innerHTML = \'<p style="text-align:center;color:#64748b;padding:2rem;">歷史價格數據不足，無法繪製走勢圖</p>\';')
+
+        # 外資買賣超圖 — 若只有 0~1 個數據點則顯文字統計
+        if len(foreign_nets) >= 2:
+            lines.append(f'new Chart(document.getElementById("foreignChart").getContext("2d"),{{type:"bar",data:{{labels:{json.dumps(foreign_dates)},datasets:[{{label:"外資淨買超",data:{json.dumps(foreign_nets)},backgroundColor:{json.dumps(foreign_nets)}.map(v=>v>0?"rgba(22,163,74,0.7)":"rgba(220,38,38,0.7)"),borderColor:{json.dumps(foreign_nets)}.map(v=>v>0?"#16a34a":"#dc2626"),borderWidth:1}}]}},options:{{responsive:true,maintainAspectRatio:false,scales:{{y:{{title:{{display:true,text:"張數"}}}}}}}}}});')
+        else:
+            # 單日或無數據時顯文字
+            if len(foreign_nets) == 1:
+                val = foreign_nets[0]
+                color = "#16a34a" if val > 0 else "#dc2626"
+                sign = "+" if val > 0 else ""
+                lines.append(f'document.getElementById("foreignChartWrap").innerHTML = \'<div style="text-align:center;padding:2rem;"><p style="font-size:1.2rem;color:#1e293b;font-weight:600;">外資 {foreign_dates[0] if foreign_dates else ""} 淨買超</p><p style="font-size:2.5rem;color:{color};font-weight:700;margin:0.5rem 0;">{sign}{val:,.0f} 張</p><p style="color:#64748b;font-size:0.9rem;">{"✅ 買超" if val > 0 else "❌ 賣超"}</p></div>\';')
+            else:
+                lines.append('document.getElementById("foreignChartWrap").innerHTML = \'<p style="text-align:center;color:#64748b;padding:2rem;">暫無外資買賣超數據</p>\';')
         lines.append('</script>')
         lines.append('</body></html>')
 
