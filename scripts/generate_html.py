@@ -192,7 +192,7 @@ class HTMLGenerator:
             margin = s.get("margin", {}) or {}
             trend = tech.get("trend", "")
             tc = "bull" if "多頭" in trend else "bear" if "空頭" in trend else "neutral"
-            open_val = info.get("open") if info and info.get("open") is not None else 0.0
+            open_val = s.get("open") if s.get("open") is not None else 0.0
             lines.append(f'<tr onclick="location.href=\'stock_{sid}.html\'" class="clickable"><td><strong>{sid}</strong></td><td>{sname}</td><td>{close:.2f}</td><td class="{"up" if change_pct>0 else "down"}">{change_pct:+.2f}%</td><td>{open_val:.2f}</td><td>{"✅" if foreign_consecutive else "❌"}</td><td class="{"buy" if foreign_net>0 else "sell"}">{foreign_net:,}</td><td class="highlight">{big_holder_pct:.2f}%</td><td>≥{big_holder_threshold}張</td><td class="{"up" if big_holder_change>0 else "down"}">{big_holder_change:+.2f}%</td><td>{margin.get("ratio","-") if margin else "-"}</td><td>{tech.get("ma20","-")}</td><td>{tech.get("ma60","-")}</td><td>{tech.get("rsi","-")}</td><td class="{tc}">{trend}</td><td><span class="score">{score}</span></td></tr>')
             # === 補丁結束 ===
 
