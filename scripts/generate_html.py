@@ -173,7 +173,7 @@ class HTMLGenerator:
         lines.append('<body>')
         lines.append(self._nav(page_key))
         lines.append(f'<div class="container"><div class="header-info"><h1>{title.split("｜")[0]}</h1><p class="subtitle">{subtitle} 共 {len(page_data)} 檔</p></div>')
-        lines.append('<div class="card"><div class="table-responsive"><table class="data-table"><thead><tr><th>代號</th><th>名稱</th><th>收盤價</th><th>漲跌%</th><th>外資買超</th><th>外資淨買</th><th>大戶%</th><th>門檻</th><th>週增減</th><th>券資比</th><th>20MA</th><th>60MA</th><th>RSI</th><th>趨勢</th><th>評分</th></tr></thead><tbody>')
+        lines.append('<div class="card"><div class="table-responsive"><table class="data-table"><thead><tr><th>代號</th><th>名稱</th><th>收盤價</th><th>漲跌%</th><th>開盤價</th><th>外資買超</th><th>外資淨買</th><th>大戶%</th><th>門檻</th><th>週增減</th><th>券資比</th><th>20MA</th><th>60MA</th><th>RSI</th><th>趨勢</th><th>評分</th></tr></thead><tbody>')
 
         for s in page_data:
             # === None 安全補丁 (2026-05-14) ===
@@ -192,7 +192,8 @@ class HTMLGenerator:
             margin = s.get("margin", {}) or {}
             trend = tech.get("trend", "")
             tc = "bull" if "多頭" in trend else "bear" if "空頭" in trend else "neutral"
-            lines.append(f'<tr onclick="location.href=\'stock_{sid}.html\'" class="clickable"><td><strong>{sid}</strong></td><td>{sname}</td><td>{close:.2f}</td><td class="{"up" if change_pct>0 else "down"}">{change_pct:+.2f}%</td><td>{"✅" if foreign_consecutive else "❌"}</td><td class="{"buy" if foreign_net>0 else "sell"}">{foreign_net:,}</td><td class="highlight">{big_holder_pct:.2f}%</td><td>≥{big_holder_threshold}張</td><td class="{"up" if big_holder_change>0 else "down"}">{big_holder_change:+.2f}%</td><td>{margin.get("ratio","-") if margin else "-"}</td><td>{tech.get("ma20","-")}</td><td>{tech.get("ma60","-")}</td><td>{tech.get("rsi","-")}</td><td class="{tc}">{trend}</td><td><span class="score">{score}</span></td></tr>')
+            open_val = info.get("open") if info and info.get("open") is not None else 0.0
+            lines.append(f'<tr onclick="location.href=\'stock_{sid}.html\'" class="clickable"><td><strong>{sid}</strong></td><td>{sname}</td><td>{close:.2f}</td><td class="{"up" if change_pct>0 else "down"}">{change_pct:+.2f}%</td><td>{open_val:.2f}</td><td>{"✅" if foreign_consecutive else "❌"}</td><td class="{"buy" if foreign_net>0 else "sell"}">{foreign_net:,}</td><td class="highlight">{big_holder_pct:.2f}%</td><td>≥{big_holder_threshold}張</td><td class="{"up" if big_holder_change>0 else "down"}">{big_holder_change:+.2f}%</td><td>{margin.get("ratio","-") if margin else "-"}</td><td>{tech.get("ma20","-")}</td><td>{tech.get("ma60","-")}</td><td>{tech.get("rsi","-")}</td><td class="{tc}">{trend}</td><td><span class="score">{score}</span></td></tr>')
             # === 補丁結束 ===
 
         lines.append('</tbody></table></div></div></div>')
@@ -246,8 +247,13 @@ class HTMLGenerator:
         lines.append(f'<div class="metric-card"><h3>🌍 外資動向</h3><p>今日買超: {"✅" if foreign_consecutive else "❌"}</p><p>淨買超: {foreign_net:,}</p></div>')
         lines.append(f'<div class="metric-card"><h3>👑 籌碼面</h3><p>大戶持股: {bh_pct_str}%</p><p>週增減: {bh_chg_str}%</p></div>')
         lines.append(f'<div class="metric-card"><h3>💰 融資融券</h3><p>券資比: {margin.get("ratio","-") if margin else "-"}</p><p>融資餘額: {margin.get("margin_balance","-") if margin else "-"}</p></div>')
+        # === patch: add open price metric card ===
+        open_val = info.get("open", 0) if info else 0
+        lines.append(f'<div class="metric-card"><h3>📊 開盤價</h3><p>{open_val:.2f}</p><p style="color:{'#16a34a' if info and info.get('change',0)>=0 else '#dc2626'};">{info.get("change",0):+.2f if info else 0}</p></div>')
+        # === patch end ===
         lines.append('</div>')
-        lines.append('<div class="card"><h2>📈 股價走勢</h2><div class="chart-container"><canvas id="priceChart"></canvas></div></div>')
+        lines.append('<div class="card"><h2>📈 股價走勢 + 均線 + 成交量</h2><div class="chart-container"><canvas id="priceChart"></canvas></div></div>')
+        lines.append('<div class="card"><h2>📊 MACD 指標 (12,26,9)</h2><div class="chart-container"><canvas id="macdChart"></canvas></div></div>')
         lines.append('<div class="card"><h2>🌍 外資買賣超</h2><div id="foreignChartWrap"><canvas id="foreignChart"></canvas></div></div>')
         lines.append('</div>')
         lines.append(self._footer())
@@ -274,9 +280,31 @@ class HTMLGenerator:
             foreign_nets.append(buy - sell)
 
         lines.append('<script>')
-        # 股價走勢圖
+        # 計算均線 (MA5 / MA10 / MA20)
+        def calc_ma(data, period):
+            ma = []
+            for i in range(len(data)):
+                if i < period - 1:
+                    ma.append(None)
+                else:
+                    ma.append(round(sum(data[i-period+1:i+1]) / period, 2))
+            return ma
+        ma5 = calc_ma(price_closes, 5) if len(price_closes) >= 5 else []
+        ma10 = calc_ma(price_closes, 10) if len(price_closes) >= 10 else []
+        ma20 = calc_ma(price_closes, 20) if len(price_closes) >= 20 else []
+        # 股價走勢圖 + 均線
         if len(price_closes) >= 5:
-            lines.append(f'new Chart(document.getElementById("priceChart").getContext("2d"),{{type:"line",data:{{labels:{json.dumps(price_labels)},datasets:[{{label:"收盤價",data:{json.dumps(price_closes)},borderColor:"#1d4ed8",backgroundColor:"rgba(29,78,216,0.1)",fill:true,tension:0.4}}]}},options:{{responsive:true,maintainAspectRatio:false,scales:{{y:{{title:{{display:true,text:"價格"}}}}}}}}}});')
+            datasets = [
+                {'label': '收盤價', 'data': price_closes, 'borderColor': '#1d4ed8', 'backgroundColor': 'rgba(29,78,216,0.08)', 'fill': True, 'tension': 0.3, 'pointRadius': 0, 'borderWidth': 2},
+            ]
+            if ma5:
+                datasets.append({'label': 'MA5', 'data': ma5, 'borderColor': '#f97316', 'backgroundColor': 'transparent', 'fill': False, 'tension': 0.3, 'pointRadius': 0, 'borderWidth': 1.5})
+            if ma10:
+                datasets.append({'label': 'MA10', 'data': ma10, 'borderColor': '#8b5cf6', 'backgroundColor': 'transparent', 'fill': False, 'tension': 0.3, 'pointRadius': 0, 'borderWidth': 1.5})
+            if ma20:
+                datasets.append({'label': 'MA20', 'data': ma20, 'borderColor': '#64748b', 'backgroundColor': 'transparent', 'fill': False, 'tension': 0.3, 'pointRadius': 0, 'borderWidth': 1.5})
+            datasets_json = json.dumps(datasets, ensure_ascii=False)
+            lines.append(f'new Chart(document.getElementById("priceChart").getContext("2d"),{{type:"line",data:{{labels:{json.dumps(price_labels)},datasets:{datasets_json}}},options:{{responsive:true,maintainAspectRatio:false,plugins:{{legend:{{display:true,labels:{{usePointStyle:true,boxWidth:8}}}}}},scales:{{x:{{grid:{{color:"rgba(0,0,0,0.05)"}},ticks:{{color:"#64748b"}}}},y:{{grid:{{color:"rgba(0,0,0,0.05)"}},ticks:{{color:"#64748b"}},title:{{display:true,text:"價格",color:"#64748b"}}}}}}}}}});')
         else:
             lines.append('document.getElementById("priceChart").parentElement.innerHTML = \'<p style="text-align:center;color:#64748b;padding:2rem;">歷史價格數據不足，無法繪製走勢圖</p>\';')
 
