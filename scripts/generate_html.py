@@ -249,7 +249,10 @@ class HTMLGenerator:
         lines.append(f'<div class="metric-card"><h3>💰 融資融券</h3><p>券資比: {margin.get("ratio","-") if margin else "-"}</p><p>融資餘額: {margin.get("margin_balance","-") if margin else "-"}</p></div>')
         # === patch: add open price metric card ===
         open_val = info.get("open", 0) if info else 0
-        lines.append(f'<div class="metric-card"><h3>📊 開盤價</h3><p>{open_val:.2f}</p><p style="color:{'#16a34a' if info and info.get('change',0)>=0 else '#dc2626'};">{info.get("change",0):+.2f if info else 0}</p></div>')
+        change_val = info.get("change", 0) if info else 0
+        change_color = "#16a34a" if change_val >= 0 else "#dc2626"
+        change_sign = "+" if change_val >= 0 else ""
+        lines.append(f'<div class="metric-card"><h3>📊 開盤價</h3><p>{open_val:.2f}</p><p style="color:{change_color};">{change_sign}{change_val:.2f}</p></div>')
         # === patch end ===
         lines.append('</div>')
         lines.append('<div class="card"><h2>📈 股價走勢 + 均線 + 成交量</h2><div class="chart-container"><canvas id="priceChart"></canvas></div></div>')
