@@ -525,6 +525,19 @@ class TWStockDataFetcher:
 
             time.sleep(0.3)  # 避免 yfinance rate limit
 
+        # === Step 5: Merge 大戶週報資料 (如果有) ===
+        self._merge_chip_monitoring(results)
+
+        # === Step 6: Merge 集保人數分級統計 (MNDTAS) ===
+        self._merge_mndtas(results)
+
+        # === Save ===
+        os.makedirs(DATA_DIR, exist_ok=True)
+        with open(os.path.join(DATA_DIR, "raw_data.json"), "w", encoding="utf-8") as f:
+            json.dump(results, f, ensure_ascii=False, indent=2)
+        print(f"[INFO] Data saved: {len(results)} stocks")
+        return results
+
     def _merge_mndtas(self, results):
         """抓取集保持股人數分級統計 (MNDTAS)，計算籌碼集中度"""
         print("[INFO] Fetching MNDTAS (shareholder count by level)...")

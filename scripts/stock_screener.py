@@ -250,6 +250,7 @@ class StockScreener:
                 "score": score,
                 "technical": tech,
                 "margin": margin,
+                "shareholder": self.raw_data.get(stock_id, {}).get("shareholder", []),
             })
 
         # 主排序: score 降序, 次排序: 大戶門檻數字降序 (1000>400>200>100>1), 三排序: 大戶%降序
@@ -302,6 +303,7 @@ class StockScreener:
                 "technical": tech,
                 "margin": margin,
                 "dual_certified": self.check_dual_certified(stock_id, info, tech, big_pct, big_change, foreign_consecutive, trust_consecutive),
+                "shareholder": self.raw_data.get(stock_id, {}).get("shareholder", []),
             }
 
             # 綜合篩選條件

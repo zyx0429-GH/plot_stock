@@ -261,6 +261,15 @@ class HTMLGenerator:
         bias60_color = "#16a34a" if isinstance(bias60, (int, float)) and bias60 >= 0 else "#dc2626" if isinstance(bias60, (int, float)) and bias60 < 0 else "#64748b"
         dual_bear_badge = f'<span style="background:#dc2626;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.75rem;margin-left:8px;">⚠️ 双破线</span>' if dual_bear else ''
         lines.append(f'<div class="metric-card"><h3>📐 乖离率{dual_bear_badge}</h3><p>20MA乖离: <span style="color:{bias20_color};font-weight:600;">{bias20:+.2f}%</span></p><p>60MA乖离: <span style="color:{bias60_color};font-weight:600;">{bias60:+.2f}%</span></p></div>')
+        # === patch: add shareholder concentration metric card ===
+        shareholder_list = s.get("shareholder", [])
+        if shareholder_list:
+            sh = shareholder_list[0]
+            conc = sh.get("concentration", 0)
+            total_count = sh.get("total_count", 0)
+            big_holder_count = sh.get("big_holder_count", 0)
+            conc_color = "#16a34a" if conc >= 50 else "#f97316" if conc >= 30 else "#dc2626"
+            lines.append(f'<div class="metric-card"><h3>👥 集保集中度</h3><p><span style="color:{conc_color};font-weight:600;font-size:1.3rem;">{conc:.2f}%</span></p><p>大戶人數: {big_holder_count:,} / 總人數: {total_count:,}</p></div>')
         # === patch end ===
         lines.append('</div>')
         lines.append('<div class="card"><h2>📈 股價走勢 + 均線 + 成交量</h2><div class="chart-container"><canvas id="priceChart"></canvas></div></div>')
