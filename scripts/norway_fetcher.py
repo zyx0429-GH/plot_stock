@@ -52,21 +52,42 @@ THRESHOLD_MAP = {
 
 
 def fetch_html(url_path: str, params: Optional[Dict] = None) -> str:
-    """抓取頁面 HTML"""
+    """抓取頁面 HTML — 帶 retry 與反爬蟲 headers"""
+    import time
+
     url = f"{BASE_URL}/{url_path}"
+    session = requests.Session()
     headers = {
         "User-Agent": (
             "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
             "AppleWebKit/537.36 (KHTML, like Gecko) "
             "Chrome/124.0.0.0 Safari/537.36"
         ),
-        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
-        "Accept-Language": "zh-TW,zh;q=0.9,en;q=0.8",
+        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
+        "Accept-Language": "zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7",
+        "Accept-Encoding": "gzip, deflate, br",
+        "Referer": "https://norway.twsthr.info/",
+        "Connection": "keep-alive",
+        "Sec-Fetch-Dest": "document",
+        "Sec-Fetch-Mode": "navigate",
+        "Sec-Fetch-Site": "same-origin",
+        "Upgrade-Insecure-Requests": "1",
+        "Cache-Control": "max-age=0",
     }
-    resp = requests.get(url, params=params, headers=headers, timeout=30)
-    resp.raise_for_status()
-    resp.encoding = "utf-8"
-    return resp.text
+
+    for attempt in range(3):
+        try:
+            time.sleep(1.5 * attempt)  # 漸進延遲
+            resp = session.get(url, params=params, headers=headers, timeout=30)
+            if resp.status_code == 200:
+                resp.encoding = "utf-8"
+                return resp.text
+            print(f"[WARN] {url} returned {resp.status_code}, retrying ({attempt + 1}/3)...")
+        except Exception as e:
+            print(f"[WARN] Request failed: {e}, retrying ({attempt + 1}/3)...")
+            time.sleep(2)
+
+    raise RuntimeError(f"Failed to fetch {url} after 3 attempts")
 
 
 def _extract_week_dates(thead_rows: List) -> List[str]:
