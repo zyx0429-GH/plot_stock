@@ -262,7 +262,7 @@ class HTMLGenerator:
         dual_bear_badge = f'<span style="background:#dc2626;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.75rem;margin-left:8px;">⚠️ 双破线</span>' if dual_bear else ''
         lines.append(f'<div class="metric-card"><h3>📐 乖离率{dual_bear_badge}</h3><p>20MA乖离: <span style="color:{bias20_color};font-weight:600;">{bias20:+.2f}%</span></p><p>60MA乖离: <span style="color:{bias60_color};font-weight:600;">{bias60:+.2f}%</span></p></div>')
         # === patch: add shareholder concentration metric card ===
-        shareholder_list = s.get("shareholder", [])
+        shareholder_list = data.get("shareholder", [])
         if shareholder_list:
             sh = shareholder_list[0]
             conc = sh.get("concentration", 0)
