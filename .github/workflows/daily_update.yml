@@ -23,6 +23,9 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+        token: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Set up Python
       uses: actions/setup-python@v5
@@ -43,8 +46,11 @@ jobs:
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
+        git config pull.rebase true
+        git config rebase.autoStash true
         git add -A
         git commit -m "📊 Daily update: $(date +'%Y-%m-%d %H:%M')" || echo "No changes"
+        git pull origin main || echo "Nothing to pull"
         git push
 
     - name: Setup Pages
