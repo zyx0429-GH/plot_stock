@@ -539,11 +539,23 @@ class TWStockDataFetcher:
         return results
 
     def _merge_mndtas(self, results):
-        """抓取集保持股人數分級統計 (MNDTAS)，計算籌碼集中度"""
+        """抓取集保持股人數分級統計 (MNDTAS)，計算籌碼集中度
+        TWSE API: /rwd/afterTrading/MNDTAS (需 date + stockNo)
+        失敗時不報錯，直接跳過"""
         print("[INFO] Fetching MNDTAS (shareholder count by level)...")
+        
+        # 取日期參數（ROC 格式）
+        today = datetime.now()
+        roc_date = f"{today.year - 1911}/{today.month:02d}/{today.day:02d}"
+        
         for stock_id in list(results.keys())[:20]:  # 先抓前20檔測試
             try:
-                data = self._twse_get("exchangeReport/MNDTAS", {"response": "json", "stockNo": stock_id})
+                # 新版 TWSE endpoint: rwd/afterTrading/MNDTAS
+                data = self._twse_get("rwd/afterTrading/MNDTAS", {
+                    "response": "json",
+                    "date": roc_date,
+                    "stockNo": stock_id,
+                })
                 if not data.get("data") or not data.get("fields"):
                     continue
                 fidx = {name: i for i, name in enumerate(data["fields"])}
@@ -556,7 +568,7 @@ class TWStockDataFetcher:
                 # 計算大戶人數 (400張以上 = 400,000股以上)
                 big_holder_levels = []
                 for level_name, idx in fidx.items():
-                    if "400,001~600,000" in level_name or "600,001~800,000" in level_name or "800,001~1,000,000" in level_name or "1,000,001" in level_name:
+                    if any(kw in level_name for kw in ["400,001", "600,001", "800,001", "1,000,001"]):
                         try:
                             big_holder_levels.append(int(latest[idx].replace(",", "")))
                         except:
@@ -567,19 +579,17 @@ class TWStockDataFetcher:
                     total_count = int(latest[fidx.get("合計", len(latest)-2)].replace(",", ""))
                 except:
                     total_count = 0
-                # 大戶集中度 = 大戶人數 / 總人數
+                # 大戶集中度
                 concentration = round(big_holder_count / total_count * 100, 2) if total_count > 0 else 0
-                # 存到 results
                 results[stock_id]["shareholder"] = [{
                     "date": date_str,
                     "total_count": total_count,
                     "big_holder_count": big_holder_count,
                     "concentration": concentration,
-                    "raw": {k: latest[v] for k, v in fidx.items()},
                 }]
                 print(f"[INFO] MNDTAS {stock_id}: 總人數={total_count}, 大戶人數={big_holder_count}, 集中度={concentration}%")
             except Exception as e:
-                print(f"[WARN] MNDTAS {stock_id}: {e}")
+                # MNDTAS 經常掛，跳過不報錯
                 continue
 
         # === Save ===
