@@ -257,10 +257,25 @@ class HTMLGenerator:
         bias20 = tech.get("bias20", "-")
         bias60 = tech.get("bias60", "-")
         dual_bear = tech.get("dual_bear", False)
-        bias20_color = "#16a34a" if isinstance(bias20, (int, float)) and bias20 >= 0 else "#dc2626" if isinstance(bias20, (int, float)) and bias20 < 0 else "#64748b"
-        bias60_color = "#16a34a" if isinstance(bias60, (int, float)) and bias60 >= 0 else "#dc2626" if isinstance(bias60, (int, float)) and bias60 < 0 else "#64748b"
+        
+        def _fmt_bias(val):
+            """乖離率格式化：數字帶符號和小數，字串直接顯示"""
+            if isinstance(val, (int, float)):
+                return f"{val:+.2f}%"
+            return str(val) + ("%" if val != "-" else "")
+        
+        def _bias_color(val):
+            """乖離率顏色：正數綠，負數紅，非數字灰色"""
+            if isinstance(val, (int, float)):
+                return "#16a34a" if val >= 0 else "#dc2626"
+            return "#64748b"
+        
+        bias20_str = _fmt_bias(bias20)
+        bias60_str = _fmt_bias(bias60)
+        bias20_color = _bias_color(bias20)
+        bias60_color = _bias_color(bias60)
         dual_bear_badge = f'<span style="background:#dc2626;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.75rem;margin-left:8px;">⚠️ 双破线</span>' if dual_bear else ''
-        lines.append(f'<div class="metric-card"><h3>📐 乖离率{dual_bear_badge}</h3><p>20MA乖离: <span style="color:{bias20_color};font-weight:600;">{bias20:+.2f}%</span></p><p>60MA乖离: <span style="color:{bias60_color};font-weight:600;">{bias60:+.2f}%</span></p></div>')
+        lines.append(f'<div class="metric-card"><h3>📐 乖离率{dual_bear_badge}</h3><p>20MA乖离: <span style="color:{bias20_color};font-weight:600;">{bias20_str}</span></p><p>60MA乖离: <span style="color:{bias60_color};font-weight:600;">{bias60_str}</span></p></div>')
         # === patch: add shareholder concentration metric card ===
         shareholder_list = data.get("shareholder", [])
         if shareholder_list:
