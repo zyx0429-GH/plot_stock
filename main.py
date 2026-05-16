@@ -13,6 +13,7 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__), "scripts"))
 from scripts.data_fetcher import fetch_all
 from scripts.stock_screener import run_screening
 from scripts.generate_html import generate
+from scripts.cross_analysis import main as run_cross_analysis
 
 def main():
     print("=" * 60)
@@ -22,6 +23,10 @@ def main():
     # Step 1: 抓取資料
     print("\n[INFO] Step 1/3: 抓取台股資料...")
     fetch_all()
+
+    # Step 1.5: 交叉比對
+    print("\n[INFO] Step 1.5: 執行籌碼數據交叉比對...")
+    run_cross_analysis()
 
     # Step 2: 選股篩選
     print("\n[INFO] Step 2/3: 執行選股邏輯...")

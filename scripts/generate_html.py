@@ -144,6 +144,58 @@ class HTMLGenerator:
             lines.append(f'<tr data-pct="{big_holder_pct}"><td>{i}</td><td><strong>{s.get("stock_id","-")}</strong></td><td>{s.get("stock_name","-")}</td><td class="highlight">{big_holder_pct:.2f}%</td><td class="{cc}">{big_holder_change:+.2f}%</td><td>{close:.2f}</td><td class="{"up" if change_pct>0 else "down"}">{change_pct:+.2f}%</td></tr>')
         lines.append('</tbody></table></div></div>')
 
+        # === Norway 數據圖表 ===
+        lines.append('<div class="card"><h2>🇳🇴 Norway.twsthr.info — 台灣50 大戶持有率排名</h2><div class="chart-container"><canvas id="norwayBarChart"></canvas></div></div>')
+        
+        # 載入 Norway 數據
+        norway_data = []
+        try:
+            with open("data/norway/taiwan50_weekly.json", "r", encoding="utf-8") as f:
+                norway_data = json.load(f)
+        except:
+            pass
+        
+        if norway_data:
+            # 持有率 bar chart 數據
+            norway_sorted = sorted(norway_data, key=lambda x: x.get("last_week_hold_pct", 0), reverse=True)
+            norway_labels = [f"{r['stock_code']}\n{r['stock_name']}" for r in norway_sorted[:20]]
+            norway_pcts = [r.get("last_week_hold_pct", 0) for r in norway_sorted[:20]]
+            norway_changes = [r.get("latest_change", 0) for r in norway_sorted[:20]]
+            
+            lines.append(f'<script>')
+            lines.append(f'new Chart(document.getElementById("norwayBarChart").getContext("2d"),{{')
+            lines.append(f'type:"bar",')
+            lines.append(f'data:{{')
+            lines.append(f'labels:{json.dumps(norway_labels, ensure_ascii=False)},')
+            lines.append(f'datasets:[')
+            lines.append(f'{{label:"大戶持有率%",data:{json.dumps(norway_pcts)},backgroundColor:"rgba(255,193,7,0.7)",borderColor:"#ffc107",borderWidth:1}},')
+            lines.append(f'{{label:"最新週增減%",data:{json.dumps(norway_changes)},backgroundColor:{json.dumps(norway_changes)}.map(v=>v>0?"rgba(46,204,113,0.7)":"rgba(231,76,60,0.7)"),borderColor:{json.dumps(norway_changes)}.map(v=>v>0?"#27ae60":"#c0392b"),borderWidth:1}}')
+            lines.append(f']')
+            lines.append(f'}},')
+            lines.append(f'options:{{responsive:true,maintainAspectRatio:false,plugins:{{legend:{{display:true}}}}}}')
+            lines.append(f'}});')
+            lines.append(f'</script>')
+        
+        # 交叉比對摘要卡片
+        cross_data = {}
+        try:
+            with open("data/cross_analysis/cross_analysis.json", "r", encoding="utf-8") as f:
+                cross_data = json.load(f)
+        except:
+            pass
+        
+        if cross_data:
+            s = cross_data.get("summary", {})
+            lines.append('<div class="card"><h2>🔗 數據源交叉比對 (fortune-fred vs Norway)</h2>')
+            lines.append('<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:15px;margin-top:10px;">')
+            lines.append(f'<div style="background:rgba(59,130,246,0.1);border:1px solid rgba(59,130,246,0.3);border-radius:8px;padding:12px;text-align:center;"><p style="margin:0;font-size:2rem;font-weight:700;color:#3b82f6;">{s.get("common_stocks",0)}</p><p style="margin:4px 0;color:#94a3b8;font-size:0.85rem;">共同覆蓋股票</p></div>')
+            lines.append(f'<div style="background:rgba(16,185,129,0.1);border:1px solid rgba(16,185,129,0.3);border-radius:8px;padding:12px;text-align:center;"><p style="margin:0;font-size:2rem;font-weight:700;color:#10b981;">{s.get("direction_match_rate",0)}%</p><p style="margin:4px 0;color:#94a3b8;font-size:0.85rem;">方向一致率</p></div>')
+            lines.append(f'<div style="background:rgba(245,158,11,0.1);border:1px solid rgba(245,158,11,0.3);border-radius:8px;padding:12px;text-align:center;"><p style="margin:0;font-size:2rem;font-weight:700;color:#f59e0b;">{s.get("avg_abs_diff",0)}%</p><p style="margin:4px 0;color:#94a3b8;font-size:0.85rem;">平均絕對差異</p></div>')
+            lines.append(f'<div style="background:rgba(239,68,68,0.1);border:1px solid rgba(239,68,68,0.3);border-radius:8px;padding:12px;text-align:center;"><p style="margin:0;font-size:2rem;font-weight:700;color:#ef4444;">{s.get("max_abs_diff",0)}%</p><p style="margin:4px 0;color:#94a3b8;font-size:0.85rem;">最大差異</p></div>')
+            lines.append('</div>')
+            lines.append('<p style="text-align:center;margin-top:15px;"><a href="cross_analysis.html" style="display:inline-block;background:#3b82f6;color:#fff;padding:10px 20px;border-radius:6px;text-decoration:none;font-weight:600;">📊 查看完整交叉比對報告</a></p>')
+            lines.append('</div>')
+        
         lines.append('</div>')
         lines.append(self._footer())
 
@@ -290,6 +342,32 @@ class HTMLGenerator:
         lines.append('<div class="card"><h2>📈 股價走勢 + 均線 + 成交量</h2><div class="chart-container"><canvas id="priceChart"></canvas></div></div>')
         lines.append('<div class="card"><h2>📊 MACD 指標 (12,26,9)</h2><div class="chart-container"><canvas id="macdChart"></canvas></div></div>')
         lines.append('<div class="card"><h2>🌍 外資買賣超</h2><div id="foreignChartWrap"><canvas id="foreignChart"></canvas></div></div>')
+        
+        # === Norway 6週趨勢圖 ===
+        shareholder_list = data.get("shareholder", [])
+        if shareholder_list:
+            sh = shareholder_list[0]
+            weekly = sh.get("weekly_changes", {})
+            if weekly:
+                lines.append('<div class="card"><h2>🇳🇴 集保大戶持有率 — 6週趨勢</h2><p class="chart-desc">數據來源: Norway.twsthr.info</p><div class="chart-container"><canvas id="norwayWeeklyChart"></canvas></div></div>')
+                
+                week_dates = list(weekly.keys())
+                week_values = list(weekly.values())
+                week_total = sh.get("total_change", 0)
+                
+                lines.append(f'<script>')
+                lines.append(f'new Chart(document.getElementById("norwayWeeklyChart").getContext("2d"),{{')
+                lines.append(f'type:"line",')
+                lines.append(f'data:{{')
+                lines.append(f'labels:{json.dumps(week_dates)},')
+                lines.append(f'datasets:[')
+                lines.append(f'{{label:"週增減%",data:{json.dumps(week_values)},borderColor:"#ffc107",backgroundColor:"rgba(255,193,7,0.1)",fill:true,tension:0.3,pointRadius:4,pointBackgroundColor:{json.dumps(week_values)}.map(v=>v>0?"#27ae60":"#c0392b")}}')
+                lines.append(f']')
+                lines.append(f'}},')
+                lines.append(f'options:{{responsive:true,maintainAspectRatio:false,plugins:{{annotation:{{annotations:{{line1:{{type:"line",yMin:0,yMax:0,borderColor:"rgba(148,163,184,0.5)",borderWidth:1,borderDash:[5,5]}}}}}}}},scales:{{y:{{title:{{display:true,text:"週增減 %"}}}}}}}}}')
+                lines.append(f'}});')
+                lines.append(f'</script>')
+        
         lines.append('</div>')
         lines.append(self._footer())
 
@@ -363,11 +441,67 @@ class HTMLGenerator:
             f.write("".join(lines))
         return filepath
 
+    def generate_cross_analysis_page(self):
+        """生成交叉比對報告頁面"""
+        cross_data = {}
+        try:
+            with open("data/cross_analysis/cross_analysis.json", "r", encoding="utf-8") as f:
+                cross_data = json.load(f)
+        except:
+            return None
+        
+        lines = []
+        lines.append(self._head("交叉比對報告｜智董籌碼選股站"))
+        lines.append('<body>')
+        lines.append(self._nav(""))
+        
+        s = cross_data.get("summary", {})
+        lines.append(f'<div class="container"><div class="header-info"><h1>🔗 籌碼數據交叉比對報告</h1><p class="subtitle">fortune-fred vs Norway.twsthr.info | 分析日期: {s.get("analysis_date", "")}</p></div>')
+        
+        # 摘要卡片
+        lines.append('<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;margin-bottom:30px;">')
+        lines.append(f'<div class="metric-card"><h3>📊 共同覆蓋</h3><p style="font-size:2rem;font-weight:700;color:#3b82f6;">{s.get("common_stocks", 0)}</p><p>檔股票</p></div>')
+        lines.append(f'<div class="metric-card"><h3>✅ 方向一致率</h3><p style="font-size:2rem;font-weight:700;color:#10b981;">{s.get("direction_match_rate", 0)}%</p><p>兩邊增減方向相同</p></div>')
+        lines.append(f'<div class="metric-card"><h3>📏 平均差異</h3><p style="font-size:2rem;font-weight:700;color:#f59e0b;">{s.get("avg_abs_diff", 0)}%</p><p>絕對差異平均值</p></div>')
+        lines.append(f'<div class="metric-card"><h3>⚠️ 最大差異</h3><p style="font-size:2rem;font-weight:700;color:#ef4444;">{s.get("max_abs_diff", 0)}%</p><p>單一股票最大差異</p></div>')
+        lines.append('</div>')
+        
+        # 差異 Top 20 表格
+        lines.append('<div class="card"><h2>📋 差異最大的股票 (Top 20)</h2><div class="table-responsive"><table class="data-table"><thead><tr><th>排名</th><th>代碼</th><th>名稱</th><th>fortune-fred</th><th>Norway</th><th>差異</th><th>方向</th></tr></thead><tbody>')
+        for i, c in enumerate(cross_data.get("comparisons", [])[:20], 1):
+            direction = "✅ 一致" if c["direction_match"] else "❌ 相反"
+            direction_color = "#10b981" if c["direction_match"] else "#ef4444"
+            lines.append(f'<tr><td>{i}</td><td><strong>{c["stock_code"]}</strong></td><td>{c["stock_name"]}</td><td>{c["chip_change"]:+.2f}%</td><td>{c["norway_change"]:+.2f}%</td><td>{c["diff"]:+.2f}%</td><td style="color:{direction_color};font-weight:600;">{direction}</td></tr>')
+        lines.append('</tbody></table></div></div>')
+        
+        # 方向不一致列表
+        mismatches = [c for c in cross_data.get("comparisons", []) if not c["direction_match"]]
+        if mismatches:
+            lines.append('<div class="card"><h2>⚠️ 方向不一致的股票</h2><div class="table-responsive"><table class="data-table"><thead><tr><th>代碼</th><th>名稱</th><th>fortune-fred</th><th>Norway</th><th>建議</th></tr></thead><tbody>')
+            for c in mismatches:
+                if abs(c["chip_change"]) > abs(c["norway_change"]):
+                    advice = "以 fortune-fred 為準"
+                else:
+                    advice = "以 Norway 為準"
+                lines.append(f'<tr><td><strong>{c["stock_code"]}</strong></td><td>{c["stock_name"]}</td><td>{c["chip_change"]:+.2f}%</td><td>{c["norway_change"]:+.2f}%</td><td>{advice}</td></tr>')
+            lines.append('</tbody></table></div></div>')
+        
+        lines.append('</div>')
+        lines.append(self._footer())
+        lines.append('</body></html>')
+        
+        filepath = os.path.join(DOCS_DIR, "cross_analysis.html")
+        with open(filepath, "w", encoding="utf-8") as f:
+            f.write("".join(lines))
+        print(f"[OK] 交叉比對: {filepath}")
+        return filepath
+
     def generate_all(self):
         os.makedirs(DOCS_DIR, exist_ok=True)
         self.generate_index()
         self.generate_watchlist()
         self.generate_etf_00981a()
+        self.generate_cross_analysis_page()
         all_stocks = list(set(WATCHLIST + ETF_00981A_HOLDINGS))
         for stock_id in all_stocks:
             self.generate_stock_detail(stock_id)

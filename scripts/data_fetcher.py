@@ -539,64 +539,66 @@ class TWStockDataFetcher:
         return results
 
     def _merge_mndtas(self, results):
-        """抓取集保持股人數分級統計 (MNDTAS)，計算籌碼集中度
-        TWSE API: /rwd/afterTrading/MNDTAS (需 date + stockNo)
-        失敗時不報錯，直接跳過"""
-        print("[INFO] Fetching MNDTAS (shareholder count by level)...")
+        """用 Norway.twsthr.info 集保籌碼數據替代 TWSE MNDTAS
+        數據來源: data/norway/all_stocks_weekly.json (由 norway_fetcher.py 生成)
+        """
+        print("[INFO] Loading Norway.twsthr.info chip data (MNDTAS substitute)...")
         
-        # 取日期參數（ROC 格式）
-        today = datetime.now()
-        roc_date = f"{today.year - 1911}/{today.month:02d}/{today.day:02d}"
+        norway_files = [
+            "data/norway/all_stocks_weekly.json",
+            "data/norway/taiwan50_weekly.json",
+        ]
         
-        for stock_id in list(results.keys())[:20]:  # 先抓前20檔測試
-            try:
-                # 新版 TWSE endpoint: rwd/afterTrading/MNDTAS
-                data = self._twse_get("rwd/afterTrading/MNDTAS", {
-                    "response": "json",
-                    "date": roc_date,
-                    "stockNo": stock_id,
-                })
-                if not data.get("data") or not data.get("fields"):
-                    continue
-                fidx = {name: i for i, name in enumerate(data["fields"])}
-                rows = data["data"]
-                if not rows:
-                    continue
-                # 取最新一期
-                latest = rows[-1]
-                date_str = latest[fidx.get("日期", 0)]
-                # 計算大戶人數 (400張以上 = 400,000股以上)
-                big_holder_levels = []
-                for level_name, idx in fidx.items():
-                    if any(kw in level_name for kw in ["400,001", "600,001", "800,001", "1,000,001"]):
-                        try:
-                            big_holder_levels.append(int(latest[idx].replace(",", "")))
-                        except:
-                            pass
-                big_holder_count = sum(big_holder_levels)
-                # 總人數
-                try:
-                    total_count = int(latest[fidx.get("合計", len(latest)-2)].replace(",", ""))
-                except:
-                    total_count = 0
-                # 大戶集中度
-                concentration = round(big_holder_count / total_count * 100, 2) if total_count > 0 else 0
-                results[stock_id]["shareholder"] = [{
-                    "date": date_str,
-                    "total_count": total_count,
-                    "big_holder_count": big_holder_count,
-                    "concentration": concentration,
-                }]
-                print(f"[INFO] MNDTAS {stock_id}: 總人數={total_count}, 大戶人數={big_holder_count}, 集中度={concentration}%")
-            except Exception as e:
-                # MNDTAS 經常掛，跳過不報錯
+        chip_lookup = {}
+        for nf in norway_files:
+            if not os.path.exists(nf):
                 continue
-
+            try:
+                with open(nf, "r", encoding="utf-8") as f:
+                    records = json.load(f)
+                for r in records:
+                    code = r.get("stock_code", "")
+                    if code:
+                        chip_lookup[code] = r
+                print(f"[INFO] Loaded {len(records)} records from {nf}")
+            except Exception as e:
+                print(f"[WARN] Failed to load {nf}: {e}")
+        
+        merged = 0
+        for sid in results:
+            if sid in chip_lookup:
+                chip = chip_lookup[sid]
+                weekly = chip.get("weekly_changes", {})
+                # 取最新週增減 (最後一個日期)
+                latest_change = list(weekly.values())[-1] if weekly else None
+                # 計算近4週趨勢
+                recent_values = list(weekly.values())[-4:] if weekly else []
+                trend_direction = "up" if len(recent_values) >= 2 and recent_values[-1] > recent_values[0] else "down" if len(recent_values) >= 2 else "flat"
+                
+                results[sid]["shareholder"] = [{
+                    "date": chip.get("latest_change", ""),
+                    "total_count": 0,  # Norway 無總人數
+                    "big_holder_count": 0,
+                    "concentration": chip.get("last_week_hold_pct", 0),
+                    "threshold_shares": chip.get("threshold_shares", 0),
+                    "threshold_code": chip.get("threshold_code", 0),
+                    "category": chip.get("category", ""),
+                    "weekly_changes": weekly,
+                    "latest_change": latest_change,
+                    "total_change": chip.get("total_change", 0),
+                    "trend_direction": trend_direction,
+                    "is_taiwan50": chip.get("is_taiwan50", False),
+                }]
+                merged += 1
+        
+        print(f"[INFO] Norway chip data merged: {merged} stocks")
+        
         # === Save ===
         os.makedirs(DATA_DIR, exist_ok=True)
         with open(os.path.join(DATA_DIR, "raw_data.json"), "w", encoding="utf-8") as f:
             json.dump(results, f, ensure_ascii=False, indent=2)
         print(f"[INFO] Data saved: {len(results)} stocks")
+        return results
         return results
 
     def fetch_etf_data(self, etf_code="00981A", holdings=None):
