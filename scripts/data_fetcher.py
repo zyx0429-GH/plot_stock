@@ -203,11 +203,11 @@ class TWStockDataFetcher:
         print(f"[INFO] Chip monitoring merged: {merged_count} stocks from {os.path.basename(latest_file)} (format: {'full' if is_full_format else 'legacy'})")
 
     def _yf_price(self, stock_id, days=60):
-        """用 yfinance 抓股價歷史 — 嘗試 .TW 和 .TWO"""
+        """用 yfinance 抓股價歷史 — 嘗試 .TW 和 .TWO, auto_adjust=False 避免 adjusted close"""
         for suffix in [".TW", ".TWO"]:
             try:
                 ticker = yf.Ticker(f"{stock_id}{suffix}")
-                df = ticker.history(period=f"{days}d")
+                df = ticker.history(period=f"{days}d", auto_adjust=False)
                 if not df.empty:
                     return df
             except Exception:
@@ -337,13 +337,27 @@ class TWStockDataFetcher:
                 print(f"[WARN] No TPEX institutional for {d}")
         return foreign_map, trust_map
 
+    @staticmethod
+    def _get_last_trading_day(date_str):
+        """回退到最近交易日（週六回退到週五，週日回退到週五）"""
+        dt = datetime.strptime(date_str, "%Y%m%d")
+        weekday = dt.weekday()  # 0=週一, 5=週六, 6=週日
+        if weekday == 5:  # 週六
+            dt = dt - timedelta(days=1)
+        elif weekday == 6:  # 週日
+            dt = dt - timedelta(days=2)
+        return dt.strftime("%Y%m%d")
+
     def fetch_all_data(self, stock_list):
         """批次抓取所有個股資料 — TWSE API + TPEX API + Yahoo Finance"""
         results = {}
-        today_str = datetime.now().strftime("%Y%m%d")
-        yesterday = (datetime.now() - timedelta(days=1)).strftime("%Y%m%d")
+        today_str_raw = datetime.now().strftime("%Y%m%d")
+        today_str = self._get_last_trading_day(today_str_raw)
+        yesterday = (datetime.strptime(today_str, "%Y%m%d") - timedelta(days=1)).strftime("%Y%m%d")
+        yesterday = self._get_last_trading_day(yesterday)
         print(f"[INFO] Fetching data for {len(stock_list)} stocks...")
-        print(f"[INFO] Using date: {today_str}")
+        print(f"[INFO] Today (raw): {today_str_raw} -> adjusted to trading day: {today_str}")
+        print(f"[INFO] Yesterday adjusted to trading day: {yesterday}")
 
         # === Step 1: 抓取上市每日成交資料 (STOCK_DAY_ALL) ===
         print("[INFO] Fetching TWSE STOCK_DAY_ALL...")
