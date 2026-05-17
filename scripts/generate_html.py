@@ -82,7 +82,7 @@ class HTMLGenerator:
         lines.append(f'<div class="container"><div class="header-info"><h1>📊 籌碼監控儀表板</h1><p class="subtitle">共 {len(screened)} 支個股｜產出 {self.data.get("update_time","")}</p></div>')
 
         # 散點圖
-        lines.append('<div class="card"><h2>🔥 大戶持股% vs 週增減</h2><p class="chart-desc">X:大戶持股% Y:週增減% 點擊進入個股</p><div class="chart-container"><canvas id="scatterChart"></canvas></div></div>')
+        lines.append('<div class="card"><h2>🔥 大戶持股% vs 週增減</h2><div class="controls"><label>顯示</label><button class="fbtn active" id="sc-all" onclick="setScatter(\'all\',this)">全部</button><button class="fbtn" id="sc-up" onclick="setScatter(\'up\',this)">📈 增加</button><button class="fbtn" id="sc-down" onclick="setScatter(\'down\',this)">📉 減少</button></div><p class="chart-desc">X:大戶持股% Y:週增減% 點擊進入個股</p><div class="chart-container"><canvas id="scatterChart"></canvas></div></div>')
 
         lines.append('<div class="card"><h2>🔥 雙重認證榜單 (00981A + 大戶增倉 + 法人買超)</h2><div class="table-responsive"><table class="data-table"><thead><tr><th>代號</th><th>名稱</th><th>收盤價</th><th>漲跌%</th><th>外資淨買</th><th>投信淨買</th><th>大戶%</th><th>週增減</th><th>趨勢</th><th>評分</th></tr></thead><tbody>')
         dual_certified = self.data.get("dual_certified", [])
@@ -185,7 +185,11 @@ class HTMLGenerator:
         lines.append('</div></div>')
 
         # 大戶排名 (全部股票，JS 依門檻篩選)
-        all_big = big_holder_rank
+        all_big = big_holder_rank[:]
+        seen_ids = {s["stock_id"] for s in all_big}
+        for s in screened:
+            if s["stock_id"] not in seen_ids:
+                all_big.append(s)
         lines.append('<div class="card"><h2>👑 大戶持股排名</h2><div class="controls"><label>顯示前 <input type="number" id="rankLimit" value="50" min="10" max="200" onchange="updateRank()"> 名</label><label>最小持股% <input type="number" id="minPct" value="0" min="0" max="100" step="0.1" onchange="updateRank()"></label><span class="ctrl-sep"></span><label>門檻</label><button class="fbtn active" id="th-all" onclick="setThreshold(\'all\',this)">全部</button><button class="fbtn" id="th-200" onclick="setThreshold(\'200\',this)">≥200張</button><button class="fbtn" id="th-400" onclick="setThreshold(\'400\',this)">≥400張</button><button class="fbtn" id="th-1000" onclick="setThreshold(\'1000\',this)">≥1000張</button></div><div class="table-responsive"><table class="data-table" id="bigHolderTable"><thead><tr><th>排名</th><th>代號</th><th>名稱</th><th>大戶%</th><th>週增減%</th><th>收盤價</th><th>漲跌%</th><th>門檻</th></tr></thead><tbody>')
         for i, s in enumerate(all_big, 1):
             big_holder_pct = s.get("big_holder_pct") if s.get("big_holder_pct") is not None else 0.0
@@ -258,7 +262,7 @@ class HTMLGenerator:
         lines.append(f'<script>')
         lines.append(f'const scatterData = {sd};')
         lines.append('const ctx = document.getElementById("scatterChart").getContext("2d");')
-        lines.append('new Chart(ctx, {type:"scatter",data:{datasets:[{label:"個股籌碼分布",data:scatterData.map(d=>({x:d.x,y:d.y})),backgroundColor:scatterData.map(d=>d.y>0?"rgba(46,204,113,0.6)":"rgba(231,76,60,0.6)"),borderColor:scatterData.map(d=>d.y>0?"#27ae60":"#c0392b"),borderWidth:1,pointRadius:6,pointHoverRadius:10}]},options:{responsive:true,maintainAspectRatio:false,plugins:{tooltip:{callbacks:{label:function(c){const d=scatterData[c.dataIndex];return d.stock_id+" "+d.stock_name+": 大戶"+d.x.toFixed(2)+"%,週增減"+d.y.toFixed(2)+"%";}}}},scales:{x:{title:{display:true,text:"大戶持股 %"}},y:{title:{display:true,text:"本週增減 %"}}},onClick:(e,elements)=>{if(elements.length>0){const idx=elements[0].index;window.location.href="stock_"+scatterData[idx].stock_id+".html";}}}});')
+        lines.append('let scatterChart;function renderScatter(filter){const up=scatterData.filter(d=>d.y>0);const down=scatterData.filter(d=>d.y<0);const flat=scatterData.filter(d=>d.y===0);const ds=[];if(filter==="all"||filter==="up")ds.push({label:"📈 增加",data:up,backgroundColor:"rgba(46,204,113,0.6)",borderColor:"#27ae60",borderWidth:1,pointRadius:6,pointHoverRadius:10});if(filter==="all"||filter==="down")ds.push({label:"📉 減少",data:down,backgroundColor:"rgba(231,76,60,0.6)",borderColor:"#c0392b",borderWidth:1,pointRadius:6,pointHoverRadius:10});if(filter==="all"||filter==="flat")ds.push({label:"➡️ 持平",data:flat,backgroundColor:"rgba(148,163,184,0.6)",borderColor:"#64748b",borderWidth:1,pointRadius:6,pointHoverRadius:10});if(scatterChart)scatterChart.destroy();scatterChart=new Chart(ctx,{type:"scatter",data:{datasets:ds},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:true}},scales:{x:{title:{display:true,text:"大戶持股 %"}},y:{title:{display:true,text:"本週增減 %"}}},onClick:(e,elements)=>{if(elements.length>0){const el=elements[0];const d=scatterChart.data.datasets[el.datasetIndex].data[el.index];window.location.href="stock_"+d.stock_id+".html";}}}});}function setScatter(v,btn){["sc-all","sc-up","sc-down"].forEach(id=>document.getElementById(id).classList.remove("active"));btn.classList.add("active");renderScatter(v);}renderScatter("all");')
         lines.append('function updateRank(){const limit=parseInt(document.getElementById("rankLimit").value)||200;const minPct=parseFloat(document.getElementById("minPct").value)||0;const th=document.getElementById("th-all").classList.contains("active")?"all":document.getElementById("th-200").classList.contains("active")?"200":document.getElementById("th-400").classList.contains("active")?"400":document.getElementById("th-1000").classList.contains("active")?"1000":"all";const rows=document.querySelectorAll("#bigHolderTable tbody tr");let shown=0;rows.forEach((row)=>{const pct=parseFloat(row.dataset.pct);const rowTh=row.dataset.threshold||"";const thOk=th==="all"||rowTh===th;const show=shown<limit&&pct>=minPct&&thOk;if(show)shown++;row.style.display=show?"":"none";});}function setThreshold(v,btn){["th-all","th-200","th-400","th-1000"].forEach(id=>document.getElementById(id).classList.remove("active"));btn.classList.add("active");updateRank();}')
         lines.append('</script>')
         lines.append('</body></html>')
@@ -341,57 +345,102 @@ class HTMLGenerator:
         lines.append(self._nav(""))
         lines.append(f'<div class="container"><div class="stock-header"><h1>{stock_id} {info.get("stock_name","")}</h1><div class="stock-price"><span class="price">{info.get("close",0):.2f}</span><span class="change {"up" if info.get("change_pct",0)>0 else "down"}">{info.get("change_pct",0):+.2f}%</span></div></div>')
         lines.append('<div class="metrics-grid">')
-        lines.append(f'<div class="metric-card"><h3>📊 技術面</h3><p>20MA: {tech.get("ma20","-")}</p><p>60MA: {tech.get("ma60","-")}</p><p>RSI: {tech.get("rsi","-")}</p><p class="trend">趨勢: {tech.get("trend","-")}</p></div>')
-        # === None-safe patch for f-string formatting ===
-        foreign_consecutive = screened_item and screened_item.get("foreign_consecutive_buy")
-        foreign_net = screened_item["foreign_net"] if screened_item and screened_item.get("foreign_net") is not None else 0
-        big_holder_pct = screened_item["big_holder_pct"] if screened_item and screened_item.get("big_holder_pct") is not None else None
-        big_holder_change = screened_item["big_holder_change"] if screened_item and screened_item.get("big_holder_change") is not None else None
-        bh_pct_str = f"{big_holder_pct:.2f}" if big_holder_pct is not None else "-"
-        bh_chg_str = f"{big_holder_change:+.2f}" if big_holder_change is not None else "-"
-        # === patch end ===
-        lines.append(f'<div class="metric-card"><h3>🌍 外資動向</h3><p>今日買超: {"✅" if foreign_consecutive else "❌"}</p><p>淨買超: {foreign_net:,}</p></div>')
-        lines.append(f'<div class="metric-card"><h3>👑 籌碼面</h3><p>大戶持股: {bh_pct_str}%</p><p>週增減: {bh_chg_str}%</p></div>')
-        lines.append(f'<div class="metric-card"><h3>💰 融資融券</h3><p>券資比: {margin.get("ratio","-") if margin else "-"}</p><p>融資餘額: {margin.get("margin_balance","-") if margin else "-"}</p></div>')
-        # === patch: add open price metric card ===
-        open_val = info.get("open", 0) if info else 0
-        change_val = info.get("change", 0) if info else 0
-        change_color = "#16a34a" if change_val >= 0 else "#dc2626"
-        change_sign = "+" if change_val >= 0 else ""
-        lines.append(f'<div class="metric-card"><h3>📊 開盤價</h3><p>{open_val:.2f}</p><p style="color:{change_color};">{change_sign}{change_val:.2f}</p></div>')
-        # === patch: add bias rate metric card ===
-        bias20 = tech.get("bias20", "-")
-        bias60 = tech.get("bias60", "-")
-        dual_bear = tech.get("dual_bear", False)
-        
-        def _fmt_bias(val):
-            """乖離率格式化：數字帶符號和小數，字串直接顯示"""
-            if isinstance(val, (int, float)):
-                return f"{val:+.2f}%"
-            return str(val) + ("%" if val != "-" else "")
-        
-        def _bias_color(val):
-            """乖離率顏色：正數綠，負數紅，非數字灰色"""
-            if isinstance(val, (int, float)):
-                return "#16a34a" if val >= 0 else "#dc2626"
-            return "#64748b"
-        
-        bias20_str = _fmt_bias(bias20)
-        bias60_str = _fmt_bias(bias60)
-        bias20_color = _bias_color(bias20)
-        bias60_color = _bias_color(bias60)
-        dual_bear_badge = f'<span style="background:#dc2626;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.75rem;margin-left:8px;">⚠️ 双破线</span>' if dual_bear else ''
-        lines.append(f'<div class="metric-card"><h3>📐 乖离率{dual_bear_badge}</h3><p>20MA乖离: <span style="color:{bias20_color};font-weight:600;">{bias20_str}</span></p><p>60MA乖离: <span style="color:{bias60_color};font-weight:600;">{bias60_str}</span></p></div>')
-        # === patch: add shareholder concentration metric card ===
-        shareholder_list = data.get("shareholder", [])
+        # === 訊號說明輔助函數 ===
+        def _tech_signal(tech):
+            trend = tech.get("trend", "-")
+            rsi = tech.get("rsi", None)
+            if "多頭" in trend:
+                return "📈 偏多 — 均線多頭排列"
+            elif "空頭" in trend:
+                return "📉 偏空 — 均線空頭排列"
+            elif rsi is not None and isinstance(rsi, (int, float)):
+                if rsi > 70:
+                    return "⚠️ 超買 — RSI 偏高"
+                elif rsi < 30:
+                    return "💡 超賣 — RSI 偏低"
+            return "➡️ 盤整 — 趨勢不明"
+
+        def _foreign_signal(consecutive, net):
+            if consecutive and net > 0:
+                return "📈 外資做多 — 連續買超"
+            elif net > 0:
+                return "📈 外資買超 — 單日淨買"
+            elif net < 0:
+                return "📉 外資賣超 — 淨賣出"
+            return "➡️ 外資觀望 — 無明顯動向"
+
+        def _big_holder_signal(pct, change):
+            if pct is None:
+                return "❓ 無大戶數據"
+            if change is None:
+                return f"{'🔒' if pct >= 50 else '🔸' if pct >= 30 else '🔹'} 大戶持股 {pct:.1f}%"
+            if change > 1.0:
+                return "🚀 大戶積極進場 — 週增 >1%"
+            elif change > 0:
+                return "📈 大戶緩步增持 — 週增 <1%"
+            elif change < -1.0:
+                return "⚠️ 大戶急於出貨 — 週減 >1%"
+            elif change < 0:
+                return "📉 大戶小幅減持 — 週減 <1%"
+            return "➡️ 大戶籌碼持平"
+
+        def _margin_signal(margin):
+            if not margin:
+                return "❓ 無融資數據"
+            ratio = margin.get("ratio", 0)
+            if isinstance(ratio, (int, float)):
+                if ratio > 0.5:
+                    return "⚠️ 融券高比例 — 注意回補風險"
+                elif ratio > 0.3:
+                    return "🔸 融券比例偏高"
+                elif ratio > 0.1:
+                    return "➡️ 融券比例正常"
+            return "✅ 融券比例低 — 安全"
+
+        def _open_signal(change_val):
+            if change_val > 0:
+                return "📈 開高 — 盤中走強"
+            elif change_val < 0:
+                return "📉 開低 — 盤中走弱"
+            return "➡️ 平開 —  neutral"
+
+        def _bias_signal(bias20, bias60, dual_bear):
+            if dual_bear:
+                return "⚠️ 双破線 — 乖離過大+趨勢轉弱"
+            b20 = bias20 if isinstance(bias20, (int, float)) else 0
+            b60 = bias60 if isinstance(bias60, (int, float)) else 0
+            if b20 > 10 or b60 > 15:
+                return "⚠️ 乖離過大 — 可能回檔"
+            elif b20 < -10 or b60 < -15:
+                return "💡 乖離過深 — 可能反彈"
+            return "✅ 乖離正常"
+
+        def _conc_signal(conc):
+            if conc >= 60:
+                return "🔒 高度集中 — 主力控盤"
+            elif conc >= 40:
+                return "🔸 相對集中 — 籌碼穩定"
+            elif conc >= 20:
+                return "➡️ 中度分散"
+            return "🔹 籌碼分散 — 無主力跡象"
+
+        tech_signal = _tech_signal(tech)
+        foreign_signal = _foreign_signal(foreign_consecutive, foreign_net)
+        bh_signal = _big_holder_signal(big_holder_pct, big_holder_change)
+        margin_signal = _margin_signal(margin)
+        open_signal = _open_signal(change_val)
+        bias_signal = _bias_signal(bias20, bias60, dual_bear)
+        conc_signal = _conc_signal(conc) if shareholder_list else ""
+        # === 訊號說明輔助函數結束 ===
+
+        lines.append(f'<div class="metric-card"><h3>📊 技術面</h3><p>20MA: {tech.get("ma20","-")}</p><p>60MA: {tech.get("ma60","-")}</p><p>RSI: {tech.get("rsi","-")}</p><p class="trend">趨勢: {tech.get("trend","-")}</p><p style="margin-top:8px;font-size:0.85rem;color:#64748b;background:rgba(241,245,249,0.5);padding:4px 8px;border-radius:4px;">{tech_signal}</p></div>')
+        lines.append(f'<div class="metric-card"><h3>🌍 外資動向</h3><p>今日買超: {"✅" if foreign_consecutive else "❌"}</p><p>淨買超: {foreign_net:,}</p><p style="margin-top:8px;font-size:0.85rem;color:#64748b;background:rgba(241,245,249,0.5);padding:4px 8px;border-radius:4px;">{foreign_signal}</p></div>')
+        lines.append(f'<div class="metric-card"><h3>👑 籌碼面</h3><p>大戶持股: {bh_pct_str}%</p><p>週增減: {bh_chg_str}%</p><p style="margin-top:8px;font-size:0.85rem;color:#64748b;background:rgba(241,245,249,0.5);padding:4px 8px;border-radius:4px;">{bh_signal}</p></div>')
+        lines.append(f'<div class="metric-card"><h3>💰 融資融券</h3><p>券資比: {margin.get("ratio","-") if margin else "-"}</p><p>融資餘額: {margin.get("margin_balance","-") if margin else "-"}</p><p style="margin-top:8px;font-size:0.85rem;color:#64748b;background:rgba(241,245,249,0.5);padding:4px 8px;border-radius:4px;">{margin_signal}</p></div>')
+        lines.append(f'<div class="metric-card"><h3>📊 開盤價</h3><p>{open_val:.2f}</p><p style="color:{change_color};">{change_sign}{change_val:.2f}</p><p style="margin-top:8px;font-size:0.85rem;color:#64748b;background:rgba(241,245,249,0.5);padding:4px 8px;border-radius:4px;">{open_signal}</p></div>')
+        lines.append(f'<div class="metric-card"><h3>📐 乖離率{dual_bear_badge}</h3><p>20MA乖離: <span style="color:{bias20_color};font-weight:600;">{bias20_str}</span></p><p>60MA乖離: <span style="color:{bias60_color};font-weight:600;">{bias60_str}</span></p><p style="margin-top:8px;font-size:0.85rem;color:#64748b;background:rgba(241,245,249,0.5);padding:4px 8px;border-radius:4px;">{bias_signal}</p></div>')
         if shareholder_list:
-            sh = shareholder_list[0]
-            conc = sh.get("concentration", 0)
-            total_count = sh.get("total_count", 0)
-            big_holder_count = sh.get("big_holder_count", 0)
-            conc_color = "#16a34a" if conc >= 50 else "#f97316" if conc >= 30 else "#dc2626"
-            lines.append(f'<div class="metric-card"><h3>👥 集保集中度</h3><p><span style="color:{conc_color};font-weight:600;font-size:1.3rem;">{conc:.2f}%</span></p><p>大戶人數: {big_holder_count:,} / 總人數: {total_count:,}</p></div>')
-        # === patch end ===
+            lines.append(f'<div class="metric-card"><h3>👥 集保集中度</h3><p><span style="color:{conc_color};font-weight:600;font-size:1.3rem;">{conc:.2f}%</span></p><p>大戶人數: {big_holder_count:,} / 總人數: {total_count:,}</p><p style="margin-top:8px;font-size:0.85rem;color:#64748b;background:rgba(241,245,249,0.5);padding:4px 8px;border-radius:4px;">{conc_signal}</p></div>')
         lines.append('</div>')
         lines.append('<div class="card"><h2>📈 股價走勢 + 均線 + 成交量</h2><div class="chart-container"><canvas id="priceChart"></canvas></div></div>')
         lines.append('<div class="card"><h2>📊 MACD 指標 (12,26,9)</h2><div class="chart-container"><canvas id="macdChart"></canvas></div></div>')
@@ -522,12 +571,12 @@ class HTMLGenerator:
             lines.append(f'data:{{')
             lines.append(f'labels:{json.dumps(macd_labels)},')
             lines.append(f'datasets:[')
-            lines.append(f'{{type:"line",label:"MACD",data:{json.dumps(macd_line)},borderColor:"#1d4ed8",backgroundColor:"transparent",fill:false,pointRadius:0,borderWidth:1.5,tension:0.1}},')
-            lines.append(f'{{type:"line",label:"Signal",data:{json.dumps(signal_line)},borderColor:"#f97316",backgroundColor:"transparent",fill:false,pointRadius:0,borderWidth:1.5,tension:0.1}},')
-            lines.append(f'{{label:"Histogram",data:{json.dumps(histogram)},backgroundColor:{json.dumps(histogram)}.map(v=>v>=0?"rgba(22,163,74,0.5)":"rgba(220,38,38,0.5)"),borderColor:{json.dumps(histogram)}.map(v=>v>=0?"#16a34a":"#dc2626"),borderWidth:1}}')
+            lines.append(f'{{type:"line",label:"MACD 柱線",data:{json.dumps(macd_line)},borderColor:"#1d4ed8",backgroundColor:"transparent",fill:false,pointRadius:0,borderWidth:1.5,tension:0.1}},')
+            lines.append(f'{{type:"line",label:"訊號線",data:{json.dumps(signal_line)},borderColor:"#f97316",backgroundColor:"transparent",fill:false,pointRadius:0,borderWidth:1.5,tension:0.1}},')
+            lines.append(f'{{label:"柱狀圖",data:{json.dumps(histogram)},backgroundColor:{json.dumps(histogram)}.map(v=>v>=0?"rgba(22,163,74,0.5)":"rgba(220,38,38,0.5)"),borderColor:{json.dumps(histogram)}.map(v=>v>=0?"#16a34a":"#dc2626"),borderWidth:1}}')
             lines.append(f']')
             lines.append(f'}},')
-            lines.append(f'options:{{responsive:true,maintainAspectRatio:false,plugins:{{legend:{{display:true,labels:{{usePointStyle:true,boxWidth:8}}}}}},scales:{{x:{{grid:{{color:"rgba(0,0,0,0.05)"}},ticks:{{color:"#64748b",maxRotation:45}}}},y:{{grid:{{color:"rgba(0,0,0,0.05)"}},ticks:{{color:"#64748b"}},title:{{display:true,text:"MACD",color:"#64748b"}}}}}}}}}});')
+            lines.append(f'options:{{responsive:true,maintainAspectRatio:false,plugins:{{legend:{{display:true,labels:{{usePointStyle:true,boxWidth:8}}}}}},scales:{{x:{{grid:{{color:"rgba(0,0,0,0.05)"}},ticks:{{color:"#64748b",maxRotation:45}}}},y:{{grid:{{color:"rgba(0,0,0,0.05)"}},ticks:{{color:"#64748b"}},title:{{display:true,text:"MACD 值",color:"#64748b"}}}}}}}}}});')
         else:
             lines.append('document.getElementById("macdChart").parentElement.innerHTML = \'<p style="text-align:center;color:#64748b;padding:2rem;">歷史價格數據不足（需 ≥35 筆），無法計算 MACD</p>\';')
         lines.append('</script>')
