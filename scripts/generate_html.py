@@ -364,7 +364,7 @@ class HTMLGenerator:
                 lines.append(f'{{label:"週增減%",data:{json.dumps(week_values)},borderColor:"#ffc107",backgroundColor:"rgba(255,193,7,0.1)",fill:true,tension:0.3,pointRadius:4,pointBackgroundColor:{json.dumps(week_values)}.map(v=>v>0?"#27ae60":"#c0392b")}}')
                 lines.append(f']')
                 lines.append(f'}},')
-                lines.append(f'options:{{responsive:true,maintainAspectRatio:false,plugins:{{annotation:{{annotations:{{line1:{{type:"line",yMin:0,yMax:0,borderColor:"rgba(148,163,184,0.5)",borderWidth:1,borderDash:[5,5]}}}}}}}},scales:{{y:{{title:{{display:true,text:"週增減 %"}}}}}}}}}')
+                lines.append(f'options:{{responsive:true,maintainAspectRatio:false,plugins:{{annotation:{{annotations:{{line1:{{type:"line",yMin:0,yMax:0,borderColor:"rgba(148,163,184,0.5)",borderWidth:1,borderDash:[5,5]}}}}}}}},scales:{{y:{{title:{{display:true,text:"週增減 %"}}}}}}}}')
                 lines.append(f'}});')
                 lines.append(f'</script>')
         
