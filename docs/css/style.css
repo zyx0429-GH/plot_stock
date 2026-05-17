@@ -102,10 +102,73 @@ body {
 .nav-search button:hover {
     background: #2563eb;
 }
+
+/* ===== 控制列按鈕 (大戶排名門檻切換) ===== */
+.controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+    background: #f1f5f9;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+}
+.ctrl-sep {
+    width: 1px;
+    height: 24px;
+    background: #cbd5e1;
+    margin: 0 4px;
+}
+.fbtn {
+    padding: 5px 14px;
+    border-radius: 12px;
+    border: 1px solid #d2d2d7;
+    background: #fff;
+    color: #6e6e73;
+    font-size: 12px;
+    cursor: pointer;
+    transition: .12s;
+}
+.fbtn:hover {
+    border-color: #999;
+    color: #1d1d1f;
+}
+.fbtn.active {
+    background: #1d4ed8;
+    color: #fff;
+    border-color: #1d4ed8;
+    box-shadow: 0 0 10px rgba(29,78,216,0.2);
+}
+.controls label {
+    font-size: 13px;
+    color: #475569;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+.controls input[type="number"] {
+    width: 70px;
+    padding: 4px 8px;
+    border: 1px solid #d2d2d7;
+    border-radius: 6px;
+    font-size: 13px;
+    outline: none;
+    text-align: center;
+}
+.controls input[type="number"]:focus {
+    border-color: #1d4ed8;
+    box-shadow: 0 0 0 2px rgba(29,78,216,0.15);
+}
 @media (max-width: 768px) {
     .navbar { flex-wrap: wrap; height: auto; padding: 0.5rem 1rem; }
     .nav-search { width: 100%; margin: 0.5rem 0 0 0; }
     .nav-search input { flex: 1; width: auto; }
+    .controls { gap: 6px; padding: 0.5rem; }
+    .ctrl-sep { display: none; }
+    .fbtn { padding: 4px 10px; font-size: 11px; }
 }
 
 /* ===== 容器 ===== */

@@ -146,15 +146,17 @@ class HTMLGenerator:
                 lines.append(f'<div style="background:rgba(255,215,0,0.05);border:1px solid rgba(255,215,0,0.2);border-radius:8px;padding:12px;"><h4 style="color:#ffd700;margin:0 0 8px 0;">{label}</h4><p style="margin:4px 0;color:#ccc;font-size:0.9em;">自選覆蓋: {stats["count"]} 檔</p><p style="margin:4px 0;color:#ccc;font-size:0.9em;">大戶%: {stats["min"]:.1f}% ~ {stats["max"]:.1f}% (avg {avg:.1f}%)</p></div>')
         lines.append('</div></div>')
 
-        # 大戶排名
-        lines.append('<div class="card"><h2>👑 大戶持股排名 (400張以上)</h2><div class="controls"><label>顯示前 <input type="number" id="rankLimit" value="50" min="10" max="200" onchange="updateRank()"> 名</label><label>最小持股% <input type="number" id="minPct" value="0" min="0" max="100" step="0.1" onchange="updateRank()"></label></div><div class="table-responsive"><table class="data-table" id="bigHolderTable"><thead><tr><th>排名</th><th>代號</th><th>名稱</th><th>大戶%</th><th>週增減%</th><th>收盤價</th><th>漲跌%</th></tr></thead><tbody>')
-        for i, s in enumerate(top_big, 1):
+        # 大戶排名 (全部股票，JS 依門檻篩選)
+        all_big = big_holder_rank
+        lines.append('<div class="card"><h2>👑 大戶持股排名</h2><div class="controls"><label>顯示前 <input type="number" id="rankLimit" value="50" min="10" max="200" onchange="updateRank()"> 名</label><label>最小持股% <input type="number" id="minPct" value="0" min="0" max="100" step="0.1" onchange="updateRank()"></label><span class="ctrl-sep"></span><label>門檻</label><button class="fbtn active" id="th-all" onclick="setThreshold(\'all\',this)">全部</button><button class="fbtn" id="th-200" onclick="setThreshold(\'200\',this)">≥200張</button><button class="fbtn" id="th-400" onclick="setThreshold(\'400\',this)">≥400張</button><button class="fbtn" id="th-1000" onclick="setThreshold(\'1000\',this)">≥1000張</button></div><div class="table-responsive"><table class="data-table" id="bigHolderTable"><thead><tr><th>排名</th><th>代號</th><th>名稱</th><th>大戶%</th><th>週增減%</th><th>收盤價</th><th>漲跌%</th><th>門檻</th></tr></thead><tbody>')
+        for i, s in enumerate(all_big, 1):
             big_holder_pct = s.get("big_holder_pct") if s.get("big_holder_pct") is not None else 0.0
             big_holder_change = s.get("big_holder_change") if s.get("big_holder_change") is not None else 0.0
             close = s.get("close") if s.get("close") is not None else 0.0
             change_pct = s.get("change_pct") if s.get("change_pct") is not None else 0.0
+            th = s.get("big_holder_threshold", "") or "—"
             cc = "up" if big_holder_change>0 else "down" if big_holder_change<0 else ""
-            lines.append(f'<tr data-pct="{big_holder_pct}"><td>{i}</td><td><strong>{s.get("stock_id","-")}</strong></td><td>{s.get("stock_name","-")}</td><td class="highlight">{big_holder_pct:.2f}%</td><td class="{cc}">{big_holder_change:+.2f}%</td><td>{close:.2f}</td><td class="{"up" if change_pct>0 else "down"}">{change_pct:+.2f}%</td></tr>')
+            lines.append(f'<tr data-pct="{big_holder_pct}" data-threshold="{th}"><td>{i}</td><td><strong>{s.get("stock_id","-")}</strong></td><td>{s.get("stock_name","-")}</td><td class="highlight">{big_holder_pct:.2f}%</td><td class="{cc}">{big_holder_change:+.2f}%</td><td>{close:.2f}</td><td class="{"up" if change_pct>0 else "down"}">{change_pct:+.2f}%</td><td>≥{th}張</td></tr>')
         lines.append('</tbody></table></div></div>')
 
         # === Norway 數據圖表 ===
@@ -218,7 +220,7 @@ class HTMLGenerator:
         lines.append(f'const scatterData = {sd};')
         lines.append('const ctx = document.getElementById("scatterChart").getContext("2d");')
         lines.append('new Chart(ctx, {type:"scatter",data:{datasets:[{label:"個股籌碼分布",data:scatterData.map(d=>({x:d.x,y:d.y})),backgroundColor:scatterData.map(d=>d.y>0?"rgba(46,204,113,0.6)":"rgba(231,76,60,0.6)"),borderColor:scatterData.map(d=>d.y>0?"#27ae60":"#c0392b"),borderWidth:1,pointRadius:6,pointHoverRadius:10}]},options:{responsive:true,maintainAspectRatio:false,plugins:{tooltip:{callbacks:{label:function(c){const d=scatterData[c.dataIndex];return d.stock_id+" "+d.stock_name+": 大戶"+d.x.toFixed(2)+"%,週增減"+d.y.toFixed(2)+"%";}}}},scales:{x:{title:{display:true,text:"大戶持股 %"}},y:{title:{display:true,text:"本週增減 %"}}},onClick:(e,elements)=>{if(elements.length>0){const idx=elements[0].index;window.location.href="stock_"+scatterData[idx].stock_id+".html";}}}});')
-        lines.append('function updateRank(){const limit=parseInt(document.getElementById("rankLimit").value)||50;const minPct=parseFloat(document.getElementById("minPct").value)||0;const rows=document.querySelectorAll("#bigHolderTable tbody tr");rows.forEach((row,idx)=>{const pct=parseFloat(row.dataset.pct);row.style.display=(idx<limit&&pct>=minPct)?"":"none";});}')
+        lines.append('function updateRank(){const limit=parseInt(document.getElementById("rankLimit").value)||200;const minPct=parseFloat(document.getElementById("minPct").value)||0;const th=document.getElementById("th-all").classList.contains("active")?"all":document.getElementById("th-200").classList.contains("active")?"200":document.getElementById("th-400").classList.contains("active")?"400":document.getElementById("th-1000").classList.contains("active")?"1000":"all";const rows=document.querySelectorAll("#bigHolderTable tbody tr");let shown=0;rows.forEach((row)=>{const pct=parseFloat(row.dataset.pct);const rowTh=row.dataset.threshold||"";const thOk=th==="all"||rowTh===th;const show=shown<limit&&pct>=minPct&&thOk;if(show)shown++;row.style.display=show?"":"none";});}function setThreshold(v,btn){["th-all","th-200","th-400","th-1000"].forEach(id=>document.getElementById(id).classList.remove("active"));btn.classList.add("active");updateRank();}')
         lines.append('</script>')
         lines.append('</body></html>')
 
