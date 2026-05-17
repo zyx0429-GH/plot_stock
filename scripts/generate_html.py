@@ -114,6 +114,44 @@ class HTMLGenerator:
             lines.append(f'<tr onclick="location.href=\'stock_{s.get("stock_id","-")}.html\'" class="clickable"><td><strong>{s.get("stock_id","-")}</strong></td><td>{s.get("stock_name","-")}</td><td>{close:.2f}</td><td class="{"up" if change_pct>0 else "down"}">{change_pct:+.2f}%</td><td class="buy">{foreign_net:,}</td><td>{big_holder_pct:.2f}%</td><td class="{tc}">{trend}</td><td><span class="score">{score}</span></td></tr>')
         lines.append('</tbody></table></div></div>')
 
+        # 外資買超時間圖表 — Top 5 近 20 日淨買超趨勢
+        if foreign_buy:
+            top5_foreign = foreign_buy[:5]
+            foreign_datasets = []
+            shared_dates = None
+            for s in top5_foreign:
+                sid = s.get("stock_id")
+                raw = self.raw_data.get(sid, {})
+                fd = raw.get("foreign", [])
+                if not fd:
+                    continue
+                last20 = fd[-20:]
+                dates = [f["date"][:10] for f in last20]
+                nets = []
+                for f in last20:
+                    buy = float(f.get("buy", 0)) if f.get("buy") else 0
+                    sell = float(f.get("sell", 0)) if f.get("sell") else 0
+                    nets.append(buy - sell)
+                if shared_dates is None:
+                    shared_dates = dates
+                foreign_datasets.append({
+                    "label": f"{sid} {s.get('stock_name', '')}",
+                    "data": nets,
+                    "borderColor": None,  # assigned by index later
+                    "backgroundColor": "transparent",
+                    "fill": False,
+                    "tension": 0.3,
+                    "pointRadius": 3,
+                    "borderWidth": 2
+                })
+            if shared_dates and foreign_datasets:
+                colors = ["#1d4ed8", "#f97316", "#10b981", "#8b5cf6", "#ef4444"]
+                for i, ds in enumerate(foreign_datasets):
+                    ds["borderColor"] = colors[i % len(colors)]
+                fjson = json.dumps(foreign_datasets, ensure_ascii=False)
+                lines.append('<div class="card"><h2>🌍 外資買超 — 時間趨勢圖 (Top 5)</h2><p class="chart-desc">近 20 個交易日外資淨買超張數趨勢</p><div class="chart-container"><canvas id="foreignTrendChart"></canvas></div></div>')
+                lines.append(f'<script>new Chart(document.getElementById("foreignTrendChart").getContext("2d"),{{type:"line",data:{{labels:{json.dumps(shared_dates)},datasets:{fjson}}},options:{{responsive:true,maintainAspectRatio:false,plugins:{{legend:{{display:true,labels:{{usePointStyle:true,boxWidth:8}}}}}},scales:{{x:{{grid:{{color:"rgba(0,0,0,0.05)"}},ticks:{{color:"#64748b",maxRotation:45}}}},y:{{grid:{{color:"rgba(0,0,0,0.05)"}},ticks:{{color:"#64748b"}},title:{{display:true,text:"淨買超 (張)",color:"#64748b"}}}}}}}}}});</script>')
+
         # 多頭排列
         lines.append('<div class="card"><h2>📈 多頭排列清單</h2><div class="table-responsive"><table class="data-table"><thead><tr><th>代號</th><th>名稱</th><th>收盤價</th><th>20MA</th><th>60MA</th><th>RSI</th><th>大戶%</th><th>外資連買</th></tr></thead><tbody>')
         for s in bull_stocks[:30]:
@@ -156,7 +194,8 @@ class HTMLGenerator:
             change_pct = s.get("change_pct") if s.get("change_pct") is not None else 0.0
             th = s.get("big_holder_threshold", "") or "—"
             cc = "up" if big_holder_change>0 else "down" if big_holder_change<0 else ""
-            lines.append(f'<tr data-pct="{big_holder_pct}" data-threshold="{th}"><td>{i}</td><td><strong>{s.get("stock_id","-")}</strong></td><td>{s.get("stock_name","-")}</td><td class="highlight">{big_holder_pct:.2f}%</td><td class="{cc}">{big_holder_change:+.2f}%</td><td>{close:.2f}</td><td class="{"up" if change_pct>0 else "down"}">{change_pct:+.2f}%</td><td>≥{th}張</td></tr>')
+            sid = s.get("stock_id","-")
+            lines.append(f'<tr data-pct="{big_holder_pct}" data-threshold="{th}" onclick="location.href=\'stock_{sid}.html\'" class="clickable"><td>{i}</td><td><strong>{sid}</strong></td><td>{s.get("stock_name","-")}</td><td class="highlight">{big_holder_pct:.2f}%</td><td class="{cc}">{big_holder_change:+.2f}%</td><td>{close:.2f}</td><td class="{"up" if change_pct>0 else "down"}">{change_pct:+.2f}%</td><td>≥{th}張</td></tr>')
         lines.append('</tbody></table></div></div>')
 
         # === Norway 數據圖表 ===
