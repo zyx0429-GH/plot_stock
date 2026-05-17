@@ -43,7 +43,20 @@ class HTMLGenerator:
         for href, text in items:
             cls = "active" if active in href else ""
             html += f'<a href="{href}" class="{cls}">{text}</a>'
-        html += '</div></nav>'
+        html += '</div>'
+        # === 全局搜尋框 ===
+        stock_map = {}
+        for s in self.data.get("screened", []):
+            sid = s.get("stock_id")
+            sname = s.get("stock_name")
+            if sid:
+                stock_map[sid] = sname or ""
+        html += f'<div class="nav-search"><input type="text" id="globalSearch" list="stockList" placeholder="🔍 輸入代號或名稱查找個股…" onkeydown="if(event.key===\'Enter\')goStock()" onchange="goStock()"><datalist id="stockList">'
+        for sid, sname in stock_map.items():
+            html += f'<option value="{sid} {sname}"></option>'
+        html += '</datalist><button onclick="goStock()">前往</button></div>'
+        html += '<script>function goStock(){const v=document.getElementById("globalSearch").value.trim();if(!v)return;const m=v.match(/^\\d+/);const id=m?m[0]:v;location.href="stock_"+id+".html";}</script>'
+        html += '</nav>'
         return html
 
     def _footer(self):
