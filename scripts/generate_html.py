@@ -421,6 +421,18 @@ class HTMLGenerator:
                 lines.append(f'options:{{responsive:true,maintainAspectRatio:false,plugins:{{annotation:{{annotations:{{line1:{{type:"line",yMin:0,yMax:0,borderColor:"rgba(148,163,184,0.5)",borderWidth:1,borderDash:[5,5]}}}}}}}},scales:{{y:{{title:{{display:true,text:"週增減 %"}}}}}}}}')
                 lines.append(f'}});')
                 lines.append(f'</script>')
+
+                # === 大戶各周變化數據明細表 ===
+                lines.append('<div class="card"><h2>📋 大戶各周變化數據明細</h2><p class="chart-desc">Norway.twsthr.info — 每週集保結算日大戶持股比例變化</p><div class="table-responsive"><table class="data-table"><thead><tr><th>週別</th><th>結算日期</th><th>大戶持有率變化</th><th>方向</th><th>累計變化</th></tr></thead><tbody>')
+                cumulative = 0.0
+                for idx, (wd, wv) in enumerate(zip(week_dates, week_values), 1):
+                    cumulative += wv
+                    direction_icon = "📈" if wv > 0 else "📉" if wv < 0 else "➡️"
+                    direction_class = "up" if wv > 0 else "down" if wv < 0 else "neutral"
+                    cum_class = "up" if cumulative > 0 else "down" if cumulative < 0 else "neutral"
+                    lines.append(f'<tr><td>第 {idx} 週</td><td>{wd}</td><td class="{direction_class}">{direction_icon} {wv:+.2f}%</td><td>{"增持" if wv > 0 else "減持" if wv < 0 else "持平"}</td><td class="{cum_class}">{cumulative:+.2f}%</td></tr>')
+                lines.append(f'<tr style="font-weight:700;background:rgba(255,193,7,0.05);"><td colspan="2">總計（{len(week_dates)} 週）</td><td colspan="2">—</td><td class="{"up" if week_total > 0 else "down" if week_total < 0 else "neutral"}">{week_total:+.2f}%</td></tr>')
+                lines.append('</tbody></table></div></div>')
         
         lines.append('</div>')
         lines.append(self._footer())
@@ -487,6 +499,37 @@ class HTMLGenerator:
                 lines.append(f'document.getElementById("foreignChartWrap").innerHTML = \'<div style="text-align:center;padding:2rem;"><p style="font-size:1.2rem;color:#1e293b;font-weight:600;">外資 {foreign_dates[0] if foreign_dates else ""} 淨買超</p><p style="font-size:2.5rem;color:{color};font-weight:700;margin:0.5rem 0;">{sign}{val:,.0f} 張</p><p style="color:#64748b;font-size:0.9rem;">{"✅ 買超" if val > 0 else "❌ 賣超"}</p></div>\';')
             else:
                 lines.append('document.getElementById("foreignChartWrap").innerHTML = \'<p style="text-align:center;color:#64748b;padding:2rem;">暫無外資買賣超數據</p>\';')
+
+        # === MACD 計算與圖表 (12,26,9) ===
+        def calc_ema(data, period):
+            ema = []
+            multiplier = 2 / (period + 1)
+            for i, val in enumerate(data):
+                if i == 0:
+                    ema.append(val)
+                else:
+                    ema.append(val * multiplier + ema[i-1] * (1 - multiplier))
+            return ema
+        if len(price_closes) >= 35:
+            ema12 = calc_ema(price_closes, 12)
+            ema26 = calc_ema(price_closes, 26)
+            macd_line = [round(e12 - e26, 4) for e12, e26 in zip(ema12, ema26)]
+            signal_line = calc_ema(macd_line, 9)
+            histogram = [round(m - s, 4) for m, s in zip(macd_line, signal_line)]
+            macd_labels = price_labels[-len(macd_line):] if len(price_labels) >= len(macd_line) else price_labels
+            lines.append(f'new Chart(document.getElementById("macdChart").getContext("2d"),{{')
+            lines.append(f'type:"bar",')
+            lines.append(f'data:{{')
+            lines.append(f'labels:{json.dumps(macd_labels)},')
+            lines.append(f'datasets:[')
+            lines.append(f'{{type:"line",label:"MACD",data:{json.dumps(macd_line)},borderColor:"#1d4ed8",backgroundColor:"transparent",fill:false,pointRadius:0,borderWidth:1.5,tension:0.1}},')
+            lines.append(f'{{type:"line",label:"Signal",data:{json.dumps(signal_line)},borderColor:"#f97316",backgroundColor:"transparent",fill:false,pointRadius:0,borderWidth:1.5,tension:0.1}},')
+            lines.append(f'{{label:"Histogram",data:{json.dumps(histogram)},backgroundColor:{json.dumps(histogram)}.map(v=>v>=0?"rgba(22,163,74,0.5)":"rgba(220,38,38,0.5)"),borderColor:{json.dumps(histogram)}.map(v=>v>=0?"#16a34a":"#dc2626"),borderWidth:1}}')
+            lines.append(f']')
+            lines.append(f'}},')
+            lines.append(f'options:{{responsive:true,maintainAspectRatio:false,plugins:{{legend:{{display:true,labels:{{usePointStyle:true,boxWidth:8}}}}}},scales:{{x:{{grid:{{color:"rgba(0,0,0,0.05)"}},ticks:{{color:"#64748b",maxRotation:45}}}},y:{{grid:{{color:"rgba(0,0,0,0.05)"}},ticks:{{color:"#64748b"}},title:{{display:true,text:"MACD",color:"#64748b"}}}}}}}}}});')
+        else:
+            lines.append('document.getElementById("macdChart").parentElement.innerHTML = \'<p style="text-align:center;color:#64748b;padding:2rem;">歷史價格數據不足（需 ≥35 筆），無法計算 MACD</p>\';')
         lines.append('</script>')
         lines.append('</body></html>')
 
