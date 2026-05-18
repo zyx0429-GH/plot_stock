@@ -276,7 +276,7 @@ class HTMLGenerator:
         # === 策略回測區（彈出模態框）===
         lines.append('<div id="backtestModal" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.7);z-index:9998;align-items:center;justify-content:center;padding:20px;">')
         lines.append('<div style="background:#0f172a;border:1px solid #334155;border-radius:12px;max-width:700px;width:100%;max-height:90vh;overflow-y:auto;padding:25px;">')
-        lines.append('<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;"><h2 style="color:#38bdf8;margin:0;">🧪 策略回測</h2><button onclick="document.getElementById('backtestModal').style.display='none'" style="background:none;border:none;color:#94a3b8;font-size:20px;cursor:pointer;">✕</button></div>')
+        lines.append('<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;"><h2 style="color:#38bdf8;margin:0;">🧪 策略回測</h2><button onclick="document.getElementById(\'backtestModal\').style.display=\'none\'" style="background:none;border:none;color:#94a3b8;font-size:20px;cursor:pointer;">✕</button></div>')
         lines.append('<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-bottom:20px;">')
         lines.append('<div><label style="color:#94a3b8;font-size:12px;">大戶持股% ≥</label><input type="number" id="ruleMinBh" value="0" min="0" max="100" step="0.1" style="width:100%;padding:8px;margin-top:4px;background:#1e293b;border:1px solid #334155;border-radius:6px;color:#e2e8f0;"></div>')
         lines.append('<div><label style="color:#94a3b8;font-size:12px;">最小漲跌% ≥</label><input type="number" id="ruleMinChange" value="-10" step="0.1" style="width:100%;padding:8px;margin-top:4px;background:#1e293b;border:1px solid #334155;border-radius:6px;color:#e2e8f0;"></div>')
@@ -289,7 +289,7 @@ class HTMLGenerator:
         lines.append('</div></div>')
 
         # 浮動回測按鈕
-        lines.append('<button onclick="document.getElementById('backtestModal').style.display='flex'" style="position:fixed;bottom:90px;right:30px;width:50px;height:50px;background:#3b82f6;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:18px;z-index:1000;box-shadow:0 4px 12px rgba(0,0,0,0.3);border:none;">🧪</button>')
+        lines.append('<button onclick="document.getElementById(\'backtestModal\').style.display=\'flex\'" style="position:fixed;bottom:90px;right:30px;width:50px;height:50px;background:#3b82f6;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:18px;z-index:1000;box-shadow:0 4px 12px rgba(0,0,0,0.3);border:none;">🧪</button>')
 
         # JS
         sd = json.dumps(scatter_data, ensure_ascii=False)
