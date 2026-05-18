@@ -35,6 +35,7 @@ class HTMLGenerator:
 <link rel="stylesheet" href="css/style.css">
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
 <script src="js/app.js" defer></script>
+<script src="js/extra_features.js" defer></script>
 </head>"""
 
     def _nav(self, active=""):
@@ -55,6 +56,7 @@ class HTMLGenerator:
         for sid, sname in stock_map.items():
             html += f'<option value="{sid} {sname}"></option>'
         html += '</datalist><button onclick="goStock()">前往</button></div>'
+        html += '<button id="csvExportBtn" style="margin-left:12px;padding:6px 14px;background:#334155;color:#94a3b8;border:none;border-radius:6px;cursor:pointer;font-size:13px;">📥 匯出CSV</button>'
         html += '<script>function goStock(){const v=document.getElementById("globalSearch").value.trim();if(!v)return;const m=v.match(/^\\d+/);const id=m?m[0]:v;location.href="stock_"+id+".html";}</script>'
         html += '</nav>'
         return html
@@ -80,6 +82,20 @@ class HTMLGenerator:
         lines.append('<body>')
         lines.append(self._nav("index"))
         lines.append(f'<div class="container"><div class="header-info"><h1>📊 籌碼監控儀表板</h1><p class="subtitle">共 {len(screened)} 支個股｜產出 {self.data.get("update_time","")}</p></div>')
+
+        # === 市場情緒指標儀表板 ===
+        lines.append('<div style="max-width:1400px;margin:10px auto;padding:0 20px;"><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:15px;margin-bottom:15px;">')
+        lines.append('<div style="background:rgba(30,41,59,0.6);border:1px solid #334155;border-radius:8px;padding:15px;text-align:center;"><div style="color:#94a3b8;font-size:12px;margin-bottom:5px;">🎯 市場情緒</div><div id="marketSentiment" style="font-size:1.3em;font-weight:bold;color:#fbbf24;">計算中...</div></div>')
+        lines.append('<div style="background:rgba(30,41,59,0.6);border:1px solid #334155;border-radius:8px;padding:15px;text-align:center;"><div style="color:#94a3b8;font-size:12px;margin-bottom:5px;">📈 上漲家數</div><div id="advancingCount" style="font-size:1.3em;font-weight:bold;color:#16a34a;">--</div></div>')
+        lines.append('<div style="background:rgba(30,41,59,0.6);border:1px solid #334155;border-radius:8px;padding:15px;text-align:center;"><div style="color:#94a3b8;font-size:12px;margin-bottom:5px;">📉 下跌家數</div><div id="decliningCount" style="font-size:1.3em;font-weight:bold;color:#dc2626;">--</div></div>')
+        lines.append('<div style="background:rgba(30,41,59,0.6);border:1px solid #334155;border-radius:8px;padding:15px;text-align:center;"><div style="color:#94a3b8;font-size:12px;margin-bottom:5px;">➡️ 平盤家數</div><div id="flatCount" style="font-size:1.3em;font-weight:bold;color:#94a3b8;">--</div></div>')
+        lines.append('</div></div>')
+
+        # === 族群輪動儀表板 ===
+        lines.append('<div style="max-width:1400px;margin:20px auto;padding:0 20px;"><div style="background:rgba(30,41,59,0.6);border:1px solid #334155;border-radius:12px;padding:20px;margin-bottom:20px;">')
+        lines.append('<h2 style="color:#38bdf8;font-size:1.3em;margin:0 0 15px 0;border-bottom:1px solid #334155;padding-bottom:10px;">🔄 族群輪動儀表板 <span style="font-size:12px;color:#94a3b8;font-weight:normal;">(按住 Shift + 點擊股票查看詳情)</span></h2>')
+        lines.append('<div id="sectorRotationPanel" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:15px;"><div style="color:#64748b;text-align:center;padding:20px;">載入中...</div></div>')
+        lines.append('</div></div>')
 
         # 散點圖
         lines.append('<div class="card"><h2>🔥 大戶持股% vs 週增減</h2><div class="controls"><label>顯示</label><button class="fbtn active" id="sc-all" onclick="setScatter(\'all\',this)">全部</button><button class="fbtn" id="sc-up" onclick="setScatter(\'up\',this)">📈 增加</button><button class="fbtn" id="sc-down" onclick="setScatter(\'down\',this)">📉 減少</button></div><p class="chart-desc">X:大戶持股% Y:週增減% 點擊進入個股</p><div class="chart-container"><canvas id="scatterChart"></canvas></div></div>')
@@ -256,6 +272,24 @@ class HTMLGenerator:
         
         lines.append('</div>')
         lines.append(self._footer())
+
+        # === 策略回測區（彈出模態框）===
+        lines.append('<div id="backtestModal" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.7);z-index:9998;align-items:center;justify-content:center;padding:20px;">')
+        lines.append('<div style="background:#0f172a;border:1px solid #334155;border-radius:12px;max-width:700px;width:100%;max-height:90vh;overflow-y:auto;padding:25px;">')
+        lines.append('<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;"><h2 style="color:#38bdf8;margin:0;">🧪 策略回測</h2><button onclick="document.getElementById('backtestModal').style.display='none'" style="background:none;border:none;color:#94a3b8;font-size:20px;cursor:pointer;">✕</button></div>')
+        lines.append('<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-bottom:20px;">')
+        lines.append('<div><label style="color:#94a3b8;font-size:12px;">大戶持股% ≥</label><input type="number" id="ruleMinBh" value="0" min="0" max="100" step="0.1" style="width:100%;padding:8px;margin-top:4px;background:#1e293b;border:1px solid #334155;border-radius:6px;color:#e2e8f0;"></div>')
+        lines.append('<div><label style="color:#94a3b8;font-size:12px;">最小漲跌% ≥</label><input type="number" id="ruleMinChange" value="-10" step="0.1" style="width:100%;padding:8px;margin-top:4px;background:#1e293b;border:1px solid #334155;border-radius:6px;color:#e2e8f0;"></div>')
+        lines.append('<div><label style="color:#94a3b8;font-size:12px;">最大漲跌% ≤</label><input type="number" id="ruleMaxChange" value="10" step="0.1" style="width:100%;padding:8px;margin-top:4px;background:#1e293b;border:1px solid #334155;border-radius:6px;color:#e2e8f0;"></div>')
+        lines.append('<div><label style="color:#94a3b8;font-size:12px;display:flex;align-items:center;gap:5px;"><input type="checkbox" id="ruleBullOnly" style="accent-color:#3b82f6;"> 僅多頭排列</label></div>')
+        lines.append('</div>')
+        lines.append('<button id="runBacktestBtn" style="width:100%;padding:12px;background:#3b82f6;color:#fff;border:none;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;">▶️ 執行回測</button>')
+        lines.append('<div id="backtestResult" style="margin-top:20px;"></div>')
+        lines.append('<p style="color:#64748b;font-size:12px;margin-top:15px;text-align:center;">⚠️ 回測以「當日漲跌%」模擬單日持有報酬，僅供選股條件驗證參考</p>')
+        lines.append('</div></div>')
+
+        # 浮動回測按鈕
+        lines.append('<button onclick="document.getElementById('backtestModal').style.display='flex'" style="position:fixed;bottom:90px;right:30px;width:50px;height:50px;background:#3b82f6;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:18px;z-index:1000;box-shadow:0 4px 12px rgba(0,0,0,0.3);border:none;">🧪</button>')
 
         # JS
         sd = json.dumps(scatter_data, ensure_ascii=False)
