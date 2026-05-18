@@ -391,7 +391,7 @@
         });
     }
 
-    // ===================== 7. 表格行點擊攔截 =====================
+    // ===================== 7. 表格行點擊攔截 + 搜尋即時過濾 =====================
     function initTableClick() {
         document.querySelectorAll('.data-table tbody tr.clickable').forEach(row => {
             // 保留原有 onclick，但加入 shift+點擊 彈出詳情
@@ -405,6 +405,41 @@
         });
     }
 
+    // 即時過濾所有表格
+    function initLiveFilter() {
+        const search = document.getElementById('globalSearch');
+        if (!search) return;
+        search.addEventListener('input', e => {
+            const term = e.target.value.trim().toLowerCase();
+            const tables = document.querySelectorAll('.data-table tbody');
+            tables.forEach(tb => {
+                let visible = 0;
+                tb.querySelectorAll('tr').forEach(tr => {
+                    const text = tr.textContent.toLowerCase();
+                    const show = !term || text.includes(term);
+                    tr.style.display = show ? '' : 'none';
+                    if (show) visible++;
+                });
+            });
+            // 顯示統計
+            let hint = document.getElementById('filterHint');
+            if (!hint) {
+                hint = document.createElement('div');
+                hint.id = 'filterHint';
+                hint.style.cssText = 'text-align:center;color:#94a3b8;font-size:13px;margin:8px 0;';
+                const firstCard = document.querySelector('.card');
+                if (firstCard) firstCard.before(hint);
+            }
+            if (term) {
+                const allRows = document.querySelectorAll('.data-table tbody tr');
+                const visibleRows = document.querySelectorAll('.data-table tbody tr:not([style*="none"])');
+                hint.textContent = `🔍 「${term}」找到 ${visibleRows.length} / ${allRows.length} 筆結果`;
+            } else {
+                hint.textContent = '';
+            }
+        });
+    }
+
     // ===================== 8. 初始化入口 =====================
     function init() {
         // 等待頁面資料載入
@@ -414,6 +449,7 @@
             initScrollTop();
             initKeyboardShortcuts();
             initTableClick();
+            initLiveFilter();
 
             // 綁定回測按鈕
             const runBtn = $('runBacktestBtn');
