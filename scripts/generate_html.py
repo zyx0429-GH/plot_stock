@@ -345,6 +345,44 @@ class HTMLGenerator:
         lines.append(self._nav(""))
         lines.append(f'<div class="container"><div class="stock-header"><h1>{stock_id} {info.get("stock_name","")}</h1><div class="stock-price"><span class="price">{info.get("close",0):.2f}</span><span class="change {"up" if info.get("change_pct",0)>0 else "down"}">{info.get("change_pct",0):+.2f}%</span></div></div>')
         lines.append('<div class="metrics-grid">')
+
+        # === 變數提取（供 helper function 與模板使用） ===
+        foreign_consecutive = screened_item.get("foreign_consecutive_buy") if screened_item else False
+        foreign_net = screened_item.get("foreign_net") if screened_item and screened_item.get("foreign_net") is not None else 0
+        big_holder_pct = screened_item.get("big_holder_pct") if screened_item and screened_item.get("big_holder_pct") is not None else None
+        big_holder_change = screened_item.get("big_holder_change") if screened_item and screened_item.get("big_holder_change") is not None else None
+        bh_pct_str = f"{big_holder_pct:.2f}" if big_holder_pct is not None else "-"
+        bh_chg_str = f"{big_holder_change:+.2f}" if big_holder_change is not None else "-"
+        open_val = info.get("open", 0) if info else 0
+        change_val = info.get("change", 0) if info else 0
+        change_color = "#16a34a" if change_val >= 0 else "#dc2626"
+        change_sign = "+" if change_val >= 0 else ""
+        bias20 = tech.get("bias20", "-")
+        bias60 = tech.get("bias60", "-")
+        dual_bear = tech.get("dual_bear", False)
+
+        def _fmt_bias(val):
+            if isinstance(val, (int, float)):
+                return f"{val:+.2f}%"
+            return str(val) + ("%" if val != "-" else "")
+
+        def _bias_color(val):
+            if isinstance(val, (int, float)):
+                return "#16a34a" if val >= 0 else "#dc2626"
+            return "#64748b"
+
+        bias20_str = _fmt_bias(bias20)
+        bias60_str = _fmt_bias(bias60)
+        bias20_color = _bias_color(bias20)
+        bias60_color = _bias_color(bias60)
+        dual_bear_badge = f'<span style="background:#dc2626;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.75rem;margin-left:8px;">⚠️ 双破线</span>' if dual_bear else ''
+        shareholder_list = data.get("shareholder", [])
+        conc = shareholder_list[0].get("concentration", 0) if shareholder_list else 0
+        total_count = shareholder_list[0].get("total_count", 0) if shareholder_list else 0
+        big_holder_count = shareholder_list[0].get("big_holder_count", 0) if shareholder_list else 0
+        conc_color = "#16a34a" if conc >= 50 else "#f97316" if conc >= 30 else "#dc2626"
+        # === 變數提取結束 ===
+
         # === 訊號說明輔助函數 ===
         def _tech_signal(tech):
             trend = tech.get("trend", "-")
