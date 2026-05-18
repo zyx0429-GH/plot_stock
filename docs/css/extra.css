@@ -1,0 +1,39 @@
+/* Additional styles for new features */
+
+/* Navigation link hover */
+#mainNav a:hover {
+    color: #38bdf8 !important;
+    background: rgba(56,189,248,0.15) !important;
+}
+
+/* Signal column styles */
+.tag-dual-strong { background: #dc262630; color: #dc2626; border: 1px solid #dc262660; }
+.tag-chip { background: #16a34a30; color: #16a34a; border: 1px solid #16a34a60; }
+.tag-tech { background: #38bdf830; color: #38bdf8; border: 1px solid #38bdf860; }
+.tag-overbought { background: #f59e0b30; color: #f59e0b; border: 1px solid #f59e0b60; }
+.tag-dumping { background: #dc262630; color: #dc2626; border: 1px solid #dc262660; }
+.tag-good { background: #16a34a30; color: #16a34a; border: 1px solid #16a34a60; }
+.tag-neutral { background: #64748b30; color: #64748b; border: 1px solid #64748b60; }
+.tag-risk { background: #dc262630; color: #dc2626; border: 1px solid #dc262660; }
+
+/* Search input focus */
+#stockSearch:focus {
+    border-color: #38bdf8 !important;
+    box-shadow: 0 0 0 3px rgba(56,189,248,0.2);
+}
+
+/* Plotly chart container */
+.js-plotly-plot .plotly .modebar {
+    left: 50% !important;
+    transform: translateX(-50%);
+}
+
+/* K-line modal */
+#klineModal {
+    animation: fadeIn 0.2s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
