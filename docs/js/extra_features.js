@@ -14,21 +14,56 @@
     let _allStocks = null;
     function getAllStocks() {
         if (_allStocks) return _allStocks;
-        // 從頁面上所有表格抓取股票資料
-        const rows = document.querySelectorAll('.data-table tbody tr.clickable');
+        const rows = document.querySelectorAll('.data-table tbody tr.clickable, #bigHolderTable tbody tr');
+        const seen = new Set();
         _allStocks = Array.from(rows).map(tr => {
             const tds = tr.querySelectorAll('td');
             if (tds.length < 4) return null;
             const code = tds[1]?.textContent?.trim() || '';
             const name = tds[2]?.textContent?.trim() || '';
-            const close = parseFloat(tds[3]?.textContent) || 0;
+            if (!code || !/^\d{4,}$/.test(code) || seen.has(code)) return null;
+            seen.add(code);
+
+            const close = parseFloat(tds[3]?.textContent?.replace(/,/g,'')) || 0;
             const changePct = parseFloat(tds[4]?.textContent) || 0;
-            // 嘗試從 inline dataset 或 pattern match 取得其他欄位
-            const bhMatch = tr.textContent.match(/(\d+\.?\d*)%/g);
-            const bhPct = bhMatch ? parseFloat(bhMatch[0]) : 0;
+
+            let bhPct = 0;
+            if (tr.dataset.pct) {
+                bhPct = parseFloat(tr.dataset.pct);
+            } else {
+                const text = tr.textContent;
+                // 嘗試從「大戶%」欄位精確匹配
+                const bhMatch = text.match(/大戶%?[\s:]*([\d.]+)%/);
+                if (bhMatch) bhPct = parseFloat(bhMatch[1]);
+            }
+
+            const text = tr.textContent;
+            let wowChange = 0;
+            const allPct = text.match(/([+-]?[\d.]+)%/g);
+            if (allPct && allPct.length >= 2) {
+                for (const p of allPct) {
+                    const v = parseFloat(p);
+                    if (!isNaN(v) && Math.abs(v) < 15 && Math.abs(v - bhPct) > 0.1 && Math.abs(v - changePct) > 0.1) {
+                        wowChange = v;
+                        break;
+                    }
+                }
+            }
+
+            let trend = '';
+            if (text.includes('多頭排列')) trend = '多頭排列';
+            else if (text.includes('空頭排列')) trend = '空頭排列';
+
+            let foreignBuy = text.includes('外資連買') || text.includes('✅');
+
+            let rsi = 0;
+            const rsiMatch = text.match(/RSI[:\s]*([\d.]+)/);
+            if (rsiMatch) rsi = parseFloat(rsiMatch[1]);
+
             return {
                 code, name, close, change_pct: changePct,
-                big_holder_pct: bhPct,
+                big_holder_pct: bhPct, wow_change: wowChange,
+                trend, foreign_buy: foreignBuy, rsi,
                 element: tr
             };
         }).filter(Boolean);
@@ -123,6 +158,87 @@
         return '其他';
     }
 
+    // 更細部嚴謹的評分函數
+    function calculateDetailedScore(stock) {
+        let score = 50; // 基礎分
+        const text = stock.element?.textContent || '';
+
+        // ===== 技術面（最高 30 分） =====
+        if (stock.trend === '多頭排列') {
+            score += 18;
+            // 額外加強：20MA > 60MA 的距離
+            const ma20Match = text.match(/(\d+\.?\d*)\s+\d+\.?\d*\s+\d+\.?\d*/);
+        } else if (stock.trend === '空頭排列') {
+            score -= 12;
+        }
+
+        if (stock.rsi > 0) {
+            if (stock.rsi >= 50 && stock.rsi < 70) score += 8;   // 健康動能區
+            else if (stock.rsi >= 40 && stock.rsi < 50) score += 4;
+            else if (stock.rsi >= 70 && stock.rsi < 80) score += 3; // 偏熱但仍可
+            else if (stock.rsi >= 80) score -= 5;                  // 過熱警示
+            else if (stock.rsi >= 30 && stock.rsi < 40) score += 2;
+            else if (stock.rsi < 30) score += 5;                   // 超賣反彈潛力
+        }
+
+        // ===== 籌碼面（最高 25 分） =====
+        const bh = stock.big_holder_pct;
+        if (bh >= 80) score += 15;
+        else if (bh >= 65) score += 12;
+        else if (bh >= 50) score += 8;
+        else if (bh >= 35) score += 4;
+        else if (bh >= 20) score += 1;
+        else if (bh > 0) score -= 2;  // 大戶極低，籌碼渙散
+
+        const wow = stock.wow_change;
+        if (Math.abs(wow) > 0.01) {
+            if (wow >= 5) score += 10;       // 大幅增持
+            else if (wow >= 3) score += 7;
+            else if (wow >= 1) score += 4;
+            else if (wow >= 0.3) score += 2;
+            else if (wow <= -5) score -= 8;  // 大幅減持
+            else if (wow <= -3) score -= 5;
+            else if (wow <= -1) score -= 3;
+            else if (wow < -0.3) score -= 1;
+        }
+
+        // ===== 法人面（最高 15 分） =====
+        if (stock.foreign_buy) score += 8;
+        if (text.includes('投信淨買')) {
+            const trustMatch = text.match(/投信淨買[^\d]*(\d{1,3}(?:,\d{3})*)/);
+            if (trustMatch) {
+                const trustVal = parseInt(trustMatch[1].replace(/,/g,''));
+                if (trustVal > 500000) score += 7;
+                else if (trustVal > 100000) score += 4;
+                else if (trustVal > 0) score += 2;
+            }
+        }
+        if (text.includes('外資淨買')) {
+            const foreignMatch = text.match(/外資淨買[^\d]*(\d{1,3}(?:,\d{3})*)/);
+            if (foreignMatch) {
+                const fVal = parseInt(foreignMatch[1].replace(/,/g,''));
+                if (fVal > 2000000) score += 5;
+                else if (fVal > 500000) score += 3;
+            }
+        }
+
+        // ===== 漲跌穩健度（最高 10 分，可負分） =====
+        const absChg = Math.abs(stock.change_pct);
+        if (absChg >= 7) score -= 6;        // 過度波動，追高危險
+        else if (absChg >= 5) score -= 3;
+        else if (absChg >= 3) score += 2;   // 溫和強勢
+        else if (absChg >= 1) score += 5;
+        else if (absChg < 1) score += 3;    // 低波動，穩健
+
+        // ===== 綜合加成/減成 =====
+        // 雙強認證：多頭 + 外資連買 + 大戶增倉
+        if (stock.trend === '多頭排列' && stock.foreign_buy && wow >= 1) score += 5;
+        // 三弱警訊：空頭 + 外資賣 + 大戶減持
+        if (stock.trend === '空頭排列' && !stock.foreign_buy && wow <= -1) score -= 5;
+
+        return clamp(Math.round(score), 0, 100);
+    }
+
     function renderSectorRotation() {
         const stocks = getAllStocks();
         const sectorData = {};
@@ -139,14 +255,20 @@
         if (!panel) return;
 
         const sorted = Object.entries(sectorData)
-            .map(([name, data]) => ({ name, avgChange: data.count ? data.totalChange / data.count : 0, count: data.count, upCount: data.upCount }))
+            .map(([name, data]) => ({ name, avgChange: data.count ? data.totalChange / data.count : 0, count: data.count, upCount: data.upCount, stocks: data.stocks }))
             .sort((a, b) => b.avgChange - a.avgChange);
 
         panel.innerHTML = sorted.map(s => {
             const color = s.avgChange >= 0 ? '#16a34a' : '#dc2626';
             const heat = s.avgChange > 2 ? '🔥🔥🔥' : s.avgChange > 0 ? '🔥' : '❄️';
-            return `<div style="background:#1e293b;border:1px solid #334155;border-radius:8px;padding:15px;">
-                <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+            const topScore = s.stocks.length ? Math.max(...s.stocks.map(x => calculateDetailedScore(x))) : 0;
+            const scoreLabel = topScore >= 80 ? 'A+' : topScore >= 65 ? 'A' : topScore >= 50 ? 'B' : topScore >= 35 ? 'C' : 'D';
+            const scoreColor = topScore >= 80 ? '#16a34a' : topScore >= 65 ? '#22c55e' : topScore >= 50 ? '#f59e0b' : topScore >= 35 ? '#f97316' : '#dc2626';
+            return `<div class="sector-card" data-sector="${s.name}" style="background:#1e293b;border:1px solid #334155;border-radius:8px;padding:15px;cursor:pointer;transition:all 0.2s;position:relative;"
+                onmouseenter="this.style.borderColor='#475569';this.style.transform='translateY(-2px)';this.style.boxShadow='0 4px 12px rgba(0,0,0,0.2)';"
+                onmouseleave="this.style.borderColor='#334155';this.style.transform='';this.style.boxShadow='';">
+                <div style="position:absolute;top:10px;right:12px;font-size:11px;font-weight:700;color:${scoreColor};background:${scoreColor}15;padding:2px 8px;border-radius:10px;border:1px solid ${scoreColor}30;">${scoreLabel}</div>
+                <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;padding-right:40px;">
                     <span style="font-weight:bold;color:#e2e8f0;font-size:14px;">${s.name}</span>
                     <span style="font-size:12px;">${heat}</span>
                 </div>
@@ -155,8 +277,107 @@
                     <div>股票數: ${s.count} 檔</div>
                     <div>上漲: ${s.upCount} 檔</div>
                 </div>
+                <div style="margin-top:8px;font-size:11px;color:#64748b;text-align:center;padding-top:8px;border-top:1px solid #334155;">
+                    👆 點擊查看個股詳情
+                </div>
             </div>`;
         }).join('');
+
+        // 綁定點擊事件
+        panel.querySelectorAll('.sector-card').forEach(card => {
+            card.addEventListener('click', () => {
+                const sector = card.dataset.sector;
+                const data = sorted.find(x => x.name === sector);
+                if (data) showSectorPopup(sector, data.stocks);
+            });
+        });
+    }
+
+    // 族群詳情彈窗
+    function showSectorPopup(sectorName, stocks) {
+        const modal = document.createElement('div');
+        modal.id = 'sectorPopupModal';
+        modal.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.7);z-index:9999;display:flex;align-items:center;justify-content:center;padding:20px;';
+
+        const sortedStocks = [...stocks].sort((a, b) => calculateDetailedScore(b) - calculateDetailedScore(a));
+
+        const rowsHtml = sortedStocks.map(s => {
+            const score = calculateDetailedScore(s);
+            const scoreColor = score >= 80 ? '#16a34a' : score >= 65 ? '#22c55e' : score >= 50 ? '#f59e0b' : score >= 35 ? '#f97316' : '#dc2626';
+            const scoreBg = score >= 80 ? 'rgba(22,163,74,0.12)' : score >= 65 ? 'rgba(34,197,94,0.12)' : score >= 50 ? 'rgba(245,158,11,0.12)' : score >= 35 ? 'rgba(249,115,22,0.12)' : 'rgba(220,38,38,0.12)';
+            const changeColor = s.change_pct >= 0 ? '#16a34a' : '#dc2626';
+            const changeSign = s.change_pct >= 0 ? '+' : '';
+            const wowColor = s.wow_change > 0 ? '#16a34a' : s.wow_change < 0 ? '#dc2626' : '#94a3b8';
+            const wowSign = s.wow_change > 0 ? '+' : '';
+
+            return `
+            <tr onclick="location.href='stock_${s.code}.html'" class="clickable" style="cursor:pointer;border-bottom:1px solid #1e293b;transition:background 0.15s;" onmouseenter="this.style.background='#1e293b'" onmouseleave="this.style.background=''">
+                <td style="padding:10px 8px;"><strong style="color:#e2e8f0;">${s.code}</strong></td>
+                <td style="padding:10px 8px;color:#e2e8f0;">${s.name}</td>
+                <td style="padding:10px 8px;text-align:right;color:#e2e8f0;">${s.close > 0 ? s.close.toFixed(2) : '—'}</td>
+                <td style="padding:10px 8px;text-align:right;color:${changeColor};font-weight:600;">${s.change_pct !== 0 ? changeSign + s.change_pct.toFixed(2) + '%' : '—'}</td>
+                <td style="padding:10px 8px;text-align:right;color:#fbbf24;font-weight:600;">${s.big_holder_pct > 0 ? s.big_holder_pct.toFixed(2) + '%' : '—'}</td>
+                <td style="padding:10px 8px;text-align:right;color:${wowColor};font-weight:600;">${s.wow_change !== 0 ? wowSign + s.wow_change.toFixed(2) + '%' : '—'}</td>
+                <td style="padding:10px 8px;text-align:center;">${s.trend ? '<span style="color:' + (s.trend === '多頭排列' ? '#16a34a' : '#dc2626') + ';font-size:12px;">' + s.trend + '</span>' : '—'}</td>
+                <td style="padding:10px 8px;text-align:center;font-size:14px;">${s.foreign_buy ? '<span style="color:#16a34a;">✅</span>' : '<span style="color:#64748b;">❌</span>'}</td>
+                <td style="padding:10px 8px;text-align:center;"><span style="display:inline-block;padding:3px 10px;border-radius:12px;background:${scoreBg};color:${scoreColor};font-weight:bold;font-size:13px;min-width:36px;text-align:center;">${score}</span></td>
+            </tr>`;
+        }).join('');
+
+        // 計算族群統計
+        const avgScore = sortedStocks.length ? (sortedStocks.reduce((sum, s) => sum + calculateDetailedScore(s), 0) / sortedStocks.length).toFixed(1) : 0;
+        const bullCount = sortedStocks.filter(s => s.trend === '多頭排列').length;
+        const hotStocks = sortedStocks.filter(s => calculateDetailedScore(s) >= 65).length;
+
+        modal.innerHTML = `
+            <div style="background:#0f172a;border:1px solid #334155;border-radius:12px;max-width:950px;width:100%;max-height:90vh;overflow-y:auto;padding:25px;position:relative;">
+                <button onclick="document.getElementById('sectorPopupModal').remove()" style="position:absolute;top:15px;right:15px;background:none;border:none;color:#94a3b8;font-size:20px;cursor:pointer;z-index:10;">✕</button>
+                <h2 style="color:#38bdf8;margin:0 0 5px 0;font-size:1.4em;">🔄 ${sectorName}</h2>
+                <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(100px,1fr));gap:10px;margin:0 0 15px 0;">
+                    <div style="background:#1e293b;border-radius:6px;padding:8px 12px;text-align:center;">
+                        <div style="color:#94a3b8;font-size:11px;">個股數</div>
+                        <div style="color:#e2e8f0;font-weight:bold;font-size:1.2em;">${stocks.length}</div>
+                    </div>
+                    <div style="background:#1e293b;border-radius:6px;padding:8px 12px;text-align:center;">
+                        <div style="color:#94a3b8;font-size:11px;">平均評分</div>
+                        <div style="color:${avgScore >= 60 ? '#16a34a' : avgScore >= 45 ? '#f59e0b' : '#dc2626'};font-weight:bold;font-size:1.2em;">${avgScore}</div>
+                    </div>
+                    <div style="background:#1e293b;border-radius:6px;padding:8px 12px;text-align:center;">
+                        <div style="color:#94a3b8;font-size:11px;">多頭排列</div>
+                        <div style="color:#16a34a;font-weight:bold;font-size:1.2em;">${bullCount} 檔</div>
+                    </div>
+                    <div style="background:#1e293b;border-radius:6px;padding:8px 12px;text-align:center;">
+                        <div style="color:#94a3b8;font-size:11px;">強勢股 (≥65)</div>
+                        <div style="color:#fbbf24;font-weight:bold;font-size:1.2em;">${hotStocks} 檔</div>
+                    </div>
+                </div>
+                <div style="overflow-x:auto;border:1px solid #334155;border-radius:8px;">
+                    <table style="width:100%;border-collapse:collapse;font-size:13px;">
+                        <thead>
+                            <tr style="border-bottom:1px solid #334155;background:#1e293b;">
+                                <th style="text-align:left;padding:10px 8px;color:#94a3b8;font-weight:600;font-size:12px;">代號</th>
+                                <th style="text-align:left;padding:10px 8px;color:#94a3b8;font-weight:600;font-size:12px;">名稱</th>
+                                <th style="text-align:right;padding:10px 8px;color:#94a3b8;font-weight:600;font-size:12px;">收盤價</th>
+                                <th style="text-align:right;padding:10px 8px;color:#94a3b8;font-weight:600;font-size:12px;">漲跌%</th>
+                                <th style="text-align:right;padding:10px 8px;color:#94a3b8;font-weight:600;font-size:12px;">大戶%</th>
+                                <th style="text-align:right;padding:10px 8px;color:#94a3b8;font-weight:600;font-size:12px;">週增減</th>
+                                <th style="text-align:center;padding:10px 8px;color:#94a3b8;font-weight:600;font-size:12px;">趨勢</th>
+                                <th style="text-align:center;padding:10px 8px;color:#94a3b8;font-weight:600;font-size:12px;">外資連買</th>
+                                <th style="text-align:center;padding:10px 8px;color:#94a3b8;font-weight:600;font-size:12px;">評分</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            ${rowsHtml}
+                        </tbody>
+                    </table>
+                </div>
+                <p style="color:#64748b;font-size:11px;margin-top:12px;text-align:center;">⚠️ 評分綜合技術面、籌碼面、法人面、漲跌穩健度計算 · 點擊列可進入個股頁面</p>
+            </div>
+        `;
+        document.body.appendChild(modal);
+
+        const escHandler = e => { if (e.key === 'Escape') { modal.remove(); document.removeEventListener('keydown', escHandler); } };
+        document.addEventListener('keydown', escHandler);
     }
 
     // ===================== 3. 市場情緒指標 =====================
