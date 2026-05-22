@@ -42,8 +42,8 @@ class HTMLGenerator:
         items = [("index.html","📊 首頁"),("watchlist.html","⭐ 自選"),("etf_00981a.html","📈 00981A"),("sector.html","🔄 族群輪動")]
         html = '<nav class="navbar"><a href="index.html" class="nav-brand">🔥 跟隨大戶選股站</a><span style="color:#334155;">|</span><div class="nav-links">'
         for href, text in items:
-            if active in href:
-                html += f'<span style="color:#38bdf8;font-weight:600;font-size:0.85rem;">{text}</span>'
+            if active and active in href:
+                html += f'<span class="nav-active" style="color:var(--active);font-weight:600;font-size:0.85rem;cursor:default;">{text}</span>'
             else:
                 html += f'<a href="{href}">{text}</a>'
         html += '</div>'
@@ -716,12 +716,164 @@ class HTMLGenerator:
         print(f"[OK] 交叉比對: {filepath}")
         return filepath
 
+    def generate_sector(self):
+        """生成族群輪動儀表板 sector.html — 數據動態填充"""
+        import json as _json
+        from config import BIG_HOLDER_MISSED
+
+        # === 族群映射表 ===
+        SECTOR_MAP = {
+            "2317": "semiconductor", "2324": "ai-server", "2327": "passive-component",
+            "2330": "semiconductor", "2337": "semiconductor", "2344": "memory",
+            "2345": "semiconductor", "2355": "pcb", "2356": "ai-server",
+            "2357": "semiconductor", "2368": "pcb", "2376": "ai-server",
+            "2377": "semiconductor", "2382": "ai-server", "2383": "pcb",
+            "2404": "semiconductor", "2408": "memory", "2409": "display",
+            "2428": "semiconductor", "2439": "semiconductor", "2449": "semiconductor",
+            "2481": "semiconductor", "2492": "passive-component", "2634": "aerospace-defense",
+            "2881": "financial", "2882": "financial", "3006": "memory",
+            "3016": "semiconductor", "3017": "semiconductor", "3036": "semiconductor",
+            "3037": "pcb", "3217": "semiconductor", "3231": "ai-server",
+            "3264": "semiconductor", "3376": "semiconductor", "3443": "semiconductor",
+            "3450": "silicon-photonics", "3481": "display", "3653": "semiconductor",
+            "3661": "semiconductor", "3665": "semiconductor", "3680": "semiconductor",
+            "3707": "sic-power", "3711": "semiconductor", "4961": "semiconductor",
+            "4966": "semiconductor", "4967": "semiconductor", "5274": "semiconductor",
+            "5347": "semiconductor", "5439": "semiconductor", "6147": "semiconductor",
+            "6151": "semiconductor", "6173": "passive-component", "6182": "semiconductor",
+            "6187": "semiconductor", "6191": "semiconductor", "6207": "semiconductor",
+            "6213": "pcb", "6223": "semiconductor", "6239": "semiconductor",
+            "6261": "semiconductor", "6271": "semiconductor", "6274": "pcb",
+            "6415": "semiconductor", "6446": "biotech", "6510": "semiconductor",
+            "6515": "semiconductor", "6669": "semiconductor", "6770": "memory",
+            "6805": "semiconductor", "6821": "satellite", "8042": "passive-component",
+            "8046": "pcb", "8150": "semiconductor", "8210": "semiconductor",
+            "8261": "sic-power", "8358": "passive-component", "8996": "semiconductor",
+            "1590": "semiconductor", "1727": "semiconductor", "1815": "passive-component",
+            "2002": "semiconductor", "2301": "semiconductor", "2303": "semiconductor",
+            "2308": "semiconductor", "2313": "pcb", "2382": "ai-server",
+        }
+
+        # === 讀取模板（從 workspace 備份恢復，避免編碼損壞） ===
+        workspace_root = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+        backup_path = os.path.join(workspace_root, "sector.html")
+        template_path = os.path.join(DOCS_DIR, "sector.html")
+        if os.path.exists(backup_path):
+            with open(backup_path, "r", encoding="utf-8") as f:
+                template = f.read()
+        else:
+            with open(template_path, "r", encoding="utf-8") as f:
+                template = f.read()
+
+        # === 生成 stocks 數組 ===
+        screened = self.data.get("screened", [])
+        stocks_list = []
+        for s in screened:
+            sid = s.get("stock_id", "")
+            sector = SECTOR_MAP.get(sid, "semiconductor")
+            tech = s.get("technical", {}) or {}
+            pros, cons = [], []
+            if s.get("dual_certified"):
+                pros.append("雙重認證")
+            bh_chg = s.get("big_holder_change", 0)
+            if bh_chg >= 5:
+                pros.append("大戶大幅增持")
+            elif bh_chg >= 2:
+                pros.append("大戶增倉明顯")
+            elif bh_chg <= -2:
+                cons.append("大戶減倉")
+            fn = s.get("foreign_net", 0)
+            tn = s.get("trust_net", 0)
+            if fn > 0 and tn > 0:
+                pros.append("法人同步買超")
+            if fn > 10000000:
+                pros.append("外資大買")
+            cp = s.get("change_pct", 0)
+            if cp >= 5:
+                pros.append("漲幅強勁")
+            elif cp <= -3:
+                cons.append("跌幅較大")
+            trend = tech.get("trend", "")
+            if "多頭" in trend:
+                pros.append("均線多頭")
+            elif "空頭" in trend:
+                cons.append("均線空頭")
+            rsi = tech.get("rsi", 0)
+            if rsi > 75:
+                cons.append("RSI過熱")
+            stocks_list.append({
+                "ticker": sid,
+                "name": s.get("stock_name", ""),
+                "sector": sector,
+                "price": s.get("close", 0),
+                "change_pct": cp,
+                "big_holder_pct": s.get("big_holder_pct", 0),
+                "bh_wow": bh_chg,
+                "foreign": fn,
+                "volume": None,
+                "eps_q1": None,
+                "revenue_yoy": None,
+                "pe": None,
+                "pros": pros,
+                "cons": cons,
+            })
+
+        # === 生成 missed 數組 ===
+        bhr = self.data.get("big_holder_rank", [])
+        bhr_map = {b["stock_id"]: {**b, "rank": i+1} for i, b in enumerate(bhr)}
+        missed_list = []
+        for sid in BIG_HOLDER_MISSED:
+            b = bhr_map.get(sid, {})
+            bh_chg = b.get("big_holder_change", 0)
+            cp = b.get("change_pct", 0)
+            missed_list.append({
+                "ticker": sid,
+                "name": b.get("stock_name", ""),
+                "rank": b.get("rank", 0),
+                "bh_wow": f"{bh_chg:+.2f}%",
+                "weekly_chg": f"{cp:+.2f}%",
+                "bh_pct": f"{b.get('big_holder_pct',0):.2f}%",
+                "signals": [],
+                "category": SECTOR_MAP.get(sid, "其他"),
+                "relation": "",
+            })
+
+        # === 替換佔位符 ===
+        stocks_js = _json.dumps(stocks_list, ensure_ascii=False)
+        missed_js = _json.dumps(missed_list, ensure_ascii=False)
+        template = template.replace(
+            "// <!-- STOCKS_DATA_START -->\n// <!-- STOCKS_DATA_END -->",
+            f"const stocks = {stocks_js};"
+        )
+        template = template.replace(
+            "// <!-- MISSED_DATA_START -->\n// <!-- MISSED_DATA_END -->",
+            f"const missed = {missed_js};"
+        )
+
+        # 更新統計日期
+        update_time = self.data.get("update_time", "")
+        bh_date = update_time.split()[0] if update_time else ""
+        template = template.replace(
+            "更新時間：2026-05-22",
+            f"更新時間：{update_time}" if update_time else "更新時間：2026-05-22"
+        )
+        template = template.replace(
+            "大戶籌碼統計日期：2026-05-15",
+            f"大戶籌碼統計日期：{bh_date}" if bh_date else "大戶籌碼統計日期：2026-05-15"
+        )
+
+        with open(template_path, "w", encoding="utf-8") as f:
+            f.write(template)
+        print(f"[OK] sector: {template_path}")
+        return template_path
+
     def generate_all(self):
         os.makedirs(DOCS_DIR, exist_ok=True)
         self.generate_index()
         self.generate_watchlist()
         self.generate_etf_00981a()
         self.generate_cross_analysis_page()
+        self.generate_sector()
         all_stocks = list(set(WATCHLIST + ETF_00981A_HOLDINGS))
         for stock_id in all_stocks:
             self.generate_stock_detail(stock_id)
