@@ -517,7 +517,9 @@ class HTMLGenerator:
             lines.append(f'<div class="metric-card"><h3>👥 集保集中度</h3><p><span style="color:{conc_color};font-weight:600;font-size:1.3rem;">{conc:.2f}%</span></p><p>大戶人數: {big_holder_count:,} / 總人數: {total_count:,}</p><p style="margin-top:8px;font-size:0.85rem;color:#64748b;background:rgba(241,245,249,0.5);padding:4px 8px;border-radius:4px;">{conc_signal}</p></div>')
         lines.append('</div>')
         lines.append('<div class="card"><h2>📈 股價走勢 + 均線 + 成交量</h2><div class="chart-container"><canvas id="priceChart"></canvas></div></div>')
-        lines.append('<div class="card"><h2>📊 MACD 指標 (12,26,9)</h2><div class="chart-container"><canvas id="macdChart"></canvas></div></div>')
+        lines.append('<div class="card"><h2>📊 MACD 指標 (12,26,9)</h2>')
+        lines.append('<div id="macd-values" style="display:flex;gap:24px;margin:8px 0 16px;font-size:0.85rem;color:var(--text);"></div>')
+        lines.append('<div class="chart-container"><canvas id="macdChart"></canvas></div></div>')
         lines.append('<div class="card"><h2>🌍 外資買賣超</h2><div id="foreignChartWrap"><canvas id="foreignChart"></canvas></div></div>')
         
         # === Norway 6週趨勢圖 ===
@@ -640,19 +642,39 @@ class HTMLGenerator:
             signal_line = calc_ema(macd_line, 9)
             histogram = [round(m - s, 4) for m, s in zip(macd_line, signal_line)]
             macd_labels = price_labels[-len(macd_line):] if len(price_labels) >= len(macd_line) else price_labels
+
+            # MACD 最新數值顯示
+            latest_dif = macd_line[-1] if macd_line else 0
+            latest_sig = signal_line[-1] if signal_line else 0
+            latest_osc = histogram[-1] if histogram else 0
+            prev_dif = macd_line[-2] if len(macd_line) >= 2 else latest_dif
+            prev_sig = signal_line[-2] if len(signal_line) >= 2 else latest_sig
+            prev_osc = histogram[-2] if len(histogram) >= 2 else latest_osc
+            def _arrow(val, prev):
+                if val > prev: return '<span style="color:#22c55e;">▲</span>'
+                elif val < prev: return '<span style="color:#ef4444;">▼</span>'
+                return '<span style="color:#94a3b8;">—</span>'
+            osc_color = '#22c55e' if latest_osc >= 0 else '#ef4444'
+            lines.append(f'document.getElementById("macd-values").innerHTML = \'')
+            lines.append(f'<div><strong style="color:var(--text-muted);">DIF(12,26)</strong> <span style="font-weight:600;">{latest_dif:.2f}</span> {_arrow(latest_dif, prev_dif)}</div>')
+            lines.append(f'<div><strong style="color:var(--text-muted);">MACD(9)</strong> <span style="font-weight:600;">{latest_sig:.2f}</span> {_arrow(latest_sig, prev_sig)}</div>')
+            lines.append(f'<div><strong style="color:var(--text-muted);">OSC</strong> <span style="font-weight:600;color:{osc_color}">{latest_osc:+.2f}</span> {_arrow(latest_osc, prev_osc)}</div>')
+            lines.append('document.getElementById("macd-values").innerHTML = \'\';')
+
             lines.append(f'new Chart(document.getElementById("macdChart").getContext("2d"),{{')
             lines.append(f'type:"bar",')
             lines.append(f'data:{{')
             lines.append(f'labels:{json.dumps(macd_labels)},')
             lines.append(f'datasets:[')
-            lines.append(f'{{type:"line",label:"MACD 柱線",data:{json.dumps(macd_line)},borderColor:"#1d4ed8",backgroundColor:"transparent",fill:false,pointRadius:0,borderWidth:1.5,tension:0.1}},')
-            lines.append(f'{{type:"line",label:"訊號線",data:{json.dumps(signal_line)},borderColor:"#f97316",backgroundColor:"transparent",fill:false,pointRadius:0,borderWidth:1.5,tension:0.1}},')
-            lines.append(f'{{label:"柱狀圖",data:{json.dumps(histogram)},backgroundColor:{json.dumps(histogram)}.map(v=>v>=0?"rgba(22,163,74,0.5)":"rgba(220,38,38,0.5)"),borderColor:{json.dumps(histogram)}.map(v=>v>=0?"#16a34a":"#dc2626"),borderWidth:1}}')
+            lines.append(f'{{type:"line",label:"MACD 柱線",data:{json.dumps(macd_line)},borderColor:"#38bdf8",backgroundColor:"transparent",fill:false,pointRadius:0,borderWidth:1.5,tension:0.1}},')
+            lines.append(f'{{type:"line",label:"訊號線",data:{json.dumps(signal_line)},borderColor:"#fbbf24",backgroundColor:"transparent",fill:false,pointRadius:0,borderWidth:1.5,tension:0.1}},')
+            lines.append(f'{{label:"柱狀圖",data:{json.dumps(histogram)},backgroundColor:{json.dumps(histogram)}.map(v=>v>=0?"rgba(34,197,94,0.6)":"rgba(239,68,68,0.6)"),borderColor:{json.dumps(histogram)}.map(v=>v>=0?"#22c55e":"#ef4444"),borderWidth:1}}')
             lines.append(f']')
             lines.append(f'}},')
             lines.append(f'options:{{responsive:true,maintainAspectRatio:false,plugins:{{legend:{{display:true,labels:{{usePointStyle:true,boxWidth:8}}}}}},scales:{{x:{{grid:{{color:"rgba(0,0,0,0.05)"}},ticks:{{color:"#64748b",maxRotation:45}}}},y:{{grid:{{color:"rgba(0,0,0,0.05)"}},ticks:{{color:"#64748b"}},title:{{display:true,text:"MACD 值",color:"#64748b"}}}}}}}}}});')
         else:
-            lines.append('document.getElementById("macdChart").parentElement.innerHTML = \'<p style="text-align:center;color:#64748b;padding:2rem;">歷史價格數據不足（需 ≥35 筆），無法計算 MACD</p>\';')
+            lines.append('document.getElementById("macd-values").innerHTML = \'\';')
+            lines.append('document.getElementById("macdChart").parentElement.innerHTML = \'<p style="text-align:center;color:#94a3b8;padding:2rem;">歷史價格數據不足（需 ≥35 筆），無法計算 MACD</p>\';')
         lines.append('</script>')
         lines.append('</body></html>')
 

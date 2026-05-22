@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>台股熱門族群輪動儀表板</title>
-<link rel="stylesheet" href="css/style.css">
 <style>
   :root {
     --bg: #0f172a;
@@ -26,9 +25,8 @@
     color: var(--text);
     font-family: 'Segoe UI', 'Microsoft JhengHei', system-ui, sans-serif;
     line-height: 1.5;
-    padding: 0;
+    padding: 16px;
   }
-  .sector-container { padding: 16px; max-width: 1400px; margin: 0 auto; }
   h1 {
     font-size: 1.4rem;
     margin-bottom: 4px;
@@ -228,15 +226,6 @@
   .chip-weak { background: rgba(239,68,68,0.2); color: var(--down); }
   .chip-mid { background: rgba(148,163,184,0.2); color: var(--text-dim); }
 
-  .data-note {
-    color: var(--text-dim);
-    font-size: 0.75rem;
-    margin-bottom: 12px;
-    padding: 8px 12px;
-    background: rgba(56,189,248,0.05);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-  }
   .section { margin-bottom: 24px; }
   .scroll-x { overflow-x: auto; }
   .note {
@@ -245,14 +234,13 @@
     margin-top: 8px;
   }
 </style>
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<nav class="navbar"><a href="index.html" class="nav-brand">🔥 跟隨大戶選股站</a><span style="color:#334155;">|</span><div class="nav-links"><a href="index.html">📊 首頁</a><a href="watchlist.html">⭐ 自選</a><a href="etf_00981a.html">📈 00981A</a><span style="color:#38bdf8;font-weight:600;font-size:0.85rem;">🔄 族群輪動</span></div></nav>
+<nav class="navbar"><a href="index.html" class="nav-brand">🔥 跟隨大戶選股站</a><span style="color:#334155;">|</span><div class="nav-links"><a href="index.html">📊 首頁</a><a href="watchlist.html">⭐ 自選</a><a href="etf_00981a.html">📈 00981A</a><span class="nav-active" style="color:var(--active);font-weight:600;font-size:0.85rem;cursor:default;">🔄 族群輪動</span></div></nav>
 
-<div class="sector-container">
 <h1>🎯 台股熱門族群輪動儀表板</h1>
-<p class="subtitle">整合外資、大戶籌碼、族群輪動方向、有利/不利數值 | 更新時間：2026-05-22</p>
-<p class="data-note">📅 大戶籌碼統計日期：2026-05-15（集保週結算）| 股價：2026-05-22 盤中 | 無現價/成交量者 = 當日未達漲停或盤中暫無即時報價</p>
+<p class="subtitle">整合外資、大戶籌碼、族群輪動方向、有利/不利數值 | 更新時間：2026-05-16 00:45</p>
 
 <!-- 族群輪動熱度 -->
 <div class="section">
@@ -523,9 +511,8 @@ function renderStockTable() {
     ? [...stocks]
     : stocks.filter(s => s.sector === currentSector);
 
-  // 多欄位排序（chip_score 需預先計算）
+  // 多欄位排序
   if (sortColumns.length > 0) {
-    filtered.forEach(s => { if (!s.hasOwnProperty('chip_score')) s.chip_score = calcChipScore(s); });
     filtered.sort((a, b) => {
       for (const col of sortColumns) {
         const va = a[col.key] ?? -999999;
@@ -659,6 +646,5 @@ setInterval(() => {
 }, 30000);
 </script>
 
-</div>
 </body>
 </html>
