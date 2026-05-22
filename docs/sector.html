@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>台股熱門族群輪動儀表板</title>
+<style>
+  :root {
+    --bg: #0f172a;
+    --card: #1e293b;
+    --card-hover: #26344d;
+    --border: #334155;
+    --text: #e2e8f0;
+    --text-dim: #94a3b8;
+    --accent: #38bdf8;
+    --accent2: #818cf8;
+    --up: #22c55e;
+    --down: #ef4444;
+    --warn: #f59e0b;
+    --hot: #f97316;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Segoe UI', 'Microsoft JhengHei', system-ui, sans-serif;
+    line-height: 1.5;
+    padding: 16px;
+  }
+  h1 {
+    font-size: 1.4rem;
+    margin-bottom: 4px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .subtitle {
+    color: var(--text-dim);
+    font-size: 0.85rem;
+    margin-bottom: 16px;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 16px;
+    transition: background 0.2s;
+  }
+  .card:hover { background: var(--card-hover); }
+  .card-title {
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .badge {
+    font-size: 0.7rem;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-weight: 600;
+  }
+  .badge-hot { background: rgba(249, 115, 22, 0.2); color: var(--hot); }
+  .badge-warm { background: rgba(245, 158, 11, 0.2); color: var(--warn); }
+  .badge-cold { background: rgba(148, 163, 184, 0.2); color: var(--text-dim); }
+
+  /* 族群熱度條 */
+  .heat-bar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  .heat-name {
+    width: 100px;
+    font-size: 0.85rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .heat-track {
+    flex: 1;
+    height: 20px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 4px;
+    position: relative;
+    overflow: hidden;
+  }
+  .heat-fill {
+    height: 100%;
+    border-radius: 4px;
+    transition: width 0.5s ease;
+  }
+  .heat-fill.up { background: linear-gradient(90deg, rgba(34,197,94,0.4), rgba(34,197,94,0.8)); }
+  .heat-fill.down { background: linear-gradient(90deg, rgba(239,68,68,0.4), rgba(239,68,68,0.8)); }
+  .heat-fill.flat { background: linear-gradient(90deg, rgba(148,163,184,0.4), rgba(148,163,184,0.8)); }
+  .heat-value {
+    width: 40px;
+    text-align: right;
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+
+  /* 輪動方向 */
+  .rotate-dir {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 0.75rem;
+    padding: 2px 6px;
+    border-radius: 4px;
+  }
+  .rotate-in { background: rgba(34,197,94,0.15); color: var(--up); }
+  .rotate-out { background: rgba(239,68,68,0.15); color: var(--down); }
+  .rotate-hold { background: rgba(148,163,184,0.15); color: var(--text-dim); }
+
+  /* 表格 */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.82rem;
+  }
+  th {
+    text-align: left;
+    padding: 8px 6px;
+    color: var(--text-dim);
+    font-weight: 500;
+    border-bottom: 1px solid var(--border);
+    cursor: pointer;
+    user-select: none;
+    white-space: nowrap;
+  }
+  th:hover { color: var(--text); }
+  th .sort-icon { font-size: 0.65rem; margin-left: 2px; }
+  td {
+    padding: 8px 6px;
+    border-bottom: 1px solid rgba(51,65,85,0.5);
+  }
+  tr:hover td { background: rgba(255,255,255,0.03); }
+  .ticker { font-weight: 600; color: var(--accent); }
+  .name { color: var(--text-dim); font-size: 0.8rem; }
+  .num { font-family: 'SF Mono', 'Cascadia Mono', monospace; }
+  .up { color: var(--up); }
+  .down { color: var(--down); }
+  .center { text-align: center; }
+  .right { text-align: right; }
+
+  /* 篩選欄 */
+  .filter-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+  .filter-btn {
+    padding: 4px 12px;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    background: var(--card);
+    color: var(--text);
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  .filter-btn:hover { border-color: var(--accent); }
+  .filter-btn.active {
+    background: var(--accent);
+    color: var(--bg);
+    border-color: var(--accent);
+  }
+
+  /* 複選排序 */
+  .multi-sort {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 8px;
+  }
+  .sort-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    background: var(--card);
+    border: 1px solid var(--border);
+  }
+  .sort-chip .remove { cursor: pointer; opacity: 0.6; }
+  .sort-chip .remove:hover { opacity: 1; }
+  .sort-chip.asc { border-color: var(--up); }
+  .sort-chip.desc { border-color: var(--down); }
+
+  /* 有利/不利標籤 */
+  .pro-con {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3px;
+  }
+  .pc-tag {
+    font-size: 0.65rem;
+    padding: 1px 5px;
+    border-radius: 3px;
+    white-space: nowrap;
+  }
+  .pc-pro { background: rgba(34,197,94,0.2); color: var(--up); }
+  .pc-con { background: rgba(239,68,68,0.2); color: var(--down); }
+
+  /* 籌碼指標 */
+  .chip-score {
+    display: inline-flex;
+    align-items: center;
+    gap: 2px;
+    font-size: 0.75rem;
+    padding: 1px 6px;
+    border-radius: 8px;
+  }
+  .chip-strong { background: rgba(34,197,94,0.2); color: var(--up); }
+  .chip-weak { background: rgba(239,68,68,0.2); color: var(--down); }
+  .chip-mid { background: rgba(148,163,184,0.2); color: var(--text-dim); }
+
+  .section { margin-bottom: 24px; }
+  .scroll-x { overflow-x: auto; }
+  .note {
+    color: var(--text-dim);
+    font-size: 0.75rem;
+    margin-top: 8px;
+  }
+</style>
+</head>
+<body>
+<nav style="display:flex;align-items:center;gap:12px;padding:8px 0;margin-bottom:12px;border-bottom:1px solid var(--border);flex-wrap:wrap;">
+  <a href="index.html" style="color:var(--accent);text-decoration:none;font-weight:600;font-size:0.9rem;">🔥 跟隨大戶選股站</a>
+  <span style="color:var(--border);">|</span>
+  <a href="index.html" style="color:var(--text-dim);text-decoration:none;font-size:0.82rem;">📊 首頁</a>
+  <a href="watchlist.html" style="color:var(--text-dim);text-decoration:none;font-size:0.82rem;">⭐ 自選</a>
+  <a href="etf_00981a.html" style="color:var(--text-dim);text-decoration:none;font-size:0.82rem;">📈 00981A</a>
+  <span style="color:var(--accent);font-size:0.82rem;font-weight:600;">🔄 族群輪動</span>
+</nav>
+
+<h1>🎯 台股熱門族群輪動儀表板</h1>
+<p class="subtitle">整合外資、大戶籌碼、族群輪動方向、有利/不利數值 | 更新時間：2026-05-22</p>
+
+<!-- 族群輪動熱度 -->
+<div class="section">
+  <div class="card">
+    <div class="card-title">
+      🔥 族群輪動熱度排行
+      <span class="badge badge-hot">輪動中</span>
+    </div>
+    <div id="sector-heat"></div>
+    <div style="margin-top:12px; display:flex; gap:16px; font-size:0.75rem; color:var(--text-dim);">
+      <span>🟢 多頭方向 ↑</span>
+      <span>🔴 空頭方向 ↓</span>
+      <span>⚪ 盤整橫盤 →</span>
+    </div>
+    <p class="note">輪動方向判斷：資金流入強度 + 大戶籌碼變化 + 技術面趨勢</p>
+  </div>
+</div>
+
+<!-- 族群輪動方向 -->
+<div class="grid">
+  <div class="card">
+    <div class="card-title">
+      📈 資金流入族群
+      <span class="badge badge-hot">強勢</span>
+    </div>
+    <div id="rotate-in" style="font-size:0.85rem; line-height:2;"></div>
+  </div>
+  <div class="card">
+    <div class="card-title">
+      📉 資金流出族群
+      <span class="badge badge-cold">偏弱</span>
+    </div>
+    <div id="rotate-out" style="font-size:0.85rem; line-height:2;"></div>
+  </div>
+</div>
+
+<!-- 篩選列 -->
+<div class="card">
+  <div class="card-title">
+    🎛️ 多維度排序篩選
+    <span class="badge badge-warm">比對模式</span>
+  </div>
+  <div class="filter-bar">
+    <button class="filter-btn active" onclick="setSector('all')">全部</button>
+    <button class="filter-btn" onclick="setSector('ai-server')">AI伺服器</button>
+    <button class="filter-btn" onclick="setSector('semiconductor')">半導體</button>
+    <button class="filter-btn" onclick="setSector('memory')">記憶體</button>
+    <button class="filter-btn" onclick="setSector('passive-component')">被動元件</button>
+    <button class="filter-btn" onclick="setSector('pcb')">PCB/載板</button>
+    <button class="filter-btn" onclick="setSector('silicon-photonics')">矽光子/CPO</button>
+    <button class="filter-btn" onclick="setSector('satellite')">低軌衛星</button>
+    <button class="filter-btn" onclick="setSector('display')">面板</button>
+    <button class="filter-btn" onclick="setSector('sic-power')">SiC功率</button>
+    <button class="filter-btn" onclick="setSector('aerospace-defense')">軍工國防</button>
+    <button class="filter-btn" onclick="setSector('biotech')">生技</button>
+    <button class="filter-btn" onclick="setSector('financial')">金融</button>
+  </div>
+  <div class="multi-sort" id="active-sorts">
+    <span style="color:var(--text-dim); font-size:0.8rem;">點擊欄位標題加入排序（可多選）：</span>
+  </div>
+  <div class="scroll-x">
+    <table id="stock-table">
+      <thead>
+        <tr>
+          <th onclick="toggleSort('ticker')">代號<span class="sort-icon"></span></th>
+          <th onclick="toggleSort('name')">名稱<span class="sort-icon"></span></th>
+          <th onclick="toggleSort('sector')">族群<span class="sort-icon"></span></th>
+          <th onclick="toggleSort('price')">現價<span class="sort-icon"></span></th>
+          <th onclick="toggleSort('change_pct')">漲幅%<span class="sort-icon"></span></th>
+          <th onclick="toggleSort('big_holder_pct')">大戶%<span class="sort-icon"></span></th>
+          <th onclick="toggleSort('bh_wow')">大戶增減%<span class="sort-icon"></span></th>
+          <th onclick="toggleSort('foreign')">外資張<span class="sort-icon"></span></th>
+          <th onclick="toggleSort('volume')">成交量<span class="sort-icon"></span></th>
+          <th onclick="toggleSort('eps_q1')">Q1 EPS<span class="sort-icon"></span></th>
+          <th onclick="toggleSort('revenue_yoy')">營收YoY%<span class="sort-icon"></span></th>
+          <th onclick="toggleSort('pe')">本益比<span class="sort-icon"></span></th>
+          <th>有利 / 不利</th>
+          <th onclick="toggleSort('chip_score')">籌碼評分<span class="sort-icon"></span></th>
+        </tr>
+      </thead>
+      <tbody id="stock-tbody"></tbody>
+    </table>
+  </div>
+  <p class="note">
+    籌碼評分計算：大戶增減(30%) + 外資方向(30%) + 量價配合(20%) + 均線位置(20%) | 
+    綠色=偏多(>60) 灰色=中性(40-60) 紅色=偏弱(<40)
+  </p>
+</div>
+
+<!-- 大戶漏網之魚 -->
+<div class="card">
+  <div class="card-title">
+    🎣 大戶漏網之魚（你沒有的熱門股）
+    <span class="badge badge-hot">11檔追蹤中</span>
+  </div>
+  <div class="scroll-x">
+    <table>
+      <thead>
+        <tr>
+          <th>代號</th>
+          <th>名稱</th>
+          <th>大戶榜排名</th>
+          <th>大戶增減%</th>
+          <th>週漲幅%</th>
+          <th>訊號標籤</th>
+          <th>產業</th>
+          <th>與你的持倉關聯</th>
+        </tr>
+      </thead>
+      <tbody id="missed-tbody"></tbody>
+    </table>
+  </div>
+  <p class="note">更新規則：每週六 13:00 自動抓取。新增/刪除清單股票或權重變化>1%才通知。</p>
+</div>
+
+<script>
+// === 族群分類資料 ===
+const sectors = [
+  { id:'ai-server', name:'AI 伺服器', momentum:'up', score:92 },
+  { id:'semiconductor', name:'半導體', momentum:'up', score:88 },
+  { id:'memory', name:'記憶體', momentum:'up', score:85 },
+  { id:'silicon-photonics', name:'矽光子/CPO', momentum:'up', score:82 },
+  { id:'passive-component', name:'被動元件', momentum:'up', score:78 },
+  { id:'pcb', name:'PCB/載板', momentum:'up', score:75 },
+  { id:'sic-power', name:'SiC/功率', momentum:'up', score:72 },
+  { id:'aerospace-defense', name:'軍工/國防', momentum:'up', score:65 },
+  { id:'satellite', name:'低軌衛星', momentum:'sideways', score:60 },
+  { id:'display', name:'面板/顯示', momentum:'sideways', score:55 },
+  { id:'biotech', name:'生技/新藥', momentum:'sideways', score:50 },
+  { id:'financial', name:'金融', momentum:'sideways', score:48 }
+];
+
+// === 股票資料（整合今日討論 + 籌碼數據） ===
+const stocks = [
+  // 今日分析標的
+  { ticker:'2313', name:'華通', sector:'pcb', price:276.5, change_pct:7.0, big_holder_pct:58.9, bh_wow:0, foreign:0, volume:73826, eps_q1:1.26, revenue_yoy:16.85, pe:55, pros:['HDI龍頭','MACD金叉','均線多頭'], cons:['量縮','賣壓重','4月營收月減9%'] },
+  { ticker:'3006', name:'晶豪科', sector:'memory', price:240.5, change_pct:8.33, big_holder_pct:63.72, bh_wow:24.26, foreign:180, volume:20247, eps_q1:7.22, revenue_yoy:349.21, pe:8, pros:['Q1 EPS歷史新高','4月營收年增349%','毛利率47.5%','DRAM供需緊'], cons:['3日漲20%','股東會賣壓','賣壓76%'] },
+  { ticker:'3707', name:'漢磊', sector:'sic-power', price:83.6, change_pct:4.5, big_holder_pct:54.35, bh_wow:9.84, foreign:0, volume:20247, eps_q1:null, revenue_yoy:31, pe:null, pros:['SiC題材','3日漲停跳空','量比增69%'], cons:['3日漲20%','獲利了結壓力','買賣50:50'] },
+  { ticker:'1727', name:'中華化', sector:'semiconductor', price:93.0, change_pct:0, big_holder_pct:58.9, bh_wow:20.89, foreign:0, volume:0, eps_q1:null, revenue_yoy:12.07, pe:2325, pros:['電子級硫酸認證過','半導體國產化'], cons:['EPS僅0.04','PE>1000倍','獲利未跟上股價'] },
+  { ticker:'3037', name:'欣興', sector:'pcb', price:954, change_pct:5.41, big_holder_pct:0, bh_wow:0, foreign:0, volume:18629, eps_q1:3.28, revenue_yoy:27.64, pe:73, pros:['Q1 EPS年增447%','IC載板龍頭','MACD空頭收斂'], cons:['前高974壓力','量能未過均量'] },
+  { ticker:'8261', name:'富鼎', sector:'sic-power', price:0, change_pct:0, big_holder_pct:51.35, bh_wow:6.75, foreign:0, volume:0, eps_q1:3.05, revenue_yoy:86, pe:15, pros:['Q1 EPS 3.05','5月營收年增86%','基本面最紮實'], cons:['題材不夠性感'] },
+  { ticker:'3481', name:'群創', sector:'display', price:36.95, change_pct:0, big_holder_pct:54.54, bh_wow:22.79, foreign:0, volume:0, eps_q1:null, revenue_yoy:11.79, pe:1232, pros:['FOPLP題材','大戶新進榜'], cons:['EPS僅0.03','面板產能過剩'] },
+  { ticker:'6207', name:'雷科', sector:'semiconductor', price:0, change_pct:0, big_holder_pct:20.12, bh_wow:21.38, foreign:0, volume:0, eps_q1:4.49, revenue_yoy:3.6, pe:50, pros:['玻璃基板雷切','NVIDIA供應鏈'], cons:['股本8億微型股','本業獲利薄'] },
+  { ticker:'6821', name:'聯寶', sector:'satellite', price:0, change_pct:0, big_holder_pct:0, bh_wow:0, foreign:0, volume:0, eps_q1:0.32, revenue_yoy:-21.64, pe:40, pros:['低軌衛星電源'], cons:['年營收不到6億','4月營收年減21%'] },
+  { ticker:'6151', name:'晉倫', sector:'semiconductor', price:0, change_pct:0, big_holder_pct:21.01, bh_wow:11.88, foreign:0, volume:0, eps_q1:0.72, revenue_yoy:28.35, pe:46, pros:['半導體複合材料'], cons:['傳產蹭題材','營收僅2億'] },
+
+  // 大戶漏網之魚
+  { ticker:'6182', name:'合晶', sector:'semiconductor', price:0, change_pct:41.9, big_holder_pct:30.6, bh_wow:8.02, foreign:0, volume:0, eps_q1:null, revenue_yoy:0, pe:null, pros:['大戶榜#1','單週+41.9%','矽晶圓國產化'], cons:['波動極大'] },
+  { ticker:'8042', name:'金山電', sector:'passive-component', price:0, change_pct:43.5, big_holder_pct:73.43, bh_wow:7.80, foreign:0, volume:0, eps_q1:null, revenue_yoy:0, pe:null, pros:['大戶榜#2','單週+43.5%','被動元件復甦'], cons:['追價風險'] },
+  { ticker:'6173', name:'信昌電', sector:'passive-component', price:0, change_pct:42.4, big_holder_pct:65.16, bh_wow:5.07, foreign:0, volume:0, eps_q1:null, revenue_yoy:0, pe:null, pros:['大戶榜#8','單週+42.4%','電感龍頭'], cons:['漲幅已大'] },
+  { ticker:'8150', name:'南茂', sector:'semiconductor', price:0, change_pct:32.8, big_holder_pct:77.98, bh_wow:5.15, foreign:0, volume:0, eps_q1:null, revenue_yoy:0, pe:null, pros:['大戶榜#7','五訊號全亮','封測'], cons:['籌碼過度集中'] },
+  { ticker:'2492', name:'華新科', sector:'passive-component', price:0, change_pct:18.6, big_holder_pct:63.20, bh_wow:4.23, foreign:0, volume:0, eps_q1:null, revenue_yoy:0, pe:null, pros:['MLCC大廠','籌碼集中63%'], cons:['國巨競爭對手'] },
+  { ticker:'3680', name:'家登', sector:'semiconductor', price:0, change_pct:4.3, big_holder_pct:60.17, bh_wow:4.90, foreign:0, volume:0, eps_q1:null, revenue_yoy:0, pe:null, pros:['光罩盒','台積電供應鏈'], cons:['漲幅較小'] },
+  { ticker:'6770', name:'力積電', sector:'memory', price:0, change_pct:18.3, big_holder_pct:47.10, bh_wow:3.27, foreign:0, volume:0, eps_q1:null, revenue_yoy:0, pe:null, pros:['DRAM代工','與晶豪科同生態'], cons:['排名僅#23'] },
+  { ticker:'3450', name:'聯鈞', sector:'silicon-photonics', price:0, change_pct:35.8, big_holder_pct:41.32, bh_wow:3.93, foreign:0, volume:0, eps_q1:null, revenue_yoy:0, pe:null, pros:['矽光封裝','CPO概念'], cons:['波動劇烈'] },
+  { ticker:'6261', name:'久元', sector:'semiconductor', price:0, change_pct:31.7, big_holder_pct:46.96, bh_wow:3.92, foreign:0, volume:0, eps_q1:null, revenue_yoy:0, pe:null, pros:['半導體測試'], cons:['訊號較弱'] },
+  { ticker:'8358', name:'金居', sector:'pcb', price:0, change_pct:17.0, big_holder_pct:60.08, bh_wow:4.57, foreign:0, volume:0, eps_q1:null, revenue_yoy:0, pe:null, pros:['CCL上游','00981A也持有'], cons:['排名#11'] },
+
+  // 其他重要標的補充
+  { ticker:'2330', name:'台積電', sector:'semiconductor', price:1095, change_pct:0, big_holder_pct:75, bh_wow:0, foreign:0, volume:0, eps_q1:12.5, revenue_yoy:35, pe:22, pros:['先進製程壟斷','CoWoS擴產'], cons:['估值高','地緣政治'] },
+  { ticker:'2454', name:'聯發科', sector:'semiconductor', price:1120, change_pct:0, big_holder_pct:70, bh_wow:0, foreign:0, volume:0, eps_q1:18.2, revenue_yoy:25, pe:15, pros:['AI手機SoC','天璣9400'], cons:['手機市場飽和'] },
+  { ticker:'2327', name:'國巨', sector:'passive-component', price:780, change_pct:0, big_holder_pct:65, bh_wow:0, foreign:0, volume:0, eps_q1:12.5, revenue_yoy:15, pe:15, pros:['MLCC龍頭','車用占比提升'], cons:['中國競爭'] },
+  { ticker:'2881', name:'富邦金', sector:'financial', price:95, change_pct:0, big_holder_pct:55, bh_wow:0, foreign:0, volume:0, eps_q1:2.1, revenue_yoy:5, pe:11, pros:['壽險獲利改善','金控整併'], cons:['利率風險'] },
+  { ticker:'2408', name:'南亞科', sector:'memory', price:78, change_pct:0, big_holder_pct:72, bh_wow:0, foreign:0, volume:0, eps_q1:2.5, revenue_yoy:120, pe:8, pros:['DRAM報價回升'], cons:['三星競爭'] },
+  { ticker:'2344', name:'華邦電', sector:'memory', price:52, change_pct:0, big_holder_pct:74.14, bh_wow:21.03, foreign:0, volume:0, eps_q1:0.8, revenue_yoy:100, pe:16, pros:['Flash+DRAM','大戶增21%'], cons:['獲利較薄'] },
+  { ticker:'2382', name:'廣達', sector:'ai-server', price:780, change_pct:0, big_holder_pct:68, bh_wow:0, foreign:0, volume:0, eps_q1:8.5, revenue_yoy:60, pe:23, pros:['AI伺服器龍頭','GB200出貨'], cons:['估值高'] },
+  { ticker:'3231', name:'緯創', sector:'ai-server', price:145, change_pct:0, big_holder_pct:60, bh_wow:0, foreign:0, volume:0, eps_q1:3.2, revenue_yoy:45, pe:11, pros:['AI伺服器','本益比低'], cons:['毛利低'] },
+  { ticker:'6446', name:'藥華藥', sector:'biotech', price:280, change_pct:0, big_holder_pct:42.83, bh_wow:14.09, foreign:0, volume:0, eps_q1:-2.5, revenue_yoy:200, pe:null, pros:['新藥授權','大戶增14%'], cons:['尚未獲利'] },
+  { ticker:'2409', name:'友達', sector:'display', price:18, change_pct:0, big_holder_pct:56.15, bh_wow:6.72, foreign:0, volume:0, eps_q1:0.5, revenue_yoy:10, pe:9, pros:['面板雙雄','車用面板'], cons:['產能過剩'] },
+  { ticker:'2634', name:'漢翔', sector:'aerospace-defense', price:45, change_pct:0, big_holder_pct:67.72, bh_wow:-13.99, foreign:0, volume:0, eps_q1:1.2, revenue_yoy:5, pe:9, pros:['軍機維修','潛艦國造'], cons:['大戶減少14%','國防預算不確定'] },
+];
+
+// 大戶漏網之魚資料
+const missed = [
+  { ticker:'6182', name:'合晶', rank:1, bh_wow:'+8.02%', weekly_chg:'+41.90%', bh_pct:'30.60%', signals:['籌碼回補','新進榜','事件驅動','高波動警示'], category:'半導體材料-矽晶圓', relation:'完全沒有半導體材料股' },
+  { ticker:'8042', name:'金山電', rank:2, bh_wow:'+7.80%', weekly_chg:'+43.52%', bh_pct:'73.43%', signals:['籌碼回補','新進榜','法人同向','事件驅動','高波動警示'], category:'被動元件-鋁質電容', relation:'有國巨但沒金山電，同族群' },
+  { ticker:'3481', name:'群創', rank:3, bh_wow:'+6.61%', weekly_chg:'+22.76%', bh_pct:'47.25%', signals:['籌碼回補','新進榜','事件驅動','高波動警示'], category:'面板', relation:'有友達但沒群創，面板雙雄只抓一邊' },
+  { ticker:'8150', name:'南茂', rank:7, bh_wow:'+5.15%', weekly_chg:'+32.81%', bh_pct:'77.98%', signals:['籌碼回補','高度集中','新進榜','法人同向','事件驅動','高波動警示'], category:'封測', relation:'有力成但沒南茂，同生態' },
+  { ticker:'6173', name:'信昌電', rank:8, bh_wow:'+5.07%', weekly_chg:'+42.36%', bh_pct:'65.16%', signals:['籌碼回補','新進榜','事件驅動','高波動警示'], category:'被動元件-電感', relation:'跟國巨同族群' },
+  { ticker:'3680', name:'家登', rank:10, bh_wow:'+4.90%', weekly_chg:'+4.28%', bh_pct:'60.17%', signals:[], category:'半導體設備-光罩盒', relation:'完全沒有半導體設備股' },
+  { ticker:'8358', name:'金居', rank:11, bh_wow:'+4.57%', weekly_chg:'+16.99%', bh_pct:'60.08%', signals:[], category:'被動元件-CCL', relation:'00981A也有持股0.35%' },
+  { ticker:'2492', name:'華新科', rank:13, bh_wow:'+4.23%', weekly_chg:'+18.63%', bh_pct:'63.20%', signals:[], category:'被動元件-MLCC', relation:'MLCC大廠，國巨競爭對手' },
+  { ticker:'6261', name:'久元', rank:16, bh_wow:'+3.92%', weekly_chg:'+31.69%', bh_pct:'46.96%', signals:[], category:'半導體測試', relation:'跟封測同生態' },
+  { ticker:'6770', name:'力積電', rank:23, bh_wow:'+3.27%', weekly_chg:'+18.30%', bh_pct:'47.10%', signals:[], category:'DRAM-晶圓代工', relation:'有晶豪科但沒力積電' },
+  { ticker:'3450', name:'聯鈞', rank:15, bh_wow:'+3.93%', weekly_chg:'+35.76%', bh_pct:'41.32%', signals:['籌碼回補','新進榜','事件驅動','高波動警示'], category:'矽光-封裝', relation:'矽光封裝，CPO概念' },
+];
+
+// 當前篩選
+let currentSector = 'all';
+let sortColumns = [];
+
+// 計算籌碼評分 (0-100)
+function calcChipScore(s) {
+  let score = 50;
+  if (s.bh_wow > 5) score += 15;
+  else if (s.bh_wow > 0) score += 5;
+  else if (s.bh_wow < -5) score -= 15;
+  else if (s.bh_wow < 0) score -= 5;
+
+  if (s.foreign > 1000) score += 15;
+  else if (s.foreign > 0) score += 5;
+  else if (s.foreign < -1000) score -= 15;
+  else if (s.foreign < 0) score -= 5;
+
+  if (s.change_pct > 5 && s.volume > 10000) score += 10; // 帶量上漲
+  else if (s.change_pct > 5 && s.volume < 5000) score -= 5; // 量縮上漲
+
+  if (s.big_holder_pct > 60) score += 5;
+  if (s.revenue_yoy > 50) score += 5;
+  if (s.eps_q1 && s.eps_q1 > 2) score += 5;
+
+  return Math.max(0, Math.min(100, score));
+}
+
+// 渲染族群熱度
+function renderSectorHeat() {
+  const el = document.getElementById('sector-heat');
+  el.innerHTML = sectors.sort((a,b) => b.score - a.score).map(s => {
+    const colorClass = s.momentum === 'up' ? 'up' : s.momentum === 'down' ? 'down' : 'flat';
+    const icon = s.momentum === 'up' ? '↑' : s.momentum === 'down' ? '↓' : '→';
+    return `
+      <div class="heat-bar">
+        <div class="heat-name">${s.name} ${icon}</div>
+        <div class="heat-track">
+          <div class="heat-fill ${colorClass}" style="width:${s.score}%"></div>
+        </div>
+        <div class="heat-value ${s.momentum==='up'?'up':s.momentum==='down'?'down':''}">${s.score}</div>
+      </div>
+    `;
+  }).join('');
+}
+
+// 渲染輪動方向
+function renderRotate() {
+  const inEl = document.getElementById('rotate-in');
+  const outEl = document.getElementById('rotate-out');
+
+  const upSectors = sectors.filter(s => s.momentum === 'up').sort((a,b) => b.score - a.score);
+  const downSectors = sectors.filter(s => s.momentum === 'down').sort((a,b) => a.score - b.score);
+  const flatSectors = sectors.filter(s => s.momentum === 'sideways');
+
+  inEl.innerHTML = upSectors.map(s => `
+    <div>
+      <span class="rotate-dir rotate-in">↑ 流入</span>
+      <strong>${s.name}</strong> (熱度 ${s.score})
+    </div>
+  `).join('');
+
+  outEl.innerHTML = [...downSectors, ...flatSectors].map(s => `
+    <div>
+      <span class="rotate-dir ${s.momentum==='down'?'rotate-out':'rotate-hold'}">
+        ${s.momentum==='down'?'↓ 流出':'→ 觀望'}
+      </span>
+      <strong>${s.name}</strong> (熱度 ${s.score})
+    </div>
+  `).join('');
+}
+
+// 取得族群名稱
+function sectorName(id) {
+  const s = sectors.find(x => x.id === id);
+  return s ? s.name : id;
+}
+
+// 渲染股票表格
+function renderStockTable() {
+  let filtered = currentSector === 'all'
+    ? [...stocks]
+    : stocks.filter(s => s.sector === currentSector);
+
+  // 多欄位排序
+  if (sortColumns.length > 0) {
+    filtered.sort((a, b) => {
+      for (const col of sortColumns) {
+        const va = a[col.key] ?? -999999;
+        const vb = b[col.key] ?? -999999;
+        if (va !== vb) {
+          return col.asc ? (va - vb) : (vb - va);
+        }
+      }
+      return 0;
+    });
+  }
+
+  const tbody = document.getElementById('stock-tbody');
+  tbody.innerHTML = filtered.map(s => {
+    const score = calcChipScore(s);
+    const scoreClass = score > 60 ? 'chip-strong' : score < 40 ? 'chip-weak' : 'chip-mid';
+    const chgClass = s.change_pct > 0 ? 'up' : s.change_pct < 0 ? 'down' : '';
+    const bhClass = s.bh_wow > 0 ? 'up' : s.bh_wow < 0 ? 'down' : '';
+    const fClass = s.foreign > 0 ? 'up' : s.foreign < 0 ? 'down' : '';
+    const revClass = s.revenue_yoy > 0 ? 'up' : s.revenue_yoy < 0 ? 'down' : '';
+
+    return `
+      <tr>
+        <td class="ticker">${s.ticker}</td>
+        <td class="name">${s.name}</td>
+        <td>${sectorName(s.sector)}</td>
+        <td class="right num">${s.price ? s.price.toFixed(1) : '-'}</td>
+        <td class="right num ${chgClass}">${s.change_pct ? (s.change_pct>0?'+':'')+s.change_pct.toFixed(1)+'%' : '-'}</td>
+        <td class="right num">${s.big_holder_pct ? s.big_holder_pct+'%' : '-'}</td>
+        <td class="right num ${bhClass}">${s.bh_wow ? (s.bh_wow>0?'+':'')+s.bh_wow.toFixed(1)+'%' : '-'}</td>
+        <td class="right num ${fClass}">${s.foreign ? (s.foreign>0?'+':'')+s.foreign.toLocaleString() : '-'}</td>
+        <td class="right num">${s.volume ? s.volume.toLocaleString() : '-'}</td>
+        <td class="right num">${s.eps_q1 ?? '-'}</td>
+        <td class="right num ${revClass}">${s.revenue_yoy ? (s.revenue_yoy>0?'+':'')+s.revenue_yoy.toFixed(1)+'%' : '-'}</td>
+        <td class="right num">${s.pe ? s.pe.toFixed(0) : '-'}</td>
+        <td>
+          <div class="pro-con">
+            ${s.pros.map(p => `<span class="pc-tag pc-pro">${p}</span>`).join('')}
+            ${s.cons.map(c => `<span class="pc-tag pc-con">${c}</span>`).join('')}
+          </div>
+        </td>
+        <td class="center"><span class="chip-score ${scoreClass}">${score}</span></td>
+      </tr>
+    `;
+  }).join('');
+}
+
+// 渲染大戶漏網之魚
+function renderMissed() {
+  const tbody = document.getElementById('missed-tbody');
+  tbody.innerHTML = missed.map(m => `
+    <tr>
+      <td class="ticker">${m.ticker}</td>
+      <td>${m.name}</td>
+      <td class="center">#${m.rank}</td>
+      <td class="up">${m.bh_wow}</td>
+      <td class="up">${m.weekly_chg}</td>
+      <td>${m.signals.map(s => `<span class="pc-tag pc-pro">${s}</span>`).join('')}</td>
+      <td>${m.category}</td>
+      <td class="name">${m.relation}</td>
+    </tr>
+  `).join('');
+}
+
+// 切換族群篩選
+function setSector(id) {
+  currentSector = id;
+  document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+  event.target.classList.add('active');
+  renderStockTable();
+}
+
+// 切換排序
+function toggleSort(key) {
+  const existing = sortColumns.find(s => s.key === key);
+  if (existing) {
+    if (!existing.asc) {
+      // 已經 desc，移除
+      sortColumns = sortColumns.filter(s => s.key !== key);
+    } else {
+      // asc -> desc
+      existing.asc = false;
+    }
+  } else {
+    sortColumns.push({ key, asc: false }); // 預設 desc（大的在前）
+  }
+  updateSortChips();
+  renderStockTable();
+}
+
+function updateSortChips() {
+  const el = document.getElementById('active-sorts');
+  const base = '<span style="color:var(--text-dim); font-size:0.8rem;">目前排序：</span>';
+  if (sortColumns.length === 0) {
+    el.innerHTML = base + '<span style="color:var(--text-dim); font-size:0.8rem;">點擊欄位標題加入排序（可多選）</span>';
+    return;
+  }
+  el.innerHTML = base + sortColumns.map((s, i) => {
+    const labels = {
+      ticker:'代號', name:'名稱', sector:'族群', price:'現價', change_pct:'漲幅%',
+      big_holder_pct:'大戶%', bh_wow:'大戶增減%', foreign:'外資張',
+      volume:'成交量', eps_q1:'Q1 EPS', revenue_yoy:'營收YoY%', pe:'本益比',
+      chip_score:'籌碼評分'
+    };
+    return `
+      <span class="sort-chip ${s.asc?'asc':'desc'}">
+        ${i+1}. ${labels[s.key] || s.key} ${s.asc?'↑':'↓'}
+        <span class="remove" onclick="removeSort('${s.key}')">×</span>
+      </span>
+    `;
+  }).join('');
+}
+
+function removeSort(key) {
+  sortColumns = sortColumns.filter(s => s.key !== key);
+  updateSortChips();
+  renderStockTable();
+}
+
+// 初始化
+renderSectorHeat();
+renderRotate();
+renderStockTable();
+renderMissed();
+updateSortChips();
+
+// 定時刷新（模擬）
+setInterval(() => {
+  renderSectorHeat();
+  renderRotate();
+}, 30000);
+</script>
+
+</body>
+</html>
