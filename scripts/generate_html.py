@@ -39,7 +39,7 @@ class HTMLGenerator:
 </head>"""
 
     def _nav(self, active=""):
-        items = [("index.html","📊 首頁"),("watchlist.html","⭐ 自選"),("etf_00981a.html","📈 00981A")]
+        items = [("index.html","📊 首頁"),("watchlist.html","⭐ 自選"),("etf_00981a.html","📈 00981A"),("sector.html","🔄 族群輪動")]
         html = '<nav class="navbar"><div class="nav-brand">🔥 跟隨大戶選股站</div><div class="nav-links">'
         for href, text in items:
             cls = "active" if active in href else ""
