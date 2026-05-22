@@ -40,10 +40,12 @@ class HTMLGenerator:
 
     def _nav(self, active=""):
         items = [("index.html","📊 首頁"),("watchlist.html","⭐ 自選"),("etf_00981a.html","📈 00981A"),("sector.html","🔄 族群輪動")]
-        html = '<nav class="navbar"><div class="nav-brand">🔥 跟隨大戶選股站</div><div class="nav-links">'
+        html = '<nav class="navbar"><a href="index.html" class="nav-brand">🔥 跟隨大戶選股站</a><span style="color:#334155;">|</span><div class="nav-links">'
         for href, text in items:
-            cls = "active" if active in href else ""
-            html += f'<a href="{href}" class="{cls}">{text}</a>'
+            if active in href:
+                html += f'<span style="color:#38bdf8;font-weight:600;font-size:0.85rem;">{text}</span>'
+            else:
+                html += f'<a href="{href}">{text}</a>'
         html += '</div>'
         # === 全局搜尋框 ===
         stock_map = {}
