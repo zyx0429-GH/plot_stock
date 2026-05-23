@@ -316,6 +316,7 @@ class StockScreener:
                 "stock_name": info.get("stock_name", ""),
                 "big_holder_pct": round(big_pct, 2) if big_pct else 0,
                 "big_holder_change": big_change if big_change else 0,
+                "big_holder_threshold": big_threshold,
                 "close": close,
                 "change_pct": round(info.get("change_pct", 0), 2),
             })
