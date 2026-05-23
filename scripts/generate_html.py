@@ -225,20 +225,40 @@ Chart.defaults.scale.ticks.color = '#64748b';
         lines.append('</div></div>')
 
         # 大戶排名 (全部股票，JS 依門檻篩選)
+        # 從 watchlist 建立 threshold 查詢表 (big_holder_rank 可能缺少 threshold)
+        threshold_lookup = {}
+        for s in watchlist_data:
+            sid = s.get("stock_id")
+            th = s.get("big_holder_threshold")
+            if sid and th:
+                threshold_lookup[sid] = str(th)
+        # 也從 screened 補充
+        for s in screened:
+            sid = s.get("stock_id")
+            if sid and sid not in threshold_lookup:
+                th = s.get("big_holder_threshold")
+                if th:
+                    threshold_lookup[sid] = str(th)
+        
         all_big = big_holder_rank[:]
         seen_ids = {s["stock_id"] for s in all_big}
         for s in screened:
             if s["stock_id"] not in seen_ids:
                 all_big.append(s)
-        lines.append('<div class="card"><h2>👑 大戶持股排名（含外資）</h2><div class="controls"><label>顯示前 <input type="number" id="rankLimit" value="50" min="10" max="200" onchange="updateRank()"> 名</label><label>最小持股% <input type="number" id="minPct" value="0" min="0" max="100" step="0.1" onchange="updateRank()"></label><span class="ctrl-sep"></span><label>門檻</label><button class="fbtn active" id="th-all" onclick="setThreshold(\'all\',this)">全部</button><button class="fbtn" id="th-200" onclick="setThreshold(\'200\',this)">≥200張</button><button class="fbtn" id="th-400" onclick="setThreshold(\'400\',this)">≥400張</button><button class="fbtn" id="th-1000" onclick="setThreshold(\'1000\',this)">≥1000張</button></div><div class="table-responsive"><table class="data-table" id="bigHolderTable"><thead><tr><th>排名</th><th>代號</th><th>名稱</th><th>大戶%</th><th>週增減%</th><th>收盤價</th><th>漲跌%</th><th>門檻</th></tr></thead><tbody>')
+        lines.append('<div class="card"><h2>👑 大戶持股排名（含外資）</h2><p class="chart-desc">依大戶持股比例排序，可切換不同門檻（100張=Norway台灣50 / 200~1000張=fortune-fred大戶監控）</p><div class="controls"><label>顯示前 <input type="number" id="rankLimit" value="50" min="10" max="200" onchange="updateRank()"> 名</label><label>最小持股% <input type="number" id="minPct" value="0" min="0" max="100" step="0.1" onchange="updateRank()"></label><span class="ctrl-sep"></span><label>門檻</label><button class="fbtn active" id="th-all" onclick="setThreshold(\'all\',this)">全部</button><button class="fbtn" id="th-100" onclick="setThreshold(\'100\',this)">≥100張</button><button class="fbtn" id="th-200" onclick="setThreshold(\'200\',this)">≥200張</button><button class="fbtn" id="th-400" onclick="setThreshold(\'400\',this)">≥400張</button><button class="fbtn" id="th-1000" onclick="setThreshold(\'1000\',this)">≥1000張</button></div><div class="table-responsive"><table class="data-table" id="bigHolderTable"><thead><tr><th>排名</th><th>代號</th><th>名稱</th><th>大戶%</th><th>週增減%</th><th>收盤價</th><th>漲跌%</th><th>門檻</th></tr></thead><tbody>')
         for i, s in enumerate(all_big, 1):
             big_holder_pct = s.get("big_holder_pct") if s.get("big_holder_pct") is not None else 0.0
             big_holder_change = s.get("big_holder_change") if s.get("big_holder_change") is not None else 0.0
             close = s.get("close") if s.get("close") is not None else 0.0
             change_pct = s.get("change_pct") if s.get("change_pct") is not None else 0.0
-            th = s.get("big_holder_threshold", "") or "—"
-            cc = "up" if big_holder_change>0 else "down" if big_holder_change<0 else ""
             sid = s.get("stock_id","-")
+            # 優先從查詢表取得 threshold，否則用 item 自身或預設
+            th = threshold_lookup.get(sid, "")
+            if not th:
+                th = s.get("big_holder_threshold", "")
+            if not th:
+                th = "—"
+            cc = "up" if big_holder_change>0 else "down" if big_holder_change<0 else ""
             lines.append(f'<tr data-pct="{big_holder_pct}" data-threshold="{th}" onclick="location.href=\'stock_{sid}.html\'" class="clickable"><td>{i}</td><td><strong>{sid}</strong></td><td>{s.get("stock_name","-")}</td><td class="highlight">{big_holder_pct:.2f}%</td><td class="{cc}">{big_holder_change:+.2f}%</td><td>{close:.2f}</td><td class="{"up" if change_pct>0 else "down"}">{change_pct:+.2f}%</td><td>≥{th}張</td></tr>')
         lines.append('</tbody></table></div></div>')
 
@@ -321,7 +341,7 @@ Chart.defaults.scale.ticks.color = '#64748b';
         lines.append(f'const scatterData = {sd};')
         lines.append('const ctx = document.getElementById("scatterChart").getContext("2d");')
         lines.append('let scatterChart;function renderScatter(filter){const up=scatterData.filter(d=>d.y>0);const down=scatterData.filter(d=>d.y<0);const flat=scatterData.filter(d=>d.y===0);const ds=[];if(filter==="all"||filter==="up")ds.push({label:"📈 增加",data:up,backgroundColor:"rgba(46,204,113,0.6)",borderColor:"#27ae60",borderWidth:1,pointRadius:6,pointHoverRadius:10});if(filter==="all"||filter==="down")ds.push({label:"📉 減少",data:down,backgroundColor:"rgba(231,76,60,0.6)",borderColor:"#c0392b",borderWidth:1,pointRadius:6,pointHoverRadius:10});if(filter==="all"||filter==="flat")ds.push({label:"➡️ 持平",data:flat,backgroundColor:"rgba(148,163,184,0.6)",borderColor:"#64748b",borderWidth:1,pointRadius:6,pointHoverRadius:10});if(scatterChart)scatterChart.destroy();scatterChart=new Chart(ctx,{type:"scatter",data:{datasets:ds},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:true},tooltip:{backgroundColor:"rgba(15,23,42,0.95)",titleColor:"#e2e8f0",bodyColor:"#e2e8f0",borderColor:"#334155",borderWidth:1,cornerRadius:8,padding:10,displayColors:true,callbacks:{label:function(context){const d=context.raw;return `${d.stock_name}(${d.stock_id}) 大戶:${d.x}% 週增減:${d.y>=0?"+":""}${d.y}%`;},title:function(){return"";}}}},scales:{x:{title:{display:true,text:"大戶持股 %",color:"#64748b"},ticks:{color:"#64748b"},grid:{color:"rgba(0,0,0,0.05)"}},y:{title:{display:true,text:"本週增減 %",color:"#64748b"},ticks:{color:"#64748b"},grid:{color:"rgba(0,0,0,0.05)"}}},onClick:(e,elements)=>{if(elements.length>0){const el=elements[0];const d=scatterChart.data.datasets[el.datasetIndex].data[el.index];window.location.href="stock_"+d.stock_id+".html";}}}});}function setScatter(v,btn){["sc-all","sc-up","sc-down"].forEach(id=>document.getElementById(id).classList.remove("active"));btn.classList.add("active");renderScatter(v);}renderScatter("all");')
-        lines.append('function updateRank(){const limit=parseInt(document.getElementById("rankLimit").value)||200;const minPct=parseFloat(document.getElementById("minPct").value)||0;const th=document.getElementById("th-all").classList.contains("active")?"all":document.getElementById("th-200").classList.contains("active")?"200":document.getElementById("th-400").classList.contains("active")?"400":document.getElementById("th-1000").classList.contains("active")?"1000":"all";const rows=document.querySelectorAll("#bigHolderTable tbody tr");let shown=0;rows.forEach((row)=>{const pct=parseFloat(row.dataset.pct);const rowTh=row.dataset.threshold||"";const thOk=th==="all"||rowTh===th;const show=shown<limit&&pct>=minPct&&thOk;if(show)shown++;row.style.display=show?"":"none";});}function setThreshold(v,btn){["th-all","th-200","th-400","th-1000"].forEach(id=>document.getElementById(id).classList.remove("active"));btn.classList.add("active");updateRank();}')
+        lines.append('function updateRank(){const limit=parseInt(document.getElementById("rankLimit").value)||200;const minPct=parseFloat(document.getElementById("minPct").value)||0;const th=document.getElementById("th-all").classList.contains("active")?"all":document.getElementById("th-100").classList.contains("active")?"100":document.getElementById("th-200").classList.contains("active")?"200":document.getElementById("th-400").classList.contains("active")?"400":document.getElementById("th-1000").classList.contains("active")?"1000":"all";const rows=document.querySelectorAll("#bigHolderTable tbody tr");let shown=0;rows.forEach((row)=>{const pct=parseFloat(row.dataset.pct);const rowTh=row.dataset.threshold||"";const thOk=th==="all"||rowTh===th;const show=shown<limit&&pct>=minPct&&thOk;if(show)shown++;row.style.display=show?"":"none";});}function setThreshold(v,btn){["th-all","th-100","th-200","th-400","th-1000"].forEach(id=>document.getElementById(id).classList.remove("active"));btn.classList.add("active");updateRank();}')
         lines.append('</script>')
         lines.append('</body></html>')
 

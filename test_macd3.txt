@@ -1,0 +1,1 @@
+ = '<div><strong style="color:var(--text-muted);">DIF(12,26)</strong> <span style="font-weight:600;">10.76</span> <span style="color:#ef4444;">▼</span></div><div><strong style="color:var(--text-muted);">MACD(9)</strong> <span style="font-weight:600;">11.25</span> <span style="color:#ef4444;">▼</span></div><div><strong style="color:var(--text-muted)
