@@ -1,19 +1,21 @@
-/* ===== 智董籌碼選股站 - 深色主題 (與族群輪動頁統一) ===== */
+/* ===== 籌碼選股站 — 白底清爽主題 ===== */
 :root {
-    --bg: #0f172a;
-    --card-bg: #1e293b;
-    --text: #e2e8f0;
-    --text-muted: #94a3b8;
-    --accent: #38bdf8;
-    --accent-glow: rgba(56,189,248,0.12);
-    --up: #22c55e;
-    --down: #ef4444;
-    --buy: #22c55e;
-    --sell: #ef4444;
-    --border: #334155;
-    --hover: #38bdf8;
-    --shadow: rgba(0,0,0,0.3);
-    --shadow-hover: rgba(56,189,248,0.15);
+    --bg: #f8fafc;
+    --card-bg: #ffffff;
+    --text: #1e293b;
+    --text-muted: #64748b;
+    --accent: #2563eb;
+    --accent-glow: rgba(37,99,235,0.08);
+    --up: #16a34a;
+    --down: #dc2626;
+    --buy: #16a34a;
+    --sell: #dc2626;
+    --border: #e2e8f0;
+    --hover: #2563eb;
+    --shadow: rgba(0,0,0,0.06);
+    --shadow-hover: rgba(37,99,235,0.10);
+    --grid-line: rgba(0,0,0,0.06);
+    --chart-text: #475569;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -26,10 +28,10 @@ body {
     min-height: 100vh;
 }
 
-/* ===== 導航列（統一緊湊風格） ===== */
+/* ===== 導航列 ===== */
 .navbar {
-    background: #0f172a;
-    border-bottom: 1px solid #334155;
+    background: #ffffff;
+    border-bottom: 1px solid var(--border);
     padding: 8px 2rem;
     display: flex;
     align-items: center;
@@ -39,12 +41,13 @@ body {
     top: 0;
     z-index: 100;
     flex-wrap: wrap;
+    box-shadow: 0 1px 3px var(--shadow);
 }
 
 .nav-brand {
     font-size: 0.95rem;
     font-weight: 600;
-    color: #38bdf8;
+    color: var(--accent);
     text-decoration: none;
 }
 
@@ -55,7 +58,7 @@ body {
 }
 
 .nav-links a {
-    color: #94a3b8;
+    color: var(--text-muted);
     text-decoration: none;
     font-size: 0.85rem;
     padding: 4px 8px;
@@ -65,11 +68,11 @@ body {
 }
 
 .nav-links a:hover {
-    color: #e2e8f0;
+    color: var(--text);
 }
 
 .nav-links a.active {
-    color: #38bdf8;
+    color: var(--accent);
     font-weight: 600;
 }
 
@@ -82,27 +85,27 @@ body {
 }
 .nav-search input {
     padding: 6px 12px;
-    border: 1px solid #475569;
+    border: 1px solid var(--border);
     border-radius: 8px;
-    background: #0f172a;
-    color: #e2e8f0;
+    background: #ffffff;
+    color: var(--text);
     font-size: 0.9rem;
     width: 220px;
     outline: none;
     transition: border-color 0.2s, box-shadow 0.2s;
 }
 .nav-search input:focus {
-    border-color: #3b82f6;
-    box-shadow: 0 0 0 3px rgba(59,130,246,0.2);
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(37,99,235,0.15);
 }
 .nav-search input::placeholder {
-    color: #64748b;
+    color: #94a3b8;
 }
 .nav-search button {
     padding: 6px 14px;
     border: none;
     border-radius: 8px;
-    background: #1d4ed8;
+    background: var(--accent);
     color: #fff;
     font-size: 0.85rem;
     font-weight: 600;
@@ -110,7 +113,7 @@ body {
     transition: background 0.2s;
 }
 .nav-search button:hover {
-    background: #2563eb;
+    background: #1d4ed8;
 }
 
 /* ===== 控制列按鈕 ===== */
@@ -121,39 +124,39 @@ body {
     flex-wrap: wrap;
     margin-bottom: 1rem;
     padding: 0.75rem;
-    background: #1e293b;
+    background: #f1f5f9;
     border-radius: 8px;
-    border: 1px solid #334155;
+    border: 1px solid var(--border);
 }
 .ctrl-sep {
     width: 1px;
     height: 24px;
-    background: #475569;
+    background: #cbd5e1;
     margin: 0 4px;
 }
 .fbtn {
     padding: 5px 14px;
     border-radius: 12px;
-    border: 1px solid #475569;
-    background: #1e293b;
-    color: #94a3b8;
+    border: 1px solid #cbd5e1;
+    background: #ffffff;
+    color: var(--text-muted);
     font-size: 12px;
     cursor: pointer;
     transition: .12s;
 }
 .fbtn:hover {
-    border-color: #64748b;
-    color: #e2e8f0;
+    border-color: #94a3b8;
+    color: var(--text);
 }
 .fbtn.active {
-    background: #1d4ed8;
+    background: var(--accent);
     color: #fff;
-    border-color: #1d4ed8;
-    box-shadow: 0 0 10px rgba(29,78,216,0.3);
+    border-color: var(--accent);
+    box-shadow: 0 0 10px rgba(37,99,235,0.2);
 }
 .controls label {
     font-size: 13px;
-    color: #94a3b8;
+    color: var(--text-muted);
     font-weight: 500;
     display: flex;
     align-items: center;
@@ -162,17 +165,17 @@ body {
 .controls input[type="number"] {
     width: 70px;
     padding: 4px 8px;
-    border: 1px solid #475569;
+    border: 1px solid #cbd5e1;
     border-radius: 6px;
     font-size: 13px;
     outline: none;
     text-align: center;
-    background: #0f172a;
-    color: #e2e8f0;
+    background: #ffffff;
+    color: var(--text);
 }
 .controls input[type="number"]:focus {
-    border-color: #3b82f6;
-    box-shadow: 0 0 0 2px rgba(59,130,246,0.2);
+    border-color: var(--accent);
+    box-shadow: 0 0 0 2px rgba(37,99,235,0.15);
 }
 @media (max-width: 768px) {
     .navbar { flex-wrap: wrap; height: auto; padding: 0.5rem 1rem; }
@@ -194,7 +197,7 @@ body {
     text-align: center;
     margin-bottom: 2rem;
     padding: 1.5rem;
-    background: linear-gradient(135deg, #1e293b 0%, rgba(56,189,248,0.05) 100%);
+    background: linear-gradient(135deg, #ffffff 0%, rgba(37,99,235,0.03) 100%);
     border-radius: 12px;
     border: 1px solid var(--border);
     box-shadow: 0 2px 8px var(--shadow);
@@ -203,7 +206,7 @@ body {
 .header-info h1 {
     font-size: 2rem;
     margin-bottom: 0.5rem;
-    background: linear-gradient(90deg, #38bdf8, #818cf8);
+    background: linear-gradient(90deg, #2563eb, #7c3aed);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -232,7 +235,7 @@ body {
 .card h2 {
     font-size: 1.2rem;
     margin-bottom: 1rem;
-    color: #38bdf8;
+    color: var(--accent);
     display: flex;
     align-items: center;
     gap: 0.5rem;
@@ -248,6 +251,9 @@ body {
     position: relative;
     height: 400px;
     width: 100%;
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 8px;
 }
 
 /* ===== 表格 ===== */
@@ -255,6 +261,7 @@ body {
     overflow-x: auto;
     border-radius: 8px;
     border: 1px solid var(--border);
+    background: #ffffff;
 }
 
 .data-table {
@@ -264,8 +271,8 @@ body {
 }
 
 .data-table thead {
-    background: linear-gradient(90deg, #1e3a5f, #334155);
-    color: #f1f5f9;
+    background: linear-gradient(90deg, #f1f5f9, #e2e8f0);
+    color: var(--text);
 }
 
 .data-table th {
@@ -273,7 +280,8 @@ body {
     text-align: center;
     font-weight: 600;
     white-space: nowrap;
-    border-bottom: 2px solid #1e3a5f;
+    border-bottom: 2px solid var(--border);
+    color: var(--text);
 }
 
 .data-table td {
@@ -285,11 +293,11 @@ body {
 }
 
 .data-table tbody tr:nth-child(even) {
-    background: rgba(30,41,59,0.6);
+    background: rgba(241,245,249,0.6);
 }
 
 .data-table tbody tr:hover {
-    background: rgba(56,189,248,0.06);
+    background: rgba(37,99,235,0.04);
 }
 
 .data-table tbody tr.clickable {
@@ -304,10 +312,10 @@ body {
 .bull { color: var(--up); font-weight: 600; }
 .bear { color: var(--down); font-weight: 600; }
 .neutral { color: var(--text-muted); }
-.highlight { color: #f59e0b; font-weight: 700; }
+.highlight { color: #d97706; font-weight: 700; }
 
 .score {
-    background: linear-gradient(135deg, #1d4ed8, #7c3aed);
+    background: linear-gradient(135deg, #2563eb, #7c3aed);
     color: white;
     padding: 0.2rem 0.6rem;
     border-radius: 20px;
@@ -319,7 +327,7 @@ body {
 .stock-header {
     text-align: center;
     padding: 2rem;
-    background: linear-gradient(135deg, #1e293b, rgba(56,189,248,0.05));
+    background: linear-gradient(135deg, #ffffff, rgba(37,99,235,0.03));
     border-radius: 12px;
     margin-bottom: 1.5rem;
     border: 1px solid var(--border);
@@ -329,7 +337,7 @@ body {
 .stock-header h1 {
     font-size: 1.8rem;
     margin-bottom: 0.5rem;
-    color: #38bdf8;
+    color: var(--accent);
 }
 
 .stock-price {
@@ -342,14 +350,14 @@ body {
 .stock-price .price {
     font-size: 2.5rem;
     font-weight: 700;
-    color: #e2e8f0;
+    color: var(--text);
 }
 
 .stock-price .change {
     font-size: 1.2rem;
     padding: 0.3rem 0.8rem;
     border-radius: 20px;
-    background: rgba(255,255,255,0.06);
+    background: rgba(0,0,0,0.04);
     color: var(--text);
 }
 
@@ -375,7 +383,7 @@ body {
 }
 
 .metric-card h3 {
-    color: #38bdf8;
+    color: var(--accent);
     margin-bottom: 0.8rem;
     font-size: 1rem;
 }
@@ -402,6 +410,7 @@ body {
     font-size: 0.8rem;
     border-top: 1px solid var(--border);
     margin-top: 2rem;
+    background: #ffffff;
 }
 
 /* ===== 響應式 ===== */
@@ -412,4 +421,9 @@ body {
     .chart-container { height: 300px; }
     .metrics-grid { grid-template-columns: 1fr; }
     .controls { flex-direction: column; gap: 0.5rem; }
+}
+
+/* ===== Chart.js 白底圖表全域樣式覆蓋 ===== */
+.chart-container canvas {
+    background: #ffffff !important;
 }

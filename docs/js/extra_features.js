@@ -108,9 +108,9 @@
         const color = parseFloat(result.avgReturn) >= 0 ? '#16a34a' : '#dc2626';
         el.innerHTML = `
             <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:15px;">
-                <div style="background:#1e293b;border:1px solid #334155;border-radius:8px;padding:15px;text-align:center;">
-                    <div style="color:#94a3b8;font-size:12px;margin-bottom:5px;">選中檔數</div>
-                    <div style="font-size:1.5em;font-weight:bold;color:#e2e8f0;">${result.selectedCount} / ${result.total}</div>
+                <div style="background:#ffffff;border:1px solid #e2e8f0;border-radius:8px;padding:15px;text-align:center;">
+                    <div style="color:#64748b;font-size:12px;margin-bottom:5px;">選中檔數</div>
+                    <div style="font-size:1.5em;font-weight:bold;color:#1e293b;">${result.selectedCount} / ${result.total}</div>
                 </div>
                 <div style="background:#1e293b;border:1px solid #334155;border-radius:8px;padding:15px;text-align:center;">
                     <div style="color:#94a3b8;font-size:12px;margin-bottom:5px;">勝率</div>
