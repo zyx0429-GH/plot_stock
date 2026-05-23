@@ -677,11 +677,10 @@ Chart.defaults.scale.ticks.color = '#64748b';
                 elif val < prev: return '<span style="color:#ef4444;">▼</span>'
                 return '<span style="color:#94a3b8;">—</span>'
             osc_color = '#22c55e' if latest_osc >= 0 else '#ef4444'
-            lines.append(f'document.getElementById("macd-values").innerHTML = \'')
-            lines.append(f'<div><strong style="color:var(--text-muted);">DIF(12,26)</strong> <span style="font-weight:600;">{latest_dif:.2f}</span> {_arrow(latest_dif, prev_dif)}</div>')
-            lines.append(f'<div><strong style="color:var(--text-muted);">MACD(9)</strong> <span style="font-weight:600;">{latest_sig:.2f}</span> {_arrow(latest_sig, prev_sig)}</div>')
-            lines.append(f'<div><strong style="color:var(--text-muted);">OSC</strong> <span style="font-weight:600;color:{osc_color}">{latest_osc:+.2f}</span> {_arrow(latest_osc, prev_osc)}</div>')
-            lines.append('document.getElementById("macd-values").innerHTML = \'\';')
+            macd_html = f'<div><strong style="color:var(--text-muted);">DIF(12,26)</strong> <span style="font-weight:600;">{latest_dif:.2f}</span> {_arrow(latest_dif, prev_dif)}</div>' \
+                        f'<div><strong style="color:var(--text-muted);">MACD(9)</strong> <span style="font-weight:600;">{latest_sig:.2f}</span> {_arrow(latest_sig, prev_sig)}</div>' \
+                        f'<div><strong style="color:var(--text-muted);">OSC</strong> <span style="font-weight:600;color:{osc_color}">{latest_osc:+.2f}</span> {_arrow(latest_osc, prev_osc)}</div>'
+            lines.append(f'document.getElementById("macd-values").innerHTML = \'{macd_html}\';')
 
             lines.append(f'new Chart(document.getElementById("macdChart").getContext("2d"),{{')
             lines.append(f'type:"bar",')
