@@ -108,7 +108,7 @@
         const color = parseFloat(result.avgReturn) >= 0 ? '#16a34a' : '#dc2626';
         el.innerHTML = `
             <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:15px;">
-                <div style="background:#ffffff;border:1px solid #e2e8f0;border-radius:8px;padding:15px;text-align:center;">
+                <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:8px;padding:15px;text-align:center;">
                     <div style="color:var(--text-muted);font-size:12px;margin-bottom:5px;">選中檔數</div>
                     <div style="font-size:1.5em;font-weight:bold;color:#1e293b;">${result.selectedCount} / ${result.total}</div>
                 </div>
@@ -131,9 +131,9 @@
             </div>
             ${result.selectedCount > 0 ? `
             <div style="margin-top:15px;">
-                <div style="color:#fbbf24;font-weight:bold;margin-bottom:8px;">📋 選中股票</div>
+                <div style="color:#f59e0b;font-weight:bold;margin-bottom:8px;">📋 選中股票</div>
                 <div style="display:flex;flex-wrap:wrap;gap:6px;">
-                    ${result.matched.map(s => `<span style="padding:3px 10px;border-radius:4px;background:var(--text-secondary);color:#e2e8f0;font-size:12px;">${s.code} ${s.name} <span style="color:${s.change_pct>=0?'#16a34a':'#dc2626'}">${s.change_pct>=0?'+':''}${s.change_pct.toFixed(2)}%</span></span>`).join('')}
+                    ${result.matched.map(s => `<span style="padding:3px 10px;border-radius:4px;background:var(--badge-bg);color:var(--text);font-size:12px;">${s.code} ${s.name} <span style="color:${s.change_pct>=0?'#16a34a':'#dc2626'}">${s.change_pct>=0?'+':''}${s.change_pct.toFixed(2)}%</span></span>`).join('')}
                 </div>
             </div>` : ''}
         `;
@@ -265,11 +265,11 @@
             const scoreLabel = topScore >= 80 ? 'A+' : topScore >= 65 ? 'A' : topScore >= 50 ? 'B' : topScore >= 35 ? 'C' : 'D';
             const scoreColor = topScore >= 80 ? '#16a34a' : topScore >= 65 ? '#16a34a' : topScore >= 50 ? '#f59e0b' : topScore >= 35 ? '#f97316' : '#dc2626';
             return `<div class="sector-card" data-sector="${s.name}" style="background:var(--card-bg);border:1px solid var(--border);border-radius:8px;padding:15px;cursor:pointer;transition:all 0.2s;position:relative;"
-                onmouseenter="this.style.borderColor='#475569';this.style.transform='translateY(-2px)';this.style.boxShadow='0 4px 12px rgba(0,0,0,0.2)';"
+                onmouseenter="this.style.borderColor='var(--accent)';this.style.transform='translateY(-2px)';this.style.boxShadow='0 4px 12px rgba(37,99,235,0.10)';"
                 onmouseleave="this.style.borderColor='var(--border)';this.style.transform='';this.style.boxShadow='';">
                 <div style="position:absolute;top:10px;right:12px;font-size:11px;font-weight:700;color:${scoreColor};background:${scoreColor}15;padding:2px 8px;border-radius:10px;border:1px solid ${scoreColor}30;">${scoreLabel}</div>
                 <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;padding-right:40px;">
-                    <span style="font-weight:bold;color:#e2e8f0;font-size:14px;">${s.name}</span>
+                    <span style="font-weight:bold;color:var(--text);font-size:14px;">${s.name}</span>
                     <span style="font-size:12px;">${heat}</span>
                 </div>
                 <div style="font-size:1.5em;font-weight:bold;color:${color};margin-bottom:5px;">${s.avgChange>=0?'+':''}${s.avgChange.toFixed(2)}%</div>
@@ -311,12 +311,12 @@
             const wowSign = s.wow_change > 0 ? '+' : '';
 
             return `
-            <tr onclick="location.href='stock_${s.code}.html'" class="clickable" style="cursor:pointer;border-bottom:1px solid #1e293b;transition:background 0.15s;" onmouseenter="this.style.background='#1e293b'" onmouseleave="this.style.background=''">
-                <td style="padding:10px 8px;"><strong style="color:#e2e8f0;">${s.code}</strong></td>
-                <td style="padding:10px 8px;color:#e2e8f0;">${s.name}</td>
-                <td style="padding:10px 8px;text-align:right;color:#e2e8f0;">${s.close > 0 ? s.close.toFixed(2) : '—'}</td>
+            <tr onclick="location.href='stock_${s.code}.html'" class="clickable" style="cursor:pointer;border-bottom:1px solid var(--border);transition:background 0.15s;" onmouseenter="this.style.background='rgba(37,99,235,0.04)'" onmouseleave="this.style.background=''">
+                <td style="padding:10px 8px;"><strong style="color:var(--text);">${s.code}</strong></td>
+                <td style="padding:10px 8px;color:var(--text);">${s.name}</td>
+                <td style="padding:10px 8px;text-align:right;color:var(--text);">${s.close > 0 ? s.close.toFixed(2) : '—'}</td>
                 <td style="padding:10px 8px;text-align:right;color:${changeColor};font-weight:600;">${s.change_pct !== 0 ? changeSign + s.change_pct.toFixed(2) + '%' : '—'}</td>
-                <td style="padding:10px 8px;text-align:right;color:#fbbf24;font-weight:600;">${s.big_holder_pct > 0 ? s.big_holder_pct.toFixed(2) + '%' : '—'}</td>
+                <td style="padding:10px 8px;text-align:right;color:var(--warning);font-weight:600;">${s.big_holder_pct > 0 ? s.big_holder_pct.toFixed(2) + '%' : '—'}</td>
                 <td style="padding:10px 8px;text-align:right;color:${wowColor};font-weight:600;">${s.wow_change !== 0 ? wowSign + s.wow_change.toFixed(2) + '%' : '—'}</td>
                 <td style="padding:10px 8px;text-align:center;">${s.trend ? '<span style="color:' + (s.trend === '多頭排列' ? '#16a34a' : '#dc2626') + ';font-size:12px;">' + s.trend + '</span>' : '—'}</td>
                 <td style="padding:10px 8px;text-align:center;font-size:14px;">${s.foreign_buy ? '<span style="color:#16a34a;">✅</span>' : '<span style="color:var(--text-muted);">❌</span>'}</td>
@@ -336,7 +336,7 @@
                 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(100px,1fr));gap:10px;margin:0 0 15px 0;">
                     <div style="background:var(--card-bg);border-radius:6px;padding:8px 12px;text-align:center;">
                         <div style="color:var(--text-muted);font-size:11px;">個股數</div>
-                        <div style="color:#e2e8f0;font-weight:bold;font-size:1.2em;">${stocks.length}</div>
+                        <div style="color:var(--text);font-weight:bold;font-size:1.2em;">${stocks.length}</div>
                     </div>
                     <div style="background:var(--card-bg);border-radius:6px;padding:8px 12px;text-align:center;">
                         <div style="color:var(--text-muted);font-size:11px;">平均評分</div>
@@ -348,7 +348,7 @@
                     </div>
                     <div style="background:var(--card-bg);border-radius:6px;padding:8px 12px;text-align:center;">
                         <div style="color:var(--text-muted);font-size:11px;">強勢股 (≥65)</div>
-                        <div style="color:#fbbf24;font-weight:bold;font-size:1.2em;">${hotStocks} 檔</div>
+                        <div style="color:#f59e0b;font-weight:bold;font-size:1.2em;">${hotStocks} 檔</div>
                     </div>
                 </div>
                 <div style="overflow-x:auto;border:1px solid var(--border);border-radius:8px;">
@@ -467,7 +467,7 @@
                 <div style="display:flex;gap:15px;margin-bottom:15px;flex-wrap:wrap;">
                     <div style="flex:1;min-width:120px;background:var(--card-bg);border-radius:8px;padding:12px;text-align:center;">
                         <div style="color:var(--text-muted);font-size:12px;">收盤價</div>
-                        <div style="font-size:1.3em;font-weight:bold;color:#e2e8f0;">${close}</div>
+                        <div style="font-size:1.3em;font-weight:bold;color:var(--text);">${close}</div>
                     </div>
                     <div style="flex:1;min-width:120px;background:var(--card-bg);border-radius:8px;padding:12px;text-align:center;">
                         <div style="color:var(--text-muted);font-size:12px;">漲跌</div>
@@ -475,24 +475,24 @@
                     </div>
                 </div>
                 <div style="margin-bottom:15px;">
-                    <div style="color:#fbbf24;font-weight:bold;margin-bottom:8px;">📊 五維雷達圖</div>
+                    <div style="color:#f59e0b;font-weight:bold;margin-bottom:8px;">📊 五維雷達圖</div>
                     <div style="max-width:350px;margin:0 auto;">
                         <canvas id="radarChartPopup"></canvas>
                     </div>
                 </div>
                 <div style="margin-bottom:15px;">
-                    <div style="color:#fbbf24;font-weight:bold;margin-bottom:8px;">🎯 訊號標籤</div>
+                    <div style="color:#f59e0b;font-weight:bold;margin-bottom:8px;">🎯 訊號標籤</div>
                     <div style="display:flex;flex-wrap:wrap;gap:5px;">
                         ${generateSignalTags(stockText)}
                     </div>
                 </div>
                 <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;font-size:12px;color:var(--text-muted);">
                     <div style="background:var(--card-bg);border-radius:6px;padding:10px;">
-                        <div style="color:#e2e8f0;font-weight:bold;margin-bottom:4px;">💰 買點</div>
+                        <div style="color:var(--text);font-weight:bold;margin-bottom:4px;">💰 買點</div>
                         ${getBuySignalText(stockText)}
                     </div>
                     <div style="background:var(--card-bg);border-radius:6px;padding:10px;">
-                        <div style="color:#e2e8f0;font-weight:bold;margin-bottom:4px;">📉 停損</div>
+                        <div style="color:var(--text);font-weight:bold;margin-bottom:4px;">📉 停損</div>
                         ${getStopLossText(stockText, close)}
                     </div>
                 </div>
@@ -530,7 +530,7 @@
                                 min: 0, max: 10,
                                 ticks: { stepSize: 2, color: 'var(--text-muted)', backdropColor: 'transparent' },
                                 grid: { color: 'var(--border)' },
-                                pointLabels: { color: '#e2e8f0', font: { size: 12 } }
+                                pointLabels: { color: 'var(--chart-text)', font: { size: 12 } }
                             }
                         },
                         plugins: { legend: { display: false } }
@@ -592,7 +592,7 @@
     function initScrollTop() {
         const btn = document.createElement('div');
         btn.innerHTML = '⬆️';
-        btn.style.cssText = 'position:fixed;bottom:30px;right:30px;width:50px;height:50px;background:var(--text-secondary);color:#e2e8f0;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:20px;z-index:1000;opacity:0;transition:opacity 0.3s;box-shadow:0 4px 12px rgba(0,0,0,0.3);';
+        btn.style.cssText = 'position:fixed;bottom:30px;right:30px;width:50px;height:50px;background:var(--text-secondary);color:var(--text);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:20px;z-index:1000;opacity:0;transition:opacity 0.3s;box-shadow:0 4px 12px rgba(0,0,0,0.3);';
         btn.onclick = () => window.scrollTo({top:0, behavior:'smooth'});
         document.body.appendChild(btn);
         window.addEventListener('scroll', () => { btn.style.opacity = window.scrollY > 500 ? '1' : '0'; });
