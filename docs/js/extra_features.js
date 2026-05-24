@@ -109,23 +109,23 @@
         el.innerHTML = `
             <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:15px;">
                 <div style="background:#ffffff;border:1px solid #e2e8f0;border-radius:8px;padding:15px;text-align:center;">
-                    <div style="color:#64748b;font-size:12px;margin-bottom:5px;">選中檔數</div>
+                    <div style="color:var(--text-muted);font-size:12px;margin-bottom:5px;">選中檔數</div>
                     <div style="font-size:1.5em;font-weight:bold;color:#1e293b;">${result.selectedCount} / ${result.total}</div>
                 </div>
-                <div style="background:#1e293b;border:1px solid #334155;border-radius:8px;padding:15px;text-align:center;">
-                    <div style="color:#94a3b8;font-size:12px;margin-bottom:5px;">勝率</div>
-                    <div style="font-size:1.5em;font-weight:bold;color:#38bdf8;">${result.winRate}%</div>
+                <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:8px;padding:15px;text-align:center;">
+                    <div style="color:var(--text-muted);font-size:12px;margin-bottom:5px;">勝率</div>
+                    <div style="font-size:1.5em;font-weight:bold;color:var(--accent);">${result.winRate}%</div>
                 </div>
-                <div style="background:#1e293b;border:1px solid #334155;border-radius:8px;padding:15px;text-align:center;">
-                    <div style="color:#94a3b8;font-size:12px;margin-bottom:5px;">平均報酬</div>
+                <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:8px;padding:15px;text-align:center;">
+                    <div style="color:var(--text-muted);font-size:12px;margin-bottom:5px;">平均報酬</div>
                     <div style="font-size:1.5em;font-weight:bold;color:${color};">${result.avgReturn}%</div>
                 </div>
-                <div style="background:#1e293b;border:1px solid #334155;border-radius:8px;padding:15px;text-align:center;">
-                    <div style="color:#94a3b8;font-size:12px;margin-bottom:5px;">最大單日虧損</div>
+                <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:8px;padding:15px;text-align:center;">
+                    <div style="color:var(--text-muted);font-size:12px;margin-bottom:5px;">最大單日虧損</div>
                     <div style="font-size:1.5em;font-weight:bold;color:#dc2626;">${result.maxLoss}%</div>
                 </div>
-                <div style="background:#1e293b;border:1px solid #334155;border-radius:8px;padding:15px;text-align:center;">
-                    <div style="color:#94a3b8;font-size:12px;margin-bottom:5px;">最大單日獲利</div>
+                <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:8px;padding:15px;text-align:center;">
+                    <div style="color:var(--text-muted);font-size:12px;margin-bottom:5px;">最大單日獲利</div>
                     <div style="font-size:1.5em;font-weight:bold;color:#16a34a;">${result.maxGain}%</div>
                 </div>
             </div>
@@ -133,7 +133,7 @@
             <div style="margin-top:15px;">
                 <div style="color:#fbbf24;font-weight:bold;margin-bottom:8px;">📋 選中股票</div>
                 <div style="display:flex;flex-wrap:wrap;gap:6px;">
-                    ${result.matched.map(s => `<span style="padding:3px 10px;border-radius:4px;background:#334155;color:#e2e8f0;font-size:12px;">${s.code} ${s.name} <span style="color:${s.change_pct>=0?'#16a34a':'#dc2626'}">${s.change_pct>=0?'+':''}${s.change_pct.toFixed(2)}%</span></span>`).join('')}
+                    ${result.matched.map(s => `<span style="padding:3px 10px;border-radius:4px;background:var(--text-secondary);color:#e2e8f0;font-size:12px;">${s.code} ${s.name} <span style="color:${s.change_pct>=0?'#16a34a':'#dc2626'}">${s.change_pct>=0?'+':''}${s.change_pct.toFixed(2)}%</span></span>`).join('')}
                 </div>
             </div>` : ''}
         `;
@@ -263,21 +263,21 @@
             const heat = s.avgChange > 2 ? '🔥🔥🔥' : s.avgChange > 0 ? '🔥' : '❄️';
             const topScore = s.stocks.length ? Math.max(...s.stocks.map(x => calculateDetailedScore(x))) : 0;
             const scoreLabel = topScore >= 80 ? 'A+' : topScore >= 65 ? 'A' : topScore >= 50 ? 'B' : topScore >= 35 ? 'C' : 'D';
-            const scoreColor = topScore >= 80 ? '#16a34a' : topScore >= 65 ? '#22c55e' : topScore >= 50 ? '#f59e0b' : topScore >= 35 ? '#f97316' : '#dc2626';
-            return `<div class="sector-card" data-sector="${s.name}" style="background:#1e293b;border:1px solid #334155;border-radius:8px;padding:15px;cursor:pointer;transition:all 0.2s;position:relative;"
+            const scoreColor = topScore >= 80 ? '#16a34a' : topScore >= 65 ? '#16a34a' : topScore >= 50 ? '#f59e0b' : topScore >= 35 ? '#f97316' : '#dc2626';
+            return `<div class="sector-card" data-sector="${s.name}" style="background:var(--card-bg);border:1px solid var(--border);border-radius:8px;padding:15px;cursor:pointer;transition:all 0.2s;position:relative;"
                 onmouseenter="this.style.borderColor='#475569';this.style.transform='translateY(-2px)';this.style.boxShadow='0 4px 12px rgba(0,0,0,0.2)';"
-                onmouseleave="this.style.borderColor='#334155';this.style.transform='';this.style.boxShadow='';">
+                onmouseleave="this.style.borderColor='var(--border)';this.style.transform='';this.style.boxShadow='';">
                 <div style="position:absolute;top:10px;right:12px;font-size:11px;font-weight:700;color:${scoreColor};background:${scoreColor}15;padding:2px 8px;border-radius:10px;border:1px solid ${scoreColor}30;">${scoreLabel}</div>
                 <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;padding-right:40px;">
                     <span style="font-weight:bold;color:#e2e8f0;font-size:14px;">${s.name}</span>
                     <span style="font-size:12px;">${heat}</span>
                 </div>
                 <div style="font-size:1.5em;font-weight:bold;color:${color};margin-bottom:5px;">${s.avgChange>=0?'+':''}${s.avgChange.toFixed(2)}%</div>
-                <div style="font-size:12px;color:#94a3b8;">
+                <div style="font-size:12px;color:var(--text-muted);">
                     <div>股票數: ${s.count} 檔</div>
                     <div>上漲: ${s.upCount} 檔</div>
                 </div>
-                <div style="margin-top:8px;font-size:11px;color:#64748b;text-align:center;padding-top:8px;border-top:1px solid #334155;">
+                <div style="margin-top:8px;font-size:11px;color:var(--text-muted);text-align:center;padding-top:8px;border-top:1px solid var(--border);">
                     👆 點擊查看個股詳情
                 </div>
             </div>`;
@@ -303,11 +303,11 @@
 
         const rowsHtml = sortedStocks.map(s => {
             const score = calculateDetailedScore(s);
-            const scoreColor = score >= 80 ? '#16a34a' : score >= 65 ? '#22c55e' : score >= 50 ? '#f59e0b' : score >= 35 ? '#f97316' : '#dc2626';
-            const scoreBg = score >= 80 ? 'rgba(22,163,74,0.12)' : score >= 65 ? 'rgba(34,197,94,0.12)' : score >= 50 ? 'rgba(245,158,11,0.12)' : score >= 35 ? 'rgba(249,115,22,0.12)' : 'rgba(220,38,38,0.12)';
+            const scoreColor = score >= 80 ? '#16a34a' : score >= 65 ? '#16a34a' : score >= 50 ? '#f59e0b' : score >= 35 ? '#f97316' : '#dc2626';
+            const scoreBg = score >= 80 ? 'rgba(22,163,74,0.12)' : score >= 65 ? 'rgba(22,163,74,0.12)' : score >= 50 ? 'rgba(245,158,11,0.12)' : score >= 35 ? 'rgba(249,115,22,0.12)' : 'rgba(220,38,38,0.12)';
             const changeColor = s.change_pct >= 0 ? '#16a34a' : '#dc2626';
             const changeSign = s.change_pct >= 0 ? '+' : '';
-            const wowColor = s.wow_change > 0 ? '#16a34a' : s.wow_change < 0 ? '#dc2626' : '#94a3b8';
+            const wowColor = s.wow_change > 0 ? '#16a34a' : s.wow_change < 0 ? '#dc2626' : 'var(--text-muted)';
             const wowSign = s.wow_change > 0 ? '+' : '';
 
             return `
@@ -319,7 +319,7 @@
                 <td style="padding:10px 8px;text-align:right;color:#fbbf24;font-weight:600;">${s.big_holder_pct > 0 ? s.big_holder_pct.toFixed(2) + '%' : '—'}</td>
                 <td style="padding:10px 8px;text-align:right;color:${wowColor};font-weight:600;">${s.wow_change !== 0 ? wowSign + s.wow_change.toFixed(2) + '%' : '—'}</td>
                 <td style="padding:10px 8px;text-align:center;">${s.trend ? '<span style="color:' + (s.trend === '多頭排列' ? '#16a34a' : '#dc2626') + ';font-size:12px;">' + s.trend + '</span>' : '—'}</td>
-                <td style="padding:10px 8px;text-align:center;font-size:14px;">${s.foreign_buy ? '<span style="color:#16a34a;">✅</span>' : '<span style="color:#64748b;">❌</span>'}</td>
+                <td style="padding:10px 8px;text-align:center;font-size:14px;">${s.foreign_buy ? '<span style="color:#16a34a;">✅</span>' : '<span style="color:var(--text-muted);">❌</span>'}</td>
                 <td style="padding:10px 8px;text-align:center;"><span style="display:inline-block;padding:3px 10px;border-radius:12px;background:${scoreBg};color:${scoreColor};font-weight:bold;font-size:13px;min-width:36px;text-align:center;">${score}</span></td>
             </tr>`;
         }).join('');
@@ -330,40 +330,40 @@
         const hotStocks = sortedStocks.filter(s => calculateDetailedScore(s) >= 65).length;
 
         modal.innerHTML = `
-            <div style="background:#0f172a;border:1px solid #334155;border-radius:12px;max-width:950px;width:100%;max-height:90vh;overflow-y:auto;padding:25px;position:relative;">
-                <button onclick="document.getElementById('sectorPopupModal').remove()" style="position:absolute;top:15px;right:15px;background:none;border:none;color:#94a3b8;font-size:20px;cursor:pointer;z-index:10;">✕</button>
-                <h2 style="color:#38bdf8;margin:0 0 5px 0;font-size:1.4em;">🔄 ${sectorName}</h2>
+            <div style="background:var(--bg);border:1px solid var(--border);border-radius:12px;max-width:950px;width:100%;max-height:90vh;overflow-y:auto;padding:25px;position:relative;">
+                <button onclick="document.getElementById('sectorPopupModal').remove()" style="position:absolute;top:15px;right:15px;background:none;border:none;color:var(--text-muted);font-size:20px;cursor:pointer;z-index:10;">✕</button>
+                <h2 style="color:var(--accent);margin:0 0 5px 0;font-size:1.4em;">🔄 ${sectorName}</h2>
                 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(100px,1fr));gap:10px;margin:0 0 15px 0;">
-                    <div style="background:#1e293b;border-radius:6px;padding:8px 12px;text-align:center;">
-                        <div style="color:#94a3b8;font-size:11px;">個股數</div>
+                    <div style="background:var(--card-bg);border-radius:6px;padding:8px 12px;text-align:center;">
+                        <div style="color:var(--text-muted);font-size:11px;">個股數</div>
                         <div style="color:#e2e8f0;font-weight:bold;font-size:1.2em;">${stocks.length}</div>
                     </div>
-                    <div style="background:#1e293b;border-radius:6px;padding:8px 12px;text-align:center;">
-                        <div style="color:#94a3b8;font-size:11px;">平均評分</div>
+                    <div style="background:var(--card-bg);border-radius:6px;padding:8px 12px;text-align:center;">
+                        <div style="color:var(--text-muted);font-size:11px;">平均評分</div>
                         <div style="color:${avgScore >= 60 ? '#16a34a' : avgScore >= 45 ? '#f59e0b' : '#dc2626'};font-weight:bold;font-size:1.2em;">${avgScore}</div>
                     </div>
-                    <div style="background:#1e293b;border-radius:6px;padding:8px 12px;text-align:center;">
-                        <div style="color:#94a3b8;font-size:11px;">多頭排列</div>
+                    <div style="background:var(--card-bg);border-radius:6px;padding:8px 12px;text-align:center;">
+                        <div style="color:var(--text-muted);font-size:11px;">多頭排列</div>
                         <div style="color:#16a34a;font-weight:bold;font-size:1.2em;">${bullCount} 檔</div>
                     </div>
-                    <div style="background:#1e293b;border-radius:6px;padding:8px 12px;text-align:center;">
-                        <div style="color:#94a3b8;font-size:11px;">強勢股 (≥65)</div>
+                    <div style="background:var(--card-bg);border-radius:6px;padding:8px 12px;text-align:center;">
+                        <div style="color:var(--text-muted);font-size:11px;">強勢股 (≥65)</div>
                         <div style="color:#fbbf24;font-weight:bold;font-size:1.2em;">${hotStocks} 檔</div>
                     </div>
                 </div>
-                <div style="overflow-x:auto;border:1px solid #334155;border-radius:8px;">
+                <div style="overflow-x:auto;border:1px solid var(--border);border-radius:8px;">
                     <table style="width:100%;border-collapse:collapse;font-size:13px;">
                         <thead>
-                            <tr style="border-bottom:1px solid #334155;background:#1e293b;">
-                                <th style="text-align:left;padding:10px 8px;color:#94a3b8;font-weight:600;font-size:12px;">代號</th>
-                                <th style="text-align:left;padding:10px 8px;color:#94a3b8;font-weight:600;font-size:12px;">名稱</th>
-                                <th style="text-align:right;padding:10px 8px;color:#94a3b8;font-weight:600;font-size:12px;">收盤價</th>
-                                <th style="text-align:right;padding:10px 8px;color:#94a3b8;font-weight:600;font-size:12px;">漲跌%</th>
-                                <th style="text-align:right;padding:10px 8px;color:#94a3b8;font-weight:600;font-size:12px;">大戶%</th>
-                                <th style="text-align:right;padding:10px 8px;color:#94a3b8;font-weight:600;font-size:12px;">週增減</th>
-                                <th style="text-align:center;padding:10px 8px;color:#94a3b8;font-weight:600;font-size:12px;">趨勢</th>
-                                <th style="text-align:center;padding:10px 8px;color:#94a3b8;font-weight:600;font-size:12px;">外資連買</th>
-                                <th style="text-align:center;padding:10px 8px;color:#94a3b8;font-weight:600;font-size:12px;">評分</th>
+                            <tr style="border-bottom:1px solid var(--border);background:var(--card-bg);">
+                                <th style="text-align:left;padding:10px 8px;color:var(--text-muted);font-weight:600;font-size:12px;">代號</th>
+                                <th style="text-align:left;padding:10px 8px;color:var(--text-muted);font-weight:600;font-size:12px;">名稱</th>
+                                <th style="text-align:right;padding:10px 8px;color:var(--text-muted);font-weight:600;font-size:12px;">收盤價</th>
+                                <th style="text-align:right;padding:10px 8px;color:var(--text-muted);font-weight:600;font-size:12px;">漲跌%</th>
+                                <th style="text-align:right;padding:10px 8px;color:var(--text-muted);font-weight:600;font-size:12px;">大戶%</th>
+                                <th style="text-align:right;padding:10px 8px;color:var(--text-muted);font-weight:600;font-size:12px;">週增減</th>
+                                <th style="text-align:center;padding:10px 8px;color:var(--text-muted);font-weight:600;font-size:12px;">趨勢</th>
+                                <th style="text-align:center;padding:10px 8px;color:var(--text-muted);font-weight:600;font-size:12px;">外資連買</th>
+                                <th style="text-align:center;padding:10px 8px;color:var(--text-muted);font-weight:600;font-size:12px;">評分</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -371,7 +371,7 @@
                         </tbody>
                     </table>
                 </div>
-                <p style="color:#64748b;font-size:11px;margin-top:12px;text-align:center;">⚠️ 評分綜合技術面、籌碼面、法人面、漲跌穩健度計算 · 點擊列可進入個股頁面</p>
+                <p style="color:var(--text-muted);font-size:11px;margin-top:12px;text-align:center;">⚠️ 評分綜合技術面、籌碼面、法人面、漲跌穩健度計算 · 點擊列可進入個股頁面</p>
             </div>
         `;
         document.body.appendChild(modal);
@@ -401,9 +401,9 @@
             let text, color;
             if (pct >= 70) { text = '🔥 極度樂觀'; color = '#dc2626'; }
             else if (pct >= 55) { text = '📈 偏多'; color = '#16a34a'; }
-            else if (pct >= 45) { text = '➡️ 中性'; color = '#94a3b8'; }
+            else if (pct >= 45) { text = '➡️ 中性'; color = 'var(--text-muted)'; }
             else if (pct >= 30) { text = '📉 偏空'; color = '#f59e0b'; }
-            else { text = '❄️ 極度悲觀'; color = '#38bdf8'; }
+            else { text = '❄️ 極度悲觀'; color = 'var(--accent)'; }
             sentEl.textContent = `${text} (${pct.toFixed(1)}%)`;
             sentEl.style.color = color;
         }
@@ -461,16 +461,16 @@
         modal.id = 'stockPopupModal';
         modal.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.7);z-index:9999;display:flex;align-items:center;justify-content:center;padding:20px;';
         modal.innerHTML = `
-            <div style="background:#0f172a;border:1px solid #334155;border-radius:12px;max-width:600px;width:100%;max-height:90vh;overflow-y:auto;padding:25px;position:relative;">
-                <button onclick="document.getElementById('stockPopupModal').remove()" style="position:absolute;top:15px;right:15px;background:none;border:none;color:#94a3b8;font-size:20px;cursor:pointer;">✕</button>
-                <h2 style="color:#38bdf8;margin:0 0 15px 0;font-size:1.4em;">${code} ${name}</h2>
+            <div style="background:var(--bg);border:1px solid var(--border);border-radius:12px;max-width:600px;width:100%;max-height:90vh;overflow-y:auto;padding:25px;position:relative;">
+                <button onclick="document.getElementById('stockPopupModal').remove()" style="position:absolute;top:15px;right:15px;background:none;border:none;color:var(--text-muted);font-size:20px;cursor:pointer;">✕</button>
+                <h2 style="color:var(--accent);margin:0 0 15px 0;font-size:1.4em;">${code} ${name}</h2>
                 <div style="display:flex;gap:15px;margin-bottom:15px;flex-wrap:wrap;">
-                    <div style="flex:1;min-width:120px;background:#1e293b;border-radius:8px;padding:12px;text-align:center;">
-                        <div style="color:#94a3b8;font-size:12px;">收盤價</div>
+                    <div style="flex:1;min-width:120px;background:var(--card-bg);border-radius:8px;padding:12px;text-align:center;">
+                        <div style="color:var(--text-muted);font-size:12px;">收盤價</div>
                         <div style="font-size:1.3em;font-weight:bold;color:#e2e8f0;">${close}</div>
                     </div>
-                    <div style="flex:1;min-width:120px;background:#1e293b;border-radius:8px;padding:12px;text-align:center;">
-                        <div style="color:#94a3b8;font-size:12px;">漲跌</div>
+                    <div style="flex:1;min-width:120px;background:var(--card-bg);border-radius:8px;padding:12px;text-align:center;">
+                        <div style="color:var(--text-muted);font-size:12px;">漲跌</div>
                         <div style="font-size:1.3em;font-weight:bold;color:${change.includes('-')?'#dc2626':'#16a34a'};">${change}</div>
                     </div>
                 </div>
@@ -486,12 +486,12 @@
                         ${generateSignalTags(stockText)}
                     </div>
                 </div>
-                <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;font-size:12px;color:#94a3b8;">
-                    <div style="background:#1e293b;border-radius:6px;padding:10px;">
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;font-size:12px;color:var(--text-muted);">
+                    <div style="background:var(--card-bg);border-radius:6px;padding:10px;">
                         <div style="color:#e2e8f0;font-weight:bold;margin-bottom:4px;">💰 買點</div>
                         ${getBuySignalText(stockText)}
                     </div>
-                    <div style="background:#1e293b;border-radius:6px;padding:10px;">
+                    <div style="background:var(--card-bg);border-radius:6px;padding:10px;">
                         <div style="color:#e2e8f0;font-weight:bold;margin-bottom:4px;">📉 停損</div>
                         ${getStopLossText(stockText, close)}
                     </div>
@@ -528,8 +528,8 @@
                         scales: {
                             r: {
                                 min: 0, max: 10,
-                                ticks: { stepSize: 2, color: '#64748b', backdropColor: 'transparent' },
-                                grid: { color: '#334155' },
+                                ticks: { stepSize: 2, color: 'var(--text-muted)', backdropColor: 'transparent' },
+                                grid: { color: 'var(--border)' },
                                 pointLabels: { color: '#e2e8f0', font: { size: 12 } }
                             }
                         },
@@ -554,7 +554,7 @@
         if (rsiMatch) {
             const rsi = parseFloat(rsiMatch[1]);
             if (rsi > 75) tags.push({t:`🔥 RSI ${rsi}`,c:'#dc2626',bg:'#dc262620'});
-            else if (rsi < 30) tags.push({t:`❄️ RSI ${rsi}`,c:'#38bdf8',bg:'#38bdf820'});
+            else if (rsi < 30) tags.push({t:`❄️ RSI ${rsi}`,c:'var(--accent)',bg:'var(--accent-glow)'});
         }
         return tags.map(t => `<span style="padding:3px 8px;border-radius:4px;font-size:11px;color:${t.c};background:${t.bg};border:1px solid ${t.c}40;">${t.t}</span>`).join('');
     }
@@ -563,15 +563,15 @@
         if (text.includes('多頭排列') && (text.includes('外資連買') || text.includes('✅'))) return '<span style="color:#16a34a;">📈 雙強認證 — 可考慮分批佈局</span>';
         if (text.includes('多頭排列')) return '<span style="color:#16a34a;">📈 趨勢偏多 — 回測均線時關注</span>';
         if (text.includes('外資連買') || text.includes('✅')) return '<span style="color:#f59e0b;">💰 外資買超 — 觀察籌碼配合</span>';
-        return '<span style="color:#94a3b8;">➖ 暫無明確買點</span>';
+        return '<span style="color:var(--text-muted);">➖ 暫無明確買點</span>';
     }
 
     function getStopLossText(text, closeStr) {
         const close = parseFloat(closeStr) || 0;
-        if (!close) return '<span style="color:#94a3b8;">無法計算</span>';
+        if (!close) return '<span style="color:var(--text-muted);">無法計算</span>';
         // 簡化：固定 7% 停損 + 技術停損估計
         const fixedStop = (close * 0.93).toFixed(1);
-        return `<span style="color:#dc2626;">固定 7%: ${fixedStop}</span><br><span style="color:#94a3b8;font-size:11px;">建議同時觀察跌破 MA20</span>`;
+        return `<span style="color:#dc2626;">固定 7%: ${fixedStop}</span><br><span style="color:var(--text-muted);font-size:11px;">建議同時觀察跌破 MA20</span>`;
     }
 
     // ===================== 5. CSV 匯出 =====================
@@ -592,7 +592,7 @@
     function initScrollTop() {
         const btn = document.createElement('div');
         btn.innerHTML = '⬆️';
-        btn.style.cssText = 'position:fixed;bottom:30px;right:30px;width:50px;height:50px;background:#334155;color:#e2e8f0;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:20px;z-index:1000;opacity:0;transition:opacity 0.3s;box-shadow:0 4px 12px rgba(0,0,0,0.3);';
+        btn.style.cssText = 'position:fixed;bottom:30px;right:30px;width:50px;height:50px;background:var(--text-secondary);color:#e2e8f0;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:20px;z-index:1000;opacity:0;transition:opacity 0.3s;box-shadow:0 4px 12px rgba(0,0,0,0.3);';
         btn.onclick = () => window.scrollTo({top:0, behavior:'smooth'});
         document.body.appendChild(btn);
         window.addEventListener('scroll', () => { btn.style.opacity = window.scrollY > 500 ? '1' : '0'; });
@@ -647,7 +647,7 @@
             if (!hint) {
                 hint = document.createElement('div');
                 hint.id = 'filterHint';
-                hint.style.cssText = 'text-align:center;color:#94a3b8;font-size:13px;margin:8px 0;';
+                hint.style.cssText = 'text-align:center;color:var(--text-muted);font-size:13px;margin:8px 0;';
                 const firstCard = document.querySelector('.card');
                 if (firstCard) firstCard.before(hint);
             }

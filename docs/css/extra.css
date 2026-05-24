@@ -2,14 +2,14 @@
 
 /* Navigation link hover */
 #mainNav a:hover {
-    color: #38bdf8 !important;
+    color: #2563eb !important;
     background: rgba(56,189,248,0.15) !important;
 }
 
 /* Signal column styles */
 .tag-dual-strong { background: #dc262630; color: #dc2626; border: 1px solid #dc262660; }
 .tag-chip { background: #16a34a30; color: #16a34a; border: 1px solid #16a34a60; }
-.tag-tech { background: #38bdf830; color: #38bdf8; border: 1px solid #38bdf860; }
+.tag-tech { background: #2563eb30; color: #2563eb; border: 1px solid #2563eb60; }
 .tag-overbought { background: #f59e0b30; color: #f59e0b; border: 1px solid #f59e0b60; }
 .tag-dumping { background: #dc262630; color: #dc2626; border: 1px solid #dc262660; }
 .tag-good { background: #16a34a30; color: #16a34a; border: 1px solid #16a34a60; }
@@ -18,7 +18,7 @@
 
 /* Search input focus */
 #stockSearch:focus {
-    border-color: #38bdf8 !important;
+    border-color: #2563eb !important;
     box-shadow: 0 0 0 3px rgba(56,189,248,0.2);
 }
 

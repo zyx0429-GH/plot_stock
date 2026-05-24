@@ -4,7 +4,9 @@
     --card-bg: #ffffff;
     --text: #1e293b;
     --text-muted: #64748b;
+    --text-secondary: #475569;
     --accent: #2563eb;
+    --accent-hover: var(--accent-hover);
     --accent-glow: rgba(37,99,235,0.08);
     --up: #16a34a;
     --down: #dc2626;
@@ -16,6 +18,20 @@
     --shadow-hover: rgba(37,99,235,0.10);
     --grid-line: rgba(0,0,0,0.06);
     --chart-text: #475569;
+    --input-bg: #ffffff;
+    --input-border: var(--input-border);
+    --input-placeholder: var(--input-placeholder);
+    --tooltip-bg: rgba(30,41,59,0.95);
+    --tooltip-text: #f8fafc;
+    --modal-bg: #ffffff;
+    --modal-border: #e2e8f0;
+    --overlay-bg: rgba(0,0,0,0.5);
+    --badge-bg: var(--badge-bg);
+    --warning: #f59e0b;
+    --warning-bg: rgba(245,158,11,0.08);
+    --danger: #dc2626;
+    --success: #16a34a;
+    --info: #3b82f6;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -99,7 +115,7 @@ body {
     box-shadow: 0 0 0 3px rgba(37,99,235,0.15);
 }
 .nav-search input::placeholder {
-    color: #94a3b8;
+    color: var(--input-placeholder);
 }
 .nav-search button {
     padding: 6px 14px;
@@ -113,7 +129,7 @@ body {
     transition: background 0.2s;
 }
 .nav-search button:hover {
-    background: #1d4ed8;
+    background: var(--accent-hover);
 }
 
 /* ===== 控制列按鈕 ===== */
@@ -124,20 +140,20 @@ body {
     flex-wrap: wrap;
     margin-bottom: 1rem;
     padding: 0.75rem;
-    background: #f1f5f9;
+    background: var(--badge-bg);
     border-radius: 8px;
     border: 1px solid var(--border);
 }
 .ctrl-sep {
     width: 1px;
     height: 24px;
-    background: #cbd5e1;
+    background: var(--input-border);
     margin: 0 4px;
 }
 .fbtn {
     padding: 5px 14px;
     border-radius: 12px;
-    border: 1px solid #cbd5e1;
+    border: 1px solid var(--input-border);
     background: #ffffff;
     color: var(--text-muted);
     font-size: 12px;
@@ -145,7 +161,7 @@ body {
     transition: .12s;
 }
 .fbtn:hover {
-    border-color: #94a3b8;
+    border-color: var(--input-placeholder);
     color: var(--text);
 }
 .fbtn.active {
@@ -165,7 +181,7 @@ body {
 .controls input[type="number"] {
     width: 70px;
     padding: 4px 8px;
-    border: 1px solid #cbd5e1;
+    border: 1px solid var(--input-border);
     border-radius: 6px;
     font-size: 13px;
     outline: none;
@@ -271,7 +287,7 @@ body {
 }
 
 .data-table thead {
-    background: linear-gradient(90deg, #f1f5f9, #e2e8f0);
+    background: linear-gradient(90deg, var(--badge-bg), #e2e8f0);
     color: var(--text);
 }
 
@@ -312,7 +328,7 @@ body {
 .bull { color: var(--up); font-weight: 600; }
 .bear { color: var(--down); font-weight: 600; }
 .neutral { color: var(--text-muted); }
-.highlight { color: #d97706; font-weight: 700; }
+.highlight { color: var(--warning); font-weight: 700; }
 
 .score {
     background: linear-gradient(135deg, #2563eb, #7c3aed);
@@ -412,6 +428,208 @@ body {
     margin-top: 2rem;
     background: #ffffff;
 }
+
+/* ===== 分頁按鈕 ===== */
+.pagination {
+    display: flex;
+    gap: 6px;
+    justify-content: center;
+    margin-top: 1rem;
+}
+.page-btn {
+    padding: 6px 14px;
+    border: 1px solid var(--input-border);
+    border-radius: 6px;
+    background: var(--input-bg);
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+.page-btn:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+.page-btn.active {
+    background: var(--accent);
+    color: #fff;
+    border-color: var(--accent);
+}
+
+/* ===== 排序區塊 ===== */
+.sort-bar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+    background: var(--badge-bg);
+    border-radius: 8px;
+    border: 1px solid var(--border);
+}
+.sort-bar label {
+    font-size: 13px;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+/* ===== 彈出模態框（白底主題） ===== */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: var(--overlay-bg);
+    z-index: 9998;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+.modal-box {
+    background: var(--modal-bg);
+    border: 1px solid var(--modal-border);
+    border-radius: 12px;
+    max-width: 700px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    padding: 25px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+}
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.modal-header h2 {
+    color: var(--accent);
+    margin: 0;
+}
+.modal-close {
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    font-size: 20px;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+.modal-close:hover { color: var(--text); }
+.modal-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 12px;
+    margin-bottom: 20px;
+}
+.modal-grid label {
+    color: var(--text-muted);
+    font-size: 12px;
+}
+.modal-grid input,
+.modal-grid select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 4px;
+    background: var(--input-bg);
+    border: 1px solid var(--input-border);
+    border-radius: 6px;
+    color: var(--text);
+    font-size: 13px;
+}
+.modal-grid input:focus,
+.modal-grid select:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 2px rgba(37,99,235,0.15);
+    outline: none;
+}
+.modal-action {
+    width: 100%;
+    padding: 12px;
+    background: var(--accent);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.modal-action:hover { background: var(--accent-hover); }
+.modal-note {
+    color: var(--text-muted);
+    font-size: 12px;
+    margin-top: 15px;
+    text-align: center;
+}
+
+/* ===== 小格 / 儀表板卡片 ===== */
+.mini-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 1px 3px var(--shadow);
+}
+.mini-card .label {
+    color: var(--text-secondary);
+    font-size: 12px;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+.mini-card .value {
+    font-size: 1.4em;
+    font-weight: 700;
+}
+
+/* ===== 浮動按鈕 ===== */
+.fab {
+    position: fixed;
+    bottom: 90px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background: var(--accent);
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 18px;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    border: none;
+    transition: all 0.2s;
+}
+.fab:hover {
+    background: var(--accent-hover);
+    transform: scale(1.05);
+}
+
+/* ===== 數據源卡片（交叉比對等） ===== */
+.stat-card {
+    border-radius: 8px;
+    padding: 12px;
+    text-align: center;
+}
+.stat-card .number {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 700;
+}
+.stat-card .desc {
+    margin: 4px 0;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
+/* ===== 市場情緤儀表板 ===== */
+.sentiment-up { color: var(--success); }
+.sentiment-down { color: var(--danger); }
+.sentiment-flat { color: var(--text-secondary); }
+.sentiment-warn { color: var(--warning); }
 
 /* ===== 響應式 ===== */
 @media (max-width: 768px) {
