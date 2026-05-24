@@ -11,22 +11,26 @@ def parse_top_week():
     resp = requests.get(url, headers=headers, timeout=30)
     resp.raise_for_status()
     
+    # Server claims utf-8, and encoding_test confirms utf-8 is correct
     soup = BeautifulSoup(resp.text, "html.parser")
     
-    # Find main data table (max cells >= 15)
-    tables = soup.find_all("table")
-    main_table = None
-    for t in tables:
-        first_row = t.find("tr")
-        if first_row:
-            n_cells = len(first_row.find_all(["td", "th"]))
-            if n_cells >= 15:
-                main_table = t
-                break
-    
+    # Find main data table by id="details"
+    main_table = soup.find("table", id="details")
     if not main_table:
-        print("[ERR] Main data table not found")
-        return []
+        print("[ERR] Table with id='details' not found")
+        # Fallback: find table with most cells in first row
+        tables = soup.find_all("table")
+        best_cells = 0
+        for t in tables:
+            first_row = t.find("tr")
+            if first_row:
+                n_cells = len(first_row.find_all(["td", "th"]))
+                if n_cells > best_cells:
+                    best_cells = n_cells
+                    main_table = t
+        if not main_table:
+            print("[ERR] No suitable table found")
+            return []
     
     tbody = main_table.find("tbody")
     if not tbody:
@@ -116,15 +120,21 @@ def parse_top_week():
 
 if __name__ == "__main__":
     stocks = parse_top_week()
-    print(f"[OK] Parsed {len(stocks)} stocks")
     
-    os.makedirs("data/norway", exist_ok=True)
-    out_path = "data/norway/top200_weekly_20260515.json"
+    os.makedirs("../data/norway", exist_ok=True)
+    out_path = "../data/norway/top200_weekly_20260522.json"
     with open(out_path, "w", encoding="utf-8") as f:
         json.dump(stocks, f, ensure_ascii=False, indent=2)
-    print(f"[OK] Saved to {out_path}")
     
-    # Print top 20 summary
-    print("\n=== Top 20 ===")
-    for s in stocks[:20]:
-        print(f"  {s['rank']:>3} | {s['stock_code']} {s['stock_name']:<8} | {s['category']:<10} | 週增={s['latest_change']:>+6.2f}% | 總增={s['total_change']:>+6.2f}% | 持有={s['last_week_hold_pct']:>5.2f}% | 收盤={s['close_price']}")
+    # Write summary to file instead of console (avoid Windows cp950 encoding issues)
+    with open("../data/norway/fetch_log.txt", "w", encoding="utf-8") as log:
+        log.write(f"Parsed {len(stocks)} stocks\n")
+        log.write(f"Saved to {out_path}\n\n")
+        log.write("=== Top 20 ===\n")
+        for s in stocks[:20]:
+            log.write(f"  {s['rank']:>3} | {s['stock_code']} {s['stock_name']:<8} | {s['category']:<10} | 週增={s['latest_change']:>+6.2f}% | 總增={s['total_change']:>+6.2f}% | 持有={s['last_week_hold_pct']:>5.2f}% | 收盤={s['close_price']}\n")
+    
+    # Use ASCII-only print to avoid Windows console encoding issues
+    print(f"[OK] Parsed {len(stocks)} stocks")
+    print(f"[OK] Saved to {out_path}")
+    print("[OK] Summary written to data/norway/fetch_log.txt")

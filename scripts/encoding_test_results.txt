@@ -1,0 +1,25 @@
+Response encoding: utf-8
+Apparent encoding: utf-8
+
+[utf-8] 1087 rows, first: ['', '', '1', '4916事欣科', '電腦週邊', '4.81']
+  Stock name bytes check: '4916事欣科'
+  *** CORRECT ENCODING: utf-8 ***
+
+[cp950] 1087 rows, first: ['', '', '1', '4916鈭�甈�蝘�', '��餉�阡�梢��', '4.81']
+  Stock name bytes check: '4916鈭�甈�蝘�'
+
+[big5] 1087 rows, first: ['', '', '1', '4916鈭�甈�蝘�', '��餉�阡�梢��', '4.81']
+  Stock name bytes check: '4916鈭�甈�蝘�'
+
+[big5-hkscs] 1087 rows, first: ['', '', '1', '4916鈭𧢲派蝘�', '�𤓖��阡�梢��', '4.81']
+  Stock name bytes check: '4916鈭𧢲派蝘�'
+
+[gb18030] 1087 rows, first: ['', '', '1', '4916浜嬫\ue0be绉�', '闆昏叇閫遍倞', '4.81']
+  Stock name bytes check: '4916浜嬫\ue0be绉�'
+
+[gb2312] 1087 rows, first: ['', '', '1', '4916浜�娆ｇ��', '��昏����遍��', '4.81']
+  Stock name bytes check: '4916浜�娆ｇ��'
+
+[gbk] 1087 rows, first: ['', '', '1', '4916浜嬫�ｇ��', '闆昏叇閫遍倞', '4.81']
+  Stock name bytes check: '4916浜嬫�ｇ��'
+
