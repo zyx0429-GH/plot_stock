@@ -140,9 +140,14 @@ Chart.defaults.scale.ticks.color = 'var(--text-muted)';
             lines.append(f'<tr onclick="location.href=\'stock_{s.get("stock_id","-")}.html\'" class="clickable"><td><strong>{s.get("stock_id","-")}</strong></td><td>{s.get("stock_name","-")}</td><td>{close:.2f}</td><td class="{"up" if change_pct>0 else "down"}">{change_pct:+.2f}%</td><td class="{"buy" if foreign_net>0 else "sell"}">{foreign_net:,}</td><td class="{"buy" if trust_net>0 else "sell"}">{trust_net:,}</td><td class="highlight">{big_holder_pct:.2f}%</td><td class="{"up" if big_holder_change>0 else "down"}">{big_holder_change:+.2f}%</td><td class="{tc}">{trend}</td><td><span class="score">{score}</span></td></tr>')
         lines.append('</tbody></table></div></div>')
 
-        # 外資買超
-        lines.append(f'<div class="card"><h2>🌍 外資買超榜單</h2><div class="table-responsive"><table class="data-table"><thead><tr><th>代號</th><th>名稱</th><th>收盤價</th><th>漲跌%</th><th>外資淨買</th><th>大戶%</th><th>趨勢</th><th>評分</th></tr></thead><tbody>')
-        for s in foreign_buy[:30]:
+        # 外資買超 / 賣超榜單（單日數據）
+        foreign_buy_today = [s for s in screened if s.get("foreign_net", 0) > 0]
+        foreign_sell_today = [s for s in screened if s.get("foreign_net", 0) < 0]
+        foreign_buy_today.sort(key=lambda x: x.get("foreign_net", 0), reverse=True)
+        foreign_sell_today.sort(key=lambda x: x.get("foreign_net", 0))
+        
+        lines.append('<div class="card"><h2>🌍 外資買超榜單 (單日)</h2><div class="table-responsive"><table class="data-table"><thead><tr><th>代號</th><th>名稱</th><th>收盤價</th><th>漲跌%</th><th>外資淨買</th><th>大戶%</th><th>趨勢</th><th>評分</th></tr></thead><tbody>')
+        for s in foreign_buy_today[:30]:
             tech = s.get("technical",{}) or {}
             trend = tech.get("trend","")
             tc = "bull" if "多頭" in trend else "bear" if "空頭" in trend else ""
@@ -153,10 +158,23 @@ Chart.defaults.scale.ticks.color = 'var(--text-muted)';
             score = s.get("score") if s.get("score") is not None else 0
             lines.append(f'<tr onclick="location.href=\'stock_{s.get("stock_id","-")}.html\'" class="clickable"><td><strong>{s.get("stock_id","-")}</strong></td><td>{s.get("stock_name","-")}</td><td>{close:.2f}</td><td class="{"up" if change_pct>0 else "down"}">{change_pct:+.2f}%</td><td class="buy">{foreign_net:,}</td><td>{big_holder_pct:.2f}%</td><td class="{tc}">{trend}</td><td><span class="score">{score}</span></td></tr>')
         lines.append('</tbody></table></div></div>')
+        
+        lines.append('<div class="card"><h2>🌍 外資賣超榜單 (單日)</h2><div class="table-responsive"><table class="data-table"><thead><tr><th>代號</th><th>名稱</th><th>收盤價</th><th>漲跌%</th><th>外資淨賣</th><th>大戶%</th><th>趨勢</th><th>評分</th></tr></thead><tbody>')
+        for s in foreign_sell_today[:30]:
+            tech = s.get("technical",{}) or {}
+            trend = tech.get("trend","")
+            tc = "bull" if "多頭" in trend else "bear" if "空頭" in trend else ""
+            close = s.get("close") if s.get("close") is not None else 0.0
+            change_pct = s.get("change_pct") if s.get("change_pct") is not None else 0.0
+            foreign_net = abs(s.get("foreign_net")) if s.get("foreign_net") is not None else 0
+            big_holder_pct = s.get("big_holder_pct") if s.get("big_holder_pct") is not None else 0.0
+            score = s.get("score") if s.get("score") is not None else 0
+            lines.append(f'<tr onclick="location.href=\'stock_{s.get("stock_id","-")}.html\'" class="clickable"><td><strong>{s.get("stock_id","-")}</strong></td><td>{s.get("stock_name","-")}</td><td>{close:.2f}</td><td class="{"up" if change_pct>0 else "down"}">{change_pct:+.2f}%</td><td class="sell">{foreign_net:,}</td><td>{big_holder_pct:.2f}%</td><td class="{tc}">{trend}</td><td><span class="score">{score}</span></td></tr>')
+        lines.append('</tbody></table></div></div>')
 
-        # 外資買超時間圖表 — Top 5 近 20 日淨買超趨勢
-        if foreign_buy:
-            top5_foreign = foreign_buy[:5]
+        # 外資買超時間圖表 — 數據限制說明
+        if foreign_buy_today:
+            top5_foreign = foreign_buy_today[:5]
             foreign_datasets = []
             shared_dates = None
             for s in top5_foreign:
@@ -177,7 +195,7 @@ Chart.defaults.scale.ticks.color = 'var(--text-muted)';
                 foreign_datasets.append({
                     "label": f"{sid} {s.get('stock_name', '')}",
                     "data": nets,
-                    "borderColor": None,  # assigned by index later
+                    "borderColor": None,
                     "backgroundColor": "transparent",
                     "fill": False,
                     "tension": 0.3,
@@ -189,17 +207,33 @@ Chart.defaults.scale.ticks.color = 'var(--text-muted)';
                 for i, ds in enumerate(foreign_datasets):
                     ds["borderColor"] = colors[i % len(colors)]
                 fjson = json.dumps(foreign_datasets, ensure_ascii=False)
-                lines.append('<div class="card"><h2>🌍 外資買超 — 時間趨勢圖 (Top 5)</h2><p class="chart-desc">近 20 個交易日外資淨買超張數趨勢</p><div class="chart-container"><canvas id="foreignTrendChart"></canvas></div></div>')
+                lines.append('<div class="card"><h2>🌍 外資買超 — 時間趨勢圖 (Top 5)</h2>')
+                lines.append(f'<p class="chart-desc">⚠️ 當前僅有 {len(shared_dates)} 天數據（{shared_dates[0] if shared_dates else ""}）。外資歷史數據從今日開始累積，累積 5 天後可顯示趨勢線。</p>')
+                lines.append('<div class="chart-container"><canvas id="foreignTrendChart"></canvas></div></div>')
                 lines.append(f'<script>new Chart(document.getElementById("foreignTrendChart").getContext("2d"),{{type:"line",data:{{labels:{json.dumps(shared_dates)},datasets:{fjson}}},options:{{responsive:true,maintainAspectRatio:false,plugins:{{legend:{{display:true,labels:{{usePointStyle:true,boxWidth:8}}}}}},scales:{{x:{{grid:{{color:"rgba(0,0,0,0.06)"}},ticks:{{color:"var(--text-muted)",maxRotation:45}}}},y:{{grid:{{color:"rgba(0,0,0,0.06)"}},ticks:{{color:"var(--text-muted)"}},title:{{display:true,text:"淨買超 (張)",color:"var(--text-muted)"}}}}}}}}}});</script>')
 
-        # 多頭排列
-        lines.append('<div class="card"><h2>📈 多頭排列清單</h2><div class="table-responsive"><table class="data-table"><thead><tr><th>代號</th><th>名稱</th><th>收盤價</th><th>20MA</th><th>60MA</th><th>RSI</th><th>大戶%</th><th>外資連買</th></tr></thead><tbody>')
+        # 多頭排列清單 + MACD 分數
+        lines.append('<div class="card"><h2>📈 多頭排列清單 + MACD</h2><div class="table-responsive"><table class="data-table"><thead><tr><th>代號</th><th>名稱</th><th>收盤價</th><th>20MA</th><th>60MA</th><th>RSI</th><th>MACD DIF</th><th>MACD DEA</th><th>柱狀</th><th>MACD分</th><th>大戶%</th><th>外資連買</th></tr></thead><tbody>')
         for s in bull_stocks[:30]:
             tech = s.get("technical",{}) or {}
             close = s.get("close") if s.get("close") is not None else 0.0
             big_holder_pct = s.get("big_holder_pct") if s.get("big_holder_pct") is not None else 0.0
             foreign_consecutive = bool(s.get("foreign_consecutive_buy"))
-            lines.append(f'<tr onclick="location.href=\'stock_{s.get("stock_id","-")}.html\'" class="clickable"><td><strong>{s.get("stock_id","-")}</strong></td><td>{s.get("stock_name","-")}</td><td>{close:.2f}</td><td>{tech.get("ma20","-")}</td><td>{tech.get("ma60","-")}</td><td>{tech.get("rsi","-")}</td><td>{big_holder_pct:.2f}%</td><td>{"✅" if foreign_consecutive else "❌"}</td></tr>')
+            macd = tech.get("macd", {})
+            dif = macd.get("dif", "-")
+            dea = macd.get("dea", "-")
+            hist = macd.get("hist", "-")
+            macd_score = macd.get("score", "-")
+            # Format numbers
+            dif_str = f"{dif:+.4f}" if isinstance(dif, (int, float)) else str(dif)
+            dea_str = f"{dea:+.4f}" if isinstance(dea, (int, float)) else str(dea)
+            hist_str = f"{hist:+.4f}" if isinstance(hist, (int, float)) else str(hist)
+            score_str = f"{macd_score}" if macd_score != "-" else "-"
+            # Color for hist
+            hist_class = ""
+            if isinstance(hist, (int, float)):
+                hist_class = "up" if hist > 0 else "down"
+            lines.append(f'<tr onclick="location.href=\'stock_{s.get("stock_id","-")}.html\'" class="clickable"><td><strong>{s.get("stock_id","-")}</strong></td><td>{s.get("stock_name","-")}</td><td>{close:.2f}</td><td>{tech.get("ma20","-")}</td><td>{tech.get("ma60","-")}</td><td>{tech.get("rsi","-")}</td><td>{dif_str}</td><td>{dea_str}</td><td class="{hist_class}">{hist_str}</td><td><span class="score">{score_str}</span></td><td>{big_holder_pct:.2f}%</td><td>{"✅" if foreign_consecutive else "❌"}</td></tr>')
         lines.append('</tbody></table></div></div>')
 
         # 大戶門檻統計
@@ -224,8 +258,8 @@ Chart.defaults.scale.ticks.color = 'var(--text-muted)';
                 lines.append(f'<div style="background:var(--warning-bg);border:1px solid rgba(245,158,11,0.25);border-radius:8px;padding:12px;"><h4 style="color:var(--warning);margin:0 0 8px 0;">{label}</h4><p style="margin:4px 0;color:var(--text-muted);font-size:0.9em;">自選覆蓋: {stats["count"]} 檔</p><p style="margin:4px 0;color:var(--text-muted);font-size:0.9em;">大戶%: {stats["min"]:.1f}% ~ {stats["max"]:.1f}% (avg {avg:.1f}%)</p></div>')
         lines.append('</div></div>')
 
-        # 大戶排名 (全部股票，JS 依門檻篩選)
-        # 從 watchlist 建立 threshold 查詢表 (big_holder_rank 可能缺少 threshold)
+        # 大戶排名 (全部股票，JS 依門檻篩選) — 加入外資欄位
+        # 從 watchlist 建立 threshold 查詢表
         threshold_lookup = {}
         for s in watchlist_data:
             sid = s.get("stock_id")
@@ -240,26 +274,35 @@ Chart.defaults.scale.ticks.color = 'var(--text-muted)';
                 if th:
                     threshold_lookup[sid] = str(th)
         
+        # 建立 screened 查詢表（用於補充外資數據）
+        screened_lookup = {s.get("stock_id"): s for s in screened}
+        
         all_big = big_holder_rank[:]
         seen_ids = {s["stock_id"] for s in all_big}
         for s in screened:
             if s["stock_id"] not in seen_ids:
                 all_big.append(s)
-        lines.append('<div class="card"><h2>👑 大戶持股排名（含外資）</h2><p class="chart-desc">依大戶持股比例排序，可切換不同門檻（100張=Norway台灣50 / 200~1000張=fortune-fred大戶監控）</p><div class="controls"><label>顯示前 <input type="number" id="rankLimit" value="50" min="10" max="200" onchange="updateRank()"> 名</label><label>最小持股% <input type="number" id="minPct" value="0" min="0" max="100" step="0.1" onchange="updateRank()"></label><span class="ctrl-sep"></span><label>門檻</label><button class="fbtn active" id="th-all" onclick="setThreshold(\'all\',this)">全部</button><button class="fbtn" id="th-100" onclick="setThreshold(\'100\',this)">≥100張</button><button class="fbtn" id="th-200" onclick="setThreshold(\'200\',this)">≥200張</button><button class="fbtn" id="th-400" onclick="setThreshold(\'400\',this)">≥400張</button><button class="fbtn" id="th-1000" onclick="setThreshold(\'1000\',this)">≥1000張</button></div><div class="table-responsive"><table class="data-table" id="bigHolderTable"><thead><tr><th>排名</th><th>代號</th><th>名稱</th><th>大戶%</th><th>週增減%</th><th>收盤價</th><th>漲跌%</th><th>門檻</th></tr></thead><tbody>')
+        lines.append('<div class="card"><h2>👑 大戶持股排名（含外資）</h2><p class="chart-desc">依大戶持股比例排序，可切換不同門檻（100張=Norway台灣50 / 200~1000張=fortune-fred大戶監控）</p><div class="controls"><label>顯示前 <input type="number" id="rankLimit" value="50" min="10" max="200" onchange="updateRank()"> 名</label><label>最小持股% <input type="number" id="minPct" value="0" min="0" max="100" step="0.1" onchange="updateRank()"></label><span class="ctrl-sep"></span><label>門檻</label><button class="fbtn active" id="th-all" onclick="setThreshold(\'all\',this)">全部</button><button class="fbtn" id="th-100" onclick="setThreshold(\'100\',this)">≥100張</button><button class="fbtn" id="th-200" onclick="setThreshold(\'200\',this)">≥200張</button><button class="fbtn" id="th-400" onclick="setThreshold(\'400\',this)">≥400張</button><button class="fbtn" id="th-1000" onclick="setThreshold(\'1000\',this)">≥1000張</button></div><div class="table-responsive"><table class="data-table" id="bigHolderTable"><thead><tr><th>排名</th><th>代號</th><th>名稱</th><th>大戶%</th><th>週增減%</th><th>外資淨買</th><th>收盤價</th><th>漲跌%</th><th>門檻</th></tr></thead><tbody>')
         for i, s in enumerate(all_big, 1):
             big_holder_pct = s.get("big_holder_pct") if s.get("big_holder_pct") is not None else 0.0
             big_holder_change = s.get("big_holder_change") if s.get("big_holder_change") is not None else 0.0
             close = s.get("close") if s.get("close") is not None else 0.0
             change_pct = s.get("change_pct") if s.get("change_pct") is not None else 0.0
             sid = s.get("stock_id","-")
-            # 優先從查詢表取得 threshold，否則用 item 自身或預設
+            # 補充外資數據
+            screened_s = screened_lookup.get(sid, {})
+            foreign_net = screened_s.get("foreign_net") if screened_s else (s.get("foreign_net") if s.get("foreign_net") is not None else 0)
+            if foreign_net is None:
+                foreign_net = 0
+            # 優先從查詢表取得 threshold
             th = threshold_lookup.get(sid, "")
             if not th:
                 th = s.get("big_holder_threshold", "")
             if not th:
                 th = "—"
             cc = "up" if big_holder_change>0 else "down" if big_holder_change<0 else ""
-            lines.append(f'<tr data-pct="{big_holder_pct}" data-threshold="{th}" onclick="location.href=\'stock_{sid}.html\'" class="clickable"><td>{i}</td><td><strong>{sid}</strong></td><td>{s.get("stock_name","-")}</td><td class="highlight">{big_holder_pct:.2f}%</td><td class="{cc}">{big_holder_change:+.2f}%</td><td>{close:.2f}</td><td class="{"up" if change_pct>0 else "down"}">{change_pct:+.2f}%</td><td>≥{th}張</td></tr>')
+            fc = "buy" if foreign_net>0 else "sell" if foreign_net<0 else ""
+            lines.append(f'<tr data-pct="{big_holder_pct}" data-threshold="{th}" onclick="location.href=\'stock_{sid}.html\'" class="clickable"><td>{i}</td><td><strong>{sid}</strong></td><td>{s.get("stock_name","-")}</td><td class="highlight">{big_holder_pct:.2f}%</td><td class="{cc}">{big_holder_change:+.2f}%</td><td class="{fc}">{foreign_net:,}</td><td>{close:.2f}</td><td class="{"up" if change_pct>0 else "down"}">{change_pct:+.2f}%</td><td>≥{th}張</td></tr>')
         lines.append('</tbody></table></div></div>')
 
         # === Norway 數據圖表 ===
@@ -281,8 +324,12 @@ Chart.defaults.scale.ticks.color = 'var(--text-muted)';
             # 持有率 bar chart 數據
             norway_sorted = sorted(norway_data, key=lambda x: x.get("last_week_hold_pct", 0), reverse=True)
             norway_labels = [f"{r['stock_code']}\n{r['stock_name']}" for r in norway_sorted[:20]]
-            norway_pcts = [r.get("last_week_hold_pct", 0) for r in norway_sorted[:20]]
-            norway_changes = [r.get("latest_change", 0) for r in norway_sorted[:20]]
+            norway_pcts = [round(r.get("last_week_hold_pct", 0), 2) for r in norway_sorted[:20]]
+            norway_changes = [round(r.get("latest_change", 0), 2) for r in norway_sorted[:20]]
+            
+            # Pre-compute colors
+            change_colors_bg = ["rgba(22,163,74,0.7)" if v > 0 else "rgba(220,38,38,0.7)" for v in norway_changes]
+            change_colors_border = ["#16a34a" if v > 0 else "#dc2626" for v in norway_changes]
             
             lines.append(f'<script>')
             lines.append(f'new Chart(document.getElementById("norwayBarChart").getContext("2d"),{{')
@@ -290,11 +337,11 @@ Chart.defaults.scale.ticks.color = 'var(--text-muted)';
             lines.append(f'data:{{')
             lines.append(f'labels:{json.dumps(norway_labels, ensure_ascii=False)},')
             lines.append(f'datasets:[')
-            lines.append(f'{{label:"大戶持有率%",data:{json.dumps(norway_pcts)},backgroundColor:"rgba(255,193,7,0.7)",borderColor:"#ffc107",borderWidth:1}},')
-            lines.append(f'{{label:"最新週增減%",data:{json.dumps(norway_changes)},backgroundColor:{json.dumps(norway_changes)}.map(v=>v>0?"rgba(22,163,74,0.7)":"rgba(220,38,38,0.7)"),borderColor:{json.dumps(norway_changes)}.map(v=>v>0?"#16a34a":"#dc2626"),borderWidth:1}}')
+            lines.append(f'{{label:"大戶持有率%",data:{json.dumps(norway_pcts)},backgroundColor:"rgba(255,193,7,0.7)",borderColor:"#ffc107",borderWidth:1,yAxisID:"y"}},')
+            lines.append(f'{{label:"最新週增減%",data:{json.dumps(norway_changes)},backgroundColor:{json.dumps(change_colors_bg)},borderColor:{json.dumps(change_colors_border)},borderWidth:1,yAxisID:"y1"}}')
             lines.append(f']')
             lines.append(f'}},')
-            lines.append(f'options:{{responsive:true,maintainAspectRatio:false,plugins:{{legend:{{display:true}}}}}}')
+            lines.append('options:{{responsive:true,maintainAspectRatio:false,indexAxis:"y",plugins:{{legend:{{display:true,position:"top"}},tooltip:{{mode:"index",intersect:false}}}},scales:{{x:{{min:0,max:100,grid:{{color:"rgba(0,0,0,0.06)"}},ticks:{{color:"var(--text-secondary)"}}}},y:{{grid:{{display:false}},ticks:{{color:"var(--text-secondary)",font:{{size:11}}}}},y1:{{display:false,grid:{{display:false}},position:"right"}}}}}}')
             lines.append(f'}});')
             lines.append(f'</script>')
         

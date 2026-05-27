@@ -55,6 +55,20 @@ class StockScreener:
         ma20 = close.rolling(20).mean().iloc[-1]
         ma60 = close.rolling(60).mean().iloc[-1] if len(df) >= 60 else None
 
+        # MACD (12, 26, 9)
+        macd_data = {"dif": "-", "dea": "-", "hist": "-"}
+        if len(close) >= 35:
+            ema12 = close.ewm(span=12, adjust=False).mean()
+            ema26 = close.ewm(span=26, adjust=False).mean()
+            dif_series = ema12 - ema26
+            dea_series = dif_series.ewm(span=9, adjust=False).mean()
+            hist_series = dif_series - dea_series
+            macd_data = {
+                "dif": round(dif_series.iloc[-1], 4) if not pd.isna(dif_series.iloc[-1]) else "-",
+                "dea": round(dea_series.iloc[-1], 4) if not pd.isna(dea_series.iloc[-1]) else "-",
+                "hist": round(hist_series.iloc[-1], 4) if not pd.isna(hist_series.iloc[-1]) else "-",
+            }
+
         # RSI
         delta = close.diff()
         gain = delta.clip(lower=0)
@@ -75,6 +89,7 @@ class StockScreener:
             "ma60": round(ma60, 2) if ma60 and not pd.isna(ma60) else "-",
             "rsi": round(rsi, 1) if not pd.isna(rsi) else "-",
             "trend": trend,
+            "macd": macd_data,
         }
 
     def check_foreign_buy(self, stock_id):
@@ -214,6 +229,26 @@ class StockScreener:
         # 融資評分 (0-10)
         if margin and margin.get("ratio", 0) > 0.3:
             score += 10
+
+        # MACD 評分 (0-10)
+        macd = tech.get("macd", {}) if tech else {}
+        if isinstance(macd, dict):
+            dif = macd.get("dif")
+            dea = macd.get("dea")
+            hist = macd.get("hist")
+            if dif not in (None, "-", "") and dea not in (None, "-", "") and hist not in (None, "-", ""):
+                try:
+                    dif_f = float(dif)
+                    dea_f = float(dea)
+                    hist_f = float(hist)
+                    if dif_f > dea_f and hist_f > 0:
+                        score += 10
+                    elif dif_f < dea_f and hist_f < 0:
+                        score += 0
+                    else:
+                        score += 5
+                except (ValueError, TypeError):
+                    pass
 
         return score
 
