@@ -265,11 +265,15 @@ Chart.defaults.scale.ticks.color = 'var(--text-muted)';
         # === Norway 數據圖表 ===
         lines.append('<div class="card"><h2>🇳🇴 Norway.twsthr.info — 台灣50 大戶持有率排名</h2><div class="chart-container"><canvas id="norwayBarChart"></canvas></div></div>')
         
-        # 載入 Norway 數據
+        # 嵌入 Norway 數據 (找最新的 top200_weekly_*.json)
         norway_data = []
         try:
-            with open("data/norway/taiwan50_weekly.json", "r", encoding="utf-8") as f:
-                norway_data = json.load(f)
+            import glob, os
+            norway_files = glob.glob("data/norway/top200_weekly_*.json")
+            if norway_files:
+                latest_file = max(norway_files, key=os.path.getmtime)
+                with open(latest_file, "r", encoding="utf-8") as f:
+                    norway_data = json.load(f)
         except:
             pass
         
