@@ -87,7 +87,7 @@ Chart.defaults.scale.ticks.color = 'var(--text-muted)';
 
     def _footer(self):
         t = self.data.get("update_time", "未知")
-        return f'<footer class="footer"><p>📅 更新: {t} | 來源: FinMind/Yahoo/證交所</p><p>⚠️ 僅供研究參考</p></footer>'
+        return f'<footer class="footer"><p>📅 資料更新: {t}｜來源: FinMind / Yahoo Finance / 台灣證交所</p><p>⚠️ 僅供研究參考，不構成投資建議</p></footer>'
 
     def generate_index(self):
         screened = self.data.get("screened", [])

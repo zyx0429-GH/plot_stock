@@ -169,6 +169,16 @@ def generate_html(data):
 }}
 .wr-header h1 {{ font-size: 1.5em; margin-bottom: 5px; }}
 .wr-header .subtitle {{ color: var(--text-muted); font-size: 0.9em; }}
+.wr-header .meta-bar {{
+    display: flex; align-items: center; gap: 12px; margin-top: 10px;
+    font-size: 0.8em; color: var(--text-muted); flex-wrap: wrap;
+}}
+.wr-header .meta-bar .badge {{
+    padding: 3px 10px; border-radius: 12px; font-size: 0.75em; font-weight: 600;
+}}
+.wr-header .meta-bar .badge.source {{ background: #dbeafe; color: #1d4ed8; }}
+.wr-header .meta-bar .badge.time {{ background: #dcfce7; color: #15803d; }}
+.wr-header .meta-bar .badge.count {{ background: #fef3c7; color: #b45309; }}
 
 /* Signal Stats */
 .signal-stats {{
@@ -263,7 +273,12 @@ def generate_html(data):
 
 <div class="wr-header">
     <h1>📅 大戶籌碼週排行榜</h1>
-    <p class="subtitle">來源: fortune-fred.github.io/plot_stock/weekly_ranking.html｜更新: {fetched}</p>
+    <div class="meta-bar">
+        <span class="badge source">📡 來源: fortune-fred.github.io/plot_stock</span>
+        <span class="badge time">📅 更新: {fetched}</span>
+        <span class="badge count">📊 共 {sum(td['count'] for td in thresholds.values())} 檔</span>
+        <span style="color:var(--text-secondary);">｜排序: 大戶週增減% (由高到低)</span>
+    </div>
 </div>
 
 <!-- Signal Stats -->
