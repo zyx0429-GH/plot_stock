@@ -61,7 +61,7 @@ Chart.defaults.scale.ticks.color = 'var(--text-muted)';
 </head>"""
 
     def _nav(self, active=""):
-        items = [("index.html","📊 首頁"),("watchlist.html","⭐ 自選"),("etf_00981a.html","📈 00981A"),("sector.html","🔄 族群輪動")]
+        items = [("index.html","📊 首頁"),("watchlist.html","⭐ 自選"),("etf_00981a.html","📈 00981A"),("sector.html","🔄 族群輪動"),("weekly_ranking.html","📅 週排行")]
         html = '<nav class="navbar"><a href="index.html" class="nav-brand">🔥 跟隨大戶選股站</a><span style="color:var(--text-secondary);">|</span><div class="nav-links">'
         for href, text in items:
             if active and active in href:
