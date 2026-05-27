@@ -6,16 +6,16 @@
 <title>台股熱門族群輪動儀表板</title>
 <style>
   :root {
-    --bg: #0f172a;
-    --card: #1e293b;
-    --card-hover: #26344d;
-    --border: #334155;
-    --text: #e2e8f0;
-    --text-dim: #94a3b8;
-    --accent: #38bdf8;
-    --accent2: #818cf8;
-    --up: #22c55e;
-    --down: #ef4444;
+    --bg: #f8fafc;
+    --card: #ffffff;
+    --card-hover: #f1f5f9;
+    --border: #e2e8f0;
+    --text: #1e293b;
+    --text-dim: #64748b;
+    --accent: #2563eb;
+    --accent2: #6366f1;
+    --up: #16a34a;
+    --down: #dc2626;
     --warn: #f59e0b;
     --hot: #f97316;
   }
@@ -88,7 +88,7 @@
   .heat-track {
     flex: 1;
     height: 20px;
-    background: rgba(255,255,255,0.05);
+    background: rgba(0,0,0,0.06);
     border-radius: 4px;
     position: relative;
     overflow: hidden;
@@ -98,9 +98,9 @@
     border-radius: 4px;
     transition: width 0.5s ease;
   }
-  .heat-fill.up { background: linear-gradient(90deg, rgba(34,197,94,0.4), rgba(34,197,94,0.8)); }
-  .heat-fill.down { background: linear-gradient(90deg, rgba(239,68,68,0.4), rgba(239,68,68,0.8)); }
-  .heat-fill.flat { background: linear-gradient(90deg, rgba(148,163,184,0.4), rgba(148,163,184,0.8)); }
+  .heat-fill.up { background: linear-gradient(90deg, rgba(22,163,74,0.35), rgba(22,163,74,0.7)); }
+  .heat-fill.down { background: linear-gradient(90deg, rgba(220,38,38,0.35), rgba(220,38,38,0.7)); }
+  .heat-fill.flat { background: linear-gradient(90deg, rgba(148,163,184,0.35), rgba(148,163,184,0.7)); }
   .heat-value {
     width: 40px;
     text-align: right;
@@ -143,7 +143,7 @@
     padding: 8px 6px;
     border-bottom: 1px solid rgba(51,65,85,0.5);
   }
-  tr:hover td { background: rgba(255,255,255,0.03); }
+  tr:hover td { background: rgba(0,0,0,0.03); }
   .ticker { font-weight: 600; color: var(--accent); }
   .name { color: var(--text-dim); font-size: 0.8rem; }
   .num { font-family: 'SF Mono', 'Cascadia Mono', monospace; }
@@ -237,7 +237,7 @@
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<nav class="navbar"><a href="index.html" class="nav-brand">🔥 跟隨大戶選股站</a><span style="color:#334155;">|</span><div class="nav-links"><a href="index.html">📊 首頁</a><a href="watchlist.html">⭐ 自選</a><a href="etf_00981a.html">📈 00981A</a><span class="nav-active" style="color:var(--active);font-weight:600;font-size:0.85rem;cursor:default;">🔄 族群輪動</span></div></nav>
+<nav class="navbar"><a href="index.html" class="nav-brand">🔥 跟隨大戶選股站</a><span style="color:var(--text-secondary);">|</span><div class="nav-links"><a href="index.html">📊 首頁</a><a href="watchlist.html">⭐ 自選</a><a href="etf_00981a.html">📈 00981A</a><span class="nav-active" style="color:var(--active);font-weight:600;font-size:0.85rem;cursor:default;">🔄 族群輪動</span><a href="weekly_ranking.html">📅 週排行</a></div></nav>
 
 <h1>🎯 台股熱門族群輪動儀表板</h1>
 <p class="subtitle">整合外資、大戶籌碼、族群輪動方向、有利/不利數值 | 更新時間：2026-05-24 10:32</p>
