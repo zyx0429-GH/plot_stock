@@ -1,0 +1,41 @@
+name: Weekly Ranking Update
+
+on:
+  schedule:
+    # 每周六 06:00 UTC = 台湾时间 14:00 (周六下午，fortune-fred 数据已更新)
+    - cron: '0 6 * * 6'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-weekly:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+        token: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+
+    - name: Install dependencies
+      run: |
+        pip install requests
+
+    - name: Fetch & generate weekly ranking
+      run: |
+        python scripts/update_weekly.py
+
+    - name: Commit and push changes
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add -A
+        git commit -m "📅 Weekly ranking update: $(date +'%Y-%m-%d')" || echo "No changes"
+        git push
