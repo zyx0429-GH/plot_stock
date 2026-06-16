@@ -78,6 +78,16 @@ class StockScreener:
         rs = avg_gain.iloc[-1] / avg_loss.iloc[-1] if avg_loss.iloc[-1] != 0 else 0
         rsi = 100 - (100 / (1 + rs)) if avg_loss.iloc[-1] != 0 else 50
 
+        # 乖離率 (BIAS)
+        last_close = close.iloc[-1] if len(close) > 0 else None
+        bias20 = None
+        bias60 = None
+        if last_close is not None and not pd.isna(last_close):
+            if ma20 is not None and not pd.isna(ma20) and ma20 != 0:
+                bias20 = (last_close - ma20) / ma20 * 100
+            if ma60 is not None and not pd.isna(ma60) and ma60 != 0:
+                bias60 = (last_close - ma60) / ma60 * 100
+
         # 趨勢判斷
         if ma20 and ma60:
             trend = "多頭排列" if ma20 > ma60 else "空頭排列"
@@ -90,6 +100,8 @@ class StockScreener:
             "rsi": round(rsi, 1) if not pd.isna(rsi) else "-",
             "trend": trend,
             "macd": macd_data,
+            "bias20": round(bias20, 2) if bias20 is not None and not pd.isna(bias20) else "-",
+            "bias60": round(bias60, 2) if bias60 is not None and not pd.isna(bias60) else "-",
         }
 
     def check_foreign_buy(self, stock_id):
