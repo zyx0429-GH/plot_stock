@@ -212,6 +212,124 @@ Chart.defaults.scale.ticks.color = 'var(--text-muted)';
                 lines.append('<div class="chart-container"><canvas id="foreignTrendChart"></canvas></div></div>')
                 lines.append(f'<script>new Chart(document.getElementById("foreignTrendChart").getContext("2d"),{{type:"line",data:{{labels:{json.dumps(shared_dates)},datasets:{fjson}}},options:{{responsive:true,maintainAspectRatio:false,plugins:{{legend:{{display:true,labels:{{usePointStyle:true,boxWidth:8}}}}}},scales:{{x:{{grid:{{color:"rgba(0,0,0,0.06)"}},ticks:{{color:"var(--text-muted)",maxRotation:45}}}},y:{{grid:{{color:"rgba(0,0,0,0.06)"}},ticks:{{color:"var(--text-muted)"}},title:{{display:true,text:"淨買超 (張)",color:"var(--text-muted)"}}}}}}}}}});</script>')
 
+        # === 融資餘額排行榜 ===
+        margin_top = self.data.get("margin_top", [])
+        if margin_top:
+            lines.append('<div class="card"><h2>💰 融資餘額排行榜 (Top 20)</h2><div class="table-responsive"><table class="data-table"><thead><tr><th>代號</th><th>名稱</th><th>收盤價</th><th>漲跌%</th><th>融資餘額</th><th>融資增減</th><th>融資增減%</th><th>券資比</th><th>趨勢</th></tr></thead><tbody>')
+            for s in margin_top[:20]:
+                tech = s.get("technical", {}) or {}
+                trend = tech.get("trend", "")
+                close = s.get("close") if s.get("close") is not None else 0.0
+                change_pct = s.get("change_pct") if s.get("change_pct") is not None else 0.0
+                margin = s.get("margin", {}) or {}
+                m_bal = margin.get("balance", 0)
+                m_chg = margin.get("margin_change", 0)
+                m_chg_pct = margin.get("margin_change_pct", 0)
+                ratio = margin.get("ratio", 0)
+                lines.append(
+                    f'<tr onclick="location.href=\'stock_{s.get("stock_id", "-")}.html\'" class="clickable">'
+                    f'<td><strong>{s.get("stock_id", "-")}</strong></td>'
+                    f'<td>{s.get("stock_name", "-")}</td>'
+                    f'<td>{close:.2f}</td>'
+                    f'<td class="{"up" if change_pct>0 else "down"}">{change_pct:+.2f}%</td>'
+                    f'<td>{m_bal:,}</td>'
+                    f'<td class="{"up" if m_chg>0 else "down"}">{"📈" if m_chg > 0 else "📉" if m_chg < 0 else "➡️"} {m_chg:+,}</td>'
+                    f'<td class="{"up" if m_chg_pct>0 else "down"}">{m_chg_pct:+.2f}%</td>'
+                    f'<td>{ratio:.2f}%</td>'
+                    f'<td>{trend}</td></tr>'
+                )
+            lines.append('</tbody></table></div></div>')
+
+        # === 券資比排行榜（高券資比 = 注意回補風險）===
+        short_ratio_top = self.data.get("short_ratio_top", [])
+        if short_ratio_top:
+            lines.append('<div class="card"><h2>⚠️ 券資比排行榜 (Top 20)</h2><div class="table-responsive"><table class="data-table"><thead><tr><th>代號</th><th>名稱</th><th>收盤價</th><th>漲跌%</th><th>券資比</th><th>融券餘額</th><th>融券增減</th><th>趨勢</th><th>評分</th></tr></thead><tbody>')
+            for s in short_ratio_top[:20]:
+                tech = s.get("technical", {}) or {}
+                trend = tech.get("trend", "")
+                close = s.get("close") if s.get("close") is not None else 0.0
+                change_pct = s.get("change_pct") if s.get("change_pct") is not None else 0.0
+                margin = s.get("margin", {}) or {}
+                ratio = margin.get("ratio", 0)
+                s_bal = margin.get("short_balance", 0)
+                s_chg = margin.get("short_change", 0)
+                score = s.get("score", 0)
+                # 券資比警示色
+                ratio_alert = "🔴" if ratio > 0.5 else "🟠" if ratio > 0.3 else "🟡" if ratio > 0.1 else "🟢"
+                lines.append(
+                    f'<tr onclick="location.href=\'stock_{s.get("stock_id", "-")}.html\'" class="clickable">'
+                    f'<td><strong>{s.get("stock_id", "-")}</strong></td>'
+                    f'<td>{s.get("stock_name", "-")}</td>'
+                    f'<td>{close:.2f}</td>'
+                    f'<td class="{"up" if change_pct>0 else "down"}">{change_pct:+.2f}%</td>'
+                    f'<td><span class="{"sell" if ratio > 0.3 else ""}">{ratio_alert} {ratio:.2f}%</span></td>'
+                    f'<td>{s_bal:,}</td>'
+                    f'<td class="{"up" if s_chg>0 else "down"}">{s_chg:+,}</td>'
+                    f'<td>{trend}</td>'
+                    f'<td><span class="score">{score}</span></td></tr>'
+                )
+            lines.append('</tbody></table></div></div>')
+
+        # === 融資異動警示（單日變化 > 20%）===
+        margin_spike = self.data.get("margin_spike", [])
+        if margin_spike:
+            lines.append('<div class="card"><h2>🚨 融資異動警示（單日變化 > 20%）</h2><div class="table-responsive"><table class="data-table"><thead><tr><th>代號</th><th>名稱</th><th>收盤價</th><th>漲跌%</th><th>融資增減%</th><th>融券增減%</th><th>券資比</th><th>訊號</th></tr></thead><tbody>')
+            for s in margin_spike[:15]:
+                close = s.get("close") if s.get("close") is not None else 0.0
+                change_pct = s.get("change_pct") if s.get("change_pct") is not None else 0.0
+                margin = s.get("margin", {}) or {}
+                m_chg_pct = margin.get("margin_change_pct", 0)
+                s_chg_pct = margin.get("short_change_pct", 0)
+                ratio = margin.get("ratio", 0)
+                
+                # 訊號判斷
+                signals = []
+                if abs(m_chg_pct) >= 20:
+                    signals.append(f"融資{'大增' if m_chg_pct > 0 else '大減'} {m_chg_pct:+.1f}%")
+                if abs(s_chg_pct) >= 20:
+                    signals.append(f"融券{'大增' if s_chg_pct > 0 else '大減'} {s_chg_pct:+.1f}%")
+                signal_str = " + ".join(signals)
+                
+                lines.append(
+                    f'<tr onclick="location.href=\'stock_{s.get("stock_id", "-")}.html\'" class="clickable">'
+                    f'<td><strong>{s.get("stock_id", "-")}</strong></td>'
+                    f'<td>{s.get("stock_name", "-")}</td>'
+                    f'<td>{close:.2f}</td>'
+                    f'<td class="{"up" if change_pct>0 else "down"}">{change_pct:+.2f}%</td>'
+                    f'<td class="{"up" if m_chg_pct>0 else "down"}">{m_chg_pct:+.2f}%</td>'
+                    f'<td class="{"up" if s_chg_pct>0 else "down"}">{s_chg_pct:+.2f}%</td>'
+                    f'<td>{ratio:.2f}%</td>'
+                    f'<td><span class="warning" style="font-size:0.85rem;">{signal_str}</span></td></tr>'
+                )
+            lines.append('</tbody></table></div></div>')
+
+        # === 融資大減榜（散戶退場，籌碼收斂）===
+        margin_decrease = self.data.get("margin_decrease", [])
+        if margin_decrease:
+            lines.append('<div class="card"><h2>📉 融資大減榜（散戶退場 — 潛在偏多）</h2><div class="table-responsive"><table class="data-table"><thead><tr><th>代號</th><th>名稱</th><th>收盤價</th><th>漲跌%</th><th>融資餘額</th><th>融資減少</th><th>融資減幅%</th><th>大戶%</th><th>外資淨買</th></tr></thead><tbody>')
+            for s in margin_decrease[:15]:
+                close = s.get("close") if s.get("close") is not None else 0.0
+                change_pct = s.get("change_pct") if s.get("change_pct") is not None else 0.0
+                margin = s.get("margin", {}) or {}
+                m_bal = margin.get("balance", 0)
+                m_chg = margin.get("margin_change", 0)
+                m_chg_pct = margin.get("margin_change_pct", 0)
+                big_pct = s.get("big_holder_pct", 0) or 0
+                foreign_net = s.get("foreign_net", 0) or 0
+                lines.append(
+                    f'<tr onclick="location.href=\'stock_{s.get("stock_id", "-")}.html\'" class="clickable">'
+                    f'<td><strong>{s.get("stock_id", "-")}</strong></td>'
+                    f'<td>{s.get("stock_name", "-")}</td>'
+                    f'<td>{close:.2f}</td>'
+                    f'<td class="{"up" if change_pct>0 else "down"}">{change_pct:+.2f}%</td>'
+                    f'<td>{m_bal:,}</td>'
+                    f'<td class="down">{m_chg:,}</td>'
+                    f'<td class="down">{m_chg_pct:.2f}%</td>'
+                    f'<td>{big_pct:.2f}%</td>'
+                    f'<td class="{"buy" if foreign_net>0 else "sell"}">{foreign_net:+,}</td></tr>'
+                )
+            lines.append('</tbody></table></div></div>')
+
         # 多頭排列清單 + MACD 分數
         lines.append('<div class="card"><h2>📈 多頭排列清單 + MACD</h2><div class="table-responsive"><table class="data-table"><thead><tr><th>代號</th><th>名稱</th><th>收盤價</th><th>20MA</th><th>60MA</th><th>RSI</th><th>MACD DIF</th><th>MACD DEA</th><th>柱狀</th><th>MACD分</th><th>大戶%</th><th>外資連買</th></tr></thead><tbody>')
         for s in bull_stocks[:30]:

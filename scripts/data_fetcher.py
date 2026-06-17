@@ -349,8 +349,52 @@ class TWStockDataFetcher:
                 print(f"[WARN] No TPEX institutional for {d}")
         return foreign_map, trust_map
 
-    @staticmethod
-    def _get_last_trading_day(date_str):
+    def _fetch_tpex_margin(self, today_str, yesterday_str):
+        """抓取 TPEX 上櫃融資融券餘額"""
+        roc_today = self._roc_date(today_str)
+        roc_yesterday = self._roc_date(yesterday_str)
+        margin_map = {}
+
+        for d in [roc_today, roc_yesterday]:
+            if not d:
+                continue
+            print(f"[INFO] Fetching TPEX margin for {d}...")
+            data = self._tpex_get("web/stock/margin_trading/margin_balance/margin_bal_result.php", {
+                "l": "zh-tw", "o": "json", "d": d, "_": "0"
+            })
+            tables = data.get("tables", [])
+            if tables and tables[0].get("data"):
+                table = tables[0]
+                rows = table.get("data", [])
+                print(f"[INFO] TPEX margin: {len(rows)} stocks for {d}")
+                for row in rows:
+                    if len(row) < 19:
+                        continue
+                    sid = str(row[0]).lstrip("0") or "0"
+                    try:
+                        prev_margin = int(str(row[2]).replace(",", ""))  # 前資餘額
+                        margin_balance = int(str(row[6]).replace(",", ""))  # 資餘額
+                        prev_short = int(str(row[10]).replace(",", ""))  # 前券餘額
+                        short_balance = int(str(row[14]).replace(",", ""))  # 券餘額
+                        margin_usage_str = str(row[8]).replace(",", "") if row[8] else "0"
+                        margin_usage = float(margin_usage_str) if margin_usage_str else 0
+                        ratio = short_balance / margin_balance if margin_balance > 0 else 0
+                        margin_map[sid] = {
+                            "margin_balance": margin_balance,
+                            "short_balance": short_balance,
+                            "margin_prev": prev_margin,
+                            "short_prev": prev_short,
+                            "margin_change": margin_balance - prev_margin,
+                            "short_change": short_balance - prev_short,
+                            "margin_usage_pct": round(margin_usage, 2),
+                            "ratio": round(ratio, 4),
+                        }
+                    except Exception:
+                        pass
+                break  # 有資料就跳出
+            else:
+                print(f"[WARN] No TPEX margin for {d}")
+        return margin_map
         """回退到最近交易日（週六回退到週五，週日回退到週五）"""
         dt = datetime.strptime(date_str, "%Y%m%d")
         weekday = dt.weekday()  # 0=週一, 5=週六, 6=週日
@@ -454,16 +498,30 @@ class TWStockDataFetcher:
                     try:
                         margin_balance = int(row[fidx.get("融資今日餘額", 6)].replace(",", ""))
                         short_balance = int(row[fidx.get("融券今日餘額", 12)].replace(",", ""))
+                        prev_margin = int(row[fidx.get("融資昨日餘額", 5)].replace(",", ""))
+                        prev_short = int(row[fidx.get("融券昨日餘額", 11)].replace(",", ""))
                         ratio = short_balance / margin_balance if margin_balance > 0 else 0
                         margin_map[sid.lstrip("0") or "0"] = {
                             "margin_balance": margin_balance,
                             "short_balance": short_balance,
+                            "margin_prev": prev_margin,
+                            "short_prev": prev_short,
+                            "margin_change": margin_balance - prev_margin,
+                            "short_change": short_balance - prev_short,
+                            "margin_usage_pct": None,
                             "ratio": round(ratio, 4),
                         }
                     except Exception:
                         pass
         print(f"[INFO] TWSE MI_MARGN: {len(margin_map)} stocks")
-        # NOTE: TPEX margin API 目前無穩定 JSON endpoint，暫不補上櫃融資融券
+
+        # === Step 3c: 抓取上櫃融資融券 (TPEX) ===
+        tpex_margin_map = self._fetch_tpex_margin(today_str, yesterday)
+        print(f"[INFO] TPEX margin: {len(tpex_margin_map)} stocks")
+        # 合併：以上市為主，上櫃補缺
+        for sid, mdata in tpex_margin_map.items():
+            if sid not in margin_map:
+                margin_map[sid] = mdata
 
         # === Step 4: 用 yfinance 抓歷史價格算技術指標 ===
         print("[INFO] Fetching yfinance history for technical indicators...")
@@ -519,6 +577,11 @@ class TWStockDataFetcher:
                         "date": today_str,
                         "margin_balance": margin_data["margin_balance"],
                         "short_balance": margin_data["short_balance"],
+                        "margin_prev": margin_data.get("margin_prev", 0),
+                        "short_prev": margin_data.get("short_prev", 0),
+                        "margin_change": margin_data.get("margin_change", 0),
+                        "short_change": margin_data.get("short_change", 0),
+                        "margin_usage_pct": margin_data.get("margin_usage_pct"),
                         "margin_short_ratio": margin_data["ratio"],
                     }]
 
