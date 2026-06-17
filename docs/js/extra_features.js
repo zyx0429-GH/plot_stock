@@ -409,6 +409,39 @@
         }
     }
 
+    // ===================== 3.5 各族群情緒 =====================
+    function renderSectorSentiment() {
+        const stocks = getAllStocks();
+        const sectorMap = {
+            'semiconductor': { name: '🔧 半導體', ids: ['2330','2317','2454','2303','2337','2344','2345','2357','2404','2428','2439','2449','2481','3006','3036','3231','3264','3443','3535','3653','3661','3665','3680','3711','4919','4961','4966','4967','5347','5439','6104','6155','6182','6187','6191','6207','6223','6239','6261','6271','6415','6510','6515','6669','6770','6805','8040','8042','8091','8150','8210','8289','8358','8996','1590','1727','2002','2301','2308','2313','2324','2327','2377','2382','2383','2408','2409','3016','3017','3037','3376','3450','3481','5274'] },
+            'ai-server': { name: '🤖 AI伺服器', ids: ['2324','2356','2376','2382','3231','3661','6669'] },
+            'passive-component': { name: '🔌 被動元件', ids: ['2327','2472','2478','2492','6173','8042','8043','1815','3026','2375','3090','6207','8358'] },
+            'pcb': { name: '📟 PCB', ids: ['2313','2355','2368','2383','3037','6213','6274','8046'] },
+            'memory': { name: '💾 記憶體', ids: ['2344','2408','3006','6770'] },
+            'display': { name: '🖥️ 面板', ids: ['2409','3481'] },
+            'financial': { name: '🏦 金融', ids: ['2881','2882','2850','2880','2883','2885','2886','2887','2890','2892'] },
+        };
+
+        const panel = $('sectorSentimentPanel');
+        if (!panel) return;
+
+        const html = [];
+        for (const [key, cfg] of Object.entries(sectorMap)) {
+            const sectorStocks = stocks.filter(s => cfg.ids.includes(s.code));
+            if (sectorStocks.length === 0) continue;
+            const up = sectorStocks.filter(s => s.change_pct > 0).length;
+            const pct = (up / sectorStocks.length) * 100;
+            let emoji, colorClass;
+            if (pct >= 70) { emoji = '🔥'; colorClass = 'sentiment-up'; }
+            else if (pct >= 55) { emoji = '📈'; colorClass = 'sentiment-up'; }
+            else if (pct >= 45) { emoji = '➡️'; colorClass = 'sentiment-flat'; }
+            else if (pct >= 30) { emoji = '📉'; colorClass = 'sentiment-down'; }
+            else { emoji = '❄️'; colorClass = 'sentiment-down'; }
+            html.push(`<div class="mini-card" style="text-align:center;padding:10px;"><div style="font-size:0.85rem;color:var(--text-muted);">${cfg.name}</div><div class="value ${colorClass}" style="font-size:1.1rem;">${emoji} ${pct.toFixed(0)}%</div><div style="font-size:0.7rem;color:var(--text-muted);">${up}/${sectorStocks.length} 上漲</div></div>`);
+        }
+        panel.innerHTML = html.join('') || '<div style="color:var(--text-muted);text-align:center;padding:10px;">暫無族群數據</div>';
+    }
+
     // ===================== 4. 個股彈窗 + 雷達圖 =====================
     function calculateRiskScore(stockText) {
         let score = 5;
@@ -666,6 +699,7 @@
         // 等待頁面資料載入
         setTimeout(() => {
             renderMarketSentiment();
+            renderSectorSentiment();
             renderSectorRotation();
             initScrollTop();
             initKeyboardShortcuts();
