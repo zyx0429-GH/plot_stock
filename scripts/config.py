@@ -142,6 +142,17 @@ WATCHLIST = [
     "8289",  # 泰藝
     "3498",  # 陽程
     "8091",  # 翔名
+    # --- 金融股 ---
+    "2882",  # 國泰金
+    "2890",  # 永豐金
+    "2881",  # 富邦金
+    "2892",  # 第一金
+    "2850",  # 新產
+    "2885",  # 元大金
+    "2880",  # 華南金
+    "2883",  # 凱基金
+    "2886",  # 兆豐金
+    "2887",  # 台新金
     # --- 00981A ETF ---
     "00981A",
 ]
@@ -220,6 +231,153 @@ BIG_HOLDER_MISSED = [
     "6770",  # 力積電
     "3450",  # 聯鈞
 ]
+
+# === 被動元件族群 ===
+PASSIVE_COMPONENT = [
+    "2327",  # 國巨
+    "2478",  # 大毅
+    "2492",  # 華新科
+    "2472",  # 立隆電
+    "6173",  # 信昌電
+    "8043",  # 蜜望實
+    "3090",  # 日電貿
+    "3026",  # 禾伸堂
+    "2375",  # 凱美
+    "6207",  # 雷科
+]
+
+# === 金融股族群 ===
+FINANCIAL_STOCKS = [
+    "2882",  # 國泰金
+    "2890",  # 永豐金
+    "2881",  # 富邦金
+    "2892",  # 第一金
+    "2850",  # 新產
+    "2885",  # 元大金
+    "2880",  # 華南金
+    "2883",  # 凱基金
+    "2886",  # 兆豐金
+    "2887",  # 台新金
+]
+
+# === 每周大戶400 TOP25（動態載入）===
+def load_big_holder_top25():
+    """從 chip_monitoring weekly JSON 載入最新大戶 TOP25"""
+    import glob
+    import json
+    
+    weekly_dirs = [
+        os.path.join(os.path.dirname(__file__), "..", "data", "chip_monitoring", "weekly"),
+        os.path.join(os.path.dirname(__file__), "..", "..", "memory", "chip-monitoring", "weekly"),
+        os.path.join(os.path.dirname(__file__), "..", "..", "memory", "chip_monitoring", "weekly"),
+    ]
+    
+    all_files = []
+    for d in weekly_dirs:
+        if os.path.isdir(d):
+            all_files.extend(sorted(glob.glob(os.path.join(d, "*-full.json")), reverse=True))
+            all_files.extend(sorted(glob.glob(os.path.join(d, "[0-9]*-[0-9]*-[0-9]*.json")), reverse=True))
+    
+    if not all_files:
+        return []
+    
+    # 去重並排序
+    seen = set()
+    unique_files = []
+    for f in all_files:
+        if f not in seen:
+            seen.add(f)
+            unique_files.append(f)
+    
+    latest_file = unique_files[0]
+    try:
+        with open(latest_file, "r", encoding="utf-8") as f:
+            data = json.load(f)
+    except Exception:
+        return []
+    
+    stocks = data.get("all_stocks", data.get("top100_increase", []) + data.get("top100_decrease", []))
+    if not stocks:
+        return []
+    
+    # 按 bh_pct 排序取前25
+    sorted_stocks = sorted(stocks, key=lambda x: x.get("bh_pct", 0), reverse=True)
+    return [str(s.get("ticker", "")).lstrip("0") or "0" for s in sorted_stocks[:25]]
+
+BIG_HOLDER_TOP25 = load_big_holder_top25()
+
+# === 族群映射（供前端計算各族群情緒）===
+SECTOR_MAP = {
+    "semiconductor": "半導體",
+    "ai-server": "AI伺服器",
+    "passive-component": "被動元件",
+    "pcb": "PCB",
+    "memory": "記憶體",
+    "display": "面板",
+    "financial": "金融",
+    "sic-power": "SiC功率",
+    "biotech": "生技",
+    "aerospace-defense": "航太軍工",
+    "satellite": "衛星",
+}
+
+# 個股→族群對照（key: stock_id, value: sector_key）
+STOCK_SECTOR = {
+    # 半導體
+    "2330": "semiconductor", "2317": "semiconductor", "2454": "semiconductor",
+    "2303": "semiconductor", "2337": "semiconductor", "2344": "semiconductor",
+    "2345": "semiconductor", "2357": "semiconductor", "2404": "semiconductor",
+    "2428": "semiconductor", "2439": "semiconductor", "2449": "semiconductor",
+    "2481": "semiconductor", "3006": "semiconductor", "3036": "semiconductor",
+    "3231": "semiconductor", "3264": "semiconductor", "3443": "semiconductor",
+    "3535": "semiconductor", "3653": "semiconductor", "3661": "semiconductor",
+    "3665": "semiconductor", "3680": "semiconductor", "3711": "semiconductor",
+    "4919": "semiconductor", "4961": "semiconductor", "4966": "semiconductor",
+    "4967": "semiconductor", "5347": "semiconductor", "5439": "semiconductor",
+    "6104": "semiconductor", "6155": "semiconductor", "6182": "semiconductor",
+    "6187": "semiconductor", "6191": "semiconductor", "6207": "semiconductor",
+    "6223": "semiconductor", "6239": "semiconductor", "6261": "semiconductor",
+    "6271": "semiconductor", "6415": "semiconductor", "6510": "semiconductor",
+    "6515": "semiconductor", "6669": "semiconductor", "6770": "semiconductor",
+    "6805": "semiconductor", "8040": "semiconductor", "8042": "semiconductor",
+    "8091": "semiconductor", "8150": "semiconductor", "8210": "semiconductor",
+    "8289": "semiconductor", "8358": "semiconductor", "8996": "semiconductor",
+    "1590": "semiconductor", "1727": "semiconductor", "2002": "semiconductor",
+    "2301": "semiconductor", "2308": "semiconductor", "2313": "semiconductor",
+    "2324": "semiconductor", "2327": "semiconductor", "2377": "semiconductor",
+    "2382": "semiconductor", "2383": "semiconductor", "2408": "semiconductor",
+    "2409": "semiconductor", "3016": "semiconductor", "3017": "semiconductor",
+    "3037": "semiconductor", "3376": "semiconductor", "3450": "semiconductor",
+    "3481": "semiconductor", "5274": "semiconductor",
+    # AI伺服器
+    "2324": "ai-server", "2356": "ai-server", "2376": "ai-server",
+    "2382": "ai-server", "3231": "ai-server", "3661": "ai-server",
+    "6669": "ai-server",
+    # 被動元件
+    "2327": "passive-component", "2472": "passive-component", "2478": "passive-component",
+    "2492": "passive-component", "6173": "passive-component", "8042": "passive-component",
+    "8043": "passive-component", "1815": "passive-component", "3026": "passive-component",
+    "2375": "passive-component", "3090": "passive-component", "6207": "passive-component",
+    "6173": "passive-component", "8358": "passive-component",
+    # PCB
+    "2313": "pcb", "2355": "pcb", "2368": "pcb", "2383": "pcb",
+    "3037": "pcb", "6213": "pcb", "6274": "pcb", "8046": "pcb",
+    # 記憶體
+    "2344": "memory", "2408": "memory", "3006": "memory", "6770": "memory",
+    # 面板
+    "2409": "display", "3481": "display",
+    # 金融
+    "2881": "financial", "2882": "financial", "2850": "financial",
+    "2880": "financial", "2883": "financial", "2885": "financial",
+    "2886": "financial", "2887": "financial", "2890": "financial",
+    "2892": "financial",
+    # SiC功率
+    "3707": "sic-power", "8261": "sic-power",
+    # 航太軍工
+    "2634": "aerospace-defense",
+    # 衛星
+    "6821": "satellite",
+}
 
 # === 輸出路徑 ===
 DATA_DIR = "data"

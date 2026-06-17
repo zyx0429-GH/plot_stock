@@ -61,7 +61,7 @@ Chart.defaults.scale.ticks.color = 'var(--text-muted)';
 </head>"""
 
     def _nav(self, active=""):
-        items = [("index.html","📊 首頁"),("watchlist.html","⭐ 自選"),("etf_00981a.html","📈 00981A"),("sector.html","🔄 族群輪動"),("weekly_ranking.html","📅 週排行")]
+        items = [("index.html","📊 首頁"),("watchlist.html","⭐ 自選"),("etf_00981a.html","📈 00981A"),("passive_component.html","🔌 被動元件"),("big_holder_top25.html","👑 大戶TOP25"),("sector.html","🔄 族群輪動"),("weekly_ranking.html","📅 週排行")]
         html = '<nav class="navbar"><a href="index.html" class="nav-brand">🔥 跟隨大戶選股站</a><span style="color:var(--text-secondary);">|</span><div class="nav-links">'
         for href, text in items:
             if active and active in href:
@@ -109,11 +109,14 @@ Chart.defaults.scale.ticks.color = 'var(--text-muted)';
 
         # === 市場情緒指標儀表板 ===
         lines.append('<div style="max-width:1400px;margin:10px auto;padding:0 20px;"><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:15px;margin-bottom:15px;">')
-        lines.append('<div class="mini-card"><div class="label">🎯 市場情緒</div><div id="marketSentiment" class="value sentiment-warn">計算中...</div></div>')
+        lines.append('<div class="mini-card"><div class="label">🎯 監控個股情緒</div><div id="marketSentiment" class="value sentiment-warn">計算中...</div><div style="font-size:0.75rem;color:var(--text-muted);margin-top:4px;">基於本頁監控個股</div></div>')
         lines.append('<div class="mini-card"><div class="label">📈 上漲家數</div><div id="advancingCount" class="value sentiment-up">--</div></div>')
         lines.append('<div class="mini-card"><div class="label">📉 下跌家數</div><div id="decliningCount" class="value sentiment-down">--</div></div>')
         lines.append('<div class="mini-card"><div class="label">➡️ 平盤家數</div><div id="flatCount" class="value sentiment-flat">--</div></div>')
         lines.append('</div></div>')
+
+        # === 各族群情緒儀表板 ===
+        lines.append('<div style="max-width:1400px;margin:10px auto;padding:0 20px;"><div class="card"><h3 style="margin:0 0 12px 0;">🎭 各族群情緒（基於監控個股）</h3><div id="sectorSentimentPanel" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;"><div style="color:var(--text-muted);text-align:center;padding:10px;">載入中...</div></div></div></div>')
 
         # === 族群輪動儀表板 ===
         lines.append('<div style="max-width:1400px;margin:20px auto;padding:0 20px;"><div class="card">')
@@ -211,6 +214,124 @@ Chart.defaults.scale.ticks.color = 'var(--text-muted)';
                 lines.append(f'<p class="chart-desc">⚠️ 當前僅有 {len(shared_dates)} 天數據（{shared_dates[0] if shared_dates else ""}）。外資歷史數據從今日開始累積，累積 5 天後可顯示趨勢線。</p>')
                 lines.append('<div class="chart-container"><canvas id="foreignTrendChart"></canvas></div></div>')
                 lines.append(f'<script>new Chart(document.getElementById("foreignTrendChart").getContext("2d"),{{type:"line",data:{{labels:{json.dumps(shared_dates)},datasets:{fjson}}},options:{{responsive:true,maintainAspectRatio:false,plugins:{{legend:{{display:true,labels:{{usePointStyle:true,boxWidth:8}}}}}},scales:{{x:{{grid:{{color:"rgba(0,0,0,0.06)"}},ticks:{{color:"var(--text-muted)",maxRotation:45}}}},y:{{grid:{{color:"rgba(0,0,0,0.06)"}},ticks:{{color:"var(--text-muted)"}},title:{{display:true,text:"淨買超 (張)",color:"var(--text-muted)"}}}}}}}}}});</script>')
+
+        # === 融資餘額排行榜 ===
+        margin_top = self.data.get("margin_top", [])
+        if margin_top:
+            lines.append('<div class="card"><h2>💰 融資餘額排行榜 (Top 20)</h2><div class="table-responsive"><table class="data-table"><thead><tr><th>代號</th><th>名稱</th><th>收盤價</th><th>漲跌%</th><th>融資餘額</th><th>融資增減</th><th>融資增減%</th><th>券資比</th><th>趨勢</th></tr></thead><tbody>')
+            for s in margin_top[:20]:
+                tech = s.get("technical", {}) or {}
+                trend = tech.get("trend", "")
+                close = s.get("close") if s.get("close") is not None else 0.0
+                change_pct = s.get("change_pct") if s.get("change_pct") is not None else 0.0
+                margin = s.get("margin", {}) or {}
+                m_bal = margin.get("balance", 0)
+                m_chg = margin.get("margin_change", 0)
+                m_chg_pct = margin.get("margin_change_pct", 0)
+                ratio = margin.get("ratio", 0)
+                lines.append(
+                    f'<tr onclick="location.href=\'stock_{s.get("stock_id", "-")}.html\'" class="clickable">'
+                    f'<td><strong>{s.get("stock_id", "-")}</strong></td>'
+                    f'<td>{s.get("stock_name", "-")}</td>'
+                    f'<td>{close:.2f}</td>'
+                    f'<td class="{"up" if change_pct>0 else "down"}">{change_pct:+.2f}%</td>'
+                    f'<td>{m_bal:,}</td>'
+                    f'<td class="{"up" if m_chg>0 else "down"}">{"📈" if m_chg > 0 else "📉" if m_chg < 0 else "➡️"} {m_chg:+,}</td>'
+                    f'<td class="{"up" if m_chg_pct>0 else "down"}">{m_chg_pct:+.2f}%</td>'
+                    f'<td>{ratio:.2f}%</td>'
+                    f'<td>{trend}</td></tr>'
+                )
+            lines.append('</tbody></table></div></div>')
+
+        # === 券資比排行榜（高券資比 = 注意回補風險）===
+        short_ratio_top = self.data.get("short_ratio_top", [])
+        if short_ratio_top:
+            lines.append('<div class="card"><h2>⚠️ 券資比排行榜 (Top 20)</h2><div class="table-responsive"><table class="data-table"><thead><tr><th>代號</th><th>名稱</th><th>收盤價</th><th>漲跌%</th><th>券資比</th><th>融券餘額</th><th>融券增減</th><th>趨勢</th><th>評分</th></tr></thead><tbody>')
+            for s in short_ratio_top[:20]:
+                tech = s.get("technical", {}) or {}
+                trend = tech.get("trend", "")
+                close = s.get("close") if s.get("close") is not None else 0.0
+                change_pct = s.get("change_pct") if s.get("change_pct") is not None else 0.0
+                margin = s.get("margin", {}) or {}
+                ratio = margin.get("ratio", 0)
+                s_bal = margin.get("short_balance", 0)
+                s_chg = margin.get("short_change", 0)
+                score = s.get("score", 0)
+                # 券資比警示色
+                ratio_alert = "🔴" if ratio > 0.5 else "🟠" if ratio > 0.3 else "🟡" if ratio > 0.1 else "🟢"
+                lines.append(
+                    f'<tr onclick="location.href=\'stock_{s.get("stock_id", "-")}.html\'" class="clickable">'
+                    f'<td><strong>{s.get("stock_id", "-")}</strong></td>'
+                    f'<td>{s.get("stock_name", "-")}</td>'
+                    f'<td>{close:.2f}</td>'
+                    f'<td class="{"up" if change_pct>0 else "down"}">{change_pct:+.2f}%</td>'
+                    f'<td><span class="{"sell" if ratio > 0.3 else ""}">{ratio_alert} {ratio:.2f}%</span></td>'
+                    f'<td>{s_bal:,}</td>'
+                    f'<td class="{"up" if s_chg>0 else "down"}">{s_chg:+,}</td>'
+                    f'<td>{trend}</td>'
+                    f'<td><span class="score">{score}</span></td></tr>'
+                )
+            lines.append('</tbody></table></div></div>')
+
+        # === 融資異動警示（單日變化 > 20%）===
+        margin_spike = self.data.get("margin_spike", [])
+        if margin_spike:
+            lines.append('<div class="card"><h2>🚨 融資異動警示（單日變化 > 20%）</h2><div class="table-responsive"><table class="data-table"><thead><tr><th>代號</th><th>名稱</th><th>收盤價</th><th>漲跌%</th><th>融資增減%</th><th>融券增減%</th><th>券資比</th><th>訊號</th></tr></thead><tbody>')
+            for s in margin_spike[:15]:
+                close = s.get("close") if s.get("close") is not None else 0.0
+                change_pct = s.get("change_pct") if s.get("change_pct") is not None else 0.0
+                margin = s.get("margin", {}) or {}
+                m_chg_pct = margin.get("margin_change_pct", 0)
+                s_chg_pct = margin.get("short_change_pct", 0)
+                ratio = margin.get("ratio", 0)
+                
+                # 訊號判斷
+                signals = []
+                if abs(m_chg_pct) >= 20:
+                    signals.append(f"融資{'大增' if m_chg_pct > 0 else '大減'} {m_chg_pct:+.1f}%")
+                if abs(s_chg_pct) >= 20:
+                    signals.append(f"融券{'大增' if s_chg_pct > 0 else '大減'} {s_chg_pct:+.1f}%")
+                signal_str = " + ".join(signals)
+                
+                lines.append(
+                    f'<tr onclick="location.href=\'stock_{s.get("stock_id", "-")}.html\'" class="clickable">'
+                    f'<td><strong>{s.get("stock_id", "-")}</strong></td>'
+                    f'<td>{s.get("stock_name", "-")}</td>'
+                    f'<td>{close:.2f}</td>'
+                    f'<td class="{"up" if change_pct>0 else "down"}">{change_pct:+.2f}%</td>'
+                    f'<td class="{"up" if m_chg_pct>0 else "down"}">{m_chg_pct:+.2f}%</td>'
+                    f'<td class="{"up" if s_chg_pct>0 else "down"}">{s_chg_pct:+.2f}%</td>'
+                    f'<td>{ratio:.2f}%</td>'
+                    f'<td><span class="warning" style="font-size:0.85rem;">{signal_str}</span></td></tr>'
+                )
+            lines.append('</tbody></table></div></div>')
+
+        # === 融資大減榜（散戶退場，籌碼收斂）===
+        margin_decrease = self.data.get("margin_decrease", [])
+        if margin_decrease:
+            lines.append('<div class="card"><h2>📉 融資大減榜（散戶退場 — 潛在偏多）</h2><div class="table-responsive"><table class="data-table"><thead><tr><th>代號</th><th>名稱</th><th>收盤價</th><th>漲跌%</th><th>融資餘額</th><th>融資減少</th><th>融資減幅%</th><th>大戶%</th><th>外資淨買</th></tr></thead><tbody>')
+            for s in margin_decrease[:15]:
+                close = s.get("close") if s.get("close") is not None else 0.0
+                change_pct = s.get("change_pct") if s.get("change_pct") is not None else 0.0
+                margin = s.get("margin", {}) or {}
+                m_bal = margin.get("balance", 0)
+                m_chg = margin.get("margin_change", 0)
+                m_chg_pct = margin.get("margin_change_pct", 0)
+                big_pct = s.get("big_holder_pct", 0) or 0
+                foreign_net = s.get("foreign_net", 0) or 0
+                lines.append(
+                    f'<tr onclick="location.href=\'stock_{s.get("stock_id", "-")}.html\'" class="clickable">'
+                    f'<td><strong>{s.get("stock_id", "-")}</strong></td>'
+                    f'<td>{s.get("stock_name", "-")}</td>'
+                    f'<td>{close:.2f}</td>'
+                    f'<td class="{"up" if change_pct>0 else "down"}">{change_pct:+.2f}%</td>'
+                    f'<td>{m_bal:,}</td>'
+                    f'<td class="down">{m_chg:,}</td>'
+                    f'<td class="down">{m_chg_pct:.2f}%</td>'
+                    f'<td>{big_pct:.2f}%</td>'
+                    f'<td class="{"buy" if foreign_net>0 else "sell"}">{foreign_net:+,}</td></tr>'
+                )
+            lines.append('</tbody></table></div></div>')
 
         # 多頭排列清單 + MACD 分數
         lines.append('<div class="card"><h2>📈 多頭排列清單 + MACD</h2><div class="table-responsive"><table class="data-table"><thead><tr><th>代號</th><th>名稱</th><th>收盤價</th><th>20MA</th><th>60MA</th><th>RSI</th><th>MACD DIF</th><th>MACD DEA</th><th>柱狀</th><th>MACD分</th><th>大戶%</th><th>外資連買</th></tr></thead><tbody>')
@@ -450,6 +571,63 @@ Chart.defaults.scale.ticks.color = 'var(--text-muted)';
 
     def generate_etf_00981a(self):
         return self._generate_table_page("00981A 持股明細｜智董籌碼選股站", "📈 00981A 成分股", "etf_00981a", ETF_00981A_HOLDINGS)
+
+    def generate_passive_component(self):
+        from config import PASSIVE_COMPONENT
+        return self._generate_table_page("被動元件族群｜智董籌碼選股站", "🔌 被動元件核心股", "passive_component", PASSIVE_COMPONENT)
+
+    def generate_big_holder_top25(self):
+        """生成大戶400 TOP25 專屬頁面"""
+        from config import BIG_HOLDER_TOP25
+        
+        screened = self.data.get("screened", [])
+        page_data = [s for s in screened if s["stock_id"] in BIG_HOLDER_TOP25]
+        # 按大戶%排序
+        page_data.sort(key=lambda x: x.get("big_holder_pct", 0), reverse=True)
+        
+        lines = []
+        lines.append(self._head("大戶400 TOP25｜智董籌碼選股站"))
+        lines.append('<body>')
+        lines.append(self._nav("big_holder_top25"))
+        lines.append(f'<div class="container"><div class="header-info"><h1>👑 大戶400 TOP25</h1><p class="subtitle">每周六更新｜大戶持股比例最高的 25 檔個股｜共 {len(page_data)} 檔</p></div>')
+        lines.append('<div class="card"><div class="table-responsive"><table class="data-table"><thead><tr><th>排名</th><th>代號</th><th>名稱</th><th>收盤價</th><th>漲跌%</th><th>大戶%</th><th>週增減</th><th>外資淨買</th><th>投信淨買</th><th>券資比</th><th>趨勢</th><th>評分</th></tr></thead><tbody>')
+        for i, s in enumerate(page_data, 1):
+            tech = s.get("technical", {}) or {}
+            trend = tech.get("trend", "")
+            tc = "bull" if "多頭" in trend else "bear" if "空頭" in trend else "neutral"
+            close = s.get("close") if s.get("close") is not None else 0.0
+            change_pct = s.get("change_pct") if s.get("change_pct") is not None else 0.0
+            big_holder_pct = s.get("big_holder_pct") if s.get("big_holder_pct") is not None else 0.0
+            big_holder_change = s.get("big_holder_change") if s.get("big_holder_change") is not None else 0.0
+            foreign_net = s.get("foreign_net") if s.get("foreign_net") is not None else 0
+            trust_net = s.get("trust_net") if s.get("trust_net") is not None else 0
+            score = s.get("score") if s.get("score") is not None else 0
+            margin = s.get("margin", {}) or {}
+            ratio = margin.get("ratio", "-") if margin else "-"
+            lines.append(
+                f'<tr onclick="location.href=\'stock_{s.get("stock_id", "-")}.html\'" class="clickable">'
+                f'<td>{i}</td>'
+                f'<td><strong>{s.get("stock_id", "-")}</strong></td>'
+                f'<td>{s.get("stock_name", "-")}</td>'
+                f'<td>{close:.2f}</td>'
+                f'<td class="{"up" if change_pct>0 else "down"}">{change_pct:+.2f}%</td>'
+                f'<td class="highlight">{big_holder_pct:.2f}%</td>'
+                f'<td class="{"up" if big_holder_change>0 else "down"}">{big_holder_change:+.2f}%</td>'
+                f'<td class="{"buy" if foreign_net>0 else "sell"}">{foreign_net:,}</td>'
+                f'<td class="{"buy" if trust_net>0 else "sell"}">{trust_net:,}</td>'
+                f'<td>{ratio}</td>'
+                f'<td class="{tc}">{trend}</td>'
+                f'<td><span class="score">{score}</span></td></tr>'
+            )
+        lines.append('</tbody></table></div></div></div>')
+        lines.append(self._footer())
+        lines.append('</body></html>')
+        
+        filepath = os.path.join(DOCS_DIR, "big_holder_top25.html")
+        with open(filepath, "w", encoding="utf-8") as f:
+            f.write("".join(lines))
+        print(f"[OK] big_holder_top25: {filepath}")
+        return filepath
 
     def generate_stock_detail(self, stock_id):
         if stock_id not in self.raw_data:
@@ -986,6 +1164,8 @@ Chart.defaults.scale.ticks.color = 'var(--text-muted)';
         self.generate_index()
         self.generate_watchlist()
         self.generate_etf_00981a()
+        self.generate_passive_component()
+        self.generate_big_holder_top25()
         self.generate_cross_analysis_page()
         self.generate_sector()
         all_stocks = list(set(WATCHLIST + ETF_00981A_HOLDINGS))

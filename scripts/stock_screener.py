@@ -199,7 +199,7 @@ class StockScreener:
         return 0, 0, "", []
 
     def check_margin(self, stock_id):
-        """檢查融資融券"""
+        """檢查融資融券 — 返回完整數據"""
         data = self.raw_data.get(stock_id, {})
         margin = data.get("margin", [])
         if not margin:
@@ -210,10 +210,26 @@ class StockScreener:
             return None
 
         latest = df.iloc[-1]
+        margin_balance = int(latest.get("margin_balance", 0))
+        short_balance = int(latest.get("short_balance", 0))
+        margin_change = int(latest.get("margin_change", 0))
+        short_change = int(latest.get("short_change", 0))
+        margin_prev = int(latest.get("margin_prev", 1))
+        short_prev = int(latest.get("short_prev", 1))
+        
+        # 計算變化率
+        margin_change_pct = (margin_change / margin_prev * 100) if margin_prev > 0 else 0
+        short_change_pct = (short_change / short_prev * 100) if short_prev > 0 else 0
+        
         return {
-            "balance": int(latest.get("margin_balance", 0)),
+            "balance": margin_balance,
+            "short_balance": short_balance,
             "ratio": round(float(latest.get("margin_short_ratio", 0)), 4),
-            "change": int(latest.get("margin_balance", 0)) - int(df.iloc[0].get("margin_balance", 0)) if len(df) > 1 else 0,
+            "margin_change": margin_change,
+            "short_change": short_change,
+            "margin_change_pct": round(margin_change_pct, 2),
+            "short_change_pct": round(short_change_pct, 2),
+            "margin_usage_pct": latest.get("margin_usage_pct"),
         }
 
     def _calculate_score(self, stock_id, info, tech, foreign_consecutive, big_holder_pct, margin):
@@ -378,6 +394,30 @@ class StockScreener:
         bull_stocks = [s for s in screened if s.get("technical", {}).get("trend") in ["短多頭", "多頭排列"]]
         dual_certified = [s for s in screened if s.get("dual_certified", False)]
 
+        # 融資異動警示（單日變化超過閾值）
+        MARGIN_SPIKE_PCT = self.config.get("margin_spike_pct", 20)
+        margin_spike = [s for s in screened if s.get("margin") and (
+            abs(s["margin"].get("margin_change_pct", 0)) >= MARGIN_SPIKE_PCT or
+            abs(s["margin"].get("short_change_pct", 0)) >= MARGIN_SPIKE_PCT
+        )]
+        margin_spike.sort(key=lambda x: abs(x["margin"].get("margin_change_pct", 0)), reverse=True)
+
+        # 融資餘額排行（Top 30）
+        margin_top = [s for s in screened if s.get("margin") and s["margin"].get("balance", 0) > 0]
+        margin_top.sort(key=lambda x: x["margin"]["balance"], reverse=True)
+
+        # 券資比排行（Top 30，高券資比 = 融券壓力大）
+        short_ratio_top = [s for s in screened if s.get("margin") and s["margin"].get("ratio", 0) > 0]
+        short_ratio_top.sort(key=lambda x: x["margin"]["ratio"], reverse=True)
+
+        # 融資大減（散戶退場，可能偏多）
+        margin_decrease = [s for s in screened if s.get("margin") and s["margin"].get("margin_change", 0) < 0]
+        margin_decrease.sort(key=lambda x: x["margin"]["margin_change"])
+
+        # 融券大增（空單增加，偏空訊號）
+        short_increase = [s for s in screened if s.get("margin") and s["margin"].get("short_change", 0) > 0]
+        short_increase.sort(key=lambda x: x["margin"]["short_change"], reverse=True)
+
         self.results = {
             "screened": screened,
             "big_holder_rank": big_holder_rank,
@@ -385,6 +425,13 @@ class StockScreener:
             "trust_buy": trust_buy,
             "bull_stocks": bull_stocks,
             "dual_certified": dual_certified,
+            # === 新增融資相關 ===
+            "margin_spike": margin_spike,
+            "margin_top": margin_top,
+            "short_ratio_top": short_ratio_top,
+            "margin_decrease": margin_decrease,
+            "short_increase": short_increase,
+            # ====================
             "update_time": datetime.now().strftime("%Y-%m-%d %H:%M"),
             "total": len(screened),
         }
@@ -417,6 +464,11 @@ class StockScreener:
         print(f"  - Trust buy: {len(results['trust_buy'])}")
         print(f"  - Bull stocks: {len(results['bull_stocks'])}")
         print(f"  - Dual certified: {len(results['dual_certified'])}")
+        print(f"  - Margin spike: {len(results['margin_spike'])}")
+        print(f"  - Margin top: {len(results['margin_top'])}")
+        print(f"  - Short ratio top: {len(results['short_ratio_top'])}")
+        print(f"  - Margin decrease: {len(results['margin_decrease'])}")
+        print(f"  - Short increase: {len(results['short_increase'])}")
         print(f"  - Watchlist: {len(watchlist)}")
 
         return results
