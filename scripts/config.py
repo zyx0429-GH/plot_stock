@@ -217,20 +217,94 @@ ETF_00981A_HOLDINGS = [
     "6147",  # 頎邦 0.00%
 ]
 
-# === 大戶漏網之魚清單 (獨立追蹤) ===
-BIG_HOLDER_MISSED = [
-    "6182",  # 合晶
-    "8042",  # 金山電
-    "3481",  # 群創
-    "8150",  # 南茂
-    "6173",  # 信昌電
-    "3680",  # 家登
-    "8358",  # 金居
-    "2492",  # 華新科
-    "6261",  # 久元
-    "6770",  # 力積電
-    "3450",  # 聯鈞
-]
+# === 大戶漏網之魚清單 (動態載入) ===
+BIG_HOLDER_MISSED = []
+
+def load_big_holder_missed():
+    """從最新 fortune-fred 週排名載入大戶漏網之魚"""
+    import json, os
+    
+    weekly_path = os.path.join(os.path.dirname(__file__), "..", "data", "weekly_ranking.json")
+    if not os.path.exists(weekly_path):
+        return []
+    
+    try:
+        with open(weekly_path, "r", encoding="utf-8") as f:
+            data = json.load(f)
+    except Exception:
+        return []
+    
+    # 從 thresholds 提取所有股票
+    all_stocks = []
+    for th_data in data.get("thresholds", {}).values():
+        for s in th_data.get("stocks", []):
+            all_stocks.append(s)
+    
+    if not all_stocks:
+        return []
+    
+    # 去重
+    seen = set()
+    unique = []
+    for s in all_stocks:
+        code = str(s.get("code", "")).lstrip("0") or "0"
+        if code not in seen:
+            seen.add(code)
+            # 解析 big_holder_pct (可能是字符串如 "50.96%")
+            pct_str = str(s.get("big_holder_pct", "0%")).replace("%", "")
+            try:
+                pct = float(pct_str)
+            except:
+                pct = 0.0
+            unique.append({"code": code, "name": s.get("name", ""), "pct": pct})
+    
+    # 過濾掉已在 WATCHLIST 的，按大戶%排序取前 15
+    watchlist_set = set(WATCHLIST)
+    candidates = [s for s in unique if s["code"] not in watchlist_set]
+    candidates.sort(key=lambda x: x["pct"], reverse=True)
+    return [s["code"] for s in candidates[:15]]
+
+BIG_HOLDER_MISSED = load_big_holder_missed()
+
+# === 00981A 成分股 (動態載入) ===
+ETF_00981A_HOLDINGS = []
+
+def load_etf_00981a():
+    """嘗試從 pocket.tw 抓取 00981A 最新成分股"""
+    import urllib.request, re, ssl
+    
+    url = "https://www.pocket.tw/etf/tw/00981A/fundholding"
+    try:
+        ctx = ssl.create_default_context()
+        ctx.check_hostname = False
+        ctx.verify_mode = ssl.CERT_NONE
+        req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+        with urllib.request.urlopen(req, timeout=30, context=ctx) as response:
+            html = response.read().decode("utf-8")
+        
+        # 提取股票代號 (4-6 位數字)
+        tickers = re.findall(r'>(\d{4,6})<', html)
+        return list(dict.fromkeys(tickers))  # 去重
+    except Exception as e:
+        print(f"[WARN] Failed to fetch 00981A holdings: {e}")
+        return []
+
+# 嘗試動態載入，失敗則用備份列表
+_etf_dynamic = load_etf_00981a()
+if _etf_dynamic:
+    ETF_00981A_HOLDINGS = _etf_dynamic
+    print(f"[INFO] 00981A loaded dynamically: {len(ETF_00981A_HOLDINGS)} stocks")
+else:
+    # 備份列表 (2026-05-12)
+    ETF_00981A_HOLDINGS = [
+        "2330", "2383", "2454", "2345", "2308", "6669", "3665", "2368", "8046", "6223",
+        "3017", "3037", "3653", "5274", "3711", "2327", "6274", "2303", "6515", "3443",
+        "6510", "6805", "8210", "2449", "3264", "5439", "2357", "6187", "2404", "8996",
+        "4966", "1590", "6415", "3008", "2481", "6191", "3376", "3036", "8358", "2313",
+        "2317", "3661", "8150", "2002", "3217", "1319", "1815", "2439", "2337", "5347",
+        "6147",
+    ]
+    print(f"[INFO] 00981A using fallback list: {len(ETF_00981A_HOLDINGS)} stocks")
 
 # === 被動元件族群 ===
 PASSIVE_COMPONENT = [

@@ -61,7 +61,7 @@ Chart.defaults.scale.ticks.color = 'var(--text-muted)';
 </head>"""
 
     def _nav(self, active=""):
-        items = [("index.html","📊 首頁"),("watchlist.html","⭐ 自選"),("etf_00981a.html","📈 00981A"),("passive_component.html","🔌 被動元件"),("big_holder_top25.html","👑 大戶TOP25"),("sector.html","🔄 族群輪動"),("weekly_ranking.html","📅 週排行")]
+        items = [("index.html","📊 首頁"),("watchlist.html","⭐ 自選"),("etf_00981a.html","📈 00981A"),("big_holder_top25.html","👑 大戶TOP25"),("sector.html","🔄 族群輪動"),("weekly_ranking.html","📅 週排行")]
         html = '<nav class="navbar"><a href="index.html" class="nav-brand">🔥 跟隨大戶選股站</a><span style="color:var(--text-secondary);">|</span><div class="nav-links">'
         for href, text in items:
             if active and active in href:
@@ -426,8 +426,8 @@ Chart.defaults.scale.ticks.color = 'var(--text-muted)';
             lines.append(f'<tr data-pct="{big_holder_pct}" data-threshold="{th}" onclick="location.href=\'stock_{sid}.html\'" class="clickable"><td>{i}</td><td><strong>{sid}</strong></td><td>{s.get("stock_name","-")}</td><td class="highlight">{big_holder_pct:.2f}%</td><td class="{cc}">{big_holder_change:+.2f}%</td><td class="{fc}">{foreign_net:,}</td><td>{close:.2f}</td><td class="{"up" if change_pct>0 else "down"}">{change_pct:+.2f}%</td><td>≥{th}張</td></tr>')
         lines.append('</tbody></table></div></div>')
 
-        # === Norway 數據圖表 ===
-        lines.append('<div class="card"><h2>🇳🇴 Norway.twsthr.info — 台灣50 大戶持有率排名</h2><div class="chart-container"><canvas id="norwayBarChart"></canvas></div></div>')
+        # === Norway 數據圖表 (大戶持有率 Top 200) ===
+        lines.append('<div class="card"><h2>🇳🇴 大戶持有率 Top 200 排名</h2><div class="chart-container"><canvas id="norwayBarChart"></canvas></div></div>')
         
         # 嵌入 Norway 數據 (找最新的 top200_weekly_*.json)
         norway_data = []
@@ -513,7 +513,7 @@ Chart.defaults.scale.ticks.color = 'var(--text-muted)';
         lines.append(f'const scatterData = {sd};')
         lines.append('const ctx = document.getElementById("scatterChart").getContext("2d");')
         lines.append('let scatterChart;function renderScatter(filter){const up=scatterData.filter(d=>d.y>0);const down=scatterData.filter(d=>d.y<0);const flat=scatterData.filter(d=>d.y===0);const ds=[];if(filter==="all"||filter==="up")ds.push({label:"📈 增加",data:up,backgroundColor:"rgba(22,163,74,0.6)",borderColor:"#16a34a",borderWidth:1,pointRadius:6,pointHoverRadius:10});if(filter==="all"||filter==="down")ds.push({label:"📉 減少",data:down,backgroundColor:"rgba(220,38,38,0.6)",borderColor:"#dc2626",borderWidth:1,pointRadius:6,pointHoverRadius:10});if(filter==="all"||filter==="flat")ds.push({label:"➡️ 持平",data:flat,backgroundColor:"rgba(148,163,184,0.6)",borderColor:"var(--text-muted)",borderWidth:1,pointRadius:6,pointHoverRadius:10});if(scatterChart)scatterChart.destroy();scatterChart=new Chart(ctx,{type:"scatter",data:{datasets:ds},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:true},tooltip:{backgroundColor:"rgba(30,41,59,0.95)",titleColor:"#f8fafc",bodyColor:"#e2e8f0",borderColor:"rgba(255,255,255,0.1)",borderWidth:1,cornerRadius:8,padding:10,displayColors:true,callbacks:{label:function(context){const d=context.raw;return `${d.stock_name}(${d.stock_id}) 大戶:${d.x}% 週增減:${d.y>=0?"+":""}${d.y}%`;},title:function(){return"";}}}},scales:{x:{title:{display:true,text:"大戶持股 %",color:"var(--text-muted)"},ticks:{color:"var(--text-muted)"},grid:{color:"rgba(0,0,0,0.06)"}},y:{title:{display:true,text:"本週增減 %",color:"var(--text-muted)"},ticks:{color:"var(--text-muted)"},grid:{color:"rgba(0,0,0,0.06)"}}},onClick:(e,elements)=>{if(elements.length>0){const el=elements[0];const d=scatterChart.data.datasets[el.datasetIndex].data[el.index];window.location.href="stock_"+d.stock_id+".html";}}}});}function setScatter(v,btn){["sc-all","sc-up","sc-down"].forEach(id=>document.getElementById(id).classList.remove("active"));btn.classList.add("active");renderScatter(v);}renderScatter("all");')
-        lines.append('function updateRank(){const limit=parseInt(document.getElementById("rankLimit").value)||200;const minPct=parseFloat(document.getElementById("minPct").value)||0;const th=document.getElementById("th-all").classList.contains("active")?"all":document.getElementById("th-100").classList.contains("active")?"100":document.getElementById("th-200").classList.contains("active")?"200":document.getElementById("th-400").classList.contains("active")?"400":document.getElementById("th-1000").classList.contains("active")?"1000":"all";const rows=document.querySelectorAll("#bigHolderTable tbody tr");let shown=0;rows.forEach((row)=>{const pct=parseFloat(row.dataset.pct);const rowTh=row.dataset.threshold||"";const thOk=th==="all"||rowTh===th;const show=shown<limit&&pct>=minPct&&thOk;if(show)shown++;row.style.display=show?"":"none";});}function setThreshold(v,btn){["th-all","th-100","th-200","th-400","th-1000"].forEach(id=>document.getElementById(id).classList.remove("active"));btn.classList.add("active");updateRank();}')
+        lines.append('function updateRank(){const limit=parseInt(document.getElementById("rankLimit").value)||200;const minPct=parseFloat(document.getElementById("minPct").value)||0;const th=document.getElementById("th-all").classList.contains("active")?"all":document.getElementById("th-100").classList.contains("active")?"100":document.getElementById("th-200").classList.contains("active")?"200":document.getElementById("th-400").classList.contains("active")?"400":document.getElementById("th-1000").classList.contains("active")?"1000":"all";const rows=document.querySelectorAll("#bigHolderTable tbody tr");let shown=0;let rank=1;rows.forEach((row)=>{const pct=parseFloat(row.dataset.pct);const rowTh=row.dataset.threshold||"";const thOk=th==="all"||rowTh===th;const show=shown<limit&&pct>=minPct&&thOk;if(show){shown++;row.cells[0].textContent=rank;rank++;}row.style.display=show?"":"none";});}function setThreshold(v,btn){["th-all","th-100","th-200","th-400","th-1000"].forEach(id=>document.getElementById(id).classList.remove("active"));btn.classList.add("active");updateRank();}')
         lines.append('</script>')
         lines.append('</body></html>')
 
@@ -1164,7 +1164,6 @@ Chart.defaults.scale.ticks.color = 'var(--text-muted)';
         self.generate_index()
         self.generate_watchlist()
         self.generate_etf_00981a()
-        self.generate_passive_component()
         self.generate_big_holder_top25()
         self.generate_cross_analysis_page()
         self.generate_sector()
