@@ -1,9 +1,9 @@
-name: Weekly Ranking Update
+name: Weekly Ranking + Full Site Update
 
 on:
   schedule:
-    # 每周六 06:00 UTC = 台湾时间 14:00 (周六下午，fortune-fred 数据已更新)
-    - cron: '0 6 * * 6'
+    # 每周六 20:00 台灣時間 = 12:00 UTC
+    - cron: '0 12 * * 6'
   workflow_dispatch:
 
 permissions:
@@ -26,16 +26,20 @@ jobs:
 
     - name: Install dependencies
       run: |
-        pip install requests
+        pip install requests pandas numpy yfinance
 
-    - name: Fetch & generate weekly ranking
+    - name: Fetch weekly ranking data
       run: |
         python scripts/update_weekly.py
+
+    - name: Run full site update (includes big holder TOP25)
+      run: |
+        python main.py
 
     - name: Commit and push changes
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
         git add -A
-        git commit -m "📅 Weekly ranking update: $(date +'%Y-%m-%d')" || echo "No changes"
+        git commit -m "📅 Weekly update: $(date +'%Y-%m-%d') — ranking + full site + TOP25" || echo "No changes"
         git push
