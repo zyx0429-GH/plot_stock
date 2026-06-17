@@ -395,6 +395,9 @@ class TWStockDataFetcher:
             else:
                 print(f"[WARN] No TPEX margin for {d}")
         return margin_map
+
+    @staticmethod
+    def _get_last_trading_day(date_str):
         """回退到最近交易日（週六回退到週五，週日回退到週五）"""
         dt = datetime.strptime(date_str, "%Y%m%d")
         weekday = dt.weekday()  # 0=週一, 5=週六, 6=週日
