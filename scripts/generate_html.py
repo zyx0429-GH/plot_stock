@@ -124,8 +124,9 @@ Chart.defaults.scale.ticks.color = 'var(--text-muted)';
         lines.append('<div id="sectorRotationPanel" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:15px;"><div style="color:var(--text-muted);text-align:center;padding:20px;">載入中...</div></div>')
         lines.append('</div></div>')
 
-        # 散點圖
-        lines.append('<div class="card"><h2>🔥 大戶持股%(含外資) vs 週增減</h2><div class="controls"><label>顯示</label><button class="fbtn active" id="sc-all" onclick="setScatter(\'all\',this)">全部</button><button class="fbtn" id="sc-up" onclick="setScatter(\'up\',this)">📈 增加</button><button class="fbtn" id="sc-down" onclick="setScatter(\'down\',this)">📉 減少</button></div><p class="chart-desc">X:大戶持股% Y:週增減% 點擊進入個股</p><div class="chart-container"><canvas id="scatterChart"></canvas></div></div>')
+        update_time = self.data.get("update_time", "")
+        week_str = f" (統計週期: {update_time})" if update_time else ""
+        lines.append(f'<div class="card"><h2>🔥 大戶持股%(含外資) vs 週增減{week_str}</h2><div class="controls"><label>顯示</label><button class="fbtn active" id="sc-all" onclick="setScatter(\'all\',this)">全部</button><button class="fbtn" id="sc-up" onclick="setScatter(\'up\',this)">📈 增加</button><button class="fbtn" id="sc-down" onclick="setScatter(\'down\',this)">📉 減少</button></div><p class="chart-desc">X:大戶持股% Y:週增減% 點擊進入個股</p><div class="chart-container"><canvas id="scatterChart"></canvas></div></div>')
 
         lines.append('<div class="card"><h2>🔥 雙重認證榜單 (00981A + 大戶增倉 + 法人買超)</h2><div class="table-responsive"><table class="data-table"><thead><tr><th>代號</th><th>名稱</th><th>收盤價</th><th>漲跌%</th><th>外資淨買</th><th>投信淨買</th><th>大戶%</th><th>週增減</th><th>趨勢</th><th>評分</th></tr></thead><tbody>')
         dual_certified = self.data.get("dual_certified", [])

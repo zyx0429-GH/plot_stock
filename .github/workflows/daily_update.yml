@@ -4,7 +4,7 @@ on:
   push:
     branches: [main]
   schedule:
-    - cron: '4 8 * * 1-5'  # 週一到週五 08:04 UTC = 台灣16:04 盤後數據更新
+    - cron: '55 8 * * 1-5'  # 週一到週五 08:55 UTC = 台灣16:55 (04:55PM) 盤後數據更新
   workflow_dispatch:       # 允許手動觸發
 
 permissions:
