@@ -386,75 +386,216 @@ print(f"[INFO] Watchlist after TOP25 merge: {len(WATCHLIST)} stocks")
 
 # === 族群映射（供前端計算各族群情緒）===
 SECTOR_MAP = {
-    "semiconductor": "半導體",
-    "ai-server": "AI伺服器",
-    "passive-component": "被動元件",
-    "pcb": "PCB",
+    "ic-design": "IC設計",
+    "foundry": "晶圓代工",
+    "packaging": "封測",
     "memory": "記憶體",
+    "semi-equip": "半導體設備/材料",
+    "ai-server": "AI伺服器",
+    "pcb": "PCB",
+    "passive-component": "被動元件",
+    "thermal": "散熱/電源/機殼",
+    "opto": "光電/光通訊",
     "display": "面板",
+    "connector": "連接器/網通",
+    "brand": "品牌/組裝",
     "financial": "金融",
-    "sic-power": "SiC功率",
-    "biotech": "生技",
-    "aerospace-defense": "航太軍工",
-    "satellite": "衛星",
+    "steel-chemical": "鋼鐵/塑化/傳產",
+    "auto": "汽車零組件",
+    "others": "其他",
 }
 
 # 個股→族群對照（key: stock_id, value: sector_key）
+# 注意：每檔股票只歸一類，後面覆蓋前面
 STOCK_SECTOR = {
-    # 半導體
-    "2330": "semiconductor", "2317": "semiconductor", "2454": "semiconductor",
-    "2303": "semiconductor", "2337": "semiconductor", "2344": "semiconductor",
-    "2345": "semiconductor", "2357": "semiconductor", "2404": "semiconductor",
-    "2428": "semiconductor", "2439": "semiconductor", "2449": "semiconductor",
-    "2481": "semiconductor", "3006": "semiconductor", "3036": "semiconductor",
-    "3231": "semiconductor", "3264": "semiconductor", "3443": "semiconductor",
-    "3535": "semiconductor", "3653": "semiconductor", "3661": "semiconductor",
-    "3665": "semiconductor", "3680": "semiconductor", "3711": "semiconductor",
-    "4919": "semiconductor", "4961": "semiconductor", "4966": "semiconductor",
-    "4967": "semiconductor", "5347": "semiconductor", "5439": "semiconductor",
-    "6104": "semiconductor", "6155": "semiconductor", "6182": "semiconductor",
-    "6187": "semiconductor", "6191": "semiconductor", "6207": "semiconductor",
-    "6223": "semiconductor", "6239": "semiconductor", "6261": "semiconductor",
-    "6271": "semiconductor", "6415": "semiconductor", "6510": "semiconductor",
-    "6515": "semiconductor", "6669": "semiconductor", "6770": "semiconductor",
-    "6805": "semiconductor", "8040": "semiconductor", "8042": "semiconductor",
-    "8091": "semiconductor", "8150": "semiconductor", "8210": "semiconductor",
-    "8289": "semiconductor", "8358": "semiconductor", "8996": "semiconductor",
-    "1590": "semiconductor", "1727": "semiconductor", "2002": "semiconductor",
-    "2301": "semiconductor", "2308": "semiconductor", "2313": "semiconductor",
-    "2324": "semiconductor", "2327": "semiconductor", "2377": "semiconductor",
-    "2382": "semiconductor", "2383": "semiconductor", "2408": "semiconductor",
-    "2409": "semiconductor", "3016": "semiconductor", "3017": "semiconductor",
-    "3037": "semiconductor", "3376": "semiconductor", "3450": "semiconductor",
-    "3481": "semiconductor", "5274": "semiconductor",
-    # AI伺服器
-    "2324": "ai-server", "2356": "ai-server", "2376": "ai-server",
-    "2382": "ai-server", "3231": "ai-server", "3661": "ai-server",
-    "6669": "ai-server",
-    # 被動元件
-    "2327": "passive-component", "2472": "passive-component", "2478": "passive-component",
-    "2492": "passive-component", "6173": "passive-component", "8042": "passive-component",
-    "8043": "passive-component", "1815": "passive-component", "3026": "passive-component",
-    "2375": "passive-component", "3090": "passive-component", "6207": "passive-component",
-    "6173": "passive-component", "8358": "passive-component",
-    # PCB
-    "2313": "pcb", "2355": "pcb", "2368": "pcb", "2383": "pcb",
-    "3037": "pcb", "6213": "pcb", "6274": "pcb", "8046": "pcb",
-    # 記憶體
-    "2344": "memory", "2408": "memory", "3006": "memory", "6770": "memory",
-    # 面板
-    "2409": "display", "3481": "display",
-    # 金融
-    "2881": "financial", "2882": "financial", "2850": "financial",
-    "2880": "financial", "2883": "financial", "2885": "financial",
-    "2886": "financial", "2887": "financial", "2890": "financial",
-    "2892": "financial",
-    # SiC功率
-    "3707": "sic-power", "8261": "sic-power",
-    # 航太軍工
-    "2634": "aerospace-defense",
-    # 衛星
-    "6821": "satellite",
+    # === IC設計 ===
+    "2454": "ic-design",   # 聯發科
+    "3661": "ic-design",   # 世芯-KY
+    "3443": "ic-design",   # 創意
+    "5274": "ic-design",   # 信驊
+    "4966": "ic-design",   # 譜瑞-KY
+    "4961": "ic-design",   # 天鈺
+    "6415": "ic-design",   # 矽力*-KY
+    "6104": "ic-design",   # 創惟
+    "6462": "ic-design",   # 神盾
+    "6485": "ic-design",   # 點序
+    "4919": "ic-design",   # 新唐
+    "3663": "ic-design",   # 鑫科
+    "3675": "ic-design",   # 德微
+
+    # === 晶圓代工 ===
+    "2330": "foundry",     # 台積電
+    "2303": "foundry",     # 聯電
+    "5347": "foundry",     # 世界
+    "6770": "foundry",     # 力積電
+
+    # === 封測 ===
+    "3711": "packaging",   # 日月光投控
+    "2449": "packaging",   # 京元電子
+    "8150": "packaging",   # 南茂
+    "3264": "packaging",   # 欣銓
+    "6147": "packaging",   # 頎邦
+    "6257": "packaging",   # 矽格
+    "6239": "packaging",   # 力成
+    "6191": "packaging",   # 精成科
+    "6261": "packaging",   # 久元
+
+    # === 記憶體 ===
+    "2408": "memory",      # 南亞科
+    "2344": "memory",      # 華邦電
+    "2337": "memory",      # 旺宏
+    "3006": "memory",      # 晶豪科
+    "4967": "memory",      # 十銓
+
+    # === 半導體設備/材料 ===
+    "3680": "semi-equip",  # 家登
+    "6187": "semi-equip",  # 萬潤
+    "6223": "semi-equip",  # 旺矽
+    "2404": "semi-equip",  # 漢唐
+    "6510": "semi-equip",  # 精測
+    "6515": "semi-equip",  # 穎崴
+    "3016": "semi-equip",  # 嘉晶
+    "6182": "semi-equip",  # 合晶
+
+    # === AI伺服器 ===
+    "2382": "ai-server",   # 廣達
+    "6669": "ai-server",   # 緯穎
+    "2376": "ai-server",   # 技嘉
+    "2356": "ai-server",   # 英業達
+    "2324": "ai-server",   # 仁寶
+
+    # === PCB ===
+    "2313": "pcb",         # 華通
+    "2368": "pcb",         # 金像電
+    "2383": "pcb",         # 台光電
+    "3037": "pcb",         # 欣興
+    "6213": "pcb",         # 聯茂
+    "6274": "pcb",         # 台燿
+    "8046": "pcb",         # 南電
+    "5439": "pcb",         # 高技
+    "2355": "pcb",         # 敬鵬
+
+    # === 被動元件 ===
+    "2327": "passive-component",  # 國巨
+    "2492": "passive-component",  # 華新科
+    "6173": "passive-component",  # 信昌電
+    "8042": "passive-component",  # 金山電
+    "8043": "passive-component",  # 蜜望實
+    "1815": "passive-component",  # 富喬
+    "3026": "passive-component",  # 禾伸堂
+    "2375": "passive-component",  # 凱美
+    "3090": "passive-component",  # 日電貿
+    "6207": "passive-component",  # 雷科
+    "8358": "passive-component",  # 金居
+    "3236": "passive-component",  # 千如
+    "3624": "passive-component",  # 光頡
+
+    # === 散熱/電源/機殼 ===
+    "3017": "thermal",     # 奇鋐
+    "6805": "thermal",     # 富世達
+    "8210": "thermal",     # 勤誠
+    "8996": "thermal",     # 高力
+    "2301": "thermal",     # 光寶科
+    "2308": "thermal",     # 台達電
+    "6271": "thermal",     # 同欣電
+    "2428": "thermal",     # 興勤
+    "3653": "thermal",     # 健策
+
+    # === 光電/光通訊 ===
+    "3450": "opto",        # 聯鈞
+    "3008": "opto",        # 大立光
+    "2439": "opto",        # 美律
+
+    # === 面板 ===
+    "2409": "display",     # 友達
+    "3481": "display",     # 群創
+
+    # === 連接器/網通 ===
+    "3665": "connector",   # 貿聯-KY
+    "3376": "connector",   # 新日興
+    "3217": "connector",   # 優群
+    "2345": "connector",   # 智邦
+    "3533": "connector",   # 嘉澤
+    "6284": "connector",   # 佳邦
+
+    # === 品牌/組裝 ===
+    "2357": "brand",       # 華碩
+    "2377": "brand",       # 微星
+    "2317": "brand",       # 鴻海
+
+    # === 金融 ===
+    "2881": "financial",   # 富邦金
+    "2882": "financial",   # 國泰金
+    "2883": "financial",   # 凱基金
+    "2885": "financial",   # 元大金
+    "2886": "financial",   # 兆豐金
+    "2887": "financial",   # 台新新光金
+    "2890": "financial",   # 永豐金
+    "2892": "financial",   # 第一金
+    "2880": "financial",   # 華南金
+    "2850": "financial",   # 新產
+
+    # === 鋼鐵/塑化/傳產 ===
+    "2002": "steel-chemical",  # 中鋼
+    "1301": "steel-chemical",  # 台塑
+    "1605": "steel-chemical",  # 華新
+    "1216": "steel-chemical",  # 統一
+    "2023": "steel-chemical",  # 燁輝
+    "2030": "steel-chemical",  # 彰源
+    "2031": "steel-chemical",  # 新光鋼
+    "2032": "steel-chemical",  # 新鋼
+    "2033": "steel-chemical",  # 佳大
+    "2034": "steel-chemical",  # 允強
+    "2025": "steel-chemical",  # 千興
+
+    # === 汽車零組件 ===
+    "1319": "auto",        # 東陽
+    "1590": "auto",        # 亞德客-KY
+    "2351": "auto",        # 順德
+
+    # === 其他（電子零組件、小股、ETF、生技等）===
+    "3036": "others",      # 文曄
+    "3537": "others",      # 堡達
+    "3285": "others",      # 微端
+    "8289": "others",      # 泰藝
+    "8040": "others",      # 九暘
+    "8096": "others",      # 擎亞
+    "8091": "others",      # 翔名
+    "3498": "others",      # 陽程
+    "3357": "others",      # 臺慶科
+    "3709": "others",      # 鑫聯大投控
+    "4556": "others",      # 旭然
+    "5291": "others",      # 邑昇
+    "5328": "others",      # 華容
+    "5425": "others",      # 台半
+    "6127": "others",      # 九豪
+    "6727": "others",      # 亞泰金屬
+    "2491": "others",      # 吉祥全
+    "3042": "others",      # 晶技
+    "3005": "others",      # 神基
+    "6177": "others",      # 達麗
+    "2497": "others",      # 怡利電
+    "7738": "others",      # 東聯互動
+    "8472": "others",      # 夠麻吉
+    "5871": "others",      # 中租-KY
+    "8454": "others",      # 富邦媒
+    "2501": "others",      # 國建
+    "8473": "others",      # 山林水
+    "5534": "others",      # 長虹
+    "8476": "others",      # 台境*
+    "6890": "others",      # 來億-KY
+    "6924": "others",      # 榮惠-KY創
+    "2597": "others",      # 潤弘
+    "6550": "others",      # 北極星藥業-KY
+    "2481": "others",      # 強茂
+    "0050": "others",      # 元大台灣50
+    "0056": "others",      # 元大高股息
+    "00981A": "others",    # 群益台灣精選高息
+    "6831": "others",      # 邁科
+    "3356": "others",      # 奇偶
+    "2352": "others",      # 佳世達
+    "8182": "others",      # 加高
+    "9941": "others",      # 裕融
 }
 
 # === 輸出路徑 ===
