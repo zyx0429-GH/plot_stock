@@ -1,0 +1,88 @@
+name: Weekly Norway Big Holder Update
+
+on:
+  schedule:
+    # 每週六 UTC 12:00 (台北時間 20:00)
+    - cron: '0 12 * * 6'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  norway-update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: |
+          pip install requests beautifulsoup4
+
+      - name: Run Norway Fetcher
+        run: |
+          cd $GITHUB_WORKSPACE
+          python scripts/norway_fetcher_v2.py
+
+      - name: Merge Norway into raw_data
+        run: |
+          cd $GITHUB_WORKSPACE
+          python -c "
+          import json, os
+          
+          # Load raw_data
+          with open('data/raw_data.json', 'r', encoding='utf-8') as f:
+              raw_data = json.load(f)
+          
+          # Load Norway data
+          with open('data/norway/all_stocks_weekly.json', 'r', encoding='utf-8') as f:
+              norway_data = json.load(f)
+          
+          # Build lookup
+          norway_lookup = {r['stock_code']: r for r in norway_data}
+          
+          merged = 0
+          for sid in raw_data:
+              if sid in norway_lookup:
+                  chip = norway_lookup[sid]
+                  weekly = chip.get('weekly_changes', {})
+                  latest_change = list(weekly.values())[-1] if weekly else None
+                  recent_values = list(weekly.values())[-4:] if weekly else []
+                  trend_direction = 'up' if len(recent_values) >= 2 and recent_values[-1] > recent_values[0] else 'down' if len(recent_values) >= 2 else 'flat'
+                  
+                  raw_data[sid]['shareholder'] = [{
+                      'date': chip.get('latest_change', ''),
+                      'total_count': 0,
+                      'big_holder_count': 0,
+                      'concentration': chip.get('last_week_hold_pct', 0),
+                      'threshold_shares': chip.get('threshold_shares', 0),
+                      'threshold_code': chip.get('threshold_code', 0),
+                      'category': chip.get('category', ''),
+                      'weekly_changes': weekly,
+                      'latest_change': latest_change,
+                      'total_change': chip.get('total_change', 0),
+                      'trend_direction': trend_direction,
+                      'is_taiwan50': chip.get('is_taiwan50', False),
+                  }]
+                  merged += 1
+          
+          print(f'Merged Norway data: {merged} stocks')
+          
+          with open('data/raw_data.json', 'w', encoding='utf-8') as f:
+              json.dump(raw_data, f, ensure_ascii=False, indent=2)
+          print('Saved raw_data.json')
+          "
+
+      - name: Commit & Push
+        run: |
+          git config --global user.email "actions@github.com"
+          git config --global user.name "GitHub Actions"
+          git add data/norway/ data/raw_data.json
+          git commit -m "📊 Weekly Norway big holder update $(date +%Y-%m-%d)" || echo "No changes"
+          git push origin main || echo "Push skipped"
