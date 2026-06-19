@@ -6821,8 +6821,8 @@
       "change_pct": 3.8,
       "foreign_consecutive_buy": false,
       "foreign_net": -60228,
-      "trust_consecutive_buy": false,
-      "trust_net": 0,
+      "trust_consecutive_buy": true,
+      "trust_net": 21664,
       "big_holder_pct": 47.59,
       "big_holder_change": -3.88,
       "big_holder_threshold": "400",
@@ -18722,6 +18722,63 @@
       "shareholder": []
     },
     {
+      "stock_id": "3376",
+      "stock_name": "新日興",
+      "close": 205.0,
+      "open": 199.0,
+      "change_pct": 3.8,
+      "foreign_consecutive_buy": false,
+      "foreign_net": -60228,
+      "trust_consecutive_buy": true,
+      "trust_net": 21664,
+      "big_holder_pct": 47.59,
+      "big_holder_change": -3.88,
+      "big_holder_threshold": "400",
+      "score": 55,
+      "technical": {
+        "ma20": 213.35,
+        "ma60": 207.75,
+        "rsi": 51.1,
+        "trend": "多頭排列",
+        "macd": {
+          "dif": -1.6037,
+          "dea": 0.8989,
+          "hist": -2.5026
+        },
+        "bias20": -3.91,
+        "bias60": -1.32
+      },
+      "margin": {
+        "balance": 12636,
+        "short_balance": 240,
+        "ratio": 0.019,
+        "margin_change": 137,
+        "short_change": 27,
+        "margin_change_pct": 1.1,
+        "short_change_pct": 12.68,
+        "margin_usage_pct": null
+      },
+      "dual_certified": false,
+      "shareholder": [
+        {
+          "date": -3.88,
+          "total_count": 0,
+          "big_holder_count": 0,
+          "concentration": 47.59,
+          "threshold_shares": 400,
+          "threshold_code": 50,
+          "category": "電子零組件",
+          "weekly_changes": {
+            "20260618": -3.88
+          },
+          "latest_change": -3.88,
+          "total_change": -4.81,
+          "trend_direction": "flat",
+          "is_taiwan50": false
+        }
+      ]
+    },
+    {
       "stock_id": "3709",
       "stock_name": "鑫聯大投控",
       "close": 74.4,
@@ -26178,8 +26235,8 @@
       "change_pct": 3.8,
       "foreign_consecutive_buy": false,
       "foreign_net": -60228,
-      "trust_consecutive_buy": false,
-      "trust_net": 0,
+      "trust_consecutive_buy": true,
+      "trust_net": 21664,
       "big_holder_pct": 47.59,
       "big_holder_change": -3.88,
       "big_holder_threshold": "400",
@@ -33913,8 +33970,8 @@
       "change_pct": 3.8,
       "foreign_consecutive_buy": false,
       "foreign_net": -60228,
-      "trust_consecutive_buy": false,
-      "trust_net": 0,
+      "trust_consecutive_buy": true,
+      "trust_net": 21664,
       "big_holder_pct": 47.59,
       "big_holder_change": -3.88,
       "big_holder_threshold": "400",
@@ -43521,8 +43578,8 @@
       "change_pct": 3.8,
       "foreign_consecutive_buy": false,
       "foreign_net": -60228,
-      "trust_consecutive_buy": false,
-      "trust_net": 0,
+      "trust_consecutive_buy": true,
+      "trust_net": 21664,
       "big_holder_pct": 47.59,
       "big_holder_change": -3.88,
       "big_holder_threshold": "400",
@@ -54413,8 +54470,8 @@
       "change_pct": 3.8,
       "foreign_consecutive_buy": false,
       "foreign_net": -60228,
-      "trust_consecutive_buy": false,
-      "trust_net": 0,
+      "trust_consecutive_buy": true,
+      "trust_net": 21664,
       "big_holder_pct": 47.59,
       "big_holder_change": -3.88,
       "big_holder_threshold": "400",
@@ -56996,7 +57053,7 @@
       ]
     }
   ],
-  "update_time": "2026-06-20 02:25",
+  "update_time": "2026-06-19 18:30",
   "total": 180,
   "watchlist": [
     {
@@ -63089,8 +63146,8 @@
       "change_pct": 3.8,
       "foreign_consecutive_buy": false,
       "foreign_net": -60228,
-      "trust_consecutive_buy": false,
-      "trust_net": 0,
+      "trust_consecutive_buy": true,
+      "trust_net": 21664,
       "big_holder_pct": 47.59,
       "big_holder_change": -3.88,
       "big_holder_threshold": "400",

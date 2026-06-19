@@ -24714,7 +24714,7 @@
       "change": 7.5,
       "change_pct": 3.79746835443038,
       "foreign_net": -60228,
-      "trust_net": 0
+      "trust_net": 21664
     },
     "foreign": [
       {
@@ -24727,9 +24727,9 @@
     "trust": [
       {
         "date": "20260619",
-        "buy": 0,
-        "sell": 0,
-        "net": 0
+        "buy": 154802,
+        "sell": 80000,
+        "net": 21664
       }
     ],
     "margin": [
