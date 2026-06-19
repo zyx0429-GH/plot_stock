@@ -2,8 +2,8 @@ name: Weekly Norway Big Holder Update
 
 on:
   schedule:
-    # 每週六 UTC 12:00 (台北時間 20:00)
-    - cron: '0 12 * * 6'
+    # 每週六 UTC 06:00 (台北時間 14:00)
+    - cron: '0 6 * * 6'
   workflow_dispatch:
 
 permissions:
