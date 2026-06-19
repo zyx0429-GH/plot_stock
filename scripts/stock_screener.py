@@ -153,13 +153,13 @@ class StockScreener:
 
     def check_dual_certified(self, stock_id, info, tech, big_pct, big_change, foreign_consecutive, trust_consecutive):
         """
-        雙重認證篩選:
+        雙重認證篩選 (嚴格版):
         條件1: 在 00981A 成分股清單中
-        條件2: 400大戶近期增倉 (big_holder_change > 0)
+        條件2: 400大戶明顯增倉 (big_holder_change >= 0.5%, 排除微小波動)
         條件3: 外資連買 or 投信連買
         """
         is_in_00981a = stock_id in ETF_00981A_HOLDINGS
-        big_holder_increasing = big_change > 0 if big_change else False
+        big_holder_increasing = big_change >= 0.5 if big_change else False
         buying = foreign_consecutive or trust_consecutive
         return is_in_00981a and big_holder_increasing and buying
 
@@ -246,22 +246,22 @@ class StockScreener:
         }
 
     def _calculate_score(self, stock_id, info, tech, foreign_consecutive, big_holder_pct, margin):
-        """計算綜合評分"""
+        """計算綜合評分 (滿分100)"""
         score = 0
 
-        # 技術面評分 (0-30)
+        # 技術面評分 (0-35)
         if tech and tech.get("trend") == "多頭排列":
-            score += 30
+            score += 35
         elif tech and tech.get("trend") == "短期震盪":
-            score += 15
+            score += 18
 
-        # 籌碼面評分 (0-40)
-        if big_holder_pct and big_holder_pct > 20:
-            score += 40
-        elif big_holder_pct and big_holder_pct > 15:
+        # 籌碼面評分 (0-30) — 依大戶%實際分布調整
+        if big_holder_pct and big_holder_pct >= 60:
             score += 30
-        elif big_holder_pct and big_holder_pct > 10:
+        elif big_holder_pct and big_holder_pct >= 40:
             score += 20
+        elif big_holder_pct and big_holder_pct >= 20:
+            score += 10
 
         # 外資評分 (0-20)
         if foreign_consecutive:
@@ -271,7 +271,7 @@ class StockScreener:
         if margin and margin.get("ratio", 0) > 0.3:
             score += 10
 
-        # MACD 評分 (0-10)
+        # MACD 評分 (0-5)
         macd = tech.get("macd", {}) if tech else {}
         if isinstance(macd, dict):
             dif = macd.get("dif")
@@ -283,10 +283,6 @@ class StockScreener:
                     dea_f = float(dea)
                     hist_f = float(hist)
                     if dif_f > dea_f and hist_f > 0:
-                        score += 10
-                    elif dif_f < dea_f and hist_f < 0:
-                        score += 0
-                    else:
                         score += 5
                 except (ValueError, TypeError):
                     pass
