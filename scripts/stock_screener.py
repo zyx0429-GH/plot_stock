@@ -164,8 +164,21 @@ class StockScreener:
         return is_in_00981a and big_holder_increasing and buying
 
     def check_big_holder(self, stock_id):
-        """檢查大戶持股 (兼容週報 big_holder_pct / 舊接口 percent)"""
+        """檢查大戶持股 (兼容週報 big_holder_pct / shareholder 新數據 / 舊接口 percent)"""
         data = self.raw_data.get(stock_id, {})
+        
+        # 優先使用新的 shareholder 數據 (Norway.twsthr.info)
+        shareholder = data.get("shareholder", [])
+        if shareholder:
+            sh = shareholder[0]
+            pct = sh.get("concentration", 0)
+            change = sh.get("latest_change", 0)
+            threshold = str(sh.get("threshold_shares", "—")) if sh.get("threshold_shares") else "—"
+            detail = sh.get("weekly_changes", {})
+            if pct and pct > 0:
+                return float(pct), float(change) if change else 0, threshold, detail
+        
+        # 回退到舊的 holding 數據
         holding = data.get("holding", [])
         if not holding:
             return 0, 0, "", []
