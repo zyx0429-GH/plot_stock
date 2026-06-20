@@ -209,10 +209,39 @@ class StockScreener:
         return is_in_etf and big_holder_increasing and buying
 
     def check_big_holder(self, stock_id):
-        """檢查大戶持股 (兼容週報 big_holder_pct / shareholder 新數據 / 舊接口 percent)"""
+        """檢查大戶持股 (兼容週報 big_holder_pct / shareholder 新數據 / 舊接口 percent)
+        
+        數據優先級：
+        1. 舊 holding 數據 (chip-monitoring) — 門檻更齊全 (100/200/400/1000)
+        2. 新 shareholder 數據 (Norway.twsthr.info) — 門檻較粗 (200/400/1000)
+        """
         data = self.raw_data.get(stock_id, {})
         
-        # 優先使用新的 shareholder 數據 (Norway.twsthr.info)
+        # 優先使用舊 holding 數據 (chip-monitoring，門檻更齊全)
+        holding = data.get("holding", [])
+        if holding:
+            df = pd.DataFrame(holding)
+            pct_col = None
+            for c in ["big_holder_pct", "percent"]:
+                if c in df.columns:
+                    pct_col = c
+                    break
+            if pct_col:
+                df[pct_col] = pd.to_numeric(df[pct_col], errors="coerce")
+                latest = df.iloc[-1] if not df.empty else None
+                if latest is not None and not pd.isna(latest[pct_col]):
+                    pct = float(latest[pct_col])
+                    if "big_holder_change_pct" in df.columns:
+                        change = float(pd.to_numeric(latest.get("big_holder_change_pct", 0), errors="coerce"))
+                    elif len(df) >= 2:
+                        prev = df.iloc[-2][pct_col] if len(df) >= 2 else df.iloc[0][pct_col]
+                        change = pct - float(prev)
+                    else:
+                        change = 0
+                    threshold = str(latest.get("threshold", "—")) if "threshold" in df.columns else "—"
+                    return pct, round(change, 2), threshold, df.to_dict("records")
+        
+        # 回退到 shareholder 數據 (Norway.twsthr.info)
         shareholder = data.get("shareholder", [])
         if shareholder:
             sh = shareholder[0]
@@ -223,37 +252,6 @@ class StockScreener:
             if pct and pct > 0:
                 return float(pct), float(change) if change else 0, threshold, detail
         
-        # 回退到舊的 holding 數據
-        holding = data.get("holding", [])
-        if not holding:
-            return 0, 0, "", []
-
-        df = pd.DataFrame(holding)
-        # 優先使用大戶週報的欄位名
-        pct_col = None
-        for c in ["big_holder_pct", "percent"]:
-            if c in df.columns:
-                pct_col = c
-                break
-        if not pct_col:
-            return 0, 0, "", []
-
-        df[pct_col] = pd.to_numeric(df[pct_col], errors="coerce")
-        latest = df.iloc[-1] if not df.empty else None
-
-        if latest is not None and not pd.isna(latest[pct_col]):
-            pct = float(latest[pct_col])
-            # 優先使用週報的週增減欄位
-            if "big_holder_change_pct" in df.columns:
-                change = float(pd.to_numeric(latest.get("big_holder_change_pct", 0), errors="coerce"))
-            elif len(df) >= 2:
-                prev = df.iloc[-2][pct_col] if len(df) >= 2 else df.iloc[0][pct_col]
-                change = pct - float(prev)
-            else:
-                change = 0
-            threshold = str(latest.get("threshold", "—")) if "threshold" in df.columns else "—"
-            return pct, round(change, 2), threshold, df.to_dict("records")
-
         return 0, 0, "", []
 
     def check_margin(self, stock_id):
