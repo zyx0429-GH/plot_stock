@@ -98,7 +98,7 @@ Chart.defaults.scale.ticks.color = 'var(--text-muted)';
 
         scatter_data = []
         for s in screened:
-            # 補齊：只要 big_holder_change 不為 None 就加入（包含 0 值）
+            # 內部數據齊全：所有股票都加入
             bh_pct = s.get("big_holder_pct")
             bh_change = s.get("big_holder_change")
             if bh_pct is not None and bh_change is not None:
@@ -111,6 +111,10 @@ Chart.defaults.scale.ticks.color = 'var(--text-muted)';
                     "trend": s.get("technical", {}).get("trend", "") if s.get("technical") else "",
                     "score": s.get("score", 0),
                 })
+        # 散點圖只顯示有數據的（排除 0%），按週增減絕對值取前25名
+        scatter_data_display = [d for d in scatter_data if d["x"] > 0]
+        scatter_data_display.sort(key=lambda d: abs(d["y"]), reverse=True)
+        scatter_data_display = scatter_data_display[:25]
 
         lines = []
         lines.append(self._head("籌碼監控｜首頁"))
@@ -554,7 +558,7 @@ Chart.defaults.scale.ticks.color = 'var(--text-muted)';
         lines.append('<button class="fab" onclick="document.getElementById(\'backtestModal\').style.display=\'flex\'">🧪</button>')
 
         # JS
-        sd = json.dumps(scatter_data, ensure_ascii=False)
+        sd = json.dumps(scatter_data_display, ensure_ascii=False)
         lines.append(f'<script>')
         lines.append(f'const scatterData = {sd};')
         lines.append('const ctx = document.getElementById("scatterChart").getContext("2d");')

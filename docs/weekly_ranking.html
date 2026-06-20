@@ -94,7 +94,7 @@
     <h1>📅 大戶籌碼週排行榜</h1>
     <div class="meta-bar">
         <span class="badge source">📡 來源: norway.twsthr.info/StockHolders.aspx</span>
-        <span class="badge time">📅 更新: 2026-06-13</span>
+        <span class="badge time">📅 更新: 2026-06-20</span>
         <span class="badge count">📊 共 300 檔</span>
         <span style="color:var(--text-secondary);">｜排序: 大戶週增減% (由高到低)</span>
     </div>
@@ -105,55 +105,51 @@
     
         <div class="stat-card" style="border-left:3px solid #0ea5e9">
             <div class="stat-name">新進榜</div>
-            <div class="stat-count" style="color:#0ea5e9">261</div>
+            <div class="stat-count" style="color:#0ea5e9">255</div>
         </div>
         <div class="stat-card" style="border-left:3px solid #be123c">
             <div class="stat-name">高波動警示</div>
-            <div class="stat-count" style="color:#be123c">156</div>
+            <div class="stat-count" style="color:#be123c">201</div>
         </div>
         <div class="stat-card" style="border-left:3px solid #ea580c">
             <div class="stat-name">籌碼回補</div>
-            <div class="stat-count" style="color:#ea580c">147</div>
-        </div>
-        <div class="stat-card" style="border-left:3px solid #64748b">
-            <div class="stat-name">連增3</div>
-            <div class="stat-count" style="color:#64748b">102</div>
+            <div class="stat-count" style="color:#ea580c">189</div>
         </div>
         <div class="stat-card" style="border-left:3px solid #dc2626">
             <div class="stat-name">加速</div>
-            <div class="stat-count" style="color:#dc2626">99</div>
+            <div class="stat-count" style="color:#dc2626">63</div>
         </div>
-        <div class="stat-card" style="border-left:3px solid #f59e0b">
-            <div class="stat-name">量價背離</div>
-            <div class="stat-count" style="color:#f59e0b">99</div>
+        <div class="stat-card" style="border-left:3px solid #64748b">
+            <div class="stat-name">連增3</div>
+            <div class="stat-count" style="color:#64748b">51</div>
         </div>
         <div class="stat-card" style="border-left:3px solid #059669">
             <div class="stat-name">法人同向</div>
-            <div class="stat-count" style="color:#059669">90</div>
-        </div>
-        <div class="stat-card" style="border-left:3px solid #2563eb">
-            <div class="stat-name">逆買</div>
-            <div class="stat-count" style="color:#2563eb">84</div>
-        </div>
-        <div class="stat-card" style="border-left:3px solid #0891b2">
-            <div class="stat-name">內外共振</div>
-            <div class="stat-count" style="color:#0891b2">57</div>
-        </div>
-        <div class="stat-card" style="border-left:3px solid #64748b">
-            <div class="stat-name">連增5</div>
-            <div class="stat-count" style="color:#64748b">33</div>
-        </div>
-        <div class="stat-card" style="border-left:3px solid #4338ca">
-            <div class="stat-name">高度集中</div>
-            <div class="stat-count" style="color:#4338ca">30</div>
+            <div class="stat-count" style="color:#059669">45</div>
         </div>
         <div class="stat-card" style="border-left:3px solid #7c3aed">
             <div class="stat-name">事件驅動</div>
-            <div class="stat-count" style="color:#7c3aed">24</div>
+            <div class="stat-count" style="color:#7c3aed">42</div>
         </div>
-        <div class="stat-card" style="border-left:3px solid #94a3b8">
-            <div class="stat-name">流動性風險</div>
-            <div class="stat-count" style="color:#94a3b8">3</div>
+        <div class="stat-card" style="border-left:3px solid #0891b2">
+            <div class="stat-name">內外共振</div>
+            <div class="stat-count" style="color:#0891b2">39</div>
+        </div>
+        <div class="stat-card" style="border-left:3px solid #f59e0b">
+            <div class="stat-name">量價背離</div>
+            <div class="stat-count" style="color:#f59e0b">36</div>
+        </div>
+        <div class="stat-card" style="border-left:3px solid #4338ca">
+            <div class="stat-name">高度集中</div>
+            <div class="stat-count" style="color:#4338ca">27</div>
+        </div>
+        <div class="stat-card" style="border-left:3px solid #64748b">
+            <div class="stat-name">連增5</div>
+            <div class="stat-count" style="color:#64748b">18</div>
+        </div>
+        <div class="stat-card" style="border-left:3px solid #2563eb">
+            <div class="stat-name">逆買</div>
+            <div class="stat-count" style="color:#2563eb">15</div>
         </div>
         <div class="stat-card" style="border-left:3px solid #65a30d">
             <div class="stat-name">久盤吸籌</div>
@@ -187,7 +183,7 @@
 <!-- Signal Filters -->
 <div class="filter-bar">
     <button class="filter-clear" onclick="clearFilters()">🔄 清除篩選</button>
-    <button class="filter-btn" data-signal="新進榜" style="--c:#0ea5e9" onclick="toggleFilter(this, '新進榜')">新進榜 (261)</button><button class="filter-btn" data-signal="高波動警示" style="--c:#be123c" onclick="toggleFilter(this, '高波動警示')">高波動警示 (156)</button><button class="filter-btn" data-signal="籌碼回補" style="--c:#ea580c" onclick="toggleFilter(this, '籌碼回補')">籌碼回補 (147)</button><button class="filter-btn" data-signal="連增3" style="--c:#64748b" onclick="toggleFilter(this, '連增3')">連增3 (102)</button><button class="filter-btn" data-signal="加速" style="--c:#dc2626" onclick="toggleFilter(this, '加速')">加速 (99)</button><button class="filter-btn" data-signal="量價背離" style="--c:#f59e0b" onclick="toggleFilter(this, '量價背離')">量價背離 (99)</button><button class="filter-btn" data-signal="法人同向" style="--c:#059669" onclick="toggleFilter(this, '法人同向')">法人同向 (90)</button><button class="filter-btn" data-signal="逆買" style="--c:#2563eb" onclick="toggleFilter(this, '逆買')">逆買 (84)</button><button class="filter-btn" data-signal="內外共振" style="--c:#0891b2" onclick="toggleFilter(this, '內外共振')">內外共振 (57)</button><button class="filter-btn" data-signal="連增5" style="--c:#64748b" onclick="toggleFilter(this, '連增5')">連增5 (33)</button><button class="filter-btn" data-signal="高度集中" style="--c:#4338ca" onclick="toggleFilter(this, '高度集中')">高度集中 (30)</button><button class="filter-btn" data-signal="事件驅動" style="--c:#7c3aed" onclick="toggleFilter(this, '事件驅動')">事件驅動 (24)</button><button class="filter-btn" data-signal="流動性風險" style="--c:#94a3b8" onclick="toggleFilter(this, '流動性風險')">流動性風險 (3)</button><button class="filter-btn" data-signal="久盤吸籌" style="--c:#65a30d" onclick="toggleFilter(this, '久盤吸籌')">久盤吸籌 (3)</button>
+    <button class="filter-btn" data-signal="新進榜" style="--c:#0ea5e9" onclick="toggleFilter(this, '新進榜')">新進榜 (255)</button><button class="filter-btn" data-signal="高波動警示" style="--c:#be123c" onclick="toggleFilter(this, '高波動警示')">高波動警示 (201)</button><button class="filter-btn" data-signal="籌碼回補" style="--c:#ea580c" onclick="toggleFilter(this, '籌碼回補')">籌碼回補 (189)</button><button class="filter-btn" data-signal="加速" style="--c:#dc2626" onclick="toggleFilter(this, '加速')">加速 (63)</button><button class="filter-btn" data-signal="連增3" style="--c:#64748b" onclick="toggleFilter(this, '連增3')">連增3 (51)</button><button class="filter-btn" data-signal="法人同向" style="--c:#059669" onclick="toggleFilter(this, '法人同向')">法人同向 (45)</button><button class="filter-btn" data-signal="事件驅動" style="--c:#7c3aed" onclick="toggleFilter(this, '事件驅動')">事件驅動 (42)</button><button class="filter-btn" data-signal="內外共振" style="--c:#0891b2" onclick="toggleFilter(this, '內外共振')">內外共振 (39)</button><button class="filter-btn" data-signal="量價背離" style="--c:#f59e0b" onclick="toggleFilter(this, '量價背離')">量價背離 (36)</button><button class="filter-btn" data-signal="高度集中" style="--c:#4338ca" onclick="toggleFilter(this, '高度集中')">高度集中 (27)</button><button class="filter-btn" data-signal="連增5" style="--c:#64748b" onclick="toggleFilter(this, '連增5')">連增5 (18)</button><button class="filter-btn" data-signal="逆買" style="--c:#2563eb" onclick="toggleFilter(this, '逆買')">逆買 (15)</button><button class="filter-btn" data-signal="久盤吸籌" style="--c:#65a30d" onclick="toggleFilter(this, '久盤吸籌')">久盤吸籌 (3)</button>
 </div>
 
 <!-- Tables -->
@@ -196,10 +192,10 @@
             <div class="panel-header">
                 <h3>門檻 ≥200張｜增25 + 減25</h3>
                 <div class="mini-stats">
-                    <span>📈 上漲: 885</span>
-                    <span>📉 下跌: 917</span>
-                    <span>🚀 加速: 33</span>
-                    <span>🆕 新進榜: 87</span>
+                    <span>📈 上漲: 966</span>
+                    <span>📉 下跌: 806</span>
+                    <span>🚀 加速: 21</span>
+                    <span>🆕 新進榜: 85</span>
                 </div>
             </div>
             
@@ -220,355 +216,355 @@
                     </thead>
                     <tbody>
                         
-                <tr data-signals=",籌碼回補,新進榜,事件驅動,高波動警示," data-wow="7.49">
+                <tr data-signals=",籌碼回補,新進榜,事件驅動,高波動警示," data-wow="7.71">
                     <td class="rk">1</td>
                     <td class="rd rc-new">NEW</td>
-                    <td><strong>3441</strong></td>
-                    <td>聯一光</td>
-                    <td><span class="mkt-tag">上櫃</span></td>
-                    <td class="ind">光電業</td>
-                    <td class="pr">70.0</td>
-                    <td class="cg up">+16.28%</td>
-                    <td class="pt">39.29%</td>
-                    <td class="cg up">+7.49%</td>
-                    <td></td>
-                    <td class="tags"><span class="signal-badge" style="background:#ea580c15;color:#ea580c;border:1px solid #ea580c30">籌碼回補</span> <span class="signal-badge" style="background:#0ea5e915;color:#0ea5e9;border:1px solid #0ea5e930">新進榜</span> <span class="signal-badge" style="background:#7c3aed15;color:#7c3aed;border:1px solid #7c3aed30">事件驅動</span> <span class="signal-badge" style="background:#be123c15;color:#be123c;border:1px solid #be123c30">高波動警示</span></td>
-                </tr>
-                <tr data-signals=",籌碼回補,新進榜,事件驅動," data-wow="5.86">
-                    <td class="rk">2</td>
-                    <td class="rd rc-new">NEW</td>
-                    <td><strong>5328</strong></td>
-                    <td>華容</td>
-                    <td><span class="mkt-tag">上櫃</span></td>
-                    <td class="ind">電子零組件業</td>
-                    <td class="pr">42.4</td>
-                    <td class="cg up">+4.05%</td>
-                    <td class="pt">48.86%</td>
-                    <td class="cg up">+5.86%</td>
-                    <td></td>
-                    <td class="tags"><span class="signal-badge" style="background:#ea580c15;color:#ea580c;border:1px solid #ea580c30">籌碼回補</span> <span class="signal-badge" style="background:#0ea5e915;color:#0ea5e9;border:1px solid #0ea5e930">新進榜</span> <span class="signal-badge" style="background:#7c3aed15;color:#7c3aed;border:1px solid #7c3aed30">事件驅動</span></td>
-                </tr>
-                <tr data-signals=",籌碼回補,新進榜,事件驅動,高波動警示," data-wow="5.72">
-                    <td class="rk">3</td>
-                    <td class="rd rc-new">NEW</td>
-                    <td><strong>2413</strong></td>
-                    <td>環科</td>
-                    <td><span class="mkt-tag">上市</span></td>
-                    <td class="ind">電子零組件業</td>
-                    <td class="pr">61.2</td>
-                    <td class="cg up">+19.77%</td>
-                    <td class="pt">65.66%</td>
-                    <td class="cg up">+5.72%</td>
-                    <td></td>
-                    <td class="tags"><span class="signal-badge" style="background:#ea580c15;color:#ea580c;border:1px solid #ea580c30">籌碼回補</span> <span class="signal-badge" style="background:#0ea5e915;color:#0ea5e9;border:1px solid #0ea5e930">新進榜</span> <span class="signal-badge" style="background:#7c3aed15;color:#7c3aed;border:1px solid #7c3aed30">事件驅動</span> <span class="signal-badge" style="background:#be123c15;color:#be123c;border:1px solid #be123c30">高波動警示</span></td>
-                </tr>
-                <tr data-signals=",籌碼回補,新進榜,事件驅動,高波動警示," data-wow="5.58">
-                    <td class="rk">4</td>
-                    <td class="rd rc-new">NEW</td>
-                    <td><strong>6174</strong></td>
-                    <td>安��</td>
-                    <td><span class="mkt-tag">上櫃</span></td>
-                    <td class="ind">電子零組件業</td>
-                    <td class="pr">50.3</td>
-                    <td class="cg up">+15.10%</td>
-                    <td class="pt">69.35%</td>
-                    <td class="cg up">+5.58%</td>
-                    <td></td>
-                    <td class="tags"><span class="signal-badge" style="background:#ea580c15;color:#ea580c;border:1px solid #ea580c30">籌碼回補</span> <span class="signal-badge" style="background:#0ea5e915;color:#0ea5e9;border:1px solid #0ea5e930">新進榜</span> <span class="signal-badge" style="background:#7c3aed15;color:#7c3aed;border:1px solid #7c3aed30">事件驅動</span> <span class="signal-badge" style="background:#be123c15;color:#be123c;border:1px solid #be123c30">高波動警示</span></td>
-                </tr>
-                <tr data-signals=",連增3,加速,內外共振,高波動警示," data-wow="5.41">
-                    <td class="rk">5</td>
-                    <td class="rd rc-up">↑82</td>
-                    <td><strong>4741</strong></td>
-                    <td>泓瀚</td>
-                    <td><span class="mkt-tag">上櫃</span></td>
-                    <td class="ind">化學工業</td>
-                    <td class="pr">78.0</td>
-                    <td class="cg up">+24.01%</td>
-                    <td class="pt">64.28%</td>
-                    <td class="cg up">+5.41%</td>
-                    <td><span class="streak-badge">↑3週</span></td>
-                    <td class="tags"><span class="signal-badge" style="background:#64748b15;color:#64748b;border:1px solid #64748b30">連增3</span> <span class="signal-badge" style="background:#dc262615;color:#dc2626;border:1px solid #dc262630">加速</span> <span class="signal-badge" style="background:#0891b215;color:#0891b2;border:1px solid #0891b230">內外共振</span> <span class="signal-badge" style="background:#be123c15;color:#be123c;border:1px solid #be123c30">高波動警示</span></td>
-                </tr>
-                <tr data-signals=",逆買,籌碼回補,新進榜,量價背離,事件驅動," data-wow="4.21">
-                    <td class="rk">6</td>
-                    <td class="rd rc-new">NEW</td>
-                    <td><strong>6695</strong></td>
-                    <td>芯鼎</td>
+                    <td><strong>8261</strong></td>
+                    <td>富鼎</td>
                     <td><span class="mkt-tag">上市</span></td>
                     <td class="ind">半導體業</td>
-                    <td class="pr">50.3</td>
-                    <td class="cg down">-4.73%</td>
-                    <td class="pt">51.67%</td>
-                    <td class="cg up">+4.21%</td>
-                    <td></td>
-                    <td class="tags"><span class="signal-badge" style="background:#2563eb15;color:#2563eb;border:1px solid #2563eb30">逆買</span> <span class="signal-badge" style="background:#ea580c15;color:#ea580c;border:1px solid #ea580c30">籌碼回補</span> <span class="signal-badge" style="background:#0ea5e915;color:#0ea5e9;border:1px solid #0ea5e930">新進榜</span> <span class="signal-badge" style="background:#f59e0b15;color:#f59e0b;border:1px solid #f59e0b30">量價背離</span> <span class="signal-badge" style="background:#7c3aed15;color:#7c3aed;border:1px solid #7c3aed30">事件驅動</span></td>
-                </tr>
-                <tr data-signals=",籌碼回補,新進榜,事件驅動," data-wow="4.16">
-                    <td class="rk">7</td>
-                    <td class="rd rc-new">NEW</td>
-                    <td><strong>3213</strong></td>
-                    <td>茂訊</td>
-                    <td><span class="mkt-tag">上櫃</span></td>
-                    <td class="ind">電腦及週邊設備業</td>
-                    <td class="pr">138.5</td>
-                    <td class="cg down">-0.36%</td>
-                    <td class="pt">33.44%</td>
-                    <td class="cg up">+4.16%</td>
-                    <td></td>
-                    <td class="tags"><span class="signal-badge" style="background:#ea580c15;color:#ea580c;border:1px solid #ea580c30">籌碼回補</span> <span class="signal-badge" style="background:#0ea5e915;color:#0ea5e9;border:1px solid #0ea5e930">新進榜</span> <span class="signal-badge" style="background:#7c3aed15;color:#7c3aed;border:1px solid #7c3aed30">事件驅動</span></td>
-                </tr>
-                <tr data-signals=",籌碼回補,新進榜,事件驅動,高波動警示," data-wow="3.87">
-                    <td class="rk">8</td>
-                    <td class="rd rc-new">NEW</td>
-                    <td><strong>2241</strong></td>
-                    <td>艾姆勒</td>
-                    <td><span class="mkt-tag">上市</span></td>
-                    <td class="ind">汽車工業</td>
-                    <td class="pr">43.1</td>
-                    <td class="cg up">+21.75%</td>
-                    <td class="pt">50.04%</td>
-                    <td class="cg up">+3.87%</td>
+                    <td class="pr">215.0</td>
+                    <td class="cg up">+23.92%</td>
+                    <td class="pt">53.43%</td>
+                    <td class="cg up">+7.71%</td>
                     <td></td>
                     <td class="tags"><span class="signal-badge" style="background:#ea580c15;color:#ea580c;border:1px solid #ea580c30">籌碼回補</span> <span class="signal-badge" style="background:#0ea5e915;color:#0ea5e9;border:1px solid #0ea5e930">新進榜</span> <span class="signal-badge" style="background:#7c3aed15;color:#7c3aed;border:1px solid #7c3aed30">事件驅動</span> <span class="signal-badge" style="background:#be123c15;color:#be123c;border:1px solid #be123c30">高波動警示</span></td>
                 </tr>
-                <tr data-signals=",加速,新進榜,高波動警示," data-wow="3.69">
-                    <td class="rk">9</td>
+                <tr data-signals=",籌碼回補,新進榜,事件驅動,高波動警示," data-wow="6.5">
+                    <td class="rk">2</td>
                     <td class="rd rc-new">NEW</td>
-                    <td><strong>4542</strong></td>
-                    <td>科嶠</td>
+                    <td><strong>6207</strong></td>
+                    <td>雷科</td>
                     <td><span class="mkt-tag">上櫃</span></td>
                     <td class="ind">電子零組件業</td>
-                    <td class="pr">335.5</td>
-                    <td class="cg up">+17.31%</td>
-                    <td class="pt">65.52%</td>
-                    <td class="cg up">+3.69%</td>
-                    <td><span class="streak-badge">↑2週</span></td>
-                    <td class="tags"><span class="signal-badge" style="background:#dc262615;color:#dc2626;border:1px solid #dc262630">加速</span> <span class="signal-badge" style="background:#0ea5e915;color:#0ea5e9;border:1px solid #0ea5e930">新進榜</span> <span class="signal-badge" style="background:#be123c15;color:#be123c;border:1px solid #be123c30">高波動警示</span></td>
+                    <td class="pr">165.5</td>
+                    <td class="cg up">+33.47%</td>
+                    <td class="pt">33.83%</td>
+                    <td class="cg up">+6.50%</td>
+                    <td></td>
+                    <td class="tags"><span class="signal-badge" style="background:#ea580c15;color:#ea580c;border:1px solid #ea580c30">籌碼回補</span> <span class="signal-badge" style="background:#0ea5e915;color:#0ea5e9;border:1px solid #0ea5e930">新進榜</span> <span class="signal-badge" style="background:#7c3aed15;color:#7c3aed;border:1px solid #7c3aed30">事件驅動</span> <span class="signal-badge" style="background:#be123c15;color:#be123c;border:1px solid #be123c30">高波動警示</span></td>
                 </tr>
-                <tr data-signals=",連增3,加速,新進榜,內外共振,高波動警示," data-wow="3.58">
-                    <td class="rk">10</td>
+                <tr data-signals=",籌碼回補,新進榜,事件驅動,高波動警示," data-wow="6.28">
+                    <td class="rk">3</td>
                     <td class="rd rc-new">NEW</td>
-                    <td><strong>8021</strong></td>
-                    <td>尖點</td>
+                    <td><strong>3060</strong></td>
+                    <td>銘異</td>
                     <td><span class="mkt-tag">上市</span></td>
-                    <td class="ind">其他電子業</td>
-                    <td class="pr">522.0</td>
-                    <td class="cg up">+13.97%</td>
-                    <td class="pt">58.69%</td>
-                    <td class="cg up">+3.58%</td>
-                    <td><span class="streak-badge">↑3週</span></td>
-                    <td class="tags"><span class="signal-badge" style="background:#64748b15;color:#64748b;border:1px solid #64748b30">連增3</span> <span class="signal-badge" style="background:#dc262615;color:#dc2626;border:1px solid #dc262630">加速</span> <span class="signal-badge" style="background:#0ea5e915;color:#0ea5e9;border:1px solid #0ea5e930">新進榜</span> <span class="signal-badge" style="background:#0891b215;color:#0891b2;border:1px solid #0891b230">內外共振</span> <span class="signal-badge" style="background:#be123c15;color:#be123c;border:1px solid #be123c30">高波動警示</span></td>
+                    <td class="ind">電腦及週邊設備業</td>
+                    <td class="pr">37.9</td>
+                    <td class="cg up">+21.67%</td>
+                    <td class="pt">32.92%</td>
+                    <td class="cg up">+6.28%</td>
+                    <td></td>
+                    <td class="tags"><span class="signal-badge" style="background:#ea580c15;color:#ea580c;border:1px solid #ea580c30">籌碼回補</span> <span class="signal-badge" style="background:#0ea5e915;color:#0ea5e9;border:1px solid #0ea5e930">新進榜</span> <span class="signal-badge" style="background:#7c3aed15;color:#7c3aed;border:1px solid #7c3aed30">事件驅動</span> <span class="signal-badge" style="background:#be123c15;color:#be123c;border:1px solid #be123c30">高波動警示</span></td>
                 </tr>
-                <tr data-signals=",連增5,連增3,法人同向,內外共振,高波動警示," data-wow="3.42">
-                    <td class="rk">11</td>
-                    <td class="rd rc-up">↑7</td>
-                    <td><strong>2243</strong></td>
-                    <td>宏旭-KY</td>
-                    <td><span class="mkt-tag">上市</span></td>
-                    <td class="ind">汽車工業</td>
-                    <td class="pr">37.2</td>
-                    <td class="cg up">+32.62%</td>
-                    <td class="pt">70.19%</td>
-                    <td class="cg up">+3.42%</td>
-                    <td><span class="streak-badge">↑5週</span></td>
-                    <td class="tags"><span class="signal-badge" style="background:#64748b15;color:#64748b;border:1px solid #64748b30">連增5</span> <span class="signal-badge" style="background:#64748b15;color:#64748b;border:1px solid #64748b30">連增3</span> <span class="signal-badge" style="background:#05966915;color:#059669;border:1px solid #05966930">法人同向</span> <span class="signal-badge" style="background:#0891b215;color:#0891b2;border:1px solid #0891b230">內外共振</span> <span class="signal-badge" style="background:#be123c15;color:#be123c;border:1px solid #be123c30">高波動警示</span></td>
+                <tr data-signals=",加速,高波動警示," data-wow="6.08">
+                    <td class="rk">4</td>
+                    <td class="rd rc-up">↑93</td>
+                    <td><strong>6432</strong></td>
+                    <td>今展科</td>
+                    <td><span class="mkt-tag">上櫃</span></td>
+                    <td class="ind">電子零組件業</td>
+                    <td class="pr">79.0</td>
+                    <td class="cg up">+12.70%</td>
+                    <td class="pt">46.24%</td>
+                    <td class="cg up">+6.08%</td>
+                    <td><span class="streak-badge">↑2週</span></td>
+                    <td class="tags"><span class="signal-badge" style="background:#dc262615;color:#dc2626;border:1px solid #dc262630">加速</span> <span class="signal-badge" style="background:#be123c15;color:#be123c;border:1px solid #be123c30">高波動警示</span></td>
                 </tr>
-                <tr data-signals=",高波動警示," data-wow="3.42">
-                    <td class="rk">12</td>
-                    <td class="rd rc-up">↑1</td>
+                <tr data-signals=",籌碼回補,新進榜,事件驅動,高波動警示," data-wow="5.14">
+                    <td class="rk">5</td>
+                    <td class="rd rc-new">NEW</td>
+                    <td><strong>8088</strong></td>
+                    <td>品安</td>
+                    <td><span class="mkt-tag">上櫃</span></td>
+                    <td class="ind">半導體業</td>
+                    <td class="pr">69.2</td>
+                    <td class="cg up">+12.70%</td>
+                    <td class="pt">29.39%</td>
+                    <td class="cg up">+5.14%</td>
+                    <td></td>
+                    <td class="tags"><span class="signal-badge" style="background:#ea580c15;color:#ea580c;border:1px solid #ea580c30">籌碼回補</span> <span class="signal-badge" style="background:#0ea5e915;color:#0ea5e9;border:1px solid #0ea5e930">新進榜</span> <span class="signal-badge" style="background:#7c3aed15;color:#7c3aed;border:1px solid #7c3aed30">事件驅動</span> <span class="signal-badge" style="background:#be123c15;color:#be123c;border:1px solid #be123c30">高波動警示</span></td>
+                </tr>
+                <tr data-signals=",籌碼回補,新進榜,事件驅動,高波動警示," data-wow="4.27">
+                    <td class="rk">6</td>
+                    <td class="rd rc-new">NEW</td>
+                    <td><strong>8096</strong></td>
+                    <td>擎亞</td>
+                    <td><span class="mkt-tag">上櫃</span></td>
+                    <td class="ind">電子通路業</td>
+                    <td class="pr">155.5</td>
+                    <td class="cg up">+17.36%</td>
+                    <td class="pt">61.15%</td>
+                    <td class="cg up">+4.27%</td>
+                    <td></td>
+                    <td class="tags"><span class="signal-badge" style="background:#ea580c15;color:#ea580c;border:1px solid #ea580c30">籌碼回補</span> <span class="signal-badge" style="background:#0ea5e915;color:#0ea5e9;border:1px solid #0ea5e930">新進榜</span> <span class="signal-badge" style="background:#7c3aed15;color:#7c3aed;border:1px solid #7c3aed30">事件驅動</span> <span class="signal-badge" style="background:#be123c15;color:#be123c;border:1px solid #be123c30">高波動警示</span></td>
+                </tr>
+                <tr data-signals=",籌碼回補,新進榜,事件驅動," data-wow="4.2">
+                    <td class="rk">7</td>
+                    <td class="rd rc-new">NEW</td>
+                    <td><strong>5351</strong></td>
+                    <td>鈺創</td>
+                    <td><span class="mkt-tag">上櫃</span></td>
+                    <td class="ind">半導體業</td>
+                    <td class="pr">94.0</td>
+                    <td class="cg up">+5.98%</td>
+                    <td class="pt">41.13%</td>
+                    <td class="cg up">+4.20%</td>
+                    <td></td>
+                    <td class="tags"><span class="signal-badge" style="background:#ea580c15;color:#ea580c;border:1px solid #ea580c30">籌碼回補</span> <span class="signal-badge" style="background:#0ea5e915;color:#0ea5e9;border:1px solid #0ea5e930">新進榜</span> <span class="signal-badge" style="background:#7c3aed15;color:#7c3aed;border:1px solid #7c3aed30">事件驅動</span></td>
+                </tr>
+                <tr data-signals=",連增3,內外共振,高波動警示," data-wow="4.05">
+                    <td class="rk">8</td>
+                    <td class="rd rc-up">↑4</td>
                     <td><strong>3550</strong></td>
                     <td>聯穎</td>
                     <td><span class="mkt-tag">上市</span></td>
                     <td class="ind">電子零組件業</td>
-                    <td class="pr">29.1</td>
-                    <td class="cg up">+20.79%</td>
-                    <td class="pt">55.26%</td>
-                    <td class="cg up">+3.42%</td>
-                    <td><span class="streak-badge">↑2週</span></td>
-                    <td class="tags"><span class="signal-badge" style="background:#be123c15;color:#be123c;border:1px solid #be123c30">高波動警示</span></td>
-                </tr>
-                <tr data-signals=",連增3,內外共振,高波動警示," data-wow="3.39">
-                    <td class="rk">13</td>
-                    <td class="rd rc-down">↓9</td>
-                    <td><strong>3147</strong></td>
-                    <td>大綜</td>
-                    <td><span class="mkt-tag">上櫃</span></td>
-                    <td class="ind">資訊服務業</td>
-                    <td class="pr">338.0</td>
-                    <td class="cg up">+18.80%</td>
-                    <td class="pt">69.02%</td>
-                    <td class="cg up">+3.39%</td>
+                    <td class="pr">37.2</td>
+                    <td class="cg up">+28.23%</td>
+                    <td class="pt">59.31%</td>
+                    <td class="cg up">+4.05%</td>
                     <td><span class="streak-badge">↑3週</span></td>
                     <td class="tags"><span class="signal-badge" style="background:#64748b15;color:#64748b;border:1px solid #64748b30">連增3</span> <span class="signal-badge" style="background:#0891b215;color:#0891b2;border:1px solid #0891b230">內外共振</span> <span class="signal-badge" style="background:#be123c15;color:#be123c;border:1px solid #be123c30">高波動警示</span></td>
                 </tr>
-                <tr data-signals=",籌碼回補,新進榜,事件驅動,高波動警示," data-wow="3.28">
-                    <td class="rk">14</td>
+                <tr data-signals=",籌碼回補,新進榜,事件驅動,高波動警示," data-wow="3.92">
+                    <td class="rk">9</td>
                     <td class="rd rc-new">NEW</td>
-                    <td><strong>7749</strong></td>
-                    <td>意騰-KY</td>
+                    <td><strong>6269</strong></td>
+                    <td>台郡</td>
                     <td><span class="mkt-tag">上市</span></td>
-                    <td class="ind">半導體業</td>
-                    <td class="pr">505.0</td>
-                    <td class="cg up">+8.60%</td>
-                    <td class="pt">60.60%</td>
-                    <td class="cg up">+3.28%</td>
+                    <td class="ind">電子零組件業</td>
+                    <td class="pr">79.6</td>
+                    <td class="cg up">+10.10%</td>
+                    <td class="pt">43.22%</td>
+                    <td class="cg up">+3.92%</td>
                     <td></td>
                     <td class="tags"><span class="signal-badge" style="background:#ea580c15;color:#ea580c;border:1px solid #ea580c30">籌碼回補</span> <span class="signal-badge" style="background:#0ea5e915;color:#0ea5e9;border:1px solid #0ea5e930">新進榜</span> <span class="signal-badge" style="background:#7c3aed15;color:#7c3aed;border:1px solid #7c3aed30">事件驅動</span> <span class="signal-badge" style="background:#be123c15;color:#be123c;border:1px solid #be123c30">高波動警示</span></td>
                 </tr>
-                <tr data-signals=",籌碼回補,新進榜,高波動警示," data-wow="2.86">
+                <tr data-signals=",籌碼回補,新進榜,事件驅動,高波動警示," data-wow="3.65">
+                    <td class="rk">10</td>
+                    <td class="rd rc-new">NEW</td>
+                    <td><strong>3041</strong></td>
+                    <td>揚智</td>
+                    <td><span class="mkt-tag">上市</span></td>
+                    <td class="ind">半導體業</td>
+                    <td class="pr">28.1</td>
+                    <td class="cg up">+14.66%</td>
+                    <td class="pt">33.36%</td>
+                    <td class="cg up">+3.65%</td>
+                    <td></td>
+                    <td class="tags"><span class="signal-badge" style="background:#ea580c15;color:#ea580c;border:1px solid #ea580c30">籌碼回補</span> <span class="signal-badge" style="background:#0ea5e915;color:#0ea5e9;border:1px solid #0ea5e930">新進榜</span> <span class="signal-badge" style="background:#7c3aed15;color:#7c3aed;border:1px solid #7c3aed30">事件驅動</span> <span class="signal-badge" style="background:#be123c15;color:#be123c;border:1px solid #be123c30">高波動警示</span></td>
+                </tr>
+                <tr data-signals=",連增3,加速,新進榜,內外共振,高波動警示," data-wow="3.53">
+                    <td class="rk">11</td>
+                    <td class="rd rc-new">NEW</td>
+                    <td><strong>6693</strong></td>
+                    <td>廣閎科</td>
+                    <td><span class="mkt-tag">上櫃</span></td>
+                    <td class="ind">半導體業</td>
+                    <td class="pr">215.0</td>
+                    <td class="cg up">+27.22%</td>
+                    <td class="pt">55.94%</td>
+                    <td class="cg up">+3.53%</td>
+                    <td><span class="streak-badge">↑4週</span></td>
+                    <td class="tags"><span class="signal-badge" style="background:#64748b15;color:#64748b;border:1px solid #64748b30">連增3</span> <span class="signal-badge" style="background:#dc262615;color:#dc2626;border:1px solid #dc262630">加速</span> <span class="signal-badge" style="background:#0ea5e915;color:#0ea5e9;border:1px solid #0ea5e930">新進榜</span> <span class="signal-badge" style="background:#0891b215;color:#0891b2;border:1px solid #0891b230">內外共振</span> <span class="signal-badge" style="background:#be123c15;color:#be123c;border:1px solid #be123c30">高波動警示</span></td>
+                </tr>
+                <tr data-signals=",籌碼回補,新進榜,事件驅動," data-wow="3.44">
+                    <td class="rk">12</td>
+                    <td class="rd rc-new">NEW</td>
+                    <td><strong>2399</strong></td>
+                    <td>映泰</td>
+                    <td><span class="mkt-tag">上市</span></td>
+                    <td class="ind">電腦及週邊設備業</td>
+                    <td class="pr">48.0</td>
+                    <td class="cg up">+0.84%</td>
+                    <td class="pt">41.82%</td>
+                    <td class="cg up">+3.44%</td>
+                    <td></td>
+                    <td class="tags"><span class="signal-badge" style="background:#ea580c15;color:#ea580c;border:1px solid #ea580c30">籌碼回補</span> <span class="signal-badge" style="background:#0ea5e915;color:#0ea5e9;border:1px solid #0ea5e930">新進榜</span> <span class="signal-badge" style="background:#7c3aed15;color:#7c3aed;border:1px solid #7c3aed30">事件驅動</span></td>
+                </tr>
+                <tr data-signals=",theme:矽晶圓/碳化矽,連增5,連增3,加速,新進榜,內外共振,高波動警示," data-wow="3.39">
+                    <td class="rk">13</td>
+                    <td class="rd rc-new">NEW</td>
+                    <td><strong>6182</strong></td>
+                    <td>合晶</td>
+                    <td><span class="mkt-tag">上櫃</span></td>
+                    <td class="ind">半導體業</td>
+                    <td class="pr">120.0</td>
+                    <td class="cg up">+34.98%</td>
+                    <td class="pt">46.65%</td>
+                    <td class="cg up">+3.39%</td>
+                    <td><span class="streak-badge">↑5週</span></td>
+                    <td class="tags"><span class="signal-badge" style="background:#64748b15;color:#64748b;border:1px solid #64748b30">連增5</span> <span class="signal-badge" style="background:#64748b15;color:#64748b;border:1px solid #64748b30">連增3</span> <span class="signal-badge" style="background:#dc262615;color:#dc2626;border:1px solid #dc262630">加速</span> <span class="signal-badge" style="background:#0ea5e915;color:#0ea5e9;border:1px solid #0ea5e930">新進榜</span> <span class="signal-badge" style="background:#0891b215;color:#0891b2;border:1px solid #0891b230">內外共振</span> <span class="signal-badge" style="background:#be123c15;color:#be123c;border:1px solid #be123c30">高波動警示</span></td>
+                </tr>
+                <tr data-signals=",籌碼回補,新進榜,事件驅動,高波動警示," data-wow="3.38">
+                    <td class="rk">14</td>
+                    <td class="rd rc-new">NEW</td>
+                    <td><strong>6742</strong></td>
+                    <td>澤米</td>
+                    <td><span class="mkt-tag">上市</span></td>
+                    <td class="ind">光電業</td>
+                    <td class="pr">69.0</td>
+                    <td class="cg up">+30.68%</td>
+                    <td class="pt">45.38%</td>
+                    <td class="cg up">+3.38%</td>
+                    <td></td>
+                    <td class="tags"><span class="signal-badge" style="background:#ea580c15;color:#ea580c;border:1px solid #ea580c30">籌碼回補</span> <span class="signal-badge" style="background:#0ea5e915;color:#0ea5e9;border:1px solid #0ea5e930">新進榜</span> <span class="signal-badge" style="background:#7c3aed15;color:#7c3aed;border:1px solid #7c3aed30">事件驅動</span> <span class="signal-badge" style="background:#be123c15;color:#be123c;border:1px solid #be123c30">高波動警示</span></td>
+                </tr>
+                <tr data-signals=",籌碼回補,新進榜,事件驅動,高波動警示," data-wow="3.34">
                     <td class="rk">15</td>
                     <td class="rd rc-new">NEW</td>
-                    <td><strong>5410</strong></td>
-                    <td>國眾</td>
+                    <td><strong>6127</strong></td>
+                    <td>九豪</td>
                     <td><span class="mkt-tag">上櫃</span></td>
-                    <td class="ind">資訊服務業</td>
-                    <td class="pr">45.6</td>
-                    <td class="cg up">+13.98%</td>
-                    <td class="pt">41.52%</td>
-                    <td class="cg up">+2.86%</td>
+                    <td class="ind">電子零組件業</td>
+                    <td class="pr">84.4</td>
+                    <td class="cg up">+11.20%</td>
+                    <td class="pt">30.51%</td>
+                    <td class="cg up">+3.34%</td>
                     <td></td>
-                    <td class="tags"><span class="signal-badge" style="background:#ea580c15;color:#ea580c;border:1px solid #ea580c30">籌碼回補</span> <span class="signal-badge" style="background:#0ea5e915;color:#0ea5e9;border:1px solid #0ea5e930">新進榜</span> <span class="signal-badge" style="background:#be123c15;color:#be123c;border:1px solid #be123c30">高波動警示</span></td>
+                    <td class="tags"><span class="signal-badge" style="background:#ea580c15;color:#ea580c;border:1px solid #ea580c30">籌碼回補</span> <span class="signal-badge" style="background:#0ea5e915;color:#0ea5e9;border:1px solid #0ea5e930">新進榜</span> <span class="signal-badge" style="background:#7c3aed15;color:#7c3aed;border:1px solid #7c3aed30">事件驅動</span> <span class="signal-badge" style="background:#be123c15;color:#be123c;border:1px solid #be123c30">高波動警示</span></td>
                 </tr>
-                <tr data-signals=",籌碼回補,新進榜,高波動警示," data-wow="2.85">
+                <tr data-signals=",籌碼回補,新進榜,事件驅動,高波動警示," data-wow="3.15">
                     <td class="rk">16</td>
                     <td class="rd rc-new">NEW</td>
-                    <td><strong>2484</strong></td>
-                    <td>希華</td>
+                    <td><strong>2455</strong></td>
+                    <td>全新</td>
                     <td><span class="mkt-tag">上市</span></td>
-                    <td class="ind">電子零組件業</td>
-                    <td class="pr">66.7</td>
-                    <td class="cg up">+26.33%</td>
-                    <td class="pt">31.88%</td>
-                    <td class="cg up">+2.85%</td>
+                    <td class="ind">通信網路業</td>
+                    <td class="pr">416.0</td>
+                    <td class="cg up">+18.18%</td>
+                    <td class="pt">59.20%</td>
+                    <td class="cg up">+3.15%</td>
                     <td></td>
-                    <td class="tags"><span class="signal-badge" style="background:#ea580c15;color:#ea580c;border:1px solid #ea580c30">籌碼回補</span> <span class="signal-badge" style="background:#0ea5e915;color:#0ea5e9;border:1px solid #0ea5e930">新進榜</span> <span class="signal-badge" style="background:#be123c15;color:#be123c;border:1px solid #be123c30">高波動警示</span></td>
+                    <td class="tags"><span class="signal-badge" style="background:#ea580c15;color:#ea580c;border:1px solid #ea580c30">籌碼回補</span> <span class="signal-badge" style="background:#0ea5e915;color:#0ea5e9;border:1px solid #0ea5e930">新進榜</span> <span class="signal-badge" style="background:#7c3aed15;color:#7c3aed;border:1px solid #7c3aed30">事件驅動</span> <span class="signal-badge" style="background:#be123c15;color:#be123c;border:1px solid #be123c30">高波動警示</span></td>
                 </tr>
-                <tr data-signals=",籌碼回補,新進榜,法人同向," data-wow="2.79">
+                <tr data-signals=",籌碼回補,新進榜,事件驅動,高波動警示," data-wow="3.08">
                     <td class="rk">17</td>
                     <td class="rd rc-new">NEW</td>
-                    <td><strong>3042</strong></td>
-                    <td>晶技</td>
+                    <td><strong>3019</strong></td>
+                    <td>亞光</td>
                     <td><span class="mkt-tag">上市</span></td>
-                    <td class="ind">電子零組件業</td>
-                    <td class="pr">224.5</td>
-                    <td class="cg up">+5.90%</td>
-                    <td class="pt">71.60%</td>
-                    <td class="cg up">+2.79%</td>
+                    <td class="ind">光電業</td>
+                    <td class="pr">160.5</td>
+                    <td class="cg up">+10.31%</td>
+                    <td class="pt">45.47%</td>
+                    <td class="cg up">+3.08%</td>
                     <td></td>
-                    <td class="tags"><span class="signal-badge" style="background:#ea580c15;color:#ea580c;border:1px solid #ea580c30">籌碼回補</span> <span class="signal-badge" style="background:#0ea5e915;color:#0ea5e9;border:1px solid #0ea5e930">新進榜</span> <span class="signal-badge" style="background:#05966915;color:#059669;border:1px solid #05966930">法人同向</span></td>
+                    <td class="tags"><span class="signal-badge" style="background:#ea580c15;color:#ea580c;border:1px solid #ea580c30">籌碼回補</span> <span class="signal-badge" style="background:#0ea5e915;color:#0ea5e9;border:1px solid #0ea5e930">新進榜</span> <span class="signal-badge" style="background:#7c3aed15;color:#7c3aed;border:1px solid #7c3aed30">事件驅動</span> <span class="signal-badge" style="background:#be123c15;color:#be123c;border:1px solid #be123c30">高波動警示</span></td>
                 </tr>
-                <tr data-signals=",theme:被動元件,籌碼回補,新進榜," data-wow="2.72">
+                <tr data-signals=",籌碼回補,新進榜,事件驅動,高波動警示," data-wow="3.03">
                     <td class="rk">18</td>
                     <td class="rd rc-new">NEW</td>
-                    <td><strong>6155</strong></td>
-                    <td>鈞寶</td>
+                    <td><strong>1727</strong></td>
+                    <td>中華化</td>
                     <td><span class="mkt-tag">上市</span></td>
-                    <td class="ind">電子零組件業</td>
-                    <td class="pr">82.0</td>
-                    <td class="cg up">+3.40%</td>
-                    <td class="pt">67.19%</td>
-                    <td class="cg up">+2.72%</td>
+                    <td class="ind">化學工業</td>
+                    <td class="pr">94.1</td>
+                    <td class="cg up">+10.19%</td>
+                    <td class="pt">59.06%</td>
+                    <td class="cg up">+3.03%</td>
                     <td></td>
-                    <td class="tags"><span class="signal-badge" style="background:#ea580c15;color:#ea580c;border:1px solid #ea580c30">籌碼回補</span> <span class="signal-badge" style="background:#0ea5e915;color:#0ea5e9;border:1px solid #0ea5e930">新進榜</span></td>
+                    <td class="tags"><span class="signal-badge" style="background:#ea580c15;color:#ea580c;border:1px solid #ea580c30">籌碼回補</span> <span class="signal-badge" style="background:#0ea5e915;color:#0ea5e9;border:1px solid #0ea5e930">新進榜</span> <span class="signal-badge" style="background:#7c3aed15;color:#7c3aed;border:1px solid #7c3aed30">事件驅動</span> <span class="signal-badge" style="background:#be123c15;color:#be123c;border:1px solid #be123c30">高波動警示</span></td>
                 </tr>
-                <tr data-signals=",連增3,加速,高度集中,新進榜,法人同向," data-wow="2.68">
+                <tr data-signals=",theme:矽晶圓/碳化矽,籌碼回補,新進榜,高波動警示," data-wow="2.91">
                     <td class="rk">19</td>
                     <td class="rd rc-new">NEW</td>
-                    <td><strong>8454</strong></td>
-                    <td>富邦媒</td>
-                    <td><span class="mkt-tag">上市</span></td>
-                    <td class="ind">數位雲端</td>
-                    <td class="pr">356.5</td>
-                    <td class="cg up">+0.99%</td>
-                    <td class="pt">84.82%</td>
-                    <td class="cg up">+2.68%</td>
-                    <td><span class="streak-badge">↑4週</span></td>
-                    <td class="tags"><span class="signal-badge" style="background:#64748b15;color:#64748b;border:1px solid #64748b30">連增3</span> <span class="signal-badge" style="background:#dc262615;color:#dc2626;border:1px solid #dc262630">加速</span> <span class="signal-badge" style="background:#4338ca15;color:#4338ca;border:1px solid #4338ca30">高度集中</span> <span class="signal-badge" style="background:#0ea5e915;color:#0ea5e9;border:1px solid #0ea5e930">新進榜</span> <span class="signal-badge" style="background:#05966915;color:#059669;border:1px solid #05966930">法人同向</span></td>
-                </tr>
-                <tr data-signals=",連增5,連增3,加速,高度集中,新進榜,法人同向,內外共振,流動性風險," data-wow="2.64">
-                    <td class="rk">20</td>
-                    <td class="rd rc-new">NEW</td>
-                    <td><strong>6890</strong></td>
-                    <td>來億-KY</td>
-                    <td><span class="mkt-tag">上市</span></td>
-                    <td class="ind">運動休閒</td>
-                    <td class="pr">256.0</td>
-                    <td class="cg up">+5.57%</td>
-                    <td class="pt">93.48%</td>
-                    <td class="cg up">+2.64%</td>
-                    <td><span class="streak-badge">↑5週</span></td>
-                    <td class="tags"><span class="signal-badge" style="background:#64748b15;color:#64748b;border:1px solid #64748b30">連增5</span> <span class="signal-badge" style="background:#64748b15;color:#64748b;border:1px solid #64748b30">連增3</span> <span class="signal-badge" style="background:#dc262615;color:#dc2626;border:1px solid #dc262630">加速</span> <span class="signal-badge" style="background:#4338ca15;color:#4338ca;border:1px solid #4338ca30">高度集中</span> <span class="signal-badge" style="background:#0ea5e915;color:#0ea5e9;border:1px solid #0ea5e930">新進榜</span> <span class="signal-badge" style="background:#05966915;color:#059669;border:1px solid #05966930">法人同向</span> <span class="signal-badge" style="background:#0891b215;color:#0891b2;border:1px solid #0891b230">內外共振</span> <span class="signal-badge" style="background:#94a3b815;color:#94a3b8;border:1px solid #94a3b830">流動性風險</span></td>
-                </tr>
-                <tr data-signals=",籌碼回補,新進榜,法人同向,高波動警示," data-wow="2.48">
-                    <td class="rk">21</td>
-                    <td class="rd rc-new">NEW</td>
-                    <td><strong>8182</strong></td>
-                    <td>加高</td>
+                    <td><strong>5483</strong></td>
+                    <td>中美晶</td>
                     <td><span class="mkt-tag">上櫃</span></td>
-                    <td class="ind">電子零組件業</td>
-                    <td class="pr">53.6</td>
-                    <td class="cg up">+19.38%</td>
-                    <td class="pt">73.31%</td>
-                    <td class="cg up">+2.48%</td>
-                    <td></td>
-                    <td class="tags"><span class="signal-badge" style="background:#ea580c15;color:#ea580c;border:1px solid #ea580c30">籌碼回補</span> <span class="signal-badge" style="background:#0ea5e915;color:#0ea5e9;border:1px solid #0ea5e930">新進榜</span> <span class="signal-badge" style="background:#05966915;color:#059669;border:1px solid #05966930">法人同向</span> <span class="signal-badge" style="background:#be123c15;color:#be123c;border:1px solid #be123c30">高波動警示</span></td>
-                </tr>
-                <tr data-signals=",籌碼回補,新進榜," data-wow="2.41">
-                    <td class="rk">22</td>
-                    <td class="rd rc-new">NEW</td>
-                    <td><strong>8289</strong></td>
-                    <td>泰藝</td>
-                    <td><span class="mkt-tag">上櫃</span></td>
-                    <td class="ind">電子零組件業</td>
-                    <td class="pr">68.0</td>
-                    <td class="cg up">+0.89%</td>
-                    <td class="pt">53.14%</td>
-                    <td class="cg up">+2.41%</td>
-                    <td></td>
-                    <td class="tags"><span class="signal-badge" style="background:#ea580c15;color:#ea580c;border:1px solid #ea580c30">籌碼回補</span> <span class="signal-badge" style="background:#0ea5e915;color:#0ea5e9;border:1px solid #0ea5e930">新進榜</span></td>
-                </tr>
-                <tr data-signals=",連增3,加速,新進榜,內外共振," data-wow="2.39">
-                    <td class="rk">23</td>
-                    <td class="rd rc-new">NEW</td>
-                    <td><strong>4721</strong></td>
-                    <td>美琪瑪</td>
-                    <td><span class="mkt-tag">上櫃</span></td>
-                    <td class="ind">化學工業</td>
-                    <td class="pr">92.0</td>
-                    <td class="cg up">+3.95%</td>
-                    <td class="pt">41.78%</td>
-                    <td class="cg up">+2.39%</td>
-                    <td><span class="streak-badge">↑4週</span></td>
-                    <td class="tags"><span class="signal-badge" style="background:#64748b15;color:#64748b;border:1px solid #64748b30">連增3</span> <span class="signal-badge" style="background:#dc262615;color:#dc2626;border:1px solid #dc262630">加速</span> <span class="signal-badge" style="background:#0ea5e915;color:#0ea5e9;border:1px solid #0ea5e930">新進榜</span> <span class="signal-badge" style="background:#0891b215;color:#0891b2;border:1px solid #0891b230">內外共振</span></td>
-                </tr>
-                <tr data-signals=",籌碼回補,新進榜,高波動警示," data-wow="2.27">
-                    <td class="rk">24</td>
-                    <td class="rd rc-new">NEW</td>
-                    <td><strong>3152</strong></td>
-                    <td>璟德</td>
-                    <td><span class="mkt-tag">上櫃</span></td>
-                    <td class="ind">通信網路業</td>
-                    <td class="pr">221.0</td>
-                    <td class="cg up">+23.46%</td>
-                    <td class="pt">61.70%</td>
-                    <td class="cg up">+2.27%</td>
+                    <td class="ind">半導體業</td>
+                    <td class="pr">181.0</td>
+                    <td class="cg up">+13.84%</td>
+                    <td class="pt">65.88%</td>
+                    <td class="cg up">+2.91%</td>
                     <td></td>
                     <td class="tags"><span class="signal-badge" style="background:#ea580c15;color:#ea580c;border:1px solid #ea580c30">籌碼回補</span> <span class="signal-badge" style="background:#0ea5e915;color:#0ea5e9;border:1px solid #0ea5e930">新進榜</span> <span class="signal-badge" style="background:#be123c15;color:#be123c;border:1px solid #be123c30">高波動警示</span></td>
                 </tr>
-                <tr data-signals=",籌碼回補,新進榜," data-wow="2.19">
-                    <td class="rk">25</td>
+                <tr data-signals=",theme:記憶體,籌碼回補,高度集中,新進榜,法人同向,高波動警示," data-wow="2.87">
+                    <td class="rk">20</td>
                     <td class="rd rc-new">NEW</td>
-                    <td><strong>3004</strong></td>
-                    <td>豐達科</td>
+                    <td><strong>2344</strong></td>
+                    <td>華邦電</td>
                     <td><span class="mkt-tag">上市</span></td>
-                    <td class="ind">鋼鐵工業</td>
-                    <td class="pr">133.5</td>
-                    <td class="cg up">+2.69%</td>
-                    <td class="pt">63.48%</td>
-                    <td class="cg up">+2.19%</td>
+                    <td class="ind">半導體業</td>
+                    <td class="pr">218.5</td>
+                    <td class="cg up">+27.03%</td>
+                    <td class="pt">76.49%</td>
+                    <td class="cg up">+2.87%</td>
                     <td></td>
-                    <td class="tags"><span class="signal-badge" style="background:#ea580c15;color:#ea580c;border:1px solid #ea580c30">籌碼回補</span> <span class="signal-badge" style="background:#0ea5e915;color:#0ea5e9;border:1px solid #0ea5e930">新進榜</span></td>
+                    <td class="tags"><span class="signal-badge" style="background:#ea580c15;color:#ea580c;border:1px solid #ea580c30">籌碼回補</span> <span class="signal-badge" style="background:#4338ca15;color:#4338ca;border:1px solid #4338ca30">高度集中</span> <span class="signal-badge" style="background:#0ea5e915;color:#0ea5e9;border:1px solid #0ea5e930">新進榜</span> <span class="signal-badge" style="background:#05966915;color:#059669;border:1px solid #05966930">法人同向</span> <span class="signal-badge" style="background:#be123c15;color:#be123c;border:1px solid #be123c30">高波動警示</span></td>
+                </tr>
+                <tr data-signals=",籌碼回補,新進榜,高波動警示," data-wow="2.87">
+                    <td class="rk">21</td>
+                    <td class="rd rc-new">NEW</td>
+                    <td><strong>6202</strong></td>
+                    <td>盛群</td>
+                    <td><span class="mkt-tag">上市</span></td>
+                    <td class="ind">半導體業</td>
+                    <td class="pr">67.0</td>
+                    <td class="cg up">+12.79%</td>
+                    <td class="pt">42.73%</td>
+                    <td class="cg up">+2.87%</td>
+                    <td></td>
+                    <td class="tags"><span class="signal-badge" style="background:#ea580c15;color:#ea580c;border:1px solid #ea580c30">籌碼回補</span> <span class="signal-badge" style="background:#0ea5e915;color:#0ea5e9;border:1px solid #0ea5e930">新進榜</span> <span class="signal-badge" style="background:#be123c15;color:#be123c;border:1px solid #be123c30">高波動警示</span></td>
+                </tr>
+                <tr data-signals=",籌碼回補,新進榜,高波動警示," data-wow="2.84">
+                    <td class="rk">22</td>
+                    <td class="rd rc-new">NEW</td>
+                    <td><strong>2489</strong></td>
+                    <td>瑞軒</td>
+                    <td><span class="mkt-tag">上市</span></td>
+                    <td class="ind">光電業</td>
+                    <td class="pr">48.1</td>
+                    <td class="cg up">+15.61%</td>
+                    <td class="pt">37.71%</td>
+                    <td class="cg up">+2.84%</td>
+                    <td></td>
+                    <td class="tags"><span class="signal-badge" style="background:#ea580c15;color:#ea580c;border:1px solid #ea580c30">籌碼回補</span> <span class="signal-badge" style="background:#0ea5e915;color:#0ea5e9;border:1px solid #0ea5e930">新進榜</span> <span class="signal-badge" style="background:#be123c15;color:#be123c;border:1px solid #be123c30">高波動警示</span></td>
+                </tr>
+                <tr data-signals=",籌碼回補,新進榜,高波動警示," data-wow="2.76">
+                    <td class="rk">23</td>
+                    <td class="rd rc-new">NEW</td>
+                    <td><strong>4513</strong></td>
+                    <td>福裕</td>
+                    <td><span class="mkt-tag">上櫃</span></td>
+                    <td class="ind">電機機械</td>
+                    <td class="pr">17.4</td>
+                    <td class="cg up">+11.86%</td>
+                    <td class="pt">60.95%</td>
+                    <td class="cg up">+2.76%</td>
+                    <td></td>
+                    <td class="tags"><span class="signal-badge" style="background:#ea580c15;color:#ea580c;border:1px solid #ea580c30">籌碼回補</span> <span class="signal-badge" style="background:#0ea5e915;color:#0ea5e9;border:1px solid #0ea5e930">新進榜</span> <span class="signal-badge" style="background:#be123c15;color:#be123c;border:1px solid #be123c30">高波動警示</span></td>
+                </tr>
+                <tr data-signals=",新進榜,高波動警示," data-wow="2.67">
+                    <td class="rk">24</td>
+                    <td class="rd rc-new">NEW</td>
+                    <td><strong>3094</strong></td>
+                    <td>聯傑</td>
+                    <td><span class="mkt-tag">上市</span></td>
+                    <td class="ind">半導體業</td>
+                    <td class="pr">38.2</td>
+                    <td class="cg up">+18.97%</td>
+                    <td class="pt">27.32%</td>
+                    <td class="cg up">+2.67%</td>
+                    <td></td>
+                    <td class="tags"><span class="signal-badge" style="background:#0ea5e915;color:#0ea5e9;border:1px solid #0ea5e930">新進榜</span> <span class="signal-badge" style="background:#be123c15;color:#be123c;border:1px solid #be123c30">高波動警示</span></td>
+                </tr>
+                <tr data-signals=",theme:被動元件,連增3,法人同向,內外共振,高波動警示," data-wow="2.66">
+                    <td class="rk">25</td>
+                    <td class="rd rc-up">↑4</td>
+                    <td><strong>2478</strong></td>
+                    <td>大毅</td>
+                    <td><span class="mkt-tag">上市</span></td>
+                    <td class="ind">電子零組件業</td>
+                    <td class="pr">234.0</td>
+                    <td class="cg up">+36.44%</td>
+                    <td class="pt">72.99%</td>
+                    <td class="cg up">+2.66%</td>
+                    <td><span class="streak-badge">↑3週</span></td>
+                    <td class="tags"><span class="signal-badge" style="background:#64748b15;color:#64748b;border:1px solid #64748b30">連增3</span> <span class="signal-badge" style="background:#05966915;color:#059669;border:1px solid #05966930">法人同向</span> <span class="signal-badge" style="background:#0891b215;color:#0891b2;border:1px solid #0891b230">內外共振</span> <span class="signal-badge" style="background:#be123c15;color:#be123c;border:1px solid #be123c30">高波動警示</span></td>
                 </tr>
                     </tbody>
                 </table>
@@ -593,10 +589,10 @@
             <div class="panel-header">
                 <h3>門檻 ≥400張｜增25 + 減25</h3>
                 <div class="mini-stats">
-                    <span>📈 上漲: 832</span>
-                    <span>📉 下跌: 828</span>
-                    <span>🚀 加速: 27</span>
-                    <span>🆕 新進榜: 89</span>
+                    <span>📈 上漲: 874</span>
+                    <span>📉 下跌: 730</span>
+                    <span>🚀 加速: 29</span>
+                    <span>🆕 新進榜: 86</span>
                 </div>
             </div>
             
@@ -617,355 +613,355 @@
                     </thead>
                     <tbody>
                         
-                <tr data-signals=",籌碼回補,新進榜,事件驅動,高波動警示," data-wow="7.49">
+                <tr data-signals=",籌碼回補,新進榜,事件驅動,高波動警示," data-wow="7.71">
                     <td class="rk">1</td>
                     <td class="rd rc-new">NEW</td>
-                    <td><strong>3441</strong></td>
-                    <td>聯一光</td>
-                    <td><span class="mkt-tag">上櫃</span></td>
-                    <td class="ind">光電業</td>
-                    <td class="pr">70.0</td>
-                    <td class="cg up">+16.28%</td>
-                    <td class="pt">39.29%</td>
-                    <td class="cg up">+7.49%</td>
-                    <td></td>
-                    <td class="tags"><span class="signal-badge" style="background:#ea580c15;color:#ea580c;border:1px solid #ea580c30">籌碼回補</span> <span class="signal-badge" style="background:#0ea5e915;color:#0ea5e9;border:1px solid #0ea5e930">新進榜</span> <span class="signal-badge" style="background:#7c3aed15;color:#7c3aed;border:1px solid #7c3aed30">事件驅動</span> <span class="signal-badge" style="background:#be123c15;color:#be123c;border:1px solid #be123c30">高波動警示</span></td>
-                </tr>
-                <tr data-signals=",籌碼回補,新進榜,事件驅動," data-wow="5.86">
-                    <td class="rk">2</td>
-                    <td class="rd rc-new">NEW</td>
-                    <td><strong>5328</strong></td>
-                    <td>華容</td>
-                    <td><span class="mkt-tag">上櫃</span></td>
-                    <td class="ind">電子零組件業</td>
-                    <td class="pr">42.4</td>
-                    <td class="cg up">+4.05%</td>
-                    <td class="pt">48.86%</td>
-                    <td class="cg up">+5.86%</td>
-                    <td></td>
-                    <td class="tags"><span class="signal-badge" style="background:#ea580c15;color:#ea580c;border:1px solid #ea580c30">籌碼回補</span> <span class="signal-badge" style="background:#0ea5e915;color:#0ea5e9;border:1px solid #0ea5e930">新進榜</span> <span class="signal-badge" style="background:#7c3aed15;color:#7c3aed;border:1px solid #7c3aed30">事件驅動</span></td>
-                </tr>
-                <tr data-signals=",籌碼回補,新進榜,事件驅動,高波動警示," data-wow="5.72">
-                    <td class="rk">3</td>
-                    <td class="rd rc-new">NEW</td>
-                    <td><strong>2413</strong></td>
-                    <td>環科</td>
-                    <td><span class="mkt-tag">上市</span></td>
-                    <td class="ind">電子零組件業</td>
-                    <td class="pr">61.2</td>
-                    <td class="cg up">+19.77%</td>
-                    <td class="pt">65.66%</td>
-                    <td class="cg up">+5.72%</td>
-                    <td></td>
-                    <td class="tags"><span class="signal-badge" style="background:#ea580c15;color:#ea580c;border:1px solid #ea580c30">籌碼回補</span> <span class="signal-badge" style="background:#0ea5e915;color:#0ea5e9;border:1px solid #0ea5e930">新進榜</span> <span class="signal-badge" style="background:#7c3aed15;color:#7c3aed;border:1px solid #7c3aed30">事件驅動</span> <span class="signal-badge" style="background:#be123c15;color:#be123c;border:1px solid #be123c30">高波動警示</span></td>
-                </tr>
-                <tr data-signals=",籌碼回補,新進榜,事件驅動,高波動警示," data-wow="5.58">
-                    <td class="rk">4</td>
-                    <td class="rd rc-new">NEW</td>
-                    <td><strong>6174</strong></td>
-                    <td>安��</td>
-                    <td><span class="mkt-tag">上櫃</span></td>
-                    <td class="ind">電子零組件業</td>
-                    <td class="pr">50.3</td>
-                    <td class="cg up">+15.10%</td>
-                    <td class="pt">69.35%</td>
-                    <td class="cg up">+5.58%</td>
-                    <td></td>
-                    <td class="tags"><span class="signal-badge" style="background:#ea580c15;color:#ea580c;border:1px solid #ea580c30">籌碼回補</span> <span class="signal-badge" style="background:#0ea5e915;color:#0ea5e9;border:1px solid #0ea5e930">新進榜</span> <span class="signal-badge" style="background:#7c3aed15;color:#7c3aed;border:1px solid #7c3aed30">事件驅動</span> <span class="signal-badge" style="background:#be123c15;color:#be123c;border:1px solid #be123c30">高波動警示</span></td>
-                </tr>
-                <tr data-signals=",連增3,加速,內外共振,高波動警示," data-wow="5.41">
-                    <td class="rk">5</td>
-                    <td class="rd rc-up">↑82</td>
-                    <td><strong>4741</strong></td>
-                    <td>泓瀚</td>
-                    <td><span class="mkt-tag">上櫃</span></td>
-                    <td class="ind">化學工業</td>
-                    <td class="pr">78.0</td>
-                    <td class="cg up">+24.01%</td>
-                    <td class="pt">64.28%</td>
-                    <td class="cg up">+5.41%</td>
-                    <td><span class="streak-badge">↑3週</span></td>
-                    <td class="tags"><span class="signal-badge" style="background:#64748b15;color:#64748b;border:1px solid #64748b30">連增3</span> <span class="signal-badge" style="background:#dc262615;color:#dc2626;border:1px solid #dc262630">加速</span> <span class="signal-badge" style="background:#0891b215;color:#0891b2;border:1px solid #0891b230">內外共振</span> <span class="signal-badge" style="background:#be123c15;color:#be123c;border:1px solid #be123c30">高波動警示</span></td>
-                </tr>
-                <tr data-signals=",逆買,籌碼回補,新進榜,量價背離,事件驅動," data-wow="4.21">
-                    <td class="rk">6</td>
-                    <td class="rd rc-new">NEW</td>
-                    <td><strong>6695</strong></td>
-                    <td>芯鼎</td>
+                    <td><strong>8261</strong></td>
+                    <td>富鼎</td>
                     <td><span class="mkt-tag">上市</span></td>
                     <td class="ind">半導體業</td>
-                    <td class="pr">50.3</td>
-                    <td class="cg down">-4.73%</td>
-                    <td class="pt">51.67%</td>
-                    <td class="cg up">+4.21%</td>
-                    <td></td>
-                    <td class="tags"><span class="signal-badge" style="background:#2563eb15;color:#2563eb;border:1px solid #2563eb30">逆買</span> <span class="signal-badge" style="background:#ea580c15;color:#ea580c;border:1px solid #ea580c30">籌碼回補</span> <span class="signal-badge" style="background:#0ea5e915;color:#0ea5e9;border:1px solid #0ea5e930">新進榜</span> <span class="signal-badge" style="background:#f59e0b15;color:#f59e0b;border:1px solid #f59e0b30">量價背離</span> <span class="signal-badge" style="background:#7c3aed15;color:#7c3aed;border:1px solid #7c3aed30">事件驅動</span></td>
-                </tr>
-                <tr data-signals=",籌碼回補,新進榜,事件驅動," data-wow="4.16">
-                    <td class="rk">7</td>
-                    <td class="rd rc-new">NEW</td>
-                    <td><strong>3213</strong></td>
-                    <td>茂訊</td>
-                    <td><span class="mkt-tag">上櫃</span></td>
-                    <td class="ind">電腦及週邊設備業</td>
-                    <td class="pr">138.5</td>
-                    <td class="cg down">-0.36%</td>
-                    <td class="pt">33.44%</td>
-                    <td class="cg up">+4.16%</td>
-                    <td></td>
-                    <td class="tags"><span class="signal-badge" style="background:#ea580c15;color:#ea580c;border:1px solid #ea580c30">籌碼回補</span> <span class="signal-badge" style="background:#0ea5e915;color:#0ea5e9;border:1px solid #0ea5e930">新進榜</span> <span class="signal-badge" style="background:#7c3aed15;color:#7c3aed;border:1px solid #7c3aed30">事件驅動</span></td>
-                </tr>
-                <tr data-signals=",籌碼回補,新進榜,事件驅動,高波動警示," data-wow="3.87">
-                    <td class="rk">8</td>
-                    <td class="rd rc-new">NEW</td>
-                    <td><strong>2241</strong></td>
-                    <td>艾姆勒</td>
-                    <td><span class="mkt-tag">上市</span></td>
-                    <td class="ind">汽車工業</td>
-                    <td class="pr">43.1</td>
-                    <td class="cg up">+21.75%</td>
-                    <td class="pt">50.04%</td>
-                    <td class="cg up">+3.87%</td>
+                    <td class="pr">215.0</td>
+                    <td class="cg up">+23.92%</td>
+                    <td class="pt">53.43%</td>
+                    <td class="cg up">+7.71%</td>
                     <td></td>
                     <td class="tags"><span class="signal-badge" style="background:#ea580c15;color:#ea580c;border:1px solid #ea580c30">籌碼回補</span> <span class="signal-badge" style="background:#0ea5e915;color:#0ea5e9;border:1px solid #0ea5e930">新進榜</span> <span class="signal-badge" style="background:#7c3aed15;color:#7c3aed;border:1px solid #7c3aed30">事件驅動</span> <span class="signal-badge" style="background:#be123c15;color:#be123c;border:1px solid #be123c30">高波動警示</span></td>
                 </tr>
-                <tr data-signals=",加速,新進榜,高波動警示," data-wow="3.69">
-                    <td class="rk">9</td>
+                <tr data-signals=",籌碼回補,新進榜,事件驅動,高波動警示," data-wow="6.5">
+                    <td class="rk">2</td>
                     <td class="rd rc-new">NEW</td>
-                    <td><strong>4542</strong></td>
-                    <td>科嶠</td>
+                    <td><strong>6207</strong></td>
+                    <td>雷科</td>
                     <td><span class="mkt-tag">上櫃</span></td>
                     <td class="ind">電子零組件業</td>
-                    <td class="pr">335.5</td>
-                    <td class="cg up">+17.31%</td>
-                    <td class="pt">65.52%</td>
-                    <td class="cg up">+3.69%</td>
-                    <td><span class="streak-badge">↑2週</span></td>
-                    <td class="tags"><span class="signal-badge" style="background:#dc262615;color:#dc2626;border:1px solid #dc262630">加速</span> <span class="signal-badge" style="background:#0ea5e915;color:#0ea5e9;border:1px solid #0ea5e930">新進榜</span> <span class="signal-badge" style="background:#be123c15;color:#be123c;border:1px solid #be123c30">高波動警示</span></td>
+                    <td class="pr">165.5</td>
+                    <td class="cg up">+33.47%</td>
+                    <td class="pt">33.83%</td>
+                    <td class="cg up">+6.50%</td>
+                    <td></td>
+                    <td class="tags"><span class="signal-badge" style="background:#ea580c15;color:#ea580c;border:1px solid #ea580c30">籌碼回補</span> <span class="signal-badge" style="background:#0ea5e915;color:#0ea5e9;border:1px solid #0ea5e930">新進榜</span> <span class="signal-badge" style="background:#7c3aed15;color:#7c3aed;border:1px solid #7c3aed30">事件驅動</span> <span class="signal-badge" style="background:#be123c15;color:#be123c;border:1px solid #be123c30">高波動警示</span></td>
                 </tr>
-                <tr data-signals=",連增3,加速,新進榜,內外共振,高波動警示," data-wow="3.58">
-                    <td class="rk">10</td>
+                <tr data-signals=",籌碼回補,新進榜,事件驅動,高波動警示," data-wow="6.28">
+                    <td class="rk">3</td>
                     <td class="rd rc-new">NEW</td>
-                    <td><strong>8021</strong></td>
-                    <td>尖點</td>
+                    <td><strong>3060</strong></td>
+                    <td>銘異</td>
                     <td><span class="mkt-tag">上市</span></td>
-                    <td class="ind">其他電子業</td>
-                    <td class="pr">522.0</td>
-                    <td class="cg up">+13.97%</td>
-                    <td class="pt">58.69%</td>
-                    <td class="cg up">+3.58%</td>
-                    <td><span class="streak-badge">↑3週</span></td>
-                    <td class="tags"><span class="signal-badge" style="background:#64748b15;color:#64748b;border:1px solid #64748b30">連增3</span> <span class="signal-badge" style="background:#dc262615;color:#dc2626;border:1px solid #dc262630">加速</span> <span class="signal-badge" style="background:#0ea5e915;color:#0ea5e9;border:1px solid #0ea5e930">新進榜</span> <span class="signal-badge" style="background:#0891b215;color:#0891b2;border:1px solid #0891b230">內外共振</span> <span class="signal-badge" style="background:#be123c15;color:#be123c;border:1px solid #be123c30">高波動警示</span></td>
+                    <td class="ind">電腦及週邊設備業</td>
+                    <td class="pr">37.9</td>
+                    <td class="cg up">+21.67%</td>
+                    <td class="pt">32.92%</td>
+                    <td class="cg up">+6.28%</td>
+                    <td></td>
+                    <td class="tags"><span class="signal-badge" style="background:#ea580c15;color:#ea580c;border:1px solid #ea580c30">籌碼回補</span> <span class="signal-badge" style="background:#0ea5e915;color:#0ea5e9;border:1px solid #0ea5e930">新進榜</span> <span class="signal-badge" style="background:#7c3aed15;color:#7c3aed;border:1px solid #7c3aed30">事件驅動</span> <span class="signal-badge" style="background:#be123c15;color:#be123c;border:1px solid #be123c30">高波動警示</span></td>
                 </tr>
-                <tr data-signals=",連增5,連增3,法人同向,內外共振,高波動警示," data-wow="3.42">
-                    <td class="rk">11</td>
-                    <td class="rd rc-up">↑7</td>
-                    <td><strong>2243</strong></td>
-                    <td>宏旭-KY</td>
-                    <td><span class="mkt-tag">上市</span></td>
-                    <td class="ind">汽車工業</td>
-                    <td class="pr">37.2</td>
-                    <td class="cg up">+32.62%</td>
-                    <td class="pt">70.19%</td>
-                    <td class="cg up">+3.42%</td>
-                    <td><span class="streak-badge">↑5週</span></td>
-                    <td class="tags"><span class="signal-badge" style="background:#64748b15;color:#64748b;border:1px solid #64748b30">連增5</span> <span class="signal-badge" style="background:#64748b15;color:#64748b;border:1px solid #64748b30">連增3</span> <span class="signal-badge" style="background:#05966915;color:#059669;border:1px solid #05966930">法人同向</span> <span class="signal-badge" style="background:#0891b215;color:#0891b2;border:1px solid #0891b230">內外共振</span> <span class="signal-badge" style="background:#be123c15;color:#be123c;border:1px solid #be123c30">高波動警示</span></td>
+                <tr data-signals=",加速,高波動警示," data-wow="6.08">
+                    <td class="rk">4</td>
+                    <td class="rd rc-up">↑93</td>
+                    <td><strong>6432</strong></td>
+                    <td>今展科</td>
+                    <td><span class="mkt-tag">上櫃</span></td>
+                    <td class="ind">電子零組件業</td>
+                    <td class="pr">79.0</td>
+                    <td class="cg up">+12.70%</td>
+                    <td class="pt">46.24%</td>
+                    <td class="cg up">+6.08%</td>
+                    <td><span class="streak-badge">↑2週</span></td>
+                    <td class="tags"><span class="signal-badge" style="background:#dc262615;color:#dc2626;border:1px solid #dc262630">加速</span> <span class="signal-badge" style="background:#be123c15;color:#be123c;border:1px solid #be123c30">高波動警示</span></td>
                 </tr>
-                <tr data-signals=",高波動警示," data-wow="3.42">
-                    <td class="rk">12</td>
-                    <td class="rd rc-up">↑1</td>
+                <tr data-signals=",籌碼回補,新進榜,事件驅動,高波動警示," data-wow="5.14">
+                    <td class="rk">5</td>
+                    <td class="rd rc-new">NEW</td>
+                    <td><strong>8088</strong></td>
+                    <td>品安</td>
+                    <td><span class="mkt-tag">上櫃</span></td>
+                    <td class="ind">半導體業</td>
+                    <td class="pr">69.2</td>
+                    <td class="cg up">+12.70%</td>
+                    <td class="pt">29.39%</td>
+                    <td class="cg up">+5.14%</td>
+                    <td></td>
+                    <td class="tags"><span class="signal-badge" style="background:#ea580c15;color:#ea580c;border:1px solid #ea580c30">籌碼回補</span> <span class="signal-badge" style="background:#0ea5e915;color:#0ea5e9;border:1px solid #0ea5e930">新進榜</span> <span class="signal-badge" style="background:#7c3aed15;color:#7c3aed;border:1px solid #7c3aed30">事件驅動</span> <span class="signal-badge" style="background:#be123c15;color:#be123c;border:1px solid #be123c30">高波動警示</span></td>
+                </tr>
+                <tr data-signals=",籌碼回補,新進榜,事件驅動,高波動警示," data-wow="4.27">
+                    <td class="rk">6</td>
+                    <td class="rd rc-new">NEW</td>
+                    <td><strong>8096</strong></td>
+                    <td>擎亞</td>
+                    <td><span class="mkt-tag">上櫃</span></td>
+                    <td class="ind">電子通路業</td>
+                    <td class="pr">155.5</td>
+                    <td class="cg up">+17.36%</td>
+                    <td class="pt">61.15%</td>
+                    <td class="cg up">+4.27%</td>
+                    <td></td>
+                    <td class="tags"><span class="signal-badge" style="background:#ea580c15;color:#ea580c;border:1px solid #ea580c30">籌碼回補</span> <span class="signal-badge" style="background:#0ea5e915;color:#0ea5e9;border:1px solid #0ea5e930">新進榜</span> <span class="signal-badge" style="background:#7c3aed15;color:#7c3aed;border:1px solid #7c3aed30">事件驅動</span> <span class="signal-badge" style="background:#be123c15;color:#be123c;border:1px solid #be123c30">高波動警示</span></td>
+                </tr>
+                <tr data-signals=",籌碼回補,新進榜,事件驅動," data-wow="4.2">
+                    <td class="rk">7</td>
+                    <td class="rd rc-new">NEW</td>
+                    <td><strong>5351</strong></td>
+                    <td>鈺創</td>
+                    <td><span class="mkt-tag">上櫃</span></td>
+                    <td class="ind">半導體業</td>
+                    <td class="pr">94.0</td>
+                    <td class="cg up">+5.98%</td>
+                    <td class="pt">41.13%</td>
+                    <td class="cg up">+4.20%</td>
+                    <td></td>
+                    <td class="tags"><span class="signal-badge" style="background:#ea580c15;color:#ea580c;border:1px solid #ea580c30">籌碼回補</span> <span class="signal-badge" style="background:#0ea5e915;color:#0ea5e9;border:1px solid #0ea5e930">新進榜</span> <span class="signal-badge" style="background:#7c3aed15;color:#7c3aed;border:1px solid #7c3aed30">事件驅動</span></td>
+                </tr>
+                <tr data-signals=",連增3,內外共振,高波動警示," data-wow="4.05">
+                    <td class="rk">8</td>
+                    <td class="rd rc-up">↑4</td>
                     <td><strong>3550</strong></td>
                     <td>聯穎</td>
                     <td><span class="mkt-tag">上市</span></td>
                     <td class="ind">電子零組件業</td>
-                    <td class="pr">29.1</td>
-                    <td class="cg up">+20.79%</td>
-                    <td class="pt">55.26%</td>
-                    <td class="cg up">+3.42%</td>
-                    <td><span class="streak-badge">↑2週</span></td>
-                    <td class="tags"><span class="signal-badge" style="background:#be123c15;color:#be123c;border:1px solid #be123c30">高波動警示</span></td>
-                </tr>
-                <tr data-signals=",連增3,內外共振,高波動警示," data-wow="3.39">
-                    <td class="rk">13</td>
-                    <td class="rd rc-down">↓9</td>
-                    <td><strong>3147</strong></td>
-                    <td>大綜</td>
-                    <td><span class="mkt-tag">上櫃</span></td>
-                    <td class="ind">資訊服務業</td>
-                    <td class="pr">338.0</td>
-                    <td class="cg up">+18.80%</td>
-                    <td class="pt">69.02%</td>
-                    <td class="cg up">+3.39%</td>
+                    <td class="pr">37.2</td>
+                    <td class="cg up">+28.23%</td>
+                    <td class="pt">59.31%</td>
+                    <td class="cg up">+4.05%</td>
                     <td><span class="streak-badge">↑3週</span></td>
                     <td class="tags"><span class="signal-badge" style="background:#64748b15;color:#64748b;border:1px solid #64748b30">連增3</span> <span class="signal-badge" style="background:#0891b215;color:#0891b2;border:1px solid #0891b230">內外共振</span> <span class="signal-badge" style="background:#be123c15;color:#be123c;border:1px solid #be123c30">高波動警示</span></td>
                 </tr>
-                <tr data-signals=",籌碼回補,新進榜,事件驅動,高波動警示," data-wow="3.28">
-                    <td class="rk">14</td>
+                <tr data-signals=",籌碼回補,新進榜,事件驅動,高波動警示," data-wow="3.92">
+                    <td class="rk">9</td>
                     <td class="rd rc-new">NEW</td>
-                    <td><strong>7749</strong></td>
-                    <td>意騰-KY</td>
+                    <td><strong>6269</strong></td>
+                    <td>台郡</td>
                     <td><span class="mkt-tag">上市</span></td>
-                    <td class="ind">半導體業</td>
-                    <td class="pr">505.0</td>
-                    <td class="cg up">+8.60%</td>
-                    <td class="pt">60.60%</td>
-                    <td class="cg up">+3.28%</td>
+                    <td class="ind">電子零組件業</td>
+                    <td class="pr">79.6</td>
+                    <td class="cg up">+10.10%</td>
+                    <td class="pt">43.22%</td>
+                    <td class="cg up">+3.92%</td>
                     <td></td>
                     <td class="tags"><span class="signal-badge" style="background:#ea580c15;color:#ea580c;border:1px solid #ea580c30">籌碼回補</span> <span class="signal-badge" style="background:#0ea5e915;color:#0ea5e9;border:1px solid #0ea5e930">新進榜</span> <span class="signal-badge" style="background:#7c3aed15;color:#7c3aed;border:1px solid #7c3aed30">事件驅動</span> <span class="signal-badge" style="background:#be123c15;color:#be123c;border:1px solid #be123c30">高波動警示</span></td>
                 </tr>
-                <tr data-signals=",籌碼回補,新進榜,高波動警示," data-wow="2.86">
+                <tr data-signals=",籌碼回補,新進榜,事件驅動,高波動警示," data-wow="3.65">
+                    <td class="rk">10</td>
+                    <td class="rd rc-new">NEW</td>
+                    <td><strong>3041</strong></td>
+                    <td>揚智</td>
+                    <td><span class="mkt-tag">上市</span></td>
+                    <td class="ind">半導體業</td>
+                    <td class="pr">28.1</td>
+                    <td class="cg up">+14.66%</td>
+                    <td class="pt">33.36%</td>
+                    <td class="cg up">+3.65%</td>
+                    <td></td>
+                    <td class="tags"><span class="signal-badge" style="background:#ea580c15;color:#ea580c;border:1px solid #ea580c30">籌碼回補</span> <span class="signal-badge" style="background:#0ea5e915;color:#0ea5e9;border:1px solid #0ea5e930">新進榜</span> <span class="signal-badge" style="background:#7c3aed15;color:#7c3aed;border:1px solid #7c3aed30">事件驅動</span> <span class="signal-badge" style="background:#be123c15;color:#be123c;border:1px solid #be123c30">高波動警示</span></td>
+                </tr>
+                <tr data-signals=",連增3,加速,新進榜,內外共振,高波動警示," data-wow="3.53">
+                    <td class="rk">11</td>
+                    <td class="rd rc-new">NEW</td>
+                    <td><strong>6693</strong></td>
+                    <td>廣閎科</td>
+                    <td><span class="mkt-tag">上櫃</span></td>
+                    <td class="ind">半導體業</td>
+                    <td class="pr">215.0</td>
+                    <td class="cg up">+27.22%</td>
+                    <td class="pt">55.94%</td>
+                    <td class="cg up">+3.53%</td>
+                    <td><span class="streak-badge">↑4週</span></td>
+                    <td class="tags"><span class="signal-badge" style="background:#64748b15;color:#64748b;border:1px solid #64748b30">連增3</span> <span class="signal-badge" style="background:#dc262615;color:#dc2626;border:1px solid #dc262630">加速</span> <span class="signal-badge" style="background:#0ea5e915;color:#0ea5e9;border:1px solid #0ea5e930">新進榜</span> <span class="signal-badge" style="background:#0891b215;color:#0891b2;border:1px solid #0891b230">內外共振</span> <span class="signal-badge" style="background:#be123c15;color:#be123c;border:1px solid #be123c30">高波動警示</span></td>
+                </tr>
+                <tr data-signals=",籌碼回補,新進榜,事件驅動," data-wow="3.44">
+                    <td class="rk">12</td>
+                    <td class="rd rc-new">NEW</td>
+                    <td><strong>2399</strong></td>
+                    <td>映泰</td>
+                    <td><span class="mkt-tag">上市</span></td>
+                    <td class="ind">電腦及週邊設備業</td>
+                    <td class="pr">48.0</td>
+                    <td class="cg up">+0.84%</td>
+                    <td class="pt">41.82%</td>
+                    <td class="cg up">+3.44%</td>
+                    <td></td>
+                    <td class="tags"><span class="signal-badge" style="background:#ea580c15;color:#ea580c;border:1px solid #ea580c30">籌碼回補</span> <span class="signal-badge" style="background:#0ea5e915;color:#0ea5e9;border:1px solid #0ea5e930">新進榜</span> <span class="signal-badge" style="background:#7c3aed15;color:#7c3aed;border:1px solid #7c3aed30">事件驅動</span></td>
+                </tr>
+                <tr data-signals=",theme:矽晶圓/碳化矽,連增5,連增3,加速,新進榜,內外共振,高波動警示," data-wow="3.39">
+                    <td class="rk">13</td>
+                    <td class="rd rc-new">NEW</td>
+                    <td><strong>6182</strong></td>
+                    <td>合晶</td>
+                    <td><span class="mkt-tag">上櫃</span></td>
+                    <td class="ind">半導體業</td>
+                    <td class="pr">120.0</td>
+                    <td class="cg up">+34.98%</td>
+                    <td class="pt">46.65%</td>
+                    <td class="cg up">+3.39%</td>
+                    <td><span class="streak-badge">↑5週</span></td>
+                    <td class="tags"><span class="signal-badge" style="background:#64748b15;color:#64748b;border:1px solid #64748b30">連增5</span> <span class="signal-badge" style="background:#64748b15;color:#64748b;border:1px solid #64748b30">連增3</span> <span class="signal-badge" style="background:#dc262615;color:#dc2626;border:1px solid #dc262630">加速</span> <span class="signal-badge" style="background:#0ea5e915;color:#0ea5e9;border:1px solid #0ea5e930">新進榜</span> <span class="signal-badge" style="background:#0891b215;color:#0891b2;border:1px solid #0891b230">內外共振</span> <span class="signal-badge" style="background:#be123c15;color:#be123c;border:1px solid #be123c30">高波動警示</span></td>
+                </tr>
+                <tr data-signals=",籌碼回補,新進榜,事件驅動,高波動警示," data-wow="3.38">
+                    <td class="rk">14</td>
+                    <td class="rd rc-new">NEW</td>
+                    <td><strong>6742</strong></td>
+                    <td>澤米</td>
+                    <td><span class="mkt-tag">上市</span></td>
+                    <td class="ind">光電業</td>
+                    <td class="pr">69.0</td>
+                    <td class="cg up">+30.68%</td>
+                    <td class="pt">45.38%</td>
+                    <td class="cg up">+3.38%</td>
+                    <td></td>
+                    <td class="tags"><span class="signal-badge" style="background:#ea580c15;color:#ea580c;border:1px solid #ea580c30">籌碼回補</span> <span class="signal-badge" style="background:#0ea5e915;color:#0ea5e9;border:1px solid #0ea5e930">新進榜</span> <span class="signal-badge" style="background:#7c3aed15;color:#7c3aed;border:1px solid #7c3aed30">事件驅動</span> <span class="signal-badge" style="background:#be123c15;color:#be123c;border:1px solid #be123c30">高波動警示</span></td>
+                </tr>
+                <tr data-signals=",籌碼回補,新進榜,事件驅動,高波動警示," data-wow="3.34">
                     <td class="rk">15</td>
                     <td class="rd rc-new">NEW</td>
-                    <td><strong>5410</strong></td>
-                    <td>國眾</td>
+                    <td><strong>6127</strong></td>
+                    <td>九豪</td>
                     <td><span class="mkt-tag">上櫃</span></td>
-                    <td class="ind">資訊服務業</td>
-                    <td class="pr">45.6</td>
-                    <td class="cg up">+13.98%</td>
-                    <td class="pt">41.52%</td>
-                    <td class="cg up">+2.86%</td>
+                    <td class="ind">電子零組件業</td>
+                    <td class="pr">84.4</td>
+                    <td class="cg up">+11.20%</td>
+                    <td class="pt">30.51%</td>
+                    <td class="cg up">+3.34%</td>
                     <td></td>
-                    <td class="tags"><span class="signal-badge" style="background:#ea580c15;color:#ea580c;border:1px solid #ea580c30">籌碼回補</span> <span class="signal-badge" style="background:#0ea5e915;color:#0ea5e9;border:1px solid #0ea5e930">新進榜</span> <span class="signal-badge" style="background:#be123c15;color:#be123c;border:1px solid #be123c30">高波動警示</span></td>
+                    <td class="tags"><span class="signal-badge" style="background:#ea580c15;color:#ea580c;border:1px solid #ea580c30">籌碼回補</span> <span class="signal-badge" style="background:#0ea5e915;color:#0ea5e9;border:1px solid #0ea5e930">新進榜</span> <span class="signal-badge" style="background:#7c3aed15;color:#7c3aed;border:1px solid #7c3aed30">事件驅動</span> <span class="signal-badge" style="background:#be123c15;color:#be123c;border:1px solid #be123c30">高波動警示</span></td>
                 </tr>
-                <tr data-signals=",籌碼回補,新進榜,高波動警示," data-wow="2.85">
+                <tr data-signals=",籌碼回補,新進榜,事件驅動,高波動警示," data-wow="3.15">
                     <td class="rk">16</td>
                     <td class="rd rc-new">NEW</td>
-                    <td><strong>2484</strong></td>
-                    <td>希華</td>
+                    <td><strong>2455</strong></td>
+                    <td>全新</td>
                     <td><span class="mkt-tag">上市</span></td>
-                    <td class="ind">電子零組件業</td>
-                    <td class="pr">66.7</td>
-                    <td class="cg up">+26.33%</td>
-                    <td class="pt">31.88%</td>
-                    <td class="cg up">+2.85%</td>
+                    <td class="ind">通信網路業</td>
+                    <td class="pr">416.0</td>
+                    <td class="cg up">+18.18%</td>
+                    <td class="pt">59.20%</td>
+                    <td class="cg up">+3.15%</td>
                     <td></td>
-                    <td class="tags"><span class="signal-badge" style="background:#ea580c15;color:#ea580c;border:1px solid #ea580c30">籌碼回補</span> <span class="signal-badge" style="background:#0ea5e915;color:#0ea5e9;border:1px solid #0ea5e930">新進榜</span> <span class="signal-badge" style="background:#be123c15;color:#be123c;border:1px solid #be123c30">高波動警示</span></td>
+                    <td class="tags"><span class="signal-badge" style="background:#ea580c15;color:#ea580c;border:1px solid #ea580c30">籌碼回補</span> <span class="signal-badge" style="background:#0ea5e915;color:#0ea5e9;border:1px solid #0ea5e930">新進榜</span> <span class="signal-badge" style="background:#7c3aed15;color:#7c3aed;border:1px solid #7c3aed30">事件驅動</span> <span class="signal-badge" style="background:#be123c15;color:#be123c;border:1px solid #be123c30">高波動警示</span></td>
                 </tr>
-                <tr data-signals=",籌碼回補,新進榜,法人同向," data-wow="2.79">
+                <tr data-signals=",籌碼回補,新進榜,事件驅動,高波動警示," data-wow="3.08">
                     <td class="rk">17</td>
                     <td class="rd rc-new">NEW</td>
-                    <td><strong>3042</strong></td>
-                    <td>晶技</td>
+                    <td><strong>3019</strong></td>
+                    <td>亞光</td>
                     <td><span class="mkt-tag">上市</span></td>
-                    <td class="ind">電子零組件業</td>
-                    <td class="pr">224.5</td>
-                    <td class="cg up">+5.90%</td>
-                    <td class="pt">71.60%</td>
-                    <td class="cg up">+2.79%</td>
+                    <td class="ind">光電業</td>
+                    <td class="pr">160.5</td>
+                    <td class="cg up">+10.31%</td>
+                    <td class="pt">45.47%</td>
+                    <td class="cg up">+3.08%</td>
                     <td></td>
-                    <td class="tags"><span class="signal-badge" style="background:#ea580c15;color:#ea580c;border:1px solid #ea580c30">籌碼回補</span> <span class="signal-badge" style="background:#0ea5e915;color:#0ea5e9;border:1px solid #0ea5e930">新進榜</span> <span class="signal-badge" style="background:#05966915;color:#059669;border:1px solid #05966930">法人同向</span></td>
+                    <td class="tags"><span class="signal-badge" style="background:#ea580c15;color:#ea580c;border:1px solid #ea580c30">籌碼回補</span> <span class="signal-badge" style="background:#0ea5e915;color:#0ea5e9;border:1px solid #0ea5e930">新進榜</span> <span class="signal-badge" style="background:#7c3aed15;color:#7c3aed;border:1px solid #7c3aed30">事件驅動</span> <span class="signal-badge" style="background:#be123c15;color:#be123c;border:1px solid #be123c30">高波動警示</span></td>
                 </tr>
-                <tr data-signals=",theme:被動元件,籌碼回補,新進榜," data-wow="2.72">
+                <tr data-signals=",籌碼回補,新進榜,事件驅動,高波動警示," data-wow="3.03">
                     <td class="rk">18</td>
                     <td class="rd rc-new">NEW</td>
-                    <td><strong>6155</strong></td>
-                    <td>鈞寶</td>
+                    <td><strong>1727</strong></td>
+                    <td>中華化</td>
                     <td><span class="mkt-tag">上市</span></td>
-                    <td class="ind">電子零組件業</td>
-                    <td class="pr">82.0</td>
-                    <td class="cg up">+3.40%</td>
-                    <td class="pt">67.19%</td>
-                    <td class="cg up">+2.72%</td>
+                    <td class="ind">化學工業</td>
+                    <td class="pr">94.1</td>
+                    <td class="cg up">+10.19%</td>
+                    <td class="pt">59.06%</td>
+                    <td class="cg up">+3.03%</td>
                     <td></td>
-                    <td class="tags"><span class="signal-badge" style="background:#ea580c15;color:#ea580c;border:1px solid #ea580c30">籌碼回補</span> <span class="signal-badge" style="background:#0ea5e915;color:#0ea5e9;border:1px solid #0ea5e930">新進榜</span></td>
+                    <td class="tags"><span class="signal-badge" style="background:#ea580c15;color:#ea580c;border:1px solid #ea580c30">籌碼回補</span> <span class="signal-badge" style="background:#0ea5e915;color:#0ea5e9;border:1px solid #0ea5e930">新進榜</span> <span class="signal-badge" style="background:#7c3aed15;color:#7c3aed;border:1px solid #7c3aed30">事件驅動</span> <span class="signal-badge" style="background:#be123c15;color:#be123c;border:1px solid #be123c30">高波動警示</span></td>
                 </tr>
-                <tr data-signals=",連增3,加速,高度集中,新進榜,法人同向," data-wow="2.68">
+                <tr data-signals=",theme:矽晶圓/碳化矽,籌碼回補,新進榜,高波動警示," data-wow="2.91">
                     <td class="rk">19</td>
                     <td class="rd rc-new">NEW</td>
-                    <td><strong>8454</strong></td>
-                    <td>富邦媒</td>
-                    <td><span class="mkt-tag">上市</span></td>
-                    <td class="ind">數位雲端</td>
-                    <td class="pr">356.5</td>
-                    <td class="cg up">+0.99%</td>
-                    <td class="pt">84.82%</td>
-                    <td class="cg up">+2.68%</td>
-                    <td><span class="streak-badge">↑4週</span></td>
-                    <td class="tags"><span class="signal-badge" style="background:#64748b15;color:#64748b;border:1px solid #64748b30">連增3</span> <span class="signal-badge" style="background:#dc262615;color:#dc2626;border:1px solid #dc262630">加速</span> <span class="signal-badge" style="background:#4338ca15;color:#4338ca;border:1px solid #4338ca30">高度集中</span> <span class="signal-badge" style="background:#0ea5e915;color:#0ea5e9;border:1px solid #0ea5e930">新進榜</span> <span class="signal-badge" style="background:#05966915;color:#059669;border:1px solid #05966930">法人同向</span></td>
-                </tr>
-                <tr data-signals=",連增5,連增3,加速,高度集中,新進榜,法人同向,內外共振,流動性風險," data-wow="2.64">
-                    <td class="rk">20</td>
-                    <td class="rd rc-new">NEW</td>
-                    <td><strong>6890</strong></td>
-                    <td>來億-KY</td>
-                    <td><span class="mkt-tag">上市</span></td>
-                    <td class="ind">運動休閒</td>
-                    <td class="pr">256.0</td>
-                    <td class="cg up">+5.57%</td>
-                    <td class="pt">93.48%</td>
-                    <td class="cg up">+2.64%</td>
-                    <td><span class="streak-badge">↑5週</span></td>
-                    <td class="tags"><span class="signal-badge" style="background:#64748b15;color:#64748b;border:1px solid #64748b30">連增5</span> <span class="signal-badge" style="background:#64748b15;color:#64748b;border:1px solid #64748b30">連增3</span> <span class="signal-badge" style="background:#dc262615;color:#dc2626;border:1px solid #dc262630">加速</span> <span class="signal-badge" style="background:#4338ca15;color:#4338ca;border:1px solid #4338ca30">高度集中</span> <span class="signal-badge" style="background:#0ea5e915;color:#0ea5e9;border:1px solid #0ea5e930">新進榜</span> <span class="signal-badge" style="background:#05966915;color:#059669;border:1px solid #05966930">法人同向</span> <span class="signal-badge" style="background:#0891b215;color:#0891b2;border:1px solid #0891b230">內外共振</span> <span class="signal-badge" style="background:#94a3b815;color:#94a3b8;border:1px solid #94a3b830">流動性風險</span></td>
-                </tr>
-                <tr data-signals=",籌碼回補,新進榜,法人同向,高波動警示," data-wow="2.48">
-                    <td class="rk">21</td>
-                    <td class="rd rc-new">NEW</td>
-                    <td><strong>8182</strong></td>
-                    <td>加高</td>
+                    <td><strong>5483</strong></td>
+                    <td>中美晶</td>
                     <td><span class="mkt-tag">上櫃</span></td>
-                    <td class="ind">電子零組件業</td>
-                    <td class="pr">53.6</td>
-                    <td class="cg up">+19.38%</td>
-                    <td class="pt">73.31%</td>
-                    <td class="cg up">+2.48%</td>
-                    <td></td>
-                    <td class="tags"><span class="signal-badge" style="background:#ea580c15;color:#ea580c;border:1px solid #ea580c30">籌碼回補</span> <span class="signal-badge" style="background:#0ea5e915;color:#0ea5e9;border:1px solid #0ea5e930">新進榜</span> <span class="signal-badge" style="background:#05966915;color:#059669;border:1px solid #05966930">法人同向</span> <span class="signal-badge" style="background:#be123c15;color:#be123c;border:1px solid #be123c30">高波動警示</span></td>
-                </tr>
-                <tr data-signals=",籌碼回補,新進榜," data-wow="2.41">
-                    <td class="rk">22</td>
-                    <td class="rd rc-new">NEW</td>
-                    <td><strong>8289</strong></td>
-                    <td>泰藝</td>
-                    <td><span class="mkt-tag">上櫃</span></td>
-                    <td class="ind">電子零組件業</td>
-                    <td class="pr">68.0</td>
-                    <td class="cg up">+0.89%</td>
-                    <td class="pt">53.14%</td>
-                    <td class="cg up">+2.41%</td>
-                    <td></td>
-                    <td class="tags"><span class="signal-badge" style="background:#ea580c15;color:#ea580c;border:1px solid #ea580c30">籌碼回補</span> <span class="signal-badge" style="background:#0ea5e915;color:#0ea5e9;border:1px solid #0ea5e930">新進榜</span></td>
-                </tr>
-                <tr data-signals=",連增3,加速,新進榜,內外共振," data-wow="2.39">
-                    <td class="rk">23</td>
-                    <td class="rd rc-new">NEW</td>
-                    <td><strong>4721</strong></td>
-                    <td>美琪瑪</td>
-                    <td><span class="mkt-tag">上櫃</span></td>
-                    <td class="ind">化學工業</td>
-                    <td class="pr">92.0</td>
-                    <td class="cg up">+3.95%</td>
-                    <td class="pt">41.78%</td>
-                    <td class="cg up">+2.39%</td>
-                    <td><span class="streak-badge">↑4週</span></td>
-                    <td class="tags"><span class="signal-badge" style="background:#64748b15;color:#64748b;border:1px solid #64748b30">連增3</span> <span class="signal-badge" style="background:#dc262615;color:#dc2626;border:1px solid #dc262630">加速</span> <span class="signal-badge" style="background:#0ea5e915;color:#0ea5e9;border:1px solid #0ea5e930">新進榜</span> <span class="signal-badge" style="background:#0891b215;color:#0891b2;border:1px solid #0891b230">內外共振</span></td>
-                </tr>
-                <tr data-signals=",籌碼回補,新進榜,高波動警示," data-wow="2.27">
-                    <td class="rk">24</td>
-                    <td class="rd rc-new">NEW</td>
-                    <td><strong>3152</strong></td>
-                    <td>璟德</td>
-                    <td><span class="mkt-tag">上櫃</span></td>
-                    <td class="ind">通信網路業</td>
-                    <td class="pr">221.0</td>
-                    <td class="cg up">+23.46%</td>
-                    <td class="pt">61.70%</td>
-                    <td class="cg up">+2.27%</td>
+                    <td class="ind">半導體業</td>
+                    <td class="pr">181.0</td>
+                    <td class="cg up">+13.84%</td>
+                    <td class="pt">65.88%</td>
+                    <td class="cg up">+2.91%</td>
                     <td></td>
                     <td class="tags"><span class="signal-badge" style="background:#ea580c15;color:#ea580c;border:1px solid #ea580c30">籌碼回補</span> <span class="signal-badge" style="background:#0ea5e915;color:#0ea5e9;border:1px solid #0ea5e930">新進榜</span> <span class="signal-badge" style="background:#be123c15;color:#be123c;border:1px solid #be123c30">高波動警示</span></td>
                 </tr>
-                <tr data-signals=",籌碼回補,新進榜," data-wow="2.19">
-                    <td class="rk">25</td>
+                <tr data-signals=",theme:記憶體,籌碼回補,高度集中,新進榜,法人同向,高波動警示," data-wow="2.87">
+                    <td class="rk">20</td>
                     <td class="rd rc-new">NEW</td>
-                    <td><strong>3004</strong></td>
-                    <td>豐達科</td>
+                    <td><strong>2344</strong></td>
+                    <td>華邦電</td>
                     <td><span class="mkt-tag">上市</span></td>
-                    <td class="ind">鋼鐵工業</td>
-                    <td class="pr">133.5</td>
-                    <td class="cg up">+2.69%</td>
-                    <td class="pt">63.48%</td>
-                    <td class="cg up">+2.19%</td>
+                    <td class="ind">半導體業</td>
+                    <td class="pr">218.5</td>
+                    <td class="cg up">+27.03%</td>
+                    <td class="pt">76.49%</td>
+                    <td class="cg up">+2.87%</td>
                     <td></td>
-                    <td class="tags"><span class="signal-badge" style="background:#ea580c15;color:#ea580c;border:1px solid #ea580c30">籌碼回補</span> <span class="signal-badge" style="background:#0ea5e915;color:#0ea5e9;border:1px solid #0ea5e930">新進榜</span></td>
+                    <td class="tags"><span class="signal-badge" style="background:#ea580c15;color:#ea580c;border:1px solid #ea580c30">籌碼回補</span> <span class="signal-badge" style="background:#4338ca15;color:#4338ca;border:1px solid #4338ca30">高度集中</span> <span class="signal-badge" style="background:#0ea5e915;color:#0ea5e9;border:1px solid #0ea5e930">新進榜</span> <span class="signal-badge" style="background:#05966915;color:#059669;border:1px solid #05966930">法人同向</span> <span class="signal-badge" style="background:#be123c15;color:#be123c;border:1px solid #be123c30">高波動警示</span></td>
+                </tr>
+                <tr data-signals=",籌碼回補,新進榜,高波動警示," data-wow="2.87">
+                    <td class="rk">21</td>
+                    <td class="rd rc-new">NEW</td>
+                    <td><strong>6202</strong></td>
+                    <td>盛群</td>
+                    <td><span class="mkt-tag">上市</span></td>
+                    <td class="ind">半導體業</td>
+                    <td class="pr">67.0</td>
+                    <td class="cg up">+12.79%</td>
+                    <td class="pt">42.73%</td>
+                    <td class="cg up">+2.87%</td>
+                    <td></td>
+                    <td class="tags"><span class="signal-badge" style="background:#ea580c15;color:#ea580c;border:1px solid #ea580c30">籌碼回補</span> <span class="signal-badge" style="background:#0ea5e915;color:#0ea5e9;border:1px solid #0ea5e930">新進榜</span> <span class="signal-badge" style="background:#be123c15;color:#be123c;border:1px solid #be123c30">高波動警示</span></td>
+                </tr>
+                <tr data-signals=",籌碼回補,新進榜,高波動警示," data-wow="2.84">
+                    <td class="rk">22</td>
+                    <td class="rd rc-new">NEW</td>
+                    <td><strong>2489</strong></td>
+                    <td>瑞軒</td>
+                    <td><span class="mkt-tag">上市</span></td>
+                    <td class="ind">光電業</td>
+                    <td class="pr">48.1</td>
+                    <td class="cg up">+15.61%</td>
+                    <td class="pt">37.71%</td>
+                    <td class="cg up">+2.84%</td>
+                    <td></td>
+                    <td class="tags"><span class="signal-badge" style="background:#ea580c15;color:#ea580c;border:1px solid #ea580c30">籌碼回補</span> <span class="signal-badge" style="background:#0ea5e915;color:#0ea5e9;border:1px solid #0ea5e930">新進榜</span> <span class="signal-badge" style="background:#be123c15;color:#be123c;border:1px solid #be123c30">高波動警示</span></td>
+                </tr>
+                <tr data-signals=",籌碼回補,新進榜,高波動警示," data-wow="2.76">
+                    <td class="rk">23</td>
+                    <td class="rd rc-new">NEW</td>
+                    <td><strong>4513</strong></td>
+                    <td>福裕</td>
+                    <td><span class="mkt-tag">上櫃</span></td>
+                    <td class="ind">電機機械</td>
+                    <td class="pr">17.4</td>
+                    <td class="cg up">+11.86%</td>
+                    <td class="pt">60.95%</td>
+                    <td class="cg up">+2.76%</td>
+                    <td></td>
+                    <td class="tags"><span class="signal-badge" style="background:#ea580c15;color:#ea580c;border:1px solid #ea580c30">籌碼回補</span> <span class="signal-badge" style="background:#0ea5e915;color:#0ea5e9;border:1px solid #0ea5e930">新進榜</span> <span class="signal-badge" style="background:#be123c15;color:#be123c;border:1px solid #be123c30">高波動警示</span></td>
+                </tr>
+                <tr data-signals=",新進榜,高波動警示," data-wow="2.67">
+                    <td class="rk">24</td>
+                    <td class="rd rc-new">NEW</td>
+                    <td><strong>3094</strong></td>
+                    <td>聯傑</td>
+                    <td><span class="mkt-tag">上市</span></td>
+                    <td class="ind">半導體業</td>
+                    <td class="pr">38.2</td>
+                    <td class="cg up">+18.97%</td>
+                    <td class="pt">27.32%</td>
+                    <td class="cg up">+2.67%</td>
+                    <td></td>
+                    <td class="tags"><span class="signal-badge" style="background:#0ea5e915;color:#0ea5e9;border:1px solid #0ea5e930">新進榜</span> <span class="signal-badge" style="background:#be123c15;color:#be123c;border:1px solid #be123c30">高波動警示</span></td>
+                </tr>
+                <tr data-signals=",theme:被動元件,連增3,法人同向,內外共振,高波動警示," data-wow="2.66">
+                    <td class="rk">25</td>
+                    <td class="rd rc-up">↑4</td>
+                    <td><strong>2478</strong></td>
+                    <td>大毅</td>
+                    <td><span class="mkt-tag">上市</span></td>
+                    <td class="ind">電子零組件業</td>
+                    <td class="pr">234.0</td>
+                    <td class="cg up">+36.44%</td>
+                    <td class="pt">72.99%</td>
+                    <td class="cg up">+2.66%</td>
+                    <td><span class="streak-badge">↑3週</span></td>
+                    <td class="tags"><span class="signal-badge" style="background:#64748b15;color:#64748b;border:1px solid #64748b30">連增3</span> <span class="signal-badge" style="background:#05966915;color:#059669;border:1px solid #05966930">法人同向</span> <span class="signal-badge" style="background:#0891b215;color:#0891b2;border:1px solid #0891b230">內外共振</span> <span class="signal-badge" style="background:#be123c15;color:#be123c;border:1px solid #be123c30">高波動警示</span></td>
                 </tr>
                     </tbody>
                 </table>
@@ -990,10 +986,10 @@
             <div class="panel-header">
                 <h3>門檻 ≥1000張｜增25 + 減25</h3>
                 <div class="mini-stats">
-                    <span>📈 上漲: 637</span>
-                    <span>📉 下跌: 671</span>
-                    <span>🚀 加速: 24</span>
-                    <span>🆕 新進榜: 94</span>
+                    <span>📈 上漲: 674</span>
+                    <span>📉 下跌: 568</span>
+                    <span>🚀 加速: 25</span>
+                    <span>🆕 新進榜: 92</span>
                 </div>
             </div>
             
@@ -1014,355 +1010,355 @@
                     </thead>
                     <tbody>
                         
-                <tr data-signals=",籌碼回補,新進榜,事件驅動,高波動警示," data-wow="7.49">
+                <tr data-signals=",籌碼回補,新進榜,事件驅動,高波動警示," data-wow="7.71">
                     <td class="rk">1</td>
                     <td class="rd rc-new">NEW</td>
-                    <td><strong>3441</strong></td>
-                    <td>聯一光</td>
-                    <td><span class="mkt-tag">上櫃</span></td>
-                    <td class="ind">光電業</td>
-                    <td class="pr">70.0</td>
-                    <td class="cg up">+16.28%</td>
-                    <td class="pt">39.29%</td>
-                    <td class="cg up">+7.49%</td>
-                    <td></td>
-                    <td class="tags"><span class="signal-badge" style="background:#ea580c15;color:#ea580c;border:1px solid #ea580c30">籌碼回補</span> <span class="signal-badge" style="background:#0ea5e915;color:#0ea5e9;border:1px solid #0ea5e930">新進榜</span> <span class="signal-badge" style="background:#7c3aed15;color:#7c3aed;border:1px solid #7c3aed30">事件驅動</span> <span class="signal-badge" style="background:#be123c15;color:#be123c;border:1px solid #be123c30">高波動警示</span></td>
-                </tr>
-                <tr data-signals=",籌碼回補,新進榜,事件驅動," data-wow="5.86">
-                    <td class="rk">2</td>
-                    <td class="rd rc-new">NEW</td>
-                    <td><strong>5328</strong></td>
-                    <td>華容</td>
-                    <td><span class="mkt-tag">上櫃</span></td>
-                    <td class="ind">電子零組件業</td>
-                    <td class="pr">42.4</td>
-                    <td class="cg up">+4.05%</td>
-                    <td class="pt">48.86%</td>
-                    <td class="cg up">+5.86%</td>
-                    <td></td>
-                    <td class="tags"><span class="signal-badge" style="background:#ea580c15;color:#ea580c;border:1px solid #ea580c30">籌碼回補</span> <span class="signal-badge" style="background:#0ea5e915;color:#0ea5e9;border:1px solid #0ea5e930">新進榜</span> <span class="signal-badge" style="background:#7c3aed15;color:#7c3aed;border:1px solid #7c3aed30">事件驅動</span></td>
-                </tr>
-                <tr data-signals=",籌碼回補,新進榜,事件驅動,高波動警示," data-wow="5.72">
-                    <td class="rk">3</td>
-                    <td class="rd rc-new">NEW</td>
-                    <td><strong>2413</strong></td>
-                    <td>環科</td>
-                    <td><span class="mkt-tag">上市</span></td>
-                    <td class="ind">電子零組件業</td>
-                    <td class="pr">61.2</td>
-                    <td class="cg up">+19.77%</td>
-                    <td class="pt">65.66%</td>
-                    <td class="cg up">+5.72%</td>
-                    <td></td>
-                    <td class="tags"><span class="signal-badge" style="background:#ea580c15;color:#ea580c;border:1px solid #ea580c30">籌碼回補</span> <span class="signal-badge" style="background:#0ea5e915;color:#0ea5e9;border:1px solid #0ea5e930">新進榜</span> <span class="signal-badge" style="background:#7c3aed15;color:#7c3aed;border:1px solid #7c3aed30">事件驅動</span> <span class="signal-badge" style="background:#be123c15;color:#be123c;border:1px solid #be123c30">高波動警示</span></td>
-                </tr>
-                <tr data-signals=",籌碼回補,新進榜,事件驅動,高波動警示," data-wow="5.58">
-                    <td class="rk">4</td>
-                    <td class="rd rc-new">NEW</td>
-                    <td><strong>6174</strong></td>
-                    <td>安��</td>
-                    <td><span class="mkt-tag">上櫃</span></td>
-                    <td class="ind">電子零組件業</td>
-                    <td class="pr">50.3</td>
-                    <td class="cg up">+15.10%</td>
-                    <td class="pt">69.35%</td>
-                    <td class="cg up">+5.58%</td>
-                    <td></td>
-                    <td class="tags"><span class="signal-badge" style="background:#ea580c15;color:#ea580c;border:1px solid #ea580c30">籌碼回補</span> <span class="signal-badge" style="background:#0ea5e915;color:#0ea5e9;border:1px solid #0ea5e930">新進榜</span> <span class="signal-badge" style="background:#7c3aed15;color:#7c3aed;border:1px solid #7c3aed30">事件驅動</span> <span class="signal-badge" style="background:#be123c15;color:#be123c;border:1px solid #be123c30">高波動警示</span></td>
-                </tr>
-                <tr data-signals=",連增3,加速,內外共振,高波動警示," data-wow="5.41">
-                    <td class="rk">5</td>
-                    <td class="rd rc-up">↑82</td>
-                    <td><strong>4741</strong></td>
-                    <td>泓瀚</td>
-                    <td><span class="mkt-tag">上櫃</span></td>
-                    <td class="ind">化學工業</td>
-                    <td class="pr">78.0</td>
-                    <td class="cg up">+24.01%</td>
-                    <td class="pt">64.28%</td>
-                    <td class="cg up">+5.41%</td>
-                    <td><span class="streak-badge">↑3週</span></td>
-                    <td class="tags"><span class="signal-badge" style="background:#64748b15;color:#64748b;border:1px solid #64748b30">連增3</span> <span class="signal-badge" style="background:#dc262615;color:#dc2626;border:1px solid #dc262630">加速</span> <span class="signal-badge" style="background:#0891b215;color:#0891b2;border:1px solid #0891b230">內外共振</span> <span class="signal-badge" style="background:#be123c15;color:#be123c;border:1px solid #be123c30">高波動警示</span></td>
-                </tr>
-                <tr data-signals=",逆買,籌碼回補,新進榜,量價背離,事件驅動," data-wow="4.21">
-                    <td class="rk">6</td>
-                    <td class="rd rc-new">NEW</td>
-                    <td><strong>6695</strong></td>
-                    <td>芯鼎</td>
+                    <td><strong>8261</strong></td>
+                    <td>富鼎</td>
                     <td><span class="mkt-tag">上市</span></td>
                     <td class="ind">半導體業</td>
-                    <td class="pr">50.3</td>
-                    <td class="cg down">-4.73%</td>
-                    <td class="pt">51.67%</td>
-                    <td class="cg up">+4.21%</td>
-                    <td></td>
-                    <td class="tags"><span class="signal-badge" style="background:#2563eb15;color:#2563eb;border:1px solid #2563eb30">逆買</span> <span class="signal-badge" style="background:#ea580c15;color:#ea580c;border:1px solid #ea580c30">籌碼回補</span> <span class="signal-badge" style="background:#0ea5e915;color:#0ea5e9;border:1px solid #0ea5e930">新進榜</span> <span class="signal-badge" style="background:#f59e0b15;color:#f59e0b;border:1px solid #f59e0b30">量價背離</span> <span class="signal-badge" style="background:#7c3aed15;color:#7c3aed;border:1px solid #7c3aed30">事件驅動</span></td>
-                </tr>
-                <tr data-signals=",籌碼回補,新進榜,事件驅動," data-wow="4.16">
-                    <td class="rk">7</td>
-                    <td class="rd rc-new">NEW</td>
-                    <td><strong>3213</strong></td>
-                    <td>茂訊</td>
-                    <td><span class="mkt-tag">上櫃</span></td>
-                    <td class="ind">電腦及週邊設備業</td>
-                    <td class="pr">138.5</td>
-                    <td class="cg down">-0.36%</td>
-                    <td class="pt">33.44%</td>
-                    <td class="cg up">+4.16%</td>
-                    <td></td>
-                    <td class="tags"><span class="signal-badge" style="background:#ea580c15;color:#ea580c;border:1px solid #ea580c30">籌碼回補</span> <span class="signal-badge" style="background:#0ea5e915;color:#0ea5e9;border:1px solid #0ea5e930">新進榜</span> <span class="signal-badge" style="background:#7c3aed15;color:#7c3aed;border:1px solid #7c3aed30">事件驅動</span></td>
-                </tr>
-                <tr data-signals=",籌碼回補,新進榜,事件驅動,高波動警示," data-wow="3.87">
-                    <td class="rk">8</td>
-                    <td class="rd rc-new">NEW</td>
-                    <td><strong>2241</strong></td>
-                    <td>艾姆勒</td>
-                    <td><span class="mkt-tag">上市</span></td>
-                    <td class="ind">汽車工業</td>
-                    <td class="pr">43.1</td>
-                    <td class="cg up">+21.75%</td>
-                    <td class="pt">50.04%</td>
-                    <td class="cg up">+3.87%</td>
+                    <td class="pr">215.0</td>
+                    <td class="cg up">+23.92%</td>
+                    <td class="pt">53.43%</td>
+                    <td class="cg up">+7.71%</td>
                     <td></td>
                     <td class="tags"><span class="signal-badge" style="background:#ea580c15;color:#ea580c;border:1px solid #ea580c30">籌碼回補</span> <span class="signal-badge" style="background:#0ea5e915;color:#0ea5e9;border:1px solid #0ea5e930">新進榜</span> <span class="signal-badge" style="background:#7c3aed15;color:#7c3aed;border:1px solid #7c3aed30">事件驅動</span> <span class="signal-badge" style="background:#be123c15;color:#be123c;border:1px solid #be123c30">高波動警示</span></td>
                 </tr>
-                <tr data-signals=",加速,新進榜,高波動警示," data-wow="3.69">
-                    <td class="rk">9</td>
+                <tr data-signals=",籌碼回補,新進榜,事件驅動,高波動警示," data-wow="6.5">
+                    <td class="rk">2</td>
                     <td class="rd rc-new">NEW</td>
-                    <td><strong>4542</strong></td>
-                    <td>科嶠</td>
+                    <td><strong>6207</strong></td>
+                    <td>雷科</td>
                     <td><span class="mkt-tag">上櫃</span></td>
                     <td class="ind">電子零組件業</td>
-                    <td class="pr">335.5</td>
-                    <td class="cg up">+17.31%</td>
-                    <td class="pt">65.52%</td>
-                    <td class="cg up">+3.69%</td>
-                    <td><span class="streak-badge">↑2週</span></td>
-                    <td class="tags"><span class="signal-badge" style="background:#dc262615;color:#dc2626;border:1px solid #dc262630">加速</span> <span class="signal-badge" style="background:#0ea5e915;color:#0ea5e9;border:1px solid #0ea5e930">新進榜</span> <span class="signal-badge" style="background:#be123c15;color:#be123c;border:1px solid #be123c30">高波動警示</span></td>
+                    <td class="pr">165.5</td>
+                    <td class="cg up">+33.47%</td>
+                    <td class="pt">33.83%</td>
+                    <td class="cg up">+6.50%</td>
+                    <td></td>
+                    <td class="tags"><span class="signal-badge" style="background:#ea580c15;color:#ea580c;border:1px solid #ea580c30">籌碼回補</span> <span class="signal-badge" style="background:#0ea5e915;color:#0ea5e9;border:1px solid #0ea5e930">新進榜</span> <span class="signal-badge" style="background:#7c3aed15;color:#7c3aed;border:1px solid #7c3aed30">事件驅動</span> <span class="signal-badge" style="background:#be123c15;color:#be123c;border:1px solid #be123c30">高波動警示</span></td>
                 </tr>
-                <tr data-signals=",連增3,加速,新進榜,內外共振,高波動警示," data-wow="3.58">
-                    <td class="rk">10</td>
+                <tr data-signals=",籌碼回補,新進榜,事件驅動,高波動警示," data-wow="6.28">
+                    <td class="rk">3</td>
                     <td class="rd rc-new">NEW</td>
-                    <td><strong>8021</strong></td>
-                    <td>尖點</td>
+                    <td><strong>3060</strong></td>
+                    <td>銘異</td>
                     <td><span class="mkt-tag">上市</span></td>
-                    <td class="ind">其他電子業</td>
-                    <td class="pr">522.0</td>
-                    <td class="cg up">+13.97%</td>
-                    <td class="pt">58.69%</td>
-                    <td class="cg up">+3.58%</td>
-                    <td><span class="streak-badge">↑3週</span></td>
-                    <td class="tags"><span class="signal-badge" style="background:#64748b15;color:#64748b;border:1px solid #64748b30">連增3</span> <span class="signal-badge" style="background:#dc262615;color:#dc2626;border:1px solid #dc262630">加速</span> <span class="signal-badge" style="background:#0ea5e915;color:#0ea5e9;border:1px solid #0ea5e930">新進榜</span> <span class="signal-badge" style="background:#0891b215;color:#0891b2;border:1px solid #0891b230">內外共振</span> <span class="signal-badge" style="background:#be123c15;color:#be123c;border:1px solid #be123c30">高波動警示</span></td>
+                    <td class="ind">電腦及週邊設備業</td>
+                    <td class="pr">37.9</td>
+                    <td class="cg up">+21.67%</td>
+                    <td class="pt">32.92%</td>
+                    <td class="cg up">+6.28%</td>
+                    <td></td>
+                    <td class="tags"><span class="signal-badge" style="background:#ea580c15;color:#ea580c;border:1px solid #ea580c30">籌碼回補</span> <span class="signal-badge" style="background:#0ea5e915;color:#0ea5e9;border:1px solid #0ea5e930">新進榜</span> <span class="signal-badge" style="background:#7c3aed15;color:#7c3aed;border:1px solid #7c3aed30">事件驅動</span> <span class="signal-badge" style="background:#be123c15;color:#be123c;border:1px solid #be123c30">高波動警示</span></td>
                 </tr>
-                <tr data-signals=",連增5,連增3,法人同向,內外共振,高波動警示," data-wow="3.42">
-                    <td class="rk">11</td>
-                    <td class="rd rc-up">↑7</td>
-                    <td><strong>2243</strong></td>
-                    <td>宏旭-KY</td>
-                    <td><span class="mkt-tag">上市</span></td>
-                    <td class="ind">汽車工業</td>
-                    <td class="pr">37.2</td>
-                    <td class="cg up">+32.62%</td>
-                    <td class="pt">70.19%</td>
-                    <td class="cg up">+3.42%</td>
-                    <td><span class="streak-badge">↑5週</span></td>
-                    <td class="tags"><span class="signal-badge" style="background:#64748b15;color:#64748b;border:1px solid #64748b30">連增5</span> <span class="signal-badge" style="background:#64748b15;color:#64748b;border:1px solid #64748b30">連增3</span> <span class="signal-badge" style="background:#05966915;color:#059669;border:1px solid #05966930">法人同向</span> <span class="signal-badge" style="background:#0891b215;color:#0891b2;border:1px solid #0891b230">內外共振</span> <span class="signal-badge" style="background:#be123c15;color:#be123c;border:1px solid #be123c30">高波動警示</span></td>
+                <tr data-signals=",加速,高波動警示," data-wow="6.08">
+                    <td class="rk">4</td>
+                    <td class="rd rc-up">↑93</td>
+                    <td><strong>6432</strong></td>
+                    <td>今展科</td>
+                    <td><span class="mkt-tag">上櫃</span></td>
+                    <td class="ind">電子零組件業</td>
+                    <td class="pr">79.0</td>
+                    <td class="cg up">+12.70%</td>
+                    <td class="pt">46.24%</td>
+                    <td class="cg up">+6.08%</td>
+                    <td><span class="streak-badge">↑2週</span></td>
+                    <td class="tags"><span class="signal-badge" style="background:#dc262615;color:#dc2626;border:1px solid #dc262630">加速</span> <span class="signal-badge" style="background:#be123c15;color:#be123c;border:1px solid #be123c30">高波動警示</span></td>
                 </tr>
-                <tr data-signals=",高波動警示," data-wow="3.42">
-                    <td class="rk">12</td>
-                    <td class="rd rc-up">↑1</td>
+                <tr data-signals=",籌碼回補,新進榜,事件驅動,高波動警示," data-wow="5.14">
+                    <td class="rk">5</td>
+                    <td class="rd rc-new">NEW</td>
+                    <td><strong>8088</strong></td>
+                    <td>品安</td>
+                    <td><span class="mkt-tag">上櫃</span></td>
+                    <td class="ind">半導體業</td>
+                    <td class="pr">69.2</td>
+                    <td class="cg up">+12.70%</td>
+                    <td class="pt">29.39%</td>
+                    <td class="cg up">+5.14%</td>
+                    <td></td>
+                    <td class="tags"><span class="signal-badge" style="background:#ea580c15;color:#ea580c;border:1px solid #ea580c30">籌碼回補</span> <span class="signal-badge" style="background:#0ea5e915;color:#0ea5e9;border:1px solid #0ea5e930">新進榜</span> <span class="signal-badge" style="background:#7c3aed15;color:#7c3aed;border:1px solid #7c3aed30">事件驅動</span> <span class="signal-badge" style="background:#be123c15;color:#be123c;border:1px solid #be123c30">高波動警示</span></td>
+                </tr>
+                <tr data-signals=",籌碼回補,新進榜,事件驅動,高波動警示," data-wow="4.27">
+                    <td class="rk">6</td>
+                    <td class="rd rc-new">NEW</td>
+                    <td><strong>8096</strong></td>
+                    <td>擎亞</td>
+                    <td><span class="mkt-tag">上櫃</span></td>
+                    <td class="ind">電子通路業</td>
+                    <td class="pr">155.5</td>
+                    <td class="cg up">+17.36%</td>
+                    <td class="pt">61.15%</td>
+                    <td class="cg up">+4.27%</td>
+                    <td></td>
+                    <td class="tags"><span class="signal-badge" style="background:#ea580c15;color:#ea580c;border:1px solid #ea580c30">籌碼回補</span> <span class="signal-badge" style="background:#0ea5e915;color:#0ea5e9;border:1px solid #0ea5e930">新進榜</span> <span class="signal-badge" style="background:#7c3aed15;color:#7c3aed;border:1px solid #7c3aed30">事件驅動</span> <span class="signal-badge" style="background:#be123c15;color:#be123c;border:1px solid #be123c30">高波動警示</span></td>
+                </tr>
+                <tr data-signals=",籌碼回補,新進榜,事件驅動," data-wow="4.2">
+                    <td class="rk">7</td>
+                    <td class="rd rc-new">NEW</td>
+                    <td><strong>5351</strong></td>
+                    <td>鈺創</td>
+                    <td><span class="mkt-tag">上櫃</span></td>
+                    <td class="ind">半導體業</td>
+                    <td class="pr">94.0</td>
+                    <td class="cg up">+5.98%</td>
+                    <td class="pt">41.13%</td>
+                    <td class="cg up">+4.20%</td>
+                    <td></td>
+                    <td class="tags"><span class="signal-badge" style="background:#ea580c15;color:#ea580c;border:1px solid #ea580c30">籌碼回補</span> <span class="signal-badge" style="background:#0ea5e915;color:#0ea5e9;border:1px solid #0ea5e930">新進榜</span> <span class="signal-badge" style="background:#7c3aed15;color:#7c3aed;border:1px solid #7c3aed30">事件驅動</span></td>
+                </tr>
+                <tr data-signals=",連增3,內外共振,高波動警示," data-wow="4.05">
+                    <td class="rk">8</td>
+                    <td class="rd rc-up">↑4</td>
                     <td><strong>3550</strong></td>
                     <td>聯穎</td>
                     <td><span class="mkt-tag">上市</span></td>
                     <td class="ind">電子零組件業</td>
-                    <td class="pr">29.1</td>
-                    <td class="cg up">+20.79%</td>
-                    <td class="pt">55.26%</td>
-                    <td class="cg up">+3.42%</td>
-                    <td><span class="streak-badge">↑2週</span></td>
-                    <td class="tags"><span class="signal-badge" style="background:#be123c15;color:#be123c;border:1px solid #be123c30">高波動警示</span></td>
-                </tr>
-                <tr data-signals=",連增3,內外共振,高波動警示," data-wow="3.39">
-                    <td class="rk">13</td>
-                    <td class="rd rc-down">↓9</td>
-                    <td><strong>3147</strong></td>
-                    <td>大綜</td>
-                    <td><span class="mkt-tag">上櫃</span></td>
-                    <td class="ind">資訊服務業</td>
-                    <td class="pr">338.0</td>
-                    <td class="cg up">+18.80%</td>
-                    <td class="pt">69.02%</td>
-                    <td class="cg up">+3.39%</td>
+                    <td class="pr">37.2</td>
+                    <td class="cg up">+28.23%</td>
+                    <td class="pt">59.31%</td>
+                    <td class="cg up">+4.05%</td>
                     <td><span class="streak-badge">↑3週</span></td>
                     <td class="tags"><span class="signal-badge" style="background:#64748b15;color:#64748b;border:1px solid #64748b30">連增3</span> <span class="signal-badge" style="background:#0891b215;color:#0891b2;border:1px solid #0891b230">內外共振</span> <span class="signal-badge" style="background:#be123c15;color:#be123c;border:1px solid #be123c30">高波動警示</span></td>
                 </tr>
-                <tr data-signals=",籌碼回補,新進榜,事件驅動,高波動警示," data-wow="3.28">
-                    <td class="rk">14</td>
+                <tr data-signals=",籌碼回補,新進榜,事件驅動,高波動警示," data-wow="3.92">
+                    <td class="rk">9</td>
                     <td class="rd rc-new">NEW</td>
-                    <td><strong>7749</strong></td>
-                    <td>意騰-KY</td>
+                    <td><strong>6269</strong></td>
+                    <td>台郡</td>
                     <td><span class="mkt-tag">上市</span></td>
-                    <td class="ind">半導體業</td>
-                    <td class="pr">505.0</td>
-                    <td class="cg up">+8.60%</td>
-                    <td class="pt">60.60%</td>
-                    <td class="cg up">+3.28%</td>
+                    <td class="ind">電子零組件業</td>
+                    <td class="pr">79.6</td>
+                    <td class="cg up">+10.10%</td>
+                    <td class="pt">43.22%</td>
+                    <td class="cg up">+3.92%</td>
                     <td></td>
                     <td class="tags"><span class="signal-badge" style="background:#ea580c15;color:#ea580c;border:1px solid #ea580c30">籌碼回補</span> <span class="signal-badge" style="background:#0ea5e915;color:#0ea5e9;border:1px solid #0ea5e930">新進榜</span> <span class="signal-badge" style="background:#7c3aed15;color:#7c3aed;border:1px solid #7c3aed30">事件驅動</span> <span class="signal-badge" style="background:#be123c15;color:#be123c;border:1px solid #be123c30">高波動警示</span></td>
                 </tr>
-                <tr data-signals=",籌碼回補,新進榜,高波動警示," data-wow="2.86">
+                <tr data-signals=",籌碼回補,新進榜,事件驅動,高波動警示," data-wow="3.65">
+                    <td class="rk">10</td>
+                    <td class="rd rc-new">NEW</td>
+                    <td><strong>3041</strong></td>
+                    <td>揚智</td>
+                    <td><span class="mkt-tag">上市</span></td>
+                    <td class="ind">半導體業</td>
+                    <td class="pr">28.1</td>
+                    <td class="cg up">+14.66%</td>
+                    <td class="pt">33.36%</td>
+                    <td class="cg up">+3.65%</td>
+                    <td></td>
+                    <td class="tags"><span class="signal-badge" style="background:#ea580c15;color:#ea580c;border:1px solid #ea580c30">籌碼回補</span> <span class="signal-badge" style="background:#0ea5e915;color:#0ea5e9;border:1px solid #0ea5e930">新進榜</span> <span class="signal-badge" style="background:#7c3aed15;color:#7c3aed;border:1px solid #7c3aed30">事件驅動</span> <span class="signal-badge" style="background:#be123c15;color:#be123c;border:1px solid #be123c30">高波動警示</span></td>
+                </tr>
+                <tr data-signals=",連增3,加速,新進榜,內外共振,高波動警示," data-wow="3.53">
+                    <td class="rk">11</td>
+                    <td class="rd rc-new">NEW</td>
+                    <td><strong>6693</strong></td>
+                    <td>廣閎科</td>
+                    <td><span class="mkt-tag">上櫃</span></td>
+                    <td class="ind">半導體業</td>
+                    <td class="pr">215.0</td>
+                    <td class="cg up">+27.22%</td>
+                    <td class="pt">55.94%</td>
+                    <td class="cg up">+3.53%</td>
+                    <td><span class="streak-badge">↑4週</span></td>
+                    <td class="tags"><span class="signal-badge" style="background:#64748b15;color:#64748b;border:1px solid #64748b30">連增3</span> <span class="signal-badge" style="background:#dc262615;color:#dc2626;border:1px solid #dc262630">加速</span> <span class="signal-badge" style="background:#0ea5e915;color:#0ea5e9;border:1px solid #0ea5e930">新進榜</span> <span class="signal-badge" style="background:#0891b215;color:#0891b2;border:1px solid #0891b230">內外共振</span> <span class="signal-badge" style="background:#be123c15;color:#be123c;border:1px solid #be123c30">高波動警示</span></td>
+                </tr>
+                <tr data-signals=",籌碼回補,新進榜,事件驅動," data-wow="3.44">
+                    <td class="rk">12</td>
+                    <td class="rd rc-new">NEW</td>
+                    <td><strong>2399</strong></td>
+                    <td>映泰</td>
+                    <td><span class="mkt-tag">上市</span></td>
+                    <td class="ind">電腦及週邊設備業</td>
+                    <td class="pr">48.0</td>
+                    <td class="cg up">+0.84%</td>
+                    <td class="pt">41.82%</td>
+                    <td class="cg up">+3.44%</td>
+                    <td></td>
+                    <td class="tags"><span class="signal-badge" style="background:#ea580c15;color:#ea580c;border:1px solid #ea580c30">籌碼回補</span> <span class="signal-badge" style="background:#0ea5e915;color:#0ea5e9;border:1px solid #0ea5e930">新進榜</span> <span class="signal-badge" style="background:#7c3aed15;color:#7c3aed;border:1px solid #7c3aed30">事件驅動</span></td>
+                </tr>
+                <tr data-signals=",theme:矽晶圓/碳化矽,連增5,連增3,加速,新進榜,內外共振,高波動警示," data-wow="3.39">
+                    <td class="rk">13</td>
+                    <td class="rd rc-new">NEW</td>
+                    <td><strong>6182</strong></td>
+                    <td>合晶</td>
+                    <td><span class="mkt-tag">上櫃</span></td>
+                    <td class="ind">半導體業</td>
+                    <td class="pr">120.0</td>
+                    <td class="cg up">+34.98%</td>
+                    <td class="pt">46.65%</td>
+                    <td class="cg up">+3.39%</td>
+                    <td><span class="streak-badge">↑5週</span></td>
+                    <td class="tags"><span class="signal-badge" style="background:#64748b15;color:#64748b;border:1px solid #64748b30">連增5</span> <span class="signal-badge" style="background:#64748b15;color:#64748b;border:1px solid #64748b30">連增3</span> <span class="signal-badge" style="background:#dc262615;color:#dc2626;border:1px solid #dc262630">加速</span> <span class="signal-badge" style="background:#0ea5e915;color:#0ea5e9;border:1px solid #0ea5e930">新進榜</span> <span class="signal-badge" style="background:#0891b215;color:#0891b2;border:1px solid #0891b230">內外共振</span> <span class="signal-badge" style="background:#be123c15;color:#be123c;border:1px solid #be123c30">高波動警示</span></td>
+                </tr>
+                <tr data-signals=",籌碼回補,新進榜,事件驅動,高波動警示," data-wow="3.38">
+                    <td class="rk">14</td>
+                    <td class="rd rc-new">NEW</td>
+                    <td><strong>6742</strong></td>
+                    <td>澤米</td>
+                    <td><span class="mkt-tag">上市</span></td>
+                    <td class="ind">光電業</td>
+                    <td class="pr">69.0</td>
+                    <td class="cg up">+30.68%</td>
+                    <td class="pt">45.38%</td>
+                    <td class="cg up">+3.38%</td>
+                    <td></td>
+                    <td class="tags"><span class="signal-badge" style="background:#ea580c15;color:#ea580c;border:1px solid #ea580c30">籌碼回補</span> <span class="signal-badge" style="background:#0ea5e915;color:#0ea5e9;border:1px solid #0ea5e930">新進榜</span> <span class="signal-badge" style="background:#7c3aed15;color:#7c3aed;border:1px solid #7c3aed30">事件驅動</span> <span class="signal-badge" style="background:#be123c15;color:#be123c;border:1px solid #be123c30">高波動警示</span></td>
+                </tr>
+                <tr data-signals=",籌碼回補,新進榜,事件驅動,高波動警示," data-wow="3.34">
                     <td class="rk">15</td>
                     <td class="rd rc-new">NEW</td>
-                    <td><strong>5410</strong></td>
-                    <td>國眾</td>
+                    <td><strong>6127</strong></td>
+                    <td>九豪</td>
                     <td><span class="mkt-tag">上櫃</span></td>
-                    <td class="ind">資訊服務業</td>
-                    <td class="pr">45.6</td>
-                    <td class="cg up">+13.98%</td>
-                    <td class="pt">41.52%</td>
-                    <td class="cg up">+2.86%</td>
+                    <td class="ind">電子零組件業</td>
+                    <td class="pr">84.4</td>
+                    <td class="cg up">+11.20%</td>
+                    <td class="pt">30.51%</td>
+                    <td class="cg up">+3.34%</td>
                     <td></td>
-                    <td class="tags"><span class="signal-badge" style="background:#ea580c15;color:#ea580c;border:1px solid #ea580c30">籌碼回補</span> <span class="signal-badge" style="background:#0ea5e915;color:#0ea5e9;border:1px solid #0ea5e930">新進榜</span> <span class="signal-badge" style="background:#be123c15;color:#be123c;border:1px solid #be123c30">高波動警示</span></td>
+                    <td class="tags"><span class="signal-badge" style="background:#ea580c15;color:#ea580c;border:1px solid #ea580c30">籌碼回補</span> <span class="signal-badge" style="background:#0ea5e915;color:#0ea5e9;border:1px solid #0ea5e930">新進榜</span> <span class="signal-badge" style="background:#7c3aed15;color:#7c3aed;border:1px solid #7c3aed30">事件驅動</span> <span class="signal-badge" style="background:#be123c15;color:#be123c;border:1px solid #be123c30">高波動警示</span></td>
                 </tr>
-                <tr data-signals=",籌碼回補,新進榜,高波動警示," data-wow="2.85">
+                <tr data-signals=",籌碼回補,新進榜,事件驅動,高波動警示," data-wow="3.15">
                     <td class="rk">16</td>
                     <td class="rd rc-new">NEW</td>
-                    <td><strong>2484</strong></td>
-                    <td>希華</td>
+                    <td><strong>2455</strong></td>
+                    <td>全新</td>
                     <td><span class="mkt-tag">上市</span></td>
-                    <td class="ind">電子零組件業</td>
-                    <td class="pr">66.7</td>
-                    <td class="cg up">+26.33%</td>
-                    <td class="pt">31.88%</td>
-                    <td class="cg up">+2.85%</td>
+                    <td class="ind">通信網路業</td>
+                    <td class="pr">416.0</td>
+                    <td class="cg up">+18.18%</td>
+                    <td class="pt">59.20%</td>
+                    <td class="cg up">+3.15%</td>
                     <td></td>
-                    <td class="tags"><span class="signal-badge" style="background:#ea580c15;color:#ea580c;border:1px solid #ea580c30">籌碼回補</span> <span class="signal-badge" style="background:#0ea5e915;color:#0ea5e9;border:1px solid #0ea5e930">新進榜</span> <span class="signal-badge" style="background:#be123c15;color:#be123c;border:1px solid #be123c30">高波動警示</span></td>
+                    <td class="tags"><span class="signal-badge" style="background:#ea580c15;color:#ea580c;border:1px solid #ea580c30">籌碼回補</span> <span class="signal-badge" style="background:#0ea5e915;color:#0ea5e9;border:1px solid #0ea5e930">新進榜</span> <span class="signal-badge" style="background:#7c3aed15;color:#7c3aed;border:1px solid #7c3aed30">事件驅動</span> <span class="signal-badge" style="background:#be123c15;color:#be123c;border:1px solid #be123c30">高波動警示</span></td>
                 </tr>
-                <tr data-signals=",籌碼回補,新進榜,法人同向," data-wow="2.79">
+                <tr data-signals=",籌碼回補,新進榜,事件驅動,高波動警示," data-wow="3.08">
                     <td class="rk">17</td>
                     <td class="rd rc-new">NEW</td>
-                    <td><strong>3042</strong></td>
-                    <td>晶技</td>
+                    <td><strong>3019</strong></td>
+                    <td>亞光</td>
                     <td><span class="mkt-tag">上市</span></td>
-                    <td class="ind">電子零組件業</td>
-                    <td class="pr">224.5</td>
-                    <td class="cg up">+5.90%</td>
-                    <td class="pt">71.60%</td>
-                    <td class="cg up">+2.79%</td>
+                    <td class="ind">光電業</td>
+                    <td class="pr">160.5</td>
+                    <td class="cg up">+10.31%</td>
+                    <td class="pt">45.47%</td>
+                    <td class="cg up">+3.08%</td>
                     <td></td>
-                    <td class="tags"><span class="signal-badge" style="background:#ea580c15;color:#ea580c;border:1px solid #ea580c30">籌碼回補</span> <span class="signal-badge" style="background:#0ea5e915;color:#0ea5e9;border:1px solid #0ea5e930">新進榜</span> <span class="signal-badge" style="background:#05966915;color:#059669;border:1px solid #05966930">法人同向</span></td>
+                    <td class="tags"><span class="signal-badge" style="background:#ea580c15;color:#ea580c;border:1px solid #ea580c30">籌碼回補</span> <span class="signal-badge" style="background:#0ea5e915;color:#0ea5e9;border:1px solid #0ea5e930">新進榜</span> <span class="signal-badge" style="background:#7c3aed15;color:#7c3aed;border:1px solid #7c3aed30">事件驅動</span> <span class="signal-badge" style="background:#be123c15;color:#be123c;border:1px solid #be123c30">高波動警示</span></td>
                 </tr>
-                <tr data-signals=",theme:被動元件,籌碼回補,新進榜," data-wow="2.72">
+                <tr data-signals=",籌碼回補,新進榜,事件驅動,高波動警示," data-wow="3.03">
                     <td class="rk">18</td>
                     <td class="rd rc-new">NEW</td>
-                    <td><strong>6155</strong></td>
-                    <td>鈞寶</td>
+                    <td><strong>1727</strong></td>
+                    <td>中華化</td>
                     <td><span class="mkt-tag">上市</span></td>
-                    <td class="ind">電子零組件業</td>
-                    <td class="pr">82.0</td>
-                    <td class="cg up">+3.40%</td>
-                    <td class="pt">67.19%</td>
-                    <td class="cg up">+2.72%</td>
+                    <td class="ind">化學工業</td>
+                    <td class="pr">94.1</td>
+                    <td class="cg up">+10.19%</td>
+                    <td class="pt">59.06%</td>
+                    <td class="cg up">+3.03%</td>
                     <td></td>
-                    <td class="tags"><span class="signal-badge" style="background:#ea580c15;color:#ea580c;border:1px solid #ea580c30">籌碼回補</span> <span class="signal-badge" style="background:#0ea5e915;color:#0ea5e9;border:1px solid #0ea5e930">新進榜</span></td>
+                    <td class="tags"><span class="signal-badge" style="background:#ea580c15;color:#ea580c;border:1px solid #ea580c30">籌碼回補</span> <span class="signal-badge" style="background:#0ea5e915;color:#0ea5e9;border:1px solid #0ea5e930">新進榜</span> <span class="signal-badge" style="background:#7c3aed15;color:#7c3aed;border:1px solid #7c3aed30">事件驅動</span> <span class="signal-badge" style="background:#be123c15;color:#be123c;border:1px solid #be123c30">高波動警示</span></td>
                 </tr>
-                <tr data-signals=",連增3,加速,高度集中,新進榜,法人同向," data-wow="2.68">
+                <tr data-signals=",theme:矽晶圓/碳化矽,籌碼回補,新進榜,高波動警示," data-wow="2.91">
                     <td class="rk">19</td>
                     <td class="rd rc-new">NEW</td>
-                    <td><strong>8454</strong></td>
-                    <td>富邦媒</td>
-                    <td><span class="mkt-tag">上市</span></td>
-                    <td class="ind">數位雲端</td>
-                    <td class="pr">356.5</td>
-                    <td class="cg up">+0.99%</td>
-                    <td class="pt">84.82%</td>
-                    <td class="cg up">+2.68%</td>
-                    <td><span class="streak-badge">↑4週</span></td>
-                    <td class="tags"><span class="signal-badge" style="background:#64748b15;color:#64748b;border:1px solid #64748b30">連增3</span> <span class="signal-badge" style="background:#dc262615;color:#dc2626;border:1px solid #dc262630">加速</span> <span class="signal-badge" style="background:#4338ca15;color:#4338ca;border:1px solid #4338ca30">高度集中</span> <span class="signal-badge" style="background:#0ea5e915;color:#0ea5e9;border:1px solid #0ea5e930">新進榜</span> <span class="signal-badge" style="background:#05966915;color:#059669;border:1px solid #05966930">法人同向</span></td>
-                </tr>
-                <tr data-signals=",連增5,連增3,加速,高度集中,新進榜,法人同向,內外共振,流動性風險," data-wow="2.64">
-                    <td class="rk">20</td>
-                    <td class="rd rc-new">NEW</td>
-                    <td><strong>6890</strong></td>
-                    <td>來億-KY</td>
-                    <td><span class="mkt-tag">上市</span></td>
-                    <td class="ind">運動休閒</td>
-                    <td class="pr">256.0</td>
-                    <td class="cg up">+5.57%</td>
-                    <td class="pt">93.48%</td>
-                    <td class="cg up">+2.64%</td>
-                    <td><span class="streak-badge">↑5週</span></td>
-                    <td class="tags"><span class="signal-badge" style="background:#64748b15;color:#64748b;border:1px solid #64748b30">連增5</span> <span class="signal-badge" style="background:#64748b15;color:#64748b;border:1px solid #64748b30">連增3</span> <span class="signal-badge" style="background:#dc262615;color:#dc2626;border:1px solid #dc262630">加速</span> <span class="signal-badge" style="background:#4338ca15;color:#4338ca;border:1px solid #4338ca30">高度集中</span> <span class="signal-badge" style="background:#0ea5e915;color:#0ea5e9;border:1px solid #0ea5e930">新進榜</span> <span class="signal-badge" style="background:#05966915;color:#059669;border:1px solid #05966930">法人同向</span> <span class="signal-badge" style="background:#0891b215;color:#0891b2;border:1px solid #0891b230">內外共振</span> <span class="signal-badge" style="background:#94a3b815;color:#94a3b8;border:1px solid #94a3b830">流動性風險</span></td>
-                </tr>
-                <tr data-signals=",籌碼回補,新進榜,法人同向,高波動警示," data-wow="2.48">
-                    <td class="rk">21</td>
-                    <td class="rd rc-new">NEW</td>
-                    <td><strong>8182</strong></td>
-                    <td>加高</td>
+                    <td><strong>5483</strong></td>
+                    <td>中美晶</td>
                     <td><span class="mkt-tag">上櫃</span></td>
-                    <td class="ind">電子零組件業</td>
-                    <td class="pr">53.6</td>
-                    <td class="cg up">+19.38%</td>
-                    <td class="pt">73.31%</td>
-                    <td class="cg up">+2.48%</td>
-                    <td></td>
-                    <td class="tags"><span class="signal-badge" style="background:#ea580c15;color:#ea580c;border:1px solid #ea580c30">籌碼回補</span> <span class="signal-badge" style="background:#0ea5e915;color:#0ea5e9;border:1px solid #0ea5e930">新進榜</span> <span class="signal-badge" style="background:#05966915;color:#059669;border:1px solid #05966930">法人同向</span> <span class="signal-badge" style="background:#be123c15;color:#be123c;border:1px solid #be123c30">高波動警示</span></td>
-                </tr>
-                <tr data-signals=",籌碼回補,新進榜," data-wow="2.41">
-                    <td class="rk">22</td>
-                    <td class="rd rc-new">NEW</td>
-                    <td><strong>8289</strong></td>
-                    <td>泰藝</td>
-                    <td><span class="mkt-tag">上櫃</span></td>
-                    <td class="ind">電子零組件業</td>
-                    <td class="pr">68.0</td>
-                    <td class="cg up">+0.89%</td>
-                    <td class="pt">53.14%</td>
-                    <td class="cg up">+2.41%</td>
-                    <td></td>
-                    <td class="tags"><span class="signal-badge" style="background:#ea580c15;color:#ea580c;border:1px solid #ea580c30">籌碼回補</span> <span class="signal-badge" style="background:#0ea5e915;color:#0ea5e9;border:1px solid #0ea5e930">新進榜</span></td>
-                </tr>
-                <tr data-signals=",連增3,加速,新進榜,內外共振," data-wow="2.39">
-                    <td class="rk">23</td>
-                    <td class="rd rc-new">NEW</td>
-                    <td><strong>4721</strong></td>
-                    <td>美琪瑪</td>
-                    <td><span class="mkt-tag">上櫃</span></td>
-                    <td class="ind">化學工業</td>
-                    <td class="pr">92.0</td>
-                    <td class="cg up">+3.95%</td>
-                    <td class="pt">41.78%</td>
-                    <td class="cg up">+2.39%</td>
-                    <td><span class="streak-badge">↑4週</span></td>
-                    <td class="tags"><span class="signal-badge" style="background:#64748b15;color:#64748b;border:1px solid #64748b30">連增3</span> <span class="signal-badge" style="background:#dc262615;color:#dc2626;border:1px solid #dc262630">加速</span> <span class="signal-badge" style="background:#0ea5e915;color:#0ea5e9;border:1px solid #0ea5e930">新進榜</span> <span class="signal-badge" style="background:#0891b215;color:#0891b2;border:1px solid #0891b230">內外共振</span></td>
-                </tr>
-                <tr data-signals=",籌碼回補,新進榜,高波動警示," data-wow="2.27">
-                    <td class="rk">24</td>
-                    <td class="rd rc-new">NEW</td>
-                    <td><strong>3152</strong></td>
-                    <td>璟德</td>
-                    <td><span class="mkt-tag">上櫃</span></td>
-                    <td class="ind">通信網路業</td>
-                    <td class="pr">221.0</td>
-                    <td class="cg up">+23.46%</td>
-                    <td class="pt">61.70%</td>
-                    <td class="cg up">+2.27%</td>
+                    <td class="ind">半導體業</td>
+                    <td class="pr">181.0</td>
+                    <td class="cg up">+13.84%</td>
+                    <td class="pt">65.88%</td>
+                    <td class="cg up">+2.91%</td>
                     <td></td>
                     <td class="tags"><span class="signal-badge" style="background:#ea580c15;color:#ea580c;border:1px solid #ea580c30">籌碼回補</span> <span class="signal-badge" style="background:#0ea5e915;color:#0ea5e9;border:1px solid #0ea5e930">新進榜</span> <span class="signal-badge" style="background:#be123c15;color:#be123c;border:1px solid #be123c30">高波動警示</span></td>
                 </tr>
-                <tr data-signals=",籌碼回補,新進榜," data-wow="2.19">
-                    <td class="rk">25</td>
+                <tr data-signals=",theme:記憶體,籌碼回補,高度集中,新進榜,法人同向,高波動警示," data-wow="2.87">
+                    <td class="rk">20</td>
                     <td class="rd rc-new">NEW</td>
-                    <td><strong>3004</strong></td>
-                    <td>豐達科</td>
+                    <td><strong>2344</strong></td>
+                    <td>華邦電</td>
                     <td><span class="mkt-tag">上市</span></td>
-                    <td class="ind">鋼鐵工業</td>
-                    <td class="pr">133.5</td>
-                    <td class="cg up">+2.69%</td>
-                    <td class="pt">63.48%</td>
-                    <td class="cg up">+2.19%</td>
+                    <td class="ind">半導體業</td>
+                    <td class="pr">218.5</td>
+                    <td class="cg up">+27.03%</td>
+                    <td class="pt">76.49%</td>
+                    <td class="cg up">+2.87%</td>
                     <td></td>
-                    <td class="tags"><span class="signal-badge" style="background:#ea580c15;color:#ea580c;border:1px solid #ea580c30">籌碼回補</span> <span class="signal-badge" style="background:#0ea5e915;color:#0ea5e9;border:1px solid #0ea5e930">新進榜</span></td>
+                    <td class="tags"><span class="signal-badge" style="background:#ea580c15;color:#ea580c;border:1px solid #ea580c30">籌碼回補</span> <span class="signal-badge" style="background:#4338ca15;color:#4338ca;border:1px solid #4338ca30">高度集中</span> <span class="signal-badge" style="background:#0ea5e915;color:#0ea5e9;border:1px solid #0ea5e930">新進榜</span> <span class="signal-badge" style="background:#05966915;color:#059669;border:1px solid #05966930">法人同向</span> <span class="signal-badge" style="background:#be123c15;color:#be123c;border:1px solid #be123c30">高波動警示</span></td>
+                </tr>
+                <tr data-signals=",籌碼回補,新進榜,高波動警示," data-wow="2.87">
+                    <td class="rk">21</td>
+                    <td class="rd rc-new">NEW</td>
+                    <td><strong>6202</strong></td>
+                    <td>盛群</td>
+                    <td><span class="mkt-tag">上市</span></td>
+                    <td class="ind">半導體業</td>
+                    <td class="pr">67.0</td>
+                    <td class="cg up">+12.79%</td>
+                    <td class="pt">42.73%</td>
+                    <td class="cg up">+2.87%</td>
+                    <td></td>
+                    <td class="tags"><span class="signal-badge" style="background:#ea580c15;color:#ea580c;border:1px solid #ea580c30">籌碼回補</span> <span class="signal-badge" style="background:#0ea5e915;color:#0ea5e9;border:1px solid #0ea5e930">新進榜</span> <span class="signal-badge" style="background:#be123c15;color:#be123c;border:1px solid #be123c30">高波動警示</span></td>
+                </tr>
+                <tr data-signals=",籌碼回補,新進榜,高波動警示," data-wow="2.84">
+                    <td class="rk">22</td>
+                    <td class="rd rc-new">NEW</td>
+                    <td><strong>2489</strong></td>
+                    <td>瑞軒</td>
+                    <td><span class="mkt-tag">上市</span></td>
+                    <td class="ind">光電業</td>
+                    <td class="pr">48.1</td>
+                    <td class="cg up">+15.61%</td>
+                    <td class="pt">37.71%</td>
+                    <td class="cg up">+2.84%</td>
+                    <td></td>
+                    <td class="tags"><span class="signal-badge" style="background:#ea580c15;color:#ea580c;border:1px solid #ea580c30">籌碼回補</span> <span class="signal-badge" style="background:#0ea5e915;color:#0ea5e9;border:1px solid #0ea5e930">新進榜</span> <span class="signal-badge" style="background:#be123c15;color:#be123c;border:1px solid #be123c30">高波動警示</span></td>
+                </tr>
+                <tr data-signals=",籌碼回補,新進榜,高波動警示," data-wow="2.76">
+                    <td class="rk">23</td>
+                    <td class="rd rc-new">NEW</td>
+                    <td><strong>4513</strong></td>
+                    <td>福裕</td>
+                    <td><span class="mkt-tag">上櫃</span></td>
+                    <td class="ind">電機機械</td>
+                    <td class="pr">17.4</td>
+                    <td class="cg up">+11.86%</td>
+                    <td class="pt">60.95%</td>
+                    <td class="cg up">+2.76%</td>
+                    <td></td>
+                    <td class="tags"><span class="signal-badge" style="background:#ea580c15;color:#ea580c;border:1px solid #ea580c30">籌碼回補</span> <span class="signal-badge" style="background:#0ea5e915;color:#0ea5e9;border:1px solid #0ea5e930">新進榜</span> <span class="signal-badge" style="background:#be123c15;color:#be123c;border:1px solid #be123c30">高波動警示</span></td>
+                </tr>
+                <tr data-signals=",新進榜,高波動警示," data-wow="2.67">
+                    <td class="rk">24</td>
+                    <td class="rd rc-new">NEW</td>
+                    <td><strong>3094</strong></td>
+                    <td>聯傑</td>
+                    <td><span class="mkt-tag">上市</span></td>
+                    <td class="ind">半導體業</td>
+                    <td class="pr">38.2</td>
+                    <td class="cg up">+18.97%</td>
+                    <td class="pt">27.32%</td>
+                    <td class="cg up">+2.67%</td>
+                    <td></td>
+                    <td class="tags"><span class="signal-badge" style="background:#0ea5e915;color:#0ea5e9;border:1px solid #0ea5e930">新進榜</span> <span class="signal-badge" style="background:#be123c15;color:#be123c;border:1px solid #be123c30">高波動警示</span></td>
+                </tr>
+                <tr data-signals=",theme:被動元件,連增3,法人同向,內外共振,高波動警示," data-wow="2.66">
+                    <td class="rk">25</td>
+                    <td class="rd rc-up">↑4</td>
+                    <td><strong>2478</strong></td>
+                    <td>大毅</td>
+                    <td><span class="mkt-tag">上市</span></td>
+                    <td class="ind">電子零組件業</td>
+                    <td class="pr">234.0</td>
+                    <td class="cg up">+36.44%</td>
+                    <td class="pt">72.99%</td>
+                    <td class="cg up">+2.66%</td>
+                    <td><span class="streak-badge">↑3週</span></td>
+                    <td class="tags"><span class="signal-badge" style="background:#64748b15;color:#64748b;border:1px solid #64748b30">連增3</span> <span class="signal-badge" style="background:#05966915;color:#059669;border:1px solid #05966930">法人同向</span> <span class="signal-badge" style="background:#0891b215;color:#0891b2;border:1px solid #0891b230">內外共振</span> <span class="signal-badge" style="background:#be123c15;color:#be123c;border:1px solid #be123c30">高波動警示</span></td>
                 </tr>
                     </tbody>
                 </table>
@@ -1385,14 +1381,14 @@
         </div>
 
 <footer class="footer">
-    <p>📅 更新: 2026-06-13 | 來源: Norway 台灣集保 (norway.twsthr.info/StockHolders.aspx)</p>
+    <p>📅 更新: 2026-06-20 | 來源: Norway 台灣集保 (norway.twsthr.info/StockHolders.aspx)</p>
     <p>⚠️ 僅供研究參考</p>
 </footer>
 
 <script>
 // ===== 散點圖數據 =====
-const scatterDataAll = [{"code": "3441", "name": "聯一光", "bh_pct": 39.29, "wow": 7.49, "threshold": "200"}, {"code": "5328", "name": "華容", "bh_pct": 48.86, "wow": 5.86, "threshold": "200"}, {"code": "2413", "name": "環科", "bh_pct": 65.66, "wow": 5.72, "threshold": "200"}, {"code": "6174", "name": "安��", "bh_pct": 69.35, "wow": 5.58, "threshold": "200"}, {"code": "4741", "name": "泓瀚", "bh_pct": 64.28, "wow": 5.41, "threshold": "200"}, {"code": "6695", "name": "芯鼎", "bh_pct": 51.67, "wow": 4.21, "threshold": "200"}, {"code": "3213", "name": "茂訊", "bh_pct": 33.44, "wow": 4.16, "threshold": "200"}, {"code": "2241", "name": "艾姆勒", "bh_pct": 50.04, "wow": 3.87, "threshold": "200"}, {"code": "4542", "name": "科嶠", "bh_pct": 65.52, "wow": 3.69, "threshold": "200"}, {"code": "8021", "name": "尖點", "bh_pct": 58.69, "wow": 3.58, "threshold": "200"}, {"code": "2243", "name": "宏旭-KY", "bh_pct": 70.19, "wow": 3.42, "threshold": "200"}, {"code": "3550", "name": "聯穎", "bh_pct": 55.26, "wow": 3.42, "threshold": "200"}, {"code": "3147", "name": "大綜", "bh_pct": 69.02, "wow": 3.39, "threshold": "200"}, {"code": "7749", "name": "意騰-KY", "bh_pct": 60.6, "wow": 3.28, "threshold": "200"}, {"code": "5410", "name": "國眾", "bh_pct": 41.52, "wow": 2.86, "threshold": "200"}, {"code": "2484", "name": "希華", "bh_pct": 31.88, "wow": 2.85, "threshold": "200"}, {"code": "3042", "name": "晶技", "bh_pct": 71.6, "wow": 2.79, "threshold": "200"}, {"code": "6155", "name": "鈞寶", "bh_pct": 67.19, "wow": 2.72, "threshold": "200"}, {"code": "8454", "name": "富邦媒", "bh_pct": 84.82, "wow": 2.68, "threshold": "200"}, {"code": "6890", "name": "來億-KY", "bh_pct": 93.48, "wow": 2.64, "threshold": "200"}, {"code": "8182", "name": "加高", "bh_pct": 73.31, "wow": 2.48, "threshold": "200"}, {"code": "8289", "name": "泰藝", "bh_pct": 53.14, "wow": 2.41, "threshold": "200"}, {"code": "4721", "name": "美琪瑪", "bh_pct": 41.78, "wow": 2.39, "threshold": "200"}, {"code": "3152", "name": "璟德", "bh_pct": 61.7, "wow": 2.27, "threshold": "200"}, {"code": "3004", "name": "豐達科", "bh_pct": 63.48, "wow": 2.19, "threshold": "200"}, {"code": "3441", "name": "聯一光", "bh_pct": 39.29, "wow": 7.49, "threshold": "400"}, {"code": "5328", "name": "華容", "bh_pct": 48.86, "wow": 5.86, "threshold": "400"}, {"code": "2413", "name": "環科", "bh_pct": 65.66, "wow": 5.72, "threshold": "400"}, {"code": "6174", "name": "安��", "bh_pct": 69.35, "wow": 5.58, "threshold": "400"}, {"code": "4741", "name": "泓瀚", "bh_pct": 64.28, "wow": 5.41, "threshold": "400"}, {"code": "6695", "name": "芯鼎", "bh_pct": 51.67, "wow": 4.21, "threshold": "400"}, {"code": "3213", "name": "茂訊", "bh_pct": 33.44, "wow": 4.16, "threshold": "400"}, {"code": "2241", "name": "艾姆勒", "bh_pct": 50.04, "wow": 3.87, "threshold": "400"}, {"code": "4542", "name": "科嶠", "bh_pct": 65.52, "wow": 3.69, "threshold": "400"}, {"code": "8021", "name": "尖點", "bh_pct": 58.69, "wow": 3.58, "threshold": "400"}, {"code": "2243", "name": "宏旭-KY", "bh_pct": 70.19, "wow": 3.42, "threshold": "400"}, {"code": "3550", "name": "聯穎", "bh_pct": 55.26, "wow": 3.42, "threshold": "400"}, {"code": "3147", "name": "大綜", "bh_pct": 69.02, "wow": 3.39, "threshold": "400"}, {"code": "7749", "name": "意騰-KY", "bh_pct": 60.6, "wow": 3.28, "threshold": "400"}, {"code": "5410", "name": "國眾", "bh_pct": 41.52, "wow": 2.86, "threshold": "400"}, {"code": "2484", "name": "希華", "bh_pct": 31.88, "wow": 2.85, "threshold": "400"}, {"code": "3042", "name": "晶技", "bh_pct": 71.6, "wow": 2.79, "threshold": "400"}, {"code": "6155", "name": "鈞寶", "bh_pct": 67.19, "wow": 2.72, "threshold": "400"}, {"code": "8454", "name": "富邦媒", "bh_pct": 84.82, "wow": 2.68, "threshold": "400"}, {"code": "6890", "name": "來億-KY", "bh_pct": 93.48, "wow": 2.64, "threshold": "400"}, {"code": "8182", "name": "加高", "bh_pct": 73.31, "wow": 2.48, "threshold": "400"}, {"code": "8289", "name": "泰藝", "bh_pct": 53.14, "wow": 2.41, "threshold": "400"}, {"code": "4721", "name": "美琪瑪", "bh_pct": 41.78, "wow": 2.39, "threshold": "400"}, {"code": "3152", "name": "璟德", "bh_pct": 61.7, "wow": 2.27, "threshold": "400"}, {"code": "3004", "name": "豐達科", "bh_pct": 63.48, "wow": 2.19, "threshold": "400"}, {"code": "3441", "name": "聯一光", "bh_pct": 39.29, "wow": 7.49, "threshold": "1000"}, {"code": "5328", "name": "華容", "bh_pct": 48.86, "wow": 5.86, "threshold": "1000"}, {"code": "2413", "name": "環科", "bh_pct": 65.66, "wow": 5.72, "threshold": "1000"}, {"code": "6174", "name": "安��", "bh_pct": 69.35, "wow": 5.58, "threshold": "1000"}, {"code": "4741", "name": "泓瀚", "bh_pct": 64.28, "wow": 5.41, "threshold": "1000"}, {"code": "6695", "name": "芯鼎", "bh_pct": 51.67, "wow": 4.21, "threshold": "1000"}, {"code": "3213", "name": "茂訊", "bh_pct": 33.44, "wow": 4.16, "threshold": "1000"}, {"code": "2241", "name": "艾姆勒", "bh_pct": 50.04, "wow": 3.87, "threshold": "1000"}, {"code": "4542", "name": "科嶠", "bh_pct": 65.52, "wow": 3.69, "threshold": "1000"}, {"code": "8021", "name": "尖點", "bh_pct": 58.69, "wow": 3.58, "threshold": "1000"}, {"code": "2243", "name": "宏旭-KY", "bh_pct": 70.19, "wow": 3.42, "threshold": "1000"}, {"code": "3550", "name": "聯穎", "bh_pct": 55.26, "wow": 3.42, "threshold": "1000"}, {"code": "3147", "name": "大綜", "bh_pct": 69.02, "wow": 3.39, "threshold": "1000"}, {"code": "7749", "name": "意騰-KY", "bh_pct": 60.6, "wow": 3.28, "threshold": "1000"}, {"code": "5410", "name": "國眾", "bh_pct": 41.52, "wow": 2.86, "threshold": "1000"}, {"code": "2484", "name": "希華", "bh_pct": 31.88, "wow": 2.85, "threshold": "1000"}, {"code": "3042", "name": "晶技", "bh_pct": 71.6, "wow": 2.79, "threshold": "1000"}, {"code": "6155", "name": "鈞寶", "bh_pct": 67.19, "wow": 2.72, "threshold": "1000"}, {"code": "8454", "name": "富邦媒", "bh_pct": 84.82, "wow": 2.68, "threshold": "1000"}, {"code": "6890", "name": "來億-KY", "bh_pct": 93.48, "wow": 2.64, "threshold": "1000"}, {"code": "8182", "name": "加高", "bh_pct": 73.31, "wow": 2.48, "threshold": "1000"}, {"code": "8289", "name": "泰藝", "bh_pct": 53.14, "wow": 2.41, "threshold": "1000"}, {"code": "4721", "name": "美琪瑪", "bh_pct": 41.78, "wow": 2.39, "threshold": "1000"}, {"code": "3152", "name": "璟德", "bh_pct": 61.7, "wow": 2.27, "threshold": "1000"}, {"code": "3004", "name": "豐達科", "bh_pct": 63.48, "wow": 2.19, "threshold": "1000"}];
-const scatterDataUp = [{"code": "3441", "name": "聯一光", "bh_pct": 39.29, "wow": 7.49, "threshold": "200"}, {"code": "5328", "name": "華容", "bh_pct": 48.86, "wow": 5.86, "threshold": "200"}, {"code": "2413", "name": "環科", "bh_pct": 65.66, "wow": 5.72, "threshold": "200"}, {"code": "6174", "name": "安��", "bh_pct": 69.35, "wow": 5.58, "threshold": "200"}, {"code": "4741", "name": "泓瀚", "bh_pct": 64.28, "wow": 5.41, "threshold": "200"}, {"code": "6695", "name": "芯鼎", "bh_pct": 51.67, "wow": 4.21, "threshold": "200"}, {"code": "3213", "name": "茂訊", "bh_pct": 33.44, "wow": 4.16, "threshold": "200"}, {"code": "2241", "name": "艾姆勒", "bh_pct": 50.04, "wow": 3.87, "threshold": "200"}, {"code": "4542", "name": "科嶠", "bh_pct": 65.52, "wow": 3.69, "threshold": "200"}, {"code": "8021", "name": "尖點", "bh_pct": 58.69, "wow": 3.58, "threshold": "200"}, {"code": "2243", "name": "宏旭-KY", "bh_pct": 70.19, "wow": 3.42, "threshold": "200"}, {"code": "3550", "name": "聯穎", "bh_pct": 55.26, "wow": 3.42, "threshold": "200"}, {"code": "3147", "name": "大綜", "bh_pct": 69.02, "wow": 3.39, "threshold": "200"}, {"code": "7749", "name": "意騰-KY", "bh_pct": 60.6, "wow": 3.28, "threshold": "200"}, {"code": "5410", "name": "國眾", "bh_pct": 41.52, "wow": 2.86, "threshold": "200"}, {"code": "2484", "name": "希華", "bh_pct": 31.88, "wow": 2.85, "threshold": "200"}, {"code": "3042", "name": "晶技", "bh_pct": 71.6, "wow": 2.79, "threshold": "200"}, {"code": "6155", "name": "鈞寶", "bh_pct": 67.19, "wow": 2.72, "threshold": "200"}, {"code": "8454", "name": "富邦媒", "bh_pct": 84.82, "wow": 2.68, "threshold": "200"}, {"code": "6890", "name": "來億-KY", "bh_pct": 93.48, "wow": 2.64, "threshold": "200"}, {"code": "8182", "name": "加高", "bh_pct": 73.31, "wow": 2.48, "threshold": "200"}, {"code": "8289", "name": "泰藝", "bh_pct": 53.14, "wow": 2.41, "threshold": "200"}, {"code": "4721", "name": "美琪瑪", "bh_pct": 41.78, "wow": 2.39, "threshold": "200"}, {"code": "3152", "name": "璟德", "bh_pct": 61.7, "wow": 2.27, "threshold": "200"}, {"code": "3004", "name": "豐達科", "bh_pct": 63.48, "wow": 2.19, "threshold": "200"}, {"code": "3441", "name": "聯一光", "bh_pct": 39.29, "wow": 7.49, "threshold": "400"}, {"code": "5328", "name": "華容", "bh_pct": 48.86, "wow": 5.86, "threshold": "400"}, {"code": "2413", "name": "環科", "bh_pct": 65.66, "wow": 5.72, "threshold": "400"}, {"code": "6174", "name": "安��", "bh_pct": 69.35, "wow": 5.58, "threshold": "400"}, {"code": "4741", "name": "泓瀚", "bh_pct": 64.28, "wow": 5.41, "threshold": "400"}, {"code": "6695", "name": "芯鼎", "bh_pct": 51.67, "wow": 4.21, "threshold": "400"}, {"code": "3213", "name": "茂訊", "bh_pct": 33.44, "wow": 4.16, "threshold": "400"}, {"code": "2241", "name": "艾姆勒", "bh_pct": 50.04, "wow": 3.87, "threshold": "400"}, {"code": "4542", "name": "科嶠", "bh_pct": 65.52, "wow": 3.69, "threshold": "400"}, {"code": "8021", "name": "尖點", "bh_pct": 58.69, "wow": 3.58, "threshold": "400"}, {"code": "2243", "name": "宏旭-KY", "bh_pct": 70.19, "wow": 3.42, "threshold": "400"}, {"code": "3550", "name": "聯穎", "bh_pct": 55.26, "wow": 3.42, "threshold": "400"}, {"code": "3147", "name": "大綜", "bh_pct": 69.02, "wow": 3.39, "threshold": "400"}, {"code": "7749", "name": "意騰-KY", "bh_pct": 60.6, "wow": 3.28, "threshold": "400"}, {"code": "5410", "name": "國眾", "bh_pct": 41.52, "wow": 2.86, "threshold": "400"}, {"code": "2484", "name": "希華", "bh_pct": 31.88, "wow": 2.85, "threshold": "400"}, {"code": "3042", "name": "晶技", "bh_pct": 71.6, "wow": 2.79, "threshold": "400"}, {"code": "6155", "name": "鈞寶", "bh_pct": 67.19, "wow": 2.72, "threshold": "400"}, {"code": "8454", "name": "富邦媒", "bh_pct": 84.82, "wow": 2.68, "threshold": "400"}, {"code": "6890", "name": "來億-KY", "bh_pct": 93.48, "wow": 2.64, "threshold": "400"}, {"code": "8182", "name": "加高", "bh_pct": 73.31, "wow": 2.48, "threshold": "400"}, {"code": "8289", "name": "泰藝", "bh_pct": 53.14, "wow": 2.41, "threshold": "400"}, {"code": "4721", "name": "美琪瑪", "bh_pct": 41.78, "wow": 2.39, "threshold": "400"}, {"code": "3152", "name": "璟德", "bh_pct": 61.7, "wow": 2.27, "threshold": "400"}, {"code": "3004", "name": "豐達科", "bh_pct": 63.48, "wow": 2.19, "threshold": "400"}, {"code": "3441", "name": "聯一光", "bh_pct": 39.29, "wow": 7.49, "threshold": "1000"}, {"code": "5328", "name": "華容", "bh_pct": 48.86, "wow": 5.86, "threshold": "1000"}, {"code": "2413", "name": "環科", "bh_pct": 65.66, "wow": 5.72, "threshold": "1000"}, {"code": "6174", "name": "安��", "bh_pct": 69.35, "wow": 5.58, "threshold": "1000"}, {"code": "4741", "name": "泓瀚", "bh_pct": 64.28, "wow": 5.41, "threshold": "1000"}, {"code": "6695", "name": "芯鼎", "bh_pct": 51.67, "wow": 4.21, "threshold": "1000"}, {"code": "3213", "name": "茂訊", "bh_pct": 33.44, "wow": 4.16, "threshold": "1000"}, {"code": "2241", "name": "艾姆勒", "bh_pct": 50.04, "wow": 3.87, "threshold": "1000"}, {"code": "4542", "name": "科嶠", "bh_pct": 65.52, "wow": 3.69, "threshold": "1000"}, {"code": "8021", "name": "尖點", "bh_pct": 58.69, "wow": 3.58, "threshold": "1000"}, {"code": "2243", "name": "宏旭-KY", "bh_pct": 70.19, "wow": 3.42, "threshold": "1000"}, {"code": "3550", "name": "聯穎", "bh_pct": 55.26, "wow": 3.42, "threshold": "1000"}, {"code": "3147", "name": "大綜", "bh_pct": 69.02, "wow": 3.39, "threshold": "1000"}, {"code": "7749", "name": "意騰-KY", "bh_pct": 60.6, "wow": 3.28, "threshold": "1000"}, {"code": "5410", "name": "國眾", "bh_pct": 41.52, "wow": 2.86, "threshold": "1000"}, {"code": "2484", "name": "希華", "bh_pct": 31.88, "wow": 2.85, "threshold": "1000"}, {"code": "3042", "name": "晶技", "bh_pct": 71.6, "wow": 2.79, "threshold": "1000"}, {"code": "6155", "name": "鈞寶", "bh_pct": 67.19, "wow": 2.72, "threshold": "1000"}, {"code": "8454", "name": "富邦媒", "bh_pct": 84.82, "wow": 2.68, "threshold": "1000"}, {"code": "6890", "name": "來億-KY", "bh_pct": 93.48, "wow": 2.64, "threshold": "1000"}, {"code": "8182", "name": "加高", "bh_pct": 73.31, "wow": 2.48, "threshold": "1000"}, {"code": "8289", "name": "泰藝", "bh_pct": 53.14, "wow": 2.41, "threshold": "1000"}, {"code": "4721", "name": "美琪瑪", "bh_pct": 41.78, "wow": 2.39, "threshold": "1000"}, {"code": "3152", "name": "璟德", "bh_pct": 61.7, "wow": 2.27, "threshold": "1000"}, {"code": "3004", "name": "豐達科", "bh_pct": 63.48, "wow": 2.19, "threshold": "1000"}];
+const scatterDataAll = [{"code": "8261", "name": "富鼎", "bh_pct": 53.43, "wow": 7.71, "threshold": "200"}, {"code": "6207", "name": "雷科", "bh_pct": 33.83, "wow": 6.5, "threshold": "200"}, {"code": "3060", "name": "銘異", "bh_pct": 32.92, "wow": 6.28, "threshold": "200"}, {"code": "6432", "name": "今展科", "bh_pct": 46.24, "wow": 6.08, "threshold": "200"}, {"code": "8088", "name": "品安", "bh_pct": 29.39, "wow": 5.14, "threshold": "200"}, {"code": "8096", "name": "擎亞", "bh_pct": 61.15, "wow": 4.27, "threshold": "200"}, {"code": "5351", "name": "鈺創", "bh_pct": 41.13, "wow": 4.2, "threshold": "200"}, {"code": "3550", "name": "聯穎", "bh_pct": 59.31, "wow": 4.05, "threshold": "200"}, {"code": "6269", "name": "台郡", "bh_pct": 43.22, "wow": 3.92, "threshold": "200"}, {"code": "3041", "name": "揚智", "bh_pct": 33.36, "wow": 3.65, "threshold": "200"}, {"code": "6693", "name": "廣閎科", "bh_pct": 55.94, "wow": 3.53, "threshold": "200"}, {"code": "2399", "name": "映泰", "bh_pct": 41.82, "wow": 3.44, "threshold": "200"}, {"code": "6182", "name": "合晶", "bh_pct": 46.65, "wow": 3.39, "threshold": "200"}, {"code": "6742", "name": "澤米", "bh_pct": 45.38, "wow": 3.38, "threshold": "200"}, {"code": "6127", "name": "九豪", "bh_pct": 30.51, "wow": 3.34, "threshold": "200"}, {"code": "2455", "name": "全新", "bh_pct": 59.2, "wow": 3.15, "threshold": "200"}, {"code": "3019", "name": "亞光", "bh_pct": 45.47, "wow": 3.08, "threshold": "200"}, {"code": "1727", "name": "中華化", "bh_pct": 59.06, "wow": 3.03, "threshold": "200"}, {"code": "5483", "name": "中美晶", "bh_pct": 65.88, "wow": 2.91, "threshold": "200"}, {"code": "2344", "name": "華邦電", "bh_pct": 76.49, "wow": 2.87, "threshold": "200"}, {"code": "6202", "name": "盛群", "bh_pct": 42.73, "wow": 2.87, "threshold": "200"}, {"code": "2489", "name": "瑞軒", "bh_pct": 37.71, "wow": 2.84, "threshold": "200"}, {"code": "4513", "name": "福裕", "bh_pct": 60.95, "wow": 2.76, "threshold": "200"}, {"code": "3094", "name": "聯傑", "bh_pct": 27.32, "wow": 2.67, "threshold": "200"}, {"code": "2478", "name": "大毅", "bh_pct": 72.99, "wow": 2.66, "threshold": "200"}, {"code": "8261", "name": "富鼎", "bh_pct": 53.43, "wow": 7.71, "threshold": "400"}, {"code": "6207", "name": "雷科", "bh_pct": 33.83, "wow": 6.5, "threshold": "400"}, {"code": "3060", "name": "銘異", "bh_pct": 32.92, "wow": 6.28, "threshold": "400"}, {"code": "6432", "name": "今展科", "bh_pct": 46.24, "wow": 6.08, "threshold": "400"}, {"code": "8088", "name": "品安", "bh_pct": 29.39, "wow": 5.14, "threshold": "400"}, {"code": "8096", "name": "擎亞", "bh_pct": 61.15, "wow": 4.27, "threshold": "400"}, {"code": "5351", "name": "鈺創", "bh_pct": 41.13, "wow": 4.2, "threshold": "400"}, {"code": "3550", "name": "聯穎", "bh_pct": 59.31, "wow": 4.05, "threshold": "400"}, {"code": "6269", "name": "台郡", "bh_pct": 43.22, "wow": 3.92, "threshold": "400"}, {"code": "3041", "name": "揚智", "bh_pct": 33.36, "wow": 3.65, "threshold": "400"}, {"code": "6693", "name": "廣閎科", "bh_pct": 55.94, "wow": 3.53, "threshold": "400"}, {"code": "2399", "name": "映泰", "bh_pct": 41.82, "wow": 3.44, "threshold": "400"}, {"code": "6182", "name": "合晶", "bh_pct": 46.65, "wow": 3.39, "threshold": "400"}, {"code": "6742", "name": "澤米", "bh_pct": 45.38, "wow": 3.38, "threshold": "400"}, {"code": "6127", "name": "九豪", "bh_pct": 30.51, "wow": 3.34, "threshold": "400"}, {"code": "2455", "name": "全新", "bh_pct": 59.2, "wow": 3.15, "threshold": "400"}, {"code": "3019", "name": "亞光", "bh_pct": 45.47, "wow": 3.08, "threshold": "400"}, {"code": "1727", "name": "中華化", "bh_pct": 59.06, "wow": 3.03, "threshold": "400"}, {"code": "5483", "name": "中美晶", "bh_pct": 65.88, "wow": 2.91, "threshold": "400"}, {"code": "2344", "name": "華邦電", "bh_pct": 76.49, "wow": 2.87, "threshold": "400"}, {"code": "6202", "name": "盛群", "bh_pct": 42.73, "wow": 2.87, "threshold": "400"}, {"code": "2489", "name": "瑞軒", "bh_pct": 37.71, "wow": 2.84, "threshold": "400"}, {"code": "4513", "name": "福裕", "bh_pct": 60.95, "wow": 2.76, "threshold": "400"}, {"code": "3094", "name": "聯傑", "bh_pct": 27.32, "wow": 2.67, "threshold": "400"}, {"code": "2478", "name": "大毅", "bh_pct": 72.99, "wow": 2.66, "threshold": "400"}, {"code": "8261", "name": "富鼎", "bh_pct": 53.43, "wow": 7.71, "threshold": "1000"}, {"code": "6207", "name": "雷科", "bh_pct": 33.83, "wow": 6.5, "threshold": "1000"}, {"code": "3060", "name": "銘異", "bh_pct": 32.92, "wow": 6.28, "threshold": "1000"}, {"code": "6432", "name": "今展科", "bh_pct": 46.24, "wow": 6.08, "threshold": "1000"}, {"code": "8088", "name": "品安", "bh_pct": 29.39, "wow": 5.14, "threshold": "1000"}, {"code": "8096", "name": "擎亞", "bh_pct": 61.15, "wow": 4.27, "threshold": "1000"}, {"code": "5351", "name": "鈺創", "bh_pct": 41.13, "wow": 4.2, "threshold": "1000"}, {"code": "3550", "name": "聯穎", "bh_pct": 59.31, "wow": 4.05, "threshold": "1000"}, {"code": "6269", "name": "台郡", "bh_pct": 43.22, "wow": 3.92, "threshold": "1000"}, {"code": "3041", "name": "揚智", "bh_pct": 33.36, "wow": 3.65, "threshold": "1000"}, {"code": "6693", "name": "廣閎科", "bh_pct": 55.94, "wow": 3.53, "threshold": "1000"}, {"code": "2399", "name": "映泰", "bh_pct": 41.82, "wow": 3.44, "threshold": "1000"}, {"code": "6182", "name": "合晶", "bh_pct": 46.65, "wow": 3.39, "threshold": "1000"}, {"code": "6742", "name": "澤米", "bh_pct": 45.38, "wow": 3.38, "threshold": "1000"}, {"code": "6127", "name": "九豪", "bh_pct": 30.51, "wow": 3.34, "threshold": "1000"}, {"code": "2455", "name": "全新", "bh_pct": 59.2, "wow": 3.15, "threshold": "1000"}, {"code": "3019", "name": "亞光", "bh_pct": 45.47, "wow": 3.08, "threshold": "1000"}, {"code": "1727", "name": "中華化", "bh_pct": 59.06, "wow": 3.03, "threshold": "1000"}, {"code": "5483", "name": "中美晶", "bh_pct": 65.88, "wow": 2.91, "threshold": "1000"}, {"code": "2344", "name": "華邦電", "bh_pct": 76.49, "wow": 2.87, "threshold": "1000"}, {"code": "6202", "name": "盛群", "bh_pct": 42.73, "wow": 2.87, "threshold": "1000"}, {"code": "2489", "name": "瑞軒", "bh_pct": 37.71, "wow": 2.84, "threshold": "1000"}, {"code": "4513", "name": "福裕", "bh_pct": 60.95, "wow": 2.76, "threshold": "1000"}, {"code": "3094", "name": "聯傑", "bh_pct": 27.32, "wow": 2.67, "threshold": "1000"}, {"code": "2478", "name": "大毅", "bh_pct": 72.99, "wow": 2.66, "threshold": "1000"}];
+const scatterDataUp = [{"code": "8261", "name": "富鼎", "bh_pct": 53.43, "wow": 7.71, "threshold": "200"}, {"code": "6207", "name": "雷科", "bh_pct": 33.83, "wow": 6.5, "threshold": "200"}, {"code": "3060", "name": "銘異", "bh_pct": 32.92, "wow": 6.28, "threshold": "200"}, {"code": "6432", "name": "今展科", "bh_pct": 46.24, "wow": 6.08, "threshold": "200"}, {"code": "8088", "name": "品安", "bh_pct": 29.39, "wow": 5.14, "threshold": "200"}, {"code": "8096", "name": "擎亞", "bh_pct": 61.15, "wow": 4.27, "threshold": "200"}, {"code": "5351", "name": "鈺創", "bh_pct": 41.13, "wow": 4.2, "threshold": "200"}, {"code": "3550", "name": "聯穎", "bh_pct": 59.31, "wow": 4.05, "threshold": "200"}, {"code": "6269", "name": "台郡", "bh_pct": 43.22, "wow": 3.92, "threshold": "200"}, {"code": "3041", "name": "揚智", "bh_pct": 33.36, "wow": 3.65, "threshold": "200"}, {"code": "6693", "name": "廣閎科", "bh_pct": 55.94, "wow": 3.53, "threshold": "200"}, {"code": "2399", "name": "映泰", "bh_pct": 41.82, "wow": 3.44, "threshold": "200"}, {"code": "6182", "name": "合晶", "bh_pct": 46.65, "wow": 3.39, "threshold": "200"}, {"code": "6742", "name": "澤米", "bh_pct": 45.38, "wow": 3.38, "threshold": "200"}, {"code": "6127", "name": "九豪", "bh_pct": 30.51, "wow": 3.34, "threshold": "200"}, {"code": "2455", "name": "全新", "bh_pct": 59.2, "wow": 3.15, "threshold": "200"}, {"code": "3019", "name": "亞光", "bh_pct": 45.47, "wow": 3.08, "threshold": "200"}, {"code": "1727", "name": "中華化", "bh_pct": 59.06, "wow": 3.03, "threshold": "200"}, {"code": "5483", "name": "中美晶", "bh_pct": 65.88, "wow": 2.91, "threshold": "200"}, {"code": "2344", "name": "華邦電", "bh_pct": 76.49, "wow": 2.87, "threshold": "200"}, {"code": "6202", "name": "盛群", "bh_pct": 42.73, "wow": 2.87, "threshold": "200"}, {"code": "2489", "name": "瑞軒", "bh_pct": 37.71, "wow": 2.84, "threshold": "200"}, {"code": "4513", "name": "福裕", "bh_pct": 60.95, "wow": 2.76, "threshold": "200"}, {"code": "3094", "name": "聯傑", "bh_pct": 27.32, "wow": 2.67, "threshold": "200"}, {"code": "2478", "name": "大毅", "bh_pct": 72.99, "wow": 2.66, "threshold": "200"}, {"code": "8261", "name": "富鼎", "bh_pct": 53.43, "wow": 7.71, "threshold": "400"}, {"code": "6207", "name": "雷科", "bh_pct": 33.83, "wow": 6.5, "threshold": "400"}, {"code": "3060", "name": "銘異", "bh_pct": 32.92, "wow": 6.28, "threshold": "400"}, {"code": "6432", "name": "今展科", "bh_pct": 46.24, "wow": 6.08, "threshold": "400"}, {"code": "8088", "name": "品安", "bh_pct": 29.39, "wow": 5.14, "threshold": "400"}, {"code": "8096", "name": "擎亞", "bh_pct": 61.15, "wow": 4.27, "threshold": "400"}, {"code": "5351", "name": "鈺創", "bh_pct": 41.13, "wow": 4.2, "threshold": "400"}, {"code": "3550", "name": "聯穎", "bh_pct": 59.31, "wow": 4.05, "threshold": "400"}, {"code": "6269", "name": "台郡", "bh_pct": 43.22, "wow": 3.92, "threshold": "400"}, {"code": "3041", "name": "揚智", "bh_pct": 33.36, "wow": 3.65, "threshold": "400"}, {"code": "6693", "name": "廣閎科", "bh_pct": 55.94, "wow": 3.53, "threshold": "400"}, {"code": "2399", "name": "映泰", "bh_pct": 41.82, "wow": 3.44, "threshold": "400"}, {"code": "6182", "name": "合晶", "bh_pct": 46.65, "wow": 3.39, "threshold": "400"}, {"code": "6742", "name": "澤米", "bh_pct": 45.38, "wow": 3.38, "threshold": "400"}, {"code": "6127", "name": "九豪", "bh_pct": 30.51, "wow": 3.34, "threshold": "400"}, {"code": "2455", "name": "全新", "bh_pct": 59.2, "wow": 3.15, "threshold": "400"}, {"code": "3019", "name": "亞光", "bh_pct": 45.47, "wow": 3.08, "threshold": "400"}, {"code": "1727", "name": "中華化", "bh_pct": 59.06, "wow": 3.03, "threshold": "400"}, {"code": "5483", "name": "中美晶", "bh_pct": 65.88, "wow": 2.91, "threshold": "400"}, {"code": "2344", "name": "華邦電", "bh_pct": 76.49, "wow": 2.87, "threshold": "400"}, {"code": "6202", "name": "盛群", "bh_pct": 42.73, "wow": 2.87, "threshold": "400"}, {"code": "2489", "name": "瑞軒", "bh_pct": 37.71, "wow": 2.84, "threshold": "400"}, {"code": "4513", "name": "福裕", "bh_pct": 60.95, "wow": 2.76, "threshold": "400"}, {"code": "3094", "name": "聯傑", "bh_pct": 27.32, "wow": 2.67, "threshold": "400"}, {"code": "2478", "name": "大毅", "bh_pct": 72.99, "wow": 2.66, "threshold": "400"}, {"code": "8261", "name": "富鼎", "bh_pct": 53.43, "wow": 7.71, "threshold": "1000"}, {"code": "6207", "name": "雷科", "bh_pct": 33.83, "wow": 6.5, "threshold": "1000"}, {"code": "3060", "name": "銘異", "bh_pct": 32.92, "wow": 6.28, "threshold": "1000"}, {"code": "6432", "name": "今展科", "bh_pct": 46.24, "wow": 6.08, "threshold": "1000"}, {"code": "8088", "name": "品安", "bh_pct": 29.39, "wow": 5.14, "threshold": "1000"}, {"code": "8096", "name": "擎亞", "bh_pct": 61.15, "wow": 4.27, "threshold": "1000"}, {"code": "5351", "name": "鈺創", "bh_pct": 41.13, "wow": 4.2, "threshold": "1000"}, {"code": "3550", "name": "聯穎", "bh_pct": 59.31, "wow": 4.05, "threshold": "1000"}, {"code": "6269", "name": "台郡", "bh_pct": 43.22, "wow": 3.92, "threshold": "1000"}, {"code": "3041", "name": "揚智", "bh_pct": 33.36, "wow": 3.65, "threshold": "1000"}, {"code": "6693", "name": "廣閎科", "bh_pct": 55.94, "wow": 3.53, "threshold": "1000"}, {"code": "2399", "name": "映泰", "bh_pct": 41.82, "wow": 3.44, "threshold": "1000"}, {"code": "6182", "name": "合晶", "bh_pct": 46.65, "wow": 3.39, "threshold": "1000"}, {"code": "6742", "name": "澤米", "bh_pct": 45.38, "wow": 3.38, "threshold": "1000"}, {"code": "6127", "name": "九豪", "bh_pct": 30.51, "wow": 3.34, "threshold": "1000"}, {"code": "2455", "name": "全新", "bh_pct": 59.2, "wow": 3.15, "threshold": "1000"}, {"code": "3019", "name": "亞光", "bh_pct": 45.47, "wow": 3.08, "threshold": "1000"}, {"code": "1727", "name": "中華化", "bh_pct": 59.06, "wow": 3.03, "threshold": "1000"}, {"code": "5483", "name": "中美晶", "bh_pct": 65.88, "wow": 2.91, "threshold": "1000"}, {"code": "2344", "name": "華邦電", "bh_pct": 76.49, "wow": 2.87, "threshold": "1000"}, {"code": "6202", "name": "盛群", "bh_pct": 42.73, "wow": 2.87, "threshold": "1000"}, {"code": "2489", "name": "瑞軒", "bh_pct": 37.71, "wow": 2.84, "threshold": "1000"}, {"code": "4513", "name": "福裕", "bh_pct": 60.95, "wow": 2.76, "threshold": "1000"}, {"code": "3094", "name": "聯傑", "bh_pct": 27.32, "wow": 2.67, "threshold": "1000"}, {"code": "2478", "name": "大毅", "bh_pct": 72.99, "wow": 2.66, "threshold": "1000"}];
 const scatterDataDown = [];
 
 let scatterChart = null;
