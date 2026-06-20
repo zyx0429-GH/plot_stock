@@ -61,7 +61,7 @@ Chart.defaults.scale.ticks.color = 'var(--text-muted)';
 </head>"""
 
     def _nav(self, active=""):
-        items = [("index.html","📊 首頁"),("watchlist.html","⭐ 自選"),("etf_00981a.html","📈 00981A"),("big_holder_top25.html","👑 大戶TOP25"),("sector.html","🔄 族群輪動"),("weekly_ranking.html","📅 週排行")]
+        items = [("index.html","📊 首頁"),("watchlist.html","⭐ 自選"),("etf_00981a.html","📈 00981A"),("etf_00982a.html","📈 00982A"),("sector.html","🔄 族群輪動"),("weekly_ranking.html","📅 週排行")]
         html = '<nav class="navbar"><a href="index.html" class="nav-brand">🔥 跟隨大戶選股站</a><span style="color:var(--text-secondary);">|</span><div class="nav-links">'
         for href, text in items:
             if active and active in href:
@@ -158,7 +158,7 @@ Chart.defaults.scale.ticks.color = 'var(--text-muted)';
             big_holder_pct = s.get("big_holder_pct") if s.get("big_holder_pct") is not None else 0.0
             big_holder_change = s.get("big_holder_change") if s.get("big_holder_change") is not None else 0.0
             score = s.get("score") if s.get("score") is not None else 0
-            lines.append(f'<tr onclick="location.href=\'stock_{s.get("stock_id","-")}.html\'" class="clickable"><td><strong>{s.get("stock_id","-")}</strong></td><td>{s.get("stock_name","-")}</td><td>{close:.2f}</td><td class="{{"up" if change_pct>0 else "down"}}">{change_pct:+.2f}%</td><td class="{{"buy" if foreign_net>0 else "sell"}}">{foreign_net:,}</td><td class="{{"buy" if trust_net>0 else "sell"}}">{trust_net:,}</td><td class="highlight">{big_holder_pct:.2f}%</td><td class="{{"up" if big_holder_change>0 else "down"}}">{big_holder_change:+.2f}%</td><td class="{tc}">{trend}</td><td><span class="score">{score}</span></td></tr>')
+            lines.append(f'<tr onclick="location.href=\'stock_{s.get("stock_id","-")}.html\'" class="clickable"><td><strong>{s.get("stock_id","-")}</strong></td><td>{s.get("stock_name","-")}</td><td>{close:.2f}</td><td class="{"up" if change_pct>0 else "down"}">{change_pct:+.2f}%</td><td class="{"buy" if foreign_net>0 else "sell"}">{foreign_net:,}</td><td class="{"buy" if trust_net>0 else "sell"}">{trust_net:,}</td><td class="highlight">{big_holder_pct:.2f}%</td><td class="{"up" if big_holder_change>0 else "down"}">{big_holder_change:+.2f}%</td><td class="{tc}">{trend}</td><td><span class="score">{score}</span></td></tr>')
         lines.append('</tbody></table></div></div>')
 
         # 三重認證榜單 (00981A 或 00982A + 大戶增倉 + 法人買超)
@@ -175,7 +175,7 @@ Chart.defaults.scale.ticks.color = 'var(--text-muted)';
             big_holder_pct = s.get("big_holder_pct") if s.get("big_holder_pct") is not None else 0.0
             big_holder_change = s.get("big_holder_change") if s.get("big_holder_change") is not None else 0.0
             score = s.get("score") if s.get("score") is not None else 0
-            lines.append(f'<tr onclick="location.href=\'stock_{s.get("stock_id","-")}.html\'" class="clickable"><td><strong>{s.get("stock_id","-")}</strong></td><td>{s.get("stock_name","-")}</td><td>{close:.2f}</td><td class="{{"up" if change_pct>0 else "down"}}">{change_pct:+.2f}%</td><td class="{{"buy" if foreign_net>0 else "sell"}}">{foreign_net:,}</td><td class="{{"buy" if trust_net>0 else "sell"}}">{trust_net:,}</td><td class="highlight">{big_holder_pct:.2f}%</td><td class="{{"up" if big_holder_change>0 else "down"}}">{big_holder_change:+.2f}%</td><td class="{tc}">{trend}</td><td><span class="score">{score}</span></td></tr>')
+            lines.append(f'<tr onclick="location.href=\'stock_{s.get("stock_id","-")}.html\'" class="clickable"><td><strong>{s.get("stock_id","-")}</strong></td><td>{s.get("stock_name","-")}</td><td>{close:.2f}</td><td class="{"up" if change_pct>0 else "down"}">{change_pct:+.2f}%</td><td class="{"buy" if foreign_net>0 else "sell"}">{foreign_net:,}</td><td class="{"buy" if trust_net>0 else "sell"}">{trust_net:,}</td><td class="highlight">{big_holder_pct:.2f}%</td><td class="{"up" if big_holder_change>0 else "down"}">{big_holder_change:+.2f}%</td><td class="{tc}">{trend}</td><td><span class="score">{score}</span></td></tr>')
         lines.append('</tbody></table></div></div>')
 
         # 外資買超 / 賣超榜單（單日數據）
