@@ -274,7 +274,7 @@ def generate_html(data):
 <div class="wr-header">
     <h1>📅 大戶籌碼週排行榜</h1>
     <div class="meta-bar">
-        <span class="badge source">📡 來源: fortune-fred.github.io/plot_stock</span>
+        <span class="badge source">📡 來源: norway.twsthr.info/StockHolders.aspx</span>
         <span class="badge time">📅 更新: {fetched}</span>
         <span class="badge count">📊 共 {sum(td['count'] for td in thresholds.values())} 檔</span>
         <span style="color:var(--text-secondary);">｜排序: 大戶週增減% (由高到低)</span>

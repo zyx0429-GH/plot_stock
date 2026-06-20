@@ -614,58 +614,6 @@ Chart.defaults.scale.ticks.color = 'var(--text-muted)';
         from config import PASSIVE_COMPONENT
         return self._generate_table_page("被動元件族群｜智董籌碼選股站", "🔌 被動元件核心股", "passive_component", PASSIVE_COMPONENT)
 
-    def generate_big_holder_top25(self):
-        """生成大戶400 TOP25 專屬頁面"""
-        from config import BIG_HOLDER_TOP25
-        
-        screened = self.data.get("screened", [])
-        page_data = [s for s in screened if s["stock_id"] in BIG_HOLDER_TOP25]
-        # 按大戶%排序
-        page_data.sort(key=lambda x: x.get("big_holder_pct", 0), reverse=True)
-        
-        lines = []
-        lines.append(self._head("大戶400 TOP25｜智董籌碼選股站"))
-        lines.append('<body>')
-        lines.append(self._nav("big_holder_top25"))
-        lines.append(f'<div class="container"><div class="header-info"><h1>👑 大戶400 TOP25</h1><p class="subtitle">每周六更新｜大戶持股比例最高的 25 檔個股｜共 {len(page_data)} 檔</p></div>')
-        lines.append('<div class="card"><div class="table-responsive"><table class="data-table"><thead><tr><th>排名</th><th>代號</th><th>名稱</th><th>收盤價</th><th>漲跌%</th><th>大戶%</th><th>週增減</th><th>外資淨買</th><th>投信淨買</th><th>券資比</th><th>趨勢</th><th>評分</th></tr></thead><tbody>')
-        for i, s in enumerate(page_data, 1):
-            tech = s.get("technical", {}) or {}
-            trend = tech.get("trend", "")
-            tc = "bull" if "多頭" in trend else "bear" if "空頭" in trend else "neutral"
-            close = s.get("close") if s.get("close") is not None else 0.0
-            change_pct = s.get("change_pct") if s.get("change_pct") is not None else 0.0
-            big_holder_pct = s.get("big_holder_pct") if s.get("big_holder_pct") is not None else 0.0
-            big_holder_change = s.get("big_holder_change") if s.get("big_holder_change") is not None else 0.0
-            foreign_net = s.get("foreign_net") if s.get("foreign_net") is not None else 0
-            trust_net = s.get("trust_net") if s.get("trust_net") is not None else 0
-            score = s.get("score") if s.get("score") is not None else 0
-            margin = s.get("margin", {}) or {}
-            ratio = margin.get("ratio", "-") if margin else "-"
-            lines.append(
-                f'<tr onclick="location.href=\'stock_{s.get("stock_id", "-")}.html\'" class="clickable">'
-                f'<td>{i}</td>'
-                f'<td><strong>{s.get("stock_id", "-")}</strong></td>'
-                f'<td>{s.get("stock_name", "-")}</td>'
-                f'<td>{close:.2f}</td>'
-                f'<td class="{"up" if change_pct>0 else "down"}">{change_pct:+.2f}%</td>'
-                f'<td class="highlight">{big_holder_pct:.2f}%</td>'
-                f'<td class="{"up" if big_holder_change>0 else "down"}">{big_holder_change:+.2f}%</td>'
-                f'<td class="{"buy" if foreign_net>0 else "sell"}">{foreign_net:,}</td>'
-                f'<td class="{"buy" if trust_net>0 else "sell"}">{trust_net:,}</td>'
-                f'<td>{ratio}</td>'
-                f'<td class="{tc}">{trend}</td>'
-                f'<td><span class="score">{score}</span></td></tr>'
-            )
-        lines.append('</tbody></table></div></div></div>')
-        lines.append(self._footer())
-        lines.append('</body></html>')
-        
-        filepath = os.path.join(DOCS_DIR, "big_holder_top25.html")
-        with open(filepath, "w", encoding="utf-8") as f:
-            f.write("".join(lines))
-        print(f"[OK] big_holder_top25: {filepath}")
-        return filepath
 
     def generate_stock_detail(self, stock_id):
         if stock_id not in self.raw_data:
@@ -1203,7 +1151,6 @@ Chart.defaults.scale.ticks.color = 'var(--text-muted)';
         self.generate_watchlist()
         self.generate_etf_00981a()
         self.generate_etf_00982a()
-        self.generate_big_holder_top25()
         self.generate_cross_analysis_page()
         self.generate_sector()
         all_stocks = list(set(WATCHLIST + ETF_00981A_HOLDINGS + ETF_00982A_HOLDINGS))
