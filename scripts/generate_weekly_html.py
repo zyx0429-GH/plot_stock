@@ -303,7 +303,7 @@ def generate_html(data):
 {tables_html}
 
 <footer class="footer">
-    <p>📅 更新: {fetched} | 來源: 籌碼監控大戶系統 (fortune-fred.github.io/plot_stock)</p>
+    <p>📅 更新: {fetched} | 來源: Norway 台灣集保 (norway.twsthr.info/StockHolders.aspx)</p>
     <p>⚠️ 僅供研究參考</p>
 </footer>
 
