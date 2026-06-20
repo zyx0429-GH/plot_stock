@@ -1,0 +1,156 @@
+[
+  {
+    "rank": 1,
+    "stock_code": "1904",
+    "stock_name": "正隆",
+    "is_taiwan50": false,
+    "category": "造紙",
+    "threshold_code": 10,
+    "threshold_shares": 1000,
+    "weekly_changes": {
+      "20260515": 0.48,
+      "20260522": -0.06,
+      "20260529": 0.12,
+      "20260605": 0.53,
+      "20260612": 0.32,
+      "20260618": 0.16
+    },
+    "latest_change": 0.16,
+    "total_change": 1.55,
+    "last_week_hold_pct": 66.14,
+    "close_price": 23.1,
+    "price_change": 0.1
+  },
+  {
+    "rank": 2,
+    "stock_code": "1909",
+    "stock_name": "榮成",
+    "is_taiwan50": false,
+    "category": "造紙",
+    "threshold_code": 30,
+    "threshold_shares": 400,
+    "weekly_changes": {
+      "20260515": 0.01,
+      "20260522": -0.02,
+      "20260529": 0.03,
+      "20260605": 0.1,
+      "20260612": 0.45,
+      "20260618": 0.13
+    },
+    "latest_change": 0.13,
+    "total_change": 0.7,
+    "last_week_hold_pct": 66.89,
+    "close_price": 10.2,
+    "price_change": 0.15
+  },
+  {
+    "rank": 3,
+    "stock_code": "1907",
+    "stock_name": "永豐餘",
+    "is_taiwan50": false,
+    "category": "造紙",
+    "threshold_code": 10,
+    "threshold_shares": 1000,
+    "weekly_changes": {
+      "20260515": -0.01,
+      "20260522": 0.13,
+      "20260529": 0.05,
+      "20260605": 0.15,
+      "20260612": 0.01,
+      "20260618": -0.15
+    },
+    "latest_change": -0.15,
+    "total_change": 0.18,
+    "last_week_hold_pct": 84.18,
+    "close_price": 28.2,
+    "price_change": 0.7
+  },
+  {
+    "rank": 4,
+    "stock_code": "1903",
+    "stock_name": "士紙",
+    "is_taiwan50": false,
+    "category": "造紙",
+    "threshold_code": 10,
+    "threshold_shares": 1000,
+    "weekly_changes": {
+      "20260515": -0.13,
+      "20260522": 0.01,
+      "20260529": -0.14,
+      "20260605": 0.21,
+      "20260612": 0.0,
+      "20260618": -0.04
+    },
+    "latest_change": -0.04,
+    "total_change": -0.09,
+    "last_week_hold_pct": 80.8,
+    "close_price": 48.1,
+    "price_change": 0.25
+  },
+  {
+    "rank": 5,
+    "stock_code": "1906",
+    "stock_name": "寶隆",
+    "is_taiwan50": false,
+    "category": "造紙",
+    "threshold_code": 30,
+    "threshold_shares": 400,
+    "weekly_changes": {
+      "20260515": -0.04,
+      "20260522": 0.02,
+      "20260529": -0.25,
+      "20260605": -0.01,
+      "20260612": 0.1,
+      "20260618": -0.01
+    },
+    "latest_change": -0.01,
+    "total_change": -0.19,
+    "last_week_hold_pct": 74.43,
+    "close_price": 11.45,
+    "price_change": 0.1
+  },
+  {
+    "rank": 6,
+    "stock_code": "1905",
+    "stock_name": "華紙",
+    "is_taiwan50": false,
+    "category": "造紙",
+    "threshold_code": 31,
+    "threshold_shares": 400,
+    "weekly_changes": {
+      "20260515": -0.21,
+      "20260522": -0.34,
+      "20260529": -0.1,
+      "20260605": 0.13,
+      "20260612": -0.34,
+      "20260618": 0.62
+    },
+    "latest_change": 0.62,
+    "total_change": -0.24,
+    "last_week_hold_pct": 71.81,
+    "close_price": 17.1,
+    "price_change": 1.55
+  },
+  {
+    "rank": 7,
+    "stock_code": "6790",
+    "stock_name": "永豐實",
+    "is_taiwan50": false,
+    "category": "造紙",
+    "threshold_code": 30,
+    "threshold_shares": 400,
+    "weekly_changes": {
+      "20260515": 0.02,
+      "20260522": -0.02,
+      "20260529": -0.01,
+      "20260605": -0.25,
+      "20260612": 0.14,
+      "20260618": -0.15
+    },
+    "latest_change": -0.15,
+    "total_change": -0.27,
+    "last_week_hold_pct": 78.57,
+    "close_price": 40.05,
+    "price_change": -0.05
+  }
+]

@@ -1,0 +1,90 @@
+[
+  {
+    "rank": 1,
+    "stock_code": "4304",
+    "stock_name": "勝昱",
+    "is_taiwan50": false,
+    "category": "櫃塑膠",
+    "threshold_code": 30,
+    "threshold_shares": 400,
+    "weekly_changes": {
+      "20260515": 0.0,
+      "20260522": 0.0,
+      "20260529": 0.0,
+      "20260605": 0.04,
+      "20260612": 0.05,
+      "20260618": 0.01
+    },
+    "latest_change": 0.01,
+    "total_change": 0.1,
+    "last_week_hold_pct": 81.92,
+    "close_price": 23.1,
+    "price_change": -0.7
+  },
+  {
+    "rank": 2,
+    "stock_code": "9950",
+    "stock_name": "萬國通",
+    "is_taiwan50": false,
+    "category": "櫃塑膠",
+    "threshold_code": 50,
+    "threshold_shares": 400,
+    "weekly_changes": {
+      "20260515": 0.02,
+      "20260522": -0.29,
+      "20260529": 0.01,
+      "20260605": 0.03,
+      "20260612": 0.07,
+      "20260618": 0.17
+    },
+    "latest_change": 0.17,
+    "total_change": 0.01,
+    "last_week_hold_pct": 83.15,
+    "close_price": 10.55,
+    "price_change": -0.3
+  },
+  {
+    "rank": 3,
+    "stock_code": "4305",
+    "stock_name": "世坤",
+    "is_taiwan50": false,
+    "category": "櫃塑膠",
+    "threshold_code": 32,
+    "threshold_shares": 0,
+    "weekly_changes": {
+      "20260515": 0.0,
+      "20260522": 0.0,
+      "20260529": 0.0,
+      "20260605": 0.0,
+      "20260612": 0.0,
+      "20260618": 0.0
+    },
+    "latest_change": 0.0,
+    "total_change": 0.0,
+    "last_week_hold_pct": 84.75,
+    "close_price": 43.9,
+    "price_change": 0.0
+  },
+  {
+    "rank": 4,
+    "stock_code": "4303",
+    "stock_name": "信立",
+    "is_taiwan50": false,
+    "category": "櫃塑膠",
+    "threshold_code": 31,
+    "threshold_shares": 400,
+    "weekly_changes": {
+      "20260515": -0.74,
+      "20260522": -1.13,
+      "20260529": 0.1,
+      "20260605": 0.06,
+      "20260612": 0.05,
+      "20260618": 0.15
+    },
+    "latest_change": 0.15,
+    "total_change": -1.51,
+    "last_week_hold_pct": 18.94,
+    "close_price": 47.5,
+    "price_change": 0.45
+  }
+]

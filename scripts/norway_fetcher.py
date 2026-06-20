@@ -56,29 +56,21 @@ def fetch_html(url_path: str, params: Optional[Dict] = None) -> str:
     import time
 
     url = f"{BASE_URL}/{url_path}"
-    session = requests.Session()
+
     headers = {
         "User-Agent": (
             "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
             "AppleWebKit/537.36 (KHTML, like Gecko) "
             "Chrome/124.0.0.0 Safari/537.36"
         ),
-        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
+        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
         "Accept-Language": "zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7",
-        "Accept-Encoding": "gzip, deflate, br",
-        "Referer": "https://norway.twsthr.info/",
-        "Connection": "keep-alive",
-        "Sec-Fetch-Dest": "document",
-        "Sec-Fetch-Mode": "navigate",
-        "Sec-Fetch-Site": "same-origin",
-        "Upgrade-Insecure-Requests": "1",
-        "Cache-Control": "max-age=0",
     }
 
     for attempt in range(3):
         try:
-            time.sleep(1.5 * attempt)  # 漸進延遲
-            resp = session.get(url, params=params, headers=headers, timeout=30)
+            time.sleep(1.5 * attempt)
+            resp = requests.get(url, params=params, headers=headers, timeout=30)
             if resp.status_code == 200:
                 resp.encoding = "utf-8"
                 return resp.text
@@ -244,9 +236,12 @@ def fetch_taiwan50():
 
 
 def fetch_all_categories():
-    """抓取所有類別"""
+    """抓取所有類別 (上市 + 上櫃)"""
+    # Norway 类别: 1-40 (上市), 90-140 (上櫃), 199 (其他)
+    all_cids = list(range(1, 41)) + list(range(90, 141)) + [199]
     all_records = []
-    for cid in list(range(1, 41)) + list(range(100, 141)):
+    
+    for cid in all_cids:
         try:
             html = fetch_html("StockHoldersTopWeek.aspx", {"Show": 1, "CID": cid})
             records = parse_top_week(html)
@@ -270,6 +265,11 @@ def fetch_all_categories():
     
     save_data(unique, "all_stocks_weekly.json")
     print(f"[INFO] Total unique stocks: {len(unique)}")
+    
+    # 統計
+    otc_count = sum(1 for r in unique if str(r.get('stock_code', '')).startswith('8'))
+    print(f"[INFO] OTC (8xxx) stocks: {otc_count}")
+    
     return unique
 
 
@@ -278,13 +278,10 @@ if __name__ == "__main__":
     print("Norway.twsthr.info 籌碼數據抓取器")
     print("=" * 50)
     
-    records = fetch_taiwan50()
-    print(f"\n[INFO] Taiwan 50: {len(records)} stocks")
-    for r in records[:5]:
-        print(f"  {r['stock_code']} {r['stock_name']}: "
-              f"持有率={r['last_week_hold_pct']}%, "
-              f"總增減={r['total_change']}%, "
-              f"最新週增減={r['latest_change']}%, "
-              f"門檻={r['threshold_shares']}張, "
-              f"收盤={r['close_price']}, "
-              f"漲跌={r['price_change']}")
+    # 抓取所有類別（包含上市+上櫃）
+    records = fetch_all_categories()
+    print(f"\n[INFO] Total unique stocks: {len(records)}")
+    
+    # 統計上櫃股票數量
+    otc_count = sum(1 for r in records if str(r.get('stock_code', '')).startswith('8'))
+    print(f"[INFO] OTC (8xxx) stocks: {otc_count}")
