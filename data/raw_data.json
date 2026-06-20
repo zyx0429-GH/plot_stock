@@ -7223,7 +7223,7 @@
       "change": 5.0,
       "change_pct": 9.9601593625498,
       "foreign_net": -2381750,
-      "trust_net": 0
+      "trust_net": 5000
     },
     "foreign": [
       {
@@ -7236,9 +7236,9 @@
     "trust": [
       {
         "date": "20260619",
-        "buy": 0,
-        "sell": 0,
-        "net": 0
+        "buy": 168922,
+        "sell": 173922,
+        "net": 5000
       }
     ],
     "margin": [
@@ -8380,7 +8380,7 @@
       "change": -0.1,
       "change_pct": -0.1724137931034483,
       "foreign_net": 202518,
-      "trust_net": 0
+      "trust_net": 13000
     },
     "foreign": [
       {
@@ -8393,9 +8393,9 @@
     "trust": [
       {
         "date": "20260619",
-        "buy": 0,
-        "sell": 0,
-        "net": 0
+        "buy": -68556,
+        "sell": 7000,
+        "net": 13000
       }
     ],
     "margin": [
@@ -9530,7 +9530,7 @@
       "change": -15.0,
       "change_pct": -1.094890510948905,
       "foreign_net": -832415,
-      "trust_net": 311554
+      "trust_net": 32131
     },
     "foreign": [
       {
@@ -9543,9 +9543,9 @@
     "trust": [
       {
         "date": "20260619",
-        "buy": 485000,
-        "sell": 173446,
-        "net": 311554
+        "buy": -35178,
+        "sell": 9293,
+        "net": 32131
       }
     ],
     "margin": [
@@ -24714,7 +24714,7 @@
       "change": 7.5,
       "change_pct": 3.79746835443038,
       "foreign_net": -60228,
-      "trust_net": 21664
+      "trust_net": 0
     },
     "foreign": [
       {
@@ -24727,9 +24727,9 @@
     "trust": [
       {
         "date": "20260619",
-        "buy": 154802,
-        "sell": 80000,
-        "net": 21664
+        "buy": 0,
+        "sell": 0,
+        "net": 0
       }
     ],
     "margin": [
