@@ -63,11 +63,30 @@ class StockScreener:
             dif_series = ema12 - ema26
             dea_series = dif_series.ewm(span=9, adjust=False).mean()
             hist_series = dif_series - dea_series
+            dif_val = dif_series.iloc[-1]
+            dea_val = dea_series.iloc[-1]
+            hist_val = hist_series.iloc[-1]
             macd_data = {
-                "dif": round(dif_series.iloc[-1], 4) if not pd.isna(dif_series.iloc[-1]) else "-",
-                "dea": round(dea_series.iloc[-1], 4) if not pd.isna(dea_series.iloc[-1]) else "-",
-                "hist": round(hist_series.iloc[-1], 4) if not pd.isna(hist_series.iloc[-1]) else "-",
+                "dif": round(dif_val, 4) if not pd.isna(dif_val) else "-",
+                "dea": round(dea_val, 4) if not pd.isna(dea_val) else "-",
+                "hist": round(hist_val, 4) if not pd.isna(hist_val) else "-",
             }
+            # MACD score (0-10)
+            if not (pd.isna(dif_val) or pd.isna(dea_val) or pd.isna(hist_val)):
+                try:
+                    dif_f = float(dif_val)
+                    dea_f = float(dea_val)
+                    hist_f = float(hist_val)
+                    if dif_f > dea_f and hist_f > 0:
+                        macd_data["score"] = 10
+                    elif dif_f < dea_f and hist_f < 0:
+                        macd_data["score"] = 0
+                    else:
+                        macd_data["score"] = 5
+                except (ValueError, TypeError):
+                    macd_data["score"] = "-"
+            else:
+                macd_data["score"] = "-"
 
         # RSI
         delta = close.diff()
@@ -151,7 +170,7 @@ class StockScreener:
         consecutive_buy = all(recent["net"] > 0) if len(recent) >= days else all(df["net"] > 0)
         return consecutive_buy, int(total_net), recent.to_dict("records")
 
-    def check_dual_certified(self, stock_id, info, tech, big_pct, big_change, foreign_consecutive, trust_consecutive):
+    def check_dual_certified(self, stock_id, big_change, foreign_consecutive, trust_consecutive):
         """
         雙重認證篩選 (嚴格版):
         條件1: 在 00981A 成分股清單中
@@ -162,6 +181,32 @@ class StockScreener:
         big_holder_increasing = big_change >= 0.5 if big_change else False
         buying = foreign_consecutive or trust_consecutive
         return is_in_00981a and big_holder_increasing and buying
+
+    def check_dual_certified_982a(self, stock_id, big_change, foreign_consecutive, trust_consecutive):
+        """
+        雙重認證篩選 (00982A):
+        條件1: 在 00982A 成分股清單中
+        條件2: 400大戶近期增倉 (big_holder_change > 0)
+        條件3: 外資連買 or 投信連買
+        """
+        from config import ETF_00982A_HOLDINGS
+        is_in_00982a = stock_id in ETF_00982A_HOLDINGS
+        big_holder_increasing = big_change > 0 if big_change else False
+        buying = foreign_consecutive or trust_consecutive
+        return is_in_00982a and big_holder_increasing and buying
+
+    def check_triple_certified(self, stock_id, big_change, foreign_consecutive, trust_consecutive):
+        """
+        三重認證篩選 (00981A 或 00982A + 大戶增倉 + 法人買超):
+        條件1: 在 00981A 或 00982A 成分股清單中（任一即可）
+        條件2: 400大戶近期增倉 (big_holder_change > 0)
+        條件3: 外資連買 or 投信連買
+        """
+        from config import ETF_00981A_HOLDINGS, ETF_00982A_HOLDINGS
+        is_in_etf = stock_id in ETF_00981A_HOLDINGS or stock_id in ETF_00982A_HOLDINGS
+        big_holder_increasing = big_change > 0 if big_change else False
+        buying = foreign_consecutive or trust_consecutive
+        return is_in_etf and big_holder_increasing and buying
 
     def check_big_holder(self, stock_id):
         """檢查大戶持股 (兼容週報 big_holder_pct / shareholder 新數據 / 舊接口 percent)"""
@@ -374,7 +419,9 @@ class StockScreener:
                 "score": score,
                 "technical": tech,
                 "margin": margin,
-                "dual_certified": self.check_dual_certified(stock_id, info, tech, big_pct, big_change, foreign_consecutive, trust_consecutive),
+                "dual_certified": self.check_dual_certified(stock_id, big_change, foreign_consecutive, trust_consecutive),
+                "dual_certified_982a": self.check_dual_certified_982a(stock_id, big_change, foreign_consecutive, trust_consecutive),
+                "triple_certified": self.check_triple_certified(stock_id, big_change, foreign_consecutive, trust_consecutive),
                 "shareholder": self.raw_data.get(stock_id, {}).get("shareholder", []),
             }
 
@@ -402,6 +449,8 @@ class StockScreener:
         trust_buy = [s for s in screened if s.get("trust_net", 0) > 0]
         bull_stocks = [s for s in screened if s.get("technical", {}).get("trend") in ["短多頭", "多頭排列"]]
         dual_certified = [s for s in screened if s.get("dual_certified", False)]
+        dual_certified_982a = [s for s in screened if s.get("dual_certified_982a", False)]
+        triple_certified = [s for s in screened if s.get("triple_certified", False)]
 
         # 融資異動警示（單日變化超過閾值）
         MARGIN_SPIKE_PCT = self.config.get("margin_spike_pct", 20)
@@ -434,6 +483,8 @@ class StockScreener:
             "trust_buy": trust_buy,
             "bull_stocks": bull_stocks,
             "dual_certified": dual_certified,
+            "dual_certified_982a": dual_certified_982a,
+            "triple_certified": triple_certified,
             # === 新增融資相關 ===
             "margin_spike": margin_spike,
             "margin_top": margin_top,
@@ -472,7 +523,9 @@ class StockScreener:
         print(f"  - Foreign buy: {len(results['foreign_buy'])}")
         print(f"  - Trust buy: {len(results['trust_buy'])}")
         print(f"  - Bull stocks: {len(results['bull_stocks'])}")
-        print(f"  - Dual certified: {len(results['dual_certified'])}")
+        print(f"  - Dual certified (00981A): {len(results['dual_certified'])}")
+        print(f"  - Dual certified (00982A): {len(results['dual_certified_982a'])}")
+        print(f"  - Triple certified: {len(results['triple_certified'])}")
         print(f"  - Margin spike: {len(results['margin_spike'])}")
         print(f"  - Margin top: {len(results['margin_top'])}")
         print(f"  - Short ratio top: {len(results['short_ratio_top'])}")

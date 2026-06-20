@@ -6,7 +6,7 @@
 import json
 import os
 
-from config import SCREEN_CONFIG, DATA_DIR, DOCS_DIR, WATCHLIST, ETF_00981A_HOLDINGS
+from config import SCREEN_CONFIG, DATA_DIR, DOCS_DIR, WATCHLIST, ETF_00981A_HOLDINGS, ETF_00982A_HOLDINGS
 
 
 class HTMLGenerator:
@@ -142,6 +142,40 @@ Chart.defaults.scale.ticks.color = 'var(--text-muted)';
             big_holder_change = s.get("big_holder_change") if s.get("big_holder_change") is not None else 0.0
             score = s.get("score") if s.get("score") is not None else 0
             lines.append(f'<tr onclick="location.href=\'stock_{s.get("stock_id","-")}.html\'" class="clickable"><td><strong>{s.get("stock_id","-")}</strong></td><td>{s.get("stock_name","-")}</td><td>{close:.2f}</td><td class="{"up" if change_pct>0 else "down"}">{change_pct:+.2f}%</td><td class="{"buy" if foreign_net>0 else "sell"}">{foreign_net:,}</td><td class="{"buy" if trust_net>0 else "sell"}">{trust_net:,}</td><td class="highlight">{big_holder_pct:.2f}%</td><td class="{"up" if big_holder_change>0 else "down"}">{big_holder_change:+.2f}%</td><td class="{tc}">{trend}</td><td><span class="score">{score}</span></td></tr>')
+        lines.append('</tbody></table></div></div>')
+
+        # 雙重認證榜單 (00982A)
+        dual_certified_982a = self.data.get("dual_certified_982a", [])
+        lines.append('<div class="card"><h2>🔥 雙重認證榜單 (00982A + 大戶增倉 + 法人買超)</h2><div class="table-responsive"><table class="data-table"><thead><tr><th>代號</th><th>名稱</th><th>收盤價</th><th>漲跌%</th><th>外資淨買</th><th>投信淨買</th><th>大戶%</th><th>週增減</th><th>趨勢</th><th>評分</th></tr></thead><tbody>')
+        for s in dual_certified_982a[:20]:
+            tech = s.get("technical", {}) or {}
+            trend = tech.get("trend", "")
+            tc = "bull" if "多頭" in trend else "bear" if "空頭" in trend else ""
+            close = s.get("close") if s.get("close") is not None else 0.0
+            change_pct = s.get("change_pct") if s.get("change_pct") is not None else 0.0
+            foreign_net = s.get("foreign_net") if s.get("foreign_net") is not None else 0
+            trust_net = s.get("trust_net") if s.get("trust_net") is not None else 0
+            big_holder_pct = s.get("big_holder_pct") if s.get("big_holder_pct") is not None else 0.0
+            big_holder_change = s.get("big_holder_change") if s.get("big_holder_change") is not None else 0.0
+            score = s.get("score") if s.get("score") is not None else 0
+            lines.append(f'<tr onclick="location.href=\'stock_{s.get("stock_id","-")}.html\'" class="clickable"><td><strong>{s.get("stock_id","-")}</strong></td><td>{s.get("stock_name","-")}</td><td>{close:.2f}</td><td class="{{"up" if change_pct>0 else "down"}}">{change_pct:+.2f}%</td><td class="{{"buy" if foreign_net>0 else "sell"}}">{foreign_net:,}</td><td class="{{"buy" if trust_net>0 else "sell"}}">{trust_net:,}</td><td class="highlight">{big_holder_pct:.2f}%</td><td class="{{"up" if big_holder_change>0 else "down"}}">{big_holder_change:+.2f}%</td><td class="{tc}">{trend}</td><td><span class="score">{score}</span></td></tr>')
+        lines.append('</tbody></table></div></div>')
+
+        # 三重認證榜單 (00981A 或 00982A + 大戶增倉 + 法人買超)
+        triple_certified = self.data.get("triple_certified", [])
+        lines.append('<div class="card"><h2>👑 三重認證榜單 (00981A 或 00982A + 大戶增倉 + 法人買超)</h2><p class="chart-desc">入選 00981A 或 00982A 成分股（任一即可），且大戶增倉 + 法人買超 — 最強篩選條件</p><div class="table-responsive"><table class="data-table"><thead><tr><th>代號</th><th>名稱</th><th>收盤價</th><th>漲跌%</th><th>外資淨買</th><th>投信淨買</th><th>大戶%</th><th>週增減</th><th>趨勢</th><th>評分</th></tr></thead><tbody>')
+        for s in triple_certified[:20]:
+            tech = s.get("technical", {}) or {}
+            trend = tech.get("trend", "")
+            tc = "bull" if "多頭" in trend else "bear" if "空頭" in trend else ""
+            close = s.get("close") if s.get("close") is not None else 0.0
+            change_pct = s.get("change_pct") if s.get("change_pct") is not None else 0.0
+            foreign_net = s.get("foreign_net") if s.get("foreign_net") is not None else 0
+            trust_net = s.get("trust_net") if s.get("trust_net") is not None else 0
+            big_holder_pct = s.get("big_holder_pct") if s.get("big_holder_pct") is not None else 0.0
+            big_holder_change = s.get("big_holder_change") if s.get("big_holder_change") is not None else 0.0
+            score = s.get("score") if s.get("score") is not None else 0
+            lines.append(f'<tr onclick="location.href=\'stock_{s.get("stock_id","-")}.html\'" class="clickable"><td><strong>{s.get("stock_id","-")}</strong></td><td>{s.get("stock_name","-")}</td><td>{close:.2f}</td><td class="{{"up" if change_pct>0 else "down"}}">{change_pct:+.2f}%</td><td class="{{"buy" if foreign_net>0 else "sell"}}">{foreign_net:,}</td><td class="{{"buy" if trust_net>0 else "sell"}}">{trust_net:,}</td><td class="highlight">{big_holder_pct:.2f}%</td><td class="{{"up" if big_holder_change>0 else "down"}}">{big_holder_change:+.2f}%</td><td class="{tc}">{trend}</td><td><span class="score">{score}</span></td></tr>')
         lines.append('</tbody></table></div></div>')
 
         # 外資買超 / 賣超榜單（單日數據）
@@ -572,6 +606,9 @@ Chart.defaults.scale.ticks.color = 'var(--text-muted)';
 
     def generate_etf_00981a(self):
         return self._generate_table_page("00981A 持股明細｜智董籌碼選股站", "📈 00981A 成分股", "etf_00981a", ETF_00981A_HOLDINGS)
+
+    def generate_etf_00982a(self):
+        return self._generate_table_page("00982A 持股明細｜智董籌碼選股站", "📈 00982A 成分股 (群益台灣精選強棒)", "etf_00982a", ETF_00982A_HOLDINGS)
 
     def generate_passive_component(self):
         from config import PASSIVE_COMPONENT
@@ -1165,10 +1202,11 @@ Chart.defaults.scale.ticks.color = 'var(--text-muted)';
         self.generate_index()
         self.generate_watchlist()
         self.generate_etf_00981a()
+        self.generate_etf_00982a()
         self.generate_big_holder_top25()
         self.generate_cross_analysis_page()
         self.generate_sector()
-        all_stocks = list(set(WATCHLIST + ETF_00981A_HOLDINGS))
+        all_stocks = list(set(WATCHLIST + ETF_00981A_HOLDINGS + ETF_00982A_HOLDINGS))
         for stock_id in all_stocks:
             self.generate_stock_detail(stock_id)
         print(f"[OK] 全部完成！共 {len(all_stocks)} 檔個股看板")
