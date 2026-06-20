@@ -94,8 +94,11 @@ class TWStockDataFetcher:
 
     @staticmethod
     def _merge_chip_monitoring(results):
-        """合併大戶週報資料 (memory/chip-monitoring/weekly/*.json) 到 results
-        優先讀取完整 200 檔 JSON (-full.json)，其次回退到舊版 top100 JSON"""
+        """已停用: fortune-fred 數據源已停更，大戶數據改由 Norway.twsthr.info 提供
+        請使用 _merge_mndtas() 獲取最新大戶籌碼數據
+        """
+        print("[INFO] chip-monitoring (fortune-fred) is deprecated. Use Norway.twsthr.info instead.")
+        return
         import glob
         # 本地開發路徑 (workspace/memory/)
         local_dirs = [

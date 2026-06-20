@@ -209,15 +209,26 @@ class StockScreener:
         return is_in_etf and big_holder_increasing and buying
 
     def check_big_holder(self, stock_id):
-        """檢查大戶持股 (兼容週報 big_holder_pct / shareholder 新數據 / 舊接口 percent)
+        """檢查大戶持股 (Norway.twsthr.info 為主要來源)
         
         數據優先級：
-        1. 舊 holding 數據 (chip-monitoring) — 門檻更齊全 (100/200/400/1000)
-        2. 新 shareholder 數據 (Norway.twsthr.info) — 門檻較粗 (200/400/1000)
+        1. shareholder 數據 (Norway.twsthr.info) — 最新、最準確
+        2. holding 數據 (舊 chip-monitoring 備份)
         """
         data = self.raw_data.get(stock_id, {})
         
-        # 優先使用舊 holding 數據 (chip-monitoring，門檻更齊全)
+        # 優先使用 Norway shareholder 數據
+        shareholder = data.get("shareholder", [])
+        if shareholder:
+            sh = shareholder[0]
+            pct = sh.get("concentration", 0)
+            change = sh.get("latest_change", 0)
+            threshold = str(sh.get("threshold_shares", "—")) if sh.get("threshold_shares") else "—"
+            detail = sh.get("weekly_changes", {})
+            if pct and pct > 0:
+                return float(pct), float(change) if change else 0, threshold, detail
+        
+        # 回退到舊 holding 數據 (chip-monitoring 備份)
         holding = data.get("holding", [])
         if holding:
             df = pd.DataFrame(holding)
@@ -240,17 +251,6 @@ class StockScreener:
                         change = 0
                     threshold = str(latest.get("threshold", "—")) if "threshold" in df.columns else "—"
                     return pct, round(change, 2), threshold, df.to_dict("records")
-        
-        # 回退到 shareholder 數據 (Norway.twsthr.info)
-        shareholder = data.get("shareholder", [])
-        if shareholder:
-            sh = shareholder[0]
-            pct = sh.get("concentration", 0)
-            change = sh.get("latest_change", 0)
-            threshold = str(sh.get("threshold_shares", "—")) if sh.get("threshold_shares") else "—"
-            detail = sh.get("weekly_changes", {})
-            if pct and pct > 0:
-                return float(pct), float(change) if change else 0, threshold, detail
         
         return 0, 0, "", []
 
