@@ -38,11 +38,12 @@ jobs:
 
     - name: Step 1 - Fetch Norway big holder data
       id: norway
+      continue-on-error: true
       run: |
         echo "=== Step 1: Fetching Norway data ==="
-        python scripts/norway_fetcher_v2.py
-        echo "Norway exit code: $?"
-        ls -la data/norway/ || echo "No norway data dir"
+        python scripts/norway_fetcher_v2.py || echo "[WARN] Norway fetch failed, using existing data"
+        ls -la data/norway/ 2>/dev/null || echo "No norway data dir"
+        ls -la data/*.json 2>/dev/null | head -5 || true
 
     - name: Step 2 - Pre-validation (check existing data)
       id: prevalidate
