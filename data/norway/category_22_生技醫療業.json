@@ -375,28 +375,6 @@
   },
   {
     "rank": 18,
-    "stock_code": "1720",
-    "stock_name": "生達",
-    "is_taiwan50": false,
-    "category": "生技醫療業",
-    "threshold_code": 30,
-    "threshold_shares": 400,
-    "weekly_changes": {
-      "20260515": -0.09,
-      "20260522": -0.02,
-      "20260529": -0.09,
-      "20260605": 0.04,
-      "20260612": 0.38,
-      "20260618": 0.23
-    },
-    "latest_change": 0.23,
-    "total_change": 0.45,
-    "last_week_hold_pct": 65.82,
-    "close_price": 62.9,
-    "price_change": 0.2
-  },
-  {
-    "rank": 19,
     "stock_code": "4108",
     "stock_name": "懷特",
     "is_taiwan50": false,
@@ -416,6 +394,28 @@
     "last_week_hold_pct": 30.19,
     "close_price": 12.0,
     "price_change": 0.0
+  },
+  {
+    "rank": 19,
+    "stock_code": "1720",
+    "stock_name": "生達",
+    "is_taiwan50": false,
+    "category": "生技醫療業",
+    "threshold_code": 30,
+    "threshold_shares": 400,
+    "weekly_changes": {
+      "20260515": -0.09,
+      "20260522": -0.02,
+      "20260529": -0.09,
+      "20260605": 0.04,
+      "20260612": 0.38,
+      "20260618": 0.23
+    },
+    "latest_change": 0.23,
+    "total_change": 0.45,
+    "last_week_hold_pct": 65.82,
+    "close_price": 62.9,
+    "price_change": 0.2
   },
   {
     "rank": 20,

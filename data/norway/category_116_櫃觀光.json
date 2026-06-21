@@ -463,28 +463,6 @@
   },
   {
     "rank": 22,
-    "stock_code": "2740",
-    "stock_name": "華軒",
-    "is_taiwan50": false,
-    "category": "櫃觀光",
-    "threshold_code": 32,
-    "threshold_shares": 0,
-    "weekly_changes": {
-      "20260515": 0.0,
-      "20260522": 0.0,
-      "20260529": 0.0,
-      "20260605": 0.0,
-      "20260612": 0.0,
-      "20260618": 0.0
-    },
-    "latest_change": 0.0,
-    "total_change": 0.0,
-    "last_week_hold_pct": 72.53,
-    "close_price": 27.45,
-    "price_change": 1.35
-  },
-  {
-    "rank": 23,
     "stock_code": "5703",
     "stock_name": "亞都麗緻",
     "is_taiwan50": false,
@@ -504,6 +482,28 @@
     "last_week_hold_pct": 88.3,
     "close_price": 13.6,
     "price_change": -0.2
+  },
+  {
+    "rank": 23,
+    "stock_code": "2740",
+    "stock_name": "華軒",
+    "is_taiwan50": false,
+    "category": "櫃觀光",
+    "threshold_code": 32,
+    "threshold_shares": 0,
+    "weekly_changes": {
+      "20260515": 0.0,
+      "20260522": 0.0,
+      "20260529": 0.0,
+      "20260605": 0.0,
+      "20260612": 0.0,
+      "20260618": 0.0
+    },
+    "latest_change": 0.0,
+    "total_change": 0.0,
+    "last_week_hold_pct": 72.53,
+    "close_price": 27.45,
+    "price_change": 1.35
   },
   {
     "rank": 24,

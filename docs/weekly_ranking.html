@@ -139,10 +139,6 @@
             <div class="stat-name">久盤吸籌</div>
             <div class="stat-count" style="color:#65a30d">102</div>
         </div>
-        <div class="stat-card" style="border-left:3px solid #0ea5e9">
-            <div class="stat-name">新進榜</div>
-            <div class="stat-count" style="color:#0ea5e9">35</div>
-        </div>
         <div class="stat-card" style="border-left:3px solid #94a3b8">
             <div class="stat-name">流動性風險</div>
             <div class="stat-count" style="color:#94a3b8">32</div>
@@ -150,6 +146,10 @@
         <div class="stat-card" style="border-left:3px solid #0891b2">
             <div class="stat-name">內外共振</div>
             <div class="stat-count" style="color:#0891b2">29</div>
+        </div>
+        <div class="stat-card" style="border-left:3px solid #0ea5e9">
+            <div class="stat-name">新進榜</div>
+            <div class="stat-count" style="color:#0ea5e9">28</div>
         </div>
         <div class="stat-card" style="border-left:3px solid #2563eb">
             <div class="stat-name">逆買</div>
@@ -187,7 +187,7 @@
 <!-- Signal Filters -->
 <div class="filter-bar">
     <button class="filter-clear" onclick="clearFilters()">🔄 清除篩選</button>
-    <button class="filter-btn" data-signal="量價背離" style="--c:#f59e0b" onclick="toggleFilter(this, '量價背離')">量價背離 (664)</button><button class="filter-btn" data-signal="籌碼回補" style="--c:#ea580c" onclick="toggleFilter(this, '籌碼回補')">籌碼回補 (379)</button><button class="filter-btn" data-signal="高度集中" style="--c:#4338ca" onclick="toggleFilter(this, '高度集中')">高度集中 (340)</button><button class="filter-btn" data-signal="法人同向" style="--c:#059669" onclick="toggleFilter(this, '法人同向')">法人同向 (252)</button><button class="filter-btn" data-signal="高波動警示" style="--c:#be123c" onclick="toggleFilter(this, '高波動警示')">高波動警示 (197)</button><button class="filter-btn" data-signal="連增3" style="--c:#64748b" onclick="toggleFilter(this, '連增3')">連增3 (153)</button><button class="filter-btn" data-signal="加速" style="--c:#dc2626" onclick="toggleFilter(this, '加速')">加速 (139)</button><button class="filter-btn" data-signal="連增5" style="--c:#64748b" onclick="toggleFilter(this, '連增5')">連增5 (110)</button><button class="filter-btn" data-signal="久盤吸籌" style="--c:#65a30d" onclick="toggleFilter(this, '久盤吸籌')">久盤吸籌 (102)</button><button class="filter-btn" data-signal="新進榜" style="--c:#0ea5e9" onclick="toggleFilter(this, '新進榜')">新進榜 (35)</button><button class="filter-btn" data-signal="流動性風險" style="--c:#94a3b8" onclick="toggleFilter(this, '流動性風險')">流動性風險 (32)</button><button class="filter-btn" data-signal="內外共振" style="--c:#0891b2" onclick="toggleFilter(this, '內外共振')">內外共振 (29)</button><button class="filter-btn" data-signal="逆買" style="--c:#2563eb" onclick="toggleFilter(this, '逆買')">逆買 (21)</button><button class="filter-btn" data-signal="事件驅動" style="--c:#7c3aed" onclick="toggleFilter(this, '事件驅動')">事件驅動 (17)</button>
+    <button class="filter-btn" data-signal="量價背離" style="--c:#f59e0b" onclick="toggleFilter(this, '量價背離')">量價背離 (664)</button><button class="filter-btn" data-signal="籌碼回補" style="--c:#ea580c" onclick="toggleFilter(this, '籌碼回補')">籌碼回補 (379)</button><button class="filter-btn" data-signal="高度集中" style="--c:#4338ca" onclick="toggleFilter(this, '高度集中')">高度集中 (340)</button><button class="filter-btn" data-signal="法人同向" style="--c:#059669" onclick="toggleFilter(this, '法人同向')">法人同向 (252)</button><button class="filter-btn" data-signal="高波動警示" style="--c:#be123c" onclick="toggleFilter(this, '高波動警示')">高波動警示 (197)</button><button class="filter-btn" data-signal="連增3" style="--c:#64748b" onclick="toggleFilter(this, '連增3')">連增3 (153)</button><button class="filter-btn" data-signal="加速" style="--c:#dc2626" onclick="toggleFilter(this, '加速')">加速 (139)</button><button class="filter-btn" data-signal="連增5" style="--c:#64748b" onclick="toggleFilter(this, '連增5')">連增5 (110)</button><button class="filter-btn" data-signal="久盤吸籌" style="--c:#65a30d" onclick="toggleFilter(this, '久盤吸籌')">久盤吸籌 (102)</button><button class="filter-btn" data-signal="流動性風險" style="--c:#94a3b8" onclick="toggleFilter(this, '流動性風險')">流動性風險 (32)</button><button class="filter-btn" data-signal="內外共振" style="--c:#0891b2" onclick="toggleFilter(this, '內外共振')">內外共振 (29)</button><button class="filter-btn" data-signal="新進榜" style="--c:#0ea5e9" onclick="toggleFilter(this, '新進榜')">新進榜 (28)</button><button class="filter-btn" data-signal="逆買" style="--c:#2563eb" onclick="toggleFilter(this, '逆買')">逆買 (21)</button><button class="filter-btn" data-signal="事件驅動" style="--c:#7c3aed" onclick="toggleFilter(this, '事件驅動')">事件驅動 (17)</button>
 </div>
 
 <!-- Tables -->
@@ -199,7 +199,7 @@
                     <span>📈 上漲: 7</span>
                     <span>📉 下跌: 5</span>
                     <span>🚀 加速: 0</span>
-                    <span>🆕 新進榜: 0</span>
+                    <span>🆕 新進榜: 2</span>
                 </div>
             </div>
             
@@ -613,8 +613,22 @@
                     <td></td>
                     <td class="tags"><span class="signal-badge" style="background:#4338ca15;color:#4338ca;border:1px solid #4338ca30">高度集中</span></td>
                 </tr>
-                <tr data-signals=",," data-wow="0.0">
+                <tr data-signals=",新進榜," data-wow="0.0">
                     <td class="rk">28</td>
+                    <td class="rd rc-new">NEW</td>
+                    <td><strong>6263</strong></td>
+                    <td>普萊德</td>
+                    <td><span class="mkt-tag">上櫃</span></td>
+                    <td class="ind">櫃通信網路</td>
+                    <td class="pr">165.0</td>
+                    <td class="cg up">+1.50%</td>
+                    <td class="pt">43.36%</td>
+                    <td class="cg up">+0.00%</td>
+                    <td></td>
+                    <td class="tags"><span class="signal-badge" style="background:#0ea5e915;color:#0ea5e9;border:1px solid #0ea5e930">新進榜</span></td>
+                </tr>
+                <tr data-signals=",," data-wow="0.0">
+                    <td class="rk">29</td>
                     <td class="rd rc-down"></td>
                     <td><strong>5220</strong></td>
                     <td>萬達光電</td>
@@ -623,20 +637,6 @@
                     <td class="pr">21.75</td>
                     <td class="cg up">+0.50%</td>
                     <td class="pt">43.57%</td>
-                    <td class="cg up">+0.00%</td>
-                    <td></td>
-                    <td class="tags"></td>
-                </tr>
-                <tr data-signals=",," data-wow="0.0">
-                    <td class="rk">29</td>
-                    <td class="rd rc-down"></td>
-                    <td><strong>6263</strong></td>
-                    <td>普萊德</td>
-                    <td><span class="mkt-tag">上櫃</span></td>
-                    <td class="ind">櫃通信網路</td>
-                    <td class="pr">165.0</td>
-                    <td class="cg up">+1.50%</td>
-                    <td class="pt">43.36%</td>
                     <td class="cg up">+0.00%</td>
                     <td></td>
                     <td class="tags"></td>
@@ -694,7 +694,7 @@
                     <span>📈 上漲: 764</span>
                     <span>📉 下跌: 504</span>
                     <span>🚀 加速: 139</span>
-                    <span>🆕 新進榜: 27</span>
+                    <span>🆕 新進榜: 22</span>
                 </div>
             </div>
             
@@ -1091,7 +1091,7 @@
                     <span>📈 上漲: 67</span>
                     <span>📉 下跌: 177</span>
                     <span>🚀 加速: 0</span>
-                    <span>🆕 新進榜: 8</span>
+                    <span>🆕 新進榜: 4</span>
                 </div>
             </div>
             

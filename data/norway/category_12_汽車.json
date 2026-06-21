@@ -375,28 +375,6 @@
   },
   {
     "rank": 18,
-    "stock_code": "4581",
-    "stock_name": "光隆精密-KY",
-    "is_taiwan50": false,
-    "category": "汽車",
-    "threshold_code": 32,
-    "threshold_shares": 0,
-    "weekly_changes": {
-      "20260515": 0.0,
-      "20260522": 0.0,
-      "20260529": 0.0,
-      "20260605": 0.0,
-      "20260612": 0.0,
-      "20260618": 0.0
-    },
-    "latest_change": 0.0,
-    "total_change": 0.0,
-    "last_week_hold_pct": 62.96,
-    "close_price": 49.95,
-    "price_change": 0.05
-  },
-  {
-    "rank": 19,
     "stock_code": "2227",
     "stock_name": "裕日車",
     "is_taiwan50": false,
@@ -418,7 +396,7 @@
     "price_change": -0.4
   },
   {
-    "rank": 20,
+    "rank": 19,
     "stock_code": "4569",
     "stock_name": "六方科-KY",
     "is_taiwan50": false,
@@ -440,7 +418,7 @@
     "price_change": 8.0
   },
   {
-    "rank": 21,
+    "rank": 20,
     "stock_code": "2247",
     "stock_name": "汎德永業",
     "is_taiwan50": false,
@@ -460,6 +438,28 @@
     "last_week_hold_pct": 76.73,
     "close_price": 238.0,
     "price_change": 0.5
+  },
+  {
+    "rank": 21,
+    "stock_code": "4581",
+    "stock_name": "光隆精密-KY",
+    "is_taiwan50": false,
+    "category": "汽車",
+    "threshold_code": 32,
+    "threshold_shares": 0,
+    "weekly_changes": {
+      "20260515": 0.0,
+      "20260522": 0.0,
+      "20260529": 0.0,
+      "20260605": 0.0,
+      "20260612": 0.0,
+      "20260618": 0.0
+    },
+    "latest_change": 0.0,
+    "total_change": 0.0,
+    "last_week_hold_pct": 62.96,
+    "close_price": 49.95,
+    "price_change": 0.05
   },
   {
     "rank": 22,

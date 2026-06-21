@@ -771,28 +771,6 @@
   },
   {
     "rank": 36,
-    "stock_code": "3652",
-    "stock_name": "精聯",
-    "is_taiwan50": false,
-    "category": "電腦週邊",
-    "threshold_code": 20,
-    "threshold_shares": 0,
-    "weekly_changes": {
-      "20260515": 0.0,
-      "20260522": -0.01,
-      "20260529": 0.01,
-      "20260605": 0.0,
-      "20260612": 0.0,
-      "20260618": -0.01
-    },
-    "latest_change": -0.01,
-    "total_change": -0.01,
-    "last_week_hold_pct": 71.58,
-    "close_price": 40.2,
-    "price_change": 2.95
-  },
-  {
-    "rank": 37,
     "stock_code": "2465",
     "stock_name": "麗臺",
     "is_taiwan50": false,
@@ -812,6 +790,28 @@
     "last_week_hold_pct": 36.29,
     "close_price": 80.9,
     "price_change": -0.9
+  },
+  {
+    "rank": 37,
+    "stock_code": "3652",
+    "stock_name": "精聯",
+    "is_taiwan50": false,
+    "category": "電腦週邊",
+    "threshold_code": 20,
+    "threshold_shares": 0,
+    "weekly_changes": {
+      "20260515": 0.0,
+      "20260522": -0.01,
+      "20260529": 0.01,
+      "20260605": 0.0,
+      "20260612": 0.0,
+      "20260618": -0.01
+    },
+    "latest_change": -0.01,
+    "total_change": -0.01,
+    "last_week_hold_pct": 71.58,
+    "close_price": 40.2,
+    "price_change": 2.95
   },
   {
     "rank": 38,

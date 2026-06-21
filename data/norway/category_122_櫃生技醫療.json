@@ -1189,28 +1189,6 @@
   },
   {
     "rank": 55,
-    "stock_code": "4175",
-    "stock_name": "杏一",
-    "is_taiwan50": false,
-    "category": "櫃生技醫療",
-    "threshold_code": 32,
-    "threshold_shares": 0,
-    "weekly_changes": {
-      "20260515": 0.0,
-      "20260522": 0.02,
-      "20260529": 0.02,
-      "20260605": 0.0,
-      "20260612": 0.0,
-      "20260618": 0.0
-    },
-    "latest_change": 0.0,
-    "total_change": 0.04,
-    "last_week_hold_pct": 56.05,
-    "close_price": 53.7,
-    "price_change": 0.2
-  },
-  {
-    "rank": 56,
     "stock_code": "6872",
     "stock_name": "浩宇生醫",
     "is_taiwan50": false,
@@ -1230,6 +1208,28 @@
     "last_week_hold_pct": 58.07,
     "close_price": 17.9,
     "price_change": 0.55
+  },
+  {
+    "rank": 56,
+    "stock_code": "4175",
+    "stock_name": "杏一",
+    "is_taiwan50": false,
+    "category": "櫃生技醫療",
+    "threshold_code": 32,
+    "threshold_shares": 0,
+    "weekly_changes": {
+      "20260515": 0.0,
+      "20260522": 0.02,
+      "20260529": 0.02,
+      "20260605": 0.0,
+      "20260612": 0.0,
+      "20260618": 0.0
+    },
+    "latest_change": 0.0,
+    "total_change": 0.04,
+    "last_week_hold_pct": 56.05,
+    "close_price": 53.7,
+    "price_change": 0.2
   },
   {
     "rank": 57,
@@ -1255,6 +1255,28 @@
   },
   {
     "rank": 58,
+    "stock_code": "4139",
+    "stock_name": "馬光-KY",
+    "is_taiwan50": false,
+    "category": "櫃生技醫療",
+    "threshold_code": 10,
+    "threshold_shares": 1000,
+    "weekly_changes": {
+      "20260515": 0.0,
+      "20260522": 0.01,
+      "20260529": 0.06,
+      "20260605": 0.05,
+      "20260612": 0.0,
+      "20260618": -0.1
+    },
+    "latest_change": -0.1,
+    "total_change": 0.02,
+    "last_week_hold_pct": 67.81,
+    "close_price": 24.75,
+    "price_change": 0.5
+  },
+  {
+    "rank": 59,
     "stock_code": "6637",
     "stock_name": "醫影",
     "is_taiwan50": false,
@@ -1276,7 +1298,7 @@
     "price_change": 0.2
   },
   {
-    "rank": 59,
+    "rank": 60,
     "stock_code": "6242",
     "stock_name": "立康",
     "is_taiwan50": false,
@@ -1296,28 +1318,6 @@
     "last_week_hold_pct": 63.83,
     "close_price": 36.65,
     "price_change": -0.05
-  },
-  {
-    "rank": 60,
-    "stock_code": "4139",
-    "stock_name": "馬光-KY",
-    "is_taiwan50": false,
-    "category": "櫃生技醫療",
-    "threshold_code": 10,
-    "threshold_shares": 1000,
-    "weekly_changes": {
-      "20260515": 0.0,
-      "20260522": 0.01,
-      "20260529": 0.06,
-      "20260605": 0.05,
-      "20260612": 0.0,
-      "20260618": -0.1
-    },
-    "latest_change": -0.1,
-    "total_change": 0.02,
-    "last_week_hold_pct": 67.81,
-    "close_price": 24.75,
-    "price_change": 0.5
   },
   {
     "rank": 61,
@@ -1343,8 +1343,8 @@
   },
   {
     "rank": 62,
-    "stock_code": "4160",
-    "stock_name": "訊聯基因",
+    "stock_code": "4116",
+    "stock_name": "明基醫",
     "is_taiwan50": false,
     "category": "櫃生技醫療",
     "threshold_code": 32,
@@ -1359,9 +1359,9 @@
     },
     "latest_change": 0.0,
     "total_change": 0.0,
-    "last_week_hold_pct": 29.64,
-    "close_price": 40.4,
-    "price_change": -0.7
+    "last_week_hold_pct": 54.96,
+    "close_price": 37.95,
+    "price_change": 0.25
   },
   {
     "rank": 63,
@@ -1387,28 +1387,6 @@
   },
   {
     "rank": 64,
-    "stock_code": "4138",
-    "stock_name": "曜亞",
-    "is_taiwan50": false,
-    "category": "櫃生技醫療",
-    "threshold_code": 32,
-    "threshold_shares": 0,
-    "weekly_changes": {
-      "20260515": 0.0,
-      "20260522": 0.0,
-      "20260529": 0.0,
-      "20260605": 0.0,
-      "20260612": 0.0,
-      "20260618": 0.0
-    },
-    "latest_change": 0.0,
-    "total_change": 0.0,
-    "last_week_hold_pct": 51.43,
-    "close_price": 51.4,
-    "price_change": -0.4
-  },
-  {
-    "rank": 65,
     "stock_code": "4735",
     "stock_name": "豪展",
     "is_taiwan50": false,
@@ -1428,6 +1406,28 @@
     "last_week_hold_pct": 53.38,
     "close_price": 30.6,
     "price_change": -0.35
+  },
+  {
+    "rank": 65,
+    "stock_code": "4160",
+    "stock_name": "訊聯基因",
+    "is_taiwan50": false,
+    "category": "櫃生技醫療",
+    "threshold_code": 32,
+    "threshold_shares": 0,
+    "weekly_changes": {
+      "20260515": 0.0,
+      "20260522": 0.0,
+      "20260529": 0.0,
+      "20260605": 0.0,
+      "20260612": 0.0,
+      "20260618": 0.0
+    },
+    "latest_change": 0.0,
+    "total_change": 0.0,
+    "last_week_hold_pct": 29.64,
+    "close_price": 40.4,
+    "price_change": -0.7
   },
   {
     "rank": 66,
@@ -1453,8 +1453,8 @@
   },
   {
     "rank": 67,
-    "stock_code": "4116",
-    "stock_name": "明基醫",
+    "stock_code": "4138",
+    "stock_name": "曜亞",
     "is_taiwan50": false,
     "category": "櫃生技醫療",
     "threshold_code": 32,
@@ -1469,9 +1469,9 @@
     },
     "latest_change": 0.0,
     "total_change": 0.0,
-    "last_week_hold_pct": 54.96,
-    "close_price": 37.95,
-    "price_change": 0.25
+    "last_week_hold_pct": 51.43,
+    "close_price": 51.4,
+    "price_change": -0.4
   },
   {
     "rank": 68,

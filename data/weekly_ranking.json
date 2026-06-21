@@ -1,6 +1,6 @@
 {
   "source": "norway.twsthr.info/StockHoldersTopWeek.aspx",
-  "fetched_at": "2026-06-21T13:40:42.396009",
+  "fetched_at": "2026-06-21T14:40:20.816030",
   "thresholds": {
     "200": {
       "stocks": [
@@ -433,20 +433,6 @@
           "rank": 27
         },
         {
-          "code": "5220",
-          "name": "萬達光電",
-          "market": "上市",
-          "industry": "櫃光電",
-          "price": 21.75,
-          "change_pct": "+0.50%",
-          "big_holder_pct": "43.57%",
-          "wow_pct": "+0.00%",
-          "streak": "",
-          "rank_change": "",
-          "signals": [],
-          "rank": 28
-        },
-        {
           "code": "6263",
           "name": "普萊德",
           "market": "上櫃",
@@ -454,6 +440,22 @@
           "price": 165.0,
           "change_pct": "+1.50%",
           "big_holder_pct": "43.36%",
+          "wow_pct": "+0.00%",
+          "streak": "",
+          "rank_change": "NEW",
+          "signals": [
+            "新進榜"
+          ],
+          "rank": 28
+        },
+        {
+          "code": "5220",
+          "name": "萬達光電",
+          "market": "上市",
+          "industry": "櫃光電",
+          "price": 21.75,
+          "change_pct": "+0.50%",
+          "big_holder_pct": "43.57%",
           "wow_pct": "+0.00%",
           "streak": "",
           "rank_change": "",
@@ -558,8 +560,10 @@
           "big_holder_pct": "53.65%",
           "wow_pct": "+0.00%",
           "streak": "",
-          "rank_change": "",
-          "signals": [],
+          "rank_change": "NEW",
+          "signals": [
+            "新進榜"
+          ],
           "rank": 36
         },
         {
@@ -707,7 +711,7 @@
         "nAll": 45,
         "nCt": 0,
         "nAccel": 0,
-        "nNewG": 0,
+        "nNewG": 2,
         "nStreak5": 2
       }
     },
@@ -1468,11 +1472,10 @@
           "big_holder_pct": "56.53%",
           "wow_pct": "+2.11%",
           "streak": "↑3週",
-          "rank_change": "NEW",
+          "rank_change": "",
           "signals": [
             "連增3",
-            "加速",
-            "新進榜"
+            "加速"
           ],
           "rank": 44
         },
@@ -2407,7 +2410,7 @@
         "nAll": 1389,
         "nCt": 0,
         "nAccel": 139,
-        "nNewG": 27,
+        "nNewG": 22,
         "nStreak5": 82
       }
     },
@@ -3433,12 +3436,11 @@
           "big_holder_pct": "37.14%",
           "wow_pct": "+0.02%",
           "streak": "↑6週",
-          "rank_change": "NEW",
+          "rank_change": "",
           "signals": [
             "連增5",
             "量價背離",
-            "久盤吸籌",
-            "新進榜"
+            "久盤吸籌"
           ],
           "rank": 58
         },
@@ -3523,10 +3525,9 @@
           "big_holder_pct": "51.01%",
           "wow_pct": "+0.01%",
           "streak": "↑4週",
-          "rank_change": "NEW",
+          "rank_change": "",
           "signals": [
-            "連增3",
-            "新進榜"
+            "連增3"
           ],
           "rank": 63
         },
@@ -3540,13 +3541,12 @@
           "big_holder_pct": "88.96%",
           "wow_pct": "+0.01%",
           "streak": "↑6週",
-          "rank_change": "NEW",
+          "rank_change": "",
           "signals": [
             "高度集中",
             "法人同向",
             "連增5",
-            "久盤吸籌",
-            "新進榜"
+            "久盤吸籌"
           ],
           "rank": 64
         },
@@ -3798,10 +3798,8 @@
           "big_holder_pct": "71.68%",
           "wow_pct": "+0.00%",
           "streak": "",
-          "rank_change": "NEW",
-          "signals": [
-            "新進榜"
-          ],
+          "rank_change": "",
+          "signals": [],
           "rank": 81
         },
         {
@@ -3814,10 +3812,11 @@
           "big_holder_pct": "94.23%",
           "wow_pct": "+0.00%",
           "streak": "",
-          "rank_change": "",
+          "rank_change": "NEW",
           "signals": [
             "高度集中",
-            "流動性風險"
+            "流動性風險",
+            "新進榜"
           ],
           "rank": 82
         },
@@ -4106,7 +4105,7 @@
         "nAll": 260,
         "nCt": 0,
         "nAccel": 0,
-        "nNewG": 8,
+        "nNewG": 4,
         "nStreak5": 26
       }
     }
@@ -4120,11 +4119,11 @@
     "連增5": 110,
     "久盤吸籌": 102,
     "流動性風險": 32,
+    "新進榜": 28,
     "事件驅動": 17,
     "籌碼回補": 379,
     "加速": 139,
     "內外共振": 29,
-    "連增3": 153,
-    "新進榜": 35
+    "連增3": 153
   }
 }

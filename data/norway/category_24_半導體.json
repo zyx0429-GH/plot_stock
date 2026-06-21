@@ -1145,28 +1145,6 @@
   },
   {
     "rank": 53,
-    "stock_code": "2338",
-    "stock_name": "光罩",
-    "is_taiwan50": false,
-    "category": "半導體",
-    "threshold_code": 50,
-    "threshold_shares": 400,
-    "weekly_changes": {
-      "20260515": -2.37,
-      "20260522": 1.61,
-      "20260529": 2.23,
-      "20260605": -1.67,
-      "20260612": -1.54,
-      "20260618": 1.28
-    },
-    "latest_change": 1.28,
-    "total_change": -0.46,
-    "last_week_hold_pct": 48.94,
-    "close_price": 53.3,
-    "price_change": 1.1
-  },
-  {
-    "rank": 54,
     "stock_code": "6415",
     "stock_name": "矽力*-KY",
     "is_taiwan50": false,
@@ -1186,6 +1164,28 @@
     "last_week_hold_pct": 78.94,
     "close_price": 629.0,
     "price_change": 57.0
+  },
+  {
+    "rank": 54,
+    "stock_code": "2338",
+    "stock_name": "光罩",
+    "is_taiwan50": false,
+    "category": "半導體",
+    "threshold_code": 50,
+    "threshold_shares": 400,
+    "weekly_changes": {
+      "20260515": -2.37,
+      "20260522": 1.61,
+      "20260529": 2.23,
+      "20260605": -1.67,
+      "20260612": -1.54,
+      "20260618": 1.28
+    },
+    "latest_change": 1.28,
+    "total_change": -0.46,
+    "last_week_hold_pct": 48.94,
+    "close_price": 53.3,
+    "price_change": 1.1
   },
   {
     "rank": 55,
