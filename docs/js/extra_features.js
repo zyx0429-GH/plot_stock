@@ -19,13 +19,13 @@
         _allStocks = Array.from(rows).map(tr => {
             const tds = tr.querySelectorAll('td');
             if (tds.length < 4) return null;
-            const code = tds[1]?.textContent?.trim() || '';
-            const name = tds[2]?.textContent?.trim() || '';
+            const code = tds[0]?.textContent?.trim() || '';
+            const name = tds[1]?.textContent?.trim() || '';
             if (!code || !/^\d{4,}$/.test(code) || seen.has(code)) return null;
             seen.add(code);
 
-            const close = parseFloat(tds[3]?.textContent?.replace(/,/g,'')) || 0;
-            const changePct = parseFloat(tds[4]?.textContent) || 0;
+            const close = parseFloat(tds[2]?.textContent?.replace(/,/g,'')) || 0;
+            const changePct = parseFloat(tds[3]?.textContent) || 0;
 
             let bhPct = 0;
             if (tr.dataset.pct) {
