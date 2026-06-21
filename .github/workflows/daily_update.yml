@@ -36,51 +36,82 @@ jobs:
       run: |
         pip install -r requirements.txt
 
-    - name: Fetch Norway.twsthr.info chip data
+    - name: Step 1 - Fetch Norway big holder data
+      id: norway
       run: |
-        python scripts/norway_fetcher.py || echo "Norway fetch failed"
+        echo "=== Step 1: Fetching Norway data ==="
+        python scripts/norway_fetcher_v2.py
+        echo "Norway exit code: $?"
+        ls -la data/norway/ || echo "No norway data dir"
 
-    - name: Validate data integrity
+    - name: Step 2 - Pre-validation (check existing data)
+      id: prevalidate
       run: |
-        python scripts/validate_data.py
-        if [ $? -ne 0 ]; then
-          echo "[ERROR] Data validation failed. Aborting."
-          exit 1
-        fi
+        echo "=== Step 2: Pre-validation ==="
+        python scripts/validate_data.py || echo "Pre-validation warnings (non-fatal)"
 
-    - name: Run full pipeline (fetch + screen + generate)
+    - name: Step 3 - Fetch TWSE/TPEX data
+      id: twse
       env:
         FINMIND_API_TOKEN: ${{ secrets.FINMIND_API_TOKEN }}
       run: |
-        python main.py
+        echo "=== Step 3: Fetching TWSE/TPEX data ==="
+        python -c "from scripts.data_fetcher import fetch_all; fetch_all()"
+        echo "TWSE fetch exit code: $?"
 
-    - name: Final validation before push
+    - name: Step 4 - Run screening
+      id: screen
       run: |
+        echo "=== Step 4: Running stock screening ==="
+        python -c "from scripts.stock_screener import run_screening; run_screening()"
+        echo "Screening exit code: $?"
+
+    - name: Step 5 - Generate HTML pages
+      id: generate
+      run: |
+        echo "=== Step 5: Generating HTML ==="
+        python -c "from scripts.generate_html import generate; generate()"
+        echo "HTML generation exit code: $?"
+        python -c "from scripts.norway_to_weekly_json import convert; convert()"
+        echo "Weekly JSON conversion exit code: $?"
+        python -c "from scripts.generate_weekly_html import generate_weekly; generate_weekly()"
+        echo "Weekly HTML generation exit code: $?"
+
+    - name: Step 6 - Post-validation (check generated data)
+      id: postvalidate
+      run: |
+        echo "=== Step 6: Post-validation ==="
         python scripts/validate_data.py
         if [ $? -ne 0 ]; then
-          echo "[ERROR] Final validation failed. Will not push broken data."
+          echo "[ERROR] Post-validation failed. Will not push broken data."
+          echo "[DEBUG] Checking data files..."
+          ls -la data/ || true
+          cat data/screened_data.json | python -c "import json,sys; d=json.load(sys.stdin); print('screened:',len(d.get('screened',[]))); print('dual:',len(d.get('dual_certified',[]))); print('triple:',len(d.get('triple_certified',[])))" || true
           exit 1
         fi
 
-    - name: Commit and push changes
+    - name: Step 7 - Commit and push changes
+      id: commit
       run: |
+        echo "=== Step 7: Commit and push ==="
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
         git config pull.rebase true
         git config rebase.autoStash true
         git add -A
-        git commit -m "📊 Daily update: $(date +'%Y-%m-%d %H:%M')" || echo "No changes"
+        git status
+        git commit -m "📊 Daily update: $(date +'%Y-%m-%d %H:%M')" || echo "No changes to commit"
         git pull origin main || echo "Nothing to pull"
         git push
 
-    - name: Setup Pages
+    - name: Step 8 - Setup Pages
       uses: actions/configure-pages@v5
 
-    - name: Upload artifact
+    - name: Step 9 - Upload artifact
       uses: actions/upload-pages-artifact@v3
       with:
         path: './docs'
 
-    - name: Deploy to GitHub Pages
+    - name: Step 10 - Deploy to GitHub Pages
       id: deployment
       uses: actions/deploy-pages@v4

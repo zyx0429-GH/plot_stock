@@ -1,88 +1,112 @@
-name: Weekly Norway Big Holder Update
+name: Weekly Norway Data Update
 
 on:
   schedule:
-    # 每週六 UTC 06:00 (台北時間 14:00)
-    - cron: '0 6 * * 6'
+    - cron: '0 5 * * 6'  # 每週六 05:00 UTC = 台灣 13:00 (01:00PM)
   workflow_dispatch:
 
 permissions:
   contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
 
 jobs:
-  norway-update:
+  update-norway:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+        token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Setup Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.12'
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
 
-      - name: Install dependencies
-        run: |
-          pip install requests beautifulsoup4
+    - name: Install dependencies
+      run: |
+        pip install -r requirements.txt
 
-      - name: Run Norway Fetcher
-        run: |
-          cd $GITHUB_WORKSPACE
-          python scripts/norway_fetcher_v2.py
+    - name: Step 1 - Fetch Norway data
+      id: norway
+      run: |
+        echo "=== Step 1: Fetching Norway data ==="
+        python scripts/norway_fetcher_v2.py
+        echo "Norway exit code: $?"
+        ls -la data/norway/ || echo "No norway data dir"
 
-      - name: Merge Norway into raw_data
-        run: |
-          cd $GITHUB_WORKSPACE
-          python -c "
-          import json, os
-          
-          # Load raw_data
-          with open('data/raw_data.json', 'r', encoding='utf-8') as f:
-              raw_data = json.load(f)
-          
-          # Load Norway data
-          with open('data/norway/all_stocks_weekly.json', 'r', encoding='utf-8') as f:
-              norway_data = json.load(f)
-          
-          # Build lookup
-          norway_lookup = {r['stock_code']: r for r in norway_data}
-          
-          merged = 0
-          for sid in raw_data:
-              if sid in norway_lookup:
-                  chip = norway_lookup[sid]
-                  weekly = chip.get('weekly_changes', {})
-                  latest_change = list(weekly.values())[-1] if weekly else None
-                  recent_values = list(weekly.values())[-4:] if weekly else []
-                  trend_direction = 'up' if len(recent_values) >= 2 and recent_values[-1] > recent_values[0] else 'down' if len(recent_values) >= 2 else 'flat'
-                  
-                  raw_data[sid]['shareholder'] = [{
-                      'date': chip.get('latest_change', ''),
-                      'total_count': 0,
-                      'big_holder_count': 0,
-                      'concentration': chip.get('last_week_hold_pct', 0),
-                      'threshold_shares': chip.get('threshold_shares', 0),
-                      'threshold_code': chip.get('threshold_code', 0),
-                      'category': chip.get('category', ''),
-                      'weekly_changes': weekly,
-                      'latest_change': latest_change,
-                      'total_change': chip.get('total_change', 0),
-                      'trend_direction': trend_direction,
-                      'is_taiwan50': chip.get('is_taiwan50', False),
-                  }]
-                  merged += 1
-          
-          print(f'Merged Norway data: {merged} stocks')
-          
-          with open('data/raw_data.json', 'w', encoding='utf-8') as f:
-              json.dump(raw_data, f, ensure_ascii=False, indent=2)
-          print('Saved raw_data.json')
-          "
+    - name: Step 2 - Validate Norway data
+      id: validate
+      run: |
+        echo "=== Step 2: Validating Norway data ==="
+        python scripts/validate_data.py || echo "Validation warnings (non-fatal)"
 
-      - name: Commit & Push
-        run: |
-          git config --global user.email "actions@github.com"
-          git config --global user.name "GitHub Actions"
-          git add data/norway/ data/raw_data.json
-          git commit -m "📊 Weekly Norway big holder update $(date +%Y-%m-%d)" || echo "No changes"
-          git push origin main || echo "Push skipped"
+    - name: Step 3 - Fetch TWSE/TPEX data
+      id: twse
+      env:
+        FINMIND_API_TOKEN: ${{ secrets.FINMIND_API_TOKEN }}
+      run: |
+        echo "=== Step 3: Fetching TWSE/TPEX data ==="
+        python -c "from scripts.data_fetcher import fetch_all; fetch_all()"
+        echo "TWSE fetch exit code: $?"
+
+    - name: Step 4 - Run screening
+      id: screen
+      run: |
+        echo "=== Step 4: Running stock screening ==="
+        python -c "from scripts.stock_screener import run_screening; run_screening()"
+        echo "Screening exit code: $?"
+
+    - name: Step 5 - Generate HTML pages
+      id: generate
+      run: |
+        echo "=== Step 5: Generating HTML ==="
+        python -c "from scripts.generate_html import generate; generate()"
+        echo "HTML generation exit code: $?"
+        python -c "from scripts.norway_to_weekly_json import convert; convert()"
+        echo "Weekly JSON conversion exit code: $?"
+        python -c "from scripts.generate_weekly_html import generate_weekly; generate_weekly()"
+        echo "Weekly HTML generation exit code: $?"
+
+    - name: Step 6 - Post-validation
+      id: postvalidate
+      run: |
+        echo "=== Step 6: Post-validation ==="
+        python scripts/validate_data.py
+        if [ $? -ne 0 ]; then
+          echo "[ERROR] Post-validation failed. Will not push broken data."
+          exit 1
+        fi
+
+    - name: Step 7 - Commit and push
+      id: commit
+      run: |
+        echo "=== Step 7: Commit and push ==="
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git config pull.rebase true
+        git config rebase.autoStash true
+        git add -A
+        git status
+        git commit -m "📊 Weekly Norway update: $(date +'%Y-%m-%d %H:%M')" || echo "No changes to commit"
+        git pull origin main || echo "Nothing to pull"
+        git push
+
+    - name: Step 8 - Setup Pages
+      uses: actions/configure-pages@v5
+
+    - name: Step 9 - Upload artifact
+      uses: actions/upload-pages-artifact@v3
+      with:
+        path: './docs'
+
+    - name: Step 10 - Deploy to GitHub Pages
+      id: deployment
+      uses: actions/deploy-pages@v4
