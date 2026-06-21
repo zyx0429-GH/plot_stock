@@ -859,28 +859,6 @@
   },
   {
     "rank": 40,
-    "stock_code": "3052",
-    "stock_name": "夆典",
-    "is_taiwan50": false,
-    "category": "營建",
-    "threshold_code": 10,
-    "threshold_shares": 1000,
-    "weekly_changes": {
-      "20260515": -0.13,
-      "20260522": -0.02,
-      "20260529": 0.18,
-      "20260605": -0.1,
-      "20260612": -0.15,
-      "20260618": -0.16
-    },
-    "latest_change": -0.16,
-    "total_change": -0.38,
-    "last_week_hold_pct": 56.01,
-    "close_price": 10.85,
-    "price_change": 0.0
-  },
-  {
-    "rank": 41,
     "stock_code": "1805",
     "stock_name": "寶徠",
     "is_taiwan50": false,
@@ -900,6 +878,28 @@
     "last_week_hold_pct": 77.78,
     "close_price": 10.35,
     "price_change": 0.05
+  },
+  {
+    "rank": 41,
+    "stock_code": "3052",
+    "stock_name": "夆典",
+    "is_taiwan50": false,
+    "category": "營建",
+    "threshold_code": 10,
+    "threshold_shares": 1000,
+    "weekly_changes": {
+      "20260515": -0.13,
+      "20260522": -0.02,
+      "20260529": 0.18,
+      "20260605": -0.1,
+      "20260612": -0.15,
+      "20260618": -0.16
+    },
+    "latest_change": -0.16,
+    "total_change": -0.38,
+    "last_week_hold_pct": 56.01,
+    "close_price": 10.85,
+    "price_change": 0.0
   },
   {
     "rank": 42,

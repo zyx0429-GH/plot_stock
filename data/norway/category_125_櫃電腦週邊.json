@@ -177,28 +177,6 @@
   },
   {
     "rank": 9,
-    "stock_code": "6160",
-    "stock_name": "欣技",
-    "is_taiwan50": false,
-    "category": "櫃電腦週邊",
-    "threshold_code": 10,
-    "threshold_shares": 1000,
-    "weekly_changes": {
-      "20260515": -0.02,
-      "20260522": 0.01,
-      "20260529": 0.0,
-      "20260605": 0.76,
-      "20260612": 0.55,
-      "20260618": -0.59
-    },
-    "latest_change": -0.59,
-    "total_change": 0.71,
-    "last_week_hold_pct": 38.6,
-    "close_price": 16.8,
-    "price_change": 0.0
-  },
-  {
-    "rank": 10,
     "stock_code": "3071",
     "stock_name": "協禧",
     "is_taiwan50": false,
@@ -218,6 +196,28 @@
     "last_week_hold_pct": 58.63,
     "close_price": 33.2,
     "price_change": -0.25
+  },
+  {
+    "rank": 10,
+    "stock_code": "6160",
+    "stock_name": "欣技",
+    "is_taiwan50": false,
+    "category": "櫃電腦週邊",
+    "threshold_code": 10,
+    "threshold_shares": 1000,
+    "weekly_changes": {
+      "20260515": -0.02,
+      "20260522": 0.01,
+      "20260529": 0.0,
+      "20260605": 0.76,
+      "20260612": 0.55,
+      "20260618": -0.59
+    },
+    "latest_change": -0.59,
+    "total_change": 0.71,
+    "last_week_hold_pct": 38.6,
+    "close_price": 16.8,
+    "price_change": 0.0
   },
   {
     "rank": 11,
@@ -463,6 +463,28 @@
   },
   {
     "rank": 22,
+    "stock_code": "4987",
+    "stock_name": "科誠",
+    "is_taiwan50": false,
+    "category": "櫃電腦週邊",
+    "threshold_code": 32,
+    "threshold_shares": 0,
+    "weekly_changes": {
+      "20260515": 0.0,
+      "20260522": 0.0,
+      "20260529": 0.0,
+      "20260605": 0.0,
+      "20260612": 0.0,
+      "20260618": 0.0
+    },
+    "latest_change": 0.0,
+    "total_change": 0.0,
+    "last_week_hold_pct": 80.39,
+    "close_price": null,
+    "price_change": null
+  },
+  {
+    "rank": 23,
     "stock_code": "6228",
     "stock_name": "全譜",
     "is_taiwan50": false,
@@ -484,7 +506,7 @@
     "price_change": -0.1
   },
   {
-    "rank": 23,
+    "rank": 24,
     "stock_code": "5474",
     "stock_name": "聰泰",
     "is_taiwan50": false,
@@ -506,7 +528,7 @@
     "price_change": 7.0
   },
   {
-    "rank": 24,
+    "rank": 25,
     "stock_code": "6577",
     "stock_name": "勁豐",
     "is_taiwan50": false,
@@ -526,28 +548,6 @@
     "last_week_hold_pct": 74.87,
     "close_price": 75.7,
     "price_change": -1.5
-  },
-  {
-    "rank": 25,
-    "stock_code": "4987",
-    "stock_name": "科誠",
-    "is_taiwan50": false,
-    "category": "櫃電腦週邊",
-    "threshold_code": 32,
-    "threshold_shares": 0,
-    "weekly_changes": {
-      "20260515": 0.0,
-      "20260522": 0.0,
-      "20260529": 0.0,
-      "20260605": 0.0,
-      "20260612": 0.0,
-      "20260618": 0.0
-    },
-    "latest_change": 0.0,
-    "total_change": 0.0,
-    "last_week_hold_pct": 80.39,
-    "close_price": null,
-    "price_change": null
   },
   {
     "rank": 26,

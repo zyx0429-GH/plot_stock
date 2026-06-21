@@ -243,28 +243,6 @@
   },
   {
     "rank": 12,
-    "stock_code": "6894",
-    "stock_name": "衛司特",
-    "is_taiwan50": false,
-    "category": "綠能",
-    "threshold_code": 40,
-    "threshold_shares": 200,
-    "weekly_changes": {
-      "20260515": 0.0,
-      "20260522": 0.0,
-      "20260529": -0.01,
-      "20260605": -0.1,
-      "20260612": 0.0,
-      "20260618": 0.0
-    },
-    "latest_change": 0.0,
-    "total_change": -0.11,
-    "last_week_hold_pct": 61.06,
-    "close_price": 374.5,
-    "price_change": 24.0
-  },
-  {
-    "rank": 13,
     "stock_code": "8171",
     "stock_name": "天宇",
     "is_taiwan50": false,
@@ -284,6 +262,28 @@
     "last_week_hold_pct": 60.87,
     "close_price": 21.55,
     "price_change": 0.0
+  },
+  {
+    "rank": 13,
+    "stock_code": "6894",
+    "stock_name": "衛司特",
+    "is_taiwan50": false,
+    "category": "綠能",
+    "threshold_code": 40,
+    "threshold_shares": 200,
+    "weekly_changes": {
+      "20260515": 0.0,
+      "20260522": 0.0,
+      "20260529": -0.01,
+      "20260605": -0.1,
+      "20260612": 0.0,
+      "20260618": 0.0
+    },
+    "latest_change": 0.0,
+    "total_change": -0.11,
+    "last_week_hold_pct": 61.06,
+    "close_price": 374.5,
+    "price_change": 24.0
   },
   {
     "rank": 14,

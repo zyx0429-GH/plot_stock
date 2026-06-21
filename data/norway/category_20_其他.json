@@ -309,28 +309,6 @@
   },
   {
     "rank": 15,
-    "stock_code": "1443",
-    "stock_name": "立益物流",
-    "is_taiwan50": false,
-    "category": "其他",
-    "threshold_code": 20,
-    "threshold_shares": 0,
-    "weekly_changes": {
-      "20260515": 0.07,
-      "20260522": 0.04,
-      "20260529": 0.03,
-      "20260605": 0.06,
-      "20260612": 0.06,
-      "20260618": 0.02
-    },
-    "latest_change": 0.02,
-    "total_change": 0.28,
-    "last_week_hold_pct": 89.88,
-    "close_price": 27.9,
-    "price_change": 0.2
-  },
-  {
-    "rank": 16,
     "stock_code": "6592",
     "stock_name": "和潤企業",
     "is_taiwan50": false,
@@ -350,6 +328,28 @@
     "last_week_hold_pct": 79.87,
     "close_price": 65.3,
     "price_change": 0.0
+  },
+  {
+    "rank": 16,
+    "stock_code": "1443",
+    "stock_name": "立益物流",
+    "is_taiwan50": false,
+    "category": "其他",
+    "threshold_code": 20,
+    "threshold_shares": 0,
+    "weekly_changes": {
+      "20260515": 0.07,
+      "20260522": 0.04,
+      "20260529": 0.03,
+      "20260605": 0.06,
+      "20260612": 0.06,
+      "20260618": 0.02
+    },
+    "latest_change": 0.02,
+    "total_change": 0.28,
+    "last_week_hold_pct": 89.88,
+    "close_price": 27.9,
+    "price_change": 0.2
   },
   {
     "rank": 17,
@@ -573,28 +573,6 @@
   },
   {
     "rank": 27,
-    "stock_code": "9902",
-    "stock_name": "台火",
-    "is_taiwan50": false,
-    "category": "其他",
-    "threshold_code": 50,
-    "threshold_shares": 400,
-    "weekly_changes": {
-      "20260515": 0.3,
-      "20260522": 0.14,
-      "20260529": 0.04,
-      "20260605": -0.36,
-      "20260612": -0.07,
-      "20260618": 0.02
-    },
-    "latest_change": 0.02,
-    "total_change": 0.07,
-    "last_week_hold_pct": 56.61,
-    "close_price": 13.7,
-    "price_change": -0.05
-  },
-  {
-    "rank": 28,
     "stock_code": "6504",
     "stock_name": "南六",
     "is_taiwan50": false,
@@ -614,6 +592,28 @@
     "last_week_hold_pct": 69.83,
     "close_price": 36.2,
     "price_change": 0.0
+  },
+  {
+    "rank": 28,
+    "stock_code": "9902",
+    "stock_name": "台火",
+    "is_taiwan50": false,
+    "category": "其他",
+    "threshold_code": 50,
+    "threshold_shares": 400,
+    "weekly_changes": {
+      "20260515": 0.3,
+      "20260522": 0.14,
+      "20260529": 0.04,
+      "20260605": -0.36,
+      "20260612": -0.07,
+      "20260618": 0.02
+    },
+    "latest_change": 0.02,
+    "total_change": 0.07,
+    "last_week_hold_pct": 56.61,
+    "close_price": 13.7,
+    "price_change": -0.05
   },
   {
     "rank": 29,
@@ -639,28 +639,6 @@
   },
   {
     "rank": 30,
-    "stock_code": "8488",
-    "stock_name": "吉源-KY",
-    "is_taiwan50": false,
-    "category": "其他",
-    "threshold_code": 30,
-    "threshold_shares": 400,
-    "weekly_changes": {
-      "20260515": 0.04,
-      "20260522": -0.04,
-      "20260529": 0.0,
-      "20260605": 0.0,
-      "20260612": 0.01,
-      "20260618": 0.0
-    },
-    "latest_change": 0.0,
-    "total_change": 0.01,
-    "last_week_hold_pct": 87.1,
-    "close_price": 10.55,
-    "price_change": 0.25
-  },
-  {
-    "rank": 31,
     "stock_code": "2496",
     "stock_name": "卓越",
     "is_taiwan50": false,
@@ -682,51 +660,29 @@
     "price_change": 0.5
   },
   {
+    "rank": 31,
+    "stock_code": "8488",
+    "stock_name": "吉源-KY",
+    "is_taiwan50": false,
+    "category": "其他",
+    "threshold_code": 30,
+    "threshold_shares": 400,
+    "weekly_changes": {
+      "20260515": 0.04,
+      "20260522": -0.04,
+      "20260529": 0.0,
+      "20260605": 0.0,
+      "20260612": 0.01,
+      "20260618": 0.0
+    },
+    "latest_change": 0.0,
+    "total_change": 0.01,
+    "last_week_hold_pct": 87.1,
+    "close_price": 10.55,
+    "price_change": 0.25
+  },
+  {
     "rank": 32,
-    "stock_code": "2443",
-    "stock_name": "昶虹",
-    "is_taiwan50": false,
-    "category": "其他",
-    "threshold_code": 32,
-    "threshold_shares": 0,
-    "weekly_changes": {
-      "20260515": 0.0,
-      "20260522": 0.0,
-      "20260529": 0.0,
-      "20260605": 0.0,
-      "20260612": 0.0,
-      "20260618": 0.0
-    },
-    "latest_change": 0.0,
-    "total_change": 0.0,
-    "last_week_hold_pct": 55.26,
-    "close_price": null,
-    "price_change": null
-  },
-  {
-    "rank": 33,
-    "stock_code": "6625",
-    "stock_name": "必應",
-    "is_taiwan50": false,
-    "category": "其他",
-    "threshold_code": 32,
-    "threshold_shares": 0,
-    "weekly_changes": {
-      "20260515": 0.0,
-      "20260522": 0.0,
-      "20260529": 0.0,
-      "20260605": 0.0,
-      "20260612": 0.0,
-      "20260618": 0.0
-    },
-    "latest_change": 0.0,
-    "total_change": 0.0,
-    "last_week_hold_pct": 48.88,
-    "close_price": 79.2,
-    "price_change": 0.2
-  },
-  {
-    "rank": 34,
     "stock_code": "1435",
     "stock_name": "中福",
     "is_taiwan50": false,
@@ -748,29 +704,51 @@
     "price_change": 0.0
   },
   {
-    "rank": 35,
-    "stock_code": "6958",
-    "stock_name": "日盛台駿",
+    "rank": 33,
+    "stock_code": "2443",
+    "stock_name": "昶虹",
     "is_taiwan50": false,
     "category": "其他",
-    "threshold_code": 30,
-    "threshold_shares": 400,
+    "threshold_code": 32,
+    "threshold_shares": 0,
     "weekly_changes": {
       "20260515": 0.0,
-      "20260522": 0.02,
+      "20260522": 0.0,
       "20260529": 0.0,
-      "20260605": -0.01,
+      "20260605": 0.0,
       "20260612": 0.0,
-      "20260618": -0.02
+      "20260618": 0.0
     },
-    "latest_change": -0.02,
-    "total_change": -0.01,
-    "last_week_hold_pct": 94.08,
-    "close_price": 17.2,
+    "latest_change": 0.0,
+    "total_change": 0.0,
+    "last_week_hold_pct": 55.26,
+    "close_price": null,
+    "price_change": null
+  },
+  {
+    "rank": 34,
+    "stock_code": "6625",
+    "stock_name": "必應",
+    "is_taiwan50": false,
+    "category": "其他",
+    "threshold_code": 32,
+    "threshold_shares": 0,
+    "weekly_changes": {
+      "20260515": 0.0,
+      "20260522": 0.0,
+      "20260529": 0.0,
+      "20260605": 0.0,
+      "20260612": 0.0,
+      "20260618": 0.0
+    },
+    "latest_change": 0.0,
+    "total_change": 0.0,
+    "last_week_hold_pct": 48.88,
+    "close_price": 79.2,
     "price_change": 0.2
   },
   {
-    "rank": 36,
+    "rank": 35,
     "stock_code": "9940",
     "stock_name": "信義",
     "is_taiwan50": false,
@@ -790,6 +768,28 @@
     "last_week_hold_pct": 81.39,
     "close_price": 19.85,
     "price_change": -0.15
+  },
+  {
+    "rank": 36,
+    "stock_code": "6958",
+    "stock_name": "日盛台駿",
+    "is_taiwan50": false,
+    "category": "其他",
+    "threshold_code": 30,
+    "threshold_shares": 400,
+    "weekly_changes": {
+      "20260515": 0.0,
+      "20260522": 0.02,
+      "20260529": 0.0,
+      "20260605": -0.01,
+      "20260612": 0.0,
+      "20260618": -0.02
+    },
+    "latest_change": -0.02,
+    "total_change": -0.01,
+    "last_week_hold_pct": 94.08,
+    "close_price": 17.2,
+    "price_change": 0.2
   },
   {
     "rank": 37,

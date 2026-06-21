@@ -551,6 +551,28 @@
   },
   {
     "rank": 26,
+    "stock_code": "6236",
+    "stock_name": "中湛",
+    "is_taiwan50": false,
+    "category": "櫃其他",
+    "threshold_code": 32,
+    "threshold_shares": 0,
+    "weekly_changes": {
+      "20260515": 0.0,
+      "20260522": 0.0,
+      "20260529": 0.0,
+      "20260605": 0.0,
+      "20260612": 0.0,
+      "20260618": 0.0
+    },
+    "latest_change": 0.0,
+    "total_change": 0.0,
+    "last_week_hold_pct": 92.65,
+    "close_price": 0.0,
+    "price_change": 0.0
+  },
+  {
+    "rank": 27,
     "stock_code": "6881",
     "stock_name": "潤德",
     "is_taiwan50": false,
@@ -572,7 +594,7 @@
     "price_change": 0.0
   },
   {
-    "rank": 27,
+    "rank": 28,
     "stock_code": "8435",
     "stock_name": "鉅邁",
     "is_taiwan50": false,
@@ -594,7 +616,7 @@
     "price_change": 0.1
   },
   {
-    "rank": 28,
+    "rank": 29,
     "stock_code": "4430",
     "stock_name": "耀億",
     "is_taiwan50": false,
@@ -616,7 +638,7 @@
     "price_change": 0.0
   },
   {
-    "rank": 29,
+    "rank": 30,
     "stock_code": "6904",
     "stock_name": "伯鑫",
     "is_taiwan50": false,
@@ -638,7 +660,7 @@
     "price_change": 0.0
   },
   {
-    "rank": 30,
+    "rank": 31,
     "stock_code": "2221",
     "stock_name": "大甲",
     "is_taiwan50": false,
@@ -658,28 +680,6 @@
     "last_week_hold_pct": 64.72,
     "close_price": 48.05,
     "price_change": 2.15
-  },
-  {
-    "rank": 31,
-    "stock_code": "6236",
-    "stock_name": "中湛",
-    "is_taiwan50": false,
-    "category": "櫃其他",
-    "threshold_code": 32,
-    "threshold_shares": 0,
-    "weekly_changes": {
-      "20260515": 0.0,
-      "20260522": 0.0,
-      "20260529": 0.0,
-      "20260605": 0.0,
-      "20260612": 0.0,
-      "20260618": 0.0
-    },
-    "latest_change": 0.0,
-    "total_change": 0.0,
-    "last_week_hold_pct": 92.65,
-    "close_price": 0.0,
-    "price_change": 0.0
   },
   {
     "rank": 32,

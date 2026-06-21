@@ -199,28 +199,6 @@
   },
   {
     "rank": 10,
-    "stock_code": "3054",
-    "stock_name": "立萬利",
-    "is_taiwan50": false,
-    "category": "食品",
-    "threshold_code": 30,
-    "threshold_shares": 400,
-    "weekly_changes": {
-      "20260515": 0.04,
-      "20260522": 0.0,
-      "20260529": -0.02,
-      "20260605": -0.56,
-      "20260612": 0.52,
-      "20260618": 0.02
-    },
-    "latest_change": 0.02,
-    "total_change": 0.0,
-    "last_week_hold_pct": 87.77,
-    "close_price": 67.7,
-    "price_change": -0.1
-  },
-  {
-    "rank": 11,
     "stock_code": "1219",
     "stock_name": "福壽",
     "is_taiwan50": false,
@@ -240,6 +218,28 @@
     "last_week_hold_pct": 61.95,
     "close_price": 12.6,
     "price_change": 0.0
+  },
+  {
+    "rank": 11,
+    "stock_code": "3054",
+    "stock_name": "立萬利",
+    "is_taiwan50": false,
+    "category": "食品",
+    "threshold_code": 30,
+    "threshold_shares": 400,
+    "weekly_changes": {
+      "20260515": 0.04,
+      "20260522": 0.0,
+      "20260529": -0.02,
+      "20260605": -0.56,
+      "20260612": 0.52,
+      "20260618": 0.02
+    },
+    "latest_change": 0.02,
+    "total_change": 0.0,
+    "last_week_hold_pct": 87.77,
+    "close_price": 67.7,
+    "price_change": -0.1
   },
   {
     "rank": 12,

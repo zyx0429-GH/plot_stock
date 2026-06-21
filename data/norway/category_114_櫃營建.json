@@ -287,28 +287,6 @@
   },
   {
     "rank": 14,
-    "stock_code": "6171",
-    "stock_name": "大城地產",
-    "is_taiwan50": false,
-    "category": "櫃營建",
-    "threshold_code": 32,
-    "threshold_shares": 0,
-    "weekly_changes": {
-      "20260515": -0.01,
-      "20260522": 0.02,
-      "20260529": 0.1,
-      "20260605": 0.0,
-      "20260612": 0.0,
-      "20260618": 0.0
-    },
-    "latest_change": 0.0,
-    "total_change": 0.11,
-    "last_week_hold_pct": 87.73,
-    "close_price": 24.9,
-    "price_change": 0.4
-  },
-  {
-    "rank": 15,
     "stock_code": "3521",
     "stock_name": "台鋼建設",
     "is_taiwan50": false,
@@ -328,6 +306,28 @@
     "last_week_hold_pct": 76.21,
     "close_price": 12.55,
     "price_change": -0.05
+  },
+  {
+    "rank": 15,
+    "stock_code": "6171",
+    "stock_name": "大城地產",
+    "is_taiwan50": false,
+    "category": "櫃營建",
+    "threshold_code": 32,
+    "threshold_shares": 0,
+    "weekly_changes": {
+      "20260515": -0.01,
+      "20260522": 0.02,
+      "20260529": 0.1,
+      "20260605": 0.0,
+      "20260612": 0.0,
+      "20260618": 0.0
+    },
+    "latest_change": 0.0,
+    "total_change": 0.11,
+    "last_week_hold_pct": 87.73,
+    "close_price": 24.9,
+    "price_change": 0.4
   },
   {
     "rank": 16,

@@ -309,28 +309,6 @@
   },
   {
     "rank": 15,
-    "stock_code": "6404",
-    "stock_name": "通訊-KY",
-    "is_taiwan50": false,
-    "category": "櫃資訊服務",
-    "threshold_code": 32,
-    "threshold_shares": 0,
-    "weekly_changes": {
-      "20260515": 0.0,
-      "20260522": 0.0,
-      "20260529": 0.0,
-      "20260605": 0.0,
-      "20260612": 0.0,
-      "20260618": 0.0
-    },
-    "latest_change": 0.0,
-    "total_change": 0.0,
-    "last_week_hold_pct": 67.09,
-    "close_price": null,
-    "price_change": null
-  },
-  {
-    "rank": 16,
     "stock_code": "3570",
     "stock_name": "大塚",
     "is_taiwan50": false,
@@ -350,6 +328,28 @@
     "last_week_hold_pct": 53.92,
     "close_price": 179.0,
     "price_change": -2.0
+  },
+  {
+    "rank": 16,
+    "stock_code": "6404",
+    "stock_name": "通訊-KY",
+    "is_taiwan50": false,
+    "category": "櫃資訊服務",
+    "threshold_code": 32,
+    "threshold_shares": 0,
+    "weekly_changes": {
+      "20260515": 0.0,
+      "20260522": 0.0,
+      "20260529": 0.0,
+      "20260605": 0.0,
+      "20260612": 0.0,
+      "20260618": 0.0
+    },
+    "latest_change": 0.0,
+    "total_change": 0.0,
+    "last_week_hold_pct": 67.09,
+    "close_price": null,
+    "price_change": null
   },
   {
     "rank": 17,

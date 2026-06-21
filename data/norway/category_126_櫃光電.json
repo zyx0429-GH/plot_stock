@@ -419,6 +419,28 @@
   },
   {
     "rank": 20,
+    "stock_code": "6419",
+    "stock_name": "京晨科",
+    "is_taiwan50": false,
+    "category": "櫃光電",
+    "threshold_code": 32,
+    "threshold_shares": 0,
+    "weekly_changes": {
+      "20260515": 0.0,
+      "20260522": 0.0,
+      "20260529": 0.0,
+      "20260605": 0.0,
+      "20260612": 0.0,
+      "20260618": 0.0
+    },
+    "latest_change": 0.0,
+    "total_change": 0.0,
+    "last_week_hold_pct": 35.61,
+    "close_price": 149.5,
+    "price_change": 11.0
+  },
+  {
+    "rank": 21,
     "stock_code": "5245",
     "stock_name": "智晶",
     "is_taiwan50": false,
@@ -440,7 +462,7 @@
     "price_change": -0.35
   },
   {
-    "rank": 21,
+    "rank": 22,
     "stock_code": "6246",
     "stock_name": "臺龍",
     "is_taiwan50": false,
@@ -462,7 +484,7 @@
     "price_change": 0.15
   },
   {
-    "rank": 22,
+    "rank": 23,
     "stock_code": "7753",
     "stock_name": "星亞",
     "is_taiwan50": false,
@@ -484,7 +506,7 @@
     "price_change": -0.15
   },
   {
-    "rank": 23,
+    "rank": 24,
     "stock_code": "6222",
     "stock_name": "立軒",
     "is_taiwan50": false,
@@ -506,7 +528,7 @@
     "price_change": 0.0
   },
   {
-    "rank": 24,
+    "rank": 25,
     "stock_code": "3297",
     "stock_name": "杭特",
     "is_taiwan50": false,
@@ -526,28 +548,6 @@
     "last_week_hold_pct": 49.35,
     "close_price": 31.6,
     "price_change": 0.0
-  },
-  {
-    "rank": 25,
-    "stock_code": "6419",
-    "stock_name": "京晨科",
-    "is_taiwan50": false,
-    "category": "櫃光電",
-    "threshold_code": 32,
-    "threshold_shares": 0,
-    "weekly_changes": {
-      "20260515": 0.0,
-      "20260522": 0.0,
-      "20260529": 0.0,
-      "20260605": 0.0,
-      "20260612": 0.0,
-      "20260618": 0.0
-    },
-    "latest_change": 0.0,
-    "total_change": 0.0,
-    "last_week_hold_pct": 35.61,
-    "close_price": 149.5,
-    "price_change": 11.0
   },
   {
     "rank": 26,

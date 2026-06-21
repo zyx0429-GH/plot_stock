@@ -1,6 +1,6 @@
 {
   "source": "norway.twsthr.info/StockHoldersTopWeek.aspx",
-  "fetched_at": "2026-06-21T14:40:20.816030",
+  "fetched_at": "2026-06-21T21:47:36.897456",
   "thresholds": {
     "200": {
       "stocks": [
@@ -370,8 +370,10 @@
           "big_holder_pct": "48.55%",
           "wow_pct": "+0.00%",
           "streak": "",
-          "rank_change": "",
-          "signals": [],
+          "rank_change": "NEW",
+          "signals": [
+            "新進榜"
+          ],
           "rank": 23
         },
         {
@@ -442,10 +444,8 @@
           "big_holder_pct": "43.36%",
           "wow_pct": "+0.00%",
           "streak": "",
-          "rank_change": "NEW",
-          "signals": [
-            "新進榜"
-          ],
+          "rank_change": "",
+          "signals": [],
           "rank": 28
         },
         {
@@ -2410,7 +2410,7 @@
         "nAll": 1389,
         "nCt": 0,
         "nAccel": 139,
-        "nNewG": 22,
+        "nNewG": 23,
         "nStreak5": 82
       }
     },
@@ -3525,9 +3525,10 @@
           "big_holder_pct": "51.01%",
           "wow_pct": "+0.01%",
           "streak": "↑4週",
-          "rank_change": "",
+          "rank_change": "NEW",
           "signals": [
-            "連增3"
+            "連增3",
+            "新進榜"
           ],
           "rank": 63
         },
@@ -3812,11 +3813,10 @@
           "big_holder_pct": "94.23%",
           "wow_pct": "+0.00%",
           "streak": "",
-          "rank_change": "NEW",
+          "rank_change": "",
           "signals": [
             "高度集中",
-            "流動性風險",
-            "新進榜"
+            "流動性風險"
           ],
           "rank": 82
         },
@@ -4105,7 +4105,7 @@
         "nAll": 260,
         "nCt": 0,
         "nAccel": 0,
-        "nNewG": 4,
+        "nNewG": 5,
         "nStreak5": 26
       }
     }
@@ -4119,7 +4119,7 @@
     "連增5": 110,
     "久盤吸籌": 102,
     "流動性風險": 32,
-    "新進榜": 28,
+    "新進榜": 30,
     "事件驅動": 17,
     "籌碼回補": 379,
     "加速": 139,

@@ -89,28 +89,6 @@
   },
   {
     "rank": 5,
-    "stock_code": "2702",
-    "stock_name": "華園",
-    "is_taiwan50": false,
-    "category": "觀光",
-    "threshold_code": 31,
-    "threshold_shares": 400,
-    "weekly_changes": {
-      "20260515": 0.17,
-      "20260522": 0.0,
-      "20260529": 0.0,
-      "20260605": 0.0,
-      "20260612": -0.01,
-      "20260618": 0.0
-    },
-    "latest_change": 0.0,
-    "total_change": 0.16,
-    "last_week_hold_pct": 73.7,
-    "close_price": 13.0,
-    "price_change": -0.05
-  },
-  {
-    "rank": 6,
     "stock_code": "2701",
     "stock_name": "萬企",
     "is_taiwan50": false,
@@ -130,6 +108,28 @@
     "last_week_hold_pct": 86.32,
     "close_price": 10.55,
     "price_change": 0.0
+  },
+  {
+    "rank": 6,
+    "stock_code": "2702",
+    "stock_name": "華園",
+    "is_taiwan50": false,
+    "category": "觀光",
+    "threshold_code": 31,
+    "threshold_shares": 400,
+    "weekly_changes": {
+      "20260515": 0.17,
+      "20260522": 0.0,
+      "20260529": 0.0,
+      "20260605": 0.0,
+      "20260612": -0.01,
+      "20260618": 0.0
+    },
+    "latest_change": 0.0,
+    "total_change": 0.16,
+    "last_week_hold_pct": 73.7,
+    "close_price": 13.0,
+    "price_change": -0.05
   },
   {
     "rank": 7,

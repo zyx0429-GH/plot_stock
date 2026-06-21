@@ -353,28 +353,6 @@
   },
   {
     "rank": 17,
-    "stock_code": "8923",
-    "stock_name": "時報",
-    "is_taiwan50": false,
-    "category": "櫃文化創意",
-    "threshold_code": 32,
-    "threshold_shares": 0,
-    "weekly_changes": {
-      "20260515": 0.0,
-      "20260522": 0.0,
-      "20260529": 0.0,
-      "20260605": 0.0,
-      "20260612": 0.0,
-      "20260618": 0.0
-    },
-    "latest_change": 0.0,
-    "total_change": 0.0,
-    "last_week_hold_pct": 82.3,
-    "close_price": 19.8,
-    "price_change": 0.45
-  },
-  {
-    "rank": 18,
     "stock_code": "4946",
     "stock_name": "辣椒",
     "is_taiwan50": false,
@@ -396,9 +374,9 @@
     "price_change": 0.0
   },
   {
-    "rank": 19,
-    "stock_code": "6482",
-    "stock_name": "弘煜科",
+    "rank": 18,
+    "stock_code": "8923",
+    "stock_name": "時報",
     "is_taiwan50": false,
     "category": "櫃文化創意",
     "threshold_code": 32,
@@ -413,12 +391,12 @@
     },
     "latest_change": 0.0,
     "total_change": 0.0,
-    "last_week_hold_pct": 67.6,
-    "close_price": 29.65,
-    "price_change": -0.3
+    "last_week_hold_pct": 82.3,
+    "close_price": 19.8,
+    "price_change": 0.45
   },
   {
-    "rank": 20,
+    "rank": 19,
     "stock_code": "3064",
     "stock_name": "泰偉",
     "is_taiwan50": false,
@@ -438,6 +416,28 @@
     "last_week_hold_pct": 63.48,
     "close_price": 19.3,
     "price_change": 0.1
+  },
+  {
+    "rank": 20,
+    "stock_code": "6482",
+    "stock_name": "弘煜科",
+    "is_taiwan50": false,
+    "category": "櫃文化創意",
+    "threshold_code": 32,
+    "threshold_shares": 0,
+    "weekly_changes": {
+      "20260515": 0.0,
+      "20260522": 0.0,
+      "20260529": 0.0,
+      "20260605": 0.0,
+      "20260612": 0.0,
+      "20260618": 0.0
+    },
+    "latest_change": 0.0,
+    "total_change": 0.0,
+    "last_week_hold_pct": 67.6,
+    "close_price": 29.65,
+    "price_change": -0.3
   },
   {
     "rank": 21,
