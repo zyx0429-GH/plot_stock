@@ -659,6 +659,33 @@ class TWStockDataFetcher:
             except Exception as e:
                 print(f"[WARN] Failed to load {nf}: {e}")
         
+        print(f"[INFO] Total chip lookup entries: {len(chip_lookup)}")
+        
+        # Guard: if chip data is insufficient, preserve existing shareholder data
+        if len(chip_lookup) < 1000:
+            print(f"[WARN] Norway chip data insufficient ({len(chip_lookup)} records). Preserving existing shareholder data from raw_data.json...")
+            existing_raw_path = os.path.join(DATA_DIR, "raw_data.json")
+            if os.path.exists(existing_raw_path):
+                try:
+                    with open(existing_raw_path, "r", encoding="utf-8") as f:
+                        existing_data = json.load(f)
+                    preserved = 0
+                    for sid in results:
+                        if sid in existing_data and existing_data[sid].get("shareholder"):
+                            results[sid]["shareholder"] = existing_data[sid]["shareholder"]
+                            preserved += 1
+                    print(f"[INFO] Preserved shareholder data for {preserved} stocks from existing raw_data.json")
+                    # Save and return early
+                    os.makedirs(DATA_DIR, exist_ok=True)
+                    with open(os.path.join(DATA_DIR, "raw_data.json"), "w", encoding="utf-8") as f:
+                        json.dump(results, f, ensure_ascii=False, indent=2)
+                    print(f"[INFO] Data saved: {len(results)} stocks")
+                    return results
+                except Exception as e:
+                    print(f"[WARN] Failed to preserve existing shareholder data: {e}")
+            else:
+                print("[WARN] No existing raw_data.json found to preserve shareholder data")
+        
         merged = 0
         for sid in results:
             if sid in chip_lookup:
@@ -688,12 +715,28 @@ class TWStockDataFetcher:
         
         print(f"[INFO] Norway chip data merged: {merged} stocks")
         
+        # Guard: if merged too few, data might be corrupted
+        if merged < 100 and len(results) > 150:
+            print(f"[WARN] Only {merged} stocks merged with chip data (expected >150). Data might be corrupted.")
+            existing_raw_path = os.path.join(DATA_DIR, "raw_data.json")
+            if os.path.exists(existing_raw_path):
+                try:
+                    with open(existing_raw_path, "r", encoding="utf-8") as f:
+                        existing_data = json.load(f)
+                    preserved = 0
+                    for sid in results:
+                        if sid in existing_data and existing_data[sid].get("shareholder"):
+                            results[sid]["shareholder"] = existing_data[sid]["shareholder"]
+                            preserved += 1
+                    print(f"[INFO] Emergency fallback: preserved shareholder data for {preserved} stocks from existing raw_data.json")
+                except Exception as e:
+                    print(f"[WARN] Failed to preserve existing data: {e}")
+        
         # === Save ===
         os.makedirs(DATA_DIR, exist_ok=True)
         with open(os.path.join(DATA_DIR, "raw_data.json"), "w", encoding="utf-8") as f:
             json.dump(results, f, ensure_ascii=False, indent=2)
         print(f"[INFO] Data saved: {len(results)} stocks")
-        return results
         return results
 
     def fetch_etf_data(self, etf_code="00981A", holdings=None):

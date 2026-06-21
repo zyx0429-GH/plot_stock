@@ -37,15 +37,30 @@ jobs:
         pip install -r requirements.txt
 
     - name: Fetch Norway.twsthr.info chip data
-      continue-on-error: true
       run: |
-        python scripts/norway_fetcher.py || echo "Norway fetch failed, continuing..."
+        python scripts/norway_fetcher.py || echo "Norway fetch failed"
+
+    - name: Validate data integrity
+      run: |
+        python scripts/validate_data.py
+        if [ $? -ne 0 ]; then
+          echo "[ERROR] Data validation failed. Aborting."
+          exit 1
+        fi
 
     - name: Run full pipeline (fetch + screen + generate)
       env:
         FINMIND_API_TOKEN: ${{ secrets.FINMIND_API_TOKEN }}
       run: |
         python main.py
+
+    - name: Final validation before push
+      run: |
+        python scripts/validate_data.py
+        if [ $? -ne 0 ]; then
+          echo "[ERROR] Final validation failed. Will not push broken data."
+          exit 1
+        fi
 
     - name: Commit and push changes
       run: |
