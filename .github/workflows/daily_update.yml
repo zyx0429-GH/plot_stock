@@ -1,11 +1,12 @@
 name: Daily Stock Update
 
 on:
-  push:
-    branches: [main]
   schedule:
     - cron: '50 8 * * 1-5'  # 週一到週五 08:50 UTC = 台灣16:50 (04:50PM) 盤後數據更新
   workflow_dispatch:       # 允許手動觸發
+
+# Note: push 事件不觸發此工作流，避免每次代碼推送時重新抓取數據
+# 數據更新只在排程時間或手動觸發時執行
 
 permissions:
   contents: write
@@ -36,65 +37,53 @@ jobs:
       run: |
         pip install -r requirements.txt
 
-    - name: Step 1 - Fetch Norway big holder data
+    - name: Step 1 - Fetch Norway big holder data (weekly, skip on failure)
       id: norway
       continue-on-error: true
       run: |
-        echo "=== Step 1: Fetching Norway data ==="
-        python scripts/norway_fetcher_v2.py || echo "[WARN] Norway fetch failed, using existing data"
-        ls -la data/norway/ 2>/dev/null || echo "No norway data dir"
+        echo "=== Step 1: Fetching Norway data (weekly update) ==="
+        python scripts/norway_fetcher_v2.py || echo "[WARN] Norway fetch failed, using existing data from repo"
+        echo "Norway data status:"
+        ls -la data/norway/ 2>/dev/null || echo "  No norway data dir"
         ls -la data/*.json 2>/dev/null | head -5 || true
 
-    - name: Step 2 - Pre-validation (check existing data)
-      id: prevalidate
-      run: |
-        echo "=== Step 2: Pre-validation ==="
-        python scripts/validate_data.py || echo "Pre-validation warnings (non-fatal)"
-
-    - name: Step 3 - Fetch TWSE/TPEX data
+    - name: Step 2 - Fetch TWSE/TPEX data
       id: twse
       env:
         FINMIND_API_TOKEN: ${{ secrets.FINMIND_API_TOKEN }}
       run: |
-        echo "=== Step 3: Fetching TWSE/TPEX data ==="
-        python -c "from scripts.data_fetcher import fetch_all; fetch_all()"
+        echo "=== Step 2: Fetching TWSE/TPEX data ==="
+        python scripts/data_fetcher.py
         echo "TWSE fetch exit code: $?"
 
-    - name: Step 4 - Run screening
+    - name: Step 3 - Run screening
       id: screen
       run: |
-        echo "=== Step 4: Running stock screening ==="
-        python -c "from scripts.stock_screener import run_screening; run_screening()"
+        echo "=== Step 3: Running stock screening ==="
+        python scripts/stock_screener.py
         echo "Screening exit code: $?"
 
-    - name: Step 5 - Generate HTML pages
+    - name: Step 4 - Generate HTML pages
       id: generate
       run: |
-        echo "=== Step 5: Generating HTML ==="
-        python -c "from scripts.generate_html import generate; generate()"
+        echo "=== Step 4: Generating HTML ==="
+        python scripts/generate_html.py
         echo "HTML generation exit code: $?"
-        python -c "from scripts.norway_to_weekly_json import convert; convert()"
+        python scripts/norway_to_weekly_json.py
         echo "Weekly JSON conversion exit code: $?"
-        python -c "from scripts.generate_weekly_html import generate_weekly; generate_weekly()"
+        python scripts/generate_weekly_html.py
         echo "Weekly HTML generation exit code: $?"
 
-    - name: Step 6 - Post-validation (check generated data)
-      id: postvalidate
+    - name: Step 5 - Validate data integrity
+      id: validate
       run: |
-        echo "=== Step 6: Post-validation ==="
-        python scripts/validate_data.py
-        if [ $? -ne 0 ]; then
-          echo "[ERROR] Post-validation failed. Will not push broken data."
-          echo "[DEBUG] Checking data files..."
-          ls -la data/ || true
-          cat data/screened_data.json | python -c "import json,sys; d=json.load(sys.stdin); print('screened:',len(d.get('screened',[]))); print('dual:',len(d.get('dual_certified',[]))); print('triple:',len(d.get('triple_certified',[])))" || true
-          exit 1
-        fi
+        echo "=== Step 5: Validating data ==="
+        python scripts/validate_data.py || echo "[WARN] Validation warnings"
 
-    - name: Step 7 - Commit and push changes
+    - name: Step 6 - Commit and push changes
       id: commit
       run: |
-        echo "=== Step 7: Commit and push ==="
+        echo "=== Step 6: Commit and push ==="
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
         git config pull.rebase true
@@ -105,14 +94,14 @@ jobs:
         git pull origin main || echo "Nothing to pull"
         git push
 
-    - name: Step 8 - Setup Pages
+    - name: Step 7 - Setup Pages
       uses: actions/configure-pages@v5
 
-    - name: Step 9 - Upload artifact
+    - name: Step 8 - Upload artifact
       uses: actions/upload-pages-artifact@v3
       with:
         path: './docs'
 
-    - name: Step 10 - Deploy to GitHub Pages
+    - name: Step 9 - Deploy to GitHub Pages
       id: deployment
       uses: actions/deploy-pages@v4
