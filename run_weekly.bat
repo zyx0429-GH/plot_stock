@@ -8,11 +8,15 @@ echo ==========================================
 echo Norway Weekly Data Update
 echo ==========================================
 
-echo [1/3] Fetching Norway data...
+echo [1/4] Fetching Norway data...
 python scripts\norway_fetcher.py
 if errorlevel 1 goto error
 
-echo [2/3] Updating daily data...
+echo [VALIDATE] Checking Norway data...
+python scripts\validate_data.py
+if errorlevel 1 goto error
+
+echo [2/4] Updating daily data...
 python scripts\data_fetcher.py
 if errorlevel 1 goto error
 
@@ -22,7 +26,18 @@ if errorlevel 1 goto error
 python scripts\generate_html.py
 if errorlevel 1 goto error
 
-echo [3/3] Pushing to GitHub...
+echo [3/4] Generating weekly ranking...
+python scripts\norway_to_weekly_json.py
+if errorlevel 1 goto error
+
+python scripts\generate_weekly_html.py
+if errorlevel 1 goto error
+
+echo [VALIDATE] Final check...
+python scripts\validate_data.py
+if errorlevel 1 goto error
+
+echo [4/4] Pushing to GitHub...
 git add -A
 git commit -m "weekly: Norway update %date%"
 git push mirror main --force

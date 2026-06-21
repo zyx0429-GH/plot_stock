@@ -11,6 +11,10 @@ echo ==========================================
 python scripts\data_fetcher.py
 if errorlevel 1 goto error
 
+echo [VALIDATE] Checking data integrity...
+python scripts\validate_data.py
+if errorlevel 1 goto error
+
 python scripts\stock_screener.py
 if errorlevel 1 goto error
 
