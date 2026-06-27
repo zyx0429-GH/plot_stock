@@ -326,7 +326,7 @@
         240218736,
         264056240,
         188234646,
-        358023317
+        354206738
       ],
       "ma20": 31.06,
       "ma60": 28.3,
@@ -369,14 +369,14 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 33184,
-        "short_balance": 4250,
-        "margin_prev": 35034,
-        "short_prev": 4372,
-        "margin_change": -1850,
-        "short_change": -122,
+        "margin_balance": 30184,
+        "short_balance": 4093,
+        "margin_prev": 33184,
+        "short_prev": 4250,
+        "margin_change": -3000,
+        "short_change": -157,
         "margin_usage_pct": null,
-        "margin_short_ratio": 0.1281
+        "margin_short_ratio": 0.1356
       }
     ],
     "holding": [],
@@ -689,7 +689,7 @@
         220786157,
         71531600,
         47550320,
-        29968281
+        29559252
       ],
       "ma20": 120.25,
       "ma60": 97.98,
@@ -755,14 +755,14 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 6825,
-        "short_balance": 717,
-        "margin_prev": 6685,
-        "short_prev": 786,
-        "margin_change": 140,
-        "short_change": -69,
+        "margin_balance": 6843,
+        "short_balance": 587,
+        "margin_prev": 6825,
+        "short_prev": 717,
+        "margin_change": 18,
+        "short_change": -130,
         "margin_usage_pct": null,
-        "margin_short_ratio": 0.1051
+        "margin_short_ratio": 0.0858
       }
     ],
     "holding": [],
@@ -1075,7 +1075,7 @@
         16269078,
         13290189,
         9651019,
-        6851902
+        6817087
       ],
       "ma20": 94.1,
       "ma60": 83.97,
@@ -1141,14 +1141,14 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 139,
+        "margin_balance": 132,
         "short_balance": 1,
-        "margin_prev": 150,
+        "margin_prev": 139,
         "short_prev": 1,
-        "margin_change": -11,
+        "margin_change": -7,
         "short_change": 0,
         "margin_usage_pct": null,
-        "margin_short_ratio": 0.0072
+        "margin_short_ratio": 0.0076
       }
     ],
     "holding": [],
@@ -1461,7 +1461,7 @@
         1186042,
         1132057,
         787050,
-        835489
+        822014
       ],
       "ma20": 1333.25,
       "ma60": 1331.73,
@@ -1527,14 +1527,14 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 60870,
-        "short_balance": 326,
-        "margin_prev": 60291,
-        "short_prev": 321,
-        "margin_change": 579,
-        "short_change": 5,
-        "margin_usage_pct": 41.58,
-        "margin_short_ratio": 0.0054
+        "margin_balance": 60760,
+        "short_balance": 622,
+        "margin_prev": 60870,
+        "short_prev": 326,
+        "margin_change": -110,
+        "short_change": 296,
+        "margin_usage_pct": 41.51,
+        "margin_short_ratio": 0.0102
       }
     ],
     "holding": [],
@@ -1847,7 +1847,7 @@
         40558523,
         27911097,
         26415148,
-        40900293
+        40373878
       ],
       "ma20": 100.53,
       "ma60": 106.06,
@@ -1913,14 +1913,14 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 9053,
-        "short_balance": 603,
-        "margin_prev": 9192,
-        "short_prev": 611,
-        "margin_change": -139,
-        "short_change": -8,
+        "margin_balance": 8869,
+        "short_balance": 574,
+        "margin_prev": 9053,
+        "short_prev": 603,
+        "margin_change": -184,
+        "short_change": -29,
         "margin_usage_pct": null,
-        "margin_short_ratio": 0.0666
+        "margin_short_ratio": 0.0647
       }
     ],
     "holding": [],
@@ -2233,7 +2233,7 @@
         27364700,
         19338378,
         9100828,
-        7794668
+        7745686
       ],
       "ma20": 14.29,
       "ma60": 13.65,
@@ -2299,14 +2299,14 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 46598,
-        "short_balance": 684,
-        "margin_prev": 46833,
-        "short_prev": 688,
-        "margin_change": -235,
-        "short_change": -4,
+        "margin_balance": 45178,
+        "short_balance": 656,
+        "margin_prev": 46598,
+        "short_prev": 684,
+        "margin_change": -1420,
+        "short_change": -28,
         "margin_usage_pct": null,
-        "margin_short_ratio": 0.0147
+        "margin_short_ratio": 0.0145
       }
     ],
     "holding": [],
@@ -2619,7 +2619,7 @@
         86902231,
         44346894,
         54786136,
-        57447440
+        57329147
       ],
       "ma20": 19.01,
       "ma60": 19.08,
@@ -2685,14 +2685,14 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 7853,
-        "short_balance": 89,
-        "margin_prev": 8017,
-        "short_prev": 95,
-        "margin_change": -164,
-        "short_change": -6,
+        "margin_balance": 8355,
+        "short_balance": 86,
+        "margin_prev": 7853,
+        "short_prev": 89,
+        "margin_change": 502,
+        "short_change": -3,
         "margin_usage_pct": null,
-        "margin_short_ratio": 0.0113
+        "margin_short_ratio": 0.0103
       }
     ],
     "holding": [],
@@ -3005,7 +3005,7 @@
         4355358,
         2332698,
         2388223,
-        2432535
+        2423380
       ],
       "ma20": 41.37,
       "ma60": 34.76,
@@ -3050,7 +3050,7 @@
       "change": 0,
       "change_pct": 0,
       "foreign_net": -8736103,
-      "trust_net": -1964008
+      "trust_net": -2099008
     },
     "foreign": [
       {
@@ -3064,21 +3064,21 @@
       {
         "date": "20260626",
         "buy": 68992,
-        "sell": 2033000,
-        "net": -1964008
+        "sell": 2168000,
+        "net": -2099008
       }
     ],
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 19470,
-        "short_balance": 215,
-        "margin_prev": 19238,
-        "short_prev": 248,
-        "margin_change": 232,
-        "short_change": -33,
+        "margin_balance": 19716,
+        "short_balance": 176,
+        "margin_prev": 19470,
+        "short_prev": 215,
+        "margin_change": 246,
+        "short_change": -39,
         "margin_usage_pct": null,
-        "margin_short_ratio": 0.011
+        "margin_short_ratio": 0.0089
       }
     ],
     "holding": [],
@@ -3391,7 +3391,7 @@
         57190792,
         33542841,
         35088597,
-        31058023
+        29689234
       ],
       "ma20": 221.5,
       "ma60": 196.5,
@@ -3457,14 +3457,14 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 7564,
-        "short_balance": 268,
-        "margin_prev": 7705,
-        "short_prev": 291,
-        "margin_change": -141,
-        "short_change": -23,
+        "margin_balance": 7169,
+        "short_balance": 187,
+        "margin_prev": 7564,
+        "short_prev": 268,
+        "margin_change": -395,
+        "short_change": -81,
         "margin_usage_pct": null,
-        "margin_short_ratio": 0.0354
+        "margin_short_ratio": 0.0261
       }
     ],
     "holding": [],
@@ -3777,7 +3777,7 @@
         14775665,
         3182242,
         2124016,
-        3677326
+        3648077
       ],
       "ma20": 28.16,
       "ma60": 21.04,
@@ -3827,8 +3827,8 @@
     "foreign": [
       {
         "date": "20260626",
-        "buy": 10769249,
-        "sell": 16248133,
+        "buy": 11113249,
+        "sell": 16592133,
         "net": -5478884
       }
     ],
@@ -3843,14 +3843,14 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 7113,
-        "short_balance": 16,
-        "margin_prev": 7062,
-        "short_prev": 4,
-        "margin_change": 51,
-        "short_change": 12,
+        "margin_balance": 7370,
+        "short_balance": 124,
+        "margin_prev": 7113,
+        "short_prev": 16,
+        "margin_change": 257,
+        "short_change": 108,
         "margin_usage_pct": null,
-        "margin_short_ratio": 0.0022
+        "margin_short_ratio": 0.0168
       }
     ],
     "holding": [],
@@ -4163,7 +4163,7 @@
         12891436,
         20264727,
         12022420,
-        28165248
+        23031042
       ],
       "ma20": 2220.75,
       "ma60": 2068.58,
@@ -4229,14 +4229,14 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 46279,
-        "short_balance": 644,
-        "margin_prev": 45650,
-        "short_prev": 636,
-        "margin_change": 629,
-        "short_change": 8,
+        "margin_balance": 44544,
+        "short_balance": 591,
+        "margin_prev": 46279,
+        "short_prev": 644,
+        "margin_change": -1735,
+        "short_change": -53,
         "margin_usage_pct": null,
-        "margin_short_ratio": 0.0139
+        "margin_short_ratio": 0.0133
       }
     ],
     "holding": [],
@@ -4549,7 +4549,7 @@
         38395718,
         33476329,
         27913989,
-        40915980
+        39511337
       ],
       "ma20": 258.75,
       "ma60": 257.85,
@@ -4615,14 +4615,14 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 5028,
-        "short_balance": 244,
-        "margin_prev": 5027,
-        "short_prev": 237,
-        "margin_change": 1,
-        "short_change": 7,
+        "margin_balance": 4500,
+        "short_balance": 262,
+        "margin_prev": 5028,
+        "short_prev": 244,
+        "margin_change": -528,
+        "short_change": 18,
         "margin_usage_pct": null,
-        "margin_short_ratio": 0.0485
+        "margin_short_ratio": 0.0582
       }
     ],
     "holding": [],
@@ -4935,7 +4935,7 @@
         18991844,
         10738724,
         4012648,
-        4448611
+        4419116
       ],
       "ma20": 182.65,
       "ma60": 143.36,
@@ -4985,8 +4985,8 @@
     "foreign": [
       {
         "date": "20260626",
-        "buy": 22674625,
-        "sell": 53002386,
+        "buy": 23040625,
+        "sell": 53368386,
         "net": -30327761
       }
     ],
@@ -5001,14 +5001,14 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 48721,
-        "short_balance": 161,
-        "margin_prev": 48168,
-        "short_prev": 324,
-        "margin_change": 553,
-        "short_change": -163,
+        "margin_balance": 49037,
+        "short_balance": 20,
+        "margin_prev": 48721,
+        "short_prev": 161,
+        "margin_change": 316,
+        "short_change": -141,
         "margin_usage_pct": null,
-        "margin_short_ratio": 0.0033
+        "margin_short_ratio": 0.0004
       }
     ],
     "holding": [],
@@ -5321,7 +5321,7 @@
         87176477,
         59641357,
         41360011,
-        79576738
+        76100217
       ],
       "ma20": 273.32,
       "ma60": 243.28,
@@ -5387,14 +5387,14 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 60588,
-        "short_balance": 422,
-        "margin_prev": 59421,
-        "short_prev": 518,
-        "margin_change": 1167,
-        "short_change": -96,
+        "margin_balance": 60419,
+        "short_balance": 760,
+        "margin_prev": 60588,
+        "short_prev": 422,
+        "margin_change": -169,
+        "short_change": 338,
         "margin_usage_pct": null,
-        "margin_short_ratio": 0.007
+        "margin_short_ratio": 0.0126
       }
     ],
     "holding": [],
@@ -5707,7 +5707,7 @@
         61829013,
         88652418,
         65214944,
-        80428729
+        79750608
       ],
       "ma20": 38.64,
       "ma60": 32.76,
@@ -5752,35 +5752,35 @@
       "change": 0,
       "change_pct": 0,
       "foreign_net": -7217850,
-      "trust_net": 994663
+      "trust_net": 1001663
     },
     "foreign": [
       {
         "date": "20260626",
-        "buy": 15056376,
-        "sell": 22274226,
+        "buy": 17983376,
+        "sell": 25201226,
         "net": -7217850
       }
     ],
     "trust": [
       {
         "date": "20260626",
-        "buy": 1016663,
+        "buy": 1023663,
         "sell": 22000,
-        "net": 994663
+        "net": 1001663
       }
     ],
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 56317,
-        "short_balance": 427,
-        "margin_prev": 54942,
-        "short_prev": 398,
-        "margin_change": 1375,
-        "short_change": 29,
+        "margin_balance": 53064,
+        "short_balance": 836,
+        "margin_prev": 56317,
+        "short_prev": 427,
+        "margin_change": -3253,
+        "short_change": 409,
         "margin_usage_pct": null,
-        "margin_short_ratio": 0.0076
+        "margin_short_ratio": 0.0158
       }
     ],
     "holding": [],
@@ -6093,7 +6093,7 @@
         44344657,
         47711122,
         58912037,
-        55099933
+        52009610
       ],
       "ma20": 901.4,
       "ma60": 561.91,
@@ -6143,8 +6143,8 @@
     "foreign": [
       {
         "date": "20260626",
-        "buy": 16354218,
-        "sell": 30635373,
+        "buy": 22676018,
+        "sell": 36957173,
         "net": -14281155
       }
     ],
@@ -6159,12 +6159,12 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 31896,
-        "short_balance": 46,
-        "margin_prev": 31148,
-        "short_prev": 45,
-        "margin_change": 748,
-        "short_change": 1,
+        "margin_balance": 31215,
+        "short_balance": 43,
+        "margin_prev": 31896,
+        "short_prev": 46,
+        "margin_change": -681,
+        "short_change": -3,
         "margin_usage_pct": null,
         "margin_short_ratio": 0.0014
       }
@@ -6479,7 +6479,7 @@
         34264856,
         55667954,
         34424468,
-        46990290
+        39547254
       ],
       "ma20": 2368.5,
       "ma60": 2214.92,
@@ -6545,14 +6545,14 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 22197,
-        "short_balance": 92,
-        "margin_prev": 22059,
-        "short_prev": 103,
-        "margin_change": 138,
-        "short_change": -11,
+        "margin_balance": 21911,
+        "short_balance": 98,
+        "margin_prev": 22197,
+        "short_prev": 92,
+        "margin_change": -286,
+        "short_change": 6,
         "margin_usage_pct": null,
-        "margin_short_ratio": 0.0041
+        "margin_short_ratio": 0.0045
       }
     ],
     "holding": [],
@@ -6865,7 +6865,7 @@
         25985790,
         10349830,
         8028519,
-        9623510
+        9593495
       ],
       "ma20": 17.0,
       "ma60": 15.44,
@@ -6931,14 +6931,14 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 104057,
-        "short_balance": 1389,
-        "margin_prev": 94836,
-        "short_prev": 1510,
-        "margin_change": 9221,
-        "short_change": -121,
+        "margin_balance": 94713,
+        "short_balance": 2019,
+        "margin_prev": 104057,
+        "short_prev": 1389,
+        "margin_change": -9344,
+        "short_change": 630,
         "margin_usage_pct": null,
-        "margin_short_ratio": 0.0133
+        "margin_short_ratio": 0.0213
       }
     ],
     "holding": [],
@@ -7251,7 +7251,7 @@
         204257809,
         112891697,
         160313441,
-        190718180
+        189108464
       ],
       "ma20": 159.9,
       "ma60": 151.84,
@@ -7317,14 +7317,14 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 6936,
-        "short_balance": 191,
-        "margin_prev": 6713,
-        "short_prev": 372,
-        "margin_change": 223,
-        "short_change": -181,
+        "margin_balance": 6710,
+        "short_balance": 160,
+        "margin_prev": 6936,
+        "short_prev": 191,
+        "margin_change": -226,
+        "short_change": -31,
         "margin_usage_pct": null,
-        "margin_short_ratio": 0.0275
+        "margin_short_ratio": 0.0238
       }
     ],
     "holding": [],
@@ -7637,7 +7637,7 @@
         27484370,
         6097691,
         3606271,
-        2594964
+        2564285
       ],
       "ma20": 46.28,
       "ma60": 39.25,
@@ -7703,14 +7703,14 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 135447,
-        "short_balance": 6122,
-        "margin_prev": 138244,
-        "short_prev": 6653,
-        "margin_change": -2797,
-        "short_change": -531,
+        "margin_balance": 134316,
+        "short_balance": 5462,
+        "margin_prev": 135447,
+        "short_prev": 6122,
+        "margin_change": -1131,
+        "short_change": -660,
         "margin_usage_pct": null,
-        "margin_short_ratio": 0.0452
+        "margin_short_ratio": 0.0407
       }
     ],
     "holding": [],
@@ -8023,7 +8023,7 @@
         259055229,
         246450870,
         225279506,
-        253696606
+        251095011
       ],
       "ma20": 184.28,
       "ma60": 132.0,
@@ -8073,8 +8073,8 @@
     "foreign": [
       {
         "date": "20260626",
-        "buy": 3202932,
-        "sell": 2503200,
+        "buy": 3222932,
+        "sell": 2523200,
         "net": 699732
       }
     ],
@@ -8089,14 +8089,14 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 1704,
-        "short_balance": 14,
-        "margin_prev": 1722,
-        "short_prev": 15,
-        "margin_change": -18,
-        "short_change": -1,
+        "margin_balance": 1491,
+        "short_balance": 15,
+        "margin_prev": 1704,
+        "short_prev": 14,
+        "margin_change": -213,
+        "short_change": 1,
         "margin_usage_pct": null,
-        "margin_short_ratio": 0.0082
+        "margin_short_ratio": 0.0101
       }
     ],
     "holding": [],
@@ -8409,7 +8409,7 @@
         3747091,
         2867427,
         4499168,
-        4852284
+        4724775
       ],
       "ma20": 2443.25,
       "ma60": 2289.83,
@@ -8475,14 +8475,14 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 14813,
-        "short_balance": 36,
-        "margin_prev": 15036,
-        "short_prev": 69,
-        "margin_change": -223,
-        "short_change": -33,
+        "margin_balance": 13743,
+        "short_balance": 27,
+        "margin_prev": 14813,
+        "short_prev": 36,
+        "margin_change": -1070,
+        "short_change": -9,
         "margin_usage_pct": null,
-        "margin_short_ratio": 0.0024
+        "margin_short_ratio": 0.002
       }
     ],
     "holding": [],
@@ -8795,7 +8795,7 @@
         9328112,
         6142950,
         4636053,
-        8056197
+        7956993
       ],
       "ma20": 57.43,
       "ma60": 55.55,
@@ -8861,14 +8861,14 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 31284,
-        "short_balance": 1178,
-        "margin_prev": 31248,
-        "short_prev": 1115,
-        "margin_change": 36,
-        "short_change": 63,
+        "margin_balance": 30615,
+        "short_balance": 1158,
+        "margin_prev": 31284,
+        "short_prev": 1178,
+        "margin_change": -669,
+        "short_change": -20,
         "margin_usage_pct": null,
-        "margin_short_ratio": 0.0377
+        "margin_short_ratio": 0.0378
       }
     ],
     "holding": [],
@@ -9181,7 +9181,7 @@
         32214886,
         25245817,
         21270147,
-        34276965
+        33884057
       ],
       "ma20": 70.24,
       "ma60": 56.1,
@@ -9247,14 +9247,14 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 2014,
-        "short_balance": 4,
-        "margin_prev": 1970,
-        "short_prev": 15,
-        "margin_change": 44,
-        "short_change": -11,
+        "margin_balance": 2068,
+        "short_balance": 0,
+        "margin_prev": 2014,
+        "short_prev": 4,
+        "margin_change": 54,
+        "short_change": -4,
         "margin_usage_pct": null,
-        "margin_short_ratio": 0.002
+        "margin_short_ratio": 0.0
       }
     ],
     "holding": [],
@@ -9567,7 +9567,7 @@
         6300707,
         4878201,
         5727314,
-        7031390
+        6542796
       ],
       "ma20": 813.4,
       "ma60": 682.75,
@@ -9633,14 +9633,14 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 5568,
-        "short_balance": 196,
-        "margin_prev": 5477,
-        "short_prev": 170,
-        "margin_change": 91,
-        "short_change": 26,
+        "margin_balance": 5361,
+        "short_balance": 445,
+        "margin_prev": 5568,
+        "short_prev": 196,
+        "margin_change": -207,
+        "short_change": 249,
         "margin_usage_pct": null,
-        "margin_short_ratio": 0.0352
+        "margin_short_ratio": 0.083
       }
     ],
     "holding": [],
@@ -9953,7 +9953,7 @@
         8325585,
         6541143,
         5892786,
-        5836725
+        5574360
       ],
       "ma20": 1332.25,
       "ma60": 1283.6,
@@ -10019,14 +10019,14 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 8485,
-        "short_balance": 357,
-        "margin_prev": 8408,
-        "short_prev": 359,
-        "margin_change": 77,
-        "short_change": -2,
+        "margin_balance": 8366,
+        "short_balance": 368,
+        "margin_prev": 8485,
+        "short_prev": 357,
+        "margin_change": -119,
+        "short_change": 11,
         "margin_usage_pct": null,
-        "margin_short_ratio": 0.0421
+        "margin_short_ratio": 0.044
       }
     ],
     "holding": [],
@@ -10339,7 +10339,7 @@
         8580040,
         7194419,
         5721044,
-        9773821
+        9559316
       ],
       "ma20": 353.58,
       "ma60": 310.63,
@@ -10405,14 +10405,14 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 17222,
-        "short_balance": 423,
-        "margin_prev": 17256,
-        "short_prev": 425,
-        "margin_change": -34,
-        "short_change": -2,
+        "margin_balance": 16777,
+        "short_balance": 486,
+        "margin_prev": 17222,
+        "short_prev": 423,
+        "margin_change": -445,
+        "short_change": 63,
         "margin_usage_pct": null,
-        "margin_short_ratio": 0.0246
+        "margin_short_ratio": 0.029
       }
     ],
     "holding": [],
@@ -10725,7 +10725,7 @@
         13999945,
         9039019,
         7318964,
-        14902968
+        14748591
       ],
       "ma20": 137.2,
       "ma60": 113.42,
@@ -10770,7 +10770,7 @@
       "change": 0,
       "change_pct": 0,
       "foreign_net": -1371490,
-      "trust_net": 917241
+      "trust_net": 916482
     },
     "foreign": [
       {
@@ -10784,21 +10784,21 @@
       {
         "date": "20260626",
         "buy": 917241,
-        "sell": 0,
-        "net": 917241
+        "sell": 759,
+        "net": 916482
       }
     ],
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 2901,
-        "short_balance": 55,
-        "margin_prev": 2817,
-        "short_prev": 65,
-        "margin_change": 84,
-        "short_change": -10,
+        "margin_balance": 2859,
+        "short_balance": 37,
+        "margin_prev": 2901,
+        "short_prev": 55,
+        "margin_change": -42,
+        "short_change": -18,
         "margin_usage_pct": null,
-        "margin_short_ratio": 0.019
+        "margin_short_ratio": 0.0129
       }
     ],
     "holding": [],
@@ -11111,7 +11111,7 @@
         7155212,
         6448872,
         7482251,
-        7144426
+        6809208
       ],
       "ma20": 695.8,
       "ma60": 595.34,
@@ -11177,14 +11177,14 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 11863,
-        "short_balance": 997,
-        "margin_prev": 11778,
-        "short_prev": 1003,
-        "margin_change": 85,
-        "short_change": -6,
+        "margin_balance": 11480,
+        "short_balance": 1017,
+        "margin_prev": 11863,
+        "short_prev": 997,
+        "margin_change": -383,
+        "short_change": 20,
         "margin_usage_pct": null,
-        "margin_short_ratio": 0.084
+        "margin_short_ratio": 0.0886
       }
     ],
     "holding": [],
@@ -11497,7 +11497,7 @@
         15629070,
         10798782,
         13229175,
-        20717655
+        20172875
       ],
       "ma20": 376.65,
       "ma60": 337.19,
@@ -11547,8 +11547,8 @@
     "foreign": [
       {
         "date": "20260626",
-        "buy": 877317,
-        "sell": 779460,
+        "buy": 1057317,
+        "sell": 959460,
         "net": 97857
       }
     ],
@@ -11563,14 +11563,14 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 1646,
-        "short_balance": 88,
-        "margin_prev": 1686,
-        "short_prev": 82,
-        "margin_change": -40,
-        "short_change": 6,
+        "margin_balance": 1575,
+        "short_balance": 84,
+        "margin_prev": 1646,
+        "short_prev": 88,
+        "margin_change": -71,
+        "short_change": -4,
         "margin_usage_pct": null,
-        "margin_short_ratio": 0.0535
+        "margin_short_ratio": 0.0533
       }
     ],
     "holding": [],
@@ -11883,7 +11883,7 @@
         1979779,
         1617523,
         1159675,
-        1197799
+        1122800
       ],
       "ma20": 5161.25,
       "ma60": 4562.58,
@@ -11949,14 +11949,14 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 2570,
-        "short_balance": 25,
-        "margin_prev": 2776,
-        "short_prev": 22,
-        "margin_change": -206,
-        "short_change": 3,
+        "margin_balance": 2297,
+        "short_balance": 23,
+        "margin_prev": 2570,
+        "short_prev": 25,
+        "margin_change": -273,
+        "short_change": -2,
         "margin_usage_pct": null,
-        "margin_short_ratio": 0.0097
+        "margin_short_ratio": 0.01
       }
     ],
     "holding": [],
@@ -12269,7 +12269,7 @@
         2167252,
         1727888,
         5557104,
-        4483793
+        4295138
       ],
       "ma20": 1234.75,
       "ma60": 1076.47,
@@ -12319,8 +12319,8 @@
     "foreign": [
       {
         "date": "20260626",
-        "buy": 44969416,
-        "sell": 45488917,
+        "buy": 45186416,
+        "sell": 45705917,
         "net": -519501
       }
     ],
@@ -12335,14 +12335,14 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 84959,
-        "short_balance": 1153,
-        "margin_prev": 86158,
-        "short_prev": 1114,
-        "margin_change": -1199,
-        "short_change": 39,
+        "margin_balance": 80192,
+        "short_balance": 954,
+        "margin_prev": 84959,
+        "short_prev": 1153,
+        "margin_change": -4767,
+        "short_change": -199,
         "margin_usage_pct": null,
-        "margin_short_ratio": 0.0136
+        "margin_short_ratio": 0.0119
       }
     ],
     "holding": [],
@@ -12655,7 +12655,7 @@
         158743158,
         121602945,
         108872443,
-        142576504
+        140427659
       ],
       "ma20": 405.0,
       "ma60": 303.99,
@@ -12721,14 +12721,14 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 229295,
-        "short_balance": 15374,
-        "margin_prev": 227287,
-        "short_prev": 16828,
-        "margin_change": 2008,
-        "short_change": -1454,
+        "margin_balance": 222785,
+        "short_balance": 22093,
+        "margin_prev": 229295,
+        "short_prev": 15374,
+        "margin_change": -6510,
+        "short_change": 6719,
         "margin_usage_pct": null,
-        "margin_short_ratio": 0.067
+        "margin_short_ratio": 0.0992
       }
     ],
     "holding": [],
@@ -13041,7 +13041,7 @@
         954650932,
         891795127,
         415097586,
-        366113629
+        365810469
       ],
       "ma20": 26.36,
       "ma60": 21.34,
@@ -13107,14 +13107,14 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 22220,
-        "short_balance": 454,
-        "margin_prev": 22120,
-        "short_prev": 587,
-        "margin_change": 100,
-        "short_change": -133,
+        "margin_balance": 20130,
+        "short_balance": 386,
+        "margin_prev": 22220,
+        "short_prev": 454,
+        "margin_change": -2090,
+        "short_change": -68,
         "margin_usage_pct": null,
-        "margin_short_ratio": 0.0204
+        "margin_short_ratio": 0.0192
       }
     ],
     "holding": [],
@@ -13427,7 +13427,7 @@
         46138318,
         28558152,
         21565338,
-        17947375
+        17806585
       ],
       "ma20": 75.57,
       "ma60": 64.59,
@@ -13493,14 +13493,14 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 1698,
-        "short_balance": 25,
-        "margin_prev": 1896,
-        "short_prev": 19,
-        "margin_change": -198,
-        "short_change": 6,
+        "margin_balance": 1585,
+        "short_balance": 20,
+        "margin_prev": 1698,
+        "short_prev": 25,
+        "margin_change": -113,
+        "short_change": -5,
         "margin_usage_pct": null,
-        "margin_short_ratio": 0.0147
+        "margin_short_ratio": 0.0126
       }
     ],
     "holding": [],
@@ -13813,7 +13813,7 @@
         1700589,
         1388100,
         2285543,
-        1645691
+        1584544
       ],
       "ma20": 290.8,
       "ma60": 225.72,
@@ -13879,14 +13879,14 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 3795,
-        "short_balance": 11,
-        "margin_prev": 3778,
-        "short_prev": 6,
-        "margin_change": 17,
-        "short_change": 5,
+        "margin_balance": 3859,
+        "short_balance": 5,
+        "margin_prev": 3795,
+        "short_prev": 11,
+        "margin_change": 64,
+        "short_change": -6,
         "margin_usage_pct": null,
-        "margin_short_ratio": 0.0029
+        "margin_short_ratio": 0.0013
       }
     ],
     "holding": [],
@@ -14199,7 +14199,7 @@
         1536647,
         989530,
         1757773,
-        2096775
+        2037449
       ],
       "ma20": 91.49,
       "ma60": 88.58,
@@ -14265,14 +14265,14 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 20476,
-        "short_balance": 352,
-        "margin_prev": 21695,
-        "short_prev": 293,
-        "margin_change": -1219,
-        "short_change": 59,
+        "margin_balance": 19498,
+        "short_balance": 291,
+        "margin_prev": 20476,
+        "short_prev": 352,
+        "margin_change": -978,
+        "short_change": -61,
         "margin_usage_pct": null,
-        "margin_short_ratio": 0.0172
+        "margin_short_ratio": 0.0149
       }
     ],
     "holding": [],
@@ -14585,7 +14585,7 @@
         74960241,
         41041876,
         32755834,
-        52021513
+        50469646
       ],
       "ma20": 305.25,
       "ma60": 298.47,
@@ -14635,8 +14635,8 @@
     "foreign": [
       {
         "date": "20260626",
-        "buy": 5298176,
-        "sell": 10537224,
+        "buy": 5317176,
+        "sell": 10556224,
         "net": -5239048
       }
     ],
@@ -14651,14 +14651,14 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 9987,
-        "short_balance": 43,
-        "margin_prev": 10127,
-        "short_prev": 46,
-        "margin_change": -140,
-        "short_change": -3,
+        "margin_balance": 9853,
+        "short_balance": 171,
+        "margin_prev": 9987,
+        "short_prev": 43,
+        "margin_change": -134,
+        "short_change": 128,
         "margin_usage_pct": null,
-        "margin_short_ratio": 0.0043
+        "margin_short_ratio": 0.0174
       }
     ],
     "holding": [],
@@ -14971,7 +14971,7 @@
         17083744,
         14381860,
         9704419,
-        24847467
+        20184014
       ],
       "ma20": 4349.25,
       "ma60": 3278.75,
@@ -15037,14 +15037,14 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 10301,
-        "short_balance": 0,
-        "margin_prev": 10480,
+        "margin_balance": 9863,
+        "short_balance": 1,
+        "margin_prev": 10301,
         "short_prev": 0,
-        "margin_change": -179,
-        "short_change": 0,
+        "margin_change": -438,
+        "short_change": 1,
         "margin_usage_pct": null,
-        "margin_short_ratio": 0.0
+        "margin_short_ratio": 0.0001
       }
     ],
     "holding": [],
@@ -15357,7 +15357,7 @@
         1540880,
         1689748,
         1047169,
-        2518044
+        2367860
       ],
       "ma20": 389.65,
       "ma60": 357.49,
@@ -15423,14 +15423,14 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 13784,
-        "short_balance": 1270,
-        "margin_prev": 12929,
-        "short_prev": 1008,
-        "margin_change": 855,
-        "short_change": 262,
+        "margin_balance": 13385,
+        "short_balance": 923,
+        "margin_prev": 13784,
+        "short_prev": 1270,
+        "margin_change": -399,
+        "short_change": -347,
         "margin_usage_pct": null,
-        "margin_short_ratio": 0.0921
+        "margin_short_ratio": 0.069
       }
     ],
     "holding": [],
@@ -15743,7 +15743,7 @@
         64240608,
         70556700,
         62390713,
-        13832617
+        13471854
       ],
       "ma20": 159.02,
       "ma60": 127.27,
@@ -15809,14 +15809,14 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 22581,
-        "short_balance": 192,
-        "margin_prev": 22584,
-        "short_prev": 178,
-        "margin_change": -3,
-        "short_change": 14,
+        "margin_balance": 22300,
+        "short_balance": 718,
+        "margin_prev": 22581,
+        "short_prev": 192,
+        "margin_change": -281,
+        "short_change": 526,
         "margin_usage_pct": null,
-        "margin_short_ratio": 0.0085
+        "margin_short_ratio": 0.0322
       }
     ],
     "holding": [],
@@ -16129,7 +16129,7 @@
         6187429,
         7819840,
         4674628,
-        9857166
+        9589545
       ],
       "ma20": 257.6,
       "ma60": 240.45,
@@ -16195,14 +16195,14 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 10931,
-        "short_balance": 427,
-        "margin_prev": 11285,
-        "short_prev": 476,
-        "margin_change": -354,
-        "short_change": -49,
+        "margin_balance": 10587,
+        "short_balance": 538,
+        "margin_prev": 10931,
+        "short_prev": 427,
+        "margin_change": -344,
+        "short_change": 111,
         "margin_usage_pct": null,
-        "margin_short_ratio": 0.0391
+        "margin_short_ratio": 0.0508
       }
     ],
     "holding": [],
@@ -16515,7 +16515,7 @@
         37949953,
         3467338,
         2173666,
-        3353313
+        3090395
       ],
       "ma20": 477.02,
       "ma60": 278.48,
@@ -16581,14 +16581,14 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 13094,
-        "short_balance": 84,
-        "margin_prev": 13081,
-        "short_prev": 75,
-        "margin_change": 13,
-        "short_change": 9,
+        "margin_balance": 12818,
+        "short_balance": 55,
+        "margin_prev": 13094,
+        "short_prev": 84,
+        "margin_change": -276,
+        "short_change": -29,
         "margin_usage_pct": null,
-        "margin_short_ratio": 0.0064
+        "margin_short_ratio": 0.0043
       }
     ],
     "holding": [],
@@ -16901,7 +16901,7 @@
         1754505,
         1283448,
         1581382,
-        1407097
+        1365508
       ],
       "ma20": 212.22,
       "ma60": 158.29,
@@ -16967,11 +16967,11 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 236,
+        "margin_balance": 232,
         "short_balance": 0,
         "margin_prev": 236,
         "short_prev": 0,
-        "margin_change": 0,
+        "margin_change": -4,
         "short_change": 0,
         "margin_usage_pct": null,
         "margin_short_ratio": 0.0
@@ -17287,7 +17287,7 @@
         532885,
         326025,
         281154,
-        491936
+        480467
       ],
       "ma20": 144.32,
       "ma60": 133.95,
@@ -17353,14 +17353,14 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 571,
-        "short_balance": 1641,
-        "margin_prev": 583,
-        "short_prev": 24,
-        "margin_change": -12,
-        "short_change": 1617,
+        "margin_balance": 639,
+        "short_balance": 21,
+        "margin_prev": 571,
+        "short_prev": 1641,
+        "margin_change": 68,
+        "short_change": -1620,
         "margin_usage_pct": null,
-        "margin_short_ratio": 2.8739
+        "margin_short_ratio": 0.0329
       }
     ],
     "holding": [],
@@ -17673,7 +17673,7 @@
         48219080,
         54864707,
         52870260,
-        28055125
+        27988328
       ],
       "ma20": 35.99,
       "ma60": 34.2,
@@ -17723,8 +17723,8 @@
     "foreign": [
       {
         "date": "20260626",
-        "buy": 20320629,
-        "sell": 20173977,
+        "buy": 21537629,
+        "sell": 21390977,
         "net": 146652
       }
     ],
@@ -17739,12 +17739,12 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 7112,
+        "margin_balance": 7164,
         "short_balance": 0,
-        "margin_prev": 7199,
-        "short_prev": 54,
-        "margin_change": -87,
-        "short_change": -54,
+        "margin_prev": 7112,
+        "short_prev": 0,
+        "margin_change": 52,
+        "short_change": 0,
         "margin_usage_pct": null,
         "margin_short_ratio": 0.0
       }
@@ -18059,7 +18059,7 @@
         24067158,
         29701142,
         21284471,
-        31240455
+        31021556
       ],
       "ma20": 125.18,
       "ma60": 103.25,
@@ -18109,8 +18109,8 @@
     "foreign": [
       {
         "date": "20260626",
-        "buy": 15711210,
-        "sell": 25557126,
+        "buy": 35711210,
+        "sell": 45557126,
         "net": -9845916
       }
     ],
@@ -18125,11 +18125,11 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 3671,
+        "margin_balance": 3888,
         "short_balance": 0,
-        "margin_prev": 3820,
+        "margin_prev": 3671,
         "short_prev": 0,
-        "margin_change": -149,
+        "margin_change": 217,
         "short_change": 0,
         "margin_usage_pct": null,
         "margin_short_ratio": 0.0
@@ -18445,7 +18445,7 @@
         29225791,
         34143899,
         29121023,
-        37564615
+        37144464
       ],
       "ma20": 102.28,
       "ma60": 85.05,
@@ -18511,12 +18511,12 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 15061,
+        "margin_balance": 15308,
         "short_balance": 0,
-        "margin_prev": 14761,
-        "short_prev": 2,
-        "margin_change": 300,
-        "short_change": -2,
+        "margin_prev": 15061,
+        "short_prev": 0,
+        "margin_change": 247,
+        "short_change": 0,
         "margin_usage_pct": null,
         "margin_short_ratio": 0.0
       }
@@ -18831,7 +18831,7 @@
         89144115,
         65642883,
         58542007,
-        71586077
+        71604613
       ],
       "ma20": 27.93,
       "ma60": 23.51,
@@ -18897,14 +18897,14 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 2470,
+        "margin_balance": 2286,
         "short_balance": 35,
-        "margin_prev": 2435,
+        "margin_prev": 2470,
         "short_prev": 35,
-        "margin_change": 35,
+        "margin_change": -184,
         "short_change": 0,
         "margin_usage_pct": null,
-        "margin_short_ratio": 0.0142
+        "margin_short_ratio": 0.0153
       }
     ],
     "holding": [],
@@ -19217,7 +19217,7 @@
         40279238,
         50162241,
         34583377,
-        29804140
+        29577716
       ],
       "ma20": 64.36,
       "ma60": 56.38,
@@ -19283,14 +19283,14 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 685,
-        "short_balance": 61,
-        "margin_prev": 502,
-        "short_prev": 51,
-        "margin_change": 183,
-        "short_change": 10,
+        "margin_balance": 580,
+        "short_balance": 57,
+        "margin_prev": 685,
+        "short_prev": 61,
+        "margin_change": -105,
+        "short_change": -4,
         "margin_usage_pct": null,
-        "margin_short_ratio": 0.0891
+        "margin_short_ratio": 0.0983
       }
     ],
     "holding": [],
@@ -19603,7 +19603,7 @@
         47087316,
         55013662,
         61792232,
-        33786355
+        33874584
       ],
       "ma20": 43.51,
       "ma60": 40.9,
@@ -19669,14 +19669,14 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 44196,
-        "short_balance": 1172,
-        "margin_prev": 45037,
-        "short_prev": 1174,
-        "margin_change": -841,
-        "short_change": -2,
+        "margin_balance": 43677,
+        "short_balance": 1171,
+        "margin_prev": 44196,
+        "short_prev": 1172,
+        "margin_change": -519,
+        "short_change": -1,
         "margin_usage_pct": null,
-        "margin_short_ratio": 0.0265
+        "margin_short_ratio": 0.0268
       }
     ],
     "holding": [],
@@ -19989,7 +19989,7 @@
         72555673,
         59019386,
         49318421,
-        52823567
+        52644795
       ],
       "ma20": 29.66,
       "ma60": 25.81,
@@ -20055,14 +20055,14 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 1638,
-        "short_balance": 431,
-        "margin_prev": 1624,
+        "margin_balance": 1746,
+        "short_balance": 405,
+        "margin_prev": 1638,
         "short_prev": 431,
-        "margin_change": 14,
-        "short_change": 0,
+        "margin_change": 108,
+        "short_change": -26,
         "margin_usage_pct": null,
-        "margin_short_ratio": 0.2631
+        "margin_short_ratio": 0.232
       }
     ],
     "holding": [],
@@ -20375,7 +20375,7 @@
         61037217,
         65610788,
         59789879,
-        43270025
+        43127406
       ],
       "ma20": 35.09,
       "ma60": 32.5,
@@ -20441,14 +20441,14 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 7529,
-        "short_balance": 17,
-        "margin_prev": 8315,
-        "short_prev": 26,
-        "margin_change": -786,
-        "short_change": -9,
+        "margin_balance": 7307,
+        "short_balance": 15,
+        "margin_prev": 7529,
+        "short_prev": 17,
+        "margin_change": -222,
+        "short_change": -2,
         "margin_usage_pct": null,
-        "margin_short_ratio": 0.0023
+        "margin_short_ratio": 0.0021
       }
     ],
     "holding": [],
@@ -20761,7 +20761,7 @@
         54335253,
         38608856,
         58758894,
-        40618576
+        40519152
       ],
       "ma20": 30.67,
       "ma60": 29.27,
@@ -20827,14 +20827,14 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 21667,
-        "short_balance": 83,
-        "margin_prev": 20995,
-        "short_prev": 146,
-        "margin_change": 672,
-        "short_change": -63,
+        "margin_balance": 21256,
+        "short_balance": 16,
+        "margin_prev": 21667,
+        "short_prev": 83,
+        "margin_change": -411,
+        "short_change": -67,
         "margin_usage_pct": null,
-        "margin_short_ratio": 0.0038
+        "margin_short_ratio": 0.0008
       }
     ],
     "holding": [],
@@ -21147,7 +21147,7 @@
         29262451,
         15562321,
         15464585,
-        11189834
+        11061577
       ],
       "ma20": 232.9,
       "ma60": 203.84,
@@ -21213,14 +21213,14 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 4689,
-        "short_balance": 43,
-        "margin_prev": 4671,
-        "short_prev": 54,
-        "margin_change": 18,
-        "short_change": -11,
+        "margin_balance": 4920,
+        "short_balance": 75,
+        "margin_prev": 4689,
+        "short_prev": 43,
+        "margin_change": 231,
+        "short_change": 32,
         "margin_usage_pct": null,
-        "margin_short_ratio": 0.0092
+        "margin_short_ratio": 0.0152
       }
     ],
     "holding": [],
@@ -21533,7 +21533,7 @@
         2789542,
         5902274,
         3600221,
-        6557277
+        5758959
       ],
       "ma20": 2510.5,
       "ma60": 2496.5,
@@ -21599,14 +21599,14 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 13535,
+        "margin_balance": 13212,
         "short_balance": 375,
-        "margin_prev": 13245,
-        "short_prev": 377,
-        "margin_change": 290,
-        "short_change": -2,
+        "margin_prev": 13535,
+        "short_prev": 375,
+        "margin_change": -323,
+        "short_change": 0,
         "margin_usage_pct": null,
-        "margin_short_ratio": 0.0277
+        "margin_short_ratio": 0.0284
       }
     ],
     "holding": [],
@@ -21919,7 +21919,7 @@
         12390844,
         7032258,
         8631632,
-        10416166
+        10310590
       ],
       "ma20": 245.58,
       "ma60": 242.22,
@@ -21964,35 +21964,35 @@
       "change": 0,
       "change_pct": 0,
       "foreign_net": -9034529,
-      "trust_net": 4616257
+      "trust_net": 4756257
     },
     "foreign": [
       {
         "date": "20260626",
-        "buy": 25004882,
-        "sell": 34039411,
+        "buy": 25022882,
+        "sell": 34057411,
         "net": -9034529
       }
     ],
     "trust": [
       {
         "date": "20260626",
-        "buy": 4691257,
+        "buy": 4831257,
         "sell": 75000,
-        "net": 4616257
+        "net": 4756257
       }
     ],
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 36776,
-        "short_balance": 229,
-        "margin_prev": 37360,
-        "short_prev": 151,
-        "margin_change": -584,
-        "short_change": 78,
+        "margin_balance": 37159,
+        "short_balance": 156,
+        "margin_prev": 36776,
+        "short_prev": 229,
+        "margin_change": 383,
+        "short_change": -73,
         "margin_usage_pct": null,
-        "margin_short_ratio": 0.0062
+        "margin_short_ratio": 0.0042
       }
     ],
     "holding": [],
@@ -22305,7 +22305,7 @@
         25057448,
         25116351,
         31912079,
-        77828874
+        75665887
       ],
       "ma20": 965.3,
       "ma60": 842.23,
@@ -22371,14 +22371,14 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 46570,
-        "short_balance": 704,
-        "margin_prev": 46553,
-        "short_prev": 653,
-        "margin_change": 17,
-        "short_change": 51,
-        "margin_usage_pct": 43.94,
-        "margin_short_ratio": 0.0151
+        "margin_balance": 46233,
+        "short_balance": 638,
+        "margin_prev": 46570,
+        "short_prev": 704,
+        "margin_change": -337,
+        "short_change": -66,
+        "margin_usage_pct": 43.62,
+        "margin_short_ratio": 0.0138
       }
     ],
     "holding": [],
@@ -22691,7 +22691,7 @@
         40450354,
         36567174,
         20414276,
-        33797108
+        32608432
       ],
       "ma20": 497.68,
       "ma60": 495.82,
@@ -22757,13 +22757,13 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 1905,
+        "margin_balance": 1856,
         "short_balance": 1,
-        "margin_prev": 1915,
+        "margin_prev": 1905,
         "short_prev": 1,
-        "margin_change": -10,
+        "margin_change": -49,
         "short_change": 0,
-        "margin_usage_pct": 8.45,
+        "margin_usage_pct": 8.23,
         "margin_short_ratio": 0.0005
       }
     ],
@@ -23077,7 +23077,7 @@
         1412345,
         771107,
         2593881,
-        1743464
+        1712349
       ],
       "ma20": 179.38,
       "ma60": 175.7,
@@ -23463,7 +23463,7 @@
         6012174,
         4454404,
         4331344,
-        3179535
+        3108761
       ],
       "ma20": 127.5,
       "ma60": 111.95,
@@ -23529,13 +23529,13 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 5387,
-        "short_balance": 365,
-        "margin_prev": 5174,
-        "short_prev": 206,
-        "margin_change": 213,
-        "short_change": 159,
-        "margin_usage_pct": 20.52,
+        "margin_balance": 5014,
+        "short_balance": 340,
+        "margin_prev": 5387,
+        "short_prev": 365,
+        "margin_change": -373,
+        "short_change": -25,
+        "margin_usage_pct": 19.1,
         "margin_short_ratio": 0.0678
       }
     ],
@@ -23849,7 +23849,7 @@
         8134083,
         7424083,
         21527358,
-        47152972
+        46981150
       ],
       "ma20": 60.57,
       "ma60": 44.74,
@@ -23915,13 +23915,13 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 6867,
+        "margin_balance": 6570,
         "short_balance": 0,
-        "margin_prev": 6777,
+        "margin_prev": 6867,
         "short_prev": 0,
-        "margin_change": 90,
+        "margin_change": -297,
         "short_change": 0,
-        "margin_usage_pct": 5.6,
+        "margin_usage_pct": 5.36,
         "margin_short_ratio": 0.0
       }
     ],
@@ -24235,7 +24235,7 @@
         13726507,
         6418255,
         5632449,
-        7200133
+        7003032
       ],
       "ma20": 225.08,
       "ma60": 211.39,
@@ -24301,14 +24301,14 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 3968,
+        "margin_balance": 3814,
         "short_balance": 47,
-        "margin_prev": 4024,
-        "short_prev": 49,
-        "margin_change": -56,
-        "short_change": -2,
-        "margin_usage_pct": 17.63,
-        "margin_short_ratio": 0.0118
+        "margin_prev": 3968,
+        "short_prev": 47,
+        "margin_change": -154,
+        "short_change": 0,
+        "margin_usage_pct": 16.95,
+        "margin_short_ratio": 0.0123
       }
     ],
     "holding": [],
@@ -24621,7 +24621,7 @@
         20269561,
         6400868,
         4545794,
-        9207966
+        9138811
       ],
       "ma20": 83.23,
       "ma60": 69.14,
@@ -24687,13 +24687,13 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 4793,
+        "margin_balance": 4472,
         "short_balance": 0,
-        "margin_prev": 5002,
+        "margin_prev": 4793,
         "short_prev": 0,
-        "margin_change": -209,
+        "margin_change": -321,
         "short_change": 0,
-        "margin_usage_pct": 17.55,
+        "margin_usage_pct": 16.37,
         "margin_short_ratio": 0.0
       }
     ],
@@ -25007,7 +25007,7 @@
         7208228,
         4980622,
         5058305,
-        3311267
+        3180637
       ],
       "ma20": 302.55,
       "ma60": 228.66,
@@ -25057,8 +25057,8 @@
     "foreign": [
       {
         "date": "20260626",
-        "buy": 629160,
-        "sell": 3593080,
+        "buy": 713160,
+        "sell": 3677080,
         "net": -2963920
       }
     ],
@@ -25073,14 +25073,14 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 12513,
-        "short_balance": 216,
-        "margin_prev": 12415,
-        "short_prev": 228,
-        "margin_change": 98,
-        "short_change": -12,
+        "margin_balance": 12500,
+        "short_balance": 214,
+        "margin_prev": 12513,
+        "short_prev": 216,
+        "margin_change": -13,
+        "short_change": -2,
         "margin_usage_pct": null,
-        "margin_short_ratio": 0.0173
+        "margin_short_ratio": 0.0171
       }
     ],
     "holding": [],
@@ -25393,7 +25393,7 @@
         5088221,
         3001302,
         8177275,
-        6337367
+        6137594
       ],
       "ma20": 210.4,
       "ma60": 206.97,
@@ -25443,8 +25443,8 @@
     "foreign": [
       {
         "date": "20260626",
-        "buy": 780507,
-        "sell": 878021,
+        "buy": 810507,
+        "sell": 908021,
         "net": -97514
       }
     ],
@@ -25459,14 +25459,14 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 4540,
-        "short_balance": 25,
-        "margin_prev": 4588,
-        "short_prev": 28,
-        "margin_change": -48,
-        "short_change": -3,
+        "margin_balance": 4592,
+        "short_balance": 24,
+        "margin_prev": 4540,
+        "short_prev": 25,
+        "margin_change": 52,
+        "short_change": -1,
         "margin_usage_pct": null,
-        "margin_short_ratio": 0.0055
+        "margin_short_ratio": 0.0052
       }
     ],
     "holding": [],
@@ -25779,7 +25779,7 @@
         1824296,
         1664223,
         3031470,
-        2252648
+        2095115
       ],
       "ma20": 4582.5,
       "ma60": 4260.42,
@@ -25845,14 +25845,14 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 21058,
-        "short_balance": 402,
-        "margin_prev": 20074,
-        "short_prev": 412,
-        "margin_change": 984,
-        "short_change": -10,
+        "margin_balance": 20214,
+        "short_balance": 342,
+        "margin_prev": 21058,
+        "short_prev": 402,
+        "margin_change": -844,
+        "short_change": -60,
         "margin_usage_pct": null,
-        "margin_short_ratio": 0.0191
+        "margin_short_ratio": 0.0169
       }
     ],
     "holding": [],
@@ -26165,7 +26165,7 @@
         19898466,
         15968173,
         15702893,
-        13648176
+        13389287
       ],
       "ma20": 522.58,
       "ma60": 418.11,
@@ -26231,14 +26231,14 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 458953,
-        "short_balance": 6141,
-        "margin_prev": 455818,
-        "short_prev": 5607,
-        "margin_change": 3135,
-        "short_change": 534,
+        "margin_balance": 429309,
+        "short_balance": 5950,
+        "margin_prev": 458953,
+        "short_prev": 6141,
+        "margin_change": -29644,
+        "short_change": -191,
         "margin_usage_pct": null,
-        "margin_short_ratio": 0.0134
+        "margin_short_ratio": 0.0139
       }
     ],
     "holding": [],
@@ -26551,7 +26551,7 @@
         759394666,
         1091538816,
         651846829,
-        733975861
+        727999213
       ],
       "ma20": 56.72,
       "ma60": 39.55,
@@ -26617,13 +26617,13 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 3824,
-        "short_balance": 105,
-        "margin_prev": 3782,
-        "short_prev": 112,
-        "margin_change": 42,
-        "short_change": -7,
-        "margin_usage_pct": 29.71,
+        "margin_balance": 3861,
+        "short_balance": 106,
+        "margin_prev": 3824,
+        "short_prev": 105,
+        "margin_change": 37,
+        "short_change": 1,
+        "margin_usage_pct": 30.0,
         "margin_short_ratio": 0.0275
       }
     ],
@@ -26937,7 +26937,7 @@
         943305,
         1163138,
         1092850,
-        745700
+        730635
       ],
       "ma20": 126.95,
       "ma60": 111.43,
@@ -27003,14 +27003,14 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 3227,
+        "margin_balance": 2814,
         "short_balance": 16,
-        "margin_prev": 3158,
-        "short_prev": 20,
-        "margin_change": 69,
-        "short_change": -4,
-        "margin_usage_pct": 22.95,
-        "margin_short_ratio": 0.005
+        "margin_prev": 3227,
+        "short_prev": 16,
+        "margin_change": -413,
+        "short_change": 0,
+        "margin_usage_pct": 20.01,
+        "margin_short_ratio": 0.0057
       }
     ],
     "holding": [],
@@ -27323,7 +27323,7 @@
         4567285,
         2842026,
         3164164,
-        2480329
+        2456342
       ],
       "ma20": 79.69,
       "ma60": 59.64,
@@ -27389,14 +27389,14 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 8547,
-        "short_balance": 164,
-        "margin_prev": 8707,
-        "short_prev": 183,
-        "margin_change": -160,
-        "short_change": -19,
-        "margin_usage_pct": 29.13,
-        "margin_short_ratio": 0.0192
+        "margin_balance": 8189,
+        "short_balance": 147,
+        "margin_prev": 8547,
+        "short_prev": 164,
+        "margin_change": -358,
+        "short_change": -17,
+        "margin_usage_pct": 27.91,
+        "margin_short_ratio": 0.018
       }
     ],
     "holding": [],
@@ -27709,7 +27709,7 @@
         19740060,
         4095046,
         1943794,
-        2076992
+        2022159
       ],
       "ma20": 129.1,
       "ma60": 85.26,
@@ -27775,14 +27775,14 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 2545,
-        "short_balance": 12,
-        "margin_prev": 2504,
-        "short_prev": 9,
-        "margin_change": 41,
-        "short_change": 3,
+        "margin_balance": 2382,
+        "short_balance": 17,
+        "margin_prev": 2545,
+        "short_prev": 12,
+        "margin_change": -163,
+        "short_change": 5,
         "margin_usage_pct": null,
-        "margin_short_ratio": 0.0047
+        "margin_short_ratio": 0.0071
       }
     ],
     "holding": [],
@@ -28095,7 +28095,7 @@
         968482,
         2009997,
         2567711,
-        1903742
+        1839393
       ],
       "ma20": 3759.25,
       "ma60": 4038.83,
@@ -28145,8 +28145,8 @@
     "foreign": [
       {
         "date": "20260626",
-        "buy": 1037093,
-        "sell": 1186678,
+        "buy": 1370093,
+        "sell": 1519678,
         "net": -149585
       }
     ],
@@ -28161,14 +28161,14 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 5710,
-        "short_balance": 72,
-        "margin_prev": 5626,
-        "short_prev": 74,
-        "margin_change": 84,
+        "margin_balance": 5738,
+        "short_balance": 70,
+        "margin_prev": 5710,
+        "short_prev": 72,
+        "margin_change": 28,
         "short_change": -2,
         "margin_usage_pct": null,
-        "margin_short_ratio": 0.0126
+        "margin_short_ratio": 0.0122
       }
     ],
     "holding": [],
@@ -28481,7 +28481,7 @@
         2086224,
         1142480,
         1949171,
-        2352432
+        2086634
       ],
       "ma20": 4304.25,
       "ma60": 4124.33,
@@ -28547,14 +28547,14 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 4510,
-        "short_balance": 161,
-        "margin_prev": 4507,
-        "short_prev": 162,
-        "margin_change": 3,
-        "short_change": -1,
-        "margin_usage_pct": 19.2,
-        "margin_short_ratio": 0.0357
+        "margin_balance": 3984,
+        "short_balance": 155,
+        "margin_prev": 4510,
+        "short_prev": 161,
+        "margin_change": -526,
+        "short_change": -6,
+        "margin_usage_pct": 16.96,
+        "margin_short_ratio": 0.0389
       }
     ],
     "holding": [],
@@ -28867,7 +28867,7 @@
         2809407,
         1810891,
         1260515,
-        1686498
+        1648664
       ],
       "ma20": 78.27,
       "ma60": 75.22,
@@ -28933,14 +28933,14 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 3672,
-        "short_balance": 9,
-        "margin_prev": 3675,
-        "short_prev": 11,
-        "margin_change": -3,
-        "short_change": -2,
+        "margin_balance": 3505,
+        "short_balance": 8,
+        "margin_prev": 3672,
+        "short_prev": 9,
+        "margin_change": -167,
+        "short_change": -1,
         "margin_usage_pct": null,
-        "margin_short_ratio": 0.0025
+        "margin_short_ratio": 0.0023
       }
     ],
     "holding": [],
@@ -29253,7 +29253,7 @@
         1785674,
         3251799,
         2280635,
-        2955712
+        2744647
       ],
       "ma20": 2114.0,
       "ma60": 2290.58,
@@ -29319,14 +29319,14 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 2618,
-        "short_balance": 159,
-        "margin_prev": 2778,
-        "short_prev": 480,
-        "margin_change": -160,
-        "short_change": -321,
-        "margin_usage_pct": 19.73,
-        "margin_short_ratio": 0.0607
+        "margin_balance": 2470,
+        "short_balance": 89,
+        "margin_prev": 2618,
+        "short_prev": 159,
+        "margin_change": -148,
+        "short_change": -70,
+        "margin_usage_pct": 18.62,
+        "margin_short_ratio": 0.036
       }
     ],
     "holding": [],
@@ -29639,7 +29639,7 @@
         9701758,
         5913496,
         734739,
-        641621
+        600600
       ],
       "ma20": 359.3,
       "ma60": 279.25,
@@ -29705,14 +29705,14 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 3630,
-        "short_balance": 29,
-        "margin_prev": 3576,
+        "margin_balance": 3577,
+        "short_balance": 30,
+        "margin_prev": 3630,
         "short_prev": 29,
-        "margin_change": 54,
-        "short_change": 0,
-        "margin_usage_pct": 15.11,
-        "margin_short_ratio": 0.008
+        "margin_change": -53,
+        "short_change": 1,
+        "margin_usage_pct": 14.88,
+        "margin_short_ratio": 0.0084
       }
     ],
     "holding": [],
@@ -30025,7 +30025,7 @@
         1412525,
         1523490,
         1486738,
-        1885597
+        1762407
       ],
       "ma20": 517.25,
       "ma60": 504.47,
@@ -30091,14 +30091,14 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 15096,
-        "short_balance": 541,
-        "margin_prev": 14675,
-        "short_prev": 1334,
-        "margin_change": 421,
-        "short_change": -793,
-        "margin_usage_pct": 17.41,
-        "margin_short_ratio": 0.0358
+        "margin_balance": 14343,
+        "short_balance": 516,
+        "margin_prev": 15096,
+        "short_prev": 541,
+        "margin_change": -753,
+        "short_change": -25,
+        "margin_usage_pct": 16.54,
+        "margin_short_ratio": 0.036
       }
     ],
     "holding": [],
@@ -30411,7 +30411,7 @@
         46004931,
         33221204,
         24407065,
-        25116364
+        24851910
       ],
       "ma20": 81.84,
       "ma60": 71.27,
@@ -30477,14 +30477,14 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 4961,
-        "short_balance": 18,
-        "margin_prev": 4854,
+        "margin_balance": 4626,
+        "short_balance": 22,
+        "margin_prev": 4961,
         "short_prev": 18,
-        "margin_change": 107,
-        "short_change": 0,
-        "margin_usage_pct": 15.8,
-        "margin_short_ratio": 0.0036
+        "margin_change": -335,
+        "short_change": 4,
+        "margin_usage_pct": 14.73,
+        "margin_short_ratio": 0.0048
       }
     ],
     "holding": [],
@@ -30797,7 +30797,7 @@
         737500,
         511056,
         910135,
-        4882080
+        4847804
       ],
       "ma20": 78.56,
       "ma60": 78.47,
@@ -30863,12 +30863,12 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 9121,
-        "short_balance": 53,
-        "margin_prev": 8837,
-        "short_prev": 61,
-        "margin_change": 284,
-        "short_change": -8,
+        "margin_balance": 8140,
+        "short_balance": 47,
+        "margin_prev": 9121,
+        "short_prev": 53,
+        "margin_change": -981,
+        "short_change": -6,
         "margin_usage_pct": null,
         "margin_short_ratio": 0.0058
       }
@@ -31183,7 +31183,7 @@
         42984044,
         34625995,
         30507412,
-        44976155
+        43302683
       ],
       "ma20": 601.2,
       "ma60": 524.62,
@@ -31249,14 +31249,14 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 19280,
-        "short_balance": 1197,
-        "margin_prev": 18814,
-        "short_prev": 1190,
-        "margin_change": 466,
-        "short_change": 7,
+        "margin_balance": 19132,
+        "short_balance": 1333,
+        "margin_prev": 19280,
+        "short_prev": 1197,
+        "margin_change": -148,
+        "short_change": 136,
         "margin_usage_pct": null,
-        "margin_short_ratio": 0.0621
+        "margin_short_ratio": 0.0697
       }
     ],
     "holding": [],
@@ -31569,7 +31569,7 @@
         34060467,
         16824068,
         15434801,
-        15522209
+        15256684
       ],
       "ma20": 186.5,
       "ma60": 159.8,
@@ -31635,12 +31635,12 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 1845,
+        "margin_balance": 1827,
         "short_balance": 0,
-        "margin_prev": 1818,
-        "short_prev": 7,
-        "margin_change": 27,
-        "short_change": -7,
+        "margin_prev": 1845,
+        "short_prev": 0,
+        "margin_change": -18,
+        "short_change": 0,
         "margin_usage_pct": null,
         "margin_short_ratio": 0.0
       }
@@ -31955,7 +31955,7 @@
         2282341,
         1006573,
         838325,
-        1028908
+        1002659
       ],
       "ma20": 170.12,
       "ma60": 164.61,
@@ -32021,14 +32021,14 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 4562,
-        "short_balance": 17,
-        "margin_prev": 4507,
+        "margin_balance": 4394,
+        "short_balance": 28,
+        "margin_prev": 4562,
         "short_prev": 17,
-        "margin_change": 55,
-        "short_change": 0,
-        "margin_usage_pct": 23.11,
-        "margin_short_ratio": 0.0037
+        "margin_change": -168,
+        "short_change": 11,
+        "margin_usage_pct": 22.26,
+        "margin_short_ratio": 0.0064
       }
     ],
     "holding": [],
@@ -32341,7 +32341,7 @@
         2070244,
         911490,
         1377633,
-        2697660
+        2574174
       ],
       "ma20": 707.7,
       "ma60": 659.76,
@@ -32407,14 +32407,14 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 9687,
-        "short_balance": 404,
-        "margin_prev": 9622,
-        "short_prev": 360,
-        "margin_change": 65,
-        "short_change": 44,
+        "margin_balance": 9408,
+        "short_balance": 282,
+        "margin_prev": 9687,
+        "short_prev": 404,
+        "margin_change": -279,
+        "short_change": -122,
         "margin_usage_pct": null,
-        "margin_short_ratio": 0.0417
+        "margin_short_ratio": 0.03
       }
     ],
     "holding": [],
@@ -32727,7 +32727,7 @@
         5936362,
         2962068,
         4485423,
-        4150707
+        4074713
       ],
       "ma20": 280.62,
       "ma60": 264.59,
@@ -32793,13 +32793,13 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 111,
+        "margin_balance": 136,
         "short_balance": 0,
-        "margin_prev": 92,
+        "margin_prev": 111,
         "short_prev": 0,
-        "margin_change": 19,
+        "margin_change": 25,
         "short_change": 0,
-        "margin_usage_pct": 1.17,
+        "margin_usage_pct": 1.43,
         "margin_short_ratio": 0.0
       }
     ],
@@ -33113,7 +33113,7 @@
         187149,
         176622,
         281126,
-        547956
+        412867
       ],
       "ma20": 18005.75,
       "ma60": 16395.58,
@@ -33179,14 +33179,14 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 5971,
-        "short_balance": 3,
-        "margin_prev": 6239,
-        "short_prev": 0,
-        "margin_change": -268,
-        "short_change": 3,
+        "margin_balance": 5679,
+        "short_balance": 9,
+        "margin_prev": 5971,
+        "short_prev": 3,
+        "margin_change": -292,
+        "short_change": 6,
         "margin_usage_pct": null,
-        "margin_short_ratio": 0.0005
+        "margin_short_ratio": 0.0016
       }
     ],
     "holding": [],
@@ -33499,7 +33499,7 @@
         11418616,
         13206138,
         12613005,
-        4715985
+        4675510
       ],
       "ma20": 93.06,
       "ma60": 72.67,
@@ -33565,13 +33565,13 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 5590,
+        "margin_balance": 5572,
         "short_balance": 4,
-        "margin_prev": 5601,
-        "short_prev": 0,
-        "margin_change": -11,
-        "short_change": 4,
-        "margin_usage_pct": 56.05,
+        "margin_prev": 5590,
+        "short_prev": 4,
+        "margin_change": -18,
+        "short_change": 0,
+        "margin_usage_pct": 55.87,
         "margin_short_ratio": 0.0007
       }
     ],
@@ -33885,7 +33885,7 @@
         413802,
         477130,
         290005,
-        465860
+        455006
       ],
       "ma20": 65.35,
       "ma60": 68.26,
@@ -33951,14 +33951,14 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 899,
+        "margin_balance": 814,
         "short_balance": 1,
-        "margin_prev": 927,
+        "margin_prev": 899,
         "short_prev": 1,
-        "margin_change": -28,
+        "margin_change": -85,
         "short_change": 0,
-        "margin_usage_pct": 10.02,
-        "margin_short_ratio": 0.0011
+        "margin_usage_pct": 9.07,
+        "margin_short_ratio": 0.0012
       }
     ],
     "holding": [],
@@ -34271,7 +34271,7 @@
         5187104,
         1704114,
         1034110,
-        1389339
+        1376069
       ],
       "ma20": 112.78,
       "ma60": 99.05,
@@ -34337,14 +34337,14 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 8357,
-        "short_balance": 1012,
-        "margin_prev": 7831,
-        "short_prev": 440,
-        "margin_change": 526,
-        "short_change": 572,
-        "margin_usage_pct": 19.35,
-        "margin_short_ratio": 0.1211
+        "margin_balance": 5935,
+        "short_balance": 1494,
+        "margin_prev": 8357,
+        "short_prev": 1012,
+        "margin_change": -2422,
+        "short_change": 482,
+        "margin_usage_pct": 13.74,
+        "margin_short_ratio": 0.2517
       }
     ],
     "holding": [],
@@ -34657,7 +34657,7 @@
         21167201,
         28204518,
         30211722,
-        46014935
+        45601499
       ],
       "ma20": 47.83,
       "ma60": 34.3,
@@ -34723,14 +34723,14 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 17837,
-        "short_balance": 587,
-        "margin_prev": 18258,
-        "short_prev": 358,
-        "margin_change": -421,
-        "short_change": 229,
-        "margin_usage_pct": 3.79,
-        "margin_short_ratio": 0.0329
+        "margin_balance": 15425,
+        "short_balance": 368,
+        "margin_prev": 17837,
+        "short_prev": 587,
+        "margin_change": -2412,
+        "short_change": -219,
+        "margin_usage_pct": 3.28,
+        "margin_short_ratio": 0.0239
       }
     ],
     "holding": [],
@@ -35043,7 +35043,7 @@
         63801869,
         67219554,
         73150872,
-        61225626
+        60661343
       ],
       "ma20": 174.95,
       "ma60": 157.06,
@@ -35109,13 +35109,13 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 17950,
-        "short_balance": 654,
-        "margin_prev": 17856,
-        "short_prev": 685,
-        "margin_change": 94,
-        "short_change": -31,
-        "margin_usage_pct": 27.25,
+        "margin_balance": 16257,
+        "short_balance": 592,
+        "margin_prev": 17950,
+        "short_prev": 654,
+        "margin_change": -1693,
+        "short_change": -62,
+        "margin_usage_pct": 24.68,
         "margin_short_ratio": 0.0364
       }
     ],
@@ -35429,7 +35429,7 @@
         116826978,
         43792343,
         34674062,
-        13355082
+        12889752
       ],
       "ma20": 108.08,
       "ma60": 82.67,
@@ -35495,14 +35495,14 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 7282,
-        "short_balance": 38,
-        "margin_prev": 7181,
-        "short_prev": 39,
-        "margin_change": 101,
-        "short_change": -1,
-        "margin_usage_pct": 31.32,
-        "margin_short_ratio": 0.0052
+        "margin_balance": 7036,
+        "short_balance": 36,
+        "margin_prev": 7282,
+        "short_prev": 38,
+        "margin_change": -246,
+        "short_change": -2,
+        "margin_usage_pct": 30.27,
+        "margin_short_ratio": 0.0051
       }
     ],
     "holding": [],
@@ -35815,7 +35815,7 @@
         1517324,
         1223761,
         1400167,
-        2061037
+        1971268
       ],
       "ma20": 345.08,
       "ma60": 363.88,
@@ -35881,14 +35881,14 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 8533,
-        "short_balance": 533,
-        "margin_prev": 6570,
-        "short_prev": 496,
-        "margin_change": 1963,
-        "short_change": 37,
-        "margin_usage_pct": 31.58,
-        "margin_short_ratio": 0.0625
+        "margin_balance": 7207,
+        "short_balance": 597,
+        "margin_prev": 8533,
+        "short_prev": 533,
+        "margin_change": -1326,
+        "short_change": 64,
+        "margin_usage_pct": 26.67,
+        "margin_short_ratio": 0.0828
       }
     ],
     "holding": [],
@@ -36201,7 +36201,7 @@
         3714149,
         3592794,
         11259114,
-        8922921
+        8777265
       ],
       "ma20": 79.85,
       "ma60": 58.37,
@@ -36267,14 +36267,14 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 1577,
-        "short_balance": 4,
-        "margin_prev": 1579,
-        "short_prev": 3,
-        "margin_change": -2,
-        "short_change": 1,
-        "margin_usage_pct": 8.34,
-        "margin_short_ratio": 0.0025
+        "margin_balance": 1427,
+        "short_balance": 0,
+        "margin_prev": 1577,
+        "short_prev": 4,
+        "margin_change": -150,
+        "short_change": -4,
+        "margin_usage_pct": 7.54,
+        "margin_short_ratio": 0.0
       }
     ],
     "holding": [],
@@ -36587,7 +36587,7 @@
         4135097,
         1674140,
         1671663,
-        1625135
+        1570320
       ],
       "ma20": 332.62,
       "ma60": 284.9,
@@ -36653,14 +36653,14 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 4530,
-        "short_balance": 122,
-        "margin_prev": 4296,
-        "short_prev": 134,
-        "margin_change": 234,
-        "short_change": -12,
+        "margin_balance": 4232,
+        "short_balance": 96,
+        "margin_prev": 4530,
+        "short_prev": 122,
+        "margin_change": -298,
+        "short_change": -26,
         "margin_usage_pct": null,
-        "margin_short_ratio": 0.0269
+        "margin_short_ratio": 0.0227
       }
     ],
     "holding": [],
@@ -36973,7 +36973,7 @@
         11049630,
         10141469,
         12500630,
-        9197866
+        9159979
       ],
       "ma20": 82.29,
       "ma60": 60.87,
@@ -37039,14 +37039,14 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 8198,
-        "short_balance": 183,
-        "margin_prev": 8254,
+        "margin_balance": 7873,
+        "short_balance": 139,
+        "margin_prev": 8198,
         "short_prev": 183,
-        "margin_change": -56,
-        "short_change": 0,
-        "margin_usage_pct": 19.15,
-        "margin_short_ratio": 0.0223
+        "margin_change": -325,
+        "short_change": -44,
+        "margin_usage_pct": 18.39,
+        "margin_short_ratio": 0.0177
       }
     ],
     "holding": [],
@@ -37359,7 +37359,7 @@
         1644169,
         919009,
         776767,
-        1754539
+        1601684
       ],
       "ma20": 262.85,
       "ma60": 164.22,
@@ -37425,14 +37425,14 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 64289,
-        "short_balance": 1942,
-        "margin_prev": 63666,
-        "short_prev": 2372,
-        "margin_change": 623,
-        "short_change": -430,
-        "margin_usage_pct": 43.31,
-        "margin_short_ratio": 0.0302
+        "margin_balance": 61805,
+        "short_balance": 1862,
+        "margin_prev": 64289,
+        "short_prev": 1942,
+        "margin_change": -2484,
+        "short_change": -80,
+        "margin_usage_pct": 41.64,
+        "margin_short_ratio": 0.0301
       }
     ],
     "holding": [],
@@ -37745,7 +37745,7 @@
         66024620,
         44962060,
         151016949,
-        140369429
+        139283086
       ],
       "ma20": 100.28,
       "ma60": 66.13,
@@ -37811,14 +37811,14 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 3100,
-        "short_balance": 42,
-        "margin_prev": 2994,
-        "short_prev": 43,
-        "margin_change": 106,
-        "short_change": -1,
-        "margin_usage_pct": 12.61,
-        "margin_short_ratio": 0.0135
+        "margin_balance": 2904,
+        "short_balance": 60,
+        "margin_prev": 3100,
+        "short_prev": 42,
+        "margin_change": -196,
+        "short_change": 18,
+        "margin_usage_pct": 11.82,
+        "margin_short_ratio": 0.0207
       }
     ],
     "holding": [],
@@ -38131,7 +38131,7 @@
         1119662,
         1636031,
         660728,
-        1327574
+        1198934
       ],
       "ma20": 1111.0,
       "ma60": 1119.85,
@@ -38197,14 +38197,14 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 23106,
-        "short_balance": 18,
-        "margin_prev": 23096,
-        "short_prev": 17,
-        "margin_change": 10,
-        "short_change": 1,
+        "margin_balance": 22488,
+        "short_balance": 22,
+        "margin_prev": 23106,
+        "short_prev": 18,
+        "margin_change": -618,
+        "short_change": 4,
         "margin_usage_pct": null,
-        "margin_short_ratio": 0.0008
+        "margin_short_ratio": 0.001
       }
     ],
     "holding": [],
@@ -38517,7 +38517,7 @@
         9338312,
         4695341,
         5502424,
-        25556992
+        25327653
       ],
       "ma20": 98.25,
       "ma60": 98.51,
@@ -38903,7 +38903,7 @@
         13402764,
         12837735,
         7047898,
-        8016470
+        7809572
       ],
       "ma20": 141.48,
       "ma60": 92.08,
@@ -38969,14 +38969,14 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 13960,
-        "short_balance": 744,
-        "margin_prev": 14283,
-        "short_prev": 291,
-        "margin_change": -323,
-        "short_change": 453,
+        "margin_balance": 13436,
+        "short_balance": 6,
+        "margin_prev": 13960,
+        "short_prev": 744,
+        "margin_change": -524,
+        "short_change": -738,
         "margin_usage_pct": null,
-        "margin_short_ratio": 0.0533
+        "margin_short_ratio": 0.0004
       }
     ],
     "holding": [],
@@ -39289,7 +39289,7 @@
         28012779,
         24816777,
         26208049,
-        35923688
+        35249928
       ],
       "ma20": 276.48,
       "ma60": 259.98,
@@ -39355,14 +39355,14 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 1093,
-        "short_balance": 33,
-        "margin_prev": 1094,
-        "short_prev": 38,
-        "margin_change": -1,
-        "short_change": -5,
-        "margin_usage_pct": 4.46,
-        "margin_short_ratio": 0.0302
+        "margin_balance": 1016,
+        "short_balance": 30,
+        "margin_prev": 1093,
+        "short_prev": 33,
+        "margin_change": -77,
+        "short_change": -3,
+        "margin_usage_pct": 4.14,
+        "margin_short_ratio": 0.0295
       }
     ],
     "holding": [],
@@ -39675,7 +39675,7 @@
         1168538,
         1125616,
         835654,
-        752175
+        673393
       ],
       "ma20": 6201.75,
       "ma60": 5466.17,
@@ -39741,14 +39741,14 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 30501,
-        "short_balance": 133,
-        "margin_prev": 29872,
-        "short_prev": 162,
-        "margin_change": 629,
-        "short_change": -29,
+        "margin_balance": 28005,
+        "short_balance": 354,
+        "margin_prev": 30501,
+        "short_prev": 133,
+        "margin_change": -2496,
+        "short_change": 221,
         "margin_usage_pct": null,
-        "margin_short_ratio": 0.0044
+        "margin_short_ratio": 0.0126
       }
     ],
     "holding": [],
@@ -40061,7 +40061,7 @@
         45872241,
         23247110,
         38867520,
-        34293006
+        33549396
       ],
       "ma20": 340.52,
       "ma60": 268.14,
@@ -40127,13 +40127,13 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 6052,
+        "margin_balance": 5714,
         "short_balance": 1,
-        "margin_prev": 5993,
+        "margin_prev": 6052,
         "short_prev": 1,
-        "margin_change": 59,
+        "margin_change": -338,
         "short_change": 0,
-        "margin_usage_pct": 18.83,
+        "margin_usage_pct": 17.78,
         "margin_short_ratio": 0.0002
       }
     ],
@@ -40447,7 +40447,7 @@
         1436399,
         1450437,
         1252421,
-        2120039
+        2091000
       ],
       "ma20": 101.4,
       "ma60": 100.67,
@@ -40513,14 +40513,14 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 10079,
-        "short_balance": 57,
-        "margin_prev": 9616,
-        "short_prev": 30,
-        "margin_change": 463,
-        "short_change": 27,
+        "margin_balance": 10150,
+        "short_balance": 73,
+        "margin_prev": 10079,
+        "short_prev": 57,
+        "margin_change": 71,
+        "short_change": 16,
         "margin_usage_pct": null,
-        "margin_short_ratio": 0.0057
+        "margin_short_ratio": 0.0072
       }
     ],
     "holding": [],
@@ -40833,7 +40833,7 @@
         17018253,
         8832070,
         24932890,
-        29402728
+        29064324
       ],
       "ma20": 241.9,
       "ma60": 204.2,
@@ -40899,14 +40899,14 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 9408,
-        "short_balance": 148,
-        "margin_prev": 9185,
-        "short_prev": 219,
-        "margin_change": 223,
-        "short_change": -71,
-        "margin_usage_pct": 12.7,
-        "margin_short_ratio": 0.0157
+        "margin_balance": 9004,
+        "short_balance": 110,
+        "margin_prev": 9408,
+        "short_prev": 148,
+        "margin_change": -404,
+        "short_change": -38,
+        "margin_usage_pct": 12.16,
+        "margin_short_ratio": 0.0122
       }
     ],
     "holding": [],
@@ -41219,7 +41219,7 @@
         6148779,
         4389325,
         6734597,
-        6146373
+        5789728
       ],
       "ma20": 1645.25,
       "ma60": 1290.93,
@@ -41285,14 +41285,14 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 6235,
-        "short_balance": 15,
-        "margin_prev": 6310,
-        "short_prev": 14,
-        "margin_change": -75,
-        "short_change": 1,
-        "margin_usage_pct": 16.74,
-        "margin_short_ratio": 0.0024
+        "margin_balance": 6122,
+        "short_balance": 14,
+        "margin_prev": 6235,
+        "short_prev": 15,
+        "margin_change": -113,
+        "short_change": -1,
+        "margin_usage_pct": 16.43,
+        "margin_short_ratio": 0.0023
       }
     ],
     "holding": [],
@@ -41605,7 +41605,7 @@
         3451533,
         2331665,
         2360305,
-        2528177
+        2480846
       ],
       "ma20": 104.18,
       "ma60": 92.67,
@@ -41671,14 +41671,14 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 6322,
-        "short_balance": 109,
-        "margin_prev": 6503,
-        "short_prev": 135,
-        "margin_change": -181,
-        "short_change": -26,
+        "margin_balance": 5917,
+        "short_balance": 104,
+        "margin_prev": 6322,
+        "short_prev": 109,
+        "margin_change": -405,
+        "short_change": -5,
         "margin_usage_pct": null,
-        "margin_short_ratio": 0.0172
+        "margin_short_ratio": 0.0176
       }
     ],
     "holding": [],
@@ -41991,7 +41991,7 @@
         9979957,
         4036668,
         3438620,
-        3316939
+        3165744
       ],
       "ma20": 574.08,
       "ma60": 471.06,
@@ -42057,14 +42057,14 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 2002,
-        "short_balance": 675,
-        "margin_prev": 1884,
-        "short_prev": 672,
-        "margin_change": 118,
-        "short_change": 3,
-        "margin_usage_pct": 23.3,
-        "margin_short_ratio": 0.3372
+        "margin_balance": 1840,
+        "short_balance": 665,
+        "margin_prev": 2002,
+        "short_prev": 675,
+        "margin_change": -162,
+        "short_change": -10,
+        "margin_usage_pct": 21.41,
+        "margin_short_ratio": 0.3614
       }
     ],
     "holding": [],
@@ -42377,7 +42377,7 @@
         2920191,
         2333119,
         4969078,
-        4863763
+        4830197
       ],
       "ma20": 72.64,
       "ma60": 53.67,
@@ -42443,14 +42443,14 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 1758,
-        "short_balance": 5,
-        "margin_prev": 1742,
-        "short_prev": 7,
-        "margin_change": 16,
-        "short_change": -2,
-        "margin_usage_pct": 18.77,
-        "margin_short_ratio": 0.0028
+        "margin_balance": 1664,
+        "short_balance": 17,
+        "margin_prev": 1758,
+        "short_prev": 5,
+        "margin_change": -94,
+        "short_change": 12,
+        "margin_usage_pct": 17.76,
+        "margin_short_ratio": 0.0102
       }
     ],
     "holding": [],
@@ -42763,7 +42763,7 @@
         3598662,
         1706558,
         1032731,
-        2049726
+        1998389
       ],
       "ma20": 298.48,
       "ma60": 234.43,
@@ -42829,14 +42829,14 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 4627,
-        "short_balance": 36,
-        "margin_prev": 4715,
-        "short_prev": 37,
-        "margin_change": -88,
-        "short_change": -1,
-        "margin_usage_pct": 22.19,
-        "margin_short_ratio": 0.0078
+        "margin_balance": 4604,
+        "short_balance": 31,
+        "margin_prev": 4627,
+        "short_prev": 36,
+        "margin_change": -23,
+        "short_change": -5,
+        "margin_usage_pct": 22.08,
+        "margin_short_ratio": 0.0067
       }
     ],
     "holding": [],
@@ -43149,7 +43149,7 @@
         4257115,
         5031653,
         5701113,
-        2493335
+        2457812
       ],
       "ma20": 117.28,
       "ma60": 121.57,
@@ -43215,13 +43215,13 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 3331,
+        "margin_balance": 3317,
         "short_balance": 4,
-        "margin_prev": 3326,
-        "short_prev": 6,
-        "margin_change": 5,
-        "short_change": -2,
-        "margin_usage_pct": 30.56,
+        "margin_prev": 3331,
+        "short_prev": 4,
+        "margin_change": -14,
+        "short_change": 0,
+        "margin_usage_pct": 30.43,
         "margin_short_ratio": 0.0012
       }
     ],
@@ -43535,7 +43535,7 @@
         847270,
         637053,
         526002,
-        906240
+        896507
       ],
       "ma20": 96.56,
       "ma60": 90.87,
@@ -43601,14 +43601,14 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 8665,
-        "short_balance": 93,
-        "margin_prev": 8737,
-        "short_prev": 90,
-        "margin_change": -72,
-        "short_change": 3,
-        "margin_usage_pct": 7.24,
-        "margin_short_ratio": 0.0107
+        "margin_balance": 8536,
+        "short_balance": 78,
+        "margin_prev": 8665,
+        "short_prev": 93,
+        "margin_change": -129,
+        "short_change": -15,
+        "margin_usage_pct": 7.14,
+        "margin_short_ratio": 0.0091
       }
     ],
     "holding": [],
@@ -43921,7 +43921,7 @@
         1843314,
         1597768,
         1257559,
-        2410764
+        2138503
       ],
       "ma20": 940.15,
       "ma60": 733.3,
@@ -43987,14 +43987,14 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 625,
-        "short_balance": 4,
-        "margin_prev": 605,
+        "margin_balance": 611,
+        "short_balance": 5,
+        "margin_prev": 625,
         "short_prev": 4,
-        "margin_change": 20,
-        "short_change": 0,
-        "margin_usage_pct": 7.59,
-        "margin_short_ratio": 0.0064
+        "margin_change": -14,
+        "short_change": 1,
+        "margin_usage_pct": 7.42,
+        "margin_short_ratio": 0.0082
       }
     ],
     "holding": [],
@@ -44307,7 +44307,7 @@
         1176066,
         643094,
         358110,
-        353868
+        331682
       ],
       "ma20": 3424.75,
       "ma60": 3533.25,
@@ -44352,7 +44352,7 @@
       "change": 0,
       "change_pct": 0,
       "foreign_net": 90175,
-      "trust_net": -75000
+      "trust_net": -115000
     },
     "foreign": [
       {
@@ -44366,21 +44366,21 @@
       {
         "date": "20260626",
         "buy": 26000,
-        "sell": 101000,
-        "net": -75000
+        "sell": 141000,
+        "net": -115000
       }
     ],
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 358,
-        "short_balance": 9,
-        "margin_prev": 341,
-        "short_prev": 11,
-        "margin_change": 17,
+        "margin_balance": 357,
+        "short_balance": 7,
+        "margin_prev": 358,
+        "short_prev": 9,
+        "margin_change": -1,
         "short_change": -2,
         "margin_usage_pct": null,
-        "margin_short_ratio": 0.0251
+        "margin_short_ratio": 0.0196
       }
     ],
     "holding": [],
@@ -44693,7 +44693,7 @@
         297123,
         294900,
         271150,
-        522559
+        444322
       ],
       "ma20": 8932.0,
       "ma60": 9239.25,
@@ -44759,14 +44759,14 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 2776,
-        "short_balance": 24,
-        "margin_prev": 2818,
+        "margin_balance": 2545,
+        "short_balance": 27,
+        "margin_prev": 2776,
         "short_prev": 24,
-        "margin_change": -42,
-        "short_change": 0,
+        "margin_change": -231,
+        "short_change": 3,
         "margin_usage_pct": null,
-        "margin_short_ratio": 0.0086
+        "margin_short_ratio": 0.0106
       }
     ],
     "holding": [],
@@ -45079,7 +45079,7 @@
         10834810,
         8986944,
         5197314,
-        3172038
+        3098571
       ],
       "ma20": 132.02,
       "ma60": 110.2,
@@ -45465,7 +45465,7 @@
         3779400,
         3323820,
         3219679,
-        1469402
+        1458160
       ],
       "ma20": 16.78,
       "ma60": 14.23,
@@ -45531,14 +45531,14 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 2233,
-        "short_balance": 3,
-        "margin_prev": 2168,
+        "margin_balance": 2085,
+        "short_balance": 4,
+        "margin_prev": 2233,
         "short_prev": 3,
-        "margin_change": 65,
-        "short_change": 0,
+        "margin_change": -148,
+        "short_change": 1,
         "margin_usage_pct": null,
-        "margin_short_ratio": 0.0013
+        "margin_short_ratio": 0.0019
       }
     ],
     "holding": [],
@@ -45851,7 +45851,7 @@
         1644866,
         1162141,
         1237416,
-        1711499
+        1426391
       ],
       "ma20": 5080.25,
       "ma60": 4729.67,
@@ -45917,14 +45917,14 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 5678,
-        "short_balance": 15,
-        "margin_prev": 5924,
-        "short_prev": 19,
-        "margin_change": -246,
-        "short_change": -4,
+        "margin_balance": 4961,
+        "short_balance": 26,
+        "margin_prev": 5678,
+        "short_prev": 15,
+        "margin_change": -717,
+        "short_change": 11,
         "margin_usage_pct": null,
-        "margin_short_ratio": 0.0026
+        "margin_short_ratio": 0.0052
       }
     ],
     "holding": [],
@@ -46237,7 +46237,7 @@
         8587990,
         14285412,
         6684950,
-        5740786
+        5588988
       ],
       "ma20": 246.78,
       "ma60": 208.91,
@@ -46303,14 +46303,14 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 4209,
-        "short_balance": 23,
-        "margin_prev": 4253,
-        "short_prev": 24,
-        "margin_change": -44,
-        "short_change": -1,
-        "margin_usage_pct": 62.62,
-        "margin_short_ratio": 0.0055
+        "margin_balance": 4075,
+        "short_balance": 21,
+        "margin_prev": 4209,
+        "short_prev": 23,
+        "margin_change": -134,
+        "short_change": -2,
+        "margin_usage_pct": 60.63,
+        "margin_short_ratio": 0.0052
       }
     ],
     "holding": [],
@@ -46623,7 +46623,7 @@
         2006164,
         1039521,
         1138500,
-        1039316
+        990342
       ],
       "ma20": 456.18,
       "ma60": 453.71,
@@ -46689,14 +46689,14 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 163762,
-        "short_balance": 4035,
-        "margin_prev": 164056,
-        "short_prev": 4373,
-        "margin_change": -294,
-        "short_change": -338,
+        "margin_balance": 155372,
+        "short_balance": 3424,
+        "margin_prev": 163762,
+        "short_prev": 4035,
+        "margin_change": -8390,
+        "short_change": -611,
         "margin_usage_pct": null,
-        "margin_short_ratio": 0.0246
+        "margin_short_ratio": 0.022
       }
     ],
     "holding": [],
@@ -47009,7 +47009,7 @@
         499183563,
         466860153,
         469670420,
-        331773769
+        330622290
       ],
       "ma20": 76.64,
       "ma60": 64.41,
@@ -47075,14 +47075,14 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 2603,
-        "short_balance": 11,
-        "margin_prev": 2523,
-        "short_prev": 13,
-        "margin_change": 80,
-        "short_change": -2,
+        "margin_balance": 2557,
+        "short_balance": 10,
+        "margin_prev": 2603,
+        "short_prev": 11,
+        "margin_change": -46,
+        "short_change": -1,
         "margin_usage_pct": null,
-        "margin_short_ratio": 0.0042
+        "margin_short_ratio": 0.0039
       }
     ],
     "holding": [],
@@ -47395,7 +47395,7 @@
         630057,
         727884,
         897462,
-        1172359
+        1066603
       ],
       "ma20": 1857.25,
       "ma60": 1870.0,
@@ -47781,7 +47781,7 @@
         16037838,
         8891519,
         6151805,
-        7445615
+        7340424
       ],
       "ma20": 98.3,
       "ma60": 101.42,
@@ -47847,14 +47847,14 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 5037,
-        "short_balance": 66,
-        "margin_prev": 5956,
-        "short_prev": 147,
-        "margin_change": -919,
-        "short_change": -81,
-        "margin_usage_pct": 29.26,
-        "margin_short_ratio": 0.0131
+        "margin_balance": 4945,
+        "short_balance": 39,
+        "margin_prev": 5037,
+        "short_prev": 66,
+        "margin_change": -92,
+        "short_change": -27,
+        "margin_usage_pct": 28.72,
+        "margin_short_ratio": 0.0079
       }
     ],
     "holding": [],
@@ -48167,7 +48167,7 @@
         8107896,
         15115183,
         8938054,
-        6957043
+        6887907
       ],
       "ma20": 103.31,
       "ma60": 84.74,
@@ -48233,14 +48233,14 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 7142,
-        "short_balance": 531,
-        "margin_prev": 7225,
-        "short_prev": 527,
-        "margin_change": -83,
+        "margin_balance": 6868,
+        "short_balance": 535,
+        "margin_prev": 7142,
+        "short_prev": 531,
+        "margin_change": -274,
         "short_change": 4,
-        "margin_usage_pct": 21.99,
-        "margin_short_ratio": 0.0743
+        "margin_usage_pct": 21.14,
+        "margin_short_ratio": 0.0779
       }
     ],
     "holding": [],
@@ -48553,7 +48553,7 @@
         1416607,
         800535,
         1196061,
-        1134659
+        1077323
       ],
       "ma20": 169.78,
       "ma60": 111.41,
@@ -48619,14 +48619,14 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 5005,
-        "short_balance": 612,
-        "margin_prev": 4733,
-        "short_prev": 615,
-        "margin_change": 272,
-        "short_change": -3,
-        "margin_usage_pct": 25.05,
-        "margin_short_ratio": 0.1223
+        "margin_balance": 4562,
+        "short_balance": 596,
+        "margin_prev": 5005,
+        "short_prev": 612,
+        "margin_change": -443,
+        "short_change": -16,
+        "margin_usage_pct": 22.83,
+        "margin_short_ratio": 0.1306
       }
     ],
     "holding": [],
@@ -48939,7 +48939,7 @@
         11155770,
         10811333,
         12201397,
-        8292255
+        8111426
       ],
       "ma20": 185.48,
       "ma60": 124.63,
@@ -48984,7 +48984,7 @@
       "change": 0,
       "change_pct": 0,
       "foreign_net": 3130115,
-      "trust_net": 2199042
+      "trust_net": 3280042
     },
     "foreign": [
       {
@@ -48997,22 +48997,22 @@
     "trust": [
       {
         "date": "20260626",
-        "buy": 2209042,
+        "buy": 3290042,
         "sell": 10000,
-        "net": 2199042
+        "net": 3280042
       }
     ],
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 11390,
-        "short_balance": 94,
-        "margin_prev": 11853,
-        "short_prev": 0,
-        "margin_change": -463,
-        "short_change": 94,
+        "margin_balance": 10755,
+        "short_balance": 288,
+        "margin_prev": 11390,
+        "short_prev": 94,
+        "margin_change": -635,
+        "short_change": 194,
         "margin_usage_pct": null,
-        "margin_short_ratio": 0.0083
+        "margin_short_ratio": 0.0268
       }
     ],
     "holding": [],
@@ -49325,7 +49325,7 @@
         33079911,
         23485322,
         24823862,
-        34999410
+        33252441
       ],
       "ma20": 893.95,
       "ma60": 836.58,
@@ -49391,14 +49391,14 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 1456,
-        "short_balance": 3,
-        "margin_prev": 1616,
+        "margin_balance": 1230,
+        "short_balance": 0,
+        "margin_prev": 1456,
         "short_prev": 3,
-        "margin_change": -160,
-        "short_change": 0,
+        "margin_change": -226,
+        "short_change": -3,
         "margin_usage_pct": null,
-        "margin_short_ratio": 0.0021
+        "margin_short_ratio": 0.0
       }
     ],
     "holding": [],
@@ -49711,7 +49711,7 @@
         2774447,
         1812397,
         1633594,
-        1723290
+        1648984
       ],
       "ma20": 291.95,
       "ma60": 266.31,
@@ -49777,14 +49777,14 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 2874,
-        "short_balance": 73,
-        "margin_prev": 2961,
-        "short_prev": 99,
-        "margin_change": -87,
-        "short_change": -26,
-        "margin_usage_pct": 20.72,
-        "margin_short_ratio": 0.0254
+        "margin_balance": 2648,
+        "short_balance": 84,
+        "margin_prev": 2874,
+        "short_prev": 73,
+        "margin_change": -226,
+        "short_change": 11,
+        "margin_usage_pct": 19.09,
+        "margin_short_ratio": 0.0317
       }
     ],
     "holding": [],
@@ -50097,7 +50097,7 @@
         2139747,
         1888934,
         3009475,
-        1542718
+        1506255
       ],
       "ma20": 255.9,
       "ma60": 219.97,
@@ -50163,14 +50163,14 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 27986,
-        "short_balance": 422,
-        "margin_prev": 27711,
-        "short_prev": 430,
-        "margin_change": 275,
-        "short_change": -8,
-        "margin_usage_pct": 74.95,
-        "margin_short_ratio": 0.0151
+        "margin_balance": 27844,
+        "short_balance": 344,
+        "margin_prev": 27986,
+        "short_prev": 422,
+        "margin_change": -142,
+        "short_change": -78,
+        "margin_usage_pct": 74.57,
+        "margin_short_ratio": 0.0124
       }
     ],
     "holding": [],
@@ -50483,7 +50483,7 @@
         10151127,
         2819364,
         2503922,
-        2641609
+        2602902
       ],
       "ma20": 138.48,
       "ma60": 111.91,
@@ -50549,11 +50549,11 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 25936,
+        "margin_balance": 23308,
         "short_balance": 0,
-        "margin_prev": 26038,
+        "margin_prev": 25936,
         "short_prev": 0,
-        "margin_change": -102,
+        "margin_change": -2628,
         "short_change": 0,
         "margin_usage_pct": null,
         "margin_short_ratio": 0.0
@@ -50869,7 +50869,7 @@
         86076325,
         36856237,
         53213465,
-        63882506
+        63437552
       ],
       "ma20": 99.09,
       "ma60": 83.07,
@@ -50935,14 +50935,14 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 2123,
-        "short_balance": 3,
-        "margin_prev": 2047,
-        "short_prev": 0,
-        "margin_change": 76,
-        "short_change": 3,
+        "margin_balance": 2132,
+        "short_balance": 7,
+        "margin_prev": 2123,
+        "short_prev": 3,
+        "margin_change": 9,
+        "short_change": 4,
         "margin_usage_pct": null,
-        "margin_short_ratio": 0.0014
+        "margin_short_ratio": 0.0033
       }
     ],
     "holding": [],
@@ -51255,7 +51255,7 @@
         1230107,
         984527,
         740753,
-        925046
+        811748
       ],
       "ma20": 1382.0,
       "ma60": 1247.05,
@@ -51321,14 +51321,14 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 3286,
-        "short_balance": 7,
-        "margin_prev": 3299,
-        "short_prev": 13,
-        "margin_change": -13,
-        "short_change": -6,
-        "margin_usage_pct": 12.91,
-        "margin_short_ratio": 0.0021
+        "margin_balance": 3190,
+        "short_balance": 4,
+        "margin_prev": 3286,
+        "short_prev": 7,
+        "margin_change": -96,
+        "short_change": -3,
+        "margin_usage_pct": 12.53,
+        "margin_short_ratio": 0.0013
       }
     ],
     "holding": [],
@@ -51641,7 +51641,7 @@
         12462488,
         2535851,
         2109635,
-        2209229
+        2128251
       ],
       "ma20": 181.45,
       "ma60": 154.07,
@@ -51707,14 +51707,14 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 10076,
-        "short_balance": 156,
-        "margin_prev": 9040,
-        "short_prev": 371,
-        "margin_change": 1036,
-        "short_change": -215,
+        "margin_balance": 9077,
+        "short_balance": 133,
+        "margin_prev": 10076,
+        "short_prev": 156,
+        "margin_change": -999,
+        "short_change": -23,
         "margin_usage_pct": null,
-        "margin_short_ratio": 0.0155
+        "margin_short_ratio": 0.0147
       }
     ],
     "holding": [],
@@ -52027,7 +52027,7 @@
         21527541,
         32255763,
         14356008,
-        23893214
+        23559745
       ],
       "ma20": 193.32,
       "ma60": 150.52,
@@ -52093,14 +52093,14 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 4414,
-        "short_balance": 81,
-        "margin_prev": 4361,
-        "short_prev": 78,
-        "margin_change": 53,
-        "short_change": 3,
-        "margin_usage_pct": 25.83,
-        "margin_short_ratio": 0.0184
+        "margin_balance": 4493,
+        "short_balance": 124,
+        "margin_prev": 4414,
+        "short_prev": 81,
+        "margin_change": 79,
+        "short_change": 43,
+        "margin_usage_pct": 26.3,
+        "margin_short_ratio": 0.0276
       }
     ],
     "holding": [],
@@ -52413,7 +52413,7 @@
         3143235,
         2297638,
         1907404,
-        6423982
+        6392576
       ],
       "ma20": 67.14,
       "ma60": 55.7,
@@ -52479,14 +52479,14 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 15447,
-        "short_balance": 480,
-        "margin_prev": 15249,
-        "short_prev": 503,
-        "margin_change": 198,
-        "short_change": -23,
-        "margin_usage_pct": 24.46,
-        "margin_short_ratio": 0.0311
+        "margin_balance": 15326,
+        "short_balance": 439,
+        "margin_prev": 15447,
+        "short_prev": 480,
+        "margin_change": -121,
+        "short_change": -41,
+        "margin_usage_pct": 24.27,
+        "margin_short_ratio": 0.0286
       }
     ],
     "holding": [],
@@ -52799,7 +52799,7 @@
         17197917,
         9507199,
         8586277,
-        16286664
+        15253100
       ],
       "ma20": 616.3,
       "ma60": 467.72,
@@ -52865,14 +52865,14 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 4200,
-        "short_balance": 314,
-        "margin_prev": 4216,
-        "short_prev": 317,
-        "margin_change": -16,
-        "short_change": -3,
+        "margin_balance": 4081,
+        "short_balance": 295,
+        "margin_prev": 4200,
+        "short_prev": 314,
+        "margin_change": -119,
+        "short_change": -19,
         "margin_usage_pct": null,
-        "margin_short_ratio": 0.0748
+        "margin_short_ratio": 0.0723
       }
     ],
     "holding": [],
@@ -53185,7 +53185,7 @@
         3226586,
         810366,
         477479,
-        1085401
+        1054260
       ],
       "ma20": 1279.75,
       "ma60": 1154.15,
@@ -53308,6 +53308,7 @@
         48.35,
         49.4,
         49.4,
+        50.5,
         50.5
       ],
       "High": [
@@ -53369,6 +53370,7 @@
         48.35,
         49.4,
         49.4,
+        50.5,
         50.5
       ],
       "Low": [
@@ -53430,7 +53432,8 @@
         48.35,
         47.6,
         49.4,
-        49.5
+        49.5,
+        50.5
       ],
       "Open": [
         47.05,
@@ -53491,7 +53494,8 @@
         48.35,
         48.65,
         49.4,
-        49.5
+        49.5,
+        50.5
       ],
       "Volume": [
         22000,
@@ -53552,14 +53556,15 @@
         9000,
         4000,
         0,
-        2000
+        2000,
+        0
       ],
-      "ma20": 48.77,
-      "ma60": "-",
+      "ma20": 48.84,
+      "ma60": 48.98,
       "rsi": 53.1,
-      "trend": "",
-      "bias20": 3.56,
-      "bias60": "-"
+      "trend": "短空頭",
+      "bias20": 3.4,
+      "bias60": 3.1
     },
     "shareholder": [
       {
@@ -53912,7 +53917,7 @@
         23001,
         7316,
         3000,
-        6463
+        4000
       ],
       "ma20": 20.65,
       "ma60": 21.47,
@@ -54286,7 +54291,7 @@
         730049,
         940320,
         989210,
-        1019963
+        1016450
       ],
       "ma20": 32.01,
       "ma60": 29.47,
@@ -54352,14 +54357,14 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 890,
-        "short_balance": 4,
-        "margin_prev": 953,
+        "margin_balance": 896,
+        "short_balance": 2,
+        "margin_prev": 890,
         "short_prev": 4,
-        "margin_change": -63,
-        "short_change": 0,
+        "margin_change": 6,
+        "short_change": -2,
         "margin_usage_pct": null,
-        "margin_short_ratio": 0.0045
+        "margin_short_ratio": 0.0022
       }
     ],
     "holding": [],
@@ -54672,7 +54677,7 @@
         40683229,
         34752329,
         33470328,
-        17861950
+        17842474
       ],
       "ma20": 105.21,
       "ma60": 98.63,
@@ -54740,9 +54745,9 @@
         "date": "20260626",
         "margin_balance": 3265,
         "short_balance": 0,
-        "margin_prev": 3263,
+        "margin_prev": 3265,
         "short_prev": 0,
-        "margin_change": 2,
+        "margin_change": 0,
         "short_change": 0,
         "margin_usage_pct": null,
         "margin_short_ratio": 0.0
@@ -55058,7 +55063,7 @@
         309008,
         132050,
         64100,
-        135625
+        133320
       ],
       "ma20": 36.3,
       "ma60": 36.58,
@@ -55124,11 +55129,11 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 38,
+        "margin_balance": 40,
         "short_balance": 0,
         "margin_prev": 38,
         "short_prev": 0,
-        "margin_change": 0,
+        "margin_change": 2,
         "short_change": 0,
         "margin_usage_pct": null,
         "margin_short_ratio": 0.0
@@ -55444,7 +55449,7 @@
         99022,
         67000,
         23005,
-        78626
+        78000
       ],
       "ma20": 80.68,
       "ma60": 82.82,
@@ -55830,7 +55835,7 @@
         18000,
         16000,
         8000,
-        71001
+        71000
       ],
       "ma20": 30.44,
       "ma60": 30.34,
@@ -55896,11 +55901,11 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 2871,
+        "margin_balance": 2876,
         "short_balance": 13,
-        "margin_prev": 2891,
+        "margin_prev": 2871,
         "short_prev": 13,
-        "margin_change": -20,
+        "margin_change": 5,
         "short_change": 0,
         "margin_usage_pct": null,
         "margin_short_ratio": 0.0045
@@ -56216,7 +56221,7 @@
         480275,
         450900,
         945246,
-        860587
+        850341
       ],
       "ma20": 53.48,
       "ma60": 53.42,
@@ -56602,7 +56607,7 @@
         14000,
         5000,
         7000,
-        2100
+        2000
       ],
       "ma20": 15.05,
       "ma60": 15.82,
@@ -56668,11 +56673,11 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 1129,
+        "margin_balance": 1138,
         "short_balance": 0,
-        "margin_prev": 1121,
+        "margin_prev": 1129,
         "short_prev": 0,
-        "margin_change": 8,
+        "margin_change": 9,
         "short_change": 0,
         "margin_usage_pct": null,
         "margin_short_ratio": 0.0
@@ -56988,7 +56993,7 @@
         113957,
         165010,
         58800,
-        184421
+        183000
       ],
       "ma20": 66.03,
       "ma60": 64.29,
@@ -57054,14 +57059,14 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 1344,
-        "short_balance": 18,
-        "margin_prev": 1088,
-        "short_prev": 0,
-        "margin_change": 256,
-        "short_change": 18,
+        "margin_balance": 1147,
+        "short_balance": 20,
+        "margin_prev": 1344,
+        "short_prev": 18,
+        "margin_change": -197,
+        "short_change": 2,
         "margin_usage_pct": null,
-        "margin_short_ratio": 0.0134
+        "margin_short_ratio": 0.0174
       }
     ],
     "holding": [],
@@ -57374,7 +57379,7 @@
         2761563,
         4366890,
         4338423,
-        2327382
+        2312247
       ],
       "ma20": 74.6,
       "ma60": 71.93,
@@ -57440,13 +57445,13 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 119,
+        "margin_balance": 112,
         "short_balance": 0,
-        "margin_prev": 120,
+        "margin_prev": 119,
         "short_prev": 0,
-        "margin_change": -1,
+        "margin_change": -7,
         "short_change": 0,
-        "margin_usage_pct": 0.15,
+        "margin_usage_pct": 0.14,
         "margin_short_ratio": 0.0
       }
     ],
@@ -57760,7 +57765,7 @@
         143350,
         68023,
         249500,
-        76085
+        75058
       ],
       "ma20": 41.71,
       "ma60": 40.72,
@@ -57826,11 +57831,11 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 35,
+        "margin_balance": 37,
         "short_balance": 0,
         "margin_prev": 35,
         "short_prev": 0,
-        "margin_change": 0,
+        "margin_change": 2,
         "short_change": 0,
         "margin_usage_pct": null,
         "margin_short_ratio": 0.0
@@ -58146,7 +58151,7 @@
         12000,
         22000,
         0,
-        27050
+        27000
       ],
       "ma20": 35.94,
       "ma60": 35.48,
@@ -58532,7 +58537,7 @@
         25000,
         1000,
         21000,
-        56447
+        56100
       ],
       "ma20": 77.95,
       "ma60": 77.13,
@@ -58598,14 +58603,14 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 3652,
+        "margin_balance": 3107,
         "short_balance": 2,
-        "margin_prev": 3783,
+        "margin_prev": 3652,
         "short_prev": 2,
-        "margin_change": -131,
+        "margin_change": -545,
         "short_change": 0,
         "margin_usage_pct": null,
-        "margin_short_ratio": 0.0005
+        "margin_short_ratio": 0.0006
       }
     ],
     "holding": [],
@@ -58918,7 +58923,7 @@
         13087933,
         19401872,
         12537590,
-        11459976
+        11437933
       ],
       "ma20": 8.26,
       "ma60": 7.91,
@@ -58984,11 +58989,11 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 5270,
+        "margin_balance": 5219,
         "short_balance": 1,
-        "margin_prev": 5412,
+        "margin_prev": 5270,
         "short_prev": 1,
-        "margin_change": -142,
+        "margin_change": -51,
         "short_change": 0,
         "margin_usage_pct": null,
         "margin_short_ratio": 0.0002
@@ -59304,7 +59309,7 @@
         892004,
         995908,
         1378320,
-        984969
+        985544
       ],
       "ma20": 61.76,
       "ma60": 59.48,
@@ -59372,9 +59377,9 @@
         "date": "20260626",
         "margin_balance": 63,
         "short_balance": 0,
-        "margin_prev": 65,
+        "margin_prev": 63,
         "short_prev": 0,
-        "margin_change": -2,
+        "margin_change": 0,
         "short_change": 0,
         "margin_usage_pct": 0.31,
         "margin_short_ratio": 0.0
@@ -59690,7 +59695,7 @@
         26400,
         30404,
         79969,
-        6076
+        6599
       ],
       "ma20": 31.96,
       "ma60": 31.75,
@@ -60064,7 +60069,7 @@
         21000,
         9000,
         51161,
-        21625
+        21339
       ],
       "ma20": 47.58,
       "ma60": 50.12,
@@ -60438,7 +60443,7 @@
         15100,
         2130,
         14000,
-        42551
+        42000
       ],
       "ma20": 65.88,
       "ma60": 60.66,
@@ -60504,11 +60509,11 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 2198,
+        "margin_balance": 2197,
         "short_balance": 0,
-        "margin_prev": 2200,
+        "margin_prev": 2198,
         "short_prev": 0,
-        "margin_change": -2,
+        "margin_change": -1,
         "short_change": 0,
         "margin_usage_pct": null,
         "margin_short_ratio": 0.0
@@ -60824,7 +60829,7 @@
         17029,
         54000,
         12000,
-        22928
+        16064
       ],
       "ma20": 12.91,
       "ma60": 13.09,
@@ -60890,14 +60895,14 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 3572,
-        "short_balance": 258,
-        "margin_prev": 3497,
-        "short_prev": 139,
-        "margin_change": 75,
-        "short_change": 119,
+        "margin_balance": 3503,
+        "short_balance": 84,
+        "margin_prev": 3572,
+        "short_prev": 258,
+        "margin_change": -69,
+        "short_change": -174,
         "margin_usage_pct": null,
-        "margin_short_ratio": 0.0722
+        "margin_short_ratio": 0.024
       }
     ],
     "holding": [],
@@ -61210,7 +61215,7 @@
         1538496,
         905832,
         838114,
-        1202750
+        1180319
       ],
       "ma20": 178.7,
       "ma60": 153.82,
@@ -61276,11 +61281,11 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 278,
+        "margin_balance": 283,
         "short_balance": 0,
-        "margin_prev": 284,
+        "margin_prev": 278,
         "short_prev": 0,
-        "margin_change": -6,
+        "margin_change": 5,
         "short_change": 0,
         "margin_usage_pct": null,
         "margin_short_ratio": 0.0
@@ -61596,7 +61601,7 @@
         655983,
         1641849,
         576002,
-        1665820
+        1657110
       ],
       "ma20": 37.52,
       "ma60": 32.77,
@@ -61646,8 +61651,8 @@
     "foreign": [
       {
         "date": "20260626",
-        "buy": 105786219,
-        "sell": 122487246,
+        "buy": 108120219,
+        "sell": 124821246,
         "net": -16701027
       }
     ],
@@ -61662,14 +61667,14 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 252197,
-        "short_balance": 3210,
-        "margin_prev": 254502,
-        "short_prev": 3505,
-        "margin_change": -2305,
-        "short_change": -295,
+        "margin_balance": 231427,
+        "short_balance": 2520,
+        "margin_prev": 252197,
+        "short_prev": 3210,
+        "margin_change": -20770,
+        "short_change": -690,
         "margin_usage_pct": null,
-        "margin_short_ratio": 0.0127
+        "margin_short_ratio": 0.0109
       }
     ],
     "holding": [],
@@ -61982,7 +61987,7 @@
         544359699,
         562107679,
         394896008,
-        379386560
+        373687844
       ],
       "ma20": 143.15,
       "ma60": 105.6,
@@ -62048,14 +62053,14 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 945,
-        "short_balance": 15,
-        "margin_prev": 853,
-        "short_prev": 12,
-        "margin_change": 92,
-        "short_change": 3,
+        "margin_balance": 848,
+        "short_balance": 11,
+        "margin_prev": 945,
+        "short_prev": 15,
+        "margin_change": -97,
+        "short_change": -4,
         "margin_usage_pct": null,
-        "margin_short_ratio": 0.0159
+        "margin_short_ratio": 0.013
       }
     ],
     "holding": [],
@@ -62368,7 +62373,7 @@
         17174058,
         19287037,
         17580891,
-        9806020
+        9760969
       ],
       "ma20": 74.55,
       "ma60": 72.87,
@@ -62434,12 +62439,12 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 25043,
+        "margin_balance": 20906,
         "short_balance": 0,
-        "margin_prev": 22794,
-        "short_prev": 1,
-        "margin_change": 2249,
-        "short_change": -1,
+        "margin_prev": 25043,
+        "short_prev": 0,
+        "margin_change": -4137,
+        "short_change": 0,
         "margin_usage_pct": null,
         "margin_short_ratio": 0.0
       }
@@ -62754,7 +62759,7 @@
         35897966,
         78711420,
         145989912,
-        62554360
+        62110469
       ],
       "ma20": 49.26,
       "ma60": 48.91,
@@ -62820,14 +62825,14 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 2041,
-        "short_balance": 30,
-        "margin_prev": 1858,
-        "short_prev": 29,
-        "margin_change": 183,
-        "short_change": 1,
+        "margin_balance": 1667,
+        "short_balance": 22,
+        "margin_prev": 2041,
+        "short_prev": 30,
+        "margin_change": -374,
+        "short_change": -8,
         "margin_usage_pct": null,
-        "margin_short_ratio": 0.0147
+        "margin_short_ratio": 0.0132
       }
     ],
     "holding": [],
@@ -63140,7 +63145,7 @@
         1699649,
         1836857,
         3162918,
-        3356996
+        3025809
       ],
       "ma20": 4350.75,
       "ma60": 3299.75,
@@ -63500,7 +63505,7 @@
         120564830,
         208531754,
         89454929,
-        290864966
+        251693794
       ],
       "ma20": 105.2,
       "ma60": 94.91,
@@ -63837,7 +63842,7 @@
         51799601,
         48220412,
         28343648,
-        75219665
+        70851389
       ],
       "ma20": 51.85,
       "ma60": 45.7,
@@ -63900,14 +63905,14 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 54303,
-        "short_balance": 220,
-        "margin_prev": 54354,
-        "short_prev": 234,
-        "margin_change": -51,
-        "short_change": -14,
-        "margin_usage_pct": 29.17,
-        "margin_short_ratio": 0.0041
+        "margin_balance": 49478,
+        "short_balance": 148,
+        "margin_prev": 54303,
+        "short_prev": 220,
+        "margin_change": -4825,
+        "short_change": -72,
+        "margin_usage_pct": 26.57,
+        "margin_short_ratio": 0.003
       }
     ],
     "holding": [],
@@ -64220,7 +64225,7 @@
         50258484,
         29790613,
         29911885,
-        37559763
+        36733046
       ],
       "ma20": 251.95,
       "ma60": 191.74,
@@ -64286,14 +64291,14 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 55175,
-        "short_balance": 587,
-        "margin_prev": 54885,
-        "short_prev": 572,
-        "margin_change": 290,
-        "short_change": 15,
+        "margin_balance": 54830,
+        "short_balance": 502,
+        "margin_prev": 55175,
+        "short_prev": 587,
+        "margin_change": -345,
+        "short_change": -85,
         "margin_usage_pct": null,
-        "margin_short_ratio": 0.0106
+        "margin_short_ratio": 0.0092
       }
     ],
     "holding": [],
@@ -64606,7 +64611,7 @@
         71670104,
         27507947,
         31565393,
-        43094867
+        42917346
       ],
       "ma20": 38.43,
       "ma60": 34.81,
@@ -64672,14 +64677,14 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 1935,
+        "margin_balance": 1877,
         "short_balance": 8,
-        "margin_prev": 1925,
+        "margin_prev": 1935,
         "short_prev": 8,
-        "margin_change": 10,
+        "margin_change": -58,
         "short_change": 0,
         "margin_usage_pct": null,
-        "margin_short_ratio": 0.0041
+        "margin_short_ratio": 0.0043
       }
     ],
     "holding": [],
@@ -64992,7 +64997,7 @@
         524605,
         787969,
         552050,
-        930525
+        915930
       ],
       "ma20": 59.63,
       "ma60": 56.91,
@@ -65058,14 +65063,14 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 5473,
-        "short_balance": 42,
-        "margin_prev": 5379,
+        "margin_balance": 5209,
+        "short_balance": 81,
+        "margin_prev": 5473,
         "short_prev": 42,
-        "margin_change": 94,
-        "short_change": 0,
+        "margin_change": -264,
+        "short_change": 39,
         "margin_usage_pct": null,
-        "margin_short_ratio": 0.0077
+        "margin_short_ratio": 0.0156
       }
     ],
     "holding": [],
@@ -65378,7 +65383,7 @@
         4332002,
         2699337,
         5113849,
-        7237074
+        7073069
       ],
       "ma20": 103.83,
       "ma60": 100.96,
@@ -65444,14 +65449,14 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 9661,
-        "short_balance": 84,
-        "margin_prev": 9924,
-        "short_prev": 87,
-        "margin_change": -263,
-        "short_change": -3,
+        "margin_balance": 10327,
+        "short_balance": 80,
+        "margin_prev": 9661,
+        "short_prev": 84,
+        "margin_change": 666,
+        "short_change": -4,
         "margin_usage_pct": null,
-        "margin_short_ratio": 0.0087
+        "margin_short_ratio": 0.0077
       }
     ],
     "holding": [],
@@ -65764,7 +65769,7 @@
         14319886,
         11951409,
         12486208,
-        13680097
+        13382284
       ],
       "ma20": 222.6,
       "ma60": 203.28,
@@ -65830,11 +65835,11 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 8308,
+        "margin_balance": 7586,
         "short_balance": 0,
-        "margin_prev": 8034,
+        "margin_prev": 8308,
         "short_prev": 0,
-        "margin_change": 274,
+        "margin_change": -722,
         "short_change": 0,
         "margin_usage_pct": null,
         "margin_short_ratio": 0.0
@@ -66150,7 +66155,7 @@
         8116950,
         18549108,
         11924775,
-        8892326
+        8792981
       ],
       "ma20": 121.7,
       "ma60": 100.16,
@@ -66216,14 +66221,14 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 5820,
-        "short_balance": 19,
-        "margin_prev": 5828,
-        "short_prev": 20,
-        "margin_change": -8,
+        "margin_balance": 5800,
+        "short_balance": 18,
+        "margin_prev": 5820,
+        "short_prev": 19,
+        "margin_change": -20,
         "short_change": -1,
-        "margin_usage_pct": 25.54,
-        "margin_short_ratio": 0.0033
+        "margin_usage_pct": 25.45,
+        "margin_short_ratio": 0.0031
       }
     ],
     "holding": [],
@@ -66536,7 +66541,7 @@
         3614110,
         1455131,
         1928510,
-        3226948
+        3171036
       ],
       "ma20": 101.63,
       "ma60": 98.17,
@@ -66602,14 +66607,14 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 3106,
-        "short_balance": 8,
-        "margin_prev": 3086,
+        "margin_balance": 3139,
+        "short_balance": 3,
+        "margin_prev": 3106,
         "short_prev": 8,
-        "margin_change": 20,
-        "short_change": 0,
+        "margin_change": 33,
+        "short_change": -5,
         "margin_usage_pct": null,
-        "margin_short_ratio": 0.0026
+        "margin_short_ratio": 0.001
       }
     ],
     "holding": [],
@@ -66922,7 +66927,7 @@
         1483570,
         988505,
         644150,
-        1302938
+        1291307
       ],
       "ma20": 45.82,
       "ma60": 45.66,
@@ -66988,14 +66993,14 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 14111,
-        "short_balance": 33,
-        "margin_prev": 14075,
-        "short_prev": 32,
-        "margin_change": 36,
-        "short_change": 1,
+        "margin_balance": 14070,
+        "short_balance": 43,
+        "margin_prev": 14110,
+        "short_prev": 33,
+        "margin_change": -40,
+        "short_change": 10,
         "margin_usage_pct": null,
-        "margin_short_ratio": 0.0023
+        "margin_short_ratio": 0.0031
       }
     ],
     "holding": [],
@@ -67308,7 +67313,7 @@
         15027235,
         7569243,
         5300844,
-        10817318
+        10756842
       ],
       "ma20": 30.95,
       "ma60": 27.15,
@@ -67374,11 +67379,11 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 4295,
+        "margin_balance": 4224,
         "short_balance": 2,
-        "margin_prev": 4237,
+        "margin_prev": 4295,
         "short_prev": 2,
-        "margin_change": 58,
+        "margin_change": -71,
         "short_change": 0,
         "margin_usage_pct": null,
         "margin_short_ratio": 0.0005
@@ -67694,7 +67699,7 @@
         1839072,
         1169664,
         3687254,
-        1671061
+        1661967
       ],
       "ma20": 13.8,
       "ma60": 13.93,
@@ -68080,7 +68085,7 @@
         412046,
         385930,
         497402,
-        776508
+        769630
       ],
       "ma20": 13.58,
       "ma60": 12.31,
@@ -68146,14 +68151,14 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 3773,
-        "short_balance": 2,
-        "margin_prev": 3640,
+        "margin_balance": 3818,
+        "short_balance": 1,
+        "margin_prev": 3773,
         "short_prev": 2,
-        "margin_change": 133,
-        "short_change": 0,
+        "margin_change": 45,
+        "short_change": -1,
         "margin_usage_pct": null,
-        "margin_short_ratio": 0.0005
+        "margin_short_ratio": 0.0003
       }
     ],
     "holding": [],
@@ -68466,7 +68471,7 @@
         4133985,
         2244042,
         1293250,
-        993609
+        990010
       ],
       "ma20": 18.73,
       "ma60": 17.34,
@@ -68532,11 +68537,11 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 1053,
+        "margin_balance": 1061,
         "short_balance": 6,
-        "margin_prev": 1065,
+        "margin_prev": 1053,
         "short_prev": 6,
-        "margin_change": -12,
+        "margin_change": 8,
         "short_change": 0,
         "margin_usage_pct": null,
         "margin_short_ratio": 0.0057
@@ -68852,7 +68857,7 @@
         1000002,
         834001,
         723010,
-        741349
+        739301
       ],
       "ma20": 40.3,
       "ma60": 39.9,
@@ -68918,11 +68923,11 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 2519,
+        "margin_balance": 2562,
         "short_balance": 0,
-        "margin_prev": 2621,
+        "margin_prev": 2519,
         "short_prev": 0,
-        "margin_change": -102,
+        "margin_change": 43,
         "short_change": 0,
         "margin_usage_pct": null,
         "margin_short_ratio": 0.0
@@ -69238,7 +69243,7 @@
         381037,
         386050,
         733150,
-        615358
+        615007
       ],
       "ma20": 17.69,
       "ma60": 16.97,
@@ -69304,11 +69309,11 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 2761,
+        "margin_balance": 2764,
         "short_balance": 0,
-        "margin_prev": 2760,
+        "margin_prev": 2761,
         "short_prev": 0,
-        "margin_change": 1,
+        "margin_change": 3,
         "short_change": 0,
         "margin_usage_pct": null,
         "margin_short_ratio": 0.0
@@ -69624,7 +69629,7 @@
         171057,
         111000,
         135000,
-        190656
+        190007
       ],
       "ma20": 15.89,
       "ma60": 15.79,
@@ -69690,11 +69695,11 @@
     "margin": [
       {
         "date": "20260626",
-        "margin_balance": 4273,
+        "margin_balance": 4262,
         "short_balance": 0,
-        "margin_prev": 4289,
+        "margin_prev": 4273,
         "short_prev": 0,
-        "margin_change": -16,
+        "margin_change": -11,
         "short_change": 0,
         "margin_usage_pct": null,
         "margin_short_ratio": 0.0
@@ -70010,7 +70015,7 @@
         1222903,
         1087400,
         1013693,
-        1745854
+        1736340
       ],
       "ma20": 20.36,
       "ma60": 20.49,
