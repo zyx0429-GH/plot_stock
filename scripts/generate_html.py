@@ -92,25 +92,53 @@ Chart.defaults.scale.ticks.color = 'var(--text-muted)';
     def generate_index(self):
         screened = self.data.get("screened", [])
         big_holder_rank = self.data.get("big_holder_rank", [])
+        
+        # Load weekly_ranking data for scatter plot
+        weekly_data = {}
+        try:
+            weekly_path = DATA_DIR + "/weekly_ranking.json"
+            with open(weekly_path, 'r', encoding='utf-8') as f:
+                weekly_data = json.load(f)
+        except Exception:
+            pass
         foreign_buy = [s for s in screened if s.get("foreign_consecutive_buy")]
         bull_stocks = [s for s in screened if s.get("technical",{}).get("trend")=="多頭排列"]
         top_big = big_holder_rank[:50]
 
+        # 散點圖數據：優先使用 weekly_ranking（全部 230+ 檔），fallback 用 screened
         scatter_data = []
-        for s in screened:
-            # 內部數據齊全：所有股票都加入
-            bh_pct = s.get("big_holder_pct")
-            bh_change = s.get("big_holder_change")
-            if bh_pct is not None and bh_change is not None:
-                scatter_data.append({
-                    "x": bh_pct,
-                    "y": bh_change,
-                    "stock_id": s["stock_id"],
-                    "stock_name": s["stock_name"],
-                    "close": s.get("close", 0),
-                    "trend": s.get("technical", {}).get("trend", "") if s.get("technical") else "",
-                    "score": s.get("score", 0),
-                })
+        if weekly_data:
+            for threshold in ['200', '400', '1000']:
+                for s in weekly_data.get('thresholds', {}).get(threshold, {}).get('stocks', []):
+                    try:
+                        bh_pct = float(s.get('big_holder_pct', '0%').replace('%', ''))
+                        wow = float(s.get('wow_pct', '0%').replace('%', ''))
+                    except:
+                        continue
+                    if bh_pct > 0:
+                        scatter_data.append({
+                            "x": bh_pct,
+                            "y": wow,
+                            "stock_id": s.get("code", ""),
+                            "stock_name": s.get("name", ""),
+                            "close": s.get("price", 0),
+                            "trend": "",
+                            "score": 0,
+                        })
+        else:
+            for s in screened:
+                bh_pct = s.get("big_holder_pct")
+                bh_change = s.get("big_holder_change")
+                if bh_pct is not None and bh_change is not None:
+                    scatter_data.append({
+                        "x": bh_pct,
+                        "y": bh_change,
+                        "stock_id": s["stock_id"],
+                        "stock_name": s["stock_name"],
+                        "close": s.get("close", 0),
+                        "trend": s.get("technical", {}).get("trend", "") if s.get("technical") else "",
+                        "score": s.get("score", 0),
+                    })
         # 散點圖顯示所有有數據的股票（排除 0%），按週增減絕對值排序，不移除前25名限制
         scatter_data_display = [d for d in scatter_data if d["x"] > 0]
         scatter_data_display.sort(key=lambda d: abs(d["y"]), reverse=True)
