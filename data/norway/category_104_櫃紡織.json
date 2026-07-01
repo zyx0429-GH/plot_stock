@@ -5,87 +5,87 @@
     "stock_name": "郡都開發",
     "is_taiwan50": false,
     "category": "櫃紡織",
-    "threshold_code": 30,
+    "threshold_code": 31,
     "threshold_shares": 400,
     "weekly_changes": {
-      "20260515": 0.08,
       "20260522": 0.07,
       "20260529": 0.15,
       "20260605": 0.32,
       "20260612": 0.8,
-      "20260618": 0.06
+      "20260618": 0.06,
+      "20260626": 0.11
     },
-    "latest_change": 0.06,
-    "total_change": 1.48,
-    "last_week_hold_pct": 66.05,
-    "close_price": 16.8,
-    "price_change": 0.3
+    "latest_change": 0.11,
+    "total_change": 1.51,
+    "last_week_hold_pct": 66.16,
+    "close_price": null,
+    "price_change": null
   },
   {
     "rank": 2,
-    "stock_code": "4432",
-    "stock_name": "銘旺實",
+    "stock_code": "4417",
+    "stock_name": "金洲",
     "is_taiwan50": false,
     "category": "櫃紡織",
-    "threshold_code": 30,
-    "threshold_shares": 400,
+    "threshold_code": 41,
+    "threshold_shares": 0,
     "weekly_changes": {
-      "20260515": 0.81,
-      "20260522": -0.01,
-      "20260529": -0.12,
-      "20260605": -0.59,
-      "20260612": 0.36,
-      "20260618": 0.0
+      "20260522": 0.0,
+      "20260529": 0.01,
+      "20260605": 0.0,
+      "20260612": 0.0,
+      "20260618": 0.0,
+      "20260626": 0.1
     },
-    "latest_change": 0.0,
-    "total_change": 0.45,
-    "last_week_hold_pct": 55.21,
-    "close_price": 16.25,
-    "price_change": -0.25
+    "latest_change": 0.1,
+    "total_change": 0.11,
+    "last_week_hold_pct": 46.26,
+    "close_price": null,
+    "price_change": null
   },
   {
     "rank": 3,
-    "stock_code": "6506",
-    "stock_name": "雙邦",
-    "is_taiwan50": false,
-    "category": "櫃紡織",
-    "threshold_code": 31,
-    "threshold_shares": 400,
-    "weekly_changes": {
-      "20260515": 0.37,
-      "20260522": 0.0,
-      "20260529": 0.05,
-      "20260605": -0.01,
-      "20260612": -0.11,
-      "20260618": 0.02
-    },
-    "latest_change": 0.02,
-    "total_change": 0.32,
-    "last_week_hold_pct": 61.32,
-    "close_price": 18.9,
-    "price_change": 0.05
-  },
-  {
-    "rank": 4,
     "stock_code": "4401",
     "stock_name": "東隆興",
     "is_taiwan50": false,
     "category": "櫃紡織",
-    "threshold_code": 30,
-    "threshold_shares": 400,
+    "threshold_code": 10,
+    "threshold_shares": 1000,
     "weekly_changes": {
-      "20260515": -0.13,
       "20260522": 0.09,
       "20260529": 0.0,
       "20260605": 0.01,
       "20260612": 0.07,
-      "20260618": 0.06
+      "20260618": 0.06,
+      "20260626": -0.13
     },
-    "latest_change": 0.06,
+    "latest_change": -0.13,
     "total_change": 0.1,
-    "last_week_hold_pct": 62.13,
-    "close_price": 14.1,
-    "price_change": -0.05
+    "last_week_hold_pct": 62.0,
+    "close_price": null,
+    "price_change": null
+  },
+  {
+    "rank": 4,
+    "stock_code": "4413",
+    "stock_name": "飛寶企業",
+    "is_taiwan50": false,
+    "category": "櫃紡織",
+    "threshold_code": 30,
+    "threshold_shares": 400,
+    "weekly_changes": {
+      "20260522": 0.0,
+      "20260529": 0.02,
+      "20260605": 0.0,
+      "20260612": 0.0,
+      "20260618": 0.01,
+      "20260626": 0.0
+    },
+    "latest_change": 0.0,
+    "total_change": 0.03,
+    "last_week_hold_pct": 69.3,
+    "close_price": null,
+    "price_change": null
   },
   {
     "rank": 5,
@@ -96,87 +96,43 @@
     "threshold_code": 32,
     "threshold_shares": 0,
     "weekly_changes": {
-      "20260515": 0.03,
       "20260522": 0.0,
       "20260529": 0.0,
       "20260605": 0.0,
       "20260612": 0.0,
-      "20260618": 0.0
+      "20260618": 0.0,
+      "20260626": 0.0
     },
     "latest_change": 0.0,
-    "total_change": 0.03,
+    "total_change": 0.0,
     "last_week_hold_pct": 57.08,
-    "close_price": 20.4,
-    "price_change": 0.05
+    "close_price": null,
+    "price_change": null
   },
   {
     "rank": 6,
-    "stock_code": "4413",
-    "stock_name": "飛寶企業",
+    "stock_code": "6506",
+    "stock_name": "雙邦",
     "is_taiwan50": false,
     "category": "櫃紡織",
-    "threshold_code": 41,
-    "threshold_shares": 0,
+    "threshold_code": 30,
+    "threshold_shares": 400,
     "weekly_changes": {
-      "20260515": 0.0,
       "20260522": 0.0,
-      "20260529": 0.02,
-      "20260605": 0.0,
-      "20260612": 0.0,
-      "20260618": 0.01
+      "20260529": 0.05,
+      "20260605": -0.01,
+      "20260612": -0.11,
+      "20260618": 0.02,
+      "20260626": -0.05
     },
-    "latest_change": 0.01,
-    "total_change": 0.03,
-    "last_week_hold_pct": 69.3,
-    "close_price": 0.0,
-    "price_change": 0.0
+    "latest_change": -0.05,
+    "total_change": -0.1,
+    "last_week_hold_pct": 61.27,
+    "close_price": null,
+    "price_change": null
   },
   {
     "rank": 7,
-    "stock_code": "4417",
-    "stock_name": "金洲",
-    "is_taiwan50": false,
-    "category": "櫃紡織",
-    "threshold_code": 32,
-    "threshold_shares": 0,
-    "weekly_changes": {
-      "20260515": 0.01,
-      "20260522": 0.0,
-      "20260529": 0.01,
-      "20260605": 0.0,
-      "20260612": 0.0,
-      "20260618": 0.0
-    },
-    "latest_change": 0.0,
-    "total_change": 0.02,
-    "last_week_hold_pct": 46.16,
-    "close_price": 46.65,
-    "price_change": 0.15
-  },
-  {
-    "rank": 8,
-    "stock_code": "4442",
-    "stock_name": "竣邦-KY",
-    "is_taiwan50": false,
-    "category": "櫃紡織",
-    "threshold_code": 21,
-    "threshold_shares": 0,
-    "weekly_changes": {
-      "20260515": -0.24,
-      "20260522": -1.24,
-      "20260529": 0.77,
-      "20260605": 0.56,
-      "20260612": 0.0,
-      "20260618": 0.0
-    },
-    "latest_change": 0.0,
-    "total_change": -0.15,
-    "last_week_hold_pct": 77.69,
-    "close_price": 56.1,
-    "price_change": 0.1
-  },
-  {
-    "rank": 9,
     "stock_code": "4420",
     "stock_name": "光明",
     "is_taiwan50": false,
@@ -184,39 +140,83 @@
     "threshold_code": 32,
     "threshold_shares": 0,
     "weekly_changes": {
-      "20260515": -0.04,
       "20260522": -0.07,
       "20260529": -0.2,
       "20260605": 0.0,
       "20260612": 0.0,
-      "20260618": 0.0
+      "20260618": 0.0,
+      "20260626": 0.0
     },
     "latest_change": 0.0,
-    "total_change": -0.31,
+    "total_change": -0.27,
     "last_week_hold_pct": 59.15,
-    "close_price": 37.6,
-    "price_change": -0.4
+    "close_price": null,
+    "price_change": null
   },
   {
-    "rank": 10,
+    "rank": 8,
+    "stock_code": "4432",
+    "stock_name": "銘旺實",
+    "is_taiwan50": false,
+    "category": "櫃紡織",
+    "threshold_code": 31,
+    "threshold_shares": 400,
+    "weekly_changes": {
+      "20260522": -0.01,
+      "20260529": -0.12,
+      "20260605": -0.59,
+      "20260612": 0.36,
+      "20260618": 0.0,
+      "20260626": 0.02
+    },
+    "latest_change": 0.02,
+    "total_change": -0.34,
+    "last_week_hold_pct": 55.23,
+    "close_price": null,
+    "price_change": null
+  },
+  {
+    "rank": 9,
     "stock_code": "4406",
     "stock_name": "新昕纖",
     "is_taiwan50": false,
     "category": "櫃紡織",
-    "threshold_code": 41,
-    "threshold_shares": 0,
+    "threshold_code": 30,
+    "threshold_shares": 400,
     "weekly_changes": {
-      "20260515": 0.17,
       "20260522": -1.36,
       "20260529": 0.69,
       "20260605": 0.01,
       "20260612": 0.01,
-      "20260618": 0.12
+      "20260618": 0.12,
+      "20260626": 0.07
     },
-    "latest_change": 0.12,
-    "total_change": -0.36,
-    "last_week_hold_pct": 75.5,
-    "close_price": 9.89,
-    "price_change": -0.06
+    "latest_change": 0.07,
+    "total_change": -0.46,
+    "last_week_hold_pct": 75.57,
+    "close_price": null,
+    "price_change": null
+  },
+  {
+    "rank": 10,
+    "stock_code": "4442",
+    "stock_name": "竣邦-KY",
+    "is_taiwan50": false,
+    "category": "櫃紡織",
+    "threshold_code": 20,
+    "threshold_shares": 0,
+    "weekly_changes": {
+      "20260522": -1.24,
+      "20260529": 0.77,
+      "20260605": 0.56,
+      "20260612": 0.0,
+      "20260618": 0.0,
+      "20260626": -0.78
+    },
+    "latest_change": -0.78,
+    "total_change": -0.69,
+    "last_week_hold_pct": 76.91,
+    "close_price": null,
+    "price_change": null
   }
 ]

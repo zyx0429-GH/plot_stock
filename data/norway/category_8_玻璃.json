@@ -1,72 +1,6 @@
 [
   {
     "rank": 1,
-    "stock_code": "1806",
-    "stock_name": "冠軍",
-    "is_taiwan50": false,
-    "category": "玻璃",
-    "threshold_code": 30,
-    "threshold_shares": 400,
-    "weekly_changes": {
-      "20260515": 0.07,
-      "20260522": -0.01,
-      "20260529": -0.05,
-      "20260605": 0.11,
-      "20260612": 0.16,
-      "20260618": 0.02
-    },
-    "latest_change": 0.02,
-    "total_change": 0.3,
-    "last_week_hold_pct": 74.6,
-    "close_price": 8.22,
-    "price_change": 0.05
-  },
-  {
-    "rank": 2,
-    "stock_code": "1817",
-    "stock_name": "凱撒衛",
-    "is_taiwan50": false,
-    "category": "玻璃",
-    "threshold_code": 40,
-    "threshold_shares": 200,
-    "weekly_changes": {
-      "20260515": -0.07,
-      "20260522": 0.0,
-      "20260529": 0.0,
-      "20260605": -0.01,
-      "20260612": 0.0,
-      "20260618": 0.0
-    },
-    "latest_change": 0.0,
-    "total_change": -0.08,
-    "last_week_hold_pct": 65.21,
-    "close_price": 40.6,
-    "price_change": 0.15
-  },
-  {
-    "rank": 3,
-    "stock_code": "1810",
-    "stock_name": "和成",
-    "is_taiwan50": false,
-    "category": "玻璃",
-    "threshold_code": 10,
-    "threshold_shares": 1000,
-    "weekly_changes": {
-      "20260515": -0.11,
-      "20260522": 0.68,
-      "20260529": -0.4,
-      "20260605": -0.02,
-      "20260612": -0.37,
-      "20260618": -0.45
-    },
-    "latest_change": -0.45,
-    "total_change": -0.67,
-    "last_week_hold_pct": 66.63,
-    "close_price": 19.9,
-    "price_change": -0.3
-  },
-  {
-    "rank": 4,
     "stock_code": "1802",
     "stock_name": "台玻",
     "is_taiwan50": false,
@@ -74,18 +8,84 @@
     "threshold_code": 50,
     "threshold_shares": 400,
     "weekly_changes": {
-      "20260515": -1.4,
       "20260522": -1.07,
       "20260529": 2.46,
       "20260605": -1.51,
       "20260612": -1.41,
-      "20260618": 1.08
+      "20260618": 1.08,
+      "20260626": 1.24
     },
-    "latest_change": 1.08,
-    "total_change": -1.85,
-    "last_week_hold_pct": 76.89,
-    "close_price": 71.3,
-    "price_change": 2.0
+    "latest_change": 1.24,
+    "total_change": 0.79,
+    "last_week_hold_pct": 78.13,
+    "close_price": 71.1,
+    "price_change": -3.7
+  },
+  {
+    "rank": 2,
+    "stock_code": "1806",
+    "stock_name": "冠軍",
+    "is_taiwan50": false,
+    "category": "玻璃",
+    "threshold_code": 10,
+    "threshold_shares": 1000,
+    "weekly_changes": {
+      "20260522": -0.01,
+      "20260529": -0.05,
+      "20260605": 0.11,
+      "20260612": 0.16,
+      "20260618": 0.02,
+      "20260626": -0.1
+    },
+    "latest_change": -0.1,
+    "total_change": 0.13,
+    "last_week_hold_pct": 74.5,
+    "close_price": 8.06,
+    "price_change": -0.05
+  },
+  {
+    "rank": 3,
+    "stock_code": "1817",
+    "stock_name": "凱撒衛",
+    "is_taiwan50": false,
+    "category": "玻璃",
+    "threshold_code": 20,
+    "threshold_shares": 0,
+    "weekly_changes": {
+      "20260522": 0.0,
+      "20260529": 0.0,
+      "20260605": -0.01,
+      "20260612": 0.0,
+      "20260618": 0.0,
+      "20260626": -0.02
+    },
+    "latest_change": -0.02,
+    "total_change": -0.03,
+    "last_week_hold_pct": 65.19,
+    "close_price": 38.5,
+    "price_change": 0.0
+  },
+  {
+    "rank": 4,
+    "stock_code": "1810",
+    "stock_name": "和成",
+    "is_taiwan50": false,
+    "category": "玻璃",
+    "threshold_code": 10,
+    "threshold_shares": 1000,
+    "weekly_changes": {
+      "20260522": 0.68,
+      "20260529": -0.4,
+      "20260605": -0.02,
+      "20260612": -0.37,
+      "20260618": -0.45,
+      "20260626": -0.6
+    },
+    "latest_change": -0.6,
+    "total_change": -1.16,
+    "last_week_hold_pct": 66.03,
+    "close_price": 20.85,
+    "price_change": -0.5
   },
   {
     "rank": 5,
@@ -93,20 +93,20 @@
     "stock_name": "中釉",
     "is_taiwan50": false,
     "category": "玻璃",
-    "threshold_code": 31,
+    "threshold_code": 50,
     "threshold_shares": 400,
     "weekly_changes": {
-      "20260515": 1.05,
       "20260522": -1.15,
       "20260529": -2.59,
       "20260605": 2.07,
       "20260612": -3.91,
-      "20260618": -0.64
+      "20260618": -0.64,
+      "20260626": 0.6
     },
-    "latest_change": -0.64,
-    "total_change": -5.17,
-    "last_week_hold_pct": 48.53,
-    "close_price": 51.4,
-    "price_change": -0.3
+    "latest_change": 0.6,
+    "total_change": -5.62,
+    "last_week_hold_pct": 49.13,
+    "close_price": 55.2,
+    "price_change": 1.0
   }
 ]

@@ -5,46 +5,156 @@
     "stock_name": "欣天然",
     "is_taiwan50": false,
     "category": "油電燃氣",
-    "threshold_code": 30,
+    "threshold_code": 31,
     "threshold_shares": 400,
     "weekly_changes": {
-      "20260515": 0.05,
       "20260522": 0.0,
       "20260529": 0.01,
       "20260605": 0.23,
       "20260612": 0.26,
-      "20260618": 0.01
+      "20260618": 0.01,
+      "20260626": 0.24
     },
-    "latest_change": 0.01,
-    "total_change": 0.56,
-    "last_week_hold_pct": 84.32,
-    "close_price": 43.1,
-    "price_change": -0.4
+    "latest_change": 0.24,
+    "total_change": 0.75,
+    "last_week_hold_pct": 84.56,
+    "close_price": 43.4,
+    "price_change": 0.05
   },
   {
     "rank": 2,
+    "stock_code": "9908",
+    "stock_name": "大台北",
+    "is_taiwan50": false,
+    "category": "油電燃氣",
+    "threshold_code": 31,
+    "threshold_shares": 400,
+    "weekly_changes": {
+      "20260522": 0.19,
+      "20260529": 0.02,
+      "20260605": 0.06,
+      "20260612": 0.11,
+      "20260618": -0.08,
+      "20260626": 0.1
+    },
+    "latest_change": 0.1,
+    "total_change": 0.4,
+    "last_week_hold_pct": 80.67,
+    "close_price": 29.8,
+    "price_change": 0.05
+  },
+  {
+    "rank": 3,
+    "stock_code": "2616",
+    "stock_name": "山隆",
+    "is_taiwan50": false,
+    "category": "油電燃氣",
+    "threshold_code": 10,
+    "threshold_shares": 1000,
+    "weekly_changes": {
+      "20260522": -0.03,
+      "20260529": 0.36,
+      "20260605": -0.01,
+      "20260612": 0.05,
+      "20260618": 0.02,
+      "20260626": -0.06
+    },
+    "latest_change": -0.06,
+    "total_change": 0.33,
+    "last_week_hold_pct": 44.83,
+    "close_price": 13.4,
+    "price_change": 0.05
+  },
+  {
+    "rank": 4,
+    "stock_code": "6505",
+    "stock_name": "台塑化",
+    "is_taiwan50": false,
+    "category": "油電燃氣",
+    "threshold_code": 50,
+    "threshold_shares": 400,
+    "weekly_changes": {
+      "20260522": -0.06,
+      "20260529": -0.06,
+      "20260605": 0.29,
+      "20260612": -0.05,
+      "20260618": 0.01,
+      "20260626": 0.08
+    },
+    "latest_change": 0.08,
+    "total_change": 0.21,
+    "last_week_hold_pct": 94.87,
+    "close_price": 53.6,
+    "price_change": -1.5
+  },
+  {
+    "rank": 5,
+    "stock_code": "9937",
+    "stock_name": "全國",
+    "is_taiwan50": false,
+    "category": "油電燃氣",
+    "threshold_code": 31,
+    "threshold_shares": 400,
+    "weekly_changes": {
+      "20260522": 0.01,
+      "20260529": 0.0,
+      "20260605": 0.01,
+      "20260612": 0.01,
+      "20260618": -0.01,
+      "20260626": 0.0
+    },
+    "latest_change": 0.0,
+    "total_change": 0.02,
+    "last_week_hold_pct": 89.05,
+    "close_price": 55.5,
+    "price_change": 0.2
+  },
+  {
+    "rank": 6,
+    "stock_code": "9926",
+    "stock_name": "新海",
+    "is_taiwan50": false,
+    "category": "油電燃氣",
+    "threshold_code": 20,
+    "threshold_shares": 0,
+    "weekly_changes": {
+      "20260522": 0.0,
+      "20260529": 0.0,
+      "20260605": 0.0,
+      "20260612": 0.0,
+      "20260618": 0.0,
+      "20260626": -0.01
+    },
+    "latest_change": -0.01,
+    "total_change": -0.01,
+    "last_week_hold_pct": 83.88,
+    "close_price": 49.6,
+    "price_change": 0.55
+  },
+  {
+    "rank": 7,
     "stock_code": "8926",
     "stock_name": "台汽電",
     "is_taiwan50": false,
     "category": "油電燃氣",
-    "threshold_code": 30,
-    "threshold_shares": 400,
+    "threshold_code": 10,
+    "threshold_shares": 1000,
     "weekly_changes": {
-      "20260515": 0.25,
       "20260522": 4.25,
       "20260529": -4.9,
       "20260605": 0.14,
       "20260612": 0.37,
-      "20260618": 0.34
+      "20260618": 0.34,
+      "20260626": -0.25
     },
-    "latest_change": 0.34,
-    "total_change": 0.45,
-    "last_week_hold_pct": 61.5,
-    "close_price": 79.0,
-    "price_change": -0.4
+    "latest_change": -0.25,
+    "total_change": -0.05,
+    "last_week_hold_pct": 61.25,
+    "close_price": 74.3,
+    "price_change": -2.0
   },
   {
-    "rank": 3,
+    "rank": 8,
     "stock_code": "9931",
     "stock_name": "欣高",
     "is_taiwan50": false,
@@ -52,127 +162,17 @@
     "threshold_code": 32,
     "threshold_shares": 0,
     "weekly_changes": {
-      "20260515": 0.36,
       "20260522": -0.06,
       "20260529": 0.01,
       "20260605": 0.0,
       "20260612": 0.0,
-      "20260618": 0.0
+      "20260618": 0.0,
+      "20260626": 0.0
     },
     "latest_change": 0.0,
-    "total_change": 0.31,
+    "total_change": -0.05,
     "last_week_hold_pct": 77.99,
-    "close_price": 35.25,
-    "price_change": 0.2
-  },
-  {
-    "rank": 4,
-    "stock_code": "9908",
-    "stock_name": "大台北",
-    "is_taiwan50": false,
-    "category": "油電燃氣",
-    "threshold_code": 30,
-    "threshold_shares": 400,
-    "weekly_changes": {
-      "20260515": 0.0,
-      "20260522": 0.19,
-      "20260529": 0.02,
-      "20260605": 0.06,
-      "20260612": 0.11,
-      "20260618": -0.08
-    },
-    "latest_change": -0.08,
-    "total_change": 0.3,
-    "last_week_hold_pct": 80.57,
-    "close_price": 29.55,
-    "price_change": -0.1
-  },
-  {
-    "rank": 5,
-    "stock_code": "6505",
-    "stock_name": "台塑化",
-    "is_taiwan50": false,
-    "category": "油電燃氣",
-    "threshold_code": 31,
-    "threshold_shares": 400,
-    "weekly_changes": {
-      "20260515": 0.03,
-      "20260522": -0.06,
-      "20260529": -0.06,
-      "20260605": 0.29,
-      "20260612": -0.05,
-      "20260618": 0.01
-    },
-    "latest_change": 0.01,
-    "total_change": 0.16,
-    "last_week_hold_pct": 94.79,
-    "close_price": 53.5,
-    "price_change": 0.9
-  },
-  {
-    "rank": 6,
-    "stock_code": "2616",
-    "stock_name": "山隆",
-    "is_taiwan50": false,
-    "category": "油電燃氣",
-    "threshold_code": 30,
-    "threshold_shares": 400,
-    "weekly_changes": {
-      "20260515": -0.29,
-      "20260522": -0.03,
-      "20260529": 0.36,
-      "20260605": -0.01,
-      "20260612": 0.05,
-      "20260618": 0.02
-    },
-    "latest_change": 0.02,
-    "total_change": 0.1,
-    "last_week_hold_pct": 44.89,
-    "close_price": 13.85,
-    "price_change": 0.1
-  },
-  {
-    "rank": 7,
-    "stock_code": "9937",
-    "stock_name": "全國",
-    "is_taiwan50": false,
-    "category": "油電燃氣",
-    "threshold_code": 20,
-    "threshold_shares": 0,
-    "weekly_changes": {
-      "20260515": -0.01,
-      "20260522": 0.01,
-      "20260529": 0.0,
-      "20260605": 0.01,
-      "20260612": 0.01,
-      "20260618": -0.01
-    },
-    "latest_change": -0.01,
-    "total_change": 0.01,
-    "last_week_hold_pct": 89.05,
-    "close_price": 55.5,
-    "price_change": 0.2
-  },
-  {
-    "rank": 8,
-    "stock_code": "9926",
-    "stock_name": "新海",
-    "is_taiwan50": false,
-    "category": "油電燃氣",
-    "threshold_code": 32,
-    "threshold_shares": 0,
-    "weekly_changes": {
-      "20260515": 0.0,
-      "20260522": 0.0,
-      "20260529": 0.0,
-      "20260605": 0.0,
-      "20260612": 0.0,
-      "20260618": 0.0
-    },
-    "latest_change": 0.0,
-    "total_change": 0.0,
-    "last_week_hold_pct": 83.89,
-    "close_price": 49.2,
-    "price_change": 0.0
+    "close_price": 33.2,
+    "price_change": -0.25
   }
 ]
