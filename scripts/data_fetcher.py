@@ -790,8 +790,25 @@ def fetch_all():
         "6515", "4966", "3005", "6257", "3016", "6104", "6177", "2352", "2324", "2404",
         "2408", "2023", "2025", "2030", "2031", "2032", "2033", "2034",
     ]
-    # 去重
-    all_stocks = list(dict.fromkeys(all_stocks))
+    
+    # 載入 weekly_ranking.json 中的股票，確保散點圖所有股票都有完整數據
+    weekly_stocks = set()
+    try:
+        weekly_path = os.path.join(DATA_DIR, "weekly_ranking.json")
+        if os.path.exists(weekly_path):
+            with open(weekly_path, "r", encoding="utf-8") as f:
+                wr = json.load(f)
+            for th in ["200", "400", "1000"]:
+                for s in wr.get("thresholds", {}).get(th, {}).get("stocks", []):
+                    code = s.get("code", "")
+                    if code and code not in all_stocks:
+                        weekly_stocks.add(code)
+            print(f"[INFO] Added {len(weekly_stocks)} stocks from weekly_ranking.json")
+    except Exception as e:
+        print(f"[WARN] Could not load weekly_ranking.json: {e}")
+    
+    all_stocks = list(dict.fromkeys(list(all_stocks) + list(weekly_stocks)))
+    print(f"[INFO] Total stocks to fetch: {len(all_stocks)}")
     fetcher.fetch_all_data(all_stocks)
     fetcher.fetch_etf_data()
 

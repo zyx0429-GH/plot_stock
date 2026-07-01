@@ -93,11 +93,11 @@ def generate_html(data):
         </div>'''
     
     # ===== 散點圖數據準備 =====
-    # 收集所有門檻前25名為散點圖數據
+    # 收集所有門檻的全部股票為散點圖數據
     scatter_data_all = []
     for threshold in ['200', '400', '1000']:
         td = thresholds.get(threshold, {})
-        stocks = td.get('stocks', [])[:25]  # 只取前25名
+        stocks = td.get('stocks', [])  # 顯示全部，不移除 [:25] 限制
         for s in stocks:
             bh_pct = parse_pct(s.get('big_holder_pct', '0%'))
             wow = parse_pct(s.get('wow_pct', '0%'))
@@ -117,16 +117,16 @@ def generate_html(data):
     scatter_js_up = json.dumps(scatter_up, ensure_ascii=False)
     scatter_js_down = json.dumps(scatter_down, ensure_ascii=False)
     
-    # ===== 表格數據（只取前25名，分增25/減25） =====
+    # ===== 表格數據（顯示全部） =====
     tables_html = ''
     for threshold in ['200', '400', '1000']:
         td = thresholds.get(threshold, {})
-        all_stocks = td.get('stocks', [])[:50]  # 取前50名，再分增減
+        all_stocks = td.get('stocks', [])  # 顯示全部，不移除 [:50] 限制
         stats = td.get('stats', {})
         
-        # 分增25/減25
-        up_stocks = [s for s in all_stocks if parse_pct(s.get('wow_pct', '0%')) > 0][:25]
-        down_stocks = [s for s in all_stocks if parse_pct(s.get('wow_pct', '0%')) <= 0][:25]
+        # 分增/減，不限制數量
+        up_stocks = [s for s in all_stocks if parse_pct(s.get('wow_pct', '0%')) > 0]
+        down_stocks = [s for s in all_stocks if parse_pct(s.get('wow_pct', '0%')) <= 0]
         
         def make_rows(stocks):
             rows_html = ''

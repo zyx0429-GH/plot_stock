@@ -799,5 +799,5 @@ STOCK_SECTOR = {
 }
 
 # === 輸出路徑 ===
-DATA_DIR = "data"
-DOCS_DIR = "docs"
+DATA_DIR = os.path.join(os.path.dirname(__file__), "..", "data")
+DOCS_DIR = os.path.join(os.path.dirname(__file__), "..", "docs")

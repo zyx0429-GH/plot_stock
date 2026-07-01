@@ -111,16 +111,26 @@ Chart.defaults.scale.ticks.color = 'var(--text-muted)';
                     "trend": s.get("technical", {}).get("trend", "") if s.get("technical") else "",
                     "score": s.get("score", 0),
                 })
-        # 散點圖只顯示有數據的（排除 0%），按週增減絕對值取前25名
+        # 散點圖顯示所有有數據的股票（排除 0%），按週增減絕對值排序，不移除前25名限制
         scatter_data_display = [d for d in scatter_data if d["x"] > 0]
         scatter_data_display.sort(key=lambda d: abs(d["y"]), reverse=True)
-        scatter_data_display = scatter_data_display[:25]
+
+        # 統計 weekly_ranking 中的總股票數（與 fortune-fred 一致顯示全部）
+        total_stocks = 0
+        if weekly_data:
+            unique_stocks = set()
+            for threshold in ['200', '400', '1000']:
+                for s in weekly_data.get('thresholds', {}).get(threshold, {}).get('stocks', []):
+                    unique_stocks.add(s.get('code', ''))
+            total_stocks = len(unique_stocks)
+        else:
+            total_stocks = len(screened)
 
         lines = []
         lines.append(self._head("籌碼監控｜首頁"))
         lines.append('<body>')
         lines.append(self._nav("index"))
-        lines.append(f'<div class="container"><div class="header-info"><h1>📊 籌碼監控儀表板</h1><p class="subtitle">共 {len(screened)} 支個股｜產出 {self.data.get("update_time","")}</p></div>')
+        lines.append(f'<div class="container"><div class="header-info"><h1>📊 籌碼監控儀表板</h1><p class="subtitle">共 {total_stocks} 支個股｜產出 {self.data.get("update_time","")}</p></div>')
 
         # === 市場情緒指標儀表板 ===
         lines.append('<div style="max-width:1400px;margin:10px auto;padding:0 20px;"><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:15px;margin-bottom:15px;">')

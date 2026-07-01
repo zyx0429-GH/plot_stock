@@ -423,9 +423,8 @@ class StockScreener:
                 "shareholder": self.raw_data.get(stock_id, {}).get("shareholder", []),
             }
 
-            # 綜合篩選條件
-            if score >= 40 or big_pct is not None or margin:
-                screened.append(stock_info)
+            # 包含所有有價格數據的股票（不再過濾，與 fortune-fred 一致顯示全部）
+            screened.append(stock_info)
 
             # 大戶排名資料 (兼容無數據時用 0)
             big_holder_rank.append({
