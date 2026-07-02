@@ -626,11 +626,74 @@ class TWStockDataFetcher:
         # === Step 6: Merge 集保人數分級統計 (MNDTAS) ===
         self._merge_mndtas(results)
 
+        # === Step 7: 累積歷史外資/投信/融資數據 (保留最近30天) ===
+        results = self._accumulate_history(results, today_str)
+
         # === Save ===
         os.makedirs(DATA_DIR, exist_ok=True)
         with open(os.path.join(DATA_DIR, "raw_data.json"), "w", encoding="utf-8") as f:
             json.dump(results, f, ensure_ascii=False, indent=2)
         print(f"[INFO] Data saved: {len(results)} stocks")
+        return results
+
+    def _accumulate_history(self, results, today_str):
+        """將當日數據與已有歷史數據合併，保留最近30天"""
+        raw_path = os.path.join(DATA_DIR, "raw_data.json")
+        if not os.path.exists(raw_path):
+            print("[INFO] No existing raw_data.json, starting fresh history")
+            return results
+
+        try:
+            with open(raw_path, "r", encoding="utf-8") as f:
+                old_data = json.load(f)
+        except Exception as e:
+            print(f"[WARN] Failed to load existing raw_data.json: {e}")
+            return results
+
+        MAX_HISTORY_DAYS = 30
+
+        for stock_id, new_record in results.items():
+            old_record = old_data.get(stock_id, {})
+
+            # 累積外資數據
+            old_foreign = old_record.get("foreign", [])
+            new_foreign = new_record.get("foreign", [])
+            if new_foreign:
+                # 去除重複日期，保留新數據
+                date_set = {f["date"] for f in new_foreign}
+                merged = [f for f in old_foreign if f.get("date") not in date_set]
+                merged.extend(new_foreign)
+                merged.sort(key=lambda x: x.get("date", ""))
+                # 只保留最近30天
+                new_record["foreign"] = merged[-MAX_HISTORY_DAYS:]
+            elif old_foreign:
+                new_record["foreign"] = old_foreign[-MAX_HISTORY_DAYS:]
+
+            # 累積投信數據
+            old_trust = old_record.get("trust", [])
+            new_trust = new_record.get("trust", [])
+            if new_trust:
+                date_set = {t["date"] for t in new_trust}
+                merged = [t for t in old_trust if t.get("date") not in date_set]
+                merged.extend(new_trust)
+                merged.sort(key=lambda x: x.get("date", ""))
+                new_record["trust"] = merged[-MAX_HISTORY_DAYS:]
+            elif old_trust:
+                new_record["trust"] = old_trust[-MAX_HISTORY_DAYS:]
+
+            # 累積融資數據
+            old_margin = old_record.get("margin", [])
+            new_margin = new_record.get("margin", [])
+            if new_margin:
+                date_set = {m["date"] for m in new_margin}
+                merged = [m for m in old_margin if m.get("date") not in date_set]
+                merged.extend(new_margin)
+                merged.sort(key=lambda x: x.get("date", ""))
+                new_record["margin"] = merged[-MAX_HISTORY_DAYS:]
+            elif old_margin:
+                new_record["margin"] = old_margin[-MAX_HISTORY_DAYS:]
+
+        print(f"[INFO] History accumulated: up to {MAX_HISTORY_DAYS} days for foreign/trust/margin")
         return results
 
     def _merge_mndtas(self, results):

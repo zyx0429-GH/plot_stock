@@ -263,27 +263,30 @@ Chart.defaults.scale.ticks.color = 'var(--text-muted)';
             lines.append(f'<tr onclick="location.href=\'stock_{s.get("stock_id","-")}.html\'" class="clickable"><td><strong>{s.get("stock_id","-")}</strong></td><td>{s.get("stock_name","-")}</td><td>{close:.2f}</td><td class="{"up" if change_pct>0 else "down"}">{change_pct:+.2f}%</td><td class="sell">{foreign_net/1000:,.0f}</td><td>{big_holder_pct:.2f}%</td><td class="{tc}">{trend}</td><td><span class="score">{score}</span></td></tr>')
         lines.append('</tbody></table></div></div>')
 
-        # 外資買超時間圖表 — 數據限制說明
-        if foreign_buy_today:
-            top5_foreign = foreign_buy_today[:5]
-            foreign_datasets = []
+        # === 外資 + 投信 買超時間趨勢圖 ===
+        def build_trend_chart(buy_list, data_key, title, chart_id, color_list):
+            """構建時間趨勢圖HTML"""
+            if not buy_list:
+                return ""
+            top5 = buy_list[:5]
+            datasets = []
             shared_dates = None
-            for s in top5_foreign:
+            for s in top5:
                 sid = s.get("stock_id")
                 raw = self.raw_data.get(sid, {})
-                fd = raw.get("foreign", [])
+                fd = raw.get(data_key, [])
                 if not fd:
                     continue
-                last20 = fd[-20:]
-                dates = [f["date"][:10] for f in last20]
+                last_n = fd[-20:]
+                dates = [f["date"][:10] for f in last_n]
                 nets = []
-                for f in last20:
+                for f in last_n:
                     buy = float(f.get("buy", 0)) if f.get("buy") else 0
                     sell = float(f.get("sell", 0)) if f.get("sell") else 0
                     nets.append(buy - sell)
                 if shared_dates is None:
                     shared_dates = dates
-                foreign_datasets.append({
+                datasets.append({
                     "label": f"{sid} {s.get('stock_name', '')}",
                     "data": nets,
                     "borderColor": None,
@@ -293,15 +296,38 @@ Chart.defaults.scale.ticks.color = 'var(--text-muted)';
                     "pointRadius": 3,
                     "borderWidth": 2
                 })
-            if shared_dates and foreign_datasets:
-                colors = ["#1d4ed8", "#f97316", "#16a34a", "#8b5cf6", "#dc2626"]
-                for i, ds in enumerate(foreign_datasets):
-                    ds["borderColor"] = colors[i % len(colors)]
-                fjson = json.dumps(foreign_datasets, ensure_ascii=False)
-                lines.append('<div class="card"><h2>🌍 外資買超 — 時間趨勢圖 (Top 5)</h2>')
-                lines.append(f'<p class="chart-desc">⚠️ 當前僅有 {len(shared_dates)} 天數據（{shared_dates[0] if shared_dates else ""}）。外資歷史數據從今日開始累積，累積 5 天後可顯示趨勢線。</p>')
-                lines.append('<div class="chart-container"><canvas id="foreignTrendChart"></canvas></div></div>')
-                lines.append(f'<script>new Chart(document.getElementById("foreignTrendChart").getContext("2d"),{{type:"line",data:{{labels:{json.dumps(shared_dates)},datasets:{fjson}}},options:{{responsive:true,maintainAspectRatio:false,plugins:{{legend:{{display:true,labels:{{usePointStyle:true,boxWidth:8}}}}}},scales:{{x:{{grid:{{color:"rgba(0,0,0,0.06)"}},ticks:{{color:"var(--text-muted)",maxRotation:45}}}},y:{{grid:{{color:"rgba(0,0,0,0.06)"}},ticks:{{color:"var(--text-muted)"}},title:{{display:true,text:"淨買超 (張)",color:"var(--text-muted)"}}}}}}}}}});</script>')
+            if not shared_dates or not datasets:
+                return ""
+            for i, ds in enumerate(datasets):
+                ds["borderColor"] = color_list[i % len(color_list)]
+            fjson = json.dumps(datasets, ensure_ascii=False)
+            day_count = len(shared_dates)
+            if day_count >= 5:
+                desc = f"📊 累積 {day_count} 天數據（{shared_dates[0]} ~ {shared_dates[-1]}）"
+            else:
+                desc = f"⚠️ 當前僅有 {day_count} 天數據。歷史數據從今日開始累積，累積 5 天後趨勢線更具參考價值。"
+            return (
+                f'<div class="card"><h2>{title} (Top 5)</h2>'
+                f'<p class="chart-desc">{desc}</p>'
+                f'<div class="chart-container"><canvas id="{chart_id}"></canvas></div></div>'
+                f'<script>new Chart(document.getElementById("{chart_id}").getContext("2d"),'
+                f'{{type:"line",data:{{labels:{json.dumps(shared_dates)},datasets:{fjson}}},'
+                f'options:{{responsive:true,maintainAspectRatio:false,'
+                f'plugins:{{legend:{{display:true,labels:{{usePointStyle:true,boxWidth:8}}}}}},'
+                f'scales:{{x:{{grid:{{color:"rgba(0,0,0,0.06)"}},ticks:{{color:"var(--text-muted)",maxRotation:45}}}},'
+                f'y:{{grid:{{color:"rgba(0,0,0,0.06)"}},ticks:{{color:"var(--text-muted)"}},'
+                f'title:{{display:true,text:"淨買超 (張)",color:"var(--text-muted)"}}}}}}}}}});</script>'
+            )
+
+        # 外資趨勢圖
+        colors_foreign = ["#1d4ed8", "#f97316", "#16a34a", "#8b5cf6", "#dc2626"]
+        lines.append(build_trend_chart(foreign_buy_today, "foreign", "🌍 外資買超 — 時間趨勢圖", "foreignTrendChart", colors_foreign))
+
+        # 投信趨勢圖
+        trust_buy_today = [s for s in screened if s.get("trust_net", 0) > 0]
+        trust_buy_today.sort(key=lambda x: x.get("trust_net", 0), reverse=True)
+        colors_trust = ["#0d9488", "#c2410c", "#15803d", "#7c3aed", "#be123c"]
+        lines.append(build_trend_chart(trust_buy_today, "trust", "🏦 投信買超 — 時間趨勢圖", "trustTrendChart", colors_trust))
 
         # === 融資餘額排行榜 ===
         margin_top = self.data.get("margin_top", [])
