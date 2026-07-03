@@ -46889,7 +46889,7 @@
       ]
     }
   ],
-  "update_time": "2026-07-03 11:23",
+  "update_time": "2026-07-03 23:50",
   "total": 138,
   "watchlist": [
     {
@@ -47912,6 +47912,70 @@
           "latest_change": -0.01,
           "total_change": 0.85,
           "trend_direction": "down",
+          "is_taiwan50": false
+        }
+      ]
+    },
+    {
+      "stock_id": "6147",
+      "stock_name": "頎邦",
+      "close": 215.5,
+      "open": 209.0,
+      "change_pct": 1.89,
+      "foreign_consecutive_buy": false,
+      "foreign_consecutive_days": 0,
+      "foreign_net": -2019135,
+      "trust_consecutive_buy": false,
+      "trust_consecutive_days": 0,
+      "trust_net": -2019135,
+      "big_holder_pct": 69.12,
+      "big_holder_change": -1.47,
+      "big_holder_threshold": "1000",
+      "score": 65,
+      "technical": {
+        "ma20": 234.48,
+        "ma60": 202.58,
+        "rsi": 47.2,
+        "trend": "多頭排列",
+        "macd": {
+          "dif": -2.8701,
+          "dea": 3.0069,
+          "hist": -5.877,
+          "score": 0
+        },
+        "bias20": -8.09,
+        "bias60": 6.38
+      },
+      "margin": {
+        "balance": 53357,
+        "short_balance": 98,
+        "ratio": 0.0018,
+        "margin_change": 1355,
+        "short_change": -11,
+        "margin_change_pct": 2.61,
+        "short_change_pct": -10.09,
+        "margin_usage_pct": 28.66
+      },
+      "shareholder": [
+        {
+          "date": -1.47,
+          "total_count": 0,
+          "big_holder_count": 0,
+          "concentration": 69.12,
+          "threshold_shares": 1000,
+          "threshold_code": 10,
+          "category": "櫃半導體",
+          "weekly_changes": {
+            "20260522": 1.9,
+            "20260529": 0.41,
+            "20260605": -3.56,
+            "20260612": -0.56,
+            "20260618": -1.03,
+            "20260626": -1.47
+          },
+          "latest_change": -1.47,
+          "total_change": -4.31,
+          "trend_direction": "up",
           "is_taiwan50": false
         }
       ]
