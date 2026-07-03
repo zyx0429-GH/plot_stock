@@ -124,51 +124,67 @@ class StockScreener:
         }
 
     def check_foreign_buy(self, stock_id):
-        """檢查外資買超 (兼容單日數據)"""
+        """檢查外資買超 (兼容單日數據)，返回 (是否連買, 連買天數, 總淨買超, 近期記錄)"""
         data = self.raw_data.get(stock_id, {})
         foreign = data.get("foreign", [])
         if not foreign:
             info = data.get("info", {})
             foreign_net = info.get("foreign_net", 0)
-            return foreign_net > 0, foreign_net, []
+            return foreign_net > 0, (1 if foreign_net > 0 else 0), foreign_net, []
 
         df = pd.DataFrame(foreign)
         if "net" not in df.columns:
             if "buy" in df.columns and "sell" in df.columns:
                 df["net"] = pd.to_numeric(df["buy"], errors="coerce") - pd.to_numeric(df["sell"], errors="coerce")
             else:
-                return False, 0, []
+                return False, 0, 0, []
 
         df["net"] = pd.to_numeric(df["net"], errors="coerce")
         latest_net = df["net"].iloc[-1] if not df.empty else 0
         total_net = df["net"].sum()
 
+        # 計算連續買入天數（從最新日期向前數，直到 net <= 0）
+        consecutive_days = 0
+        for net_val in reversed(df["net"].tolist()):
+            if net_val > 0:
+                consecutive_days += 1
+            else:
+                break
+
         days = self.config["foreign_buy_days"]
         recent = df.tail(days)
         consecutive_buy = all(recent["net"] > 0) if len(recent) >= days else all(df["net"] > 0)
-        return consecutive_buy, int(total_net), recent.to_dict("records")
+        return consecutive_buy, consecutive_days, int(total_net), recent.to_dict("records")
 
     def check_trust_buy(self, stock_id):
-        """檢查投信買超 (兼容單日數據)"""
+        """檢查投信買超 (兼容單日數據)，返回 (是否連買, 連買天數, 總淨買超, 近期記錄)"""
         data = self.raw_data.get(stock_id, {})
         trust = data.get("trust", [])
         if not trust:
             info = data.get("info", {})
             trust_net = info.get("trust_net", 0)
-            return trust_net > 0, trust_net, []
+            return trust_net > 0, (1 if trust_net > 0 else 0), trust_net, []
 
         df = pd.DataFrame(trust)
         if "net" not in df.columns:
-            return False, 0, []
+            return False, 0, 0, []
 
         df["net"] = pd.to_numeric(df["net"], errors="coerce")
         latest_net = df["net"].iloc[-1] if not df.empty else 0
         total_net = df["net"].sum()
 
+        # 計算連續買入天數（從最新日期向前數，直到 net <= 0）
+        consecutive_days = 0
+        for net_val in reversed(df["net"].tolist()):
+            if net_val > 0:
+                consecutive_days += 1
+            else:
+                break
+
         days = self.config["foreign_buy_days"]
         recent = df.tail(days)
         consecutive_buy = all(recent["net"] > 0) if len(recent) >= days else all(df["net"] > 0)
-        return consecutive_buy, int(total_net), recent.to_dict("records")
+        return consecutive_buy, consecutive_days, int(total_net), recent.to_dict("records")
 
     def check_dual_certified(self, stock_id, big_change, foreign_consecutive, trust_consecutive):
         """
@@ -343,8 +359,8 @@ class StockScreener:
             if close == 0 or close is None:
                 continue
             tech = self._get_technical_analysis(stock_id)
-            foreign_consecutive, foreign_net, foreign_detail = self.check_foreign_buy(stock_id)
-            trust_consecutive, trust_net, trust_detail = self.check_trust_buy(stock_id)
+            foreign_consecutive, foreign_days, foreign_net, foreign_detail = self.check_foreign_buy(stock_id)
+            trust_consecutive, trust_days, trust_net, trust_detail = self.check_trust_buy(stock_id)
             big_pct, big_change, big_threshold, big_detail = self.check_big_holder(stock_id)
             margin = self.check_margin(stock_id)
             score = self._calculate_score(stock_id, info, tech, foreign_consecutive, big_pct, margin)
@@ -356,8 +372,10 @@ class StockScreener:
                 "open": info.get("open", 0),
                 "change_pct": round(info.get("change_pct", 0), 2),
                 "foreign_consecutive_buy": foreign_consecutive,
+                "foreign_consecutive_days": foreign_days,
                 "foreign_net": foreign_net,
                 "trust_consecutive_buy": trust_consecutive,
+                "trust_consecutive_days": trust_days,
                 "trust_net": trust_net,
                 "big_holder_pct": round(big_pct, 2) if big_pct else 0,
                 "big_holder_change": big_change if big_change else 0,
@@ -395,8 +413,8 @@ class StockScreener:
                 continue
 
             tech = self._get_technical_analysis(stock_id)
-            foreign_consecutive, foreign_net, foreign_detail = self.check_foreign_buy(stock_id)
-            trust_consecutive, trust_net, trust_detail = self.check_trust_buy(stock_id)
+            foreign_consecutive, foreign_days, foreign_net, foreign_detail = self.check_foreign_buy(stock_id)
+            trust_consecutive, trust_days, trust_net, trust_detail = self.check_trust_buy(stock_id)
             big_pct, big_change, big_threshold, big_detail = self.check_big_holder(stock_id)
             margin = self.check_margin(stock_id)
             score = self._calculate_score(stock_id, info, tech, foreign_consecutive, big_pct, margin)
@@ -408,8 +426,10 @@ class StockScreener:
                 "open": info.get("open", 0),
                 "change_pct": round(info.get("change_pct", 0), 2),
                 "foreign_consecutive_buy": foreign_consecutive,
+                "foreign_consecutive_days": foreign_days,
                 "foreign_net": foreign_net,
                 "trust_consecutive_buy": trust_consecutive,
+                "trust_consecutive_days": trust_days,
                 "trust_net": trust_net,
                 "big_holder_pct": round(big_pct, 2) if big_pct else 0,
                 "big_holder_change": big_change if big_change else 0,

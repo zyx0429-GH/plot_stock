@@ -181,7 +181,7 @@ Chart.defaults.scale.ticks.color = 'var(--text-muted)';
         week_str = f" (統計週期: {update_time})" if update_time else ""
         lines.append(f'<div class="card"><h2>🔥 大戶持股% vs 週增減{week_str}</h2><div class="controls"><label>顯示</label><button class="fbtn active" id="sc-all" onclick="setScatter(\'all\',this)">全部</button><button class="fbtn" id="sc-up" onclick="setScatter(\'up\',this)">📈 增加</button><button class="fbtn" id="sc-down" onclick="setScatter(\'down\',this)">📉 減少</button></div><p class="chart-desc">X:大戶持股% Y:週增減% 點擊進入個股</p><div class="chart-container"><canvas id="scatterChart"></canvas></div></div>')
 
-        lines.append('<div class="card"><h2>🔥 雙重認證榜單 (00981A + 大戶增倉 + 法人買超)</h2><div class="table-responsive"><table class="data-table"><thead><tr><th>代號</th><th>名稱</th><th>收盤價</th><th>漲跌%</th><th>外資淨買(張)</th><th>投信淨買(張)</th><th>大戶%</th><th>週增減</th><th>趨勢</th><th>評分</th></tr></thead><tbody>')
+        lines.append('<div class="card"><h2>🔥 雙重認證榜單 (00981A + 大戶增倉 + 法人買超)</h2><div class="table-responsive"><table class="data-table"><thead><tr><th>代號</th><th>名稱</th><th>收盤價</th><th>漲跌%</th><th>外資淨買(張)</th><th>外資連買</th><th>投信淨買(張)</th><th>投信連買</th><th>大戶%</th><th>週增減</th><th>趨勢</th><th>評分</th></tr></thead><tbody>')
         dual_certified = self.data.get("dual_certified", [])
         for s in dual_certified[:30]:
             tech = s.get("technical",{}) or {}
@@ -191,15 +191,17 @@ Chart.defaults.scale.ticks.color = 'var(--text-muted)';
             change_pct = s.get("change_pct") if s.get("change_pct") is not None else 0.0
             foreign_net = s.get("foreign_net") if s.get("foreign_net") is not None else 0
             trust_net = s.get("trust_net") if s.get("trust_net") is not None else 0
+            foreign_days = s.get("foreign_consecutive_days") if s.get("foreign_consecutive_days") is not None else 0
+            trust_days = s.get("trust_consecutive_days") if s.get("trust_consecutive_days") is not None else 0
             big_holder_pct = s.get("big_holder_pct") if s.get("big_holder_pct") is not None else 0.0
             big_holder_change = s.get("big_holder_change") if s.get("big_holder_change") is not None else 0.0
             score = s.get("score") if s.get("score") is not None else 0
-            lines.append(f'<tr onclick="location.href=\'stock_{s.get("stock_id","-")}.html\'" class="clickable"><td><strong>{s.get("stock_id","-")}</strong></td><td>{s.get("stock_name","-")}</td><td>{close:.2f}</td><td class="{"up" if change_pct>0 else "down"}">{change_pct:+.2f}%</td><td class="{"buy" if foreign_net>0 else "sell"}">{foreign_net/1000:,.0f}</td><td class="{"buy" if trust_net>0 else "sell"}">{trust_net/1000:,.0f}</td><td class="highlight">{big_holder_pct:.2f}%</td><td class="{"up" if big_holder_change>0 else "down"}">{big_holder_change:+.2f}%</td><td class="{tc}">{trend}</td><td><span class="score">{score}</span></td></tr>')
+            lines.append(f'<tr onclick="location.href=\'stock_{s.get("stock_id","-")}.html\'" class="clickable"><td><strong>{s.get("stock_id","-")}</strong></td><td>{s.get("stock_name","-")}</td><td>{close:.2f}</td><td class="{"up" if change_pct>0 else "down"}">{change_pct:+.2f}%</td><td class="{"buy" if foreign_net>0 else "sell"}">{foreign_net/1000:,.0f}</td><td>{"🔥連"+str(foreign_days)+"日" if foreign_days>=2 else str(foreign_days)+"日"}</td><td class="{"buy" if trust_net>0 else "sell"}">{trust_net/1000:,.0f}</td><td>{"🔥連"+str(trust_days)+"日" if trust_days>=2 else str(trust_days)+"日"}</td><td class="highlight">{big_holder_pct:.2f}%</td><td class="{"up" if big_holder_change>0 else "down"}">{big_holder_change:+.2f}%</td><td class="{tc}">{trend}</td><td><span class="score">{score}</span></td></tr>')
         lines.append('</tbody></table></div></div>')
 
         # 雙重認證榜單 (00982A)
         dual_certified_982a = self.data.get("dual_certified_982a", [])
-        lines.append('<div class="card"><h2>🔥 雙重認證榜單 (00982A + 大戶增倉 + 法人買超)</h2><div class="table-responsive"><table class="data-table"><thead><tr><th>代號</th><th>名稱</th><th>收盤價</th><th>漲跌%</th><th>外資淨買(張)</th><th>投信淨買(張)</th><th>大戶%</th><th>週增減</th><th>趨勢</th><th>評分</th></tr></thead><tbody>')
+        lines.append('<div class="card"><h2>🔥 雙重認證榜單 (00982A + 大戶增倉 + 法人買超)</h2><div class="table-responsive"><table class="data-table"><thead><tr><th>代號</th><th>名稱</th><th>收盤價</th><th>漲跌%</th><th>外資淨買(張)</th><th>外資連買</th><th>投信淨買(張)</th><th>投信連買</th><th>大戶%</th><th>週增減</th><th>趨勢</th><th>評分</th></tr></thead><tbody>')
         for s in dual_certified_982a[:20]:
             tech = s.get("technical", {}) or {}
             trend = tech.get("trend", "")
@@ -208,15 +210,17 @@ Chart.defaults.scale.ticks.color = 'var(--text-muted)';
             change_pct = s.get("change_pct") if s.get("change_pct") is not None else 0.0
             foreign_net = s.get("foreign_net") if s.get("foreign_net") is not None else 0
             trust_net = s.get("trust_net") if s.get("trust_net") is not None else 0
+            foreign_days = s.get("foreign_consecutive_days") if s.get("foreign_consecutive_days") is not None else 0
+            trust_days = s.get("trust_consecutive_days") if s.get("trust_consecutive_days") is not None else 0
             big_holder_pct = s.get("big_holder_pct") if s.get("big_holder_pct") is not None else 0.0
             big_holder_change = s.get("big_holder_change") if s.get("big_holder_change") is not None else 0.0
             score = s.get("score") if s.get("score") is not None else 0
-            lines.append(f'<tr onclick="location.href=\'stock_{s.get("stock_id","-")}.html\'" class="clickable"><td><strong>{s.get("stock_id","-")}</strong></td><td>{s.get("stock_name","-")}</td><td>{close:.2f}</td><td class="{"up" if change_pct>0 else "down"}">{change_pct:+.2f}%</td><td class="{"buy" if foreign_net>0 else "sell"}">{foreign_net/1000:,.0f}</td><td class="{"buy" if trust_net>0 else "sell"}">{trust_net/1000:,.0f}</td><td class="highlight">{big_holder_pct:.2f}%</td><td class="{"up" if big_holder_change>0 else "down"}">{big_holder_change:+.2f}%</td><td class="{tc}">{trend}</td><td><span class="score">{score}</span></td></tr>')
+            lines.append(f'<tr onclick="location.href=\'stock_{s.get("stock_id","-")}.html\'" class="clickable"><td><strong>{s.get("stock_id","-")}</strong></td><td>{s.get("stock_name","-")}</td><td>{close:.2f}</td><td class="{"up" if change_pct>0 else "down"}">{change_pct:+.2f}%</td><td class="{"buy" if foreign_net>0 else "sell"}">{foreign_net/1000:,.0f}</td><td>{"🔥連"+str(foreign_days)+"日" if foreign_days>=2 else str(foreign_days)+"日"}</td><td class="{"buy" if trust_net>0 else "sell"}">{trust_net/1000:,.0f}</td><td>{"🔥連"+str(trust_days)+"日" if trust_days>=2 else str(trust_days)+"日"}</td><td class="highlight">{big_holder_pct:.2f}%</td><td class="{"up" if big_holder_change>0 else "down"}">{big_holder_change:+.2f}%</td><td class="{tc}">{trend}</td><td><span class="score">{score}</span></td></tr>')
         lines.append('</tbody></table></div></div>')
 
         # 三重認證榜單 (00981A 或 00982A + 大戶增倉 + 法人買超)
         triple_certified = self.data.get("triple_certified", [])
-        lines.append('<div class="card"><h2>👑 三重認證榜單 (00981A 或 00982A + 大戶增倉 + 法人買超)</h2><p class="chart-desc">入選 00981A 或 00982A 成分股（任一即可），且大戶增倉 + 法人買超 — 最強篩選條件</p><div class="table-responsive"><table class="data-table"><thead><tr><th>代號</th><th>名稱</th><th>收盤價</th><th>漲跌%</th><th>外資淨買(張)</th><th>投信淨買(張)</th><th>大戶%</th><th>週增減</th><th>趨勢</th><th>評分</th></tr></thead><tbody>')
+        lines.append('<div class="card"><h2>👑 三重認證榜單 (00981A 或 00982A + 大戶增倉 + 法人買超)</h2><p class="chart-desc">入選 00981A 或 00982A 成分股（任一即可），且大戶增倉 + 法人買超 — 最強篩選條件</p><div class="table-responsive"><table class="data-table"><thead><tr><th>代號</th><th>名稱</th><th>收盤價</th><th>漲跌%</th><th>外資淨買(張)</th><th>外資連買</th><th>投信淨買(張)</th><th>投信連買</th><th>大戶%</th><th>週增減</th><th>趨勢</th><th>評分</th></tr></thead><tbody>')
         for s in triple_certified[:20]:
             tech = s.get("technical", {}) or {}
             trend = tech.get("trend", "")
@@ -225,10 +229,12 @@ Chart.defaults.scale.ticks.color = 'var(--text-muted)';
             change_pct = s.get("change_pct") if s.get("change_pct") is not None else 0.0
             foreign_net = s.get("foreign_net") if s.get("foreign_net") is not None else 0
             trust_net = s.get("trust_net") if s.get("trust_net") is not None else 0
+            foreign_days = s.get("foreign_consecutive_days") if s.get("foreign_consecutive_days") is not None else 0
+            trust_days = s.get("trust_consecutive_days") if s.get("trust_consecutive_days") is not None else 0
             big_holder_pct = s.get("big_holder_pct") if s.get("big_holder_pct") is not None else 0.0
             big_holder_change = s.get("big_holder_change") if s.get("big_holder_change") is not None else 0.0
             score = s.get("score") if s.get("score") is not None else 0
-            lines.append(f'<tr onclick="location.href=\'stock_{s.get("stock_id","-")}.html\'" class="clickable"><td><strong>{s.get("stock_id","-")}</strong></td><td>{s.get("stock_name","-")}</td><td>{close:.2f}</td><td class="{"up" if change_pct>0 else "down"}">{change_pct:+.2f}%</td><td class="{"buy" if foreign_net>0 else "sell"}">{foreign_net/1000:,.0f}</td><td class="{"buy" if trust_net>0 else "sell"}">{trust_net/1000:,.0f}</td><td class="highlight">{big_holder_pct:.2f}%</td><td class="{"up" if big_holder_change>0 else "down"}">{big_holder_change:+.2f}%</td><td class="{tc}">{trend}</td><td><span class="score">{score}</span></td></tr>')
+            lines.append(f'<tr onclick="location.href=\'stock_{s.get("stock_id","-")}.html\'" class="clickable"><td><strong>{s.get("stock_id","-")}</strong></td><td>{s.get("stock_name","-")}</td><td>{close:.2f}</td><td class="{"up" if change_pct>0 else "down"}">{change_pct:+.2f}%</td><td class="{"buy" if foreign_net>0 else "sell"}">{foreign_net/1000:,.0f}</td><td>{"🔥連"+str(foreign_days)+"日" if foreign_days>=2 else str(foreign_days)+"日"}</td><td class="{"buy" if trust_net>0 else "sell"}">{trust_net/1000:,.0f}</td><td>{"🔥連"+str(trust_days)+"日" if trust_days>=2 else str(trust_days)+"日"}</td><td class="highlight">{big_holder_pct:.2f}%</td><td class="{"up" if big_holder_change>0 else "down"}">{big_holder_change:+.2f}%</td><td class="{tc}">{trend}</td><td><span class="score">{score}</span></td></tr>')
         lines.append('</tbody></table></div></div>')
 
         # 外資買超 / 賣超榜單（單日數據）
@@ -237,7 +243,7 @@ Chart.defaults.scale.ticks.color = 'var(--text-muted)';
         foreign_buy_today.sort(key=lambda x: x.get("foreign_net", 0), reverse=True)
         foreign_sell_today.sort(key=lambda x: x.get("foreign_net", 0))
         
-        lines.append('<div class="card"><h2>🌍 外資買超榜單 (單日)</h2><div class="table-responsive"><table class="data-table"><thead><tr><th>代號</th><th>名稱</th><th>收盤價</th><th>漲跌%</th><th>外資淨買(張)</th><th>大戶%</th><th>趨勢</th><th>評分</th></tr></thead><tbody>')
+        lines.append('<div class="card"><h2>🌍 外資買超榜單 (單日)</h2><div class="table-responsive"><table class="data-table"><thead><tr><th>代號</th><th>名稱</th><th>收盤價</th><th>漲跌%</th><th>外資淨買(張)</th><th>外資連買</th><th>大戶%</th><th>趨勢</th><th>評分</th></tr></thead><tbody>')
         for s in foreign_buy_today[:30]:
             tech = s.get("technical",{}) or {}
             trend = tech.get("trend","")
@@ -245,12 +251,13 @@ Chart.defaults.scale.ticks.color = 'var(--text-muted)';
             close = s.get("close") if s.get("close") is not None else 0.0
             change_pct = s.get("change_pct") if s.get("change_pct") is not None else 0.0
             foreign_net = s.get("foreign_net") if s.get("foreign_net") is not None else 0
+            foreign_days = s.get("foreign_consecutive_days") if s.get("foreign_consecutive_days") is not None else 0
             big_holder_pct = s.get("big_holder_pct") if s.get("big_holder_pct") is not None else 0.0
             score = s.get("score") if s.get("score") is not None else 0
-            lines.append(f'<tr onclick="location.href=\'stock_{s.get("stock_id","-")}.html\'" class="clickable"><td><strong>{s.get("stock_id","-")}</strong></td><td>{s.get("stock_name","-")}</td><td>{close:.2f}</td><td class="{"up" if change_pct>0 else "down"}">{change_pct:+.2f}%</td><td class="buy">{foreign_net/1000:,.0f}</td><td>{big_holder_pct:.2f}%</td><td class="{tc}">{trend}</td><td><span class="score">{score}</span></td></tr>')
+            lines.append(f'<tr onclick="location.href=\'stock_{s.get("stock_id","-")}.html\'" class="clickable"><td><strong>{s.get("stock_id","-")}</strong></td><td>{s.get("stock_name","-")}</td><td>{close:.2f}</td><td class="{"up" if change_pct>0 else "down"}">{change_pct:+.2f}%</td><td class="buy">{foreign_net/1000:,.0f}</td><td>{"🔥連"+str(foreign_days)+"日" if foreign_days>=2 else str(foreign_days)+"日"}</td><td>{big_holder_pct:.2f}%</td><td class="{tc}">{trend}</td><td><span class="score">{score}</span></td></tr>')
         lines.append('</tbody></table></div></div>')
         
-        lines.append('<div class="card"><h2>🌍 外資賣超榜單 (單日)</h2><div class="table-responsive"><table class="data-table"><thead><tr><th>代號</th><th>名稱</th><th>收盤價</th><th>漲跌%</th><th>外資淨賣</th><th>大戶%</th><th>趨勢</th><th>評分</th></tr></thead><tbody>')
+        lines.append('<div class="card"><h2>🌍 外資賣超榜單 (單日)</h2><div class="table-responsive"><table class="data-table"><thead><tr><th>代號</th><th>名稱</th><th>收盤價</th><th>漲跌%</th><th>外資淨賣</th><th>外資連買</th><th>大戶%</th><th>趨勢</th><th>評分</th></tr></thead><tbody>')
         for s in foreign_sell_today[:30]:
             tech = s.get("technical",{}) or {}
             trend = tech.get("trend","")
@@ -258,19 +265,21 @@ Chart.defaults.scale.ticks.color = 'var(--text-muted)';
             close = s.get("close") if s.get("close") is not None else 0.0
             change_pct = s.get("change_pct") if s.get("change_pct") is not None else 0.0
             foreign_net = abs(s.get("foreign_net")) if s.get("foreign_net") is not None else 0
+            foreign_days = s.get("foreign_consecutive_days") if s.get("foreign_consecutive_days") is not None else 0
             big_holder_pct = s.get("big_holder_pct") if s.get("big_holder_pct") is not None else 0.0
             score = s.get("score") if s.get("score") is not None else 0
-            lines.append(f'<tr onclick="location.href=\'stock_{s.get("stock_id","-")}.html\'" class="clickable"><td><strong>{s.get("stock_id","-")}</strong></td><td>{s.get("stock_name","-")}</td><td>{close:.2f}</td><td class="{"up" if change_pct>0 else "down"}">{change_pct:+.2f}%</td><td class="sell">{foreign_net/1000:,.0f}</td><td>{big_holder_pct:.2f}%</td><td class="{tc}">{trend}</td><td><span class="score">{score}</span></td></tr>')
+            lines.append(f'<tr onclick="location.href=\'stock_{s.get("stock_id","-")}.html\'" class="clickable"><td><strong>{s.get("stock_id","-")}</strong></td><td>{s.get("stock_name","-")}</td><td>{close:.2f}</td><td class="{"up" if change_pct>0 else "down"}">{change_pct:+.2f}%</td><td class="sell">{foreign_net/1000:,.0f}</td><td>{"連"+str(foreign_days)+"日" if foreign_days>=1 else "0日"}</td><td>{big_holder_pct:.2f}%</td><td class="{tc}">{trend}</td><td><span class="score">{score}</span></td></tr>')
         lines.append('</tbody></table></div></div>')
 
         # === 外資 + 投信 買超時間趨勢圖 ===
         def build_trend_chart(buy_list, data_key, title, chart_id, color_list):
-            """構建時間趨勢圖HTML"""
+            """構建時間趨勢圖HTML — 統一日期軸，確保至少顯示5天"""
             if not buy_list:
                 return ""
             top5 = buy_list[:5]
-            datasets = []
-            shared_dates = None
+            stock_data = []
+            all_dates = set()
+            
             for s in top5:
                 sid = s.get("stock_id")
                 raw = self.raw_data.get(sid, {})
@@ -278,30 +287,44 @@ Chart.defaults.scale.ticks.color = 'var(--text-muted)';
                 if not fd:
                     continue
                 last_n = fd[-20:]
-                dates = [f["date"][:10] for f in last_n]
-                nets = []
+                date_net_map = {}
                 for f in last_n:
+                    date_str = f.get("date", "")[:10]
                     buy = float(f.get("buy", 0)) if f.get("buy") else 0
                     sell = float(f.get("sell", 0)) if f.get("sell") else 0
-                    nets.append(buy - sell)
-                if shared_dates is None:
-                    shared_dates = dates
+                    date_net_map[date_str] = buy - sell
+                    all_dates.add(date_str)
+                stock_data.append({
+                    "sid": sid,
+                    "name": s.get("stock_name", ""),
+                    "map": date_net_map
+                })
+            
+            if not all_dates or not stock_data:
+                return ""
+            
+            # 統一日期軸（排序）
+            shared_dates = sorted(list(all_dates))
+            # 確保至少顯示5天 — 如果總日期不足5天，顯示所有可用日期
+            day_count = len(shared_dates)
+            
+            datasets = []
+            for i, sd in enumerate(stock_data):
+                nets = []
+                for d in shared_dates:
+                    nets.append(sd["map"].get(d, 0))
                 datasets.append({
-                    "label": f"{sid} {s.get('stock_name', '')}",
+                    "label": f"{sd['sid']} {sd['name']}",
                     "data": nets,
-                    "borderColor": None,
+                    "borderColor": color_list[i % len(color_list)],
                     "backgroundColor": "transparent",
                     "fill": False,
                     "tension": 0.3,
                     "pointRadius": 3,
                     "borderWidth": 2
                 })
-            if not shared_dates or not datasets:
-                return ""
-            for i, ds in enumerate(datasets):
-                ds["borderColor"] = color_list[i % len(color_list)]
+            
             fjson = json.dumps(datasets, ensure_ascii=False)
-            day_count = len(shared_dates)
             if day_count >= 5:
                 desc = f"📊 累積 {day_count} 天數據（{shared_dates[0]} ~ {shared_dates[-1]}）"
             else:
@@ -326,6 +349,39 @@ Chart.defaults.scale.ticks.color = 'var(--text-muted)';
         # 投信趨勢圖
         trust_buy_today = [s for s in screened if s.get("trust_net", 0) > 0]
         trust_buy_today.sort(key=lambda x: x.get("trust_net", 0), reverse=True)
+
+        # 投信買超 / 賣超榜單
+        trust_sell_today = [s for s in screened if s.get("trust_net", 0) < 0]
+        trust_sell_today.sort(key=lambda x: x.get("trust_net", 0))
+
+        lines.append('<div class="card"><h2>🏦 投信買超榜單 (單日)</h2><div class="table-responsive"><table class="data-table"><thead><tr><th>代號</th><th>名稱</th><th>收盤價</th><th>漲跌%</th><th>投信淨買(張)</th><th>投信連買</th><th>大戶%</th><th>趨勢</th><th>評分</th></tr></thead><tbody>')
+        for s in trust_buy_today[:30]:
+            tech = s.get("technical",{}) or {}
+            trend = tech.get("trend","")
+            tc = "bull" if "多頭" in trend else "bear" if "空頭" in trend else ""
+            close = s.get("close") if s.get("close") is not None else 0.0
+            change_pct = s.get("change_pct") if s.get("change_pct") is not None else 0.0
+            trust_net = s.get("trust_net") if s.get("trust_net") is not None else 0
+            trust_days = s.get("trust_consecutive_days") if s.get("trust_consecutive_days") is not None else 0
+            big_holder_pct = s.get("big_holder_pct") if s.get("big_holder_pct") is not None else 0.0
+            score = s.get("score") if s.get("score") is not None else 0
+            lines.append(f'<tr onclick="location.href=\'stock_{s.get("stock_id","-")}.html\'" class="clickable"><td><strong>{s.get("stock_id","-")}</strong></td><td>{s.get("stock_name","-")}</td><td>{close:.2f}</td><td class="{"up" if change_pct>0 else "down"}">{change_pct:+.2f}%</td><td class="buy">{trust_net/1000:,.0f}</td><td>{"🔥連"+str(trust_days)+"日" if trust_days>=2 else str(trust_days)+"日"}</td><td>{big_holder_pct:.2f}%</td><td class="{tc}">{trend}</td><td><span class="score">{score}</span></td></tr>')
+        lines.append('</tbody></table></div></div>')
+
+        lines.append('<div class="card"><h2>🏦 投信賣超榜單 (單日)</h2><div class="table-responsive"><table class="data-table"><thead><tr><th>代號</th><th>名稱</th><th>收盤價</th><th>漲跌%</th><th>投信淨賣</th><th>投信連買</th><th>大戶%</th><th>趨勢</th><th>評分</th></tr></thead><tbody>')
+        for s in trust_sell_today[:30]:
+            tech = s.get("technical",{}) or {}
+            trend = tech.get("trend","")
+            tc = "bull" if "多頭" in trend else "bear" if "空頭" in trend else ""
+            close = s.get("close") if s.get("close") is not None else 0.0
+            change_pct = s.get("change_pct") if s.get("change_pct") is not None else 0.0
+            trust_net = abs(s.get("trust_net")) if s.get("trust_net") is not None else 0
+            trust_days = s.get("trust_consecutive_days") if s.get("trust_consecutive_days") is not None else 0
+            big_holder_pct = s.get("big_holder_pct") if s.get("big_holder_pct") is not None else 0.0
+            score = s.get("score") if s.get("score") is not None else 0
+            lines.append(f'<tr onclick="location.href=\'stock_{s.get("stock_id","-")}.html\'" class="clickable"><td><strong>{s.get("stock_id","-")}</strong></td><td>{s.get("stock_name","-")}</td><td>{close:.2f}</td><td class="{"up" if change_pct>0 else "down"}">{change_pct:+.2f}%</td><td class="sell">{trust_net/1000:,.0f}</td><td>{"連"+str(trust_days)+"日" if trust_days>=1 else "0日"}</td><td>{big_holder_pct:.2f}%</td><td class="{tc}">{trend}</td><td><span class="score">{score}</span></td></tr>')
+        lines.append('</tbody></table></div></div>')
+
         colors_trust = ["#0d9488", "#c2410c", "#15803d", "#7c3aed", "#be123c"]
         lines.append(build_trend_chart(trust_buy_today, "trust", "🏦 投信買超 — 時間趨勢圖", "trustTrendChart", colors_trust))
 
