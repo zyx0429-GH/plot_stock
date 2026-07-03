@@ -252,6 +252,42 @@ ETF_00982A_HOLDINGS = [
     "6510",  # 精測 0.01%
 ]
 
+# 00982A 成分股更新日期（動態載入成功則自動更新，失敗保留此日期）
+ETF_00982A_UPDATE_DATE = "2026-06-18"
+
+# 嘗試從 wantgoo 動態載入 00982A 最新成分股
+def load_etf_00982a():
+    """嘗試從 wantgoo.com 抓取 00982A 最新成分股"""
+    import urllib.request, re, ssl
+    
+    url = "https://www.wantgoo.com/stock/etf/00982a/constituent"
+    try:
+        ctx = ssl.create_default_context()
+        ctx.check_hostname = False
+        ctx.verify_mode = ssl.CERT_NONE
+        req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+        with urllib.request.urlopen(req, timeout=30, context=ctx) as response:
+            html = response.read().decode("utf-8")
+        
+        # 提取股票代號 (4-6 位數字)
+        tickers = re.findall(r'>(\d{4,6})<', html)
+        unique = list(dict.fromkeys(tickers))
+        if len(unique) >= 5:
+            return unique
+        return []
+    except Exception as e:
+        print(f"[WARN] Failed to fetch 00982A holdings: {e}")
+        return []
+
+_etf82_dynamic = load_etf_00982a()
+if _etf82_dynamic:
+    ETF_00982A_HOLDINGS = _etf82_dynamic
+    from datetime import datetime
+    ETF_00982A_UPDATE_DATE = datetime.now().strftime("%Y-%m-%d")
+    print(f"[INFO] 00982A loaded dynamically: {len(ETF_00982A_HOLDINGS)} stocks (updated {ETF_00982A_UPDATE_DATE})")
+else:
+    print(f"[INFO] 00982A using fallback list: {len(ETF_00982A_HOLDINGS)} stocks (last updated {ETF_00982A_UPDATE_DATE})")
+
 # === 00981A 成分股 (群益台灣精選高息) ===
 # 資料來源: https://www.pocket.tw/etf/tw/00981A/fundholding
 # 資料日: 2026-05-12
@@ -358,64 +394,6 @@ def load_big_holder_missed():
 
 BIG_HOLDER_MISSED = load_big_holder_missed()
 
-# === 00982A 成分股 (群益台灣精選強棒 主動式ETF) ===
-# 資料來源: https://www.wantgoo.com/stock/etf/00982a/constituent
-# 資料日: 2026-06-18 (Q1 基金持股)
-ETF_00982A_HOLDINGS = [
-    "2330",  # 台積電 8.54%
-    "5536",  # 聖暉* 7.79%
-    "6669",  # 緯穎 5.16%
-    "2360",  # 致茂 4.24%
-    "6139",  # 亞翔 4.05%
-    "2383",  # 台光電 4.03%
-    "2345",  # 智邦 3.68%
-    "3264",  # 欣銓 3.68%
-    "3017",  # 奇鋐 3.63%
-    "3105",  # 穩懋 3.37%
-    "6223",  # 旺矽 3.36%
-    "2308",  # 台達電 3.23%
-    "6257",  # 矽格 3.21%
-    "7769",  # 鴻勁 3.08%
-    "6805",  # 富世達 2.97%
-    "3491",  # 昇達科 2.60%
-    "2441",  # 超豐 2.34%
-    "3036",  # 文曄 2.27%
-    "2454",  # 聯發科 2.24%
-    "2449",  # 京元電子 2.20%
-    "4958",  # 臻鼎-KY 1.86%
-    "5439",  # 高技 1.75%
-    "8210",  # 勤誠 1.66%
-    "3324",  # 雙鴻 1.62%
-    "2428",  # 興勤 1.55%
-    "1785",  # 光洋科 1.39%
-    "2421",  # 建準 1.38%
-    "2316",  # 楠梓電 1.36%
-    "8996",  # 高力 1.07%
-    "2404",  # 漢唐 1.02%
-    "5289",  # 宜鼎 0.82%
-    "2059",  # 川湖 0.57%
-    "2472",  # 立隆電 0.52%
-    "2368",  # 金像電 0.45%
-    "3711",  # 日月光投控 0.39%
-    "3008",  # 大立光 0.37%
-    "6274",  # 台燿 0.36%
-    "3665",  # 貿聯-KY 0.34%
-    "2451",  # 創見 0.33%
-    "2327",  # 國巨* 0.33%
-    "2481",  # 強茂 0.30%
-    "6177",  # 達麗 0.28%
-    "3376",  # 新日興 0.23%
-    "5274",  # 信驊 0.22%
-    "3529",  # 力旺 0.20%
-    "8046",  # 南電 0.18%
-    "2885",  # 元大金 0.17%
-    "8464",  # 億豐 0.16%
-    "1319",  # 東陽 0.10%
-    "4441",  # 振大環球 0.04%
-    "2548",  # 華固 0.01%
-    "3443",  # 創意 0.01%
-    "6510",  # 精測 0.01%
-]
 
 # === 00981A 成分股 (動態載入) ===
 ETF_00981A_HOLDINGS = []
@@ -456,6 +434,9 @@ else:
         "6147",
     ]
     print(f"[INFO] 00981A using fallback list: {len(ETF_00981A_HOLDINGS)} stocks")
+
+# 00981A 成分股更新日期（動態載入成功則自動更新，失敗保留此日期）
+ETF_00981A_UPDATE_DATE = "2026-05-12"
 
 # === 被動元件族群 ===
 PASSIVE_COMPONENT = [
@@ -534,6 +515,10 @@ print(f"[INFO] Big holder TOP25 loaded: {len(BIG_HOLDER_TOP25)} stocks")
 # 將 TOP25 自動合併到 WATCHLIST
 WATCHLIST = list(dict.fromkeys(WATCHLIST + BIG_HOLDER_TOP25))
 print(f"[INFO] Watchlist after TOP25 merge: {len(WATCHLIST)} stocks")
+
+# 將 ETF 成分股自動合併到 WATCHLIST，確保數據完整抓取
+WATCHLIST = list(dict.fromkeys(WATCHLIST + ETF_00981A_HOLDINGS + ETF_00982A_HOLDINGS))
+print(f"[INFO] Watchlist after ETF merge: {len(WATCHLIST)} stocks")
 
 # === 族群映射（供前端計算各族群情緒）===
 SECTOR_MAP = {

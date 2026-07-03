@@ -17,7 +17,7 @@ import warnings
 
 warnings.filterwarnings('ignore')
 
-from config import DATA_DIR, WATCHLIST, ETF_00981A_HOLDINGS
+from config import DATA_DIR, WATCHLIST, ETF_00981A_HOLDINGS, ETF_00982A_HOLDINGS
 
 
 class TWStockDataFetcher:
@@ -871,6 +871,12 @@ def fetch_all():
         print(f"[WARN] Could not load weekly_ranking.json: {e}")
     
     all_stocks = list(dict.fromkeys(list(all_stocks) + list(weekly_stocks)))
+    
+    # 確保 00981A / 00982A 成分股都在抓取列表中
+    etf_stocks = list(ETF_00981A_HOLDINGS) + list(ETF_00982A_HOLDINGS)
+    all_stocks = list(dict.fromkeys(list(all_stocks) + etf_stocks))
+    print(f"[INFO] Added {len(etf_stocks)} ETF holdings (00981A: {len(ETF_00981A_HOLDINGS)}, 00982A: {len(ETF_00982A_HOLDINGS)})")
+    
     print(f"[INFO] Total stocks to fetch: {len(all_stocks)}")
     fetcher.fetch_all_data(all_stocks)
     fetcher.fetch_etf_data()

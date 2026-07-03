@@ -6,7 +6,7 @@
 import json
 import os
 
-from config import SCREEN_CONFIG, DATA_DIR, DOCS_DIR, WATCHLIST, ETF_00981A_HOLDINGS, ETF_00982A_HOLDINGS
+from config import SCREEN_CONFIG, DATA_DIR, DOCS_DIR, WATCHLIST, ETF_00981A_HOLDINGS, ETF_00982A_HOLDINGS, ETF_00981A_UPDATE_DATE, ETF_00982A_UPDATE_DATE
 
 
 class HTMLGenerator:
@@ -740,10 +740,10 @@ Chart.defaults.scale.ticks.color = 'var(--text-muted)';
         return self._generate_table_page("自選清單｜智董籌碼選股站", "⭐ 自選追蹤", "watchlist", WATCHLIST)
 
     def generate_etf_00981a(self):
-        return self._generate_table_page("00981A 持股明細｜智董籌碼選股站", "📈 00981A 成分股", "etf_00981a", ETF_00981A_HOLDINGS)
+        return self._generate_table_page("00981A 持股明細｜智董籌碼選股站", f"📈 00981A 成分股 — 清單更新日: {ETF_00981A_UPDATE_DATE}", "etf_00981a", ETF_00981A_HOLDINGS)
 
     def generate_etf_00982a(self):
-        return self._generate_table_page("00982A 持股明細｜智董籌碼選股站", "📈 00982A 成分股 (群益台灣精選強棒)", "etf_00982a", ETF_00982A_HOLDINGS)
+        return self._generate_table_page("00982A 持股明細｜智董籌碼選股站", f"📈 00982A 成分股 (群益台灣精選強棒) — 清單更新日: {ETF_00982A_UPDATE_DATE}", "etf_00982a", ETF_00982A_HOLDINGS)
 
     def generate_passive_component(self):
         from config import PASSIVE_COMPONENT
