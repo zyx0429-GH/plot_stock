@@ -781,6 +781,119 @@ STOCK_SECTOR = {
     "9941": "others",      # 裕融
     "2305": "others",      # 全友
     "6919": "others",      # 康霈*
+
+    # === 2026-07-04 補充分類 (來自 weekly_ranking 未分類股票) ===
+    # 半導體設備/材料
+    "7556": "semi-equip",   # 意德士
+    "6899": "semi-equip",   # 創為精密
+    "3374": "semi-equip",   # 精材
+    "6855": "semi-equip",   # 數泓科
+    "3516": "semi-equip",   # 亞帝歐
+    "5481": "semi-equip",   # 新華
+    "5324": "semi-equip",   # 士開
+    "6291": "semi-equip",   # 沛亨
+    
+    # IC設計
+    "6569": "ic-design",    # 醫揚
+    "6716": "ic-design",    # 應廣
+    "3227": "ic-design",    # 原相 (CMOS感測器)
+    
+    # PCB
+    "5403": "pcb",          # 中菲
+    "6418": "pcb",          # 詠昇
+    
+    # 光電/光通訊
+    "8932": "opto",         # 智通
+    "3234": "opto",         # 光環
+    
+    # 連接器/網通
+    "3088": "connector",    # 艾訊
+    "3499": "connector",    # 環天科
+    "8071": "connector",    # 能率網通
+    "3710": "connector",    # 連展投控
+    
+    # 散熱/電源/機殼
+    "5210": "thermal",      # 寶碩 (散熱)
+    
+    # 品牌/組裝
+    "6161": "brand",        # 捷波 (主機板)
+    
+    # 被動元件
+    "4711": "passive-component",  # 永純
+    "5487": "passive-component",  # 通泰
+    "6179": "passive-component",  # 亞通
+    "8048": "passive-component",  # 德勝
+    "3191": "passive-component",  # 雲嘉南
+    "2064": "passive-component",  # 晉椿
+    "3322": "passive-component",  # 建舜電
+    "5014": "passive-component",  # 建錩
+    "2066": "passive-component",  # 世德
+    "4131": "passive-component",  # 浩泰
+    "3631": "passive-component",  # 晟楠
+    "3178": "passive-component",  # 公準
+    "1799": "passive-component",  # 易威
+    "5514": "passive-component",  # 三豐
+    "6150": "passive-component",  # 撼訊
+    "6560": "passive-component",  # 欣普羅
+    "8054": "passive-component",  # 安國
+    "3290": "passive-component",  # 東浦
+    "6270": "passive-component",  # 倍微
+    "3438": "passive-component",  # 類比科
+    
+    # 生技/醫療
+    "4162": "others",       # 智擎
+    "4168": "others",       # 醣聯
+    "8432": "others",       # 東生華
+    "4126": "others",       # 太醫
+    "4107": "others",       # 邦特
+    "6492": "others",       # 生華科
+    "8403": "others",       # 盛弘
+    "5398": "others",       # 慕康生醫
+    "4171": "others",       # 瑞基
+    "5276": "others",       # 達輝-KY
+    
+    # 食品/消費/觀光
+    "5905": "others",       # 南仁湖
+    "2596": "others",       # 綠意
+    "1240": "others",       # 茂生農經
+    "2732": "others",       # 六角
+    "7757": "others",       # 金色三麥
+    "5704": "others",       # 老爺知
+    
+    # 傳產/建設
+    "7642": "others",       # 昶瑞機電
+    "2035": "others",       # 唐榮
+    "2924": "others",       # 宏太-KY
+    "4535": "others",       # 至興
+    "5011": "others",       # 久陽
+    "3521": "others",       # 台鋼建設
+    
+    # 電子零組件
+    "3294": "others",       # 英濟
+    "3207": "others",       # 耀勝
+    "3332": "others",       # 幸康
+    "6693": "others",       # 廣閎科
+    "8928": "others",       # 鉅明
+    "8929": "others",       # 富堡
+    "6411": "others",       # 晶焱
+    "7402": "others",       # 邑錡
+    "6122": "others",       # 擎邦
+    "8176": "others",       # 智捷
+    "3325": "others",       # 旭品
+    "7782": "others",       # 光速火箭
+    "6725": "others",       # 矽科宏晟
+    "3152": "others",       # 璟德
+    "6680": "others",       # 鑫創電子
+    "5355": "others",       # 佳總
+    "6751": "others",       # 智聯服務
+    "6925": "others",       # 意藍
+    "5529": "others",       # 鉅陞
+    "6203": "others",       # 海韻電
+    "6590": "others",       # 普鴻
+    "6233": "others",       # 旺玖
+    "6683": "others",       # 雍智科技
+    "3548": "others",       # 兆利
+    "6530": "others",       # 創威
 }
 
 # === 輸出路徑 ===
