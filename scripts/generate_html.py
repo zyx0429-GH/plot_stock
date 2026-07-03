@@ -6,7 +6,7 @@
 import json
 import os
 
-from config import SCREEN_CONFIG, DATA_DIR, DOCS_DIR, WATCHLIST, ETF_00981A_HOLDINGS, ETF_00982A_HOLDINGS, ETF_00981A_UPDATE_DATE, ETF_00982A_UPDATE_DATE
+from config import SCREEN_CONFIG, DATA_DIR, DOCS_DIR, WATCHLIST, ETF_00981A_HOLDINGS, ETF_00982A_HOLDINGS, ETF_00981A_UPDATE_DATE, ETF_00982A_UPDATE_DATE, STOCK_SECTOR, SECTOR_MAP as CONFIG_SECTOR_MAP
 
 
 class HTMLGenerator:
@@ -1132,10 +1132,16 @@ Chart.defaults.scale.ticks.color = 'var(--text-muted)';
     def generate_sector(self):
         """生成族群輪動儀表板 sector.html — 數據動態填充"""
         import json as _json
-        from config import BIG_HOLDER_MISSED
+        from config import BIG_HOLDER_MISSED, STOCK_SECTOR, SECTOR_MAP as _SECTOR_NAME_MAP
 
-        # === 族群映射表 ===
-        SECTOR_MAP = {
+        # === 族群映射表 (使用 config.py 的 STOCK_SECTOR + SECTOR_MAP) ===
+        # 動態構建: 股票代號 -> 中文族群名稱
+        def _get_sector_name(sid):
+            sector_key = STOCK_SECTOR.get(sid, "others")
+            return _SECTOR_NAME_MAP.get(sector_key, "其他")
+        
+        # 保留舊的硬編碼映射作為 fallback
+        _legacy_sector = {
             "2317": "semiconductor", "2324": "ai-server", "2327": "passive-component",
             "2330": "semiconductor", "2337": "semiconductor", "2344": "memory",
             "2345": "semiconductor", "2355": "pcb", "2356": "ai-server",
@@ -1183,7 +1189,7 @@ Chart.defaults.scale.ticks.color = 'var(--text-muted)';
         stocks_list = []
         for s in screened:
             sid = s.get("stock_id", "")
-            sector = SECTOR_MAP.get(sid, "semiconductor")
+            sector = _get_sector_name(sid)
             tech = s.get("technical", {}) or {}
             pros, cons = [], []
             if s.get("dual_certified"):
@@ -1247,7 +1253,7 @@ Chart.defaults.scale.ticks.color = 'var(--text-muted)';
                 "weekly_chg": f"{cp:+.2f}%",
                 "bh_pct": f"{b.get('big_holder_pct',0):.2f}%",
                 "signals": [],
-                "category": SECTOR_MAP.get(sid, "其他"),
+                "category": _get_sector_name(sid),
                 "relation": "",
             })
 

@@ -188,6 +188,19 @@ WATCHLIST = [
     "2887",  # 台新金
     # --- 00981A ETF ---
     "00981A",
+    # --- 2026-07-04 新增: 石英元件 + CCL + 矽晶圓 + 電容 ---
+    "2484",  # 希華 (石英元件)
+    "6174",  # 安碁 (石英元件)
+    "3221",  # 台嘉碩 (石英元件)
+    "6672",  # 騰輝 (CCL)
+    "8924",  # 鉅橡 (CCL)
+    "3532",  # 台勝科 (矽晶圓)
+    "5483",  # 中美晶 (矽晶圓)
+    "1560",  # 中砂 (矽晶圓)
+    "8028",  # 昇陽半導體 (矽晶圓)
+    "3026",  # 禾伸堂 (電容)
+    "2375",  # 凱美 (電容)
+    "3090",  # 日電貿 (電容)
 ]
 
 # 去重並排序
@@ -542,6 +555,11 @@ SECTOR_MAP = {
     "financial": "金融",
     "steel-chemical": "鋼鐵/塑化/傳產",
     "auto": "汽車零組件",
+    "quartz-component": "石英元件",
+    "ccl": "銅箔基板",
+    "silicon-wafer": "矽晶圓",
+    "capacitor": "電容/鋁質電容",
+    "upstream-ic-packaging": "電子上游-IC-封測",
     "others": "其他",
 }
 
@@ -619,6 +637,48 @@ STOCK_SECTOR = {
     "2355": "pcb",         # 敬鵬
     "2316": "pcb",         # 楠梓電
 
+    # === 石英元件 ===
+    "3042": "quartz-component",  # 晶技 (石英晶體/振盪器)
+    "8289": "quartz-component",  # 泰藝 (OCXO/TCXO)
+    "2484": "quartz-component",  # 希華 (人工長晶)
+    "6174": "quartz-component",  # 安碁 (醫療級石英元件)
+    "3221": "quartz-component",  # 台嘉碩 (SAW/BAW濾波器)
+    "8182": "quartz-component",  # 加高 (石英環/承載盤)
+
+    # === 銅箔基板 (CCL) ===
+    "2383": "ccl",  # 台光電 (高階CCL)
+    "6274": "ccl",  # 台燿 (CCL)
+    "6213": "ccl",  # 聯茂 (CCL)
+    "6672": "ccl",  # 騰輝 (CCL)
+    "8924": "ccl",  # 鉅橡 (PCB製程輔材)
+
+    # === 矽晶圓 ===
+    "6488": "silicon-wafer",  # 環球晶 (3-12吋矽晶圓)
+    "3532": "silicon-wafer",  # 台勝科 (8-12吋矽晶圓)
+    "6182": "silicon-wafer",  # 合晶 (4-8吋矽晶圓)
+    "3016": "silicon-wafer",  # 嘉晶 (矽磊晶圓)
+    "3707": "silicon-wafer",  # 漢磊 (晶圓代工/化合物)
+    "5483": "silicon-wafer",  # 中美晶 (環球晶母公司)
+    "1560": "silicon-wafer",  # 中砂 (再生晶圓/鑽石碟)
+    "8028": "silicon-wafer",  # 昇陽半導體 (再生晶圓)
+
+    # === 電容/鋁質電容 ===
+    "2327": "capacitor",  # 國巨 (MLCC/電阻)
+    "2492": "capacitor",  # 華新科 (MLCC)
+    "6173": "capacitor",  # 信昌電 (MLCC/電感)
+    "8042": "capacitor",  # 金山電 (電感)
+    "8043": "capacitor",  # 蜜望實 (被動元件)
+    "1815": "capacitor",  # 富喬 (被動元件)
+    "3026": "capacitor",  # 禾伸堂 (MLCC)
+    "6207": "capacitor",  # 雷科 (被動元件)
+    "8358": "capacitor",  # 金居 (銅箔/被動元件)
+    "3236": "capacitor",  # 千如 (被動元件)
+    "3624": "capacitor",  # 光頡 (被動元件)
+    "6155": "capacitor",  # 鈞寶 (被動元件)
+    "6432": "capacitor",  # 今展科 (被動元件)
+    "2375": "capacitor",  # 凱美 (被動元件)
+    "3090": "capacitor",  # 日電貿 (被動元件)
+
     # === 被動元件 ===
     "2327": "passive-component",  # 國巨
     "2492": "passive-component",  # 華新科
@@ -687,6 +747,37 @@ STOCK_SECTOR = {
     "3675": "power-ic",    # 德微 (二極體)
     "5425": "power-ic",    # 台半 (二極體)
     "6573": "power-ic",    # 虹揚-KY (二極體)
+
+    # === 電子上游-IC-封測 (綜合) ===
+    "2454": "upstream-ic-packaging",  # 聯發科 (IC設計)
+    "2330": "upstream-ic-packaging",  # 台積電 (晶圓代工)
+    "2303": "upstream-ic-packaging",  # 聯電 (晶圓代工)
+    "3711": "upstream-ic-packaging",  # 日月光投控 (封測)
+    "2449": "upstream-ic-packaging",  # 京元電 (封測)
+    "6239": "upstream-ic-packaging",  # 力成 (封測)
+    "3661": "upstream-ic-packaging",  # 世芯-KY (IC設計)
+    "3443": "upstream-ic-packaging",  # 創意 (IC設計)
+    "5274": "upstream-ic-packaging",  # 信驊 (IC設計)
+    "4966": "upstream-ic-packaging",  # 譜瑞-KY (IC設計)
+    "5347": "upstream-ic-packaging",  # 世界 (晶圓代工)
+    "6770": "upstream-ic-packaging",  # 力積電 (晶圓代工)
+    "4967": "upstream-ic-packaging",  # 祥碩 (IC設計)
+    "6415": "upstream-ic-packaging",  # 矽力*-KY (IC設計)
+    "6104": "upstream-ic-packaging",  # 創惟 (IC設計)
+    "6462": "upstream-ic-packaging",  # 神盾 (IC設計)
+    "6485": "upstream-ic-packaging",  # 點序 (IC設計)
+    "4919": "upstream-ic-packaging",  # 新唐 (IC設計)
+    "3663": "upstream-ic-packaging",  # 鑫科 (IC設計)
+    "3675": "upstream-ic-packaging",  # 德微 (IC設計)
+    "2379": "upstream-ic-packaging",  # 瑞昱 (IC設計)
+    "3264": "upstream-ic-packaging",  # 欣銓 (封測)
+    "6147": "upstream-ic-packaging",  # 頎邦 (封測)
+    "6261": "upstream-ic-packaging",  # 久元 (封測)
+    "6223": "upstream-ic-packaging",  # 旺矽 (封測)
+    "6510": "upstream-ic-packaging",  # 精測 (封測設備)
+    "6515": "upstream-ic-packaging",  # 穎崴 (封測)
+    "3680": "upstream-ic-packaging",  # 家登 (封測設備)
+    "6187": "upstream-ic-packaging",  # 精材 (封測材料)
 
     # === 功率半導體基板/代工/射頻 ===
     "6488": "power-epi",   # 環球晶 (基板)
