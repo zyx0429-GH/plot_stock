@@ -71,18 +71,33 @@ class StockScreener:
                 "dea": round(dea_val, 4) if not pd.isna(dea_val) else "-",
                 "hist": round(hist_val, 4) if not pd.isna(hist_val) else "-",
             }
-            # MACD score (0-10)
+            # MACD score (0-10) — 精細化評分
             if not (pd.isna(dif_val) or pd.isna(dea_val) or pd.isna(hist_val)):
                 try:
                     dif_f = float(dif_val)
                     dea_f = float(dea_val)
                     hist_f = float(hist_val)
+                    # 計算前一日柱狀圖判斷趨勢方向
+                    hist_prev = float(hist_series.iloc[-2]) if len(hist_series) >= 2 else hist_f
+                    
                     if dif_f > dea_f and hist_f > 0:
-                        macd_data["score"] = 10
+                        # 多頭區域
+                        if hist_f > hist_prev:
+                            macd_data["score"] = 10  # 強勢多頭，動能增強
+                        else:
+                            macd_data["score"] = 8   # 多頭但動能減弱
+                    elif dif_f > dea_f and hist_f <= 0:
+                        macd_data["score"] = 6       # 空頭轉多頭（金叉附近）
+                    elif dif_f <= dea_f and hist_f > 0:
+                        macd_data["score"] = 4       # 多頭轉空頭（死叉附近）
                     elif dif_f < dea_f and hist_f < 0:
-                        macd_data["score"] = 0
+                        # 空頭區域
+                        if hist_f < hist_prev:
+                            macd_data["score"] = 0   # 強勢空頭，動能增強
+                        else:
+                            macd_data["score"] = 2   # 空頭但動能減弱
                     else:
-                        macd_data["score"] = 5
+                        macd_data["score"] = 5       # 盤整（DIF≈DEA, hist≈0）
                 except (ValueError, TypeError):
                     macd_data["score"] = "-"
             else:
@@ -330,19 +345,13 @@ class StockScreener:
         if margin and margin.get("ratio", 0) > 0.3:
             score += 10
 
-        # MACD 評分 (0-5)
+        # MACD 評分 (0-10)
         macd = tech.get("macd", {}) if tech else {}
         if isinstance(macd, dict):
-            dif = macd.get("dif")
-            dea = macd.get("dea")
-            hist = macd.get("hist")
-            if dif not in (None, "-", "") and dea not in (None, "-", "") and hist not in (None, "-", ""):
+            macd_score = macd.get("score")
+            if macd_score not in (None, "-", ""):
                 try:
-                    dif_f = float(dif)
-                    dea_f = float(dea)
-                    hist_f = float(hist)
-                    if dif_f > dea_f and hist_f > 0:
-                        score += 5
+                    score += int(macd_score)
                 except (ValueError, TypeError):
                     pass
 
