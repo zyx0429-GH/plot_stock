@@ -491,7 +491,7 @@ function calcChipScore(s) {
   return Math.max(0, Math.min(100, score));
 }
 
-// 渲染族群熱度 — 卡片式 + 可點選展開
+// 渲染族群熱度 — 卡片式，點擊彈出完整模態框
 function renderSectorHeat() {
   const el = document.getElementById('sector-heat');
   if (!el) return;
@@ -525,24 +525,8 @@ function renderSectorHeat() {
     const gradeLabel = { a: 'A', b: 'B', c: 'C', d: 'D' }[grade];
     const sign = s.avgChange >= 0 ? '+' : '';
 
-    // 展開區塊：該族群個股表格
-    const stockRows = s.stocks.map(st => {
-      const chgColor = (st.change_pct || 0) > 0 ? 'var(--up)' : (st.change_pct || 0) < 0 ? 'var(--down)' : 'var(--text-dim)';
-      const chgSign = (st.change_pct || 0) > 0 ? '+' : '';
-      const bhColor = (st.bh_wow || 0) > 0 ? 'var(--up)' : (st.bh_wow || 0) < 0 ? 'var(--down)' : 'var(--text-dim)';
-      const bhSign = (st.bh_wow || 0) > 0 ? '+' : '';
-      return `<tr onclick="location.href='stock_${st.ticker}.html'" style="cursor:pointer;">
-        <td><strong style="color:var(--accent);">${st.ticker}</strong></td>
-        <td>${st.name}</td>
-        <td style="text-align:right;color:${chgColor};">${st.change_pct !== null ? chgSign + st.change_pct.toFixed(2) + '%' : '-'}</td>
-        <td style="text-align:right;">${st.big_holder_pct ? st.big_holder_pct.toFixed(2) + '%' : '-'}</td>
-        <td style="text-align:right;color:${bhColor};">${st.bh_wow !== null ? bhSign + st.bh_wow.toFixed(2) + '%' : '-'}</td>
-        <td style="text-align:right;">${st.foreign ? (st.foreign > 0 ? '+' : '') + st.foreign.toLocaleString() : '-'}</td>
-      </tr>`;
-    }).join('');
-
     return `
-      <div class="sector-card-item" data-sector="${s.id}" onclick="toggleSectorDetail(this)">
+      <div class="sector-card-item" data-sector="${s.id}" onclick="showSectorPopup('${s.name}', '${s.id}')">
         <div class="sector-card-header">
           <span class="sector-card-name">${s.name}</span>
           <span class="sector-card-grade ${grade}">${gradeLabel}</span>
@@ -554,40 +538,109 @@ function renderSectorHeat() {
           <div>上漲: ${s.upCount} 檔</div>
         </div>
         <div class="sector-card-hint">👆 點擊查看個股詳情</div>
-        <div class="sector-detail" id="sector-detail-${s.id}">
-          <table style="width:100%;border-collapse:collapse;">
-            <thead>
-              <tr style="border-bottom:1px solid var(--border);color:var(--text-dim);font-size:0.7rem;">
-                <th style="text-align:left;padding:4px;">代號</th>
-                <th style="text-align:left;padding:4px;">名稱</th>
-                <th style="text-align:right;padding:4px;">漲跌%</th>
-                <th style="text-align:right;padding:4px;">大戶%</th>
-                <th style="text-align:right;padding:4px;">週增減</th>
-                <th style="text-align:right;padding:4px;">外資</th>
-              </tr>
-            </thead>
-            <tbody>${stockRows}</tbody>
-          </table>
-        </div>
       </div>
     `;
   }).join('') + '</div>';
 }
 
-// 展開/收起族群詳情
-function toggleSectorDetail(card) {
-  const detail = card.querySelector('.sector-detail');
-  const isOpen = detail.classList.contains('open');
-  // 先關閉所有其他
-  document.querySelectorAll('.sector-detail.open').forEach(d => d.classList.remove('open'));
-  document.querySelectorAll('.sector-card-item.active').forEach(c => c.classList.remove('active'));
-  if (!isOpen) {
-    detail.classList.add('open');
-    card.classList.add('active');
-  }
+// 族群詳情彈窗（完整展開，類似首頁邏輯）
+function showSectorPopup(sectorName, sectorId) {
+  // 從 stocks 數組收集該族群個股
+  const sectorStocks = stocks.filter(s => s.sector === sectorId);
+  if (!sectorStocks.length) return;
+
+  // 按籌碼評分排序
+  const sortedStocks = [...sectorStocks].sort((a, b) => (b.chip_score || 0) - (a.chip_score || 0));
+
+  const modal = document.createElement('div');
+  modal.id = 'sectorPopupModal';
+  modal.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.7);z-index:9999;display:flex;align-items:center;justify-content:center;padding:20px;';
+
+  // 計算族群統計
+  const avgScore = sortedStocks.length ? (sortedStocks.reduce((sum, s) => sum + (s.chip_score || 50), 0) / sortedStocks.length).toFixed(1) : 0;
+  const avgChange = sortedStocks.length ? (sortedStocks.reduce((sum, s) => sum + (s.change_pct || 0), 0) / sortedStocks.length).toFixed(2) : 0;
+  const upCount = sortedStocks.filter(s => (s.change_pct || 0) > 0).length;
+  const hotCount = sortedStocks.filter(s => (s.chip_score || 0) >= 65).length;
+
+  const rowsHtml = sortedStocks.map(st => {
+    const score = st.chip_score || 50;
+    const scoreColor = score >= 80 ? '#16a34a' : score >= 65 ? '#16a34a' : score >= 50 ? '#f59e0b' : score >= 35 ? '#f97316' : '#dc2626';
+    const scoreBg = score >= 80 ? 'rgba(22,163,74,0.12)' : score >= 65 ? 'rgba(22,163,74,0.12)' : score >= 50 ? 'rgba(245,158,11,0.12)' : score >= 35 ? 'rgba(249,115,22,0.12)' : 'rgba(220,38,38,0.12)';
+    const chgColor = (st.change_pct || 0) > 0 ? '#16a34a' : (st.change_pct || 0) < 0 ? '#dc2626' : 'var(--text-muted)';
+    const chgSign = (st.change_pct || 0) > 0 ? '+' : '';
+    const bhColor = (st.bh_wow || 0) > 0 ? '#16a34a' : (st.bh_wow || 0) < 0 ? '#dc2626' : 'var(--text-muted)';
+    const bhSign = (st.bh_wow || 0) > 0 ? '+' : '';
+    const fColor = (st.foreign || 0) > 0 ? '#16a34a' : (st.foreign || 0) < 0 ? '#dc2626' : 'var(--text-muted)';
+    const fSign = (st.foreign || 0) > 0 ? '+' : '';
+
+    return `
+      <tr onclick="location.href='stock_${st.ticker}.html'" style="cursor:pointer;border-bottom:1px solid var(--border);transition:background 0.15s;" onmouseenter="this.style.background='rgba(37,99,235,0.04)'" onmouseleave="this.style.background=''">
+        <td style="padding:10px 8px;"><strong style="color:var(--accent);">${st.ticker}</strong></td>
+        <td style="padding:10px 8px;color:var(--text);">${st.name}</td>
+        <td style="padding:10px 8px;text-align:right;color:var(--text);">${st.price ? st.price.toFixed(1) : '—'}</td>
+        <td style="padding:10px 8px;text-align:right;color:${chgColor};font-weight:600;">${st.change_pct !== null ? chgSign + st.change_pct.toFixed(2) + '%' : '—'}</td>
+        <td style="padding:10px 8px;text-align:right;color:var(--text);font-weight:600;">${st.big_holder_pct ? st.big_holder_pct.toFixed(2) + '%' : '—'}</td>
+        <td style="padding:10px 8px;text-align:right;color:${bhColor};font-weight:600;">${st.bh_wow !== null ? bhSign + st.bh_wow.toFixed(2) + '%' : '—'}</td>
+        <td style="padding:10px 8px;text-align:right;color:${fColor};">${st.foreign ? fSign + st.foreign.toLocaleString() : '—'}</td>
+        <td style="padding:10px 8px;text-align:center;"><span style="display:inline-block;padding:3px 10px;border-radius:12px;background:${scoreBg};color:${scoreColor};font-weight:bold;font-size:13px;min-width:36px;text-align:center;">${score}</span></td>
+      </tr>`;
+  }).join('');
+
+  modal.innerHTML = `
+    <div style="background:var(--bg);border:1px solid var(--border);border-radius:12px;max-width:950px;width:100%;max-height:90vh;overflow-y:auto;padding:25px;position:relative;">
+      <button onclick="document.getElementById('sectorPopupModal').remove()" style="position:absolute;top:15px;right:15px;background:none;border:none;color:var(--text-muted);font-size:20px;cursor:pointer;z-index:10;">✕</button>
+      <h2 style="color:var(--accent);margin:0 0 5px 0;font-size:1.4em;">🔄 ${sectorName}</h2>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(100px,1fr));gap:10px;margin:0 0 15px 0;">
+        <div style="background:var(--card-bg);border-radius:6px;padding:8px 12px;text-align:center;">
+          <div style="color:var(--text-muted);font-size:11px;">個股數</div>
+          <div style="color:var(--text);font-weight:bold;font-size:1.2em;">${sortedStocks.length}</div>
+        </div>
+        <div style="background:var(--card-bg);border-radius:6px;padding:8px 12px;text-align:center;">
+          <div style="color:var(--text-muted);font-size:11px;">平均評分</div>
+          <div style="color:${avgScore >= 60 ? '#16a34a' : avgScore >= 45 ? '#f59e0b' : '#dc2626'};font-weight:bold;font-size:1.2em;">${avgScore}</div>
+        </div>
+        <div style="background:var(--card-bg);border-radius:6px;padding:8px 12px;text-align:center;">
+          <div style="color:var(--text-muted);font-size:11px;">平均漲跌</div>
+          <div style="color:${avgChange >= 0 ? '#16a34a' : '#dc2626'};font-weight:bold;font-size:1.2em;">${avgChange >= 0 ? '+' : ''}${avgChange}%</div>
+        </div>
+        <div style="background:var(--card-bg);border-radius:6px;padding:8px 12px;text-align:center;">
+          <div style="color:var(--text-muted);font-size:11px;">上漲檔數</div>
+          <div style="color:#16a34a;font-weight:bold;font-size:1.2em;">${upCount} 檔</div>
+        </div>
+        <div style="background:var(--card-bg);border-radius:6px;padding:8px 12px;text-align:center;">
+          <div style="color:var(--text-muted);font-size:11px;">強勢股 (≥65)</div>
+          <div style="color:#f59e0b;font-weight:bold;font-size:1.2em;">${hotCount} 檔</div>
+        </div>
+      </div>
+      <div style="overflow-x:auto;border:1px solid var(--border);border-radius:8px;">
+        <table style="width:100%;border-collapse:collapse;font-size:13px;">
+          <thead>
+            <tr style="border-bottom:1px solid var(--border);background:var(--card-bg);">
+              <th style="text-align:left;padding:10px 8px;color:var(--text-muted);font-weight:600;font-size:12px;">代號</th>
+              <th style="text-align:left;padding:10px 8px;color:var(--text-muted);font-weight:600;font-size:12px;">名稱</th>
+              <th style="text-align:right;padding:10px 8px;color:var(--text-muted);font-weight:600;font-size:12px;">現價</th>
+              <th style="text-align:right;padding:10px 8px;color:var(--text-muted);font-weight:600;font-size:12px;">漲跌%</th>
+              <th style="text-align:right;padding:10px 8px;color:var(--text-muted);font-weight:600;font-size:12px;">大戶%</th>
+              <th style="text-align:right;padding:10px 8px;color:var(--text-muted);font-weight:600;font-size:12px;">週增減</th>
+              <th style="text-align:right;padding:10px 8px;color:var(--text-muted);font-weight:600;font-size:12px;">外資</th>
+              <th style="text-align:center;padding:10px 8px;color:var(--text-muted);font-weight:600;font-size:12px;">評分</th>
+            </tr>
+          </thead>
+          <tbody>${rowsHtml}</tbody>
+        </table>
+      </div>
+    </div>
+  `;
+
+  // 點擊背景關閉
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) modal.remove();
+  });
+
+  document.body.appendChild(modal);
 }
 
-// 渲染輪動方向（含能量條）
+// 渲染輪動方向（含對齊能量條）
 function renderRotate() {
   const inEl = document.getElementById('rotate-in');
   const outEl = document.getElementById('rotate-out');
@@ -596,37 +649,28 @@ function renderRotate() {
   const downSectors = sectors.filter(s => s.momentum === 'down').sort((a,b) => a.score - b.score);
   const flatSectors = sectors.filter(s => s.momentum === 'sideways');
 
-  function makeEnergyBar(score) {
-    const color = score >= 70 ? 'var(--up)' : score >= 50 ? 'var(--warn)' : score >= 35 ? 'var(--hot)' : 'var(--down)';
+  function renderSectorRow(s, dirLabel, dirClass) {
+    const barColor = s.score >= 70 ? '#16a34a' : s.score >= 50 ? '#f59e0b' : s.score >= 35 ? '#f97316' : '#dc2626';
     return `
-      <div style="width:80px;height:6px;background:var(--border);border-radius:3px;overflow:hidden;display:inline-block;vertical-align:middle;margin-left:8px;">
-        <div style="width:${score}%;height:100%;background:${color};border-radius:3px;"></div>
+      <div style="display:grid;grid-template-columns:70px 140px 1fr 50px;align-items:center;gap:8px;padding:7px 0;border-bottom:1px solid var(--border);font-size:0.85rem;">
+        <span class="rotate-dir ${dirClass}" style="justify-self:start;">${dirLabel}</span>
+        <strong style="color:var(--text);justify-self:start;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${s.name}</strong>
+        <div style="display:flex;align-items:center;gap:6px;justify-self:stretch;">
+          <div style="flex:1;height:8px;background:var(--border);border-radius:4px;overflow:hidden;min-width:60px;">
+            <div style="width:${s.score}%;height:100%;background:${barColor};border-radius:4px;transition:width 0.3s ease;"></div>
+          </div>
+        </div>
+        <span style="color:${barColor};font-weight:700;justify-self:end;font-size:0.9rem;">${s.score}</span>
       </div>
-      <span style="font-size:0.7rem;color:var(--text-dim);margin-left:4px;">${score}</span>
     `;
   }
 
-  inEl.innerHTML = upSectors.map(s => `
-    <div style="display:flex;align-items:center;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--border);">
-      <div>
-        <span class="rotate-dir rotate-in">↑ 流入</span>
-        <strong>${s.name}</strong>
-      </div>
-      ${makeEnergyBar(s.score)}
-    </div>
-  `).join('');
-
-  outEl.innerHTML = [...downSectors, ...flatSectors].map(s => `
-    <div style="display:flex;align-items:center;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--border);">
-      <div>
-        <span class="rotate-dir ${s.momentum==='down'?'rotate-out':'rotate-hold'}">
-          ${s.momentum==='down'?'↓ 流出':'→ 觀望'}
-        </span>
-        <strong>${s.name}</strong>
-      </div>
-      ${makeEnergyBar(s.score)}
-    </div>
-  `).join('');
+  inEl.innerHTML = upSectors.map(s => renderSectorRow(s, '↑ 流入', 'rotate-in')).join('');
+  outEl.innerHTML = [...downSectors, ...flatSectors].map(s => {
+    const dirLabel = s.momentum === 'down' ? '↓ 流出' : '→ 觀望';
+    const dirClass = s.momentum === 'down' ? 'rotate-out' : 'rotate-hold';
+    return renderSectorRow(s, dirLabel, dirClass);
+  }).join('');
 }
 
 // 取得族群名稱
