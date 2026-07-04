@@ -1,25 +1,25 @@
 [
   {
     "rank": 1,
-    "stock_code": "4304",
-    "stock_name": "勝昱",
+    "stock_code": "4303",
+    "stock_name": "信立",
     "is_taiwan50": false,
     "category": "櫃塑膠",
-    "threshold_code": 21,
-    "threshold_shares": 0,
+    "threshold_code": 30,
+    "threshold_shares": 400,
     "weekly_changes": {
-      "20260522": 0.0,
-      "20260529": 0.0,
-      "20260605": 0.04,
+      "20260529": 0.1,
+      "20260605": 0.06,
       "20260612": 0.05,
-      "20260618": 0.01,
-      "20260626": 0.01
+      "20260618": 0.15,
+      "20260626": 0.19,
+      "20260703": -0.19
     },
-    "latest_change": 0.01,
-    "total_change": 0.11,
-    "last_week_hold_pct": 81.93,
-    "close_price": null,
-    "price_change": null
+    "latest_change": -0.19,
+    "total_change": 0.36,
+    "last_week_hold_pct": 18.94,
+    "close_price": 47.85,
+    "price_change": 2.3
   },
   {
     "rank": 2,
@@ -27,24 +27,46 @@
     "stock_name": "萬國通",
     "is_taiwan50": false,
     "category": "櫃塑膠",
-    "threshold_code": 30,
-    "threshold_shares": 400,
+    "threshold_code": 10,
+    "threshold_shares": 1000,
     "weekly_changes": {
-      "20260522": -0.29,
       "20260529": 0.01,
       "20260605": 0.03,
       "20260612": 0.07,
       "20260618": 0.17,
-      "20260626": 0.05
+      "20260626": 0.05,
+      "20260703": -0.04
     },
-    "latest_change": 0.05,
-    "total_change": 0.04,
-    "last_week_hold_pct": 83.2,
-    "close_price": null,
-    "price_change": null
+    "latest_change": -0.04,
+    "total_change": 0.29,
+    "last_week_hold_pct": 83.16,
+    "close_price": 10.6,
+    "price_change": 0.1
   },
   {
     "rank": 3,
+    "stock_code": "4304",
+    "stock_name": "勝昱",
+    "is_taiwan50": false,
+    "category": "櫃塑膠",
+    "threshold_code": 32,
+    "threshold_shares": 0,
+    "weekly_changes": {
+      "20260529": 0.0,
+      "20260605": 0.04,
+      "20260612": 0.05,
+      "20260618": 0.01,
+      "20260626": 0.01,
+      "20260703": 0.01
+    },
+    "latest_change": 0.01,
+    "total_change": 0.12,
+    "last_week_hold_pct": 81.94,
+    "close_price": 18.9,
+    "price_change": 0.3
+  },
+  {
+    "rank": 4,
     "stock_code": "4305",
     "stock_name": "世坤",
     "is_taiwan50": false,
@@ -52,39 +74,17 @@
     "threshold_code": 32,
     "threshold_shares": 0,
     "weekly_changes": {
-      "20260522": 0.0,
       "20260529": 0.0,
       "20260605": 0.0,
       "20260612": 0.0,
       "20260618": 0.0,
-      "20260626": 0.0
+      "20260626": 0.0,
+      "20260703": 0.0
     },
     "latest_change": 0.0,
     "total_change": 0.0,
     "last_week_hold_pct": 84.75,
-    "close_price": null,
-    "price_change": null
-  },
-  {
-    "rank": 4,
-    "stock_code": "4303",
-    "stock_name": "信立",
-    "is_taiwan50": false,
-    "category": "櫃塑膠",
-    "threshold_code": 50,
-    "threshold_shares": 400,
-    "weekly_changes": {
-      "20260522": -1.13,
-      "20260529": 0.1,
-      "20260605": 0.06,
-      "20260612": 0.05,
-      "20260618": 0.15,
-      "20260626": 0.19
-    },
-    "latest_change": 0.19,
-    "total_change": -0.58,
-    "last_week_hold_pct": 19.13,
-    "close_price": null,
-    "price_change": null
+    "close_price": 42.6,
+    "price_change": 0.05
   }
 ]

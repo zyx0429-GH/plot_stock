@@ -5,68 +5,112 @@
     "stock_name": "萬年清",
     "is_taiwan50": false,
     "category": "綠能",
-    "threshold_code": 32,
+    "threshold_code": 41,
     "threshold_shares": 0,
     "weekly_changes": {
-      "20260522": 0.1,
       "20260529": 2.37,
       "20260605": 0.29,
       "20260612": 0.0,
       "20260618": 0.0,
-      "20260626": 0.0
+      "20260626": 0.0,
+      "20260703": 2.04
     },
-    "latest_change": 0.0,
-    "total_change": 2.76,
-    "last_week_hold_pct": 76.76,
-    "close_price": null,
-    "price_change": null
+    "latest_change": 2.04,
+    "total_change": 4.7,
+    "last_week_hold_pct": 78.8,
+    "close_price": 45.1,
+    "price_change": 0.25
   },
   {
     "rank": 2,
-    "stock_code": "3073",
-    "stock_name": "天方能源",
-    "is_taiwan50": false,
-    "category": "綠能",
-    "threshold_code": 31,
-    "threshold_shares": 400,
-    "weekly_changes": {
-      "20260522": 0.0,
-      "20260529": 0.08,
-      "20260605": -0.02,
-      "20260612": 0.13,
-      "20260618": 0.07,
-      "20260626": 0.15
-    },
-    "latest_change": 0.15,
-    "total_change": 0.41,
-    "last_week_hold_pct": 55.08,
-    "close_price": null,
-    "price_change": null
-  },
-  {
-    "rank": 3,
-    "stock_code": "3713",
-    "stock_name": "新晶投控",
+    "stock_code": "3551",
+    "stock_name": "世禾",
     "is_taiwan50": false,
     "category": "綠能",
     "threshold_code": 30,
     "threshold_shares": 400,
     "weekly_changes": {
-      "20260522": 0.04,
+      "20260529": 4.21,
+      "20260605": -3.5,
+      "20260612": -0.71,
+      "20260618": 0.67,
+      "20260626": 0.77,
+      "20260703": -0.54
+    },
+    "latest_change": -0.54,
+    "total_change": 0.9,
+    "last_week_hold_pct": 49.62,
+    "close_price": 206.0,
+    "price_change": 4.0
+  },
+  {
+    "rank": 3,
+    "stock_code": "3073",
+    "stock_name": "天方能源",
+    "is_taiwan50": false,
+    "category": "綠能",
+    "threshold_code": 30,
+    "threshold_shares": 400,
+    "weekly_changes": {
+      "20260529": 0.08,
+      "20260605": -0.02,
+      "20260612": 0.13,
+      "20260618": 0.07,
+      "20260626": 0.15,
+      "20260703": 0.09
+    },
+    "latest_change": 0.09,
+    "total_change": 0.5,
+    "last_week_hold_pct": 55.17,
+    "close_price": 22.6,
+    "price_change": 0.15
+  },
+  {
+    "rank": 4,
+    "stock_code": "3713",
+    "stock_name": "新晶投控",
+    "is_taiwan50": false,
+    "category": "綠能",
+    "threshold_code": 31,
+    "threshold_shares": 400,
+    "weekly_changes": {
       "20260529": 0.02,
       "20260605": 0.15,
       "20260612": 0.04,
       "20260618": 0.06,
-      "20260626": 0.02
+      "20260626": 0.02,
+      "20260703": 0.07
     },
-    "latest_change": 0.02,
-    "total_change": 0.33,
-    "last_week_hold_pct": 56.11,
-    "close_price": null,
-    "price_change": null
+    "latest_change": 0.07,
+    "total_change": 0.36,
+    "last_week_hold_pct": 56.18,
+    "close_price": 15.0,
+    "price_change": 0.5
   },
   {
-    "rank": 4,
+    "rank": 5,
+    "stock_code": "8171",
+    "stock_name": "天宇",
+    "is_taiwan50": false,
+    "category": "綠能",
+    "threshold_code": 30,
+    "threshold_shares": 400,
+    "weekly_changes": {
+      "20260529": -0.04,
+      "20260605": -0.06,
+      "20260612": -0.03,
+      "20260618": 0.11,
+      "20260626": 0.12,
+      "20260703": 0.09
+    },
+    "latest_change": 0.09,
+    "total_change": 0.19,
+    "last_week_hold_pct": 61.08,
+    "close_price": 21.4,
+    "price_change": 0.45
+  },
+  {
+    "rank": 6,
     "stock_code": "6692",
     "stock_name": "進能服",
     "is_taiwan50": false,
@@ -74,65 +118,43 @@
     "threshold_code": 50,
     "threshold_shares": 400,
     "weekly_changes": {
-      "20260522": 0.16,
       "20260529": 0.01,
       "20260605": 0.0,
       "20260612": 0.0,
       "20260618": 0.04,
-      "20260626": 0.06
+      "20260626": 0.06,
+      "20260703": 0.07
     },
-    "latest_change": 0.06,
-    "total_change": 0.27,
-    "last_week_hold_pct": 71.41,
-    "close_price": null,
-    "price_change": null
+    "latest_change": 0.07,
+    "total_change": 0.18,
+    "last_week_hold_pct": 71.48,
+    "close_price": 25.55,
+    "price_change": -0.15
   },
   {
-    "rank": 5,
+    "rank": 7,
     "stock_code": "7715",
     "stock_name": "裕山",
     "is_taiwan50": false,
     "category": "綠能",
-    "threshold_code": 50,
+    "threshold_code": 30,
     "threshold_shares": 400,
     "weekly_changes": {
-      "20260522": 0.0,
       "20260529": 0.0,
       "20260605": 0.0,
       "20260612": 0.0,
       "20260618": 0.03,
-      "20260626": 0.07
+      "20260626": 0.07,
+      "20260703": 0.02
     },
-    "latest_change": 0.07,
-    "total_change": 0.1,
-    "last_week_hold_pct": 56.17,
-    "close_price": null,
-    "price_change": null
+    "latest_change": 0.02,
+    "total_change": 0.12,
+    "last_week_hold_pct": 56.19,
+    "close_price": 36.0,
+    "price_change": -0.05
   },
   {
-    "rank": 6,
-    "stock_code": "8171",
-    "stock_name": "天宇",
-    "is_taiwan50": false,
-    "category": "綠能",
-    "threshold_code": 50,
-    "threshold_shares": 400,
-    "weekly_changes": {
-      "20260522": -0.01,
-      "20260529": -0.04,
-      "20260605": -0.06,
-      "20260612": -0.03,
-      "20260618": 0.11,
-      "20260626": 0.12
-    },
-    "latest_change": 0.12,
-    "total_change": 0.09,
-    "last_week_hold_pct": 60.99,
-    "close_price": null,
-    "price_change": null
-  },
-  {
-    "rank": 7,
+    "rank": 8,
     "stock_code": "5432",
     "stock_name": "新門",
     "is_taiwan50": false,
@@ -140,21 +162,21 @@
     "threshold_code": 32,
     "threshold_shares": 0,
     "weekly_changes": {
-      "20260522": 0.0,
       "20260529": 0.0,
       "20260605": 0.0,
       "20260612": 0.0,
       "20260618": 0.0,
-      "20260626": 0.0
+      "20260626": 0.0,
+      "20260703": 0.0
     },
     "latest_change": 0.0,
     "total_change": 0.0,
     "last_week_hold_pct": 54.12,
-    "close_price": null,
-    "price_change": null
+    "close_price": 156.5,
+    "price_change": -1.5
   },
   {
-    "rank": 8,
+    "rank": 9,
     "stock_code": "5205",
     "stock_name": "中茂",
     "is_taiwan50": false,
@@ -162,106 +184,84 @@
     "threshold_code": 32,
     "threshold_shares": 0,
     "weekly_changes": {
-      "20260522": 0.0,
       "20260529": 0.0,
       "20260605": 0.0,
       "20260612": 0.0,
       "20260618": 0.0,
-      "20260626": 0.0
+      "20260626": 0.0,
+      "20260703": 0.0
     },
     "latest_change": 0.0,
     "total_change": 0.0,
     "last_week_hold_pct": 74.45,
-    "close_price": null,
-    "price_change": null
+    "close_price": 24.5,
+    "price_change": -0.05
   },
   {
-    "rank": 9,
+    "rank": 10,
     "stock_code": "8423",
     "stock_name": "保綠-KY",
+    "is_taiwan50": false,
+    "category": "綠能",
+    "threshold_code": 31,
+    "threshold_shares": 400,
+    "weekly_changes": {
+      "20260529": -0.01,
+      "20260605": 0.0,
+      "20260612": -0.01,
+      "20260618": 0.02,
+      "20260626": -0.01,
+      "20260703": 0.0
+    },
+    "latest_change": 0.0,
+    "total_change": -0.01,
+    "last_week_hold_pct": 63.06,
+    "close_price": 17.85,
+    "price_change": 0.25
+  },
+  {
+    "rank": 11,
+    "stock_code": "6803",
+    "stock_name": "崑鼎",
     "is_taiwan50": false,
     "category": "綠能",
     "threshold_code": 30,
     "threshold_shares": 400,
     "weekly_changes": {
-      "20260522": 0.0,
-      "20260529": -0.01,
-      "20260605": 0.0,
-      "20260612": -0.01,
-      "20260618": 0.02,
-      "20260626": -0.01
-    },
-    "latest_change": -0.01,
-    "total_change": -0.01,
-    "last_week_hold_pct": 63.06,
-    "close_price": null,
-    "price_change": null
-  },
-  {
-    "rank": 10,
-    "stock_code": "6803",
-    "stock_name": "崑鼎",
-    "is_taiwan50": false,
-    "category": "綠能",
-    "threshold_code": 50,
-    "threshold_shares": 400,
-    "weekly_changes": {
-      "20260522": 0.02,
       "20260529": -0.01,
       "20260605": -0.06,
       "20260612": -0.01,
       "20260618": 0.0,
-      "20260626": 0.04
+      "20260626": 0.04,
+      "20260703": 0.01
     },
-    "latest_change": 0.04,
-    "total_change": -0.02,
-    "last_week_hold_pct": 55.72,
-    "close_price": null,
-    "price_change": null
+    "latest_change": 0.01,
+    "total_change": -0.03,
+    "last_week_hold_pct": 55.73,
+    "close_price": 279.0,
+    "price_change": 0.0
   },
   {
-    "rank": 11,
+    "rank": 12,
     "stock_code": "6894",
     "stock_name": "衛司特",
     "is_taiwan50": false,
     "category": "綠能",
-    "threshold_code": 20,
-    "threshold_shares": 0,
+    "threshold_code": 31,
+    "threshold_shares": 400,
     "weekly_changes": {
-      "20260522": 0.0,
       "20260529": -0.01,
       "20260605": -0.1,
       "20260612": 0.0,
       "20260618": 0.0,
-      "20260626": -0.01
+      "20260626": -0.01,
+      "20260703": 0.01
     },
-    "latest_change": -0.01,
-    "total_change": -0.12,
-    "last_week_hold_pct": 61.05,
-    "close_price": null,
-    "price_change": null
-  },
-  {
-    "rank": 12,
-    "stock_code": "3551",
-    "stock_name": "世禾",
-    "is_taiwan50": false,
-    "category": "綠能",
-    "threshold_code": 50,
-    "threshold_shares": 400,
-    "weekly_changes": {
-      "20260522": -1.69,
-      "20260529": 4.21,
-      "20260605": -3.5,
-      "20260612": -0.71,
-      "20260618": 0.67,
-      "20260626": 0.77
-    },
-    "latest_change": 0.77,
-    "total_change": -0.25,
-    "last_week_hold_pct": 50.16,
-    "close_price": null,
-    "price_change": null
+    "latest_change": 0.01,
+    "total_change": -0.11,
+    "last_week_hold_pct": 61.06,
+    "close_price": 360.5,
+    "price_change": 2.5
   },
   {
     "rank": 13,
@@ -269,68 +269,46 @@
     "stock_name": "麗升能源",
     "is_taiwan50": false,
     "category": "綠能",
-    "threshold_code": 30,
-    "threshold_shares": 400,
+    "threshold_code": 10,
+    "threshold_shares": 1000,
     "weekly_changes": {
-      "20260522": -0.17,
       "20260529": 0.17,
       "20260605": -0.84,
       "20260612": 0.06,
       "20260618": 0.16,
-      "20260626": 0.11
+      "20260626": 0.11,
+      "20260703": 0.06
     },
-    "latest_change": 0.11,
-    "total_change": -0.51,
-    "last_week_hold_pct": 57.8,
-    "close_price": null,
-    "price_change": null
+    "latest_change": 0.06,
+    "total_change": -0.28,
+    "last_week_hold_pct": 57.86,
+    "close_price": 31.5,
+    "price_change": -0.7
   },
   {
     "rank": 14,
-    "stock_code": "8390",
-    "stock_name": "金益鼎",
-    "is_taiwan50": false,
-    "category": "綠能",
-    "threshold_code": 50,
-    "threshold_shares": 400,
-    "weekly_changes": {
-      "20260522": 1.29,
-      "20260529": -0.39,
-      "20260605": -0.64,
-      "20260612": -0.52,
-      "20260618": -0.43,
-      "20260626": -0.13
-    },
-    "latest_change": -0.13,
-    "total_change": -0.82,
-    "last_week_hold_pct": 50.84,
-    "close_price": null,
-    "price_change": null
-  },
-  {
-    "rank": 15,
     "stock_code": "8440",
     "stock_name": "綠電",
     "is_taiwan50": false,
     "category": "綠能",
-    "threshold_code": 31,
-    "threshold_shares": 400,
+    "threshold_code": 40,
+    "threshold_shares": 200,
     "weekly_changes": {
-      "20260522": -0.01,
       "20260529": -0.06,
       "20260605": 0.05,
       "20260612": 0.03,
       "20260618": -0.96,
-      "20260626": 0.0
+      "20260626": 0.0,
+      "20260703": 0.0
     },
     "latest_change": 0.0,
-    "total_change": -0.95,
+    "total_change": -0.94,
     "last_week_hold_pct": 31.77,
-    "close_price": null,
-    "price_change": null
+    "close_price": 21.85,
+    "price_change": 0.5
   },
   {
-    "rank": 16,
+    "rank": 15,
     "stock_code": "6971",
     "stock_name": "惠民實業",
     "is_taiwan50": false,
@@ -338,17 +316,39 @@
     "threshold_code": 32,
     "threshold_shares": 0,
     "weekly_changes": {
-      "20260522": -0.09,
       "20260529": -1.12,
       "20260605": 0.0,
       "20260612": 0.0,
       "20260618": 0.0,
-      "20260626": 0.0
+      "20260626": 0.0,
+      "20260703": 0.0
     },
     "latest_change": 0.0,
-    "total_change": -1.21,
+    "total_change": -1.12,
     "last_week_hold_pct": 73.8,
-    "close_price": null,
-    "price_change": null
+    "close_price": 27.85,
+    "price_change": 0.1
+  },
+  {
+    "rank": 16,
+    "stock_code": "8390",
+    "stock_name": "金益鼎",
+    "is_taiwan50": false,
+    "category": "綠能",
+    "threshold_code": 30,
+    "threshold_shares": 400,
+    "weekly_changes": {
+      "20260529": -0.39,
+      "20260605": -0.64,
+      "20260612": -0.52,
+      "20260618": -0.43,
+      "20260626": -0.13,
+      "20260703": -0.65
+    },
+    "latest_change": -0.65,
+    "total_change": -2.76,
+    "last_week_hold_pct": 50.19,
+    "close_price": 109.0,
+    "price_change": 2.0
   }
 ]
