@@ -233,6 +233,88 @@
     font-size: 0.75rem;
     margin-top: 8px;
   }
+
+  /* 族群卡片 */
+  .sector-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 12px;
+  }
+  .sector-card-item {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 14px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    position: relative;
+  }
+  .sector-card-item:hover {
+    border-color: var(--accent);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(37,99,235,0.10);
+  }
+  .sector-card-item.active {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 2px rgba(37,99,235,0.15);
+  }
+  .sector-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+  }
+  .sector-card-name {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--text);
+  }
+  .sector-card-grade {
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 10px;
+  }
+  .sector-card-grade.a { background: rgba(22,163,74,0.15); color: var(--up); }
+  .sector-card-grade.b { background: rgba(245,158,11,0.15); color: var(--warn); }
+  .sector-card-grade.c { background: rgba(249,115,22,0.15); color: var(--hot); }
+  .sector-card-grade.d { background: rgba(220,38,38,0.15); color: var(--down); }
+  .sector-card-change {
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-bottom: 4px;
+  }
+  .sector-card-meta {
+    font-size: 0.78rem;
+    color: var(--text-dim);
+    line-height: 1.6;
+  }
+  .sector-card-hint {
+    margin-top: 8px;
+    padding-top: 8px;
+    border-top: 1px solid var(--border);
+    font-size: 0.72rem;
+    color: var(--text-dim);
+    text-align: center;
+  }
+
+  /* 展開內容 */
+  .sector-detail {
+    display: none;
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid var(--border);
+  }
+  .sector-detail.open {
+    display: block;
+  }
+  .sector-detail table {
+    font-size: 0.78rem;
+  }
+  .sector-detail th,
+  .sector-detail td {
+    padding: 6px 4px;
+  }
 </style>
 <link rel="stylesheet" href="css/style.css">
 </head>
@@ -330,39 +412,18 @@
   </p>
 </div>
 
-<!-- 大戶漏網之魚 -->
-<div class="card">
-  <div class="card-title">
-    🎣 大戶漏網之魚（你沒有的熱門股）
-    <span class="badge badge-hot">11檔追蹤中</span>
-  </div>
-  <div class="scroll-x">
-    <table>
-      <thead>
-        <tr>
-          <th>代號</th>
-          <th>名稱</th>
-          <th>大戶榜排名</th>
-          <th>大戶增減%</th>
-          <th>週漲幅%</th>
-          <th>訊號標籤</th>
-          <th>產業</th>
-          <th>與你的持倉關聯</th>
-        </tr>
-      </thead>
-      <tbody id="missed-tbody"></tbody>
-    </table>
-  </div>
-  <p class="note">更新規則：每週六 13:00 自動抓取。新增/刪除清單股票或權重變化>1%才通知。</p>
-</div>
-
 <script>
 // === 族群分類資料 ===
 const sectors = [
   { id:'ai-server', name:'AI 伺服器', momentum:'up', score:92 },
   { id:'semiconductor', name:'半導體', momentum:'up', score:88 },
   { id:'memory', name:'記憶體', momentum:'up', score:85 },
+  { id:'upstream-ic-packaging', name:'電子上游-IC-封測', momentum:'up', score:90 },
   { id:'silicon-photonics', name:'矽光子/CPO', momentum:'up', score:82 },
+  { id:'quartz-component', name:'石英元件', momentum:'up', score:75 },
+  { id:'ccl', name:'銅箔基板', momentum:'up', score:72 },
+  { id:'silicon-wafer', name:'矽晶圓', momentum:'up', score:78 },
+  { id:'capacitor', name:'電容/鋁質電容', momentum:'up', score:76 },
   { id:'passive-component', name:'被動元件', momentum:'up', score:78 },
   { id:'pcb', name:'PCB/載板', momentum:'up', score:75 },
   { id:'sic-power', name:'SiC/功率', momentum:'up', score:72 },
@@ -374,61 +435,9 @@ const sectors = [
 ];
 
 // === 股票資料（整合今日討論 + 籌碼數據） ===
-const stocks = [
-  // 今日分析標的
-  { ticker:'2313', name:'華通', sector:'pcb', price:276.5, change_pct:7.0, big_holder_pct:58.9, bh_wow:0, foreign:0, volume:73826, eps_q1:1.26, revenue_yoy:16.85, pe:55, pros:['HDI龍頭','MACD金叉','均線多頭'], cons:['量縮','賣壓重','4月營收月減9%'] },
-  { ticker:'3006', name:'晶豪科', sector:'memory', price:240.5, change_pct:8.33, big_holder_pct:63.72, bh_wow:24.26, foreign:180, volume:20247, eps_q1:7.22, revenue_yoy:349.21, pe:8, pros:['Q1 EPS歷史新高','4月營收年增349%','毛利率47.5%','DRAM供需緊'], cons:['3日漲20%','股東會賣壓','賣壓76%'] },
-  { ticker:'3707', name:'漢磊', sector:'sic-power', price:83.6, change_pct:4.5, big_holder_pct:54.35, bh_wow:9.84, foreign:0, volume:20247, eps_q1:null, revenue_yoy:31, pe:null, pros:['SiC題材','3日漲停跳空','量比增69%'], cons:['3日漲20%','獲利了結壓力','買賣50:50'] },
-  { ticker:'1727', name:'中華化', sector:'semiconductor', price:93.0, change_pct:0, big_holder_pct:58.9, bh_wow:20.89, foreign:0, volume:0, eps_q1:null, revenue_yoy:12.07, pe:2325, pros:['電子級硫酸認證過','半導體國產化'], cons:['EPS僅0.04','PE>1000倍','獲利未跟上股價'] },
-  { ticker:'3037', name:'欣興', sector:'pcb', price:954, change_pct:5.41, big_holder_pct:0, bh_wow:0, foreign:0, volume:18629, eps_q1:3.28, revenue_yoy:27.64, pe:73, pros:['Q1 EPS年增447%','IC載板龍頭','MACD空頭收斂'], cons:['前高974壓力','量能未過均量'] },
-  { ticker:'8261', name:'富鼎', sector:'sic-power', price:0, change_pct:0, big_holder_pct:51.35, bh_wow:6.75, foreign:0, volume:0, eps_q1:3.05, revenue_yoy:86, pe:15, pros:['Q1 EPS 3.05','5月營收年增86%','基本面最紮實'], cons:['題材不夠性感'] },
-  { ticker:'3481', name:'群創', sector:'display', price:36.95, change_pct:0, big_holder_pct:54.54, bh_wow:22.79, foreign:0, volume:0, eps_q1:null, revenue_yoy:11.79, pe:1232, pros:['FOPLP題材','大戶新進榜'], cons:['EPS僅0.03','面板產能過剩'] },
-  { ticker:'6207', name:'雷科', sector:'semiconductor', price:0, change_pct:0, big_holder_pct:20.12, bh_wow:21.38, foreign:0, volume:0, eps_q1:4.49, revenue_yoy:3.6, pe:50, pros:['玻璃基板雷切','NVIDIA供應鏈'], cons:['股本8億微型股','本業獲利薄'] },
-  { ticker:'6821', name:'聯寶', sector:'satellite', price:0, change_pct:0, big_holder_pct:0, bh_wow:0, foreign:0, volume:0, eps_q1:0.32, revenue_yoy:-21.64, pe:40, pros:['低軌衛星電源'], cons:['年營收不到6億','4月營收年減21%'] },
-  { ticker:'6151', name:'晉倫', sector:'semiconductor', price:0, change_pct:0, big_holder_pct:21.01, bh_wow:11.88, foreign:0, volume:0, eps_q1:0.72, revenue_yoy:28.35, pe:46, pros:['半導體複合材料'], cons:['傳產蹭題材','營收僅2億'] },
+const stocks = [{"ticker": "3264", "name": "欣銓", "sector": "電子上游-IC-封測", "price": 247.0, "change_pct": -0.8, "big_holder_pct": 71.03, "bh_wow": 2.03, "foreign": 1731741, "volume": null, "eps_q1": null, "revenue_yoy": null, "pe": null, "pros": ["雙重認證", "大戶增倉明顯", "法人同步買超", "均線多頭"], "cons": []}, {"ticker": "3663", "name": "鑫科", "sector": "電子上游-IC-封測", "price": 88.4, "change_pct": 9.95, "big_holder_pct": 60.2, "bh_wow": -0.88, "foreign": 1010870, "volume": null, "eps_q1": null, "revenue_yoy": null, "pe": null, "pros": ["法人同步買超", "漲幅強勁", "均線多頭"], "cons": []}, {"ticker": "5483", "name": "中美晶", "sector": "矽晶圓", "price": 210.5, "change_pct": 4.73, "big_holder_pct": 60.33, "bh_wow": -2.11, "foreign": 5108042, "volume": null, "eps_q1": null, "revenue_yoy": null, "pe": null, "pros": ["法人同步買超", "均線多頭"], "cons": ["大戶減倉", "RSI過熱"]}, {"ticker": "6173", "name": "信昌電", "sector": "電容/鋁質電容", "price": 350.5, "change_pct": 9.87, "big_holder_pct": 68.21, "bh_wow": 0.58, "foreign": 591623, "volume": null, "eps_q1": null, "revenue_yoy": null, "pe": null, "pros": ["法人同步買超", "漲幅強勁", "均線多頭"], "cons": []}, {"ticker": "6174", "name": "安碁", "sector": "石英元件", "price": 61.8, "change_pct": 9.96, "big_holder_pct": 61.83, "bh_wow": -1.6, "foreign": 467230, "volume": null, "eps_q1": null, "revenue_yoy": null, "pe": null, "pros": ["法人同步買超", "漲幅強勁", "均線多頭"], "cons": []}, {"ticker": "6488", "name": "環球晶", "sector": "功率半導體基板", "price": 1255.0, "change_pct": 4.15, "big_holder_pct": 81.38, "bh_wow": -0.16, "foreign": 257293, "volume": null, "eps_q1": null, "revenue_yoy": null, "pe": null, "pros": ["法人同步買超", "均線多頭"], "cons": []}, {"ticker": "5487", "name": "通泰", "sector": "被動元件", "price": 29.5, "change_pct": 2.79, "big_holder_pct": 71.07, "bh_wow": -0.03, "foreign": 16000, "volume": null, "eps_q1": null, "revenue_yoy": null, "pe": null, "pros": ["法人同步買超", "均線多頭"], "cons": []}, {"ticker": "7556", "name": "意德士", "sector": "半導體設備/材料", "price": 291.5, "change_pct": 1.22, "big_holder_pct": 64.64, "bh_wow": 0, "foreign": 5000, "volume": null, "eps_q1": null, "revenue_yoy": null, "pe": null, "pros": ["法人同步買超", "均線多頭"], "cons": []}, {"ticker": "4711", "name": "永純", "sector": "被動元件", "price": 17.8, "change_pct": 1.71, "big_holder_pct": 60.03, "bh_wow": 0, "foreign": 31000, "volume": null, "eps_q1": null, "revenue_yoy": null, "pe": null, "pros": ["法人同步買超", "均線多頭"], "cons": []}, {"ticker": "6274", "name": "台燿", "sector": "銅箔基板", "price": 1790.0, "change_pct": 5.92, "big_holder_pct": 67.05, "bh_wow": -0.31, "foreign": 64622, "volume": null, "eps_q1": null, "revenue_yoy": null, "pe": null, "pros": ["法人同步買超", "漲幅強勁", "均線多頭"], "cons": []}, {"ticker": "6569", "name": "醫揚", "sector": "IC設計", "price": 105.5, "change_pct": 0.96, "big_holder_pct": 67.66, "bh_wow": -0.03, "foreign": 11868, "volume": null, "eps_q1": null, "revenue_yoy": null, "pe": null, "pros": ["法人同步買超", "均線多頭"], "cons": []}, {"ticker": "6899", "name": "創為精密", "sector": "半導體設備/材料", "price": 58.6, "change_pct": 2.27, "big_holder_pct": 80.2, "bh_wow": 0, "foreign": 4000, "volume": null, "eps_q1": null, "revenue_yoy": null, "pe": null, "pros": ["法人同步買超", "均線多頭"], "cons": []}, {"ticker": "3624", "name": "光頡", "sector": "電容/鋁質電容", "price": 155.0, "change_pct": 0.98, "big_holder_pct": 61.83, "bh_wow": 0.67, "foreign": 100777, "volume": null, "eps_q1": null, "revenue_yoy": null, "pe": null, "pros": ["法人同步買超", "均線多頭"], "cons": []}, {"ticker": "3707", "name": "漢磊", "sector": "功率半導體基板", "price": 91.0, "change_pct": 3.76, "big_holder_pct": 52.4, "bh_wow": 2.15, "foreign": 1564197, "volume": null, "eps_q1": null, "revenue_yoy": null, "pe": null, "pros": ["大戶增倉明顯", "法人同步買超", "均線多頭"], "cons": []}, {"ticker": "5425", "name": "台半", "sector": "其他", "price": 131.0, "change_pct": -1.87, "big_holder_pct": 40.4, "bh_wow": -1.5, "foreign": 1164910, "volume": null, "eps_q1": null, "revenue_yoy": null, "pe": null, "pros": ["法人同步買超", "均線多頭"], "cons": []}, {"ticker": "6182", "name": "合晶", "sector": "功率半導體基板", "price": 163.0, "change_pct": 9.76, "big_holder_pct": 42.03, "bh_wow": -1.47, "foreign": 3798360, "volume": null, "eps_q1": null, "revenue_yoy": null, "pe": null, "pros": ["法人同步買超", "漲幅強勁", "均線多頭"], "cons": ["RSI過熱"]}, {"ticker": "6223", "name": "旺矽", "sector": "電子上游-IC-封測", "price": 7380.0, "change_pct": 1.72, "big_holder_pct": 49.97, "bh_wow": 1.02, "foreign": 39915, "volume": null, "eps_q1": null, "revenue_yoy": null, "pe": null, "pros": ["雙重認證", "法人同步買超", "均線多頭"], "cons": []}, {"ticker": "8091", "name": "翔名", "sector": "其他", "price": 293.5, "change_pct": 2.44, "big_holder_pct": 47.63, "bh_wow": -1.48, "foreign": 94291, "volume": null, "eps_q1": null, "revenue_yoy": null, "pe": null, "pros": ["法人同步買超", "均線多頭"], "cons": []}, {"ticker": "5536", "name": "聖暉*", "sector": "其他", "price": 1430.0, "change_pct": 0.0, "big_holder_pct": 59.32, "bh_wow": -0.38, "foreign": 143656, "volume": null, "eps_q1": null, "revenue_yoy": null, "pe": null, "pros": ["法人同步買超", "均線多頭"], "cons": []}, {"ticker": "4162", "name": "智擎", "sector": "其他", "price": 63.7, "change_pct": 4.43, "big_holder_pct": 45.89, "bh_wow": 0.1, "foreign": 281217, "volume": null, "eps_q1": null, "revenue_yoy": null, "pe": null, "pros": ["法人同步買超", "均線多頭"], "cons": []}, {"ticker": "6291", "name": "沛亨", "sector": "半導體設備/材料", "price": 534.0, "change_pct": 1.52, "big_holder_pct": 65.35, "bh_wow": 0, "foreign": 42928, "volume": null, "eps_q1": null, "revenue_yoy": null, "pe": null, "pros": ["法人同步買超", "均線多頭"], "cons": []}, {"ticker": "6418", "name": "詠昇", "sector": "PCB", "price": 34.45, "change_pct": 4.39, "big_holder_pct": 57.72, "bh_wow": 0.35, "foreign": 51000, "volume": null, "eps_q1": null, "revenue_yoy": null, "pe": null, "pros": ["法人同步買超", "均線多頭"], "cons": []}, {"ticker": "5481", "name": "新華", "sector": "半導體設備/材料", "price": 20.55, "change_pct": -4.42, "big_holder_pct": 64.92, "bh_wow": 0.14, "foreign": 11000, "volume": null, "eps_q1": null, "revenue_yoy": null, "pe": null, "pros": ["法人同步買超", "均線多頭"], "cons": ["跌幅較大"]}, {"ticker": "6179", "name": "亞通", "sector": "被動元件", "price": 26.55, "change_pct": 1.14, "big_holder_pct": 41.82, "bh_wow": 1.69, "foreign": 107569, "volume": null, "eps_q1": null, "revenue_yoy": null, "pe": null, "pros": ["法人同步買超", "均線多頭"], "cons": []}, {"ticker": "5403", "name": "中菲", "sector": "PCB", "price": 94.8, "change_pct": 0.85, "big_holder_pct": 47.48, "bh_wow": 0.38, "foreign": 12000, "volume": null, "eps_q1": null, "revenue_yoy": null, "pe": null, "pros": ["法人同步買超", "均線多頭"], "cons": []}, {"ticker": "5905", "name": "南仁湖", "sector": "其他", "price": 8.75, "change_pct": 2.1, "big_holder_pct": 46.77, "bh_wow": 0.09, "foreign": 342000, "volume": null, "eps_q1": null, "revenue_yoy": null, "pe": null, "pros": ["法人同步買超", "均線多頭"], "cons": []}, {"ticker": "5324", "name": "士開", "sector": "半導體設備/材料", "price": 12.15, "change_pct": -0.82, "big_holder_pct": 79.08, "bh_wow": -0.02, "foreign": 219000, "volume": null, "eps_q1": null, "revenue_yoy": null, "pe": null, "pros": ["法人同步買超", "均線多頭"], "cons": []}, {"ticker": "3516", "name": "亞帝歐", "sector": "半導體設備/材料", "price": 27.95, "change_pct": -0.18, "big_holder_pct": 76.75, "bh_wow": 0.16, "foreign": 14000, "volume": null, "eps_q1": null, "revenue_yoy": null, "pe": null, "pros": ["法人同步買超", "均線多頭"], "cons": []}, {"ticker": "6693", "name": "廣閎科", "sector": "其他", "price": 251.5, "change_pct": -1.37, "big_holder_pct": 47.4, "bh_wow": 2.58, "foreign": 3000, "volume": null, "eps_q1": null, "revenue_yoy": null, "pe": null, "pros": ["大戶增倉明顯", "法人同步買超", "均線多頭"], "cons": []}, {"ticker": "8289", "name": "泰藝", "sector": "石英元件", "price": 65.6, "change_pct": 5.47, "big_holder_pct": 44.42, "bh_wow": 0.02, "foreign": 36100, "volume": null, "eps_q1": null, "revenue_yoy": null, "pe": null, "pros": ["法人同步買超", "漲幅強勁", "均線多頭"], "cons": []}, {"ticker": "8358", "name": "金居", "sector": "電容/鋁質電容", "price": 590.0, "change_pct": 3.51, "big_holder_pct": 56.0, "bh_wow": -1.14, "foreign": 187267, "volume": null, "eps_q1": null, "revenue_yoy": null, "pe": null, "pros": ["法人同步買超", "均線多頭"], "cons": []}, {"ticker": "8048", "name": "德勝", "sector": "被動元件", "price": 62.7, "change_pct": 1.95, "big_holder_pct": 42.36, "bh_wow": 0.2, "foreign": 73000, "volume": null, "eps_q1": null, "revenue_yoy": null, "pe": null, "pros": ["法人同步買超", "均線多頭"], "cons": []}, {"ticker": "3207", "name": "耀勝", "sector": "其他", "price": 64.9, "change_pct": 2.2, "big_holder_pct": 41.34, "bh_wow": 1.32, "foreign": 3000, "volume": null, "eps_q1": null, "revenue_yoy": null, "pe": null, "pros": ["法人同步買超", "均線多頭"], "cons": []}, {"ticker": "3088", "name": "艾訊", "sector": "連接器/網通", "price": 146.5, "change_pct": 2.81, "big_holder_pct": 50.98, "bh_wow": 2.45, "foreign": 601890, "volume": null, "eps_q1": null, "revenue_yoy": null, "pe": null, "pros": ["大戶增倉明顯", "法人同步買超", "均線多頭"], "cons": []}, {"ticker": "3294", "name": "英濟", "sector": "其他", "price": 40.4, "change_pct": 9.93, "big_holder_pct": 53.5, "bh_wow": 0.27, "foreign": 17000, "volume": null, "eps_q1": null, "revenue_yoy": null, "pe": null, "pros": ["法人同步買超", "漲幅強勁", "均線多頭"], "cons": []}, {"ticker": "5210", "name": "寶碩", "sector": "散熱/電源/機殼", "price": 30.25, "change_pct": 0.83, "big_holder_pct": 44.49, "bh_wow": 1.93, "foreign": 45999, "volume": null, "eps_q1": null, "revenue_yoy": null, "pe": null, "pros": ["法人同步買超", "均線多頭"], "cons": []}, {"ticker": "3191", "name": "雲嘉南", "sector": "被動元件", "price": 19.1, "change_pct": 2.41, "big_holder_pct": 53.46, "bh_wow": 0, "foreign": 2000, "volume": null, "eps_q1": null, "revenue_yoy": null, "pe": null, "pros": ["法人同步買超", "均線多頭"], "cons": []}, {"ticker": "6104", "name": "創惟", "sector": "電子上游-IC-封測", "price": 105.0, "change_pct": 0.48, "big_holder_pct": 20.87, "bh_wow": 1.93, "foreign": 15070, "volume": null, "eps_q1": null, "revenue_yoy": null, "pe": null, "pros": ["法人同步買超", "均線多頭"], "cons": []}, {"ticker": "7642", "name": "昶瑞機電", "sector": "其他", "price": 78.2, "change_pct": 0.0, "big_holder_pct": 80.05, "bh_wow": 0, "foreign": -7000, "volume": null, "eps_q1": null, "revenue_yoy": null, "pe": null, "pros": ["均線多頭"], "cons": []}, {"ticker": "4126", "name": "太醫", "sector": "其他", "price": 80.6, "change_pct": 0.62, "big_holder_pct": 63.19, "bh_wow": -0.03, "foreign": -12000, "volume": null, "eps_q1": null, "revenue_yoy": null, "pe": null, "pros": ["均線多頭"], "cons": []}, {"ticker": "2596", "name": "綠意", "sector": "其他", "price": 31.85, "change_pct": 1.11, "big_holder_pct": 72.32, "bh_wow": 0.02, "foreign": -1000, "volume": null, "eps_q1": null, "revenue_yoy": null, "pe": null, "pros": ["均線多頭"], "cons": []}, {"ticker": "8432", "name": "東生華", "sector": "其他", "price": 52.5, "change_pct": 1.35, "big_holder_pct": 61.5, "bh_wow": 0.01, "foreign": -3000, "volume": null, "eps_q1": null, "revenue_yoy": null, "pe": null, "pros": ["均線多頭"], "cons": []}, {"ticker": "5347", "name": "世界", "sector": "電子上游-IC-封測", "price": 193.5, "change_pct": -2.27, "big_holder_pct": 87.36, "bh_wow": 1.52, "foreign": -3575179, "volume": null, "eps_q1": null, "revenue_yoy": null, "pe": null, "pros": ["均線多頭"], "cons": []}, {"ticker": "8932", "name": "智通*", "sector": "光電/光通訊", "price": 105.5, "change_pct": -1.86, "big_holder_pct": 81.46, "bh_wow": 1.16, "foreign": -919000, "volume": null, "eps_q1": null, "revenue_yoy": null, "pe": null, "pros": ["均線多頭"], "cons": []}, {"ticker": "3374", "name": "精材", "sector": "半導體設備/材料", "price": 313.0, "change_pct": -0.95, "big_holder_pct": 60.25, "bh_wow": 8.75, "foreign": -624667, "volume": null, "eps_q1": null, "revenue_yoy": null, "pe": null, "pros": ["大戶大幅增持", "均線多頭"], "cons": []}, {"ticker": "3537", "name": "堡達", "sector": "其他", "price": 75.8, "change_pct": -0.39, "big_holder_pct": 30.0, "bh_wow": -3.03, "foreign": 167056, "volume": null, "eps_q1": null, "revenue_yoy": null, "pe": null, "pros": ["法人同步買超", "均線多頭"], "cons": ["大戶減倉"]}, {"ticker": "6207", "name": "雷科", "sector": "電容/鋁質電容", "price": 154.0, "change_pct": 1.32, "big_holder_pct": 20.54, "bh_wow": -8.03, "foreign": 2000, "volume": null, "eps_q1": null, "revenue_yoy": null, "pe": null, "pros": ["均線多頭"], "cons": ["大戶減倉"]}, {"ticker": "6432", "name": "今展科", "sector": "電容/鋁質電容", "price": 78.6, "change_pct": 0.64, "big_holder_pct": 34.32, "bh_wow": -2.75, "foreign": 150850, "volume": null, "eps_q1": null, "revenue_yoy": null, "pe": null, "pros": ["法人同步買超", "均線多頭"], "cons": ["大戶減倉"]}, {"ticker": "8042", "name": "金山電", "sector": "電容/鋁質電容", "price": 210.5, "change_pct": 1.94, "big_holder_pct": 73.02, "bh_wow": 0.9, "foreign": -1057073, "volume": null, "eps_q1": null, "revenue_yoy": null, "pe": null, "pros": ["均線多頭"], "cons": []}, {"ticker": "3332", "name": "幸康", "sector": "其他", "price": 64.4, "change_pct": 1.26, "big_holder_pct": 86.9, "bh_wow": 0.01, "foreign": 0, "volume": null, "eps_q1": null, "revenue_yoy": null, "pe": null, "pros": ["均線多頭"], "cons": []}, {"ticker": "2064", "name": "晉椿", "sector": "被動元件", "price": 14.0, "change_pct": 1.08, "big_holder_pct": 83.05, "bh_wow": -0.01, "foreign": 0, "volume": null, "eps_q1": null, "revenue_yoy": null, "pe": null, "pros": ["均線多頭"], "cons": []}, {"ticker": "6147", "name": "頎邦", "sector": "電子上游-IC-封測", "price": 215.5, "change_pct": 1.89, "big_holder_pct": 69.12, "bh_wow": -1.47, "foreign": -2019135, "volume": null, "eps_q1": null, "revenue_yoy": null, "pe": null, "pros": ["均線多頭"], "cons": []}, {"ticker": "6716", "name": "應廣", "sector": "IC設計", "price": 99.5, "change_pct": 3.22, "big_holder_pct": 36.54, "bh_wow": 0.13, "foreign": 11946, "volume": null, "eps_q1": null, "revenue_yoy": null, "pe": null, "pros": ["法人同步買超", "均線多頭"], "cons": []}, {"ticker": "6161", "name": "捷波", "sector": "品牌/組裝", "price": 53.7, "change_pct": 0.94, "big_holder_pct": 39.41, "bh_wow": 0, "foreign": 81039, "volume": null, "eps_q1": null, "revenue_yoy": null, "pe": null, "pros": ["法人同步買超", "均線多頭"], "cons": []}, {"ticker": "3322", "name": "建舜電", "sector": "被動元件", "price": 14.5, "change_pct": 3.57, "big_holder_pct": 37.49, "bh_wow": 0.22, "foreign": 124498, "volume": null, "eps_q1": null, "revenue_yoy": null, "pe": null, "pros": ["法人同步買超", "均線多頭"], "cons": []}, {"ticker": "6855", "name": "數泓科", "sector": "半導體設備/材料", "price": 121.0, "change_pct": 0.41, "big_holder_pct": 61.4, "bh_wow": 0, "foreign": -1000, "volume": null, "eps_q1": null, "revenue_yoy": null, "pe": null, "pros": ["均線多頭"], "cons": []}, {"ticker": "5014", "name": "建錩", "sector": "被動元件", "price": 11.0, "change_pct": 0.92, "big_holder_pct": 37.47, "bh_wow": 0.06, "foreign": 44000, "volume": null, "eps_q1": null, "revenue_yoy": null, "pe": null, "pros": ["法人同步買超", "均線多頭"], "cons": []}, {"ticker": "4168", "name": "醣聯", "sector": "其他", "price": 25.5, "change_pct": 0.79, "big_holder_pct": 26.72, "bh_wow": 0.19, "foreign": 119000, "volume": null, "eps_q1": null, "revenue_yoy": null, "pe": null, "pros": ["法人同步買超", "均線多頭"], "cons": []}, {"ticker": "3675", "name": "德微", "sector": "電子上游-IC-封測", "price": 417.5, "change_pct": 2.58, "big_holder_pct": 59.36, "bh_wow": 1.29, "foreign": -15827, "volume": null, "eps_q1": null, "revenue_yoy": null, "pe": null, "pros": ["均線多頭"], "cons": []}, {"ticker": "5328", "name": "華容", "sector": "其他", "price": 82.4, "change_pct": 0.61, "big_holder_pct": 49.56, "bh_wow": 2.14, "foreign": -2188726, "volume": null, "eps_q1": null, "revenue_yoy": null, "pe": null, "pros": ["大戶增倉明顯", "均線多頭"], "cons": ["RSI過熱"]}, {"ticker": "6138", "name": "茂達", "sector": "功率半導體元件", "price": 400.0, "change_pct": -4.42, "big_holder_pct": 50.48, "bh_wow": 0.29, "foreign": -322526, "volume": null, "eps_q1": null, "revenue_yoy": null, "pe": null, "pros": ["均線多頭"], "cons": ["跌幅較大"]}, {"ticker": "6284", "name": "佳邦", "sector": "連接器/網通", "price": 108.0, "change_pct": 1.41, "big_holder_pct": 52.89, "bh_wow": -0.5, "foreign": -882949, "volume": null, "eps_q1": null, "revenue_yoy": null, "pe": null, "pros": ["均線多頭"], "cons": []}, {"ticker": "3227", "name": "原相", "sector": "IC設計", "price": 235.0, "change_pct": 0.0, "big_holder_pct": 41.0, "bh_wow": 1.37, "foreign": -234751, "volume": null, "eps_q1": null, "revenue_yoy": null, "pe": null, "pros": ["均線多頭"], "cons": []}, {"ticker": "4131", "name": "浩泰", "sector": "被動元件", "price": 32.9, "change_pct": -1.64, "big_holder_pct": 76.13, "bh_wow": 0, "foreign": 0, "volume": null, "eps_q1": null, "revenue_yoy": null, "pe": null, "pros": ["均線多頭"], "cons": []}, {"ticker": "2066", "name": "世德", "sector": "被動元件", "price": 69.1, "change_pct": 0.88, "big_holder_pct": 69.82, "bh_wow": 1.15, "foreign": -19970, "volume": null, "eps_q1": null, "revenue_yoy": null, "pe": null, "pros": ["均線多頭"], "cons": []}, {"ticker": "5299", "name": "杰力", "sector": "功率半導體元件", "price": 129.0, "change_pct": -5.15, "big_holder_pct": 51.33, "bh_wow": -0.24, "foreign": -421772, "volume": null, "eps_q1": null, "revenue_yoy": null, "pe": null, "pros": ["均線多頭"], "cons": ["跌幅較大"]}, {"ticker": "6435", "name": "大中", "sector": "功率半導體元件", "price": 382.0, "change_pct": -2.68, "big_holder_pct": 56.56, "bh_wow": -1.33, "foreign": -448194, "volume": null, "eps_q1": null, "revenue_yoy": null, "pe": null, "pros": ["均線多頭"], "cons": []}, {"ticker": "5011", "name": "久陽", "sector": "其他", "price": 24.25, "change_pct": 0.21, "big_holder_pct": 49.1, "bh_wow": 2.26, "foreign": -21000, "volume": null, "eps_q1": null, "revenue_yoy": null, "pe": null, "pros": ["大戶增倉明顯", "均線多頭"], "cons": []}, {"ticker": "3709", "name": "鑫聯大投控", "sector": "其他", "price": 74.7, "change_pct": 0.27, "big_holder_pct": 73.7, "bh_wow": -0.58, "foreign": 23620, "volume": null, "eps_q1": null, "revenue_yoy": null, "pe": null, "pros": ["法人同步買超"], "cons": ["均線空頭"]}, {"ticker": "3631", "name": "晟楠", "sector": "被動元件", "price": 34.0, "change_pct": -0.73, "big_holder_pct": 80.39, "bh_wow": 0.02, "foreign": 11000, "volume": null, "eps_q1": null, "revenue_yoy": null, "pe": null, "pros": ["法人同步買超"], "cons": ["均線空頭"]}, {"ticker": "3178", "name": "公準", "sector": "被動元件", "price": 66.0, "change_pct": 0.0, "big_holder_pct": 65.77, "bh_wow": -0.05, "foreign": 11000, "volume": null, "eps_q1": null, "revenue_yoy": null, "pe": null, "pros": ["法人同步買超"], "cons": ["均線空頭"]}, {"ticker": "3521", "name": "台鋼建設", "sector": "其他", "price": 12.9, "change_pct": 0.78, "big_holder_pct": 81.34, "bh_wow": 5.13, "foreign": 20000, "volume": null, "eps_q1": null, "revenue_yoy": null, "pe": null, "pros": ["大戶大幅增持", "法人同步買超"], "cons": ["均線空頭"]}, {"ticker": "4107", "name": "邦特", "sector": "其他", "price": 116.5, "change_pct": 0.87, "big_holder_pct": 61.91, "bh_wow": 0.04, "foreign": 16000, "volume": null, "eps_q1": null, "revenue_yoy": null, "pe": null, "pros": ["法人同步買超"], "cons": ["均線空頭"]}, {"ticker": "1799", "name": "易威", "sector": "被動元件", "price": 33.5, "change_pct": 3.88, "big_holder_pct": 68.14, "bh_wow": 0.01, "foreign": 39000, "volume": null, "eps_q1": null, "revenue_yoy": null, "pe": null, "pros": ["法人同步買超"], "cons": ["均線空頭"]}, {"ticker": "5514", "name": "三豐", "sector": "被動元件", "price": 13.65, "change_pct": -1.09, "big_holder_pct": 92.43, "bh_wow": 0, "foreign": 14000, "volume": null, "eps_q1": null, "revenue_yoy": null, "pe": null, "pros": ["法人同步買超"], "cons": ["均線空頭"]}, {"ticker": "3498", "name": "陽程", "sector": "其他", "price": 124.0, "change_pct": 0.81, "big_holder_pct": 50.62, "bh_wow": -0.78, "foreign": -139825, "volume": null, "eps_q1": null, "revenue_yoy": null, "pe": null, "pros": ["均線多頭"], "cons": []}, {"ticker": "8043", "name": "蜜望實", "sector": "電容/鋁質電容", "price": 202.5, "change_pct": 2.79, "big_holder_pct": 49.57, "bh_wow": -10.52, "foreign": -1175301, "volume": null, "eps_q1": null, "revenue_yoy": null, "pe": null, "pros": ["均線多頭"], "cons": ["大戶減倉"]}, {"ticker": "8096", "name": "擎亞", "sector": "其他", "price": 157.5, "change_pct": 2.94, "big_holder_pct": 56.23, "bh_wow": -1.88, "foreign": -266000, "volume": null, "eps_q1": null, "revenue_yoy": null, "pe": null, "pros": ["均線多頭"], "cons": []}, {"ticker": "6150", "name": "撼訊", "sector": "被動元件", "price": 63.5, "change_pct": 1.6, "big_holder_pct": 17.22, "bh_wow": 1.61, "foreign": 51154, "volume": null, "eps_q1": null, "revenue_yoy": null, "pe": null, "pros": ["法人同步買超", "均線多頭"], "cons": []}, {"ticker": "3221", "name": "台嘉碩", "sector": "石英元件", "price": 66.3, "change_pct": 3.59, "big_holder_pct": 25.47, "bh_wow": -0.75, "foreign": -116056, "volume": null, "eps_q1": null, "revenue_yoy": null, "pe": null, "pros": ["均線多頭"], "cons": []}, {"ticker": "3317", "name": "尼克森", "sector": "功率半導體元件", "price": 96.2, "change_pct": -1.13, "big_holder_pct": 28.9, "bh_wow": -0.11, "foreign": -830692, "volume": null, "eps_q1": null, "revenue_yoy": null, "pe": null, "pros": ["均線多頭"], "cons": []}, {"ticker": "3357", "name": "臺慶科", "sector": "其他", "price": 292.0, "change_pct": -2.34, "big_holder_pct": 58.58, "bh_wow": -0.7, "foreign": -105944, "volume": null, "eps_q1": null, "revenue_yoy": null, "pe": null, "pros": ["均線多頭"], "cons": []}, {"ticker": "8040", "name": "九暘", "sector": "其他", "price": 102.5, "change_pct": 0.49, "big_holder_pct": 51.99, "bh_wow": -1.0, "foreign": -40721, "volume": null, "eps_q1": null, "revenue_yoy": null, "pe": null, "pros": ["均線多頭"], "cons": []}, {"ticker": "8255", "name": "朋程", "sector": "功率半導體元件", "price": 186.5, "change_pct": 0.0, "big_holder_pct": 53.55, "bh_wow": 1.22, "foreign": -291039, "volume": null, "eps_q1": null, "revenue_yoy": null, "pe": null, "pros": ["均線多頭"], "cons": []}, {"ticker": "3438", "name": "類比科", "sector": "被動元件", "price": 68.7, "change_pct": -0.87, "big_holder_pct": 45.13, "bh_wow": -0.01, "foreign": -11051, "volume": null, "eps_q1": null, "revenue_yoy": null, "pe": null, "pros": ["均線多頭"], "cons": []}, {"ticker": "8054", "name": "安國", "sector": "被動元件", "price": 113.5, "change_pct": 0.89, "big_holder_pct": 42.34, "bh_wow": 7.68, "foreign": -682001, "volume": null, "eps_q1": null, "revenue_yoy": null, "pe": null, "pros": ["大戶大幅增持", "均線多頭"], "cons": []}, {"ticker": "3290", "name": "東浦", "sector": "被動元件", "price": 70.4, "change_pct": 0.28, "big_holder_pct": 58.57, "bh_wow": 1.34, "foreign": -109880, "volume": null, "eps_q1": null, "revenue_yoy": null, "pe": null, "pros": ["均線多頭"], "cons": []}, {"ticker": "6560", "name": "欣普羅", "sector": "被動元件", "price": 40.25, "change_pct": 0.0, "big_holder_pct": 39.57, "bh_wow": 0, "foreign": -16000, "volume": null, "eps_q1": null, "revenue_yoy": null, "pe": null, "pros": ["均線多頭"], "cons": []}, {"ticker": "6270", "name": "倍微", "sector": "被動元件", "price": 36.6, "change_pct": -1.35, "big_holder_pct": 46.3, "bh_wow": 2.85, "foreign": -54121, "volume": null, "eps_q1": null, "revenue_yoy": null, "pe": null, "pros": ["大戶增倉明顯", "均線多頭"], "cons": []}, {"ticker": "8071", "name": "能率網通", "sector": "連接器/網通", "price": 32.55, "change_pct": -3.7, "big_holder_pct": 36.49, "bh_wow": 2.27, "foreign": -335996, "volume": null, "eps_q1": null, "revenue_yoy": null, "pe": null, "pros": ["大戶增倉明顯", "均線多頭"], "cons": ["跌幅較大"]}, {"ticker": "3680", "name": "家登", "sector": "電子上游-IC-封測", "price": 539.0, "change_pct": -2.88, "big_holder_pct": 56.32, "bh_wow": -0.52, "foreign": 242611, "volume": null, "eps_q1": null, "revenue_yoy": null, "pe": null, "pros": ["法人同步買超"], "cons": ["均線空頭"]}, {"ticker": "5439", "name": "高技", "sector": "PCB", "price": 351.0, "change_pct": 0.86, "big_holder_pct": 45.95, "bh_wow": -1.09, "foreign": 212466, "volume": null, "eps_q1": null, "revenue_yoy": null, "pe": null, "pros": ["法人同步買超"], "cons": ["均線空頭"]}, {"ticker": "1785", "name": "光洋科", "sector": "其他", "price": 156.0, "change_pct": 2.63, "big_holder_pct": 46.93, "bh_wow": 0.09, "foreign": 2635625, "volume": null, "eps_q1": null, "revenue_yoy": null, "pe": null, "pros": ["法人同步買超"], "cons": ["均線空頭"]}, {"ticker": "8929", "name": "富堡", "sector": "其他", "price": 14.5, "change_pct": 3.94, "big_holder_pct": 45.69, "bh_wow": 0, "foreign": 17000, "volume": null, "eps_q1": null, "revenue_yoy": null, "pe": null, "pros": ["法人同步買超"], "cons": ["均線空頭"]}, {"ticker": "3499", "name": "環天科", "sector": "連接器/網通", "price": 14.95, "change_pct": 2.75, "big_holder_pct": 43.23, "bh_wow": 0.01, "foreign": 5000, "volume": null, "eps_q1": null, "revenue_yoy": null, "pe": null, "pros": ["法人同步買超"], "cons": ["均線空頭"]}, {"ticker": "8928", "name": "鉅明", "sector": "其他", "price": 23.3, "change_pct": 9.91, "big_holder_pct": 49.19, "bh_wow": 0.01, "foreign": 42000, "volume": null, "eps_q1": null, "revenue_yoy": null, "pe": null, "pros": ["法人同步買超", "漲幅強勁"], "cons": ["均線空頭", "RSI過熱"]}, {"ticker": "3234", "name": "光環", "sector": "光電/光通訊", "price": 128.0, "change_pct": 0.39, "big_holder_pct": 33.32, "bh_wow": -0.58, "foreign": -108840, "volume": null, "eps_q1": null, "revenue_yoy": null, "pe": null, "pros": ["均線多頭"], "cons": []}, {"ticker": "5274", "name": "信驊", "sector": "電子上游-IC-封測", "price": 17265.0, "change_pct": -2.73, "big_holder_pct": 34.0, "bh_wow": -0.16, "foreign": -3664, "volume": null, "eps_q1": null, "revenue_yoy": null, "pe": null, "pros": ["均線多頭"], "cons": []}, {"ticker": "5289", "name": "宜鼎", "sector": "其他", "price": 1635.0, "change_pct": -4.66, "big_holder_pct": 39.77, "bh_wow": -0.47, "foreign": -621481, "volume": null, "eps_q1": null, "revenue_yoy": null, "pe": null, "pros": ["均線多頭"], "cons": ["跌幅較大"]}, {"ticker": "6411", "name": "晶焱", "sector": "其他", "price": 99.7, "change_pct": -2.25, "big_holder_pct": 37.03, "bh_wow": 1.47, "foreign": -204951, "volume": null, "eps_q1": null, "revenue_yoy": null, "pe": null, "pros": ["均線多頭"], "cons": []}, {"ticker": "3236", "name": "千如", "sector": "電容/鋁質電容", "price": 68.7, "change_pct": -2.0, "big_holder_pct": 37.27, "bh_wow": 2.01, "foreign": -3257881, "volume": null, "eps_q1": null, "revenue_yoy": null, "pe": null, "pros": ["大戶增倉明顯", "均線多頭"], "cons": []}, {"ticker": "6127", "name": "九豪", "sector": "其他", "price": 88.0, "change_pct": -2.87, "big_holder_pct": 30.13, "bh_wow": 4.78, "foreign": -3294690, "volume": null, "eps_q1": null, "revenue_yoy": null, "pe": null, "pros": ["大戶增倉明顯", "均線多頭"], "cons": []}, {"ticker": "5291", "name": "邑昇", "sector": "其他", "price": 60.2, "change_pct": -0.5, "big_holder_pct": 48.32, "bh_wow": -1.28, "foreign": 44000, "volume": null, "eps_q1": null, "revenue_yoy": null, "pe": null, "pros": ["法人同步買超"], "cons": ["均線空頭"]}, {"ticker": "6187", "name": "萬潤", "sector": "電子上游-IC-封測", "price": 1030.0, "change_pct": 2.49, "big_holder_pct": 51.28, "bh_wow": -0.98, "foreign": 656967, "volume": null, "eps_q1": null, "revenue_yoy": null, "pe": null, "pros": ["法人同步買超"], "cons": ["均線空頭"]}, {"ticker": "6510", "name": "精測", "sector": "電子上游-IC-封測", "price": 3320.0, "change_pct": 2.47, "big_holder_pct": 52.23, "bh_wow": 2.07, "foreign": 26424, "volume": null, "eps_q1": null, "revenue_yoy": null, "pe": null, "pros": ["雙重認證", "大戶增倉明顯", "法人同步買超"], "cons": ["均線空頭"]}, {"ticker": "3324", "name": "雙鴻", "sector": "其他", "price": 1020.0, "change_pct": -1.92, "big_holder_pct": 45.53, "bh_wow": -1.31, "foreign": 109991, "volume": null, "eps_q1": null, "revenue_yoy": null, "pe": null, "pros": ["法人同步買超"], "cons": ["均線空頭"]}, {"ticker": "7757", "name": "金色三麥", "sector": "其他", "price": 94.9, "change_pct": 0.11, "big_holder_pct": 57.91, "bh_wow": 0, "foreign": 10000, "volume": null, "eps_q1": null, "revenue_yoy": null, "pe": null, "pros": ["法人同步買超"], "cons": ["均線空頭"]}, {"ticker": "6727", "name": "亞泰金屬", "sector": "其他", "price": 445.0, "change_pct": 7.88, "big_holder_pct": 22.74, "bh_wow": -1.36, "foreign": 34000, "volume": null, "eps_q1": null, "revenue_yoy": null, "pe": null, "pros": ["法人同步買超", "漲幅強勁"], "cons": ["均線空頭"]}, {"ticker": "2035", "name": "唐榮", "sector": "其他", "price": 27.9, "change_pct": -0.18, "big_holder_pct": 96.73, "bh_wow": 0.01, "foreign": -1000, "volume": null, "eps_q1": null, "revenue_yoy": null, "pe": null, "pros": [], "cons": ["均線空頭"]}, {"ticker": "2924", "name": "宏太-KY", "sector": "其他", "price": 18.95, "change_pct": -0.26, "big_holder_pct": 89.6, "bh_wow": 0, "foreign": 0, "volume": null, "eps_q1": null, "revenue_yoy": null, "pe": null, "pros": [], "cons": ["均線空頭"]}, {"ticker": "5276", "name": "達輝-KY", "sector": "其他", "price": 19.7, "change_pct": 2.34, "big_holder_pct": 88.14, "bh_wow": 0.03, "foreign": 0, "volume": null, "eps_q1": null, "revenue_yoy": null, "pe": null, "pros": [], "cons": ["均線空頭"]}, {"ticker": "5704", "name": "老爺知", "sector": "其他", "price": 21.5, "change_pct": 0.7, "big_holder_pct": 83.85, "bh_wow": 0, "foreign": -4000, "volume": null, "eps_q1": null, "revenue_yoy": null, "pe": null, "pros": [], "cons": ["均線空頭"]}, {"ticker": "4171", "name": "瑞基", "sector": "其他", "price": 17.25, "change_pct": 2.07, "big_holder_pct": 32.8, "bh_wow": 0, "foreign": 25000, "volume": null, "eps_q1": null, "revenue_yoy": null, "pe": null, "pros": ["法人同步買超"], "cons": ["均線空頭"]}, {"ticker": "3325", "name": "旭品", "sector": "其他", "price": 13.4, "change_pct": 3.47, "big_holder_pct": 30.3, "bh_wow": 0, "foreign": 22000, "volume": null, "eps_q1": null, "revenue_yoy": null, "pe": null, "pros": ["法人同步買超"], "cons": ["均線空頭"]}, {"ticker": "5398", "name": "慕康生醫", "sector": "其他", "price": 16.4, "change_pct": -1.2, "big_holder_pct": 57.75, "bh_wow": 0.09, "foreign": 1000, "volume": null, "eps_q1": null, "revenue_yoy": null, "pe": null, "pros": ["法人同步買超"], "cons": ["均線空頭"]}, {"ticker": "8176", "name": "智捷", "sector": "其他", "price": 10.7, "change_pct": 0.94, "big_holder_pct": 33.09, "bh_wow": 0.02, "foreign": 72000, "volume": null, "eps_q1": null, "revenue_yoy": null, "pe": null, "pros": ["法人同步買超"], "cons": ["均線空頭"]}, {"ticker": "6492", "name": "生華科", "sector": "其他", "price": 44.5, "change_pct": 3.49, "big_holder_pct": 30.69, "bh_wow": 0.05, "foreign": 41125, "volume": null, "eps_q1": null, "revenue_yoy": null, "pe": null, "pros": ["法人同步買超"], "cons": ["均線空頭"]}, {"ticker": "6122", "name": "擎邦", "sector": "其他", "price": 51.5, "change_pct": -0.96, "big_holder_pct": 29.57, "bh_wow": 0, "foreign": 18751, "volume": null, "eps_q1": null, "revenue_yoy": null, "pe": null, "pros": ["法人同步買超"], "cons": ["均線空頭", "RSI過熱"]}, {"ticker": "7402", "name": "邑錡", "sector": "其他", "price": 138.5, "change_pct": 9.92, "big_holder_pct": 38.85, "bh_wow": 1.77, "foreign": 87000, "volume": null, "eps_q1": null, "revenue_yoy": null, "pe": null, "pros": ["法人同步買超", "漲幅強勁"], "cons": ["均線空頭", "RSI過熱"]}, {"ticker": "1240", "name": "茂生農經", "sector": "其他", "price": 58.2, "change_pct": 0.34, "big_holder_pct": 69.67, "bh_wow": 0, "foreign": -1000, "volume": null, "eps_q1": null, "revenue_yoy": null, "pe": null, "pros": [], "cons": ["均線空頭"]}, {"ticker": "8403", "name": "盛弘", "sector": "其他", "price": 19.55, "change_pct": 2.09, "big_holder_pct": 38.33, "bh_wow": 0, "foreign": 108000, "volume": null, "eps_q1": null, "revenue_yoy": null, "pe": null, "pros": ["法人同步買超"], "cons": ["均線空頭"]}, {"ticker": "6725", "name": "矽科宏晟", "sector": "其他", "price": 340.0, "change_pct": -1.45, "big_holder_pct": 64.46, "bh_wow": 1.27, "foreign": -8625, "volume": null, "eps_q1": null, "revenue_yoy": null, "pe": null, "pros": [], "cons": ["均線空頭"]}, {"ticker": "7782", "name": "光速火箭", "sector": "其他", "price": 27.0, "change_pct": -0.37, "big_holder_pct": 75.9, "bh_wow": 0.03, "foreign": -1000, "volume": null, "eps_q1": null, "revenue_yoy": null, "pe": null, "pros": [], "cons": ["均線空頭"]}, {"ticker": "3152", "name": "璟德", "sector": "其他", "price": 289.0, "change_pct": -0.34, "big_holder_pct": 0, "bh_wow": 0, "foreign": -155682, "volume": null, "eps_q1": null, "revenue_yoy": null, "pe": null, "pros": ["均線多頭"], "cons": []}, {"ticker": "6485", "name": "點序", "sector": "電子上游-IC-封測", "price": 81.3, "change_pct": 0.49, "big_holder_pct": 26.35, "bh_wow": -1.22, "foreign": 19000, "volume": null, "eps_q1": null, "revenue_yoy": null, "pe": null, "pros": ["法人同步買超"], "cons": ["均線空頭"]}, {"ticker": "5355", "name": "佳總", "sector": "其他", "price": 6.09, "change_pct": -0.16, "big_holder_pct": 70.4, "bh_wow": 0.06, "foreign": -8000, "volume": null, "eps_q1": null, "revenue_yoy": null, "pe": null, "pros": [], "cons": ["均線空頭"]}, {"ticker": "6680", "name": "鑫創電子", "sector": "其他", "price": 50.8, "change_pct": 0.0, "big_holder_pct": 72.75, "bh_wow": 0.04, "foreign": 0, "volume": null, "eps_q1": null, "revenue_yoy": null, "pe": null, "pros": [], "cons": ["均線空頭"]}, {"ticker": "5529", "name": "鉅陞", "sector": "其他", "price": 22.1, "change_pct": 2.79, "big_holder_pct": 73.87, "bh_wow": 0, "foreign": -7000, "volume": null, "eps_q1": null, "revenue_yoy": null, "pe": null, "pros": [], "cons": ["均線空頭"]}, {"ticker": "3710", "name": "連展投控", "sector": "連接器/網通", "price": 5.89, "change_pct": 2.79, "big_holder_pct": 31.84, "bh_wow": 0.26, "foreign": 68000, "volume": null, "eps_q1": null, "revenue_yoy": null, "pe": null, "pros": ["法人同步買超"], "cons": ["均線空頭"]}, {"ticker": "6925", "name": "意藍", "sector": "其他", "price": 61.2, "change_pct": -1.92, "big_holder_pct": 60.59, "bh_wow": 0, "foreign": -4000, "volume": null, "eps_q1": null, "revenue_yoy": null, "pe": null, "pros": [], "cons": ["均線空頭"]}, {"ticker": "6751", "name": "智聯服務", "sector": "其他", "price": 44.7, "change_pct": 0.79, "big_holder_pct": 62.5, "bh_wow": 0, "foreign": -3000, "volume": null, "eps_q1": null, "revenue_yoy": null, "pe": null, "pros": [], "cons": ["均線空頭"]}, {"ticker": "3217", "name": "優群", "sector": "連接器/網通", "price": 179.0, "change_pct": -0.56, "big_holder_pct": 47.04, "bh_wow": 1.51, "foreign": -19200, "volume": null, "eps_q1": null, "revenue_yoy": null, "pe": null, "pros": [], "cons": ["均線空頭"]}, {"ticker": "6203", "name": "海韻電", "sector": "其他", "price": 67.8, "change_pct": 0.44, "big_holder_pct": 59.2, "bh_wow": 0, "foreign": -1000, "volume": null, "eps_q1": null, "revenue_yoy": null, "pe": null, "pros": [], "cons": ["均線空頭"]}, {"ticker": "2732", "name": "六角", "sector": "其他", "price": 65.6, "change_pct": 0.92, "big_holder_pct": 58.68, "bh_wow": -0.03, "foreign": -1000, "volume": null, "eps_q1": null, "revenue_yoy": null, "pe": null, "pros": [], "cons": ["均線空頭"]}, {"ticker": "4535", "name": "至興", "sector": "其他", "price": 26.85, "change_pct": 1.32, "big_holder_pct": 77.44, "bh_wow": 0.02, "foreign": -1000, "volume": null, "eps_q1": null, "revenue_yoy": null, "pe": null, "pros": [], "cons": ["均線空頭"]}, {"ticker": "3105", "name": "穩懋", "sector": "功率半導體基板", "price": 411.0, "change_pct": 0.0, "big_holder_pct": 54.27, "bh_wow": -1.43, "foreign": -399167, "volume": null, "eps_q1": null, "revenue_yoy": null, "pe": null, "pros": [], "cons": ["均線空頭"]}, {"ticker": "4966", "name": "譜瑞-KY", "sector": "電子上游-IC-封測", "price": 654.0, "change_pct": -0.3, "big_holder_pct": 41.05, "bh_wow": -0.18, "foreign": -143772, "volume": null, "eps_q1": null, "revenue_yoy": null, "pe": null, "pros": [], "cons": ["均線空頭"]}, {"ticker": "6590", "name": "普鴻", "sector": "其他", "price": 66.2, "change_pct": 0.3, "big_holder_pct": 57.0, "bh_wow": -0.02, "foreign": 0, "volume": null, "eps_q1": null, "revenue_yoy": null, "pe": null, "pros": [], "cons": ["均線空頭"]}, {"ticker": "6261", "name": "久元", "sector": "電子上游-IC-封測", "price": 96.6, "change_pct": 1.9, "big_holder_pct": 37.45, "bh_wow": 0.03, "foreign": -32285, "volume": null, "eps_q1": null, "revenue_yoy": null, "pe": null, "pros": [], "cons": ["均線空頭"]}, {"ticker": "8924", "name": "大田", "sector": "銅箔基板", "price": 60.1, "change_pct": -0.66, "big_holder_pct": 38.37, "bh_wow": 0, "foreign": -9000, "volume": null, "eps_q1": null, "revenue_yoy": null, "pe": null, "pros": [], "cons": ["均線空頭"]}, {"ticker": "3529", "name": "力旺", "sector": "其他", "price": 2770.0, "change_pct": -6.89, "big_holder_pct": 50.24, "bh_wow": -0.45, "foreign": -105462, "volume": null, "eps_q1": null, "revenue_yoy": null, "pe": null, "pros": [], "cons": ["跌幅較大", "均線空頭"]}, {"ticker": "6233", "name": "旺玖", "sector": "其他", "price": 25.75, "change_pct": 1.78, "big_holder_pct": 29.83, "bh_wow": 1.35, "foreign": -37001, "volume": null, "eps_q1": null, "revenue_yoy": null, "pe": null, "pros": [], "cons": ["均線空頭"]}, {"ticker": "1815", "name": "富喬", "sector": "電容/鋁質電容", "price": 101.5, "change_pct": 0.0, "big_holder_pct": 37.71, "bh_wow": 3.87, "foreign": -227671, "volume": null, "eps_q1": null, "revenue_yoy": null, "pe": null, "pros": ["大戶增倉明顯"], "cons": ["均線空頭"]}, {"ticker": "6462", "name": "神盾", "sector": "電子上游-IC-封測", "price": 117.5, "change_pct": -0.42, "big_holder_pct": 30.58, "bh_wow": -0.73, "foreign": -133900, "volume": null, "eps_q1": null, "revenue_yoy": null, "pe": null, "pros": [], "cons": ["均線空頭"]}, {"ticker": "6683", "name": "雍智科技", "sector": "其他", "price": 1805.0, "change_pct": 1.69, "big_holder_pct": 25.23, "bh_wow": 5.03, "foreign": -32396, "volume": null, "eps_q1": null, "revenue_yoy": null, "pe": null, "pros": ["大戶大幅增持"], "cons": ["均線空頭"]}, {"ticker": "3491", "name": "昇達科", "sector": "其他", "price": 1340.0, "change_pct": 5.93, "big_holder_pct": 33.17, "bh_wow": -0.02, "foreign": -22959, "volume": null, "eps_q1": null, "revenue_yoy": null, "pe": null, "pros": ["漲幅強勁"], "cons": ["均線空頭"]}, {"ticker": "3548", "name": "兆利", "sector": "其他", "price": 86.6, "change_pct": 3.22, "big_holder_pct": 32.65, "bh_wow": -0.07, "foreign": -47000, "volume": null, "eps_q1": null, "revenue_yoy": null, "pe": null, "pros": [], "cons": ["均線空頭"]}, {"ticker": "6530", "name": "創威", "sector": "其他", "price": 87.8, "change_pct": 3.91, "big_holder_pct": 18.71, "bh_wow": 1.6, "foreign": -30149, "volume": null, "eps_q1": null, "revenue_yoy": null, "pe": null, "pros": [], "cons": ["均線空頭"]}];
 
-  // 大戶漏網之魚
-  { ticker:'6182', name:'合晶', sector:'semiconductor', price:0, change_pct:41.9, big_holder_pct:30.6, bh_wow:8.02, foreign:0, volume:0, eps_q1:null, revenue_yoy:0, pe:null, pros:['大戶榜#1','單週+41.9%','矽晶圓國產化'], cons:['波動極大'] },
-  { ticker:'8042', name:'金山電', sector:'passive-component', price:0, change_pct:43.5, big_holder_pct:73.43, bh_wow:7.80, foreign:0, volume:0, eps_q1:null, revenue_yoy:0, pe:null, pros:['大戶榜#2','單週+43.5%','被動元件復甦'], cons:['追價風險'] },
-  { ticker:'6173', name:'信昌電', sector:'passive-component', price:0, change_pct:42.4, big_holder_pct:65.16, bh_wow:5.07, foreign:0, volume:0, eps_q1:null, revenue_yoy:0, pe:null, pros:['大戶榜#8','單週+42.4%','電感龍頭'], cons:['漲幅已大'] },
-  { ticker:'8150', name:'南茂', sector:'semiconductor', price:0, change_pct:32.8, big_holder_pct:77.98, bh_wow:5.15, foreign:0, volume:0, eps_q1:null, revenue_yoy:0, pe:null, pros:['大戶榜#7','五訊號全亮','封測'], cons:['籌碼過度集中'] },
-  { ticker:'2492', name:'華新科', sector:'passive-component', price:0, change_pct:18.6, big_holder_pct:63.20, bh_wow:4.23, foreign:0, volume:0, eps_q1:null, revenue_yoy:0, pe:null, pros:['MLCC大廠','籌碼集中63%'], cons:['國巨競爭對手'] },
-  { ticker:'3680', name:'家登', sector:'semiconductor', price:0, change_pct:4.3, big_holder_pct:60.17, bh_wow:4.90, foreign:0, volume:0, eps_q1:null, revenue_yoy:0, pe:null, pros:['光罩盒','台積電供應鏈'], cons:['漲幅較小'] },
-  { ticker:'6770', name:'力積電', sector:'memory', price:0, change_pct:18.3, big_holder_pct:47.10, bh_wow:3.27, foreign:0, volume:0, eps_q1:null, revenue_yoy:0, pe:null, pros:['DRAM代工','與晶豪科同生態'], cons:['排名僅#23'] },
-  { ticker:'3450', name:'聯鈞', sector:'silicon-photonics', price:0, change_pct:35.8, big_holder_pct:41.32, bh_wow:3.93, foreign:0, volume:0, eps_q1:null, revenue_yoy:0, pe:null, pros:['矽光封裝','CPO概念'], cons:['波動劇烈'] },
-  { ticker:'6261', name:'久元', sector:'semiconductor', price:0, change_pct:31.7, big_holder_pct:46.96, bh_wow:3.92, foreign:0, volume:0, eps_q1:null, revenue_yoy:0, pe:null, pros:['半導體測試'], cons:['訊號較弱'] },
-  { ticker:'8358', name:'金居', sector:'pcb', price:0, change_pct:17.0, big_holder_pct:60.08, bh_wow:4.57, foreign:0, volume:0, eps_q1:null, revenue_yoy:0, pe:null, pros:['CCL上游','00981A也持有'], cons:['排名#11'] },
-
-  // 其他重要標的補充
-  { ticker:'2330', name:'台積電', sector:'semiconductor', price:1095, change_pct:0, big_holder_pct:75, bh_wow:0, foreign:0, volume:0, eps_q1:12.5, revenue_yoy:35, pe:22, pros:['先進製程壟斷','CoWoS擴產'], cons:['估值高','地緣政治'] },
-  { ticker:'2454', name:'聯發科', sector:'semiconductor', price:1120, change_pct:0, big_holder_pct:70, bh_wow:0, foreign:0, volume:0, eps_q1:18.2, revenue_yoy:25, pe:15, pros:['AI手機SoC','天璣9400'], cons:['手機市場飽和'] },
-  { ticker:'2327', name:'國巨', sector:'passive-component', price:780, change_pct:0, big_holder_pct:65, bh_wow:0, foreign:0, volume:0, eps_q1:12.5, revenue_yoy:15, pe:15, pros:['MLCC龍頭','車用占比提升'], cons:['中國競爭'] },
-  { ticker:'2881', name:'富邦金', sector:'financial', price:95, change_pct:0, big_holder_pct:55, bh_wow:0, foreign:0, volume:0, eps_q1:2.1, revenue_yoy:5, pe:11, pros:['壽險獲利改善','金控整併'], cons:['利率風險'] },
-  { ticker:'2408', name:'南亞科', sector:'memory', price:78, change_pct:0, big_holder_pct:72, bh_wow:0, foreign:0, volume:0, eps_q1:2.5, revenue_yoy:120, pe:8, pros:['DRAM報價回升'], cons:['三星競爭'] },
-  { ticker:'2344', name:'華邦電', sector:'memory', price:52, change_pct:0, big_holder_pct:74.14, bh_wow:21.03, foreign:0, volume:0, eps_q1:0.8, revenue_yoy:100, pe:16, pros:['Flash+DRAM','大戶增21%'], cons:['獲利較薄'] },
-  { ticker:'2382', name:'廣達', sector:'ai-server', price:780, change_pct:0, big_holder_pct:68, bh_wow:0, foreign:0, volume:0, eps_q1:8.5, revenue_yoy:60, pe:23, pros:['AI伺服器龍頭','GB200出貨'], cons:['估值高'] },
-  { ticker:'3231', name:'緯創', sector:'ai-server', price:145, change_pct:0, big_holder_pct:60, bh_wow:0, foreign:0, volume:0, eps_q1:3.2, revenue_yoy:45, pe:11, pros:['AI伺服器','本益比低'], cons:['毛利低'] },
-  { ticker:'6446', name:'藥華藥', sector:'biotech', price:280, change_pct:0, big_holder_pct:42.83, bh_wow:14.09, foreign:0, volume:0, eps_q1:-2.5, revenue_yoy:200, pe:null, pros:['新藥授權','大戶增14%'], cons:['尚未獲利'] },
-  { ticker:'2409', name:'友達', sector:'display', price:18, change_pct:0, big_holder_pct:56.15, bh_wow:6.72, foreign:0, volume:0, eps_q1:0.5, revenue_yoy:10, pe:9, pros:['面板雙雄','車用面板'], cons:['產能過剩'] },
-  { ticker:'2634', name:'漢翔', sector:'aerospace-defense', price:45, change_pct:0, big_holder_pct:67.72, bh_wow:-13.99, foreign:0, volume:0, eps_q1:1.2, revenue_yoy:5, pe:9, pros:['軍機維修','潛艦國造'], cons:['大戶減少14%','國防預算不確定'] },
-];
-
-// 大戶漏網之魚資料
-const missed = [
-  { ticker:'6182', name:'合晶', rank:1, bh_wow:'+8.02%', weekly_chg:'+41.90%', bh_pct:'30.60%', signals:['籌碼回補','新進榜','事件驅動','高波動警示'], category:'半導體材料-矽晶圓', relation:'完全沒有半導體材料股' },
-  { ticker:'8042', name:'金山電', rank:2, bh_wow:'+7.80%', weekly_chg:'+43.52%', bh_pct:'73.43%', signals:['籌碼回補','新進榜','法人同向','事件驅動','高波動警示'], category:'被動元件-鋁質電容', relation:'有國巨但沒金山電，同族群' },
-  { ticker:'3481', name:'群創', rank:3, bh_wow:'+6.61%', weekly_chg:'+22.76%', bh_pct:'47.25%', signals:['籌碼回補','新進榜','事件驅動','高波動警示'], category:'面板', relation:'有友達但沒群創，面板雙雄只抓一邊' },
-  { ticker:'8150', name:'南茂', rank:7, bh_wow:'+5.15%', weekly_chg:'+32.81%', bh_pct:'77.98%', signals:['籌碼回補','高度集中','新進榜','法人同向','事件驅動','高波動警示'], category:'封測', relation:'有力成但沒南茂，同生態' },
-  { ticker:'6173', name:'信昌電', rank:8, bh_wow:'+5.07%', weekly_chg:'+42.36%', bh_pct:'65.16%', signals:['籌碼回補','新進榜','事件驅動','高波動警示'], category:'被動元件-電感', relation:'跟國巨同族群' },
-  { ticker:'3680', name:'家登', rank:10, bh_wow:'+4.90%', weekly_chg:'+4.28%', bh_pct:'60.17%', signals:[], category:'半導體設備-光罩盒', relation:'完全沒有半導體設備股' },
-  { ticker:'8358', name:'金居', rank:11, bh_wow:'+4.57%', weekly_chg:'+16.99%', bh_pct:'60.08%', signals:[], category:'被動元件-CCL', relation:'00981A也有持股0.35%' },
-  { ticker:'2492', name:'華新科', rank:13, bh_wow:'+4.23%', weekly_chg:'+18.63%', bh_pct:'63.20%', signals:[], category:'被動元件-MLCC', relation:'MLCC大廠，國巨競爭對手' },
-  { ticker:'6261', name:'久元', rank:16, bh_wow:'+3.92%', weekly_chg:'+31.69%', bh_pct:'46.96%', signals:[], category:'半導體測試', relation:'跟封測同生態' },
-  { ticker:'6770', name:'力積電', rank:23, bh_wow:'+3.27%', weekly_chg:'+18.30%', bh_pct:'47.10%', signals:[], category:'DRAM-晶圓代工', relation:'有晶豪科但沒力積電' },
-  { ticker:'3450', name:'聯鈞', rank:15, bh_wow:'+3.93%', weekly_chg:'+35.76%', bh_pct:'41.32%', signals:['籌碼回補','新進榜','事件驅動','高波動警示'], category:'矽光-封裝', relation:'矽光封裝，CPO概念' },
-];
-
-// 當前篩選
+// 當前篩選// 當前篩選
 let currentSector = 'all';
 let sortColumns = [];
 
@@ -455,22 +464,100 @@ function calcChipScore(s) {
   return Math.max(0, Math.min(100, score));
 }
 
-// 渲染族群熱度
+// 渲染族群熱度 — 卡片式 + 可點選展開
 function renderSectorHeat() {
   const el = document.getElementById('sector-heat');
-  el.innerHTML = sectors.sort((a,b) => b.score - a.score).map(s => {
-    const colorClass = s.momentum === 'up' ? 'up' : s.momentum === 'down' ? 'down' : 'flat';
-    const icon = s.momentum === 'up' ? '↑' : s.momentum === 'down' ? '↓' : '→';
+  if (!el) return;
+
+  // 計算每個族群的實際數據
+  const sectorStats = {};
+  sectors.forEach(s => { sectorStats[s.id] = { ...s, stocks: [], totalChange: 0, count: 0, upCount: 0 }; });
+
+  stocks.forEach(s => {
+    const info = sectorStats[s.sector];
+    if (!info) return;
+    info.stocks.push(s);
+    info.totalChange += (s.change_pct || 0);
+    info.count++;
+    if ((s.change_pct || 0) > 0) info.upCount++;
+  });
+
+  // 按平均漲幅排序
+  const sorted = Object.values(sectorStats)
+    .filter(s => s.count > 0)
+    .map(s => ({
+      ...s,
+      avgChange: s.count ? s.totalChange / s.count : 0
+    }))
+    .sort((a, b) => b.avgChange - a.avgChange);
+
+  el.innerHTML = '<div class="sector-cards">' + sorted.map((s, idx) => {
+    const color = s.avgChange >= 0 ? 'var(--up)' : 'var(--down)';
+    const heat = s.avgChange > 3 ? '🔥🔥🔥' : s.avgChange > 1 ? '🔥🔥' : s.avgChange > 0 ? '🔥' : s.avgChange < -3 ? '❄️❄️' : '❄️';
+    const grade = s.avgChange > 5 ? 'a' : s.avgChange > 2 ? 'b' : s.avgChange > 0 ? 'c' : 'd';
+    const gradeLabel = { a: 'A', b: 'B', c: 'C', d: 'D' }[grade];
+    const sign = s.avgChange >= 0 ? '+' : '';
+
+    // 展開區塊：該族群個股表格
+    const stockRows = s.stocks.map(st => {
+      const chgColor = (st.change_pct || 0) > 0 ? 'var(--up)' : (st.change_pct || 0) < 0 ? 'var(--down)' : 'var(--text-dim)';
+      const chgSign = (st.change_pct || 0) > 0 ? '+' : '';
+      const bhColor = (st.bh_wow || 0) > 0 ? 'var(--up)' : (st.bh_wow || 0) < 0 ? 'var(--down)' : 'var(--text-dim)';
+      const bhSign = (st.bh_wow || 0) > 0 ? '+' : '';
+      return `<tr onclick="location.href='stock_${st.ticker}.html'" style="cursor:pointer;">
+        <td><strong style="color:var(--accent);">${st.ticker}</strong></td>
+        <td>${st.name}</td>
+        <td style="text-align:right;color:${chgColor};">${st.change_pct !== null ? chgSign + st.change_pct.toFixed(2) + '%' : '-'}</td>
+        <td style="text-align:right;">${st.big_holder_pct ? st.big_holder_pct.toFixed(2) + '%' : '-'}</td>
+        <td style="text-align:right;color:${bhColor};">${st.bh_wow !== null ? bhSign + st.bh_wow.toFixed(2) + '%' : '-'}</td>
+        <td style="text-align:right;">${st.foreign ? (st.foreign > 0 ? '+' : '') + st.foreign.toLocaleString() : '-'}</td>
+      </tr>`;
+    }).join('');
+
     return `
-      <div class="heat-bar">
-        <div class="heat-name">${s.name} ${icon}</div>
-        <div class="heat-track">
-          <div class="heat-fill ${colorClass}" style="width:${s.score}%"></div>
+      <div class="sector-card-item" data-sector="${s.id}" onclick="toggleSectorDetail(this)">
+        <div class="sector-card-header">
+          <span class="sector-card-name">${s.name}</span>
+          <span class="sector-card-grade ${grade}">${gradeLabel}</span>
         </div>
-        <div class="heat-value ${s.momentum==='up'?'up':s.momentum==='down'?'down':''}">${s.score}</div>
+        <div style="font-size:0.75rem;color:var(--text-dim);margin-bottom:4px;">${heat}</div>
+        <div class="sector-card-change" style="color:${color};">${sign}${s.avgChange.toFixed(2)}%</div>
+        <div class="sector-card-meta">
+          <div>股票數: ${s.count} 檔</div>
+          <div>上漲: ${s.upCount} 檔</div>
+        </div>
+        <div class="sector-card-hint">👆 點擊查看個股詳情</div>
+        <div class="sector-detail" id="sector-detail-${s.id}">
+          <table style="width:100%;border-collapse:collapse;">
+            <thead>
+              <tr style="border-bottom:1px solid var(--border);color:var(--text-dim);font-size:0.7rem;">
+                <th style="text-align:left;padding:4px;">代號</th>
+                <th style="text-align:left;padding:4px;">名稱</th>
+                <th style="text-align:right;padding:4px;">漲跌%</th>
+                <th style="text-align:right;padding:4px;">大戶%</th>
+                <th style="text-align:right;padding:4px;">週增減</th>
+                <th style="text-align:right;padding:4px;">外資</th>
+              </tr>
+            </thead>
+            <tbody>${stockRows}</tbody>
+          </table>
+        </div>
       </div>
     `;
-  }).join('');
+  }).join('') + '</div>';
+}
+
+// 展開/收起族群詳情
+function toggleSectorDetail(card) {
+  const detail = card.querySelector('.sector-detail');
+  const isOpen = detail.classList.contains('open');
+  // 先關閉所有其他
+  document.querySelectorAll('.sector-detail.open').forEach(d => d.classList.remove('open'));
+  document.querySelectorAll('.sector-card-item.active').forEach(c => c.classList.remove('active'));
+  if (!isOpen) {
+    detail.classList.add('open');
+    card.classList.add('active');
+  }
 }
 
 // 渲染輪動方向
@@ -636,7 +723,6 @@ function removeSort(key) {
 renderSectorHeat();
 renderRotate();
 renderStockTable();
-renderMissed();
 updateSortChips();
 
 // 定時刷新（模擬）

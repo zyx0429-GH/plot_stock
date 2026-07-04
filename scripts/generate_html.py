@@ -1173,16 +1173,10 @@ Chart.defaults.scale.ticks.color = 'var(--text-muted)';
             "2308": "semiconductor", "2313": "pcb", "2382": "ai-server",
         }
 
-        # === 讀取模板（從 workspace 備份恢復，避免編碼損壞） ===
-        workspace_root = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-        backup_path = os.path.join(workspace_root, "sector.html")
+        # === 讀取模板（從 docs/sector.html 讀取，備份已移除） ===
         template_path = os.path.join(DOCS_DIR, "sector.html")
-        if os.path.exists(backup_path):
-            with open(backup_path, "r", encoding="utf-8") as f:
-                template = f.read()
-        else:
-            with open(template_path, "r", encoding="utf-8") as f:
-                template = f.read()
+        with open(template_path, "r", encoding="utf-8") as f:
+            template = f.read()
 
         # === 生成 stocks 數組 ===
         screened = self.data.get("screened", [])
@@ -1237,37 +1231,21 @@ Chart.defaults.scale.ticks.color = 'var(--text-muted)';
                 "cons": cons,
             })
 
-        # === 生成 missed 數組 ===
-        bhr = self.data.get("big_holder_rank", [])
-        bhr_map = {b["stock_id"]: {**b, "rank": i+1} for i, b in enumerate(bhr)}
-        missed_list = []
-        for sid in BIG_HOLDER_MISSED:
-            b = bhr_map.get(sid, {})
-            bh_chg = b.get("big_holder_change", 0)
-            cp = b.get("change_pct", 0)
-            missed_list.append({
-                "ticker": sid,
-                "name": b.get("stock_name", ""),
-                "rank": b.get("rank", 0),
-                "bh_wow": f"{bh_chg:+.2f}%",
-                "weekly_chg": f"{cp:+.2f}%",
-                "bh_pct": f"{b.get('big_holder_pct',0):.2f}%",
-                "signals": [],
-                "category": _get_sector_name(sid),
-                "relation": "",
-            })
-
-        # === 替換佔位符 ===
+        # === 用正則替換 stocks 數組 ===
         stocks_js = _json.dumps(stocks_list, ensure_ascii=False)
-        missed_js = _json.dumps(missed_list, ensure_ascii=False)
-        template = template.replace(
-            "// <!-- STOCKS_DATA_START -->\n// <!-- STOCKS_DATA_END -->",
-            f"const stocks = {stocks_js};"
-        )
-        template = template.replace(
-            "// <!-- MISSED_DATA_START -->\n// <!-- MISSED_DATA_END -->",
-            f"const missed = {missed_js};"
-        )
+        import re
+        # 替換 const stocks = [...]; 整個數組
+        pattern = r'const stocks = \[[\s\S]*?\];\s*(?=// 當前篩選|let currentSector)'
+        replacement = f'const stocks = {stocks_js};\n\n// 當前篩選'
+        template_new = re.sub(pattern, replacement, template)
+        if template_new == template:
+            # 如果正則沒匹配到，嘗試簡單字符串替換
+            # 找到 "const stocks = [" 開頭到 "// 當前篩選" 之前的部分
+            start = template.find('const stocks = [')
+            end = template.find('// 當前篩選')
+            if start != -1 and end != -1:
+                template_new = template[:start] + f'const stocks = {stocks_js};\n\n' + template[end:]
+        template = template_new
 
         # 更新統計日期
         update_time = self.data.get("update_time", "")
