@@ -1135,7 +1135,11 @@ Chart.defaults.scale.ticks.color = 'var(--text-muted)';
         from config import BIG_HOLDER_MISSED, STOCK_SECTOR, SECTOR_MAP as _SECTOR_NAME_MAP
 
         # === 族群映射表 (使用 config.py 的 STOCK_SECTOR + SECTOR_MAP) ===
-        # 動態構建: 股票代號 -> 中文族群名稱
+        # 動態構建: 股票代號 -> 英文族群 key
+        def _get_sector_key(sid):
+            sector_key = STOCK_SECTOR.get(sid, "others")
+            return sector_key if sector_key != "others" else "others"
+        
         def _get_sector_name(sid):
             sector_key = STOCK_SECTOR.get(sid, "others")
             return _SECTOR_NAME_MAP.get(sector_key, "其他")
@@ -1183,7 +1187,7 @@ Chart.defaults.scale.ticks.color = 'var(--text-muted)';
         stocks_list = []
         for s in screened:
             sid = s.get("stock_id", "")
-            sector = _get_sector_name(sid)
+            sector = _get_sector_key(sid)
             tech = s.get("technical", {}) or {}
             pros, cons = [], []
             if s.get("dual_certified"):
@@ -1234,13 +1238,12 @@ Chart.defaults.scale.ticks.color = 'var(--text-muted)';
         # === 用正則替換 stocks 數組 ===
         stocks_js = _json.dumps(stocks_list, ensure_ascii=False)
         import re
-        # 替換 const stocks = [...]; 整個數組
-        pattern = r'const stocks = \[[\s\S]*?\];\s*(?=// 當前篩選|let currentSector)'
-        replacement = f'const stocks = {stocks_js};\n\n// 當前篩選'
+        # 替換 const stocks = [...]; 整個數組（包含後續的空白和 // 當前篩選 註解）
+        pattern = r'const stocks = \[[\s\S]*?\];\s*// 當前篩選\s*'
+        replacement = f'const stocks = {stocks_js};\n\n// 當前篩選\n'
         template_new = re.sub(pattern, replacement, template)
         if template_new == template:
             # 如果正則沒匹配到，嘗試簡單字符串替換
-            # 找到 "const stocks = [" 開頭到 "// 當前篩選" 之前的部分
             start = template.find('const stocks = [')
             end = template.find('// 當前篩選')
             if start != -1 and end != -1:
