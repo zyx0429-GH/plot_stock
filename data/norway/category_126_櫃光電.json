@@ -397,28 +397,6 @@
   },
   {
     "rank": 19,
-    "stock_code": "7753",
-    "stock_name": "星亞",
-    "is_taiwan50": false,
-    "category": "櫃光電",
-    "threshold_code": 32,
-    "threshold_shares": 0,
-    "weekly_changes": {
-      "20260529": 0.0,
-      "20260605": 0.0,
-      "20260612": 0.0,
-      "20260618": 0.0,
-      "20260626": 0.0,
-      "20260703": 0.0
-    },
-    "latest_change": 0.0,
-    "total_change": 0.0,
-    "last_week_hold_pct": 74.16,
-    "close_price": 42.3,
-    "price_change": 0.1
-  },
-  {
-    "rank": 20,
     "stock_code": "6222",
     "stock_name": "立軒",
     "is_taiwan50": false,
@@ -440,7 +418,7 @@
     "price_change": -0.1
   },
   {
-    "rank": 21,
+    "rank": 20,
     "stock_code": "3297",
     "stock_name": "杭特",
     "is_taiwan50": false,
@@ -460,6 +438,28 @@
     "last_week_hold_pct": 49.35,
     "close_price": 31.5,
     "price_change": 0.65
+  },
+  {
+    "rank": 21,
+    "stock_code": "7753",
+    "stock_name": "星亞",
+    "is_taiwan50": false,
+    "category": "櫃光電",
+    "threshold_code": 32,
+    "threshold_shares": 0,
+    "weekly_changes": {
+      "20260529": 0.0,
+      "20260605": 0.0,
+      "20260612": 0.0,
+      "20260618": 0.0,
+      "20260626": 0.0,
+      "20260703": 0.0
+    },
+    "latest_change": 0.0,
+    "total_change": 0.0,
+    "last_week_hold_pct": 74.16,
+    "close_price": 42.3,
+    "price_change": 0.1
   },
   {
     "rank": 22,
@@ -485,28 +485,6 @@
   },
   {
     "rank": 23,
-    "stock_code": "5220",
-    "stock_name": "萬達光電",
-    "is_taiwan50": false,
-    "category": "櫃光電",
-    "threshold_code": 20,
-    "threshold_shares": 0,
-    "weekly_changes": {
-      "20260529": 0.0,
-      "20260605": -0.02,
-      "20260612": 0.0,
-      "20260618": 0.0,
-      "20260626": 0.0,
-      "20260703": -0.01
-    },
-    "latest_change": -0.01,
-    "total_change": -0.03,
-    "last_week_hold_pct": 43.56,
-    "close_price": 20.9,
-    "price_change": 0.15
-  },
-  {
-    "rank": 24,
     "stock_code": "6556",
     "stock_name": "勝品",
     "is_taiwan50": false,
@@ -526,6 +504,28 @@
     "last_week_hold_pct": 78.63,
     "close_price": 71.5,
     "price_change": 0.1
+  },
+  {
+    "rank": 24,
+    "stock_code": "5220",
+    "stock_name": "萬達光電",
+    "is_taiwan50": false,
+    "category": "櫃光電",
+    "threshold_code": 20,
+    "threshold_shares": 0,
+    "weekly_changes": {
+      "20260529": 0.0,
+      "20260605": -0.02,
+      "20260612": 0.0,
+      "20260618": 0.0,
+      "20260626": 0.0,
+      "20260703": -0.01
+    },
+    "latest_change": -0.01,
+    "total_change": -0.03,
+    "last_week_hold_pct": 43.56,
+    "close_price": 20.9,
+    "price_change": 0.15
   },
   {
     "rank": 25,

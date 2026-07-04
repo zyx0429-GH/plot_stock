@@ -947,25 +947,25 @@
   },
   {
     "rank": 44,
-    "stock_code": "6953",
-    "stock_name": "家碩",
+    "stock_code": "7751",
+    "stock_name": "竑騰",
     "is_taiwan50": false,
     "category": "櫃半導體",
-    "threshold_code": 32,
-    "threshold_shares": 0,
+    "threshold_code": 40,
+    "threshold_shares": 200,
     "weekly_changes": {
       "20260529": 0.0,
-      "20260605": 0.0,
-      "20260612": 0.0,
-      "20260618": 0.0,
+      "20260605": 1.64,
+      "20260612": 0.2,
+      "20260618": -1.84,
       "20260626": 0.0,
       "20260703": 0.0
     },
     "latest_change": 0.0,
     "total_change": 0.0,
-    "last_week_hold_pct": 63.57,
-    "close_price": 238.5,
-    "price_change": -3.0
+    "last_week_hold_pct": 47.17,
+    "close_price": 1440.0,
+    "price_change": 30.0
   },
   {
     "rank": 45,
@@ -991,28 +991,6 @@
   },
   {
     "rank": 46,
-    "stock_code": "7751",
-    "stock_name": "竑騰",
-    "is_taiwan50": false,
-    "category": "櫃半導體",
-    "threshold_code": 40,
-    "threshold_shares": 200,
-    "weekly_changes": {
-      "20260529": 0.0,
-      "20260605": 1.64,
-      "20260612": 0.2,
-      "20260618": -1.84,
-      "20260626": 0.0,
-      "20260703": 0.0
-    },
-    "latest_change": 0.0,
-    "total_change": 0.0,
-    "last_week_hold_pct": 47.17,
-    "close_price": 1440.0,
-    "price_change": 30.0
-  },
-  {
-    "rank": 47,
     "stock_code": "6996",
     "stock_name": "力領科技",
     "is_taiwan50": false,
@@ -1032,6 +1010,28 @@
     "last_week_hold_pct": 59.6,
     "close_price": 201.0,
     "price_change": 4.5
+  },
+  {
+    "rank": 47,
+    "stock_code": "6953",
+    "stock_name": "家碩",
+    "is_taiwan50": false,
+    "category": "櫃半導體",
+    "threshold_code": 32,
+    "threshold_shares": 0,
+    "weekly_changes": {
+      "20260529": 0.0,
+      "20260605": 0.0,
+      "20260612": 0.0,
+      "20260618": 0.0,
+      "20260626": 0.0,
+      "20260703": 0.0
+    },
+    "latest_change": 0.0,
+    "total_change": 0.0,
+    "last_week_hold_pct": 63.57,
+    "close_price": 238.5,
+    "price_change": -3.0
   },
   {
     "rank": 48,

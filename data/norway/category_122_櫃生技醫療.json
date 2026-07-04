@@ -1035,28 +1035,6 @@
   },
   {
     "rank": 48,
-    "stock_code": "6649",
-    "stock_name": "台生材",
-    "is_taiwan50": false,
-    "category": "櫃生技醫療",
-    "threshold_code": 31,
-    "threshold_shares": 400,
-    "weekly_changes": {
-      "20260529": -0.02,
-      "20260605": 1.11,
-      "20260612": 0.08,
-      "20260618": -0.1,
-      "20260626": -1.03,
-      "20260703": 0.05
-    },
-    "latest_change": 0.05,
-    "total_change": 0.09,
-    "last_week_hold_pct": 52.44,
-    "close_price": 38.4,
-    "price_change": 0.25
-  },
-  {
-    "rank": 49,
     "stock_code": "6662",
     "stock_name": "樂斯科",
     "is_taiwan50": false,
@@ -1078,7 +1056,7 @@
     "price_change": 0.15
   },
   {
-    "rank": 50,
+    "rank": 49,
     "stock_code": "6730",
     "stock_name": "常廣",
     "is_taiwan50": false,
@@ -1098,6 +1076,28 @@
     "last_week_hold_pct": 74.03,
     "close_price": 38.2,
     "price_change": 0.5
+  },
+  {
+    "rank": 50,
+    "stock_code": "6649",
+    "stock_name": "台生材",
+    "is_taiwan50": false,
+    "category": "櫃生技醫療",
+    "threshold_code": 31,
+    "threshold_shares": 400,
+    "weekly_changes": {
+      "20260529": -0.02,
+      "20260605": 1.11,
+      "20260612": 0.08,
+      "20260618": -0.1,
+      "20260626": -1.03,
+      "20260703": 0.05
+    },
+    "latest_change": 0.05,
+    "total_change": 0.09,
+    "last_week_hold_pct": 52.44,
+    "close_price": 38.4,
+    "price_change": 0.25
   },
   {
     "rank": 51,
@@ -1431,28 +1431,6 @@
   },
   {
     "rank": 66,
-    "stock_code": "4116",
-    "stock_name": "明基醫",
-    "is_taiwan50": false,
-    "category": "櫃生技醫療",
-    "threshold_code": 32,
-    "threshold_shares": 0,
-    "weekly_changes": {
-      "20260529": 0.0,
-      "20260605": 0.0,
-      "20260612": 0.0,
-      "20260618": 0.0,
-      "20260626": 0.0,
-      "20260703": 0.0
-    },
-    "latest_change": 0.0,
-    "total_change": 0.0,
-    "last_week_hold_pct": 54.96,
-    "close_price": 37.05,
-    "price_change": 0.05
-  },
-  {
-    "rank": 67,
     "stock_code": "8279",
     "stock_name": "生展",
     "is_taiwan50": false,
@@ -1472,6 +1450,28 @@
     "last_week_hold_pct": 62.25,
     "close_price": 88.9,
     "price_change": 0.6
+  },
+  {
+    "rank": 67,
+    "stock_code": "4116",
+    "stock_name": "明基醫",
+    "is_taiwan50": false,
+    "category": "櫃生技醫療",
+    "threshold_code": 32,
+    "threshold_shares": 0,
+    "weekly_changes": {
+      "20260529": 0.0,
+      "20260605": 0.0,
+      "20260612": 0.0,
+      "20260618": 0.0,
+      "20260626": 0.0,
+      "20260703": 0.0
+    },
+    "latest_change": 0.0,
+    "total_change": 0.0,
+    "last_week_hold_pct": 54.96,
+    "close_price": 37.05,
+    "price_change": 0.05
   },
   {
     "rank": 68,
@@ -1541,28 +1541,6 @@
   },
   {
     "rank": 71,
-    "stock_code": "6469",
-    "stock_name": "大樹",
-    "is_taiwan50": false,
-    "category": "櫃生技醫療",
-    "threshold_code": 50,
-    "threshold_shares": 400,
-    "weekly_changes": {
-      "20260529": -0.19,
-      "20260605": 0.24,
-      "20260612": 0.05,
-      "20260618": -0.21,
-      "20260626": 0.01,
-      "20260703": 0.04
-    },
-    "latest_change": 0.04,
-    "total_change": -0.06,
-    "last_week_hold_pct": 47.57,
-    "close_price": 76.7,
-    "price_change": 1.5
-  },
-  {
-    "rank": 72,
     "stock_code": "6637",
     "stock_name": "醫影",
     "is_taiwan50": false,
@@ -1582,6 +1560,28 @@
     "last_week_hold_pct": 61.65,
     "close_price": 63.7,
     "price_change": 1.0
+  },
+  {
+    "rank": 72,
+    "stock_code": "6469",
+    "stock_name": "大樹",
+    "is_taiwan50": false,
+    "category": "櫃生技醫療",
+    "threshold_code": 50,
+    "threshold_shares": 400,
+    "weekly_changes": {
+      "20260529": -0.19,
+      "20260605": 0.24,
+      "20260612": 0.05,
+      "20260618": -0.21,
+      "20260626": 0.01,
+      "20260703": 0.04
+    },
+    "latest_change": 0.04,
+    "total_change": -0.06,
+    "last_week_hold_pct": 47.57,
+    "close_price": 76.7,
+    "price_change": 1.5
   },
   {
     "rank": 73,
@@ -1695,28 +1695,6 @@
   },
   {
     "rank": 78,
-    "stock_code": "6875",
-    "stock_name": "國邑",
-    "is_taiwan50": true,
-    "category": "櫃生技醫療",
-    "threshold_code": 10,
-    "threshold_shares": 1000,
-    "weekly_changes": {
-      "20260529": -0.03,
-      "20260605": 0.0,
-      "20260612": -0.04,
-      "20260618": 0.0,
-      "20260626": -0.01,
-      "20260703": -0.11
-    },
-    "latest_change": -0.11,
-    "total_change": -0.19,
-    "last_week_hold_pct": 61.6,
-    "close_price": 37.4,
-    "price_change": -0.05
-  },
-  {
-    "rank": 79,
     "stock_code": "4166",
     "stock_name": "友霖",
     "is_taiwan50": false,
@@ -1736,6 +1714,28 @@
     "last_week_hold_pct": 82.07,
     "close_price": 25.4,
     "price_change": 0.1
+  },
+  {
+    "rank": 79,
+    "stock_code": "6875",
+    "stock_name": "國邑",
+    "is_taiwan50": true,
+    "category": "櫃生技醫療",
+    "threshold_code": 10,
+    "threshold_shares": 1000,
+    "weekly_changes": {
+      "20260529": -0.03,
+      "20260605": 0.0,
+      "20260612": -0.04,
+      "20260618": 0.0,
+      "20260626": -0.01,
+      "20260703": -0.11
+    },
+    "latest_change": -0.11,
+    "total_change": -0.19,
+    "last_week_hold_pct": 61.6,
+    "close_price": 37.4,
+    "price_change": -0.05
   },
   {
     "rank": 80,

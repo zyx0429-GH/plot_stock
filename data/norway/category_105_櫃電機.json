@@ -265,28 +265,6 @@
   },
   {
     "rank": 13,
-    "stock_code": "4527",
-    "stock_name": "方方土霖",
-    "is_taiwan50": false,
-    "category": "櫃電機",
-    "threshold_code": 30,
-    "threshold_shares": 400,
-    "weekly_changes": {
-      "20260529": 0.03,
-      "20260605": 0.17,
-      "20260612": 0.05,
-      "20260618": 0.0,
-      "20260626": 0.02,
-      "20260703": 0.01
-    },
-    "latest_change": 0.01,
-    "total_change": 0.28,
-    "last_week_hold_pct": 66.65,
-    "close_price": 39.85,
-    "price_change": 0.0
-  },
-  {
-    "rank": 14,
     "stock_code": "2235",
     "stock_name": "謚源",
     "is_taiwan50": false,
@@ -306,6 +284,28 @@
     "last_week_hold_pct": 83.83,
     "close_price": 29.9,
     "price_change": 0.05
+  },
+  {
+    "rank": 14,
+    "stock_code": "4527",
+    "stock_name": "方方土霖",
+    "is_taiwan50": false,
+    "category": "櫃電機",
+    "threshold_code": 30,
+    "threshold_shares": 400,
+    "weekly_changes": {
+      "20260529": 0.03,
+      "20260605": 0.17,
+      "20260612": 0.05,
+      "20260618": 0.0,
+      "20260626": 0.02,
+      "20260703": 0.01
+    },
+    "latest_change": 0.01,
+    "total_change": 0.28,
+    "last_week_hold_pct": 66.65,
+    "close_price": 39.85,
+    "price_change": 0.0
   },
   {
     "rank": 15,
@@ -463,28 +463,6 @@
   },
   {
     "rank": 22,
-    "stock_code": "2067",
-    "stock_name": "嘉鋼",
-    "is_taiwan50": false,
-    "category": "櫃電機",
-    "threshold_code": 32,
-    "threshold_shares": 0,
-    "weekly_changes": {
-      "20260529": 0.01,
-      "20260605": 0.0,
-      "20260612": 0.0,
-      "20260618": 0.0,
-      "20260626": 0.0,
-      "20260703": 0.0
-    },
-    "latest_change": 0.0,
-    "total_change": 0.01,
-    "last_week_hold_pct": 56.52,
-    "close_price": 6.8,
-    "price_change": 0.37
-  },
-  {
-    "rank": 23,
     "stock_code": "4580",
     "stock_name": "捷流閥業",
     "is_taiwan50": false,
@@ -506,7 +484,51 @@
     "price_change": 0.1
   },
   {
+    "rank": 23,
+    "stock_code": "2067",
+    "stock_name": "嘉鋼",
+    "is_taiwan50": false,
+    "category": "櫃電機",
+    "threshold_code": 32,
+    "threshold_shares": 0,
+    "weekly_changes": {
+      "20260529": 0.01,
+      "20260605": 0.0,
+      "20260612": 0.0,
+      "20260618": 0.0,
+      "20260626": 0.0,
+      "20260703": 0.0
+    },
+    "latest_change": 0.0,
+    "total_change": 0.01,
+    "last_week_hold_pct": 56.52,
+    "close_price": 6.8,
+    "price_change": 0.37
+  },
+  {
     "rank": 24,
+    "stock_code": "4563",
+    "stock_name": "百德",
+    "is_taiwan50": false,
+    "category": "櫃電機",
+    "threshold_code": 32,
+    "threshold_shares": 0,
+    "weekly_changes": {
+      "20260529": 0.0,
+      "20260605": 0.0,
+      "20260612": 0.0,
+      "20260618": 0.0,
+      "20260626": 0.0,
+      "20260703": 0.0
+    },
+    "latest_change": 0.0,
+    "total_change": 0.0,
+    "last_week_hold_pct": 54.28,
+    "close_price": 43.45,
+    "price_change": 0.95
+  },
+  {
+    "rank": 25,
     "stock_code": "4528",
     "stock_name": "江興鍛",
     "is_taiwan50": false,
@@ -528,7 +550,7 @@
     "price_change": 0.25
   },
   {
-    "rank": 25,
+    "rank": 26,
     "stock_code": "4584",
     "stock_name": "君帆",
     "is_taiwan50": false,
@@ -550,7 +572,7 @@
     "price_change": 0.7
   },
   {
-    "rank": 26,
+    "rank": 27,
     "stock_code": "3379",
     "stock_name": "彬台",
     "is_taiwan50": false,
@@ -570,28 +592,6 @@
     "last_week_hold_pct": 27.41,
     "close_price": 36.0,
     "price_change": -0.05
-  },
-  {
-    "rank": 27,
-    "stock_code": "4563",
-    "stock_name": "百德",
-    "is_taiwan50": false,
-    "category": "櫃電機",
-    "threshold_code": 32,
-    "threshold_shares": 0,
-    "weekly_changes": {
-      "20260529": 0.0,
-      "20260605": 0.0,
-      "20260612": 0.0,
-      "20260618": 0.0,
-      "20260626": 0.0,
-      "20260703": 0.0
-    },
-    "latest_change": 0.0,
-    "total_change": 0.0,
-    "last_week_hold_pct": 54.28,
-    "close_price": 43.45,
-    "price_change": 0.95
   },
   {
     "rank": 28,

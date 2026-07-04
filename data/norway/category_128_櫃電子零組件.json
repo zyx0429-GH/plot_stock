@@ -507,28 +507,6 @@
   },
   {
     "rank": 24,
-    "stock_code": "8109",
-    "stock_name": "博大",
-    "is_taiwan50": false,
-    "category": "櫃電子零組件",
-    "threshold_code": 31,
-    "threshold_shares": 400,
-    "weekly_changes": {
-      "20260529": 0.47,
-      "20260605": -0.53,
-      "20260612": 0.0,
-      "20260618": 0.1,
-      "20260626": 0.06,
-      "20260703": 0.51
-    },
-    "latest_change": 0.51,
-    "total_change": 0.61,
-    "last_week_hold_pct": 54.8,
-    "close_price": 140.5,
-    "price_change": 12.5
-  },
-  {
-    "rank": 25,
     "stock_code": "3388",
     "stock_name": "崇越電",
     "is_taiwan50": false,
@@ -548,6 +526,28 @@
     "last_week_hold_pct": 41.12,
     "close_price": 85.9,
     "price_change": -0.1
+  },
+  {
+    "rank": 25,
+    "stock_code": "8109",
+    "stock_name": "博大",
+    "is_taiwan50": false,
+    "category": "櫃電子零組件",
+    "threshold_code": 31,
+    "threshold_shares": 400,
+    "weekly_changes": {
+      "20260529": 0.47,
+      "20260605": -0.53,
+      "20260612": 0.0,
+      "20260618": 0.1,
+      "20260626": 0.06,
+      "20260703": 0.51
+    },
+    "latest_change": 0.51,
+    "total_change": 0.61,
+    "last_week_hold_pct": 54.8,
+    "close_price": 140.5,
+    "price_change": 12.5
   },
   {
     "rank": 26,
@@ -815,28 +815,6 @@
   },
   {
     "rank": 38,
-    "stock_code": "3492",
-    "stock_name": "長盛",
-    "is_taiwan50": false,
-    "category": "櫃電子零組件",
-    "threshold_code": 30,
-    "threshold_shares": 400,
-    "weekly_changes": {
-      "20260529": 0.06,
-      "20260605": 0.02,
-      "20260612": 0.01,
-      "20260618": 0.0,
-      "20260626": 0.03,
-      "20260703": 0.0
-    },
-    "latest_change": 0.0,
-    "total_change": 0.12,
-    "last_week_hold_pct": 48.32,
-    "close_price": 23.0,
-    "price_change": 0.55
-  },
-  {
-    "rank": 39,
     "stock_code": "3646",
     "stock_name": "艾恩特",
     "is_taiwan50": false,
@@ -856,6 +834,28 @@
     "last_week_hold_pct": 49.07,
     "close_price": 23.35,
     "price_change": 0.0
+  },
+  {
+    "rank": 39,
+    "stock_code": "3492",
+    "stock_name": "長盛",
+    "is_taiwan50": false,
+    "category": "櫃電子零組件",
+    "threshold_code": 30,
+    "threshold_shares": 400,
+    "weekly_changes": {
+      "20260529": 0.06,
+      "20260605": 0.02,
+      "20260612": 0.01,
+      "20260618": 0.0,
+      "20260626": 0.03,
+      "20260703": 0.0
+    },
+    "latest_change": 0.0,
+    "total_change": 0.12,
+    "last_week_hold_pct": 48.32,
+    "close_price": 23.0,
+    "price_change": 0.55
   },
   {
     "rank": 40,
@@ -903,6 +903,28 @@
   },
   {
     "rank": 42,
+    "stock_code": "3597",
+    "stock_name": "映興",
+    "is_taiwan50": false,
+    "category": "櫃電子零組件",
+    "threshold_code": 30,
+    "threshold_shares": 400,
+    "weekly_changes": {
+      "20260529": 0.03,
+      "20260605": -0.01,
+      "20260612": 0.0,
+      "20260618": 0.0,
+      "20260626": 0.02,
+      "20260703": 0.0
+    },
+    "latest_change": 0.0,
+    "total_change": 0.04,
+    "last_week_hold_pct": 64.33,
+    "close_price": 26.65,
+    "price_change": 0.25
+  },
+  {
+    "rank": 43,
     "stock_code": "5498",
     "stock_name": "凱崴",
     "is_taiwan50": false,
@@ -924,7 +946,7 @@
     "price_change": -0.3
   },
   {
-    "rank": 43,
+    "rank": 44,
     "stock_code": "6124",
     "stock_name": "業強",
     "is_taiwan50": false,
@@ -944,28 +966,6 @@
     "last_week_hold_pct": 93.73,
     "close_price": 29.9,
     "price_change": 0.05
-  },
-  {
-    "rank": 44,
-    "stock_code": "3597",
-    "stock_name": "映興",
-    "is_taiwan50": false,
-    "category": "櫃電子零組件",
-    "threshold_code": 30,
-    "threshold_shares": 400,
-    "weekly_changes": {
-      "20260529": 0.03,
-      "20260605": -0.01,
-      "20260612": 0.0,
-      "20260618": 0.0,
-      "20260626": 0.02,
-      "20260703": 0.0
-    },
-    "latest_change": 0.0,
-    "total_change": 0.04,
-    "last_week_hold_pct": 64.33,
-    "close_price": 26.65,
-    "price_change": 0.25
   },
   {
     "rank": 45,
@@ -991,72 +991,6 @@
   },
   {
     "rank": 46,
-    "stock_code": "3288",
-    "stock_name": "點晶",
-    "is_taiwan50": false,
-    "category": "櫃電子零組件",
-    "threshold_code": 32,
-    "threshold_shares": 0,
-    "weekly_changes": {
-      "20260529": 0.0,
-      "20260605": 0.0,
-      "20260612": 0.0,
-      "20260618": 0.0,
-      "20260626": 0.0,
-      "20260703": 0.0
-    },
-    "latest_change": 0.0,
-    "total_change": 0.0,
-    "last_week_hold_pct": 48.22,
-    "close_price": 19.8,
-    "price_change": -0.1
-  },
-  {
-    "rank": 47,
-    "stock_code": "6204",
-    "stock_name": "艾華",
-    "is_taiwan50": false,
-    "category": "櫃電子零組件",
-    "threshold_code": 32,
-    "threshold_shares": 0,
-    "weekly_changes": {
-      "20260529": 0.0,
-      "20260605": 0.0,
-      "20260612": 0.0,
-      "20260618": 0.0,
-      "20260626": 0.0,
-      "20260703": 0.0
-    },
-    "latest_change": 0.0,
-    "total_change": 0.0,
-    "last_week_hold_pct": 29.72,
-    "close_price": 122.0,
-    "price_change": -3.0
-  },
-  {
-    "rank": 48,
-    "stock_code": "6210",
-    "stock_name": "慶生",
-    "is_taiwan50": false,
-    "category": "櫃電子零組件",
-    "threshold_code": 32,
-    "threshold_shares": 0,
-    "weekly_changes": {
-      "20260529": 0.0,
-      "20260605": 0.0,
-      "20260612": 0.0,
-      "20260618": 0.0,
-      "20260626": 0.0,
-      "20260703": 0.0
-    },
-    "latest_change": 0.0,
-    "total_change": 0.0,
-    "last_week_hold_pct": 54.12,
-    "close_price": 19.9,
-    "price_change": -0.2
-  },
-  {
-    "rank": 49,
     "stock_code": "3115",
     "stock_name": "富榮綱",
     "is_taiwan50": false,
@@ -1078,7 +1012,29 @@
     "price_change": 0.3
   },
   {
-    "rank": 50,
+    "rank": 47,
+    "stock_code": "6967",
+    "stock_name": "汎瑋材料",
+    "is_taiwan50": false,
+    "category": "櫃電子零組件",
+    "threshold_code": 32,
+    "threshold_shares": 0,
+    "weekly_changes": {
+      "20260529": 0.0,
+      "20260605": 0.0,
+      "20260612": 0.0,
+      "20260618": 0.0,
+      "20260626": 0.0,
+      "20260703": 0.0
+    },
+    "latest_change": 0.0,
+    "total_change": 0.0,
+    "last_week_hold_pct": 75.66,
+    "close_price": 74.0,
+    "price_change": 1.8
+  },
+  {
+    "rank": 48,
     "stock_code": "3202",
     "stock_name": "樺晟",
     "is_taiwan50": false,
@@ -1100,7 +1056,73 @@
     "price_change": null
   },
   {
+    "rank": 49,
+    "stock_code": "6204",
+    "stock_name": "艾華",
+    "is_taiwan50": false,
+    "category": "櫃電子零組件",
+    "threshold_code": 32,
+    "threshold_shares": 0,
+    "weekly_changes": {
+      "20260529": 0.0,
+      "20260605": 0.0,
+      "20260612": 0.0,
+      "20260618": 0.0,
+      "20260626": 0.0,
+      "20260703": 0.0
+    },
+    "latest_change": 0.0,
+    "total_change": 0.0,
+    "last_week_hold_pct": 29.72,
+    "close_price": 122.0,
+    "price_change": -3.0
+  },
+  {
+    "rank": 50,
+    "stock_code": "6210",
+    "stock_name": "慶生",
+    "is_taiwan50": false,
+    "category": "櫃電子零組件",
+    "threshold_code": 32,
+    "threshold_shares": 0,
+    "weekly_changes": {
+      "20260529": 0.0,
+      "20260605": 0.0,
+      "20260612": 0.0,
+      "20260618": 0.0,
+      "20260626": 0.0,
+      "20260703": 0.0
+    },
+    "latest_change": 0.0,
+    "total_change": 0.0,
+    "last_week_hold_pct": 54.12,
+    "close_price": 19.9,
+    "price_change": -0.2
+  },
+  {
     "rank": 51,
+    "stock_code": "3288",
+    "stock_name": "點晶",
+    "is_taiwan50": false,
+    "category": "櫃電子零組件",
+    "threshold_code": 32,
+    "threshold_shares": 0,
+    "weekly_changes": {
+      "20260529": 0.0,
+      "20260605": 0.0,
+      "20260612": 0.0,
+      "20260618": 0.0,
+      "20260626": 0.0,
+      "20260703": 0.0
+    },
+    "latest_change": 0.0,
+    "total_change": 0.0,
+    "last_week_hold_pct": 48.22,
+    "close_price": 19.8,
+    "price_change": -0.1
+  },
+  {
+    "rank": 52,
     "stock_code": "6597",
     "stock_name": "立誠",
     "is_taiwan50": false,
@@ -1120,28 +1142,6 @@
     "last_week_hold_pct": 80.67,
     "close_price": 67.6,
     "price_change": 2.6
-  },
-  {
-    "rank": 52,
-    "stock_code": "6967",
-    "stock_name": "汎瑋材料",
-    "is_taiwan50": false,
-    "category": "櫃電子零組件",
-    "threshold_code": 32,
-    "threshold_shares": 0,
-    "weekly_changes": {
-      "20260529": 0.0,
-      "20260605": 0.0,
-      "20260612": 0.0,
-      "20260618": 0.0,
-      "20260626": 0.0,
-      "20260703": 0.0
-    },
-    "latest_change": 0.0,
-    "total_change": 0.0,
-    "last_week_hold_pct": 75.66,
-    "close_price": 74.0,
-    "price_change": 1.8
   },
   {
     "rank": 53,
@@ -1959,28 +1959,6 @@
   },
   {
     "rank": 90,
-    "stock_code": "8291",
-    "stock_name": "尚茂",
-    "is_taiwan50": false,
-    "category": "櫃電子零組件",
-    "threshold_code": 31,
-    "threshold_shares": 400,
-    "weekly_changes": {
-      "20260529": -0.28,
-      "20260605": -3.26,
-      "20260612": 0.0,
-      "20260618": 2.89,
-      "20260626": -2.89,
-      "20260703": 0.0
-    },
-    "latest_change": 0.0,
-    "total_change": -3.54,
-    "last_week_hold_pct": 71.9,
-    "close_price": 37.2,
-    "price_change": -1.8
-  },
-  {
-    "rank": 91,
     "stock_code": "6821",
     "stock_name": "聯寶",
     "is_taiwan50": false,
@@ -2000,6 +1978,28 @@
     "last_week_hold_pct": 48.56,
     "close_price": 60.5,
     "price_change": 0.0
+  },
+  {
+    "rank": 91,
+    "stock_code": "8291",
+    "stock_name": "尚茂",
+    "is_taiwan50": false,
+    "category": "櫃電子零組件",
+    "threshold_code": 31,
+    "threshold_shares": 400,
+    "weekly_changes": {
+      "20260529": -0.28,
+      "20260605": -3.26,
+      "20260612": 0.0,
+      "20260618": 2.89,
+      "20260626": -2.89,
+      "20260703": 0.0
+    },
+    "latest_change": 0.0,
+    "total_change": -3.54,
+    "last_week_hold_pct": 71.9,
+    "close_price": 37.2,
+    "price_change": -1.8
   },
   {
     "rank": 92,

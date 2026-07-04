@@ -507,28 +507,6 @@
   },
   {
     "rank": 24,
-    "stock_code": "7728",
-    "stock_name": "光焱科技",
-    "is_taiwan50": false,
-    "category": "櫃其他電子",
-    "threshold_code": 32,
-    "threshold_shares": 0,
-    "weekly_changes": {
-      "20260529": 0.0,
-      "20260605": 0.0,
-      "20260612": 0.0,
-      "20260618": 0.0,
-      "20260626": 0.0,
-      "20260703": 0.0
-    },
-    "latest_change": 0.0,
-    "total_change": 0.0,
-    "last_week_hold_pct": 57.14,
-    "close_price": 672.0,
-    "price_change": 16.0
-  },
-  {
-    "rank": 25,
     "stock_code": "8455",
     "stock_name": "大拓-KY",
     "is_taiwan50": false,
@@ -548,6 +526,28 @@
     "last_week_hold_pct": 89.91,
     "close_price": 28.8,
     "price_change": 1.05
+  },
+  {
+    "rank": 25,
+    "stock_code": "7728",
+    "stock_name": "光焱科技",
+    "is_taiwan50": false,
+    "category": "櫃其他電子",
+    "threshold_code": 32,
+    "threshold_shares": 0,
+    "weekly_changes": {
+      "20260529": 0.0,
+      "20260605": 0.0,
+      "20260612": 0.0,
+      "20260618": 0.0,
+      "20260626": 0.0,
+      "20260703": 0.0
+    },
+    "latest_change": 0.0,
+    "total_change": 0.0,
+    "last_week_hold_pct": 57.14,
+    "close_price": 672.0,
+    "price_change": 16.0
   },
   {
     "rank": 26,

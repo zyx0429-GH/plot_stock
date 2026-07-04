@@ -155,28 +155,6 @@
   },
   {
     "rank": 8,
-    "stock_code": "6154",
-    "stock_name": "順發",
-    "is_taiwan50": false,
-    "category": "櫃電子通路",
-    "threshold_code": 32,
-    "threshold_shares": 0,
-    "weekly_changes": {
-      "20260529": 0.0,
-      "20260605": 0.0,
-      "20260612": 0.0,
-      "20260618": 0.0,
-      "20260626": 0.0,
-      "20260703": 0.0
-    },
-    "latest_change": 0.0,
-    "total_change": 0.0,
-    "last_week_hold_pct": 63.28,
-    "close_price": 13.75,
-    "price_change": 0.1
-  },
-  {
-    "rank": 9,
     "stock_code": "8067",
     "stock_name": "志旭",
     "is_taiwan50": false,
@@ -196,6 +174,28 @@
     "last_week_hold_pct": 81.37,
     "close_price": 13.45,
     "price_change": 0.2
+  },
+  {
+    "rank": 9,
+    "stock_code": "6154",
+    "stock_name": "順發",
+    "is_taiwan50": false,
+    "category": "櫃電子通路",
+    "threshold_code": 32,
+    "threshold_shares": 0,
+    "weekly_changes": {
+      "20260529": 0.0,
+      "20260605": 0.0,
+      "20260612": 0.0,
+      "20260618": 0.0,
+      "20260626": 0.0,
+      "20260703": 0.0
+    },
+    "latest_change": 0.0,
+    "total_change": 0.0,
+    "last_week_hold_pct": 63.28,
+    "close_price": 13.75,
+    "price_change": 0.1
   },
   {
     "rank": 10,
