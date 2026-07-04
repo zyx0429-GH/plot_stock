@@ -755,7 +755,7 @@ Chart.defaults.scale.ticks.color = 'var(--text-muted)';
             return None
         data = self.raw_data[stock_id]
         info = data.get("info", {})
-        price_data = data.get("price", [])
+        price_data = data.get("price", {})
         foreign = data.get("foreign", [])
 
         screened_item = None
@@ -764,8 +764,21 @@ Chart.defaults.scale.ticks.color = 'var(--text-muted)';
                 screened_item = s
                 break
 
-        tech = screened_item.get("technical", {}) if screened_item else {}
-        margin = screened_item.get("margin", {}) if screened_item else {}
+        # 技術指標：優先使用 screened_item，否則從 raw_data.price 提取
+        if screened_item:
+            tech = screened_item.get("technical", {}) or {}
+            margin = screened_item.get("margin", {}) or {}
+        else:
+            # 從 raw_data.price 提取技術指標
+            tech = {}
+            if price_data:
+                tech["ma20"] = price_data.get("ma20", "-")
+                tech["ma60"] = price_data.get("ma60", "-")
+                tech["rsi"] = price_data.get("rsi", "-")
+                tech["trend"] = price_data.get("trend", "-")
+                tech["bias20"] = price_data.get("bias20", "-")
+                tech["bias60"] = price_data.get("bias60", "-")
+            margin = {}
 
         lines = []
         lines.append(self._head(f"{stock_id} {info.get('stock_name','')}｜個股看板"))
@@ -774,11 +787,28 @@ Chart.defaults.scale.ticks.color = 'var(--text-muted)';
         lines.append(f'<div class="container"><div class="stock-header"><h1>{stock_id} {info.get("stock_name","")}</h1><div class="stock-price"><span class="price">{info.get("close",0):.2f}</span><span class="change {"up" if info.get("change_pct",0)>0 else "down"}">{info.get("change_pct",0):+.2f}%</span></div></div>')
         lines.append('<div class="metrics-grid">')
 
-        # === 變數提取（供 helper function 與模板使用） ===
+        # 融資融券：screened_item 缺失時，從 raw_data.margin 提取
+        margin_raw = data.get("margin", [])
+        if not margin and margin_raw and isinstance(margin_raw, list) and len(margin_raw) > 0:
+            mr = margin_raw[0]
+            margin = {
+                "balance": mr.get("margin_balance", 0),
+                "short_balance": mr.get("short_balance", 0),
+                "ratio": mr.get("margin_short_ratio", 0),
+                "margin_change": mr.get("margin_change", 0),
+                "short_change": mr.get("short_change", 0),
+                "margin_usage_pct": mr.get("margin_usage_pct", 0),
+            }
         foreign_consecutive = screened_item.get("foreign_consecutive_buy") if screened_item else False
-        foreign_net = screened_item.get("foreign_net") if screened_item and screened_item.get("foreign_net") is not None else 0
+        foreign_net = screened_item.get("foreign_net") if screened_item and screened_item.get("foreign_net") is not None else info.get("foreign_net", 0)
         big_holder_pct = screened_item.get("big_holder_pct") if screened_item and screened_item.get("big_holder_pct") is not None else None
         big_holder_change = screened_item.get("big_holder_change") if screened_item and screened_item.get("big_holder_change") is not None else None
+        # 大戶籌碼：screened_item 缺失時，從 shareholder 提取
+        shareholder_list = data.get("shareholder", [])
+        if big_holder_pct is None and shareholder_list:
+            big_holder_pct = shareholder_list[0].get("concentration")
+        if big_holder_change is None and shareholder_list:
+            big_holder_change = shareholder_list[0].get("latest_change", 0)
         bh_pct_str = f"{big_holder_pct:.2f}" if big_holder_pct is not None else "-"
         bh_chg_str = f"{big_holder_change:+.2f}" if big_holder_change is not None else "-"
         open_val = info.get("open", 0) if info else 0
@@ -804,7 +834,6 @@ Chart.defaults.scale.ticks.color = 'var(--text-muted)';
         bias20_color = _bias_color(bias20)
         bias60_color = _bias_color(bias60)
         dual_bear_badge = f'<span style="background:#dc2626;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.75rem;margin-left:8px;">⚠️ 双破线</span>' if dual_bear else ''
-        shareholder_list = data.get("shareholder", [])
         conc = shareholder_list[0].get("concentration", 0) if shareholder_list else 0
         total_count = shareholder_list[0].get("total_count", 0) if shareholder_list else 0
         big_holder_count = shareholder_list[0].get("big_holder_count", 0) if shareholder_list else 0
