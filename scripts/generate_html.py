@@ -1227,10 +1227,11 @@ Chart.defaults.scale.ticks.color = 'var(--text-muted)';
                 "big_holder_pct": s.get("big_holder_pct", 0),
                 "bh_wow": bh_chg,
                 "foreign": fn,
-                "volume": None,
+                "volume": s.get("volume", None),
                 "eps_q1": None,
                 "revenue_yoy": None,
                 "pe": None,
+                "chip_score": s.get("score", 50),
                 "pros": pros,
                 "cons": cons,
             })
