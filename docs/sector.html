@@ -491,6 +491,9 @@ function calcChipScore(s) {
   return Math.max(0, Math.min(100, score));
 }
 
+// 全局計算後的族群數據（供 renderRotate 同步使用）
+let computedSectors = [];
+
 // 渲染族群熱度 — 卡片式，點擊彈出完整模態框
 function renderSectorHeat() {
   const el = document.getElementById('sector-heat');
@@ -509,16 +512,22 @@ function renderSectorHeat() {
     if ((s.change_pct || 0) > 0) info.upCount++;
   });
 
-  // 按平均漲幅排序
-  const sorted = Object.values(sectorStats)
+  // 按平均漲幅排序，只保留有數據的族群
+  computedSectors = Object.values(sectorStats)
     .filter(s => s.count > 0)
-    .map(s => ({
-      ...s,
-      avgChange: s.count ? s.totalChange / s.count : 0
-    }))
+    .map(s => {
+      const avgChange = s.count ? s.totalChange / s.count : 0;
+      // 動態判斷 momentum（不再用硬編碼）
+      let momentum = 'sideways';
+      if (avgChange > 1.5) momentum = 'up';
+      else if (avgChange < -1.5) momentum = 'down';
+      // 動態 score：avgChange * 10 + 50，限制 0-100
+      const score = Math.max(0, Math.min(100, Math.round(avgChange * 10 + 50)));
+      return { ...s, avgChange, momentum, score };
+    })
     .sort((a, b) => b.avgChange - a.avgChange);
 
-  el.innerHTML = '<div class="sector-cards">' + sorted.map((s, idx) => {
+  el.innerHTML = '<div class="sector-cards">' + computedSectors.map((s, idx) => {
     const color = s.avgChange >= 0 ? 'var(--up)' : 'var(--down)';
     const heat = s.avgChange > 3 ? '🔥🔥🔥' : s.avgChange > 1 ? '🔥🔥' : s.avgChange > 0 ? '🔥' : s.avgChange < -3 ? '❄️❄️' : '❄️';
     const grade = s.avgChange > 5 ? 'a' : s.avgChange > 2 ? 'b' : s.avgChange > 0 ? 'c' : 'd';
@@ -640,14 +649,16 @@ function showSectorPopup(sectorName, sectorId) {
   document.body.appendChild(modal);
 }
 
-// 渲染輪動方向（含對齊能量條）
+// 渲染輪動方向（含對齊能量條）— 使用 computedSectors 確保與族群卡片一致
 function renderRotate() {
   const inEl = document.getElementById('rotate-in');
   const outEl = document.getElementById('rotate-out');
 
-  const upSectors = sectors.filter(s => s.momentum === 'up').sort((a,b) => b.score - a.score);
-  const downSectors = sectors.filter(s => s.momentum === 'down').sort((a,b) => a.score - b.score);
-  const flatSectors = sectors.filter(s => s.momentum === 'sideways');
+  if (!computedSectors.length) return;
+
+  const upSectors = computedSectors.filter(s => s.momentum === 'up');
+  const downSectors = computedSectors.filter(s => s.momentum === 'down');
+  const flatSectors = computedSectors.filter(s => s.momentum === 'sideways');
 
   function renderSectorRow(s, dirLabel, dirClass) {
     const barColor = s.score >= 70 ? '#16a34a' : s.score >= 50 ? '#f59e0b' : s.score >= 35 ? '#f97316' : '#dc2626';
