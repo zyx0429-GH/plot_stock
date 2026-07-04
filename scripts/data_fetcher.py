@@ -218,7 +218,7 @@ class TWStockDataFetcher:
         return pd.DataFrame()
 
     def _calc_technical(self, df):
-        """計算技術指標 (MA20, MA60, RSI)"""
+        """計算技術指標 (MA20, MA60, RSI, MACD, KD, Bollinger Bands)"""
         if df.empty or len(df) < 20:
             return {}
         close = df["Close"]
@@ -247,6 +247,128 @@ class TWStockDataFetcher:
             trend = "短多頭" if ma20 > ma60 else "短空頭"
         else:
             trend = ""
+
+        # MACD (12, 26, 9)
+        macd_result = {}
+        if len(df) >= 35:
+            ema12 = close.ewm(span=12, adjust=False).mean()
+            ema26 = close.ewm(span=26, adjust=False).mean()
+            dif = ema12 - ema26
+            dea = dif.ewm(span=9, adjust=False).mean()
+            hist = dif - dea
+            latest_dif = dif.iloc[-1]
+            latest_dea = dea.iloc[-1]
+            latest_hist = hist.iloc[-1]
+            macd_score = 50
+            if latest_dif > 0:
+                macd_score += 15
+            else:
+                macd_score -= 15
+            if latest_hist > 0:
+                macd_score += 15
+            else:
+                macd_score -= 15
+            if len(hist) >= 2 and hist.iloc[-1] > hist.iloc[-2]:
+                macd_score += 10
+            else:
+                macd_score -= 10
+            macd_score = max(0, min(100, macd_score))
+            
+            if latest_dif > latest_dea and latest_dif > 0:
+                macd_signal = "多頭強勢"
+            elif latest_dif > latest_dea and latest_dif < 0:
+                macd_signal = "多頭轉強"
+            elif latest_dif < latest_dea and latest_dif > 0:
+                macd_signal = "多頭轉弱"
+            else:
+                macd_signal = "空頭弱勢"
+            
+            macd_result = {
+                "dif": round(latest_dif, 4) if not pd.isna(latest_dif) else "-",
+                "dea": round(latest_dea, 4) if not pd.isna(latest_dea) else "-",
+                "hist": round(latest_hist, 4) if not pd.isna(latest_hist) else "-",
+                "score": macd_score,
+                "signal": macd_signal,
+            }
+        else:
+            macd_result = {"dif": "-", "dea": "-", "hist": "-", "score": "-", "signal": "資料不足"}
+
+        # KD (9, 3, 3)
+        kd_result = {}
+        if len(df) >= 9:
+            low_min = df["Low"].rolling(window=9, min_periods=1).min()
+            high_max = df["High"].rolling(window=9, min_periods=1).max()
+            rsv = (close - low_min) / (high_max - low_min) * 100
+            rsv = rsv.fillna(50)
+            
+            k = [50]
+            for i in range(1, len(df)):
+                k.append((2/3) * k[i-1] + (1/3) * rsv.iloc[i])
+            d = [50]
+            for i in range(1, len(df)):
+                d.append((2/3) * d[i-1] + (1/3) * k[i])
+            
+            latest_k = k[-1]
+            latest_d = d[-1]
+            
+            if latest_k > 80 and latest_d > 80:
+                kd_signal = "超買區 — 注意回檔"
+            elif latest_k < 20 and latest_d < 20:
+                kd_signal = "超賣區 — 可能反彈"
+            elif latest_k > latest_d and latest_k > latest_d + 5:
+                kd_signal = "黃金交叉 — 偏多"
+            elif latest_k < latest_d and latest_d > latest_k + 5:
+                kd_signal = "死亡交叉 — 偏空"
+            else:
+                kd_signal = "盤整 — 方向不明"
+            
+            kd_result = {
+                "k": round(latest_k, 2),
+                "d": round(latest_d, 2),
+                "signal": kd_signal,
+            }
+        else:
+            kd_result = {"k": "-", "d": "-", "signal": "資料不足"}
+
+        # Bollinger Bands (20, 2)
+        bb_result = {}
+        if len(df) >= 20:
+            bb_middle = close.rolling(20).mean()
+            bb_std = close.rolling(20).std()
+            bb_upper = bb_middle + bb_std * 2
+            bb_lower = bb_middle - bb_std * 2
+            bb_bw = ((bb_upper - bb_lower) / bb_middle) * 100
+            bb_pct = (close - bb_lower) / (bb_upper - bb_lower)
+            
+            latest_upper = bb_upper.iloc[-1]
+            latest_lower = bb_lower.iloc[-1]
+            latest_middle = bb_middle.iloc[-1]
+            latest_pct = bb_pct.iloc[-1]
+            
+            if last_close >= latest_upper:
+                pos = "upper_band"
+                pos_text = "觸及上軌"
+            elif last_close <= latest_lower:
+                pos = "lower_band"
+                pos_text = "觸及下軌"
+            elif last_close > latest_middle:
+                pos = "upper_half"
+                pos_text = "上軌與中軌之間"
+            else:
+                pos = "lower_half"
+                pos_text = "下軌與中軌之間"
+            
+            bb_result = {
+                "upper": round(latest_upper, 2) if not pd.isna(latest_upper) else "-",
+                "middle": round(latest_middle, 2) if not pd.isna(latest_middle) else "-",
+                "lower": round(latest_lower, 2) if not pd.isna(latest_lower) else "-",
+                "position": pos,
+                "position_text": pos_text,
+                "pct_b": round(latest_pct, 4) if not pd.isna(latest_pct) else "-",
+            }
+        else:
+            bb_result = {"upper": "-", "middle": "-", "lower": "-", "position": "-", "position_text": "資料不足", "pct_b": "-"}
+
         return {
             "ma20": round(ma20, 2) if ma20 else "-",
             "ma60": round(ma60, 2) if ma60 else "-",
@@ -254,6 +376,9 @@ class TWStockDataFetcher:
             "trend": trend,
             "bias20": round(bias20, 2) if bias20 is not None and not pd.isna(bias20) else "-",
             "bias60": round(bias60, 2) if bias60 is not None and not pd.isna(bias60) else "-",
+            "macd": macd_result,
+            "kd": kd_result,
+            "bollinger": bb_result,
         }
 
     def _fetch_tpex_quotes(self, today_str, yesterday_str):

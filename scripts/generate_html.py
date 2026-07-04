@@ -61,7 +61,7 @@ Chart.defaults.scale.ticks.color = 'var(--text-muted)';
 </head>"""
 
     def _nav(self, active=""):
-        items = [("index.html","📊 首頁"),("watchlist.html","⭐ 自選"),("etf_00981a.html","📈 00981A"),("etf_00982a.html","📈 00982A"),("sector.html","🔄 族群輪動"),("weekly_ranking.html","📅 週排行")]
+        items = [("index.html","📊 首頁"),("watchlist.html","⭐ 自選"),("etf_00981a.html","📈 00981A"),("etf_00982a.html","📈 00982A"),("sector.html","🔄 族群輪動"),("weekly_ranking.html","📅 週排行"),("backtest_report.html","🧪 回測報告")]
         html = '<nav class="navbar"><a href="index.html" class="nav-brand">🔥 跟隨大戶選股站</a><span style="color:var(--text-secondary);">|</span><div class="nav-links">'
         for href, text in items:
             if active and active in href:
@@ -779,6 +779,14 @@ Chart.defaults.scale.ticks.color = 'var(--text-muted)';
                 tech["bias20"] = price_data.get("bias20", "-")
                 tech["bias60"] = price_data.get("bias60", "-")
             margin = {}
+        
+        # 補充新技術指標 (macd, kd, bollinger) — 從 raw_data.price 提取
+        if not tech.get("macd") and price_data and isinstance(price_data, dict):
+            tech["macd"] = price_data.get("macd", {})
+        if not tech.get("kd") and price_data and isinstance(price_data, dict):
+            tech["kd"] = price_data.get("kd", {})
+        if not tech.get("bollinger") and price_data and isinstance(price_data, dict):
+            tech["bollinger"] = price_data.get("bollinger", {})
 
         lines = []
         lines.append(self._head(f"{stock_id} {info.get('stock_name','')}｜個股看板"))
@@ -936,6 +944,36 @@ Chart.defaults.scale.ticks.color = 'var(--text-muted)';
         lines.append(f'<div class="metric-card"><h3>📐 乖離率{dual_bear_badge}</h3><p>20MA乖離: <span style="color:{bias20_color};font-weight:600;">{bias20_str}</span></p><p>60MA乖離: <span style="color:{bias60_color};font-weight:600;">{bias60_str}</span></p><p style="margin-top:8px;font-size:0.85rem;color:var(--text-muted);background:var(--badge-bg);padding:4px 8px;border-radius:4px;">{bias_signal}</p></div>')
         if shareholder_list:
             lines.append(f'<div class="metric-card"><h3>👥 集保集中度</h3><p><span style="color:{conc_color};font-weight:600;font-size:1.3rem;">{conc:.2f}%</span></p><p>大戶人數: {big_holder_count:,} / 總人數: {total_count:,}</p><p style="margin-top:8px;font-size:0.85rem;color:var(--text-muted);background:var(--badge-bg);padding:4px 8px;border-radius:4px;">{conc_signal}</p></div>')
+        
+        # === 新增技術指標卡片 (RSI, MACD, KD, Bollinger) ===
+        macd_data = tech.get("macd", {}) or {}
+        kd_data = tech.get("kd", {}) or {}
+        bb_data = tech.get("bollinger", {}) or {}
+        rsi_val = tech.get("rsi", "-")
+        
+        macd_signal_text = macd_data.get("signal", "-") if isinstance(macd_data, dict) else "-"
+        macd_dif = macd_data.get("dif", "-") if isinstance(macd_data, dict) else "-"
+        macd_dea = macd_data.get("dea", "-") if isinstance(macd_data, dict) else "-"
+        macd_hist = macd_data.get("hist", "-") if isinstance(macd_data, dict) else "-"
+        macd_score = macd_data.get("score", "-") if isinstance(macd_data, dict) else "-"
+        
+        kd_k = kd_data.get("k", "-") if isinstance(kd_data, dict) else "-"
+        kd_d = kd_data.get("d", "-") if isinstance(kd_data, dict) else "-"
+        kd_signal_text = kd_data.get("signal", "-") if isinstance(kd_data, dict) else "-"
+        
+        bb_pos_text = bb_data.get("position_text", "-") if isinstance(bb_data, dict) else "-"
+        bb_upper = bb_data.get("upper", "-") if isinstance(bb_data, dict) else "-"
+        bb_lower = bb_data.get("lower", "-") if isinstance(bb_data, dict) else "-"
+        bb_pct = bb_data.get("pct_b", "-") if isinstance(bb_data, dict) else "-"
+        
+        lines.append(f'<div class="metric-card" style="border:2px solid rgba(37,99,235,0.3);"><h3>📐 技術指標</h3>')
+        lines.append(f'<p>RSI: <strong>{rsi_val}</strong></p>')
+        lines.append(f'<p>MACD: {macd_dif} / {macd_dea} / <span style="color:{"#16a34a" if (isinstance(macd_hist, (int, float)) and macd_hist > 0) else "#dc2626" if (isinstance(macd_hist, (int, float)) and macd_hist < 0) else "var(--text-muted)"};">{macd_hist:+.4f}</span></p>' if isinstance(macd_hist, (int, float)) else f'<p>MACD: {macd_dif} / {macd_dea} / {macd_hist}</p>')
+        lines.append(f'<p>KD: K={kd_k} / D={kd_d}</p>')
+        lines.append(f'<p>布林: {bb_pos_text} ({bb_upper} ~ {bb_lower})</p>')
+        lines.append(f'<p style="margin-top:8px;font-size:0.85rem;color:var(--text-muted);background:var(--badge-bg);padding:4px 8px;border-radius:4px;">📊 RSI{rsi_val} | MACD:{macd_signal_text} | KD:{kd_signal_text}</p>')
+        lines.append(f'</div>')
+        
         lines.append('</div>')
         lines.append('<div class="card"><h2>📈 股價走勢 + 均線 + 成交量</h2><div class="chart-container"><canvas id="priceChart"></canvas></div></div>')
         lines.append('<div class="card"><h2>📊 MACD 指標 (12,26,9)</h2>')
@@ -1158,6 +1196,180 @@ Chart.defaults.scale.ticks.color = 'var(--text-muted)';
         print(f"[OK] 交叉比對: {filepath}")
         return filepath
 
+    def generate_backtest_report(self):
+        """生成回測報告頁面"""
+        import pandas as pd
+        import sys, os
+
+        # 確保 backtest 模組可用
+        sys.path.insert(0, os.path.dirname(__file__))
+        try:
+            from backtest.simple_backtest import backtest_all, backtest_strategy
+        except Exception as e:
+            print(f"[WARN] Backtest module not available: {e}")
+            return None
+
+        strategies = [
+            ('均線交叉 (MA20/MA60)', 'ma_cross', {'short': 20, 'long': 60}),
+            ('RSI 逆轉 (30/70)', 'rsi_reversal', {'period': 14, 'overbought': 70, 'oversold': 30}),
+            ('MACD 交叉', 'macd_cross', {}),
+            ('布林反彈', 'bollinger_bounce', {}),
+            ('KD 交叉', 'kd_cross', {}),
+            ('量能突破', 'volume_breakout', {}),
+            ('均線突破', 'ma_breakthrough', {}),
+        ]
+
+        # 對每支有歷史數據的股票執行回測，然後聚合
+        all_results = {name: {'trades': 0, 'wins': 0, 'returns': [], 'max_dds': []} for name, _, _ in strategies}
+        stock_count = 0
+
+        for stock_id, data in self.raw_data.items():
+            price_data = data.get("price", {})
+            if not price_data or not isinstance(price_data, dict):
+                continue
+            closes = price_data.get("Close", [])
+            highs = price_data.get("High", [])
+            lows = price_data.get("Low", [])
+            volumes = price_data.get("Volume", [])
+            if len(closes) < 35:
+                continue
+            
+            try:
+                df = pd.DataFrame({
+                    'Close': closes,
+                    'High': highs if len(highs) == len(closes) else closes,
+                    'Low': lows if len(lows) == len(closes) else closes,
+                    'Volume': volumes if len(volumes) == len(closes) else [0]*len(closes),
+                })
+            except Exception:
+                continue
+
+            stock_count += 1
+            for name, strat_name, params in strategies:
+                try:
+                    result = backtest_strategy(df, strat_name, params)
+                    all_results[name]['trades'] += result.get('total_trades', 0)
+                    all_results[name]['wins'] += result.get('win_count', 0)
+                    if result.get('total_return'):
+                        all_results[name]['returns'].append(result['total_return'])
+                    if result.get('max_drawdown'):
+                        all_results[name]['max_dds'].append(result['max_drawdown'])
+                except Exception:
+                    pass
+
+        lines = []
+        lines.append(self._head("回測報告｜智董籌碼選股站"))
+        lines.append('<body>')
+        lines.append(self._nav("backtest_report"))
+        lines.append('<div class="container"><div class="header-info"><h1>🧪 策略回測報告</h1><p class="subtitle">基於歷史價格數據的策略績效驗證</p></div>')
+        lines.append(f'<div class="card" style="margin-bottom:15px;"><p>📊 回測樣本：{stock_count} 檔個股 | 每檔策略獨立回測後聚合統計</p><p style="color:var(--text-muted);font-size:0.85rem;">⚠️ 回測僅供參考，過去績效不代表未來報酬</p></div>')
+
+        lines.append('<div class="card"><h2>📈 各策略回測績效比較</h2><div class="table-responsive"><table class="data-table"><thead><tr><th>策略</th><th>總交易次數</th><th>勝率</th><th>平均報酬%</th><th>最大回撤%</th><th>評級</th></tr></thead><tbody>')
+        
+        for name, _, _ in strategies:
+            stats = all_results[name]
+            total_trades = stats['trades']
+            wins = stats['wins']
+            win_rate = (wins / total_trades * 100) if total_trades > 0 else 0
+            avg_return = sum(stats['returns']) / len(stats['returns']) if stats['returns'] else 0
+            avg_max_dd = sum(stats['max_dds']) / len(stats['max_dds']) if stats['max_dds'] else 0
+            
+            # 評級
+            if win_rate >= 60 and avg_return > 5:
+                grade = 'A'
+                grade_color = '#16a34a'
+            elif win_rate >= 50 and avg_return > 0:
+                grade = 'B'
+                grade_color = '#f59e0b'
+            elif win_rate >= 40:
+                grade = 'C'
+                grade_color = '#f97316'
+            else:
+                grade = 'D'
+                grade_color = '#dc2626'
+            
+            lines.append(f'<tr><td><strong>{name}</strong></td><td>{total_trades}</td><td class="{"up" if win_rate >= 50 else "down"}">{win_rate:.1f}%</td><td class="{"up" if avg_return > 0 else "down"}">{avg_return:+.2f}%</td><td class="{"down" if avg_max_dd > 10 else ""}">{avg_max_dd:.2f}%</td><td style="color:{grade_color};font-weight:700;">{grade}</td></tr>')
+        
+        lines.append('</tbody></table></div></div>')
+        
+        # 策略說明
+        lines.append('<div class="card"><h2>📋 策略說明</h2><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:15px;margin-top:10px;">')
+        strategy_desc = {
+            '均線交叉 (MA20/MA60)': '當短期均線(MA20)上穿長期均線(MA60)時買入，下穿時賣出。經典趨勢跟隨策略。',
+            'RSI 逆轉 (30/70)': 'RSI低於30(超賣)買入，高於70(超買)賣出。均值回歸策略。',
+            'MACD 交叉': 'DIF線上穿DEA線(黃金交叉)買入，下穿時賣出。動量策略。',
+            '布林反彈': '觸及布林下軌買入，觸及上軌賣出。通道回歸策略。',
+            'KD 交叉': 'K值上穿D值且在超賣區買入，下穿時賣出。振盪指標策略。',
+            '量能突破': '成交量放大至5日均量1.5倍且收漲時買入。動量確認策略。',
+            '均線突破': '收盤價突破MA20且MA20>MA60時買入。趨勢突破策略。',
+        }
+        for name, desc in strategy_desc.items():
+            lines.append(f'<div style="background:var(--card-bg);border:1px solid var(--border);border-radius:8px;padding:12px;"><h4 style="margin:0 0 8px 0;color:var(--accent);">{name}</h4><p style="margin:0;color:var(--text-muted);font-size:0.9rem;">{desc}</p></div>')
+        lines.append('</div></div>')
+        
+        lines.append('</div>')
+        lines.append(self._footer())
+        lines.append('</body></html>')
+        
+        filepath = os.path.join(DOCS_DIR, "backtest_report.html")
+        with open(filepath, "w", encoding="utf-8") as f:
+            f.write("".join(lines))
+        print(f"[OK] 回測報告: {filepath}")
+        return filepath
+        """生成交叉比對報告頁面"""
+        cross_data = {}
+        try:
+            with open("data/cross_analysis/cross_analysis.json", "r", encoding="utf-8") as f:
+                cross_data = json.load(f)
+        except:
+            return None
+        
+        lines = []
+        lines.append(self._head("交叉比對報告｜智董籌碼選股站"))
+        lines.append('<body>')
+        lines.append(self._nav(""))
+        
+        s = cross_data.get("summary", {})
+        lines.append(f'<div class="container"><div class="header-info"><h1>🔗 籌碼數據交叉比對報告</h1><p class="subtitle">fortune-fred vs Norway.twsthr.info | 分析日期: {s.get("analysis_date", "")}</p></div>')
+        
+        # 摘要卡片
+        lines.append('<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;margin-bottom:30px;">')
+        lines.append(f'<div class="metric-card"><h3>📊 共同覆蓋</h3><p style="font-size:2rem;font-weight:700;color:var(--accent);">{s.get("common_stocks", 0)}</p><p>檔股票</p></div>')
+        lines.append(f'<div class="metric-card"><h3>✅ 方向一致率</h3><p style="font-size:2rem;font-weight:700;color:#16a34a;">{s.get("direction_match_rate", 0)}%</p><p>兩邊增減方向相同</p></div>')
+        lines.append(f'<div class="metric-card"><h3>📏 平均差異</h3><p style="font-size:2rem;font-weight:700;color:#f59e0b;">{s.get("avg_abs_diff", 0)}%</p><p>絕對差異平均值</p></div>')
+        lines.append(f'<div class="metric-card"><h3>⚠️ 最大差異</h3><p style="font-size:2rem;font-weight:700;color:#dc2626;">{s.get("max_abs_diff", 0)}%</p><p>單一股票最大差異</p></div>')
+        lines.append('</div>')
+        
+        # 差異 Top 20 表格
+        lines.append('<div class="card"><h2>📋 差異最大的股票 (Top 20)</h2><div class="table-responsive"><table class="data-table"><thead><tr><th>排名</th><th>代碼</th><th>名稱</th><th>fortune-fred</th><th>Norway</th><th>差異</th><th>方向</th></tr></thead><tbody>')
+        for i, c in enumerate(cross_data.get("comparisons", [])[:20], 1):
+            direction = "✅ 一致" if c["direction_match"] else "❌ 相反"
+            direction_color = "#16a34a" if c["direction_match"] else "#dc2626"
+            lines.append(f'<tr><td>{i}</td><td><strong>{c["stock_code"]}</strong></td><td>{c["stock_name"]}</td><td>{c["chip_change"]:+.2f}%</td><td>{c["norway_change"]:+.2f}%</td><td>{c["diff"]:+.2f}%</td><td style="color:{direction_color};font-weight:600;">{direction}</td></tr>')
+        lines.append('</tbody></table></div></div>')
+        
+        # 方向不一致列表
+        mismatches = [c for c in cross_data.get("comparisons", []) if not c["direction_match"]]
+        if mismatches:
+            lines.append('<div class="card"><h2>⚠️ 方向不一致的股票</h2><div class="table-responsive"><table class="data-table"><thead><tr><th>代碼</th><th>名稱</th><th>fortune-fred</th><th>Norway</th><th>建議</th></tr></thead><tbody>')
+            for c in mismatches:
+                if abs(c["chip_change"]) > abs(c["norway_change"]):
+                    advice = "以 fortune-fred 為準"
+                else:
+                    advice = "以 Norway 為準"
+                lines.append(f'<tr><td><strong>{c["stock_code"]}</strong></td><td>{c["stock_name"]}</td><td>{c["chip_change"]:+.2f}%</td><td>{c["norway_change"]:+.2f}%</td><td>{advice}</td></tr>')
+            lines.append('</tbody></table></div></div>')
+        
+        lines.append('</div>')
+        lines.append(self._footer())
+        lines.append('</body></html>')
+        
+        filepath = os.path.join(DOCS_DIR, "cross_analysis.html")
+        with open(filepath, "w", encoding="utf-8") as f:
+            f.write("".join(lines))
+        print(f"[OK] 交叉比對: {filepath}")
+        return filepath
+
     def generate_sector(self):
         """生成族群輪動儀表板 sector.html — 數據動態填充"""
         import json as _json
@@ -1304,6 +1516,7 @@ Chart.defaults.scale.ticks.color = 'var(--text-muted)';
         self.generate_etf_00981a()
         self.generate_etf_00982a()
         self.generate_cross_analysis_page()
+        self.generate_backtest_report()
         self.generate_sector()
         all_stocks = list(set(WATCHLIST + ETF_00981A_HOLDINGS + ETF_00982A_HOLDINGS))
         for stock_id in all_stocks:
