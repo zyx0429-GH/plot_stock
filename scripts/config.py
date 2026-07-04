@@ -679,23 +679,6 @@ STOCK_SECTOR = {
     "2375": "capacitor",  # 凱美 (被動元件)
     "3090": "capacitor",  # 日電貿 (被動元件)
 
-    # === 被動元件 ===
-    "2327": "passive-component",  # 國巨
-    "2492": "passive-component",  # 華新科
-    "6173": "passive-component",  # 信昌電
-    "8042": "passive-component",  # 金山電
-    "8043": "passive-component",  # 蜜望實
-    "1815": "passive-component",  # 富喬
-    "3026": "passive-component",  # 禾伸堂
-    "2375": "passive-component",  # 凱美
-    "3090": "passive-component",  # 日電貿
-    "6207": "passive-component",  # 雷科
-    "8358": "passive-component",  # 金居
-    "3236": "passive-component",  # 千如
-    "3624": "passive-component",  # 光頡
-    "6155": "passive-component",  # 鈞寶
-    "6432": "passive-component",  # 今展科
-
     # === 散熱/電源/機殼 ===
     "3017": "thermal",     # 奇鋐
     "6805": "thermal",     # 富世達
@@ -831,7 +814,6 @@ STOCK_SECTOR = {
     "3036": "others",      # 文曄
     "3537": "others",      # 堡達
     "3285": "others",      # 微端
-    "8289": "others",      # 泰藝
     "8040": "others",      # 九暘
     "8096": "others",      # 擎亞
     "8091": "others",      # 翔名
@@ -845,7 +827,6 @@ STOCK_SECTOR = {
     "6127": "others",      # 九豪
     "6727": "others",      # 亞泰金屬
     "2491": "others",      # 吉祥全
-    "3042": "others",      # 晶技
     "3005": "others",      # 神基
     "6177": "others",      # 達麗
     "2497": "others",      # 怡利電
@@ -868,7 +849,6 @@ STOCK_SECTOR = {
     "6831": "others",      # 邁科
     "3356": "others",      # 奇偶
     "2352": "others",      # 佳世達
-    "8182": "others",      # 加高
     "9941": "others",      # 裕融
     "2305": "others",      # 全友
     "6919": "others",      # 康霈*
