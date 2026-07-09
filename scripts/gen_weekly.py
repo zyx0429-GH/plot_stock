@@ -273,6 +273,24 @@ body{{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;backgro
 </head>
 <body>
 
+<!-- Navigation -->
+<style>
+.wr-nav{{display:flex;align-items:center;gap:16px;padding:12px 20px;background:#fff;border-bottom:1px solid #e5e5ea;margin-bottom:1rem;flex-wrap:wrap}}
+.wr-nav a{{color:#0066cc;text-decoration:none;font-size:13px;font-weight:500;padding:4px 10px;border-radius:6px;transition:background .15s}}
+.wr-nav a:hover{{background:#f2f2f7}}
+.wr-nav a.active{{background:#1d1d1f;color:#fff}}
+.wr-nav-brand{{font-size:14px;font-weight:600;color:#1d1d1f;margin-right:8px}}
+</style>
+<nav class="wr-nav">
+<span class="wr-nav-brand">🔥 跟隨大戶選股站</span>
+<a href="index.html">📊 首頁</a>
+<a href="watchlist.html">⭐ 自選</a>
+<a href="etf_00981a.html">📈 00981A</a>
+<a href="etf_00982a.html">📈 00982A</a>
+<a href="sector.html">🔄 族群輪動</a>
+<a href="weekly_ranking.html" class="active">📅 週排行</a>
+</nav>
+
 <div class="hdr">
     <h1 class="hdr-title">集保週排行榜 — {latest_date_fmt}</h1>
     <p class="hdr-sub">大戶持股比例週增減｜上週 {prev_date_fmt}｜僅含正股（1–9開頭4位代號）</p>
