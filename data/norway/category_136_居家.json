@@ -5,21 +5,21 @@
     "stock_name": "特昇-KY",
     "is_taiwan50": false,
     "category": "居家",
-    "threshold_code": 31,
+    "threshold_code": 30,
     "threshold_shares": 400,
     "weekly_changes": {
-      "20260529": 0.0,
       "20260605": 0.48,
       "20260612": 0.01,
       "20260618": 1.1,
       "20260626": -0.2,
-      "20260703": 0.01
+      "20260703": 0.01,
+      "20260709": -0.13
     },
-    "latest_change": 0.01,
-    "total_change": 1.4,
-    "last_week_hold_pct": 62.66,
-    "close_price": 9.11,
-    "price_change": 0.03
+    "latest_change": -0.13,
+    "total_change": 1.27,
+    "last_week_hold_pct": 62.53,
+    "close_price": 8.98,
+    "price_change": 0.0
   },
   {
     "rank": 2,
@@ -27,21 +27,21 @@
     "stock_name": "泰金-KY",
     "is_taiwan50": false,
     "category": "居家",
-    "threshold_code": 30,
-    "threshold_shares": 400,
+    "threshold_code": 10,
+    "threshold_shares": 1000,
     "weekly_changes": {
-      "20260529": 0.39,
       "20260605": -0.16,
       "20260612": -0.07,
       "20260618": 0.0,
       "20260626": 1.09,
-      "20260703": 0.03
+      "20260703": 0.03,
+      "20260709": 0.01
     },
-    "latest_change": 0.03,
-    "total_change": 1.28,
-    "last_week_hold_pct": 85.09,
-    "close_price": 109.0,
-    "price_change": 1.0
+    "latest_change": 0.01,
+    "total_change": 0.9,
+    "last_week_hold_pct": 85.1,
+    "close_price": 108.0,
+    "price_change": -0.5
   },
   {
     "rank": 3,
@@ -52,18 +52,18 @@
     "threshold_code": 10,
     "threshold_shares": 1000,
     "weekly_changes": {
-      "20260529": -0.02,
       "20260605": 0.14,
       "20260612": 0.21,
       "20260618": 0.08,
       "20260626": 0.03,
-      "20260703": 0.0
+      "20260703": 0.0,
+      "20260709": -0.02
     },
-    "latest_change": 0.0,
+    "latest_change": -0.02,
     "total_change": 0.44,
-    "last_week_hold_pct": 75.9,
-    "close_price": 27.0,
-    "price_change": -0.1
+    "last_week_hold_pct": 75.88,
+    "close_price": 26.2,
+    "price_change": -0.75
   },
   {
     "rank": 4,
@@ -71,21 +71,21 @@
     "stock_name": "關中",
     "is_taiwan50": false,
     "category": "居家",
-    "threshold_code": 30,
-    "threshold_shares": 400,
+    "threshold_code": 10,
+    "threshold_shares": 1000,
     "weekly_changes": {
-      "20260529": 0.05,
       "20260605": 0.05,
       "20260612": 0.05,
       "20260618": -0.05,
       "20260626": 0.04,
-      "20260703": 0.02
+      "20260703": 0.02,
+      "20260709": 0.0
     },
-    "latest_change": 0.02,
-    "total_change": 0.16,
+    "latest_change": 0.0,
+    "total_change": 0.11,
     "last_week_hold_pct": 67.15,
-    "close_price": 43.35,
-    "price_change": 0.2
+    "close_price": 43.0,
+    "price_change": -0.1
   },
   {
     "rank": 5,
@@ -93,43 +93,43 @@
     "stock_name": "來思達",
     "is_taiwan50": false,
     "category": "居家",
-    "threshold_code": 10,
-    "threshold_shares": 1000,
+    "threshold_code": 31,
+    "threshold_shares": 400,
     "weekly_changes": {
-      "20260529": 0.0,
       "20260605": 0.27,
       "20260612": -0.22,
       "20260618": 0.06,
       "20260626": 0.0,
-      "20260703": -0.01
-    },
-    "latest_change": -0.01,
-    "total_change": 0.1,
-    "last_week_hold_pct": 38.76,
-    "close_price": 15.1,
-    "price_change": 0.0
-  },
-  {
-    "rank": 6,
-    "stock_code": "2941",
-    "stock_name": "米斯特",
-    "is_taiwan50": false,
-    "category": "居家",
-    "threshold_code": 32,
-    "threshold_shares": 0,
-    "weekly_changes": {
-      "20260529": 0.1,
-      "20260605": 0.0,
-      "20260612": 0.0,
-      "20260618": 0.0,
-      "20260626": 0.0,
-      "20260703": 0.0
+      "20260703": -0.01,
+      "20260709": 0.0
     },
     "latest_change": 0.0,
     "total_change": 0.1,
-    "last_week_hold_pct": 66.49,
-    "close_price": 35.1,
-    "price_change": 0.65
+    "last_week_hold_pct": 38.76,
+    "close_price": 15.0,
+    "price_change": -0.05
+  },
+  {
+    "rank": 6,
+    "stock_code": "5902",
+    "stock_name": "德記",
+    "is_taiwan50": false,
+    "category": "居家",
+    "threshold_code": 31,
+    "threshold_shares": 400,
+    "weekly_changes": {
+      "20260605": 0.01,
+      "20260612": 0.0,
+      "20260618": 0.02,
+      "20260626": 0.03,
+      "20260703": 0.01,
+      "20260709": 0.02
+    },
+    "latest_change": 0.02,
+    "total_change": 0.09,
+    "last_week_hold_pct": 85.26,
+    "close_price": 33.55,
+    "price_change": 0.0
   },
   {
     "rank": 7,
@@ -137,21 +137,21 @@
     "stock_name": "寶陞",
     "is_taiwan50": false,
     "category": "居家",
-    "threshold_code": 40,
-    "threshold_shares": 200,
+    "threshold_code": 20,
+    "threshold_shares": 0,
     "weekly_changes": {
-      "20260529": 0.01,
       "20260605": 0.01,
       "20260612": 0.01,
       "20260618": 0.0,
       "20260626": 0.03,
-      "20260703": 0.03
+      "20260703": 0.03,
+      "20260709": 0.01
     },
-    "latest_change": 0.03,
+    "latest_change": 0.01,
     "total_change": 0.09,
-    "last_week_hold_pct": 80.36,
-    "close_price": 36.55,
-    "price_change": -1.4
+    "last_week_hold_pct": 80.37,
+    "close_price": 38.75,
+    "price_change": 0.7
   },
   {
     "rank": 8,
@@ -159,21 +159,21 @@
     "stock_name": "全家",
     "is_taiwan50": false,
     "category": "居家",
-    "threshold_code": 31,
+    "threshold_code": 30,
     "threshold_shares": 400,
     "weekly_changes": {
-      "20260529": 0.02,
       "20260605": 0.03,
       "20260612": 0.01,
       "20260618": 0.01,
       "20260626": 0.0,
-      "20260703": 0.01
+      "20260703": 0.01,
+      "20260709": 0.0
     },
-    "latest_change": 0.01,
-    "total_change": 0.08,
+    "latest_change": 0.0,
+    "total_change": 0.06,
     "last_week_hold_pct": 91.44,
-    "close_price": 188.5,
-    "price_change": -1.0
+    "close_price": 189.0,
+    "price_change": 0.0
   },
   {
     "rank": 9,
@@ -184,18 +184,18 @@
     "threshold_code": 10,
     "threshold_shares": 1000,
     "weekly_changes": {
-      "20260529": 0.0,
       "20260605": 0.0,
       "20260612": 0.01,
       "20260618": 0.04,
       "20260626": 0.0,
-      "20260703": -0.01
+      "20260703": -0.01,
+      "20260709": -0.02
     },
-    "latest_change": -0.01,
-    "total_change": 0.04,
-    "last_week_hold_pct": 84.58,
-    "close_price": 47.3,
-    "price_change": -0.05
+    "latest_change": -0.02,
+    "total_change": 0.02,
+    "last_week_hold_pct": 84.56,
+    "close_price": 47.95,
+    "price_change": -0.75
   },
   {
     "rank": 10,
@@ -206,21 +206,43 @@
     "threshold_code": 32,
     "threshold_shares": 0,
     "weekly_changes": {
-      "20260529": 0.0,
       "20260605": 0.0,
       "20260612": 0.0,
       "20260618": 0.0,
       "20260626": 0.0,
-      "20260703": 0.0
+      "20260703": 0.0,
+      "20260709": 0.0
     },
     "latest_change": 0.0,
     "total_change": 0.0,
     "last_week_hold_pct": 76.94,
-    "close_price": 68.2,
-    "price_change": -0.1
+    "close_price": 65.5,
+    "price_change": 0.0
   },
   {
     "rank": 11,
+    "stock_code": "2941",
+    "stock_name": "米斯特",
+    "is_taiwan50": false,
+    "category": "居家",
+    "threshold_code": 32,
+    "threshold_shares": 0,
+    "weekly_changes": {
+      "20260605": 0.0,
+      "20260612": 0.0,
+      "20260618": 0.0,
+      "20260626": 0.0,
+      "20260703": 0.0,
+      "20260709": 0.0
+    },
+    "latest_change": 0.0,
+    "total_change": 0.0,
+    "last_week_hold_pct": 66.49,
+    "close_price": 32.45,
+    "price_change": 0.0
+  },
+  {
+    "rank": 12,
     "stock_code": "8433",
     "stock_name": "弘帆",
     "is_taiwan50": false,
@@ -228,12 +250,12 @@
     "threshold_code": 32,
     "threshold_shares": 0,
     "weekly_changes": {
-      "20260529": 0.0,
       "20260605": 0.0,
       "20260612": 0.0,
       "20260618": 0.0,
       "20260626": 0.0,
-      "20260703": 0.0
+      "20260703": 0.0,
+      "20260709": 0.0
     },
     "latest_change": 0.0,
     "total_change": 0.0,
@@ -242,7 +264,7 @@
     "price_change": 0.2
   },
   {
-    "rank": 12,
+    "rank": 13,
     "stock_code": "6195",
     "stock_name": "詩肯",
     "is_taiwan50": false,
@@ -250,62 +272,40 @@
     "threshold_code": 32,
     "threshold_shares": 0,
     "weekly_changes": {
-      "20260529": 0.0,
       "20260605": 0.0,
       "20260612": 0.0,
       "20260618": 0.0,
       "20260626": 0.0,
-      "20260703": 0.0
+      "20260703": 0.0,
+      "20260709": 0.0
     },
     "latest_change": 0.0,
     "total_change": 0.0,
     "last_week_hold_pct": 53.25,
-    "close_price": 26.45,
-    "price_change": 0.95
+    "close_price": 25.7,
+    "price_change": -0.1
   },
   {
-    "rank": 13,
+    "rank": 14,
     "stock_code": "2947",
     "stock_name": "振宇五金",
     "is_taiwan50": false,
     "category": "居家",
-    "threshold_code": 20,
-    "threshold_shares": 0,
+    "threshold_code": 31,
+    "threshold_shares": 400,
     "weekly_changes": {
-      "20260529": 0.0,
       "20260605": 0.0,
       "20260612": 0.03,
       "20260618": 0.0,
       "20260626": 0.0,
-      "20260703": -0.04
-    },
-    "latest_change": -0.04,
-    "total_change": -0.01,
-    "last_week_hold_pct": 63.29,
-    "close_price": 79.5,
-    "price_change": 0.5
-  },
-  {
-    "rank": 14,
-    "stock_code": "2916",
-    "stock_name": "滿心",
-    "is_taiwan50": false,
-    "category": "居家",
-    "threshold_code": 32,
-    "threshold_shares": 0,
-    "weekly_changes": {
-      "20260529": -0.07,
-      "20260605": 0.01,
-      "20260612": 0.01,
-      "20260618": 0.0,
-      "20260626": 0.0,
-      "20260703": 0.0
+      "20260703": -0.04,
+      "20260709": 0.0
     },
     "latest_change": 0.0,
-    "total_change": -0.05,
-    "last_week_hold_pct": 58.82,
-    "close_price": 41.35,
-    "price_change": 0.55
+    "total_change": -0.01,
+    "last_week_hold_pct": 63.29,
+    "close_price": 69.0,
+    "price_change": 0.0
   },
   {
     "rank": 15,
@@ -313,21 +313,21 @@
     "stock_name": "唐鋒",
     "is_taiwan50": false,
     "category": "居家",
-    "threshold_code": 31,
+    "threshold_code": 30,
     "threshold_shares": 400,
     "weekly_changes": {
-      "20260529": 0.0,
       "20260605": 0.0,
       "20260612": 0.01,
       "20260618": 0.0,
       "20260626": -0.07,
-      "20260703": 0.0
+      "20260703": 0.0,
+      "20260709": -0.01
     },
-    "latest_change": 0.0,
-    "total_change": -0.06,
-    "last_week_hold_pct": 75.97,
-    "close_price": 5.3,
-    "price_change": 0.25
+    "latest_change": -0.01,
+    "total_change": -0.07,
+    "last_week_hold_pct": 75.96,
+    "close_price": 5.28,
+    "price_change": 0.4
   },
   {
     "rank": 16,
@@ -335,43 +335,43 @@
     "stock_name": "萬達寵物",
     "is_taiwan50": false,
     "category": "居家",
-    "threshold_code": 31,
+    "threshold_code": 50,
     "threshold_shares": 400,
     "weekly_changes": {
-      "20260529": -0.01,
       "20260605": 0.01,
       "20260612": 0.01,
       "20260618": 0.0,
       "20260626": -0.09,
-      "20260703": -0.02
+      "20260703": -0.02,
+      "20260709": 0.0
     },
-    "latest_change": -0.02,
-    "total_change": -0.1,
+    "latest_change": 0.0,
+    "total_change": -0.09,
     "last_week_hold_pct": 58.77,
-    "close_price": 42.4,
-    "price_change": 0.25
+    "close_price": 43.0,
+    "price_change": -0.3
   },
   {
     "rank": 17,
-    "stock_code": "5902",
-    "stock_name": "德記",
+    "stock_code": "5904",
+    "stock_name": "寶雅",
     "is_taiwan50": false,
     "category": "居家",
-    "threshold_code": 30,
+    "threshold_code": 31,
     "threshold_shares": 400,
     "weekly_changes": {
-      "20260529": -0.19,
-      "20260605": 0.01,
-      "20260612": 0.0,
-      "20260618": 0.02,
-      "20260626": 0.03,
-      "20260703": 0.01
+      "20260605": 0.95,
+      "20260612": -0.17,
+      "20260618": 0.07,
+      "20260626": -0.55,
+      "20260703": -1.17,
+      "20260709": 0.76
     },
-    "latest_change": 0.01,
-    "total_change": -0.12,
-    "last_week_hold_pct": 85.24,
-    "close_price": 33.9,
-    "price_change": 0.15
+    "latest_change": 0.76,
+    "total_change": -0.11,
+    "last_week_hold_pct": 69.2,
+    "close_price": 720.0,
+    "price_change": 3.0
   },
   {
     "rank": 18,
@@ -382,43 +382,21 @@
     "threshold_code": 32,
     "threshold_shares": 0,
     "weekly_changes": {
-      "20260529": 0.0,
       "20260605": -0.13,
       "20260612": 0.0,
       "20260618": 0.0,
       "20260626": 0.0,
-      "20260703": 0.0
+      "20260703": 0.0,
+      "20260709": 0.0
     },
     "latest_change": 0.0,
     "total_change": -0.13,
     "last_week_hold_pct": 63.33,
     "close_price": 110.0,
-    "price_change": 0.0
+    "price_change": 0.5
   },
   {
     "rank": 19,
-    "stock_code": "4702",
-    "stock_name": "中美實",
-    "is_taiwan50": false,
-    "category": "居家",
-    "threshold_code": 31,
-    "threshold_shares": 400,
-    "weekly_changes": {
-      "20260529": 0.04,
-      "20260605": -0.08,
-      "20260612": -0.17,
-      "20260618": -0.17,
-      "20260626": -0.23,
-      "20260703": 0.48
-    },
-    "latest_change": 0.48,
-    "total_change": -0.13,
-    "last_week_hold_pct": 51.25,
-    "close_price": 10.25,
-    "price_change": 0.1
-  },
-  {
-    "rank": 20,
     "stock_code": "2924",
     "stock_name": "宏太-KY",
     "is_taiwan50": false,
@@ -426,39 +404,61 @@
     "threshold_code": 32,
     "threshold_shares": 0,
     "weekly_changes": {
-      "20260529": 0.0,
       "20260605": -0.06,
       "20260612": -0.07,
       "20260618": 0.0,
       "20260626": 0.0,
-      "20260703": 0.0
+      "20260703": 0.0,
+      "20260709": 0.0
     },
     "latest_change": 0.0,
     "total_change": -0.13,
     "last_week_hold_pct": 89.6,
-    "close_price": 18.95,
-    "price_change": -0.05
+    "close_price": 0.0,
+    "price_change": 0.0
+  },
+  {
+    "rank": 20,
+    "stock_code": "4702",
+    "stock_name": "中美實",
+    "is_taiwan50": false,
+    "category": "居家",
+    "threshold_code": 30,
+    "threshold_shares": 400,
+    "weekly_changes": {
+      "20260605": -0.08,
+      "20260612": -0.17,
+      "20260618": -0.17,
+      "20260626": -0.23,
+      "20260703": 0.48,
+      "20260709": -0.12
+    },
+    "latest_change": -0.12,
+    "total_change": -0.29,
+    "last_week_hold_pct": 51.13,
+    "close_price": 9.9,
+    "price_change": -0.06
   },
   {
     "rank": 21,
-    "stock_code": "5904",
-    "stock_name": "寶雅",
+    "stock_code": "2916",
+    "stock_name": "滿心",
     "is_taiwan50": false,
     "category": "居家",
-    "threshold_code": 10,
-    "threshold_shares": 1000,
+    "threshold_code": 20,
+    "threshold_shares": 0,
     "weekly_changes": {
-      "20260529": -0.4,
-      "20260605": 0.95,
-      "20260612": -0.17,
-      "20260618": 0.07,
-      "20260626": -0.55,
-      "20260703": -1.17
+      "20260605": 0.01,
+      "20260612": 0.01,
+      "20260618": 0.0,
+      "20260626": 0.0,
+      "20260703": 0.0,
+      "20260709": -0.64
     },
-    "latest_change": -1.17,
-    "total_change": -1.27,
-    "last_week_hold_pct": 68.44,
-    "close_price": 721.0,
-    "price_change": 22.0
+    "latest_change": -0.64,
+    "total_change": -0.62,
+    "last_week_hold_pct": 58.18,
+    "close_price": 40.35,
+    "price_change": -0.1
   }
 ]

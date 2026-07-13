@@ -5,21 +5,21 @@
     "stock_name": "台鋼建設",
     "is_taiwan50": false,
     "category": "櫃營建",
-    "threshold_code": 30,
-    "threshold_shares": 400,
+    "threshold_code": 10,
+    "threshold_shares": 1000,
     "weekly_changes": {
-      "20260529": 0.01,
       "20260605": 0.03,
       "20260612": -0.01,
       "20260618": 0.05,
       "20260626": 5.13,
-      "20260703": 0.15
+      "20260703": 0.15,
+      "20260709": 0.0
     },
-    "latest_change": 0.15,
-    "total_change": 5.36,
+    "latest_change": 0.0,
+    "total_change": 5.35,
     "last_week_hold_pct": 81.49,
-    "close_price": 12.9,
-    "price_change": 0.1
+    "close_price": 13.6,
+    "price_change": 1.2
   },
   {
     "rank": 2,
@@ -27,87 +27,87 @@
     "stock_name": "桓鼎-KY",
     "is_taiwan50": false,
     "category": "櫃營建",
-    "threshold_code": 50,
+    "threshold_code": 30,
     "threshold_shares": 400,
     "weekly_changes": {
-      "20260529": 0.03,
       "20260605": 0.04,
       "20260612": 0.97,
       "20260618": 0.05,
       "20260626": 0.1,
-      "20260703": 0.13
+      "20260703": 0.13,
+      "20260709": 0.05
     },
-    "latest_change": 0.13,
-    "total_change": 1.32,
-    "last_week_hold_pct": 72.75,
-    "close_price": 28.95,
-    "price_change": -0.05
+    "latest_change": 0.05,
+    "total_change": 1.34,
+    "last_week_hold_pct": 72.8,
+    "close_price": 28.6,
+    "price_change": 0.0
   },
   {
     "rank": 3,
-    "stock_code": "6219",
-    "stock_name": "富旺",
+    "stock_code": "5511",
+    "stock_name": "德昌",
+    "is_taiwan50": false,
+    "category": "櫃營建",
+    "threshold_code": 31,
+    "threshold_shares": 400,
+    "weekly_changes": {
+      "20260605": 0.1,
+      "20260612": 0.17,
+      "20260618": 0.23,
+      "20260626": 0.28,
+      "20260703": -0.15,
+      "20260709": 0.71
+    },
+    "latest_change": 0.71,
+    "total_change": 1.34,
+    "last_week_hold_pct": 65.52,
+    "close_price": 63.3,
+    "price_change": 0.0
+  },
+  {
+    "rank": 4,
+    "stock_code": "5324",
+    "stock_name": "士開",
     "is_taiwan50": false,
     "category": "櫃營建",
     "threshold_code": 50,
     "threshold_shares": 400,
     "weekly_changes": {
-      "20260529": 0.73,
-      "20260605": 0.15,
-      "20260612": 0.42,
-      "20260618": -0.17,
-      "20260626": 0.03,
-      "20260703": 0.12
+      "20260605": 0.4,
+      "20260612": 0.15,
+      "20260618": 0.01,
+      "20260626": -0.02,
+      "20260703": 0.01,
+      "20260709": 0.63
     },
-    "latest_change": 0.12,
-    "total_change": 1.28,
-    "last_week_hold_pct": 68.97,
-    "close_price": 13.2,
-    "price_change": 0.35
-  },
-  {
-    "rank": 4,
-    "stock_code": "2718",
-    "stock_name": "全心投控",
-    "is_taiwan50": false,
-    "category": "櫃營建",
-    "threshold_code": 30,
-    "threshold_shares": 400,
-    "weekly_changes": {
-      "20260529": 0.17,
-      "20260605": 0.19,
-      "20260612": 0.2,
-      "20260618": 0.24,
-      "20260626": 0.25,
-      "20260703": 0.2
-    },
-    "latest_change": 0.2,
-    "total_change": 1.25,
-    "last_week_hold_pct": 88.17,
-    "close_price": 52.4,
-    "price_change": 0.1
+    "latest_change": 0.63,
+    "total_change": 1.18,
+    "last_week_hold_pct": 79.72,
+    "close_price": 12.05,
+    "price_change": 0.05
   },
   {
     "rank": 5,
-    "stock_code": "2596",
-    "stock_name": "綠意",
+    "stock_code": "2718",
+    "stock_name": "全心投控",
     "is_taiwan50": false,
     "category": "櫃營建",
     "threshold_code": 10,
     "threshold_shares": 1000,
     "weekly_changes": {
-      "20260529": 0.78,
-      "20260605": 0.2,
-      "20260612": 0.06,
-      "20260618": 0.03,
-      "20260626": 0.02,
-      "20260703": 0.0
+      "20260605": 0.19,
+      "20260612": 0.2,
+      "20260618": 0.24,
+      "20260626": 0.25,
+      "20260703": 0.2,
+      "20260709": 0.08
     },
-    "latest_change": 0.0,
-    "total_change": 1.09,
-    "last_week_hold_pct": 72.32,
-    "close_price": 31.85,
-    "price_change": 0.35
+    "latest_change": 0.08,
+    "total_change": 1.16,
+    "last_week_hold_pct": 88.25,
+    "close_price": 49.2,
+    "price_change": -0.9
   },
   {
     "rank": 6,
@@ -115,109 +115,109 @@
     "stock_name": "力麒",
     "is_taiwan50": false,
     "category": "櫃營建",
-    "threshold_code": 10,
-    "threshold_shares": 1000,
+    "threshold_code": 31,
+    "threshold_shares": 400,
     "weekly_changes": {
-      "20260529": 0.08,
       "20260605": 0.13,
       "20260612": 0.26,
       "20260618": 0.28,
       "20260626": 0.19,
-      "20260703": 0.04
+      "20260703": 0.04,
+      "20260709": 0.25
     },
-    "latest_change": 0.04,
-    "total_change": 0.98,
-    "last_week_hold_pct": 61.32,
-    "close_price": 8.26,
-    "price_change": 0.17
+    "latest_change": 0.25,
+    "total_change": 1.15,
+    "last_week_hold_pct": 61.57,
+    "close_price": 7.93,
+    "price_change": -0.09
   },
   {
     "rank": 7,
-    "stock_code": "5511",
-    "stock_name": "德昌",
+    "stock_code": "6219",
+    "stock_name": "富旺",
+    "is_taiwan50": false,
+    "category": "櫃營建",
+    "threshold_code": 50,
+    "threshold_shares": 400,
+    "weekly_changes": {
+      "20260605": 0.15,
+      "20260612": 0.42,
+      "20260618": -0.17,
+      "20260626": 0.03,
+      "20260703": 0.12,
+      "20260709": 0.26
+    },
+    "latest_change": 0.26,
+    "total_change": 0.81,
+    "last_week_hold_pct": 69.23,
+    "close_price": 12.85,
+    "price_change": 0.15
+  },
+  {
+    "rank": 8,
+    "stock_code": "5548",
+    "stock_name": "安倉",
     "is_taiwan50": false,
     "category": "櫃營建",
     "threshold_code": 30,
     "threshold_shares": 400,
     "weekly_changes": {
-      "20260529": 0.31,
-      "20260605": 0.1,
-      "20260612": 0.17,
-      "20260618": 0.23,
-      "20260626": 0.28,
-      "20260703": -0.15
+      "20260605": 0.0,
+      "20260612": 0.0,
+      "20260618": -0.01,
+      "20260626": 0.0,
+      "20260703": 0.44,
+      "20260709": 0.0
     },
-    "latest_change": -0.15,
-    "total_change": 0.94,
-    "last_week_hold_pct": 64.81,
-    "close_price": 80.4,
+    "latest_change": 0.0,
+    "total_change": 0.43,
+    "last_week_hold_pct": 64.64,
+    "close_price": 23.8,
     "price_change": 0.0
   },
   {
-    "rank": 8,
-    "stock_code": "5324",
-    "stock_name": "士開",
+    "rank": 9,
+    "stock_code": "2596",
+    "stock_name": "綠意",
     "is_taiwan50": false,
     "category": "櫃營建",
     "threshold_code": 31,
     "threshold_shares": 400,
     "weekly_changes": {
-      "20260529": 0.32,
-      "20260605": 0.4,
-      "20260612": 0.15,
-      "20260618": 0.01,
-      "20260626": -0.02,
-      "20260703": 0.01
+      "20260605": 0.2,
+      "20260612": 0.06,
+      "20260618": 0.03,
+      "20260626": 0.02,
+      "20260703": 0.0,
+      "20260709": 0.07
     },
-    "latest_change": 0.01,
-    "total_change": 0.87,
-    "last_week_hold_pct": 79.09,
-    "close_price": 12.15,
-    "price_change": -0.1
-  },
-  {
-    "rank": 9,
-    "stock_code": "6186",
-    "stock_name": "新潤",
-    "is_taiwan50": false,
-    "category": "櫃營建",
-    "threshold_code": 50,
-    "threshold_shares": 400,
-    "weekly_changes": {
-      "20260529": 0.03,
-      "20260605": 0.3,
-      "20260612": -0.51,
-      "20260618": -0.13,
-      "20260626": 0.0,
-      "20260703": 0.76
-    },
-    "latest_change": 0.76,
-    "total_change": 0.45,
-    "last_week_hold_pct": 52.79,
-    "close_price": 43.2,
-    "price_change": 0.1
+    "latest_change": 0.07,
+    "total_change": 0.38,
+    "last_week_hold_pct": 72.39,
+    "close_price": 31.7,
+    "price_change": 0.15
   },
   {
     "rank": 10,
-    "stock_code": "5548",
-    "stock_name": "安倉",
+    "stock_code": "5508",
+    "stock_name": "永信建",
     "is_taiwan50": false,
     "category": "櫃營建",
     "threshold_code": 50,
     "threshold_shares": 400,
     "weekly_changes": {
-      "20260529": 0.0,
-      "20260605": 0.0,
-      "20260612": 0.0,
-      "20260618": -0.01,
-      "20260626": 0.0,
-      "20260703": 0.44
+      "20260605": -0.05,
+      "20260612": 0.07,
+      "20260618": 0.2,
+      "20260626": -0.1,
+      "20260703": -0.04,
+      "20260709": 0.28
     },
-    "latest_change": 0.44,
-    "total_change": 0.43,
-    "last_week_hold_pct": 64.64,
-    "close_price": 23.7,
-    "price_change": 0.15
+    "latest_change": 0.28,
+    "total_change": 0.36,
+    "last_week_hold_pct": 69.0,
+    "close_price": 58.0,
+    "price_change": -0.2
   },
   {
     "rank": 11,
@@ -225,112 +225,134 @@
     "stock_name": "鉅陞",
     "is_taiwan50": false,
     "category": "櫃營建",
-    "threshold_code": 21,
+    "threshold_code": 32,
     "threshold_shares": 0,
     "weekly_changes": {
-      "20260529": 0.05,
       "20260605": -0.12,
       "20260612": 0.4,
       "20260618": 0.06,
       "20260626": 0.0,
-      "20260703": 0.0
+      "20260703": 0.0,
+      "20260709": 0.0
     },
     "latest_change": 0.0,
-    "total_change": 0.39,
+    "total_change": 0.34,
     "last_week_hold_pct": 73.87,
-    "close_price": 22.1,
-    "price_change": 0.6
+    "close_price": 21.25,
+    "price_change": -0.25
   },
   {
     "rank": 12,
-    "stock_code": "5523",
-    "stock_name": "豐謙",
+    "stock_code": "4113",
+    "stock_name": "聯上",
     "is_taiwan50": false,
     "category": "櫃營建",
     "threshold_code": 50,
     "threshold_shares": 400,
     "weekly_changes": {
-      "20260529": -0.14,
+      "20260605": 0.04,
+      "20260612": -0.29,
+      "20260618": 0.1,
+      "20260626": 0.07,
+      "20260703": 0.1,
+      "20260709": 0.22
+    },
+    "latest_change": 0.22,
+    "total_change": 0.24,
+    "last_week_hold_pct": 74.77,
+    "close_price": 15.05,
+    "price_change": 0.05
+  },
+  {
+    "rank": 13,
+    "stock_code": "6186",
+    "stock_name": "新潤",
+    "is_taiwan50": false,
+    "category": "櫃營建",
+    "threshold_code": 30,
+    "threshold_shares": 400,
+    "weekly_changes": {
+      "20260605": 0.3,
+      "20260612": -0.51,
+      "20260618": -0.13,
+      "20260626": 0.0,
+      "20260703": 0.76,
+      "20260709": -0.31
+    },
+    "latest_change": -0.31,
+    "total_change": 0.11,
+    "last_week_hold_pct": 52.48,
+    "close_price": 43.15,
+    "price_change": 0.35
+  },
+  {
+    "rank": 14,
+    "stock_code": "5523",
+    "stock_name": "豐謙",
+    "is_taiwan50": false,
+    "category": "櫃營建",
+    "threshold_code": 30,
+    "threshold_shares": 400,
+    "weekly_changes": {
       "20260605": 0.09,
       "20260612": 0.03,
       "20260618": 0.02,
       "20260626": 0.03,
-      "20260703": 0.11
+      "20260703": 0.11,
+      "20260709": -0.18
     },
-    "latest_change": 0.11,
-    "total_change": 0.14,
-    "last_week_hold_pct": 92.29,
+    "latest_change": -0.18,
+    "total_change": 0.1,
+    "last_week_hold_pct": 92.11,
     "close_price": 30.4,
-    "price_change": 0.1
+    "price_change": 0.0
   },
   {
-    "rank": 13,
+    "rank": 15,
     "stock_code": "6264",
     "stock_name": "富裔",
     "is_taiwan50": false,
     "category": "櫃營建",
-    "threshold_code": 41,
-    "threshold_shares": 0,
+    "threshold_code": 30,
+    "threshold_shares": 400,
     "weekly_changes": {
-      "20260529": 0.04,
       "20260605": 0.03,
       "20260612": 0.02,
       "20260618": 0.0,
       "20260626": 0.0,
-      "20260703": 0.01
+      "20260703": 0.01,
+      "20260709": 0.0
     },
-    "latest_change": 0.01,
-    "total_change": 0.1,
-    "last_week_hold_pct": 71.69,
-    "close_price": 6.11,
-    "price_change": 0.04
-  },
-  {
-    "rank": 14,
-    "stock_code": "6171",
-    "stock_name": "大城地產",
-    "is_taiwan50": false,
-    "category": "櫃營建",
-    "threshold_code": 20,
-    "threshold_shares": 0,
-    "weekly_changes": {
-      "20260529": 0.1,
-      "20260605": 0.0,
-      "20260612": 0.0,
-      "20260618": 0.0,
-      "20260626": 0.0,
-      "20260703": -0.04
-    },
-    "latest_change": -0.04,
+    "latest_change": 0.0,
     "total_change": 0.06,
-    "last_week_hold_pct": 87.69,
-    "close_price": 24.0,
-    "price_change": 0.3
+    "last_week_hold_pct": 71.69,
+    "close_price": 6.18,
+    "price_change": 0.01
   },
   {
-    "rank": 15,
+    "rank": 16,
     "stock_code": "6198",
     "stock_name": "瑞築",
     "is_taiwan50": false,
     "category": "櫃營建",
-    "threshold_code": 41,
-    "threshold_shares": 0,
+    "threshold_code": 30,
+    "threshold_shares": 400,
     "weekly_changes": {
-      "20260529": 0.02,
       "20260605": 0.02,
       "20260612": 0.01,
       "20260618": 0.0,
       "20260626": 0.0,
-      "20260703": 0.01
+      "20260703": 0.01,
+      "20260709": 0.0
     },
-    "latest_change": 0.01,
-    "total_change": 0.06,
+    "latest_change": 0.0,
+    "total_change": 0.04,
     "last_week_hold_pct": 94.24,
-    "close_price": 20.6,
-    "price_change": 0.25
+    "close_price": 20.35,
+    "price_change": -0.35
   },
   {
-    "rank": 16,
+    "rank": 17,
     "stock_code": "4907",
     "stock_name": "富宇",
     "is_taiwan50": false,
@@ -338,62 +360,40 @@
     "threshold_code": 32,
     "threshold_shares": 0,
     "weekly_changes": {
-      "20260529": 0.01,
       "20260605": 0.0,
       "20260612": 0.03,
       "20260618": 0.0,
       "20260626": 0.0,
-      "20260703": 0.0
+      "20260703": 0.0,
+      "20260709": 0.0
     },
     "latest_change": 0.0,
-    "total_change": 0.04,
+    "total_change": 0.03,
     "last_week_hold_pct": 84.97,
-    "close_price": 41.3,
-    "price_change": 0.5
+    "close_price": 41.35,
+    "price_change": -0.55
   },
   {
-    "rank": 17,
+    "rank": 18,
     "stock_code": "6212",
     "stock_name": "理銘",
     "is_taiwan50": false,
     "category": "櫃營建",
-    "threshold_code": 41,
-    "threshold_shares": 0,
+    "threshold_code": 30,
+    "threshold_shares": 400,
     "weekly_changes": {
-      "20260529": 0.0,
       "20260605": 0.0,
       "20260612": 0.0,
       "20260618": 0.0,
       "20260626": 0.0,
-      "20260703": 0.01
-    },
-    "latest_change": 0.01,
-    "total_change": 0.01,
-    "last_week_hold_pct": 91.81,
-    "close_price": 28.9,
-    "price_change": 0.45
-  },
-  {
-    "rank": 18,
-    "stock_code": "5547",
-    "stock_name": "久舜",
-    "is_taiwan50": false,
-    "category": "櫃營建",
-    "threshold_code": 32,
-    "threshold_shares": 0,
-    "weekly_changes": {
-      "20260529": 0.0,
-      "20260605": 0.0,
-      "20260612": 0.0,
-      "20260618": 0.0,
-      "20260626": 0.0,
-      "20260703": 0.0
+      "20260703": 0.01,
+      "20260709": 0.0
     },
     "latest_change": 0.0,
-    "total_change": 0.0,
-    "last_week_hold_pct": 65.85,
-    "close_price": 23.1,
-    "price_change": 0.05
+    "total_change": 0.01,
+    "last_week_hold_pct": 91.81,
+    "close_price": 0.0,
+    "price_change": 0.0
   },
   {
     "rank": 19,
@@ -404,18 +404,18 @@
     "threshold_code": 32,
     "threshold_shares": 0,
     "weekly_changes": {
-      "20260529": 0.0,
       "20260605": 0.0,
       "20260612": 0.0,
       "20260618": 0.0,
       "20260626": 0.0,
-      "20260703": 0.0
+      "20260703": 0.0,
+      "20260709": 0.0
     },
     "latest_change": 0.0,
     "total_change": 0.0,
     "last_week_hold_pct": 94.0,
-    "close_price": 27.25,
-    "price_change": 0.6
+    "close_price": 27.5,
+    "price_change": 0.0
   },
   {
     "rank": 20,
@@ -426,21 +426,43 @@
     "threshold_code": 32,
     "threshold_shares": 0,
     "weekly_changes": {
-      "20260529": -0.01,
       "20260605": 0.0,
       "20260612": 0.0,
       "20260618": 0.0,
       "20260626": 0.0,
-      "20260703": 0.0
+      "20260703": 0.0,
+      "20260709": 0.0
     },
     "latest_change": 0.0,
-    "total_change": -0.01,
+    "total_change": 0.0,
     "last_week_hold_pct": 83.77,
-    "close_price": 82.4,
-    "price_change": -0.1
+    "close_price": 82.3,
+    "price_change": -0.2
   },
   {
     "rank": 21,
+    "stock_code": "5547",
+    "stock_name": "久舜",
+    "is_taiwan50": false,
+    "category": "櫃營建",
+    "threshold_code": 32,
+    "threshold_shares": 0,
+    "weekly_changes": {
+      "20260605": 0.0,
+      "20260612": 0.0,
+      "20260618": 0.0,
+      "20260626": 0.0,
+      "20260703": 0.0,
+      "20260709": 0.0
+    },
+    "latest_change": 0.0,
+    "total_change": 0.0,
+    "last_week_hold_pct": 65.85,
+    "close_price": 20.25,
+    "price_change": 0.0
+  },
+  {
+    "rank": 22,
     "stock_code": "5514",
     "stock_name": "三豐",
     "is_taiwan50": false,
@@ -448,43 +470,43 @@
     "threshold_code": 32,
     "threshold_shares": 0,
     "weekly_changes": {
-      "20260529": 0.0,
       "20260605": 0.0,
       "20260612": -0.04,
       "20260618": 0.0,
       "20260626": 0.0,
-      "20260703": 0.0
+      "20260703": 0.0,
+      "20260709": 0.0
     },
     "latest_change": 0.0,
     "total_change": -0.04,
     "last_week_hold_pct": 92.43,
-    "close_price": 13.65,
-    "price_change": -0.15
-  },
-  {
-    "rank": 22,
-    "stock_code": "4113",
-    "stock_name": "聯上",
-    "is_taiwan50": false,
-    "category": "櫃營建",
-    "threshold_code": 31,
-    "threshold_shares": 400,
-    "weekly_changes": {
-      "20260529": -0.1,
-      "20260605": 0.04,
-      "20260612": -0.29,
-      "20260618": 0.1,
-      "20260626": 0.07,
-      "20260703": 0.1
-    },
-    "latest_change": 0.1,
-    "total_change": -0.08,
-    "last_week_hold_pct": 74.55,
-    "close_price": 15.0,
-    "price_change": 0.2
+    "close_price": 13.5,
+    "price_change": -0.1
   },
   {
     "rank": 23,
+    "stock_code": "6171",
+    "stock_name": "大城地產",
+    "is_taiwan50": false,
+    "category": "櫃營建",
+    "threshold_code": 21,
+    "threshold_shares": 0,
+    "weekly_changes": {
+      "20260605": 0.0,
+      "20260612": 0.0,
+      "20260618": 0.0,
+      "20260626": 0.0,
+      "20260703": -0.04,
+      "20260709": -0.04
+    },
+    "latest_change": -0.04,
+    "total_change": -0.08,
+    "last_week_hold_pct": 87.65,
+    "close_price": 23.6,
+    "price_change": -0.05
+  },
+  {
+    "rank": 24,
     "stock_code": "5213",
     "stock_name": "亞昕",
     "is_taiwan50": false,
@@ -492,84 +514,62 @@
     "threshold_code": 10,
     "threshold_shares": 1000,
     "weekly_changes": {
-      "20260529": -0.17,
       "20260605": -0.01,
       "20260612": -0.14,
       "20260618": 0.05,
       "20260626": 0.01,
-      "20260703": -0.04
+      "20260703": -0.04,
+      "20260709": -0.07
     },
-    "latest_change": -0.04,
-    "total_change": -0.3,
-    "last_week_hold_pct": 86.24,
-    "close_price": 22.6,
-    "price_change": 0.1
-  },
-  {
-    "rank": 24,
-    "stock_code": "3512",
-    "stock_name": "皇龍",
-    "is_taiwan50": false,
-    "category": "櫃營建",
-    "threshold_code": 31,
-    "threshold_shares": 400,
-    "weekly_changes": {
-      "20260529": -0.02,
-      "20260605": -0.08,
-      "20260612": -0.04,
-      "20260618": 0.31,
-      "20260626": -0.52,
-      "20260703": 0.01
-    },
-    "latest_change": 0.01,
-    "total_change": -0.34,
-    "last_week_hold_pct": 71.69,
-    "close_price": 20.85,
-    "price_change": 0.25
+    "latest_change": -0.07,
+    "total_change": -0.2,
+    "last_week_hold_pct": 86.17,
+    "close_price": 22.15,
+    "price_change": -0.15
   },
   {
     "rank": 25,
-    "stock_code": "5508",
-    "stock_name": "永信建",
+    "stock_code": "3188",
+    "stock_name": "鑫龍騰",
     "is_taiwan50": false,
     "category": "櫃營建",
     "threshold_code": 31,
     "threshold_shares": 400,
     "weekly_changes": {
-      "20260529": -0.44,
-      "20260605": -0.05,
-      "20260612": 0.07,
-      "20260618": 0.2,
-      "20260626": -0.1,
-      "20260703": -0.04
+      "20260605": 0.09,
+      "20260612": -0.11,
+      "20260618": -0.06,
+      "20260626": -0.04,
+      "20260703": -0.25,
+      "20260709": -0.01
     },
-    "latest_change": -0.04,
-    "total_change": -0.36,
-    "last_week_hold_pct": 68.72,
-    "close_price": 57.6,
-    "price_change": 0.5
+    "latest_change": -0.01,
+    "total_change": -0.38,
+    "last_week_hold_pct": 75.63,
+    "close_price": 23.6,
+    "price_change": -0.1
   },
   {
     "rank": 26,
-    "stock_code": "3188",
-    "stock_name": "鑫龍騰",
+    "stock_code": "3512",
+    "stock_name": "皇龍",
     "is_taiwan50": false,
     "category": "櫃營建",
     "threshold_code": 30,
     "threshold_shares": 400,
     "weekly_changes": {
-      "20260529": -0.04,
-      "20260605": 0.09,
-      "20260612": -0.11,
-      "20260618": -0.06,
-      "20260626": -0.04,
-      "20260703": -0.25
+      "20260605": -0.08,
+      "20260612": -0.04,
+      "20260618": 0.31,
+      "20260626": -0.52,
+      "20260703": 0.01,
+      "20260709": -0.1
     },
-    "latest_change": -0.25,
-    "total_change": -0.41,
-    "last_week_hold_pct": 75.64,
-    "close_price": 24.45,
-    "price_change": 0.15
+    "latest_change": -0.1,
+    "total_change": -0.42,
+    "last_week_hold_pct": 71.59,
+    "close_price": 20.8,
+    "price_change": -0.05
   },
   {
     "rank": 27,
@@ -577,21 +577,21 @@
     "stock_name": "坤悅",
     "is_taiwan50": false,
     "category": "櫃營建",
-    "threshold_code": 30,
-    "threshold_shares": 400,
+    "threshold_code": 10,
+    "threshold_shares": 1000,
     "weekly_changes": {
-      "20260529": -0.09,
       "20260605": -0.56,
       "20260612": -0.08,
       "20260618": 0.14,
       "20260626": 0.28,
-      "20260703": -0.15
+      "20260703": -0.15,
+      "20260709": -0.16
     },
-    "latest_change": -0.15,
-    "total_change": -0.46,
-    "last_week_hold_pct": 85.48,
-    "close_price": 23.3,
-    "price_change": 0.5
+    "latest_change": -0.16,
+    "total_change": -0.53,
+    "last_week_hold_pct": 85.32,
+    "close_price": 22.85,
+    "price_change": -0.25
   },
   {
     "rank": 28,
@@ -599,46 +599,24 @@
     "stock_name": "泰霖",
     "is_taiwan50": false,
     "category": "櫃營建",
-    "threshold_code": 30,
+    "threshold_code": 31,
     "threshold_shares": 400,
     "weekly_changes": {
-      "20260529": 0.0,
       "20260605": 0.0,
       "20260612": 0.0,
       "20260618": -0.03,
       "20260626": -0.01,
-      "20260703": -0.61
+      "20260703": -0.61,
+      "20260709": 0.0
     },
-    "latest_change": -0.61,
+    "latest_change": 0.0,
     "total_change": -0.65,
     "last_week_hold_pct": 84.13,
-    "close_price": 28.0,
-    "price_change": 0.25
+    "close_price": 27.65,
+    "price_change": 0.0
   },
   {
     "rank": 29,
-    "stock_code": "3489",
-    "stock_name": "森寶",
-    "is_taiwan50": false,
-    "category": "櫃營建",
-    "threshold_code": 31,
-    "threshold_shares": 400,
-    "weekly_changes": {
-      "20260529": 0.57,
-      "20260605": -0.06,
-      "20260612": -0.13,
-      "20260618": -0.06,
-      "20260626": -1.06,
-      "20260703": -0.64
-    },
-    "latest_change": -0.64,
-    "total_change": -1.38,
-    "last_week_hold_pct": 73.35,
-    "close_price": 24.25,
-    "price_change": 0.25
-  },
-  {
-    "rank": 30,
     "stock_code": "8424",
     "stock_name": "惠普",
     "is_taiwan50": false,
@@ -646,18 +624,40 @@
     "threshold_code": 32,
     "threshold_shares": 0,
     "weekly_changes": {
-      "20260529": -0.19,
       "20260605": -1.51,
       "20260612": 0.0,
       "20260618": 0.0,
       "20260626": 0.0,
-      "20260703": 0.0
+      "20260703": 0.0,
+      "20260709": 0.0
     },
     "latest_change": 0.0,
-    "total_change": -1.7,
+    "total_change": -1.51,
     "last_week_hold_pct": 60.59,
-    "close_price": 69.0,
+    "close_price": 68.9,
     "price_change": 0.0
+  },
+  {
+    "rank": 30,
+    "stock_code": "3489",
+    "stock_name": "森寶",
+    "is_taiwan50": false,
+    "category": "櫃營建",
+    "threshold_code": 50,
+    "threshold_shares": 400,
+    "weekly_changes": {
+      "20260605": -0.06,
+      "20260612": -0.13,
+      "20260618": -0.06,
+      "20260626": -1.06,
+      "20260703": -0.64,
+      "20260709": 0.0
+    },
+    "latest_change": 0.0,
+    "total_change": -1.95,
+    "last_week_hold_pct": 73.35,
+    "close_price": 24.2,
+    "price_change": 0.1
   },
   {
     "rank": 31,
@@ -665,21 +665,21 @@
     "stock_name": "雙喜",
     "is_taiwan50": false,
     "category": "櫃營建",
-    "threshold_code": 30,
+    "threshold_code": 31,
     "threshold_shares": 400,
     "weekly_changes": {
-      "20260529": -0.37,
       "20260605": -0.02,
       "20260612": -0.53,
       "20260618": -0.17,
       "20260626": 0.0,
-      "20260703": -1.35
+      "20260703": -1.35,
+      "20260709": 0.0
     },
-    "latest_change": -1.35,
-    "total_change": -2.44,
+    "latest_change": 0.0,
+    "total_change": -2.07,
     "last_week_hold_pct": 69.47,
-    "close_price": 10.6,
-    "price_change": 0.25
+    "close_price": 10.5,
+    "price_change": 0.2
   },
   {
     "rank": 32,
@@ -687,20 +687,20 @@
     "stock_name": "三圓",
     "is_taiwan50": false,
     "category": "櫃營建",
-    "threshold_code": 31,
+    "threshold_code": 50,
     "threshold_shares": 400,
     "weekly_changes": {
-      "20260529": -2.51,
       "20260605": -0.26,
       "20260612": -0.67,
       "20260618": -0.88,
       "20260626": -1.71,
-      "20260703": -1.5
+      "20260703": -1.5,
+      "20260709": -0.18
     },
-    "latest_change": -1.5,
-    "total_change": -7.53,
-    "last_week_hold_pct": 75.22,
-    "close_price": 11.5,
-    "price_change": 0.1
+    "latest_change": -0.18,
+    "total_change": -5.2,
+    "last_week_hold_pct": 75.04,
+    "close_price": 11.45,
+    "price_change": 0.7
   }
 ]
