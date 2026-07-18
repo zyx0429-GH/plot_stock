@@ -5,20 +5,20 @@
     "stock_name": "風青",
     "is_taiwan50": false,
     "category": "櫃電器電纜",
-    "threshold_code": 30,
-    "threshold_shares": 400,
+    "threshold_code": 10,
+    "threshold_shares": 1000,
     "weekly_changes": {
-      "20260605": -0.29,
       "20260612": -0.57,
       "20260618": 1.32,
       "20260626": -2.32,
       "20260703": 0.65,
-      "20260709": -2.05
+      "20260709": -2.05,
+      "20260717": -2.88
     },
-    "latest_change": -2.05,
-    "total_change": -3.26,
-    "last_week_hold_pct": 54.09,
-    "close_price": 74.7,
-    "price_change": -8.3
+    "latest_change": -2.88,
+    "total_change": -5.85,
+    "last_week_hold_pct": 51.21,
+    "close_price": 56.7,
+    "price_change": -6.3
   }
 ]
