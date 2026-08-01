@@ -62657,7 +62657,7 @@
       ]
     }
   ],
-  "update_time": "2026-07-18 14:39",
+  "update_time": "2026-08-01 11:39",
   "total": 182,
   "watchlist": [
     {
@@ -62789,61 +62789,6 @@
       ]
     },
     {
-      "stock_id": "2937",
-      "stock_name": "集雅社",
-      "close": 47.5,
-      "open": 47.3,
-      "change_pct": -1.04,
-      "foreign_consecutive_buy": true,
-      "foreign_consecutive_days": 1,
-      "foreign_net": 5000,
-      "trust_consecutive_buy": true,
-      "trust_consecutive_days": 1,
-      "trust_net": 5000,
-      "big_holder_pct": 84.57,
-      "big_holder_change": 0.01,
-      "big_holder_threshold": "400",
-      "score": 85,
-      "technical": {
-        "ma20": 48.22,
-        "ma60": 47.07,
-        "rsi": 37.9,
-        "trend": "多頭排列",
-        "macd": {
-          "dif": -0.0669,
-          "dea": 0.0407,
-          "hist": -0.1076,
-          "score": 0
-        },
-        "bias20": -1.49,
-        "bias60": 0.91
-      },
-      "margin": null,
-      "shareholder": [
-        {
-          "date": 0.01,
-          "total_count": 0,
-          "big_holder_count": 0,
-          "concentration": 84.57,
-          "threshold_shares": 400,
-          "threshold_code": 31,
-          "category": "居家",
-          "weekly_changes": {
-            "20260612": 0.01,
-            "20260618": 0.04,
-            "20260626": 0.0,
-            "20260703": -0.01,
-            "20260709": -0.02,
-            "20260717": 0.01
-          },
-          "latest_change": 0.01,
-          "total_change": 0.03,
-          "trend_direction": "up",
-          "is_taiwan50": false
-        }
-      ]
-    },
-    {
       "stock_id": "8042",
       "stock_name": "金山電",
       "close": 129.5,
@@ -62966,70 +62911,6 @@
           },
           "latest_change": 0.25,
           "total_change": -0.88,
-          "trend_direction": "up",
-          "is_taiwan50": false
-        }
-      ]
-    },
-    {
-      "stock_id": "5489",
-      "stock_name": "彩富",
-      "close": 46.25,
-      "open": 47.0,
-      "change_pct": -4.84,
-      "foreign_consecutive_buy": true,
-      "foreign_consecutive_days": 1,
-      "foreign_net": 41000,
-      "trust_consecutive_buy": true,
-      "trust_consecutive_days": 1,
-      "trust_net": 41000,
-      "big_holder_pct": 85.41,
-      "big_holder_change": 0.42,
-      "big_holder_threshold": "—",
-      "score": 85,
-      "technical": {
-        "ma20": 58.81,
-        "ma60": 46.42,
-        "rsi": 33.6,
-        "trend": "多頭排列",
-        "macd": {
-          "dif": 0.7586,
-          "dea": 3.3257,
-          "hist": -2.5672,
-          "score": 0
-        },
-        "bias20": -21.35,
-        "bias60": -0.37
-      },
-      "margin": {
-        "balance": 696,
-        "short_balance": 3,
-        "ratio": 0.0043,
-        "margin_change": -80,
-        "short_change": 0,
-        "margin_change_pct": -10.31,
-        "short_change_pct": 0.0,
-        "margin_usage_pct": 2.71
-      },
-      "shareholder": [
-        {
-          "date": 0.42,
-          "total_count": 0,
-          "big_holder_count": 0,
-          "concentration": 85.41,
-          "threshold_shares": 0,
-          "threshold_code": 41,
-          "category": "櫃其他電子",
-          "weekly_changes": {
-            "20260612": 0.0,
-            "20260618": 0.09,
-            "20260626": -0.31,
-            "20260703": 0.0,
-            "20260709": 0.0,
-            "20260717": 0.42
-          },
-          "latest_change": 0.42,
-          "total_change": 0.2,
           "trend_direction": "up",
           "is_taiwan50": false
         }
@@ -63990,70 +63871,6 @@
           },
           "latest_change": 0.0,
           "total_change": 0.97,
-          "trend_direction": "down",
-          "is_taiwan50": false
-        }
-      ]
-    },
-    {
-      "stock_id": "6021",
-      "stock_name": "美好證",
-      "close": 37.45,
-      "open": 38.15,
-      "change_pct": -4.1,
-      "foreign_consecutive_buy": false,
-      "foreign_consecutive_days": 0,
-      "foreign_net": -95000,
-      "trust_consecutive_buy": false,
-      "trust_consecutive_days": 0,
-      "trust_net": -95000,
-      "big_holder_pct": 90.4,
-      "big_holder_change": 0.01,
-      "big_holder_threshold": "400",
-      "score": 65,
-      "technical": {
-        "ma20": 39.65,
-        "ma60": 37.02,
-        "rsi": 39.6,
-        "trend": "多頭排列",
-        "macd": {
-          "dif": -0.102,
-          "dea": 0.2561,
-          "hist": -0.358,
-          "score": 0
-        },
-        "bias20": -5.54,
-        "bias60": 1.16
-      },
-      "margin": {
-        "balance": 470,
-        "short_balance": 5,
-        "ratio": 0.0106,
-        "margin_change": 20,
-        "short_change": 0,
-        "margin_change_pct": 4.44,
-        "short_change_pct": 0.0,
-        "margin_usage_pct": 0.6
-      },
-      "shareholder": [
-        {
-          "date": 0.01,
-          "total_count": 0,
-          "big_holder_count": 0,
-          "concentration": 90.4,
-          "threshold_shares": 400,
-          "threshold_code": 31,
-          "category": "櫃金融",
-          "weekly_changes": {
-            "20260612": 0.13,
-            "20260618": 0.04,
-            "20260626": 0.17,
-            "20260703": 0.14,
-            "20260709": 0.0,
-            "20260717": 0.01
-          },
-          "latest_change": 0.01,
-          "total_change": 0.49,
           "trend_direction": "down",
           "is_taiwan50": false
         }
@@ -65084,134 +64901,6 @@
       ]
     },
     {
-      "stock_id": "5013",
-      "stock_name": "強新",
-      "close": 25.95,
-      "open": 25.65,
-      "change_pct": 1.17,
-      "foreign_consecutive_buy": true,
-      "foreign_consecutive_days": 1,
-      "foreign_net": 6000,
-      "trust_consecutive_buy": true,
-      "trust_consecutive_days": 1,
-      "trust_net": 6000,
-      "big_holder_pct": 87.0,
-      "big_holder_change": 0,
-      "big_holder_threshold": "—",
-      "score": 52,
-      "technical": {
-        "ma20": 26.86,
-        "ma60": 27.62,
-        "rsi": 38.0,
-        "trend": "空頭排列",
-        "macd": {
-          "dif": -0.4546,
-          "dea": -0.3442,
-          "hist": -0.1103,
-          "score": 2
-        },
-        "bias20": -3.41,
-        "bias60": -6.04
-      },
-      "margin": {
-        "balance": 7,
-        "short_balance": 0,
-        "ratio": 0.0,
-        "margin_change": 0,
-        "short_change": 0,
-        "margin_change_pct": 0.0,
-        "short_change_pct": 0,
-        "margin_usage_pct": 0.02
-      },
-      "shareholder": [
-        {
-          "date": 0.0,
-          "total_count": 0,
-          "big_holder_count": 0,
-          "concentration": 87.0,
-          "threshold_shares": 0,
-          "threshold_code": 20,
-          "category": "櫃鋼鐵",
-          "weekly_changes": {
-            "20260612": 0.0,
-            "20260618": 0.0,
-            "20260626": 0.0,
-            "20260703": 0.01,
-            "20260709": 0.01,
-            "20260717": 0.0
-          },
-          "latest_change": 0.0,
-          "total_change": 0.02,
-          "trend_direction": "down",
-          "is_taiwan50": false
-        }
-      ]
-    },
-    {
-      "stock_id": "2035",
-      "stock_name": "唐榮",
-      "close": 27.15,
-      "open": 27.15,
-      "change_pct": 0.18,
-      "foreign_consecutive_buy": true,
-      "foreign_consecutive_days": 1,
-      "foreign_net": 2000,
-      "trust_consecutive_buy": true,
-      "trust_consecutive_days": 1,
-      "trust_net": 2000,
-      "big_holder_pct": 96.72,
-      "big_holder_change": 0.01,
-      "big_holder_threshold": "400",
-      "score": 50,
-      "technical": {
-        "ma20": 27.65,
-        "ma60": 27.9,
-        "rsi": 42.4,
-        "trend": "空頭排列",
-        "macd": {
-          "dif": -0.1463,
-          "dea": -0.0972,
-          "hist": -0.0491,
-          "score": 0
-        },
-        "bias20": -1.81,
-        "bias60": -2.68
-      },
-      "margin": {
-        "balance": 0,
-        "short_balance": 0,
-        "ratio": 0.0,
-        "margin_change": 0,
-        "short_change": 0,
-        "margin_change_pct": 0,
-        "short_change_pct": 0,
-        "margin_usage_pct": 0.0
-      },
-      "shareholder": [
-        {
-          "date": 0.01,
-          "total_count": 0,
-          "big_holder_count": 0,
-          "concentration": 96.72,
-          "threshold_shares": 400,
-          "threshold_code": 31,
-          "category": "櫃鋼鐵",
-          "weekly_changes": {
-            "20260612": 0.0,
-            "20260618": 0.01,
-            "20260626": 0.01,
-            "20260703": 0.0,
-            "20260709": -0.02,
-            "20260717": 0.01
-          },
-          "latest_change": 0.01,
-          "total_change": 0.01,
-          "trend_direction": "down",
-          "is_taiwan50": false
-        }
-      ]
-    },
-    {
       "stock_id": "6147",
       "stock_name": "頎邦",
       "close": 178.5,
@@ -65852,61 +65541,6 @@
       ]
     },
     {
-      "stock_id": "6929",
-      "stock_name": "佑全",
-      "close": 23.1,
-      "open": 23.2,
-      "change_pct": -0.43,
-      "foreign_consecutive_buy": false,
-      "foreign_consecutive_days": 0,
-      "foreign_net": 0,
-      "trust_consecutive_buy": false,
-      "trust_consecutive_days": 0,
-      "trust_net": 0,
-      "big_holder_pct": 89.54,
-      "big_holder_change": 0,
-      "big_holder_threshold": "—",
-      "score": 40,
-      "technical": {
-        "ma20": 23.24,
-        "ma60": 23.82,
-        "rsi": 37.0,
-        "trend": "空頭排列",
-        "macd": {
-          "dif": -0.2322,
-          "dea": -0.2431,
-          "hist": 0.011,
-          "score": 10
-        },
-        "bias20": -0.6,
-        "bias60": -3.04
-      },
-      "margin": null,
-      "shareholder": [
-        {
-          "date": 0.0,
-          "total_count": 0,
-          "big_holder_count": 0,
-          "concentration": 89.54,
-          "threshold_shares": 0,
-          "threshold_code": 32,
-          "category": "櫃生技醫療",
-          "weekly_changes": {
-            "20260612": 0.0,
-            "20260618": 0.0,
-            "20260626": -0.01,
-            "20260703": 0.0,
-            "20260709": 0.0,
-            "20260717": 0.0
-          },
-          "latest_change": 0.0,
-          "total_change": -0.01,
-          "trend_direction": "up",
-          "is_taiwan50": false
-        }
-      ]
-    },
-    {
       "stock_id": "3709",
       "stock_name": "鑫聯大投控",
       "close": 74.0,
@@ -66029,70 +65663,6 @@
           },
           "latest_change": 0.0,
           "total_change": 0.0,
-          "trend_direction": "down",
-          "is_taiwan50": false
-        }
-      ]
-    },
-    {
-      "stock_id": "6542",
-      "stock_name": "隆中",
-      "close": 44.5,
-      "open": 44.8,
-      "change_pct": 0.79,
-      "foreign_consecutive_buy": false,
-      "foreign_consecutive_days": 0,
-      "foreign_net": -3000,
-      "trust_consecutive_buy": false,
-      "trust_consecutive_days": 0,
-      "trust_net": -3000,
-      "big_holder_pct": 84.73,
-      "big_holder_change": 0,
-      "big_holder_threshold": "—",
-      "score": 32,
-      "technical": {
-        "ma20": 45.56,
-        "ma60": 46.97,
-        "rsi": 41.7,
-        "trend": "空頭排列",
-        "macd": {
-          "dif": -0.8143,
-          "dea": -0.7093,
-          "hist": -0.105,
-          "score": 2
-        },
-        "bias20": -2.33,
-        "bias60": -5.26
-      },
-      "margin": {
-        "balance": 247,
-        "short_balance": 0,
-        "ratio": 0.0,
-        "margin_change": -6,
-        "short_change": 0,
-        "margin_change_pct": -2.37,
-        "short_change_pct": 0,
-        "margin_usage_pct": 2.35
-      },
-      "shareholder": [
-        {
-          "date": 0.0,
-          "total_count": 0,
-          "big_holder_count": 0,
-          "concentration": 84.73,
-          "threshold_shares": 0,
-          "threshold_code": 20,
-          "category": "櫃文化創意",
-          "weekly_changes": {
-            "20260612": 0.0,
-            "20260618": 0.0,
-            "20260626": 0.0,
-            "20260703": 0.01,
-            "20260709": 0.01,
-            "20260717": 0.0
-          },
-          "latest_change": 0.0,
-          "total_change": 0.02,
           "trend_direction": "down",
           "is_taiwan50": false
         }

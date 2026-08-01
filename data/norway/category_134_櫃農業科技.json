@@ -5,24 +5,46 @@
     "stock_name": "惠光",
     "is_taiwan50": false,
     "category": "櫃農業科技",
-    "threshold_code": 30,
+    "threshold_code": 31,
     "threshold_shares": 400,
     "weekly_changes": {
-      "20260612": 0.02,
-      "20260618": 0.05,
       "20260626": 0.0,
       "20260703": 0.01,
       "20260709": 0.52,
-      "20260717": 0.17
+      "20260717": 0.17,
+      "20260724": 0.04,
+      "20260731": 0.1
     },
-    "latest_change": 0.17,
-    "total_change": 0.77,
-    "last_week_hold_pct": 61.19,
+    "latest_change": 0.1,
+    "total_change": 0.84,
+    "last_week_hold_pct": 61.33,
     "close_price": 25.6,
-    "price_change": -0.2
+    "price_change": 0.45
   },
   {
     "rank": 2,
+    "stock_code": "4171",
+    "stock_name": "瑞基",
+    "is_taiwan50": false,
+    "category": "櫃農業科技",
+    "threshold_code": 30,
+    "threshold_shares": 400,
+    "weekly_changes": {
+      "20260626": 0.0,
+      "20260703": 0.13,
+      "20260709": 0.0,
+      "20260717": 0.0,
+      "20260724": 0.52,
+      "20260731": 0.1
+    },
+    "latest_change": 0.1,
+    "total_change": 0.75,
+    "last_week_hold_pct": 33.55,
+    "close_price": 17.35,
+    "price_change": 0.55
+  },
+  {
+    "rank": 3,
     "stock_code": "6578",
     "stock_name": "達邦蛋白",
     "is_taiwan50": false,
@@ -30,40 +52,18 @@
     "threshold_code": 30,
     "threshold_shares": 400,
     "weekly_changes": {
-      "20260612": 0.05,
-      "20260618": 0.32,
       "20260626": -0.02,
       "20260703": 0.04,
       "20260709": 0.11,
-      "20260717": 0.05
+      "20260717": 0.05,
+      "20260724": 0.06,
+      "20260731": 0.03
     },
-    "latest_change": 0.05,
-    "total_change": 0.55,
-    "last_week_hold_pct": 63.11,
-    "close_price": 16.35,
-    "price_change": -0.1
-  },
-  {
-    "rank": 3,
-    "stock_code": "4171",
-    "stock_name": "瑞基",
-    "is_taiwan50": false,
-    "category": "櫃農業科技",
-    "threshold_code": 21,
-    "threshold_shares": 0,
-    "weekly_changes": {
-      "20260612": 0.13,
-      "20260618": 0.06,
-      "20260626": 0.0,
-      "20260703": 0.13,
-      "20260709": 0.0,
-      "20260717": 0.0
-    },
-    "latest_change": 0.0,
-    "total_change": 0.32,
-    "last_week_hold_pct": 32.93,
-    "close_price": 18.4,
-    "price_change": 1.65
+    "latest_change": 0.03,
+    "total_change": 0.27,
+    "last_week_hold_pct": 63.2,
+    "close_price": 16.5,
+    "price_change": 0.4
   },
   {
     "rank": 4,
@@ -74,17 +74,17 @@
     "threshold_code": 30,
     "threshold_shares": 400,
     "weekly_changes": {
-      "20260612": -0.01,
-      "20260618": 0.0,
       "20260626": 0.0,
       "20260703": -0.01,
       "20260709": 0.0,
-      "20260717": -0.03
+      "20260717": -0.03,
+      "20260724": 0.05,
+      "20260731": 0.0
     },
-    "latest_change": -0.03,
-    "total_change": -0.05,
-    "last_week_hold_pct": 69.63,
-    "close_price": 54.7,
-    "price_change": -0.8
+    "latest_change": 0.0,
+    "total_change": 0.01,
+    "last_week_hold_pct": 69.68,
+    "close_price": 55.2,
+    "price_change": 1.5
   }
 ]

@@ -8,18 +8,18 @@
     "threshold_code": 30,
     "threshold_shares": 400,
     "weekly_changes": {
-      "20260612": 0.38,
-      "20260618": -0.19,
       "20260626": 0.2,
       "20260703": 0.07,
       "20260709": 0.08,
-      "20260717": -0.12
+      "20260717": -0.12,
+      "20260724": 0.06,
+      "20260731": -0.02
     },
-    "latest_change": -0.12,
-    "total_change": 0.42,
-    "last_week_hold_pct": 83.2,
-    "close_price": 19.9,
-    "price_change": -1.15
+    "latest_change": -0.02,
+    "total_change": 0.27,
+    "last_week_hold_pct": 83.24,
+    "close_price": 19.1,
+    "price_change": -0.4
   },
   {
     "rank": 2,
@@ -27,21 +27,21 @@
     "stock_name": "欣雄",
     "is_taiwan50": false,
     "category": "櫃油電燃氣",
-    "threshold_code": 31,
+    "threshold_code": 30,
     "threshold_shares": 400,
     "weekly_changes": {
-      "20260612": 0.04,
-      "20260618": 0.01,
       "20260626": 0.21,
       "20260703": 0.01,
       "20260709": -0.22,
-      "20260717": 0.01
+      "20260717": 0.01,
+      "20260724": 0.02,
+      "20260731": -0.02
     },
-    "latest_change": 0.01,
-    "total_change": 0.06,
+    "latest_change": -0.02,
+    "total_change": 0.01,
     "last_week_hold_pct": 88.97,
-    "close_price": 39.25,
-    "price_change": -0.15
+    "close_price": 39.95,
+    "price_change": 0.25
   },
   {
     "rank": 3,
@@ -49,21 +49,21 @@
     "stock_name": "欣泰",
     "is_taiwan50": false,
     "category": "櫃油電燃氣",
-    "threshold_code": 31,
+    "threshold_code": 50,
     "threshold_shares": 400,
     "weekly_changes": {
-      "20260612": -0.02,
-      "20260618": -0.12,
       "20260626": 0.11,
       "20260703": -0.03,
       "20260709": -0.14,
-      "20260717": -0.01
+      "20260717": -0.01,
+      "20260724": 0.0,
+      "20260731": 0.01
     },
-    "latest_change": -0.01,
-    "total_change": -0.21,
-    "last_week_hold_pct": 82.84,
-    "close_price": 52.7,
-    "price_change": -0.3
+    "latest_change": 0.01,
+    "total_change": -0.06,
+    "last_week_hold_pct": 82.85,
+    "close_price": 51.9,
+    "price_change": 0.4
   },
   {
     "rank": 4,
@@ -71,20 +71,20 @@
     "stock_name": "大汽電",
     "is_taiwan50": false,
     "category": "櫃油電燃氣",
-    "threshold_code": 31,
-    "threshold_shares": 400,
+    "threshold_code": 10,
+    "threshold_shares": 1000,
     "weekly_changes": {
-      "20260612": 0.36,
-      "20260618": -0.34,
       "20260626": -0.02,
       "20260703": -0.02,
       "20260709": -0.34,
-      "20260717": 0.13
+      "20260717": 0.13,
+      "20260724": 0.1,
+      "20260731": 0.08
     },
-    "latest_change": 0.13,
-    "total_change": -0.23,
-    "last_week_hold_pct": 81.39,
-    "close_price": 41.5,
-    "price_change": -0.85
+    "latest_change": 0.08,
+    "total_change": -0.07,
+    "last_week_hold_pct": 81.57,
+    "close_price": 41.4,
+    "price_change": 0.5
   }
 ]

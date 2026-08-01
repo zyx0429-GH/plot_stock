@@ -117,15 +117,15 @@ def convert():
         if len(dates) >= 2:
             prev_week_change = weekly_changes.get(dates[1])
         
+        wow = r.get('latest_change', 0) or 0
+        price_change = r.get('price_change', 0) or 0
+        
         signals = compute_signals(r, streak, prev_week_change)
         
         # 判斷是否為新進榜 (需要前週數據, 簡化: 若上週變化為0或前週無數據且本週有顯著變化)
         # 這裡簡化: 若上週變化為0或極小, 且本週變化顯著, 標記為新進榜
         if prev_week_change is not None and abs(prev_week_change) < 0.05 and wow > 0.5:
             signals.append('新進榜')
-        
-        wow = r.get('latest_change', 0) or 0
-        price_change = r.get('price_change', 0) or 0
         
         threshold_groups[key].append({
             'code': str(r.get('stock_code', '')),
