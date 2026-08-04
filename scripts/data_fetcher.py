@@ -206,13 +206,17 @@ class TWStockDataFetcher:
         print(f"[INFO] Chip monitoring merged: {merged_count} stocks from {os.path.basename(latest_file)} (format: {'full' if is_full_format else 'legacy'})")
 
     def _yf_price(self, stock_id, days=60):
-        """用 yfinance 抓股價歷史 — 嘗試 .TW 和 .TWO, auto_adjust=False 避免 adjusted close"""
+        """用 yfinance 抓股價歷史 — 嘗試 .TW 和 .TWO, auto_adjust=False 避免 adjusted close
+        靜默處理退市股票錯誤，避免 stderr 輸出干擾 PowerShell"""
+        import contextlib
+        import io
         for suffix in [".TW", ".TWO"]:
             try:
-                ticker = yf.Ticker(f"{stock_id}{suffix}")
-                df = ticker.history(period=f"{days}d", auto_adjust=False)
-                if not df.empty:
-                    return df
+                with contextlib.redirect_stderr(io.StringIO()):
+                    ticker = yf.Ticker(f"{stock_id}{suffix}")
+                    df = ticker.history(period=f"{days}d", auto_adjust=False)
+                    if not df.empty:
+                        return df
             except Exception:
                 pass
         return pd.DataFrame()
@@ -970,12 +974,12 @@ def fetch_all():
     all_stocks = list(WATCHLIST) + [
         "2330", "2317", "2454", "2303", "2881", "2882", "1216", "1301", "3008", "0050", "0056",
         "3006", "2345", "2376", "2301", "2327", "2313", "2409", "3481", "3037", "2357",
-        "3661", "2382", "6415", "5274", "2344", "2356", "2377", "2383", "30277", "3665",
-        "4967", "6213", "8150", "8042", "8046", "8996", "5439", "6805", "6770", "6669",
-        "4961", "6271", "6274", "3443", "3376", "3264", "3217", "2428", "2439", "2449",
-        "2492", "2481", "4919", "3711", "3680", "6191", "6187", "6182", "6173", "6147",
-        "1815", "1590", "1319", "00981A", "1605", "6239", "6261", "3356", "3661", "6510",
-        "6515", "4966", "3005", "6257", "3016", "6104", "6177", "2352", "2324", "2404",
+        "3661", "2382", "6415", "2344", "2356", "2377", "2383", "3665",
+        "4967", "6213", "8150", "8046", "8996", "5439", "6805", "6770", "6669",
+        "4961", "6271", "3443", "3376", "2428", "2439", "2449",
+        "2492", "2481", "4919", "3711", "6191",
+        "1590", "1319", "00981A", "1605", "6239", "3356", "6515",
+        "3005", "3016", "6177", "2352", "2324", "2404",
         "2408", "2023", "2025", "2030", "2031", "2032", "2033", "2034",
     ]
     
