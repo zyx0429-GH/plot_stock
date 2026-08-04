@@ -552,28 +552,67 @@ class TWStockDataFetcher:
 
         # === Step 1: 抓取上市每日成交資料 (STOCK_DAY_ALL) ===
         print("[INFO] Fetching TWSE STOCK_DAY_ALL...")
-        day_all = self._twse_get("exchangeReport/STOCK_DAY_ALL", {"response": "json", "date": today_str})
-        if not day_all.get("data"):
-            print("[WARN] No data for today, trying yesterday...")
-            day_all = self._twse_get("exchangeReport/STOCK_DAY_ALL", {"response": "json", "date": yesterday})
         price_map = {}
-        if day_all.get("data"):
-            for row in day_all["data"]:
-                sid = row[0]
-                try:
-                    price_map[sid.lstrip("0") or "0"] = {
-                        "stock_name": row[1].strip(),
-                        "volume": int(row[2].replace(",", "")),
-                        "open": float(row[4].replace(",", "")) if row[4] != "--" else 0,
-                        "high": float(row[5].replace(",", "")) if row[5] != "--" else 0,
-                        "low": float(row[6].replace(",", "")) if row[6] != "--" else 0,
-                        "close": float(row[7].replace(",", "")) if row[7] != "--" else 0,
-                        "change": float(row[8].replace(",", "").replace("+", "").replace("X", "0")) if row[8] != "--" else 0,
-                        "trades": int(row[9].replace(",", "")),
-                    }
-                except Exception:
-                    pass
-        print(f"[INFO] TWSE STOCK_DAY_ALL: {len(price_map)} stocks")
+        for try_date in [today_str, yesterday]:
+            url = f"{self.twse_base}/exchangeReport/STOCK_DAY_ALL"
+            try:
+                resp = self.session.get(url, params={"response": "json", "date": try_date}, timeout=30)
+                resp.raise_for_status()
+                ct = resp.headers.get("Content-Type", "").lower()
+                if "csv" in ct:
+                    # TWSE 2025/08 起 STOCK_DAY_ALL 改回 CSV 格式
+                    import io
+                    df = pd.read_csv(io.StringIO(resp.text))
+                    # 欄位: 日期,證券代號,證券名稱,成交股數,成交金額,開盤價,最高價,最低價,收盤價,漲跌價差,成交筆數
+                    for _, row in df.iterrows():
+                        sid = str(row.iloc[1]).strip().lstrip("0") or "0"
+                        try:
+                            close_raw = str(row.iloc[8]).replace(",", "")
+                            close_val = float(close_raw) if close_raw not in ("--", "nan", "") else 0.0
+                            change_raw = str(row.iloc[9]).replace(",", "") if pd.notna(row.iloc[9]) else "0"
+                            change_val = float(change_raw) if change_raw not in ("--", "nan", "") else 0.0
+                            open_raw = str(row.iloc[5]).replace(",", "")
+                            high_raw = str(row.iloc[6]).replace(",", "")
+                            low_raw = str(row.iloc[7]).replace(",", "")
+                            vol_raw = str(row.iloc[3]).replace(",", "")
+                            price_map[sid] = {
+                                "stock_name": str(row.iloc[2]).strip(),
+                                "volume": int(float(vol_raw)) if vol_raw not in ("--", "nan", "") else 0,
+                                "open": float(open_raw) if open_raw not in ("--", "nan", "") else 0.0,
+                                "high": float(high_raw) if high_raw not in ("--", "nan", "") else 0.0,
+                                "low": float(low_raw) if low_raw not in ("--", "nan", "") else 0.0,
+                                "close": close_val,
+                                "change": change_val,
+                                "trades": int(float(str(row.iloc[10]).replace(",", ""))) if pd.notna(row.iloc[10]) else 0,
+                            }
+                        except Exception:
+                            pass
+                    print(f"[INFO] TWSE STOCK_DAY_ALL (CSV): {len(price_map)} stocks for {try_date}")
+                    break
+                else:
+                    data = resp.json()
+                    if data.get("data"):
+                        for row in data["data"]:
+                            sid = row[0]
+                            try:
+                                price_map[sid.lstrip("0") or "0"] = {
+                                    "stock_name": row[1].strip(),
+                                    "volume": int(row[2].replace(",", "")),
+                                    "open": float(row[4].replace(",", "")) if row[4] != "--" else 0,
+                                    "high": float(row[5].replace(",", "")) if row[5] != "--" else 0,
+                                    "low": float(row[6].replace(",", "")) if row[6] != "--" else 0,
+                                    "close": float(row[7].replace(",", "")) if row[7] != "--" else 0,
+                                    "change": float(row[8].replace(",", "").replace("+", "").replace("X", "0")) if row[8] != "--" else 0,
+                                    "trades": int(row[9].replace(",", "")),
+                                }
+                            except Exception:
+                                pass
+                        print(f"[INFO] TWSE STOCK_DAY_ALL (JSON): {len(price_map)} stocks for {try_date}")
+                        break
+                    else:
+                        print(f"[WARN] No TWSE data for {try_date}")
+            except Exception as e:
+                print(f"[ERROR] TWSE STOCK_DAY_ALL {try_date}: {e}")
 
         # === Step 1b: 抓取上櫃每日成交資料 (TPEX) ===
         tpex_price_map = self._fetch_tpex_quotes(today_str, yesterday)
