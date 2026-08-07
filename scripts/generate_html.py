@@ -1457,6 +1457,10 @@ Chart.defaults.scale.ticks.color = 'var(--text-muted)';
             elif "空頭" in trend:
                 cons.append("均線空頭")
             rsi = tech.get("rsi", 0)
+            try:
+                rsi = float(rsi) if rsi is not None else 0
+            except (ValueError, TypeError):
+                rsi = 0
             if rsi > 75:
                 cons.append("RSI過熱")
             stocks_list.append({
