@@ -1,25 +1,25 @@
 [
   {
     "rank": 1,
-    "stock_code": "6021",
-    "stock_name": "美好證",
+    "stock_code": "6026",
+    "stock_name": "福邦證",
     "is_taiwan50": false,
     "category": "櫃金融",
     "threshold_code": 31,
     "threshold_shares": 400,
     "weekly_changes": {
-      "20260626": 0.17,
-      "20260703": 0.14,
-      "20260709": 0.0,
-      "20260717": 0.01,
-      "20260724": -0.1,
-      "20260731": 0.13
+      "20260703": 0.48,
+      "20260709": 0.89,
+      "20260717": -0.14,
+      "20260724": -0.02,
+      "20260731": -0.36,
+      "20260807": 0.22
     },
-    "latest_change": 0.13,
-    "total_change": 0.35,
-    "last_week_hold_pct": 90.43,
-    "close_price": 34.1,
-    "price_change": 2.45
+    "latest_change": 0.22,
+    "total_change": 1.07,
+    "last_week_hold_pct": 49.51,
+    "close_price": 14.1,
+    "price_change": 0.2
   },
   {
     "rank": 2,
@@ -27,131 +27,131 @@
     "stock_name": "台名",
     "is_taiwan50": false,
     "category": "櫃金融",
-    "threshold_code": 21,
+    "threshold_code": 32,
     "threshold_shares": 0,
     "weekly_changes": {
-      "20260626": -0.12,
       "20260703": 0.0,
       "20260709": -0.04,
       "20260717": 0.48,
       "20260724": 0.0,
-      "20260731": 0.0
+      "20260731": 0.0,
+      "20260807": 0.0
     },
     "latest_change": 0.0,
-    "total_change": 0.32,
+    "total_change": 0.44,
     "last_week_hold_pct": 72.37,
-    "close_price": 38.4,
-    "price_change": -0.1
+    "close_price": 0.0,
+    "price_change": 0.0
   },
   {
     "rank": 3,
-    "stock_code": "6020",
-    "stock_name": "大展證",
-    "is_taiwan50": false,
-    "category": "櫃金融",
-    "threshold_code": 31,
-    "threshold_shares": 400,
-    "weekly_changes": {
-      "20260626": 0.02,
-      "20260703": 0.02,
-      "20260709": 0.01,
-      "20260717": 0.05,
-      "20260724": 0.01,
-      "20260731": 0.04
-    },
-    "latest_change": 0.04,
-    "total_change": 0.15,
-    "last_week_hold_pct": 96.74,
-    "close_price": 21.45,
-    "price_change": 0.7
-  },
-  {
-    "rank": 4,
-    "stock_code": "6026",
-    "stock_name": "福邦證",
+    "stock_code": "6021",
+    "stock_name": "美好證",
     "is_taiwan50": false,
     "category": "櫃金融",
     "threshold_code": 30,
     "threshold_shares": 400,
     "weekly_changes": {
-      "20260626": -1.62,
-      "20260703": 0.48,
-      "20260709": 0.89,
-      "20260717": -0.14,
-      "20260724": -0.02,
-      "20260731": -0.36
+      "20260703": 0.14,
+      "20260709": 0.0,
+      "20260717": 0.01,
+      "20260724": -0.1,
+      "20260731": 0.13,
+      "20260807": 0.0
     },
-    "latest_change": -0.36,
-    "total_change": -0.77,
-    "last_week_hold_pct": 49.29,
-    "close_price": 14.1,
-    "price_change": 0.75
+    "latest_change": 0.0,
+    "total_change": 0.18,
+    "last_week_hold_pct": 90.43,
+    "close_price": 34.1,
+    "price_change": 0.25
+  },
+  {
+    "rank": 4,
+    "stock_code": "6020",
+    "stock_name": "大展證",
+    "is_taiwan50": false,
+    "category": "櫃金融",
+    "threshold_code": 30,
+    "threshold_shares": 400,
+    "weekly_changes": {
+      "20260703": 0.02,
+      "20260709": 0.01,
+      "20260717": 0.05,
+      "20260724": 0.01,
+      "20260731": 0.04,
+      "20260807": 0.02
+    },
+    "latest_change": 0.02,
+    "total_change": 0.15,
+    "last_week_hold_pct": 96.76,
+    "close_price": 20.7,
+    "price_change": -0.3
   },
   {
     "rank": 5,
-    "stock_code": "6023",
-    "stock_name": "元大期貨",
-    "is_taiwan50": false,
-    "category": "櫃金融",
-    "threshold_code": 50,
-    "threshold_shares": 400,
-    "weekly_changes": {
-      "20260626": -0.34,
-      "20260703": -0.19,
-      "20260709": 0.15,
-      "20260717": -0.45,
-      "20260724": -0.31,
-      "20260731": 0.12
-    },
-    "latest_change": 0.12,
-    "total_change": -1.02,
-    "last_week_hold_pct": 85.87,
-    "close_price": 87.6,
-    "price_change": 1.6
-  },
-  {
-    "rank": 6,
     "stock_code": "6015",
     "stock_name": "宏遠證",
     "is_taiwan50": false,
     "category": "櫃金融",
-    "threshold_code": 40,
-    "threshold_shares": 200,
+    "threshold_code": 41,
+    "threshold_shares": 0,
     "weekly_changes": {
-      "20260626": -1.18,
       "20260703": -0.06,
       "20260709": 0.22,
       "20260717": -0.48,
       "20260724": -0.21,
-      "20260731": -0.21
+      "20260731": -0.21,
+      "20260807": 0.2
     },
-    "latest_change": -0.21,
-    "total_change": -1.92,
-    "last_week_hold_pct": 49.42,
-    "close_price": 15.65,
-    "price_change": 1.1
+    "latest_change": 0.2,
+    "total_change": -0.54,
+    "last_week_hold_pct": 49.62,
+    "close_price": 15.3,
+    "price_change": -0.2
   },
   {
-    "rank": 7,
+    "rank": 6,
     "stock_code": "6016",
     "stock_name": "康和證",
     "is_taiwan50": false,
     "category": "櫃金融",
-    "threshold_code": 21,
+    "threshold_code": 41,
     "threshold_shares": 0,
     "weekly_changes": {
-      "20260626": -1.09,
       "20260703": -0.01,
       "20260709": 0.15,
       "20260717": -0.13,
       "20260724": -0.43,
-      "20260731": -0.43
+      "20260731": -0.43,
+      "20260807": 0.02
     },
-    "latest_change": -0.43,
-    "total_change": -1.94,
-    "last_week_hold_pct": 50.72,
-    "close_price": 20.6,
-    "price_change": 1.6
+    "latest_change": 0.02,
+    "total_change": -0.83,
+    "last_week_hold_pct": 50.74,
+    "close_price": 19.8,
+    "price_change": -0.5
+  },
+  {
+    "rank": 7,
+    "stock_code": "6023",
+    "stock_name": "元大期貨",
+    "is_taiwan50": false,
+    "category": "櫃金融",
+    "threshold_code": 30,
+    "threshold_shares": 400,
+    "weekly_changes": {
+      "20260703": -0.19,
+      "20260709": 0.15,
+      "20260717": -0.45,
+      "20260724": -0.31,
+      "20260731": 0.12,
+      "20260807": -0.25
+    },
+    "latest_change": -0.25,
+    "total_change": -0.93,
+    "last_week_hold_pct": 85.62,
+    "close_price": 86.7,
+    "price_change": -0.3
   },
   {
     "rank": 8,
@@ -162,17 +162,17 @@
     "threshold_code": 10,
     "threshold_shares": 1000,
     "weekly_changes": {
-      "20260626": -1.09,
       "20260703": -0.35,
       "20260709": -0.83,
       "20260717": -0.12,
       "20260724": -0.14,
-      "20260731": -0.23
+      "20260731": -0.23,
+      "20260807": -0.55
     },
-    "latest_change": -0.23,
-    "total_change": -2.76,
-    "last_week_hold_pct": 67.87,
-    "close_price": 30.5,
-    "price_change": 2.75
+    "latest_change": -0.55,
+    "total_change": -2.22,
+    "last_week_hold_pct": 67.32,
+    "close_price": 28.8,
+    "price_change": -0.35
   }
 ]

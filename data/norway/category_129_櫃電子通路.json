@@ -5,21 +5,21 @@
     "stock_name": "巨虹",
     "is_taiwan50": false,
     "category": "櫃電子通路",
-    "threshold_code": 30,
+    "threshold_code": 31,
     "threshold_shares": 400,
     "weekly_changes": {
-      "20260626": 0.39,
       "20260703": 0.09,
       "20260709": 0.02,
       "20260717": -0.99,
       "20260724": 1.45,
-      "20260731": -0.26
+      "20260731": -0.26,
+      "20260807": 0.35
     },
-    "latest_change": -0.26,
-    "total_change": 0.7,
-    "last_week_hold_pct": 65.0,
-    "close_price": 43.55,
-    "price_change": 2.55
+    "latest_change": 0.35,
+    "total_change": 0.66,
+    "last_week_hold_pct": 65.35,
+    "close_price": 44.4,
+    "price_change": 1.95
   },
   {
     "rank": 2,
@@ -27,87 +27,87 @@
     "stock_name": "利機",
     "is_taiwan50": false,
     "category": "櫃電子通路",
-    "threshold_code": 10,
-    "threshold_shares": 1000,
+    "threshold_code": 31,
+    "threshold_shares": 400,
     "weekly_changes": {
-      "20260626": 0.07,
       "20260703": 0.07,
       "20260709": 0.05,
       "20260717": 0.06,
       "20260724": 0.04,
-      "20260731": -0.01
+      "20260731": -0.01,
+      "20260807": 0.0
     },
-    "latest_change": -0.01,
-    "total_change": 0.28,
+    "latest_change": 0.0,
+    "total_change": 0.21,
     "last_week_hold_pct": 48.91,
-    "close_price": 64.4,
-    "price_change": 2.9
+    "close_price": 75.3,
+    "price_change": 6.6
   },
   {
     "rank": 3,
-    "stock_code": "3224",
-    "stock_name": "三顧",
+    "stock_code": "6265",
+    "stock_name": "方土昶",
     "is_taiwan50": false,
     "category": "櫃電子通路",
-    "threshold_code": 21,
-    "threshold_shares": 0,
+    "threshold_code": 31,
+    "threshold_shares": 400,
     "weekly_changes": {
-      "20260626": 0.16,
-      "20260703": -0.05,
-      "20260709": -0.15,
-      "20260717": 0.12,
-      "20260724": -0.01,
-      "20260731": -0.01
+      "20260703": -1.37,
+      "20260709": 0.02,
+      "20260717": 0.04,
+      "20260724": -0.15,
+      "20260731": -0.19,
+      "20260807": 1.84
     },
-    "latest_change": -0.01,
-    "total_change": 0.06,
-    "last_week_hold_pct": 71.85,
-    "close_price": 35.0,
-    "price_change": 0.55
+    "latest_change": 1.84,
+    "total_change": 0.19,
+    "last_week_hold_pct": 46.21,
+    "close_price": 55.4,
+    "price_change": 0.7
   },
   {
     "rank": 4,
-    "stock_code": "6154",
-    "stock_name": "順發",
+    "stock_code": "6113",
+    "stock_name": "亞矽",
     "is_taiwan50": false,
     "category": "櫃電子通路",
     "threshold_code": 30,
     "threshold_shares": 400,
     "weekly_changes": {
-      "20260626": 0.0,
+      "20260703": -0.86,
+      "20260709": 0.04,
+      "20260717": 0.99,
+      "20260724": -0.04,
+      "20260731": 0.03,
+      "20260807": -0.01
+    },
+    "latest_change": -0.01,
+    "total_change": 0.15,
+    "last_week_hold_pct": 53.15,
+    "close_price": 23.6,
+    "price_change": 0.8
+  },
+  {
+    "rank": 5,
+    "stock_code": "6154",
+    "stock_name": "順發",
+    "is_taiwan50": false,
+    "category": "櫃電子通路",
+    "threshold_code": 31,
+    "threshold_shares": 400,
+    "weekly_changes": {
       "20260703": 0.0,
       "20260709": 0.0,
       "20260717": 0.0,
       "20260724": 0.01,
-      "20260731": 0.0
+      "20260731": 0.0,
+      "20260807": 0.01
     },
-    "latest_change": 0.0,
-    "total_change": 0.01,
-    "last_week_hold_pct": 63.29,
-    "close_price": 13.5,
-    "price_change": 0.05
-  },
-  {
-    "rank": 5,
-    "stock_code": "8067",
-    "stock_name": "志旭",
-    "is_taiwan50": false,
-    "category": "櫃電子通路",
-    "threshold_code": 32,
-    "threshold_shares": 0,
-    "weekly_changes": {
-      "20260626": 0.0,
-      "20260703": 0.0,
-      "20260709": 0.0,
-      "20260717": 0.0,
-      "20260724": 0.0,
-      "20260731": 0.0
-    },
-    "latest_change": 0.0,
-    "total_change": 0.0,
-    "last_week_hold_pct": 81.37,
-    "close_price": 13.35,
-    "price_change": 0.7
+    "latest_change": 0.01,
+    "total_change": 0.02,
+    "last_week_hold_pct": 63.3,
+    "close_price": 13.65,
+    "price_change": -0.1
   },
   {
     "rank": 6,
@@ -115,24 +115,90 @@
     "stock_name": "昱捷",
     "is_taiwan50": false,
     "category": "櫃電子通路",
-    "threshold_code": 50,
+    "threshold_code": 30,
     "threshold_shares": 400,
     "weekly_changes": {
-      "20260626": -0.09,
       "20260703": -0.05,
       "20260709": -0.06,
       "20260717": -0.08,
       "20260724": -0.07,
-      "20260731": 0.26
+      "20260731": 0.26,
+      "20260807": 0.0
     },
-    "latest_change": 0.26,
-    "total_change": -0.09,
+    "latest_change": 0.0,
+    "total_change": 0.0,
     "last_week_hold_pct": 58.36,
-    "close_price": 19.35,
-    "price_change": 0.05
+    "close_price": 19.55,
+    "price_change": -0.05
   },
   {
     "rank": 7,
+    "stock_code": "8067",
+    "stock_name": "志旭",
+    "is_taiwan50": false,
+    "category": "櫃電子通路",
+    "threshold_code": 32,
+    "threshold_shares": 0,
+    "weekly_changes": {
+      "20260703": 0.0,
+      "20260709": 0.0,
+      "20260717": 0.0,
+      "20260724": 0.0,
+      "20260731": 0.0,
+      "20260807": 0.0
+    },
+    "latest_change": 0.0,
+    "total_change": 0.0,
+    "last_week_hold_pct": 81.37,
+    "close_price": 13.35,
+    "price_change": 0.1
+  },
+  {
+    "rank": 8,
+    "stock_code": "3224",
+    "stock_name": "三顧",
+    "is_taiwan50": false,
+    "category": "櫃電子通路",
+    "threshold_code": 41,
+    "threshold_shares": 0,
+    "weekly_changes": {
+      "20260703": -0.05,
+      "20260709": -0.15,
+      "20260717": 0.12,
+      "20260724": -0.01,
+      "20260731": -0.01,
+      "20260807": 0.01
+    },
+    "latest_change": 0.01,
+    "total_change": -0.09,
+    "last_week_hold_pct": 71.86,
+    "close_price": 35.0,
+    "price_change": -0.65
+  },
+  {
+    "rank": 9,
+    "stock_code": "6474",
+    "stock_name": "華豫寧",
+    "is_taiwan50": false,
+    "category": "櫃電子通路",
+    "threshold_code": 32,
+    "threshold_shares": 0,
+    "weekly_changes": {
+      "20260703": 0.0,
+      "20260709": 0.0,
+      "20260717": -0.1,
+      "20260724": 0.0,
+      "20260731": 0.0,
+      "20260807": 0.0
+    },
+    "latest_change": 0.0,
+    "total_change": -0.1,
+    "last_week_hold_pct": 67.53,
+    "close_price": 37.55,
+    "price_change": -0.25
+  },
+  {
+    "rank": 10,
     "stock_code": "8032",
     "stock_name": "光菱",
     "is_taiwan50": false,
@@ -140,65 +206,65 @@
     "threshold_code": 50,
     "threshold_shares": 400,
     "weekly_changes": {
-      "20260626": -0.08,
       "20260703": -0.07,
       "20260709": -0.04,
       "20260717": -0.06,
       "20260724": -0.04,
-      "20260731": -0.01
+      "20260731": -0.01,
+      "20260807": 0.0
     },
-    "latest_change": -0.01,
-    "total_change": -0.3,
+    "latest_change": 0.0,
+    "total_change": -0.22,
     "last_week_hold_pct": 75.97,
-    "close_price": 34.6,
-    "price_change": 1.6
+    "close_price": 36.1,
+    "price_change": -0.2
   },
   {
-    "rank": 8,
-    "stock_code": "6227",
-    "stock_name": "茂綸",
-    "is_taiwan50": false,
-    "category": "櫃電子通路",
-    "threshold_code": 31,
-    "threshold_shares": 400,
-    "weekly_changes": {
-      "20260626": 1.11,
-      "20260703": -0.07,
-      "20260709": -0.07,
-      "20260717": 0.47,
-      "20260724": -1.06,
-      "20260731": -0.75
-    },
-    "latest_change": -0.75,
-    "total_change": -0.37,
-    "last_week_hold_pct": 71.56,
-    "close_price": 113.5,
-    "price_change": 5.5
-  },
-  {
-    "rank": 9,
+    "rank": 11,
     "stock_code": "6118",
     "stock_name": "建達",
     "is_taiwan50": false,
     "category": "櫃電子通路",
-    "threshold_code": 31,
+    "threshold_code": 30,
     "threshold_shares": 400,
     "weekly_changes": {
-      "20260626": -0.05,
       "20260703": -0.69,
       "20260709": 0.46,
       "20260717": 0.12,
       "20260724": -0.53,
-      "20260731": 0.23
+      "20260731": 0.23,
+      "20260807": -0.02
     },
-    "latest_change": 0.23,
-    "total_change": -0.46,
-    "last_week_hold_pct": 56.76,
-    "close_price": 15.55,
-    "price_change": 0.4
+    "latest_change": -0.02,
+    "total_change": -0.43,
+    "last_week_hold_pct": 56.74,
+    "close_price": 15.6,
+    "price_change": -0.15
   },
   {
-    "rank": 10,
+    "rank": 12,
+    "stock_code": "6227",
+    "stock_name": "茂綸",
+    "is_taiwan50": false,
+    "category": "櫃電子通路",
+    "threshold_code": 50,
+    "threshold_shares": 400,
+    "weekly_changes": {
+      "20260703": -0.07,
+      "20260709": -0.07,
+      "20260717": 0.47,
+      "20260724": -1.06,
+      "20260731": -0.75,
+      "20260807": 0.98
+    },
+    "latest_change": 0.98,
+    "total_change": -0.5,
+    "last_week_hold_pct": 72.54,
+    "close_price": 123.0,
+    "price_change": -2.0
+  },
+  {
+    "rank": 13,
     "stock_code": "8068",
     "stock_name": "全達",
     "is_taiwan50": false,
@@ -206,106 +272,40 @@
     "threshold_code": 50,
     "threshold_shares": 400,
     "weekly_changes": {
-      "20260626": -0.01,
       "20260703": -0.04,
       "20260709": -0.09,
       "20260717": -0.15,
       "20260724": -0.12,
-      "20260731": -0.08
+      "20260731": -0.08,
+      "20260807": -0.06
     },
-    "latest_change": -0.08,
-    "total_change": -0.49,
-    "last_week_hold_pct": 61.81,
-    "close_price": 17.2,
-    "price_change": 0.65
-  },
-  {
-    "rank": 11,
-    "stock_code": "6113",
-    "stock_name": "亞矽",
-    "is_taiwan50": false,
-    "category": "櫃電子通路",
-    "threshold_code": 31,
-    "threshold_shares": 400,
-    "weekly_changes": {
-      "20260626": -0.98,
-      "20260703": -0.86,
-      "20260709": 0.04,
-      "20260717": 0.99,
-      "20260724": -0.04,
-      "20260731": 0.03
-    },
-    "latest_change": 0.03,
-    "total_change": -0.82,
-    "last_week_hold_pct": 53.16,
-    "close_price": 21.15,
-    "price_change": 1.05
-  },
-  {
-    "rank": 12,
-    "stock_code": "6474",
-    "stock_name": "華豫寧",
-    "is_taiwan50": false,
-    "category": "櫃電子通路",
-    "threshold_code": 40,
-    "threshold_shares": 200,
-    "weekly_changes": {
-      "20260626": -0.84,
-      "20260703": 0.0,
-      "20260709": 0.0,
-      "20260717": -0.1,
-      "20260724": 0.0,
-      "20260731": 0.0
-    },
-    "latest_change": 0.0,
-    "total_change": -0.94,
-    "last_week_hold_pct": 67.53,
-    "close_price": 37.0,
-    "price_change": 0.7
-  },
-  {
-    "rank": 13,
-    "stock_code": "6270",
-    "stock_name": "倍微",
-    "is_taiwan50": false,
-    "category": "櫃電子通路",
-    "threshold_code": 50,
-    "threshold_shares": 400,
-    "weekly_changes": {
-      "20260626": 2.85,
-      "20260703": -4.37,
-      "20260709": -0.2,
-      "20260717": -0.48,
-      "20260724": -0.22,
-      "20260731": 0.04
-    },
-    "latest_change": 0.04,
-    "total_change": -2.38,
-    "last_week_hold_pct": 41.07,
-    "close_price": 27.75,
-    "price_change": 1.75
+    "latest_change": -0.06,
+    "total_change": -0.54,
+    "last_week_hold_pct": 61.75,
+    "close_price": 17.9,
+    "price_change": -0.25
   },
   {
     "rank": 14,
-    "stock_code": "6265",
-    "stock_name": "方土昶",
+    "stock_code": "3360",
+    "stock_name": "尚立",
     "is_taiwan50": false,
     "category": "櫃電子通路",
-    "threshold_code": 10,
-    "threshold_shares": 1000,
+    "threshold_code": 30,
+    "threshold_shares": 400,
     "weekly_changes": {
-      "20260626": -1.62,
-      "20260703": -1.37,
-      "20260709": 0.02,
-      "20260717": 0.04,
-      "20260724": -0.15,
-      "20260731": -0.19
+      "20260703": 1.09,
+      "20260709": -1.16,
+      "20260717": -1.95,
+      "20260724": -1.55,
+      "20260731": 0.65,
+      "20260807": -0.06
     },
-    "latest_change": -0.19,
-    "total_change": -3.27,
-    "last_week_hold_pct": 44.37,
-    "close_price": 42.4,
-    "price_change": 3.8
+    "latest_change": -0.06,
+    "total_change": -2.98,
+    "last_week_hold_pct": 23.01,
+    "close_price": 16.05,
+    "price_change": -0.05
   },
   {
     "rank": 15,
@@ -313,42 +313,42 @@
     "stock_name": "擎亞",
     "is_taiwan50": false,
     "category": "櫃電子通路",
-    "threshold_code": 30,
-    "threshold_shares": 400,
+    "threshold_code": 10,
+    "threshold_shares": 1000,
     "weekly_changes": {
-      "20260626": -1.88,
       "20260703": 0.18,
       "20260709": 0.57,
       "20260717": -4.44,
       "20260724": 0.66,
-      "20260731": -0.31
+      "20260731": -0.31,
+      "20260807": -0.92
     },
-    "latest_change": -0.31,
-    "total_change": -5.22,
-    "last_week_hold_pct": 52.89,
-    "close_price": 112.5,
-    "price_change": 10.0
+    "latest_change": -0.92,
+    "total_change": -4.26,
+    "last_week_hold_pct": 51.97,
+    "close_price": 131.5,
+    "price_change": -4.0
   },
   {
     "rank": 16,
-    "stock_code": "3360",
-    "stock_name": "尚立",
+    "stock_code": "6270",
+    "stock_name": "倍微",
     "is_taiwan50": false,
     "category": "櫃電子通路",
-    "threshold_code": 50,
+    "threshold_code": 30,
     "threshold_shares": 400,
     "weekly_changes": {
-      "20260626": -3.47,
-      "20260703": 1.09,
-      "20260709": -1.16,
-      "20260717": -1.95,
-      "20260724": -1.55,
-      "20260731": 0.65
+      "20260703": -4.37,
+      "20260709": -0.2,
+      "20260717": -0.48,
+      "20260724": -0.22,
+      "20260731": 0.04,
+      "20260807": -0.65
     },
-    "latest_change": 0.65,
-    "total_change": -6.39,
-    "last_week_hold_pct": 23.07,
-    "close_price": 15.7,
-    "price_change": 0.8
+    "latest_change": -0.65,
+    "total_change": -5.88,
+    "last_week_hold_pct": 40.42,
+    "close_price": 29.55,
+    "price_change": -0.15
   }
 ]

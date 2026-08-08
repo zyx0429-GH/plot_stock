@@ -5,21 +5,21 @@
     "stock_name": "信立",
     "is_taiwan50": false,
     "category": "櫃塑膠",
-    "threshold_code": 10,
-    "threshold_shares": 1000,
+    "threshold_code": 31,
+    "threshold_shares": 400,
     "weekly_changes": {
-      "20260626": 0.19,
       "20260703": -0.19,
       "20260709": 0.06,
       "20260717": 0.28,
       "20260724": 0.16,
-      "20260731": -0.28
+      "20260731": -0.28,
+      "20260807": 0.34
     },
-    "latest_change": -0.28,
-    "total_change": 0.22,
-    "last_week_hold_pct": 19.16,
-    "close_price": 41.35,
-    "price_change": 1.75
+    "latest_change": 0.34,
+    "total_change": 0.37,
+    "last_week_hold_pct": 19.5,
+    "close_price": 45.05,
+    "price_change": -0.15
   },
   {
     "rank": 2,
@@ -27,21 +27,21 @@
     "stock_name": "萬國通",
     "is_taiwan50": false,
     "category": "櫃塑膠",
-    "threshold_code": 10,
-    "threshold_shares": 1000,
+    "threshold_code": 31,
+    "threshold_shares": 400,
     "weekly_changes": {
-      "20260626": 0.05,
       "20260703": -0.04,
       "20260709": 0.16,
       "20260717": 0.07,
       "20260724": 0.03,
-      "20260731": -0.15
+      "20260731": -0.15,
+      "20260807": 0.28
     },
-    "latest_change": -0.15,
-    "total_change": 0.12,
-    "last_week_hold_pct": 83.27,
-    "close_price": 10.25,
-    "price_change": 0.05
+    "latest_change": 0.28,
+    "total_change": 0.35,
+    "last_week_hold_pct": 83.55,
+    "close_price": 10.45,
+    "price_change": 0.0
   },
   {
     "rank": 3,
@@ -52,18 +52,18 @@
     "threshold_code": 32,
     "threshold_shares": 0,
     "weekly_changes": {
-      "20260626": 0.0,
       "20260703": 0.0,
       "20260709": 0.0,
       "20260717": 0.0,
       "20260724": 0.0,
-      "20260731": 0.0
+      "20260731": 0.0,
+      "20260807": 0.0
     },
     "latest_change": 0.0,
     "total_change": 0.0,
     "last_week_hold_pct": 84.75,
-    "close_price": 0.0,
-    "price_change": 0.0
+    "close_price": 43.8,
+    "price_change": -0.15
   },
   {
     "rank": 4,
@@ -71,20 +71,20 @@
     "stock_name": "勝昱",
     "is_taiwan50": false,
     "category": "櫃塑膠",
-    "threshold_code": 10,
-    "threshold_shares": 1000,
+    "threshold_code": 31,
+    "threshold_shares": 400,
     "weekly_changes": {
-      "20260626": 0.01,
       "20260703": 0.01,
       "20260709": 0.0,
       "20260717": 0.01,
       "20260724": 0.0,
-      "20260731": -0.17
+      "20260731": -0.17,
+      "20260807": -0.02
     },
-    "latest_change": -0.17,
-    "total_change": -0.14,
-    "last_week_hold_pct": 81.78,
-    "close_price": 16.45,
-    "price_change": -0.7
+    "latest_change": -0.02,
+    "total_change": -0.17,
+    "last_week_hold_pct": 81.76,
+    "close_price": 15.7,
+    "price_change": -0.2
   }
 ]
