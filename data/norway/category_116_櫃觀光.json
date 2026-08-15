@@ -5,131 +5,131 @@
     "stock_name": "旅天下",
     "is_taiwan50": false,
     "category": "櫃觀光",
-    "threshold_code": 10,
-    "threshold_shares": 1000,
+    "threshold_code": 21,
+    "threshold_shares": 0,
     "weekly_changes": {
-      "20260703": 0.0,
       "20260709": 0.0,
       "20260717": 1.52,
       "20260724": 0.07,
       "20260731": 0.03,
-      "20260807": 0.0
+      "20260807": 0.0,
+      "20260814": 0.0
     },
     "latest_change": 0.0,
     "total_change": 1.62,
     "last_week_hold_pct": 44.43,
-    "close_price": 51.3,
-    "price_change": 0.3
+    "close_price": 51.5,
+    "price_change": -0.3
   },
   {
     "rank": 2,
-    "stock_code": "2729",
-    "stock_name": "瓦城",
+    "stock_code": "7757",
+    "stock_name": "金色三麥",
     "is_taiwan50": false,
     "category": "櫃觀光",
-    "threshold_code": 30,
-    "threshold_shares": 400,
+    "threshold_code": 41,
+    "threshold_shares": 0,
     "weekly_changes": {
-      "20260703": 0.39,
-      "20260709": 0.06,
-      "20260717": 0.05,
-      "20260724": 0.2,
-      "20260731": 0.27,
-      "20260807": 0.22
+      "20260709": 0.0,
+      "20260717": 0.0,
+      "20260724": 0.0,
+      "20260731": 0.0,
+      "20260807": 0.0,
+      "20260814": 1.39
     },
-    "latest_change": 0.22,
-    "total_change": 1.19,
-    "last_week_hold_pct": 67.14,
-    "close_price": 160.0,
-    "price_change": 0.5
+    "latest_change": 1.39,
+    "total_change": 1.39,
+    "last_week_hold_pct": 59.31,
+    "close_price": 91.2,
+    "price_change": 0.2
   },
   {
     "rank": 3,
-    "stock_code": "2734",
-    "stock_name": "易飛網",
+    "stock_code": "4530",
+    "stock_name": "宏易",
     "is_taiwan50": false,
     "category": "櫃觀光",
-    "threshold_code": 10,
-    "threshold_shares": 1000,
+    "threshold_code": 41,
+    "threshold_shares": 0,
     "weekly_changes": {
-      "20260703": 0.0,
-      "20260709": 0.72,
-      "20260717": 0.06,
-      "20260724": 0.15,
-      "20260731": 0.12,
-      "20260807": 0.02
+      "20260709": 0.0,
+      "20260717": 0.0,
+      "20260724": 1.13,
+      "20260731": 0.0,
+      "20260807": 0.0,
+      "20260814": 0.02
     },
     "latest_change": 0.02,
-    "total_change": 1.07,
-    "last_week_hold_pct": 37.71,
-    "close_price": 14.9,
-    "price_change": 0.05
+    "total_change": 1.15,
+    "last_week_hold_pct": 72.82,
+    "close_price": 26.5,
+    "price_change": -0.3
   },
   {
     "rank": 4,
-    "stock_code": "1259",
-    "stock_name": "安心",
+    "stock_code": "2734",
+    "stock_name": "易飛網",
     "is_taiwan50": false,
     "category": "櫃觀光",
     "threshold_code": 31,
     "threshold_shares": 400,
     "weekly_changes": {
-      "20260703": 0.06,
+      "20260709": 0.72,
+      "20260717": 0.06,
+      "20260724": 0.15,
+      "20260731": 0.12,
+      "20260807": 0.02,
+      "20260814": 0.04
+    },
+    "latest_change": 0.04,
+    "total_change": 1.11,
+    "last_week_hold_pct": 37.75,
+    "close_price": 14.9,
+    "price_change": 0.0
+  },
+  {
+    "rank": 5,
+    "stock_code": "1259",
+    "stock_name": "安心",
+    "is_taiwan50": false,
+    "category": "櫃觀光",
+    "threshold_code": 50,
+    "threshold_shares": 400,
+    "weekly_changes": {
       "20260709": 0.09,
       "20260717": 0.22,
       "20260724": 0.28,
       "20260731": 0.06,
-      "20260807": 0.07
+      "20260807": 0.07,
+      "20260814": 0.19
     },
-    "latest_change": 0.07,
-    "total_change": 0.78,
-    "last_week_hold_pct": 77.53,
-    "close_price": 60.0,
-    "price_change": 1.3
-  },
-  {
-    "rank": 5,
-    "stock_code": "5364",
-    "stock_name": "力麗店",
-    "is_taiwan50": false,
-    "category": "櫃觀光",
-    "threshold_code": 30,
-    "threshold_shares": 400,
-    "weekly_changes": {
-      "20260703": 0.64,
-      "20260709": 0.0,
-      "20260717": 0.67,
-      "20260724": -0.54,
-      "20260731": 0.04,
-      "20260807": -0.03
-    },
-    "latest_change": -0.03,
-    "total_change": 0.78,
-    "last_week_hold_pct": 70.31,
-    "close_price": 8.83,
-    "price_change": 0.1
+    "latest_change": 0.19,
+    "total_change": 0.91,
+    "last_week_hold_pct": 77.72,
+    "close_price": 65.0,
+    "price_change": 2.6
   },
   {
     "rank": 6,
-    "stock_code": "5905",
-    "stock_name": "南仁湖",
+    "stock_code": "2729",
+    "stock_name": "瓦城",
     "is_taiwan50": false,
     "category": "櫃觀光",
-    "threshold_code": 30,
-    "threshold_shares": 400,
+    "threshold_code": 10,
+    "threshold_shares": 1000,
     "weekly_changes": {
-      "20260703": 0.15,
-      "20260709": 0.03,
-      "20260717": 0.78,
-      "20260724": -0.26,
+      "20260709": 0.06,
+      "20260717": 0.05,
+      "20260724": 0.2,
       "20260731": 0.27,
-      "20260807": -0.22
+      "20260807": 0.22,
+      "20260814": 0.0
     },
-    "latest_change": -0.22,
-    "total_change": 0.75,
-    "last_week_hold_pct": 47.52,
-    "close_price": 8.19,
-    "price_change": 0.05
+    "latest_change": 0.0,
+    "total_change": 0.8,
+    "last_week_hold_pct": 67.14,
+    "close_price": 160.0,
+    "price_change": -1.0
   },
   {
     "rank": 7,
@@ -140,18 +140,18 @@
     "threshold_code": 10,
     "threshold_shares": 1000,
     "weekly_changes": {
-      "20260703": 0.02,
       "20260709": 0.01,
       "20260717": 0.33,
       "20260724": 0.21,
       "20260731": 0.02,
-      "20260807": -0.01
+      "20260807": -0.01,
+      "20260814": -0.03
     },
-    "latest_change": -0.01,
-    "total_change": 0.58,
-    "last_week_hold_pct": 54.12,
-    "close_price": 4.38,
-    "price_change": 0.13
+    "latest_change": -0.03,
+    "total_change": 0.53,
+    "last_week_hold_pct": 54.09,
+    "close_price": 4.15,
+    "price_change": -0.05
   },
   {
     "rank": 8,
@@ -159,21 +159,21 @@
     "stock_name": "海灣",
     "is_taiwan50": false,
     "category": "櫃觀光",
-    "threshold_code": 10,
-    "threshold_shares": 1000,
+    "threshold_code": 31,
+    "threshold_shares": 400,
     "weekly_changes": {
-      "20260703": 0.03,
       "20260709": -0.13,
       "20260717": 0.01,
       "20260724": 0.39,
       "20260731": 0.11,
-      "20260807": 0.02
+      "20260807": 0.02,
+      "20260814": 0.1
     },
-    "latest_change": 0.02,
-    "total_change": 0.43,
-    "last_week_hold_pct": 79.17,
-    "close_price": 15.85,
-    "price_change": 0.05
+    "latest_change": 0.1,
+    "total_change": 0.5,
+    "last_week_hold_pct": 79.27,
+    "close_price": 16.0,
+    "price_change": 0.0
   },
   {
     "rank": 9,
@@ -181,87 +181,87 @@
     "stock_name": "六角",
     "is_taiwan50": false,
     "category": "櫃觀光",
-    "threshold_code": 31,
+    "threshold_code": 30,
     "threshold_shares": 400,
     "weekly_changes": {
-      "20260703": 0.02,
       "20260709": 0.02,
       "20260717": 0.04,
       "20260724": 0.06,
       "20260731": -0.05,
-      "20260807": 0.3
+      "20260807": 0.3,
+      "20260814": 0.03
     },
-    "latest_change": 0.3,
-    "total_change": 0.39,
-    "last_week_hold_pct": 59.07,
-    "close_price": 64.0,
-    "price_change": 0.0
+    "latest_change": 0.03,
+    "total_change": 0.4,
+    "last_week_hold_pct": 59.1,
+    "close_price": 63.0,
+    "price_change": -0.2
   },
   {
     "rank": 10,
+    "stock_code": "5364",
+    "stock_name": "力麗店",
+    "is_taiwan50": false,
+    "category": "櫃觀光",
+    "threshold_code": 31,
+    "threshold_shares": 400,
+    "weekly_changes": {
+      "20260709": 0.0,
+      "20260717": 0.67,
+      "20260724": -0.54,
+      "20260731": 0.04,
+      "20260807": -0.03,
+      "20260814": -0.02
+    },
+    "latest_change": -0.02,
+    "total_change": 0.12,
+    "last_week_hold_pct": 70.29,
+    "close_price": 8.72,
+    "price_change": 0.06
+  },
+  {
+    "rank": 11,
+    "stock_code": "5905",
+    "stock_name": "南仁湖",
+    "is_taiwan50": false,
+    "category": "櫃觀光",
+    "threshold_code": 10,
+    "threshold_shares": 1000,
+    "weekly_changes": {
+      "20260709": 0.03,
+      "20260717": 0.78,
+      "20260724": -0.26,
+      "20260731": 0.27,
+      "20260807": -0.22,
+      "20260814": -0.51
+    },
+    "latest_change": -0.51,
+    "total_change": 0.09,
+    "last_week_hold_pct": 47.01,
+    "close_price": 7.91,
+    "price_change": -0.17
+  },
+  {
+    "rank": 12,
     "stock_code": "5704",
     "stock_name": "老爺知",
     "is_taiwan50": false,
     "category": "櫃觀光",
-    "threshold_code": 30,
-    "threshold_shares": 400,
+    "threshold_code": 21,
+    "threshold_shares": 0,
     "weekly_changes": {
-      "20260703": 0.0,
       "20260709": 0.0,
       "20260717": 0.05,
       "20260724": 0.0,
       "20260731": 0.01,
-      "20260807": 0.0
+      "20260807": 0.0,
+      "20260814": 0.0
     },
     "latest_change": 0.0,
     "total_change": 0.06,
     "last_week_hold_pct": 83.91,
     "close_price": 21.6,
-    "price_change": -0.15
-  },
-  {
-    "rank": 11,
-    "stock_code": "2756",
-    "stock_name": "聯發國際",
-    "is_taiwan50": false,
-    "category": "櫃觀光",
-    "threshold_code": 31,
-    "threshold_shares": 400,
-    "weekly_changes": {
-      "20260703": 1.71,
-      "20260709": 0.01,
-      "20260717": 0.0,
-      "20260724": -0.16,
-      "20260731": -1.52,
-      "20260807": 0.0
-    },
-    "latest_change": 0.0,
-    "total_change": 0.04,
-    "last_week_hold_pct": 71.59,
-    "close_price": 57.0,
     "price_change": 0.0
-  },
-  {
-    "rank": 12,
-    "stock_code": "7757",
-    "stock_name": "金色三麥",
-    "is_taiwan50": false,
-    "category": "櫃觀光",
-    "threshold_code": 32,
-    "threshold_shares": 0,
-    "weekly_changes": {
-      "20260703": 0.01,
-      "20260709": 0.0,
-      "20260717": 0.0,
-      "20260724": 0.0,
-      "20260731": 0.0,
-      "20260807": 0.0
-    },
-    "latest_change": 0.0,
-    "total_change": 0.01,
-    "last_week_hold_pct": 57.92,
-    "close_price": 89.5,
-    "price_change": 0.5
   },
   {
     "rank": 13,
@@ -272,18 +272,18 @@
     "threshold_code": 32,
     "threshold_shares": 0,
     "weekly_changes": {
-      "20260703": 0.0,
       "20260709": 0.0,
       "20260717": 0.0,
       "20260724": 0.0,
       "20260731": 0.0,
-      "20260807": 0.0
+      "20260807": 0.0,
+      "20260814": 0.0
     },
     "latest_change": 0.0,
     "total_change": 0.0,
     "last_week_hold_pct": 55.97,
-    "close_price": 11.5,
-    "price_change": 0.05
+    "close_price": 11.35,
+    "price_change": -0.1
   },
   {
     "rank": 14,
@@ -294,18 +294,18 @@
     "threshold_code": 32,
     "threshold_shares": 0,
     "weekly_changes": {
-      "20260703": 0.0,
       "20260709": 0.0,
       "20260717": 0.0,
       "20260724": 0.0,
       "20260731": 0.0,
-      "20260807": 0.0
+      "20260807": 0.0,
+      "20260814": 0.0
     },
     "latest_change": 0.0,
     "total_change": 0.0,
     "last_week_hold_pct": 52.88,
-    "close_price": 57.7,
-    "price_change": 0.9
+    "close_price": 55.8,
+    "price_change": 0.1
   },
   {
     "rank": 15,
@@ -316,21 +316,43 @@
     "threshold_code": 32,
     "threshold_shares": 0,
     "weekly_changes": {
-      "20260703": 0.0,
       "20260709": 0.0,
       "20260717": 0.0,
       "20260724": 0.0,
       "20260731": 0.0,
-      "20260807": 0.0
+      "20260807": 0.0,
+      "20260814": 0.0
     },
     "latest_change": 0.0,
     "total_change": 0.0,
     "last_week_hold_pct": 91.03,
-    "close_price": 21.65,
+    "close_price": 21.0,
     "price_change": 0.0
   },
   {
     "rank": 16,
+    "stock_code": "4419",
+    "stock_name": "皇家美食",
+    "is_taiwan50": false,
+    "category": "櫃觀光",
+    "threshold_code": 32,
+    "threshold_shares": 0,
+    "weekly_changes": {
+      "20260709": 0.0,
+      "20260717": 0.0,
+      "20260724": 0.0,
+      "20260731": 0.0,
+      "20260807": 0.0,
+      "20260814": 0.0
+    },
+    "latest_change": 0.0,
+    "total_change": 0.0,
+    "last_week_hold_pct": 96.86,
+    "close_price": 46.5,
+    "price_change": -0.35
+  },
+  {
+    "rank": 17,
     "stock_code": "4804",
     "stock_name": "大略-KY",
     "is_taiwan50": false,
@@ -338,12 +360,12 @@
     "threshold_code": 32,
     "threshold_shares": 0,
     "weekly_changes": {
-      "20260703": 0.0,
       "20260709": 0.0,
       "20260717": 0.0,
       "20260724": 0.0,
       "20260731": 0.0,
-      "20260807": 0.0
+      "20260807": 0.0,
+      "20260814": 0.0
     },
     "latest_change": 0.0,
     "total_change": 0.0,
@@ -352,7 +374,7 @@
     "price_change": null
   },
   {
-    "rank": 17,
+    "rank": 18,
     "stock_code": "2740",
     "stock_name": "華軒",
     "is_taiwan50": false,
@@ -360,21 +382,21 @@
     "threshold_code": 32,
     "threshold_shares": 0,
     "weekly_changes": {
-      "20260703": 0.0,
       "20260709": 0.0,
       "20260717": 0.0,
       "20260724": 0.0,
       "20260731": 0.0,
-      "20260807": 0.0
+      "20260807": 0.0,
+      "20260814": 0.0
     },
     "latest_change": 0.0,
     "total_change": 0.0,
     "last_week_hold_pct": 72.53,
-    "close_price": 30.9,
+    "close_price": 30.75,
     "price_change": 0.5
   },
   {
-    "rank": 18,
+    "rank": 19,
     "stock_code": "5703",
     "stock_name": "亞都麗緻",
     "is_taiwan50": false,
@@ -382,21 +404,21 @@
     "threshold_code": 32,
     "threshold_shares": 0,
     "weekly_changes": {
-      "20260703": 0.0,
       "20260709": 0.0,
       "20260717": 0.0,
       "20260724": 0.0,
       "20260731": 0.0,
-      "20260807": 0.0
+      "20260807": 0.0,
+      "20260814": 0.0
     },
     "latest_change": 0.0,
     "total_change": 0.0,
     "last_week_hold_pct": 88.3,
-    "close_price": 0.0,
-    "price_change": 0.0
+    "close_price": 14.6,
+    "price_change": -0.1
   },
   {
-    "rank": 19,
+    "rank": 20,
     "stock_code": "1268",
     "stock_name": "漢來美食",
     "is_taiwan50": false,
@@ -404,21 +426,21 @@
     "threshold_code": 32,
     "threshold_shares": 0,
     "weekly_changes": {
-      "20260703": 0.0,
       "20260709": 0.0,
       "20260717": 0.0,
       "20260724": 0.0,
       "20260731": 0.0,
-      "20260807": 0.0
+      "20260807": 0.0,
+      "20260814": 0.0
     },
     "latest_change": 0.0,
     "total_change": 0.0,
     "last_week_hold_pct": 78.11,
-    "close_price": 183.5,
-    "price_change": 13.0
+    "close_price": 181.5,
+    "price_change": 1.5
   },
   {
-    "rank": 20,
+    "rank": 21,
     "stock_code": "7708",
     "stock_name": "全家餐飲",
     "is_taiwan50": false,
@@ -426,40 +448,18 @@
     "threshold_code": 32,
     "threshold_shares": 0,
     "weekly_changes": {
-      "20260703": 0.0,
       "20260709": 0.0,
       "20260717": 0.0,
       "20260724": 0.0,
       "20260731": 0.0,
-      "20260807": 0.0
+      "20260807": 0.0,
+      "20260814": 0.0
     },
     "latest_change": 0.0,
     "total_change": 0.0,
     "last_week_hold_pct": 63.6,
-    "close_price": 93.4,
-    "price_change": 0.4
-  },
-  {
-    "rank": 21,
-    "stock_code": "4419",
-    "stock_name": "皇家美食",
-    "is_taiwan50": false,
-    "category": "櫃觀光",
-    "threshold_code": 32,
-    "threshold_shares": 0,
-    "weekly_changes": {
-      "20260703": -0.01,
-      "20260709": 0.0,
-      "20260717": 0.0,
-      "20260724": 0.0,
-      "20260731": 0.0,
-      "20260807": 0.0
-    },
-    "latest_change": 0.0,
-    "total_change": -0.01,
-    "last_week_hold_pct": 96.86,
-    "close_price": 45.65,
-    "price_change": 0.45
+    "close_price": 92.4,
+    "price_change": 0.2
   },
   {
     "rank": 22,
@@ -467,156 +467,134 @@
     "stock_name": "亞洲藏壽司",
     "is_taiwan50": false,
     "category": "櫃觀光",
-    "threshold_code": 40,
-    "threshold_shares": 200,
+    "threshold_code": 32,
+    "threshold_shares": 0,
     "weekly_changes": {
-      "20260703": 0.0,
       "20260709": 0.0,
       "20260717": 0.01,
       "20260724": -0.02,
       "20260731": 0.0,
-      "20260807": 0.0
+      "20260807": 0.0,
+      "20260814": 0.0
     },
     "latest_change": 0.0,
     "total_change": -0.01,
     "last_week_hold_pct": 73.08,
-    "close_price": 71.1,
-    "price_change": 0.7
+    "close_price": 69.5,
+    "price_change": 0.5
   },
   {
     "rank": 23,
-    "stock_code": "2755",
-    "stock_name": "揚秦",
+    "stock_code": "7723",
+    "stock_name": "築間",
     "is_taiwan50": false,
     "category": "櫃觀光",
-    "threshold_code": 21,
-    "threshold_shares": 0,
+    "threshold_code": 31,
+    "threshold_shares": 400,
     "weekly_changes": {
-      "20260703": 0.0,
       "20260709": 0.0,
-      "20260717": 0.0,
+      "20260717": -0.01,
       "20260724": 0.0,
-      "20260731": -0.01,
-      "20260807": -0.01
+      "20260731": 0.0,
+      "20260807": -0.04,
+      "20260814": 0.0
     },
-    "latest_change": -0.01,
-    "total_change": -0.02,
-    "last_week_hold_pct": 63.52,
-    "close_price": 102.5,
-    "price_change": -1.0
+    "latest_change": 0.0,
+    "total_change": -0.05,
+    "last_week_hold_pct": 56.47,
+    "close_price": 20.1,
+    "price_change": -0.4
   },
   {
     "rank": 24,
-    "stock_code": "7723",
-    "stock_name": "築間",
+    "stock_code": "2751",
+    "stock_name": "王座",
+    "is_taiwan50": false,
+    "category": "櫃觀光",
+    "threshold_code": 30,
+    "threshold_shares": 400,
+    "weekly_changes": {
+      "20260709": -0.04,
+      "20260717": 0.0,
+      "20260724": -0.01,
+      "20260731": -0.01,
+      "20260807": 0.0,
+      "20260814": -0.01
+    },
+    "latest_change": -0.01,
+    "total_change": -0.07,
+    "last_week_hold_pct": 60.35,
+    "close_price": 53.8,
+    "price_change": 0.2
+  },
+  {
+    "rank": 25,
+    "stock_code": "5301",
+    "stock_name": "寶得利",
+    "is_taiwan50": false,
+    "category": "櫃觀光",
+    "threshold_code": 31,
+    "threshold_shares": 400,
+    "weekly_changes": {
+      "20260709": -0.08,
+      "20260717": -0.01,
+      "20260724": -0.02,
+      "20260731": 0.0,
+      "20260807": -0.04,
+      "20260814": 0.03
+    },
+    "latest_change": 0.03,
+    "total_change": -0.12,
+    "last_week_hold_pct": 80.69,
+    "close_price": 0.0,
+    "price_change": 0.0
+  },
+  {
+    "rank": 26,
+    "stock_code": "2755",
+    "stock_name": "揚秦",
     "is_taiwan50": false,
     "category": "櫃觀光",
     "threshold_code": 20,
     "threshold_shares": 0,
     "weekly_changes": {
-      "20260703": 0.0,
       "20260709": 0.0,
-      "20260717": -0.01,
-      "20260724": 0.0,
-      "20260731": 0.0,
-      "20260807": -0.04
-    },
-    "latest_change": -0.04,
-    "total_change": -0.05,
-    "last_week_hold_pct": 56.47,
-    "close_price": 20.35,
-    "price_change": 1.85
-  },
-  {
-    "rank": 25,
-    "stock_code": "2751",
-    "stock_name": "王座",
-    "is_taiwan50": false,
-    "category": "櫃觀光",
-    "threshold_code": 41,
-    "threshold_shares": 0,
-    "weekly_changes": {
-      "20260703": -0.01,
-      "20260709": -0.04,
       "20260717": 0.0,
-      "20260724": -0.01,
+      "20260724": 0.0,
       "20260731": -0.01,
-      "20260807": 0.0
+      "20260807": -0.01,
+      "20260814": -0.13
     },
-    "latest_change": 0.0,
-    "total_change": -0.07,
-    "last_week_hold_pct": 60.36,
-    "close_price": 51.5,
-    "price_change": -0.4
-  },
-  {
-    "rank": 26,
-    "stock_code": "2745",
-    "stock_name": "五福",
-    "is_taiwan50": false,
-    "category": "櫃觀光",
-    "threshold_code": 30,
-    "threshold_shares": 400,
-    "weekly_changes": {
-      "20260703": 1.61,
-      "20260709": 0.01,
-      "20260717": -0.01,
-      "20260724": -0.19,
-      "20260731": -0.17,
-      "20260807": -1.36
-    },
-    "latest_change": -1.36,
-    "total_change": -0.11,
-    "last_week_hold_pct": 51.28,
-    "close_price": 88.5,
-    "price_change": 0.1
+    "latest_change": -0.13,
+    "total_change": -0.15,
+    "last_week_hold_pct": 63.39,
+    "close_price": 104.5,
+    "price_change": 0.0
   },
   {
     "rank": 27,
-    "stock_code": "5301",
-    "stock_name": "寶得利",
-    "is_taiwan50": false,
-    "category": "櫃觀光",
-    "threshold_code": 30,
-    "threshold_shares": 400,
-    "weekly_changes": {
-      "20260703": 0.0,
-      "20260709": -0.08,
-      "20260717": -0.01,
-      "20260724": -0.02,
-      "20260731": 0.0,
-      "20260807": -0.04
-    },
-    "latest_change": -0.04,
-    "total_change": -0.15,
-    "last_week_hold_pct": 80.66,
-    "close_price": 5.34,
-    "price_change": 0.14
-  },
-  {
-    "rank": 28,
     "stock_code": "8077",
     "stock_name": "洛卅卅",
     "is_taiwan50": false,
     "category": "櫃觀光",
-    "threshold_code": 40,
-    "threshold_shares": 200,
+    "threshold_code": 32,
+    "threshold_shares": 0,
     "weekly_changes": {
-      "20260703": 0.0,
       "20260709": 0.0,
       "20260717": 0.0,
       "20260724": -0.18,
       "20260731": 0.0,
-      "20260807": 0.0
+      "20260807": 0.0,
+      "20260814": 0.0
     },
     "latest_change": 0.0,
     "total_change": -0.18,
     "last_week_hold_pct": 82.08,
-    "close_price": 0.0,
-    "price_change": 0.0
+    "close_price": 44.3,
+    "price_change": 0.1
   },
   {
-    "rank": 29,
+    "rank": 28,
     "stock_code": "2752",
     "stock_name": "豆府",
     "is_taiwan50": false,
@@ -624,65 +602,43 @@
     "threshold_code": 32,
     "threshold_shares": 0,
     "weekly_changes": {
-      "20260703": 0.0,
       "20260709": -0.19,
       "20260717": 0.0,
       "20260724": 0.0,
       "20260731": 0.0,
-      "20260807": 0.0
+      "20260807": 0.0,
+      "20260814": 0.0
     },
     "latest_change": 0.0,
     "total_change": -0.19,
     "last_week_hold_pct": 63.71,
-    "close_price": 175.0,
-    "price_change": 0.5
+    "close_price": 180.0,
+    "price_change": 0.0
   },
   {
-    "rank": 30,
-    "stock_code": "4530",
-    "stock_name": "宏易",
-    "is_taiwan50": false,
-    "category": "櫃觀光",
-    "threshold_code": 21,
-    "threshold_shares": 0,
-    "weekly_changes": {
-      "20260703": -1.41,
-      "20260709": 0.0,
-      "20260717": 0.0,
-      "20260724": 1.13,
-      "20260731": 0.0,
-      "20260807": 0.0
-    },
-    "latest_change": 0.0,
-    "total_change": -0.28,
-    "last_week_hold_pct": 72.8,
-    "close_price": 25.6,
-    "price_change": 1.25
-  },
-  {
-    "rank": 31,
+    "rank": 29,
     "stock_code": "2726",
     "stock_name": "雅茗-KY",
     "is_taiwan50": false,
     "category": "櫃觀光",
-    "threshold_code": 20,
-    "threshold_shares": 0,
+    "threshold_code": 31,
+    "threshold_shares": 400,
     "weekly_changes": {
-      "20260703": -0.3,
       "20260709": -0.45,
       "20260717": 0.11,
       "20260724": 0.01,
       "20260731": 0.01,
-      "20260807": -0.12
+      "20260807": -0.12,
+      "20260814": -0.01
     },
-    "latest_change": -0.12,
-    "total_change": -0.74,
-    "last_week_hold_pct": 65.29,
-    "close_price": 8.68,
-    "price_change": 0.04
+    "latest_change": -0.01,
+    "total_change": -0.45,
+    "last_week_hold_pct": 65.28,
+    "close_price": 8.7,
+    "price_change": -0.1
   },
   {
-    "rank": 32,
+    "rank": 30,
     "stock_code": "3522",
     "stock_name": "御嵿",
     "is_taiwan50": false,
@@ -690,17 +646,61 @@
     "threshold_code": 10,
     "threshold_shares": 1000,
     "weekly_changes": {
-      "20260703": -0.69,
       "20260709": -0.14,
       "20260717": -0.91,
       "20260724": 0.41,
       "20260731": 0.05,
-      "20260807": 0.04
+      "20260807": 0.04,
+      "20260814": -0.11
     },
-    "latest_change": 0.04,
-    "total_change": -1.24,
-    "last_week_hold_pct": 56.96,
-    "close_price": 11.8,
-    "price_change": -0.3
+    "latest_change": -0.11,
+    "total_change": -0.66,
+    "last_week_hold_pct": 56.85,
+    "close_price": 11.65,
+    "price_change": -0.25
+  },
+  {
+    "rank": 31,
+    "stock_code": "2756",
+    "stock_name": "聯發國際",
+    "is_taiwan50": false,
+    "category": "櫃觀光",
+    "threshold_code": 40,
+    "threshold_shares": 200,
+    "weekly_changes": {
+      "20260709": 0.01,
+      "20260717": 0.0,
+      "20260724": -0.16,
+      "20260731": -1.52,
+      "20260807": 0.0,
+      "20260814": 0.0
+    },
+    "latest_change": 0.0,
+    "total_change": -1.67,
+    "last_week_hold_pct": 71.59,
+    "close_price": 56.5,
+    "price_change": 0.0
+  },
+  {
+    "rank": 32,
+    "stock_code": "2745",
+    "stock_name": "五福",
+    "is_taiwan50": false,
+    "category": "櫃觀光",
+    "threshold_code": 31,
+    "threshold_shares": 400,
+    "weekly_changes": {
+      "20260709": 0.01,
+      "20260717": -0.01,
+      "20260724": -0.19,
+      "20260731": -0.17,
+      "20260807": -1.36,
+      "20260814": 0.0
+    },
+    "latest_change": 0.0,
+    "total_change": -1.72,
+    "last_week_hold_pct": 51.28,
+    "close_price": 88.1,
+    "price_change": -0.4
   }
 ]

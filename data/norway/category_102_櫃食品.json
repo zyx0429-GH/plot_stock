@@ -5,20 +5,20 @@
     "stock_name": "環泰",
     "is_taiwan50": false,
     "category": "櫃食品",
-    "threshold_code": 10,
-    "threshold_shares": 1000,
+    "threshold_code": 31,
+    "threshold_shares": 400,
     "weekly_changes": {
-      "20260703": 0.07,
       "20260709": 0.24,
       "20260717": 0.26,
       "20260724": 0.51,
       "20260731": 0.07,
-      "20260807": 0.03
+      "20260807": 0.03,
+      "20260814": 0.18
     },
-    "latest_change": 0.03,
-    "total_change": 1.18,
-    "last_week_hold_pct": 73.17,
-    "close_price": 19.85,
+    "latest_change": 0.18,
+    "total_change": 1.29,
+    "last_week_hold_pct": 73.35,
+    "close_price": 20.95,
     "price_change": 0.0
   },
   {
@@ -27,21 +27,21 @@
     "stock_name": "中華食",
     "is_taiwan50": false,
     "category": "櫃食品",
-    "threshold_code": 21,
+    "threshold_code": 32,
     "threshold_shares": 0,
     "weekly_changes": {
-      "20260703": 0.0,
       "20260709": 0.0,
       "20260717": 0.0,
       "20260724": 0.44,
       "20260731": 0.0,
-      "20260807": 0.0
+      "20260807": 0.0,
+      "20260814": 0.0
     },
     "latest_change": 0.0,
     "total_change": 0.44,
     "last_week_hold_pct": 66.4,
-    "close_price": 69.8,
-    "price_change": 0.2
+    "close_price": 70.1,
+    "price_change": 0.0
   },
   {
     "rank": 3,
@@ -49,21 +49,21 @@
     "stock_name": "生合",
     "is_taiwan50": false,
     "category": "櫃食品",
-    "threshold_code": 30,
+    "threshold_code": 31,
     "threshold_shares": 400,
     "weekly_changes": {
-      "20260703": 0.13,
       "20260709": 0.1,
       "20260717": 0.0,
       "20260724": 0.0,
       "20260731": 0.01,
-      "20260807": 0.0
+      "20260807": 0.0,
+      "20260814": 0.03
     },
-    "latest_change": 0.0,
-    "total_change": 0.24,
-    "last_week_hold_pct": 56.52,
-    "close_price": 46.25,
-    "price_change": 0.05
+    "latest_change": 0.03,
+    "total_change": 0.14,
+    "last_week_hold_pct": 56.55,
+    "close_price": 46.7,
+    "price_change": 0.3
   },
   {
     "rank": 4,
@@ -71,21 +71,21 @@
     "stock_name": "綠茵",
     "is_taiwan50": false,
     "category": "櫃食品",
-    "threshold_code": 21,
+    "threshold_code": 32,
     "threshold_shares": 0,
     "weekly_changes": {
-      "20260703": 0.0,
       "20260709": 0.0,
       "20260717": 0.05,
       "20260724": 0.02,
       "20260731": 0.0,
-      "20260807": 0.0
+      "20260807": 0.0,
+      "20260814": 0.0
     },
     "latest_change": 0.0,
     "total_change": 0.07,
     "last_week_hold_pct": 66.79,
-    "close_price": 61.0,
-    "price_change": 0.0
+    "close_price": 58.0,
+    "price_change": 0.3
   },
   {
     "rank": 5,
@@ -96,18 +96,18 @@
     "threshold_code": 32,
     "threshold_shares": 0,
     "weekly_changes": {
-      "20260703": 0.0,
       "20260709": 0.04,
       "20260717": -0.02,
       "20260724": 0.0,
       "20260731": 0.0,
-      "20260807": 0.0
+      "20260807": 0.0,
+      "20260814": 0.0
     },
     "latest_change": 0.0,
     "total_change": 0.02,
     "last_week_hold_pct": 55.75,
-    "close_price": 30.75,
-    "price_change": -0.15
+    "close_price": 30.7,
+    "price_change": -0.7
   },
   {
     "rank": 6,
@@ -118,12 +118,12 @@
     "threshold_code": 32,
     "threshold_shares": 0,
     "weekly_changes": {
-      "20260703": 0.0,
       "20260709": 0.0,
       "20260717": 0.0,
       "20260724": 0.0,
       "20260731": 0.0,
-      "20260807": 0.0
+      "20260807": 0.0,
+      "20260814": 0.0
     },
     "latest_change": 0.0,
     "total_change": 0.0,
@@ -137,21 +137,21 @@
     "stock_name": "金利食安",
     "is_taiwan50": false,
     "category": "櫃食品",
-    "threshold_code": 40,
-    "threshold_shares": 200,
+    "threshold_code": 32,
+    "threshold_shares": 0,
     "weekly_changes": {
-      "20260703": 0.0,
       "20260709": 0.0,
       "20260717": -0.01,
       "20260724": -0.03,
       "20260731": 0.0,
-      "20260807": 0.0
+      "20260807": 0.0,
+      "20260814": 0.0
     },
     "latest_change": 0.0,
     "total_change": -0.04,
     "last_week_hold_pct": 74.72,
-    "close_price": 21.2,
-    "price_change": 0.6
+    "close_price": 20.8,
+    "price_change": -0.05
   },
   {
     "rank": 8,
@@ -159,21 +159,21 @@
     "stock_name": "漢田生技",
     "is_taiwan50": false,
     "category": "櫃食品",
-    "threshold_code": 31,
+    "threshold_code": 50,
     "threshold_shares": 400,
     "weekly_changes": {
-      "20260703": 0.02,
       "20260709": -0.03,
       "20260717": -0.51,
       "20260724": 0.01,
       "20260731": -0.02,
-      "20260807": 0.0
+      "20260807": 0.0,
+      "20260814": 0.1
     },
-    "latest_change": 0.0,
-    "total_change": -0.53,
-    "last_week_hold_pct": 56.24,
-    "close_price": 56.6,
-    "price_change": 0.4
+    "latest_change": 0.1,
+    "total_change": -0.45,
+    "last_week_hold_pct": 56.34,
+    "close_price": 57.3,
+    "price_change": -0.9
   },
   {
     "rank": 9,
@@ -184,17 +184,17 @@
     "threshold_code": 32,
     "threshold_shares": 0,
     "weekly_changes": {
-      "20260703": 0.0,
       "20260709": -1.19,
       "20260717": 0.0,
       "20260724": 0.0,
       "20260731": 0.0,
-      "20260807": 0.0
+      "20260807": 0.0,
+      "20260814": 0.0
     },
     "latest_change": 0.0,
     "total_change": -1.19,
     "last_week_hold_pct": 47.3,
-    "close_price": 256.0,
-    "price_change": 1.0
+    "close_price": 259.5,
+    "price_change": 0.5
   }
 ]

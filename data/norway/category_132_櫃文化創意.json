@@ -5,21 +5,21 @@
     "stock_name": "鈊象",
     "is_taiwan50": false,
     "category": "櫃文化創意",
-    "threshold_code": 31,
+    "threshold_code": 30,
     "threshold_shares": 400,
     "weekly_changes": {
-      "20260703": 1.46,
       "20260709": 0.02,
       "20260717": -0.02,
       "20260724": 0.77,
       "20260731": 0.03,
-      "20260807": 1.84
+      "20260807": 1.84,
+      "20260814": 0.97
     },
-    "latest_change": 1.84,
-    "total_change": 4.1,
-    "last_week_hold_pct": 56.42,
-    "close_price": 799.0,
-    "price_change": 15.0
+    "latest_change": 0.97,
+    "total_change": 3.61,
+    "last_week_hold_pct": 57.39,
+    "close_price": 750.0,
+    "price_change": -12.0
   },
   {
     "rank": 2,
@@ -27,21 +27,21 @@
     "stock_name": "智崴",
     "is_taiwan50": false,
     "category": "櫃文化創意",
-    "threshold_code": 50,
+    "threshold_code": 30,
     "threshold_shares": 400,
     "weekly_changes": {
-      "20260703": 0.24,
       "20260709": 0.12,
       "20260717": 0.57,
       "20260724": -0.62,
       "20260731": 0.22,
-      "20260807": 0.92
+      "20260807": 0.92,
+      "20260814": 0.04
     },
-    "latest_change": 0.92,
-    "total_change": 1.45,
-    "last_week_hold_pct": 57.3,
-    "close_price": 91.4,
-    "price_change": -1.0
+    "latest_change": 0.04,
+    "total_change": 1.25,
+    "last_week_hold_pct": 57.34,
+    "close_price": 89.8,
+    "price_change": -0.1
   },
   {
     "rank": 3,
@@ -52,18 +52,18 @@
     "threshold_code": 10,
     "threshold_shares": 1000,
     "weekly_changes": {
-      "20260703": 0.12,
       "20260709": 0.22,
       "20260717": 0.34,
       "20260724": 0.18,
       "20260731": 0.07,
-      "20260807": 0.03
+      "20260807": 0.03,
+      "20260814": 0.0
     },
-    "latest_change": 0.03,
-    "total_change": 0.96,
+    "latest_change": 0.0,
+    "total_change": 0.84,
     "last_week_hold_pct": 83.57,
-    "close_price": 0.0,
-    "price_change": 0.0
+    "close_price": 42.2,
+    "price_change": -2.6
   },
   {
     "rank": 4,
@@ -71,87 +71,87 @@
     "stock_name": "光聚晶電",
     "is_taiwan50": false,
     "category": "櫃文化創意",
-    "threshold_code": 10,
-    "threshold_shares": 1000,
+    "threshold_code": 31,
+    "threshold_shares": 400,
     "weekly_changes": {
-      "20260703": 0.22,
       "20260709": 0.09,
       "20260717": -0.03,
       "20260724": 0.26,
       "20260731": 0.02,
-      "20260807": -0.01
+      "20260807": -0.01,
+      "20260814": 0.43
     },
-    "latest_change": -0.01,
-    "total_change": 0.55,
-    "last_week_hold_pct": 44.77,
-    "close_price": 37.0,
-    "price_change": 0.1
+    "latest_change": 0.43,
+    "total_change": 0.76,
+    "last_week_hold_pct": 45.2,
+    "close_price": 37.25,
+    "price_change": -0.1
   },
   {
     "rank": 5,
-    "stock_code": "6180",
-    "stock_name": "橘子",
+    "stock_code": "6101",
+    "stock_name": "寬魚國際",
     "is_taiwan50": false,
     "category": "櫃文化創意",
     "threshold_code": 31,
     "threshold_shares": 400,
     "weekly_changes": {
-      "20260703": 0.2,
+      "20260709": -0.19,
+      "20260717": -0.09,
+      "20260724": 0.81,
+      "20260731": 0.25,
+      "20260807": -0.23,
+      "20260814": -0.1
+    },
+    "latest_change": -0.1,
+    "total_change": 0.45,
+    "last_week_hold_pct": 87.78,
+    "close_price": 35.35,
+    "price_change": -0.55
+  },
+  {
+    "rank": 6,
+    "stock_code": "6180",
+    "stock_name": "橘子",
+    "is_taiwan50": false,
+    "category": "櫃文化創意",
+    "threshold_code": 50,
+    "threshold_shares": 400,
+    "weekly_changes": {
       "20260709": -0.14,
       "20260717": 1.04,
       "20260724": -0.07,
       "20260731": -0.3,
-      "20260807": -0.28
+      "20260807": -0.28,
+      "20260814": 0.16
     },
-    "latest_change": -0.28,
-    "total_change": 0.45,
-    "last_week_hold_pct": 50.02,
-    "close_price": 41.35,
-    "price_change": 0.75
+    "latest_change": 0.16,
+    "total_change": 0.41,
+    "last_week_hold_pct": 50.18,
+    "close_price": 41.75,
+    "price_change": -0.05
   },
   {
-    "rank": 6,
+    "rank": 7,
     "stock_code": "6169",
     "stock_name": "昱泉",
     "is_taiwan50": false,
     "category": "櫃文化創意",
-    "threshold_code": 10,
-    "threshold_shares": 1000,
+    "threshold_code": 31,
+    "threshold_shares": 400,
     "weekly_changes": {
-      "20260703": 0.04,
       "20260709": 0.01,
       "20260717": 0.16,
       "20260724": 0.15,
       "20260731": 0.03,
-      "20260807": 0.0
+      "20260807": 0.0,
+      "20260814": 0.05
     },
-    "latest_change": 0.0,
-    "total_change": 0.39,
-    "last_week_hold_pct": 30.93,
-    "close_price": 12.8,
-    "price_change": -0.5
-  },
-  {
-    "rank": 7,
-    "stock_code": "5478",
-    "stock_name": "智冠",
-    "is_taiwan50": false,
-    "category": "櫃文化創意",
-    "threshold_code": 30,
-    "threshold_shares": 400,
-    "weekly_changes": {
-      "20260703": 0.3,
-      "20260709": 0.0,
-      "20260717": -0.03,
-      "20260724": -0.01,
-      "20260731": 0.01,
-      "20260807": -0.01
-    },
-    "latest_change": -0.01,
-    "total_change": 0.26,
-    "last_week_hold_pct": 79.57,
-    "close_price": 99.5,
-    "price_change": 0.5
+    "latest_change": 0.05,
+    "total_change": 0.4,
+    "last_week_hold_pct": 30.98,
+    "close_price": 12.9,
+    "price_change": 0.1
   },
   {
     "rank": 8,
@@ -159,21 +159,21 @@
     "stock_name": "華研",
     "is_taiwan50": false,
     "category": "櫃文化創意",
-    "threshold_code": 31,
+    "threshold_code": 50,
     "threshold_shares": 400,
     "weekly_changes": {
-      "20260703": 0.01,
       "20260709": 0.17,
       "20260717": -0.03,
       "20260724": 0.04,
       "20260731": -0.03,
-      "20260807": 0.06
+      "20260807": 0.06,
+      "20260814": 0.07
     },
-    "latest_change": 0.06,
-    "total_change": 0.22,
-    "last_week_hold_pct": 50.24,
-    "close_price": 85.1,
-    "price_change": -0.6
+    "latest_change": 0.07,
+    "total_change": 0.28,
+    "last_week_hold_pct": 50.31,
+    "close_price": 85.6,
+    "price_change": 0.0
   },
   {
     "rank": 9,
@@ -181,21 +181,21 @@
     "stock_name": "桂田文創",
     "is_taiwan50": false,
     "category": "櫃文化創意",
-    "threshold_code": 40,
-    "threshold_shares": 200,
+    "threshold_code": 41,
+    "threshold_shares": 0,
     "weekly_changes": {
-      "20260703": 0.0,
       "20260709": 0.0,
       "20260717": 0.01,
       "20260724": 0.0,
       "20260731": 0.02,
-      "20260807": 0.02
+      "20260807": 0.02,
+      "20260814": 0.1
     },
-    "latest_change": 0.02,
-    "total_change": 0.05,
-    "last_week_hold_pct": 88.95,
-    "close_price": 0.0,
-    "price_change": 0.0
+    "latest_change": 0.1,
+    "total_change": 0.15,
+    "last_week_hold_pct": 89.05,
+    "close_price": 9.51,
+    "price_change": -0.02
   },
   {
     "rank": 10,
@@ -203,46 +203,24 @@
     "stock_name": "智基",
     "is_taiwan50": false,
     "category": "櫃文化創意",
-    "threshold_code": 40,
-    "threshold_shares": 200,
+    "threshold_code": 41,
+    "threshold_shares": 0,
     "weekly_changes": {
-      "20260703": 0.0,
       "20260709": 0.0,
       "20260717": 0.03,
       "20260724": 0.0,
       "20260731": 0.01,
-      "20260807": 0.01
+      "20260807": 0.01,
+      "20260814": 0.06
     },
-    "latest_change": 0.01,
-    "total_change": 0.05,
-    "last_week_hold_pct": 37.21,
-    "close_price": 26.85,
-    "price_change": -0.05
+    "latest_change": 0.06,
+    "total_change": 0.11,
+    "last_week_hold_pct": 37.27,
+    "close_price": 28.85,
+    "price_change": -0.15
   },
   {
     "rank": 11,
-    "stock_code": "3083",
-    "stock_name": "網龍",
-    "is_taiwan50": false,
-    "category": "櫃文化創意",
-    "threshold_code": 40,
-    "threshold_shares": 200,
-    "weekly_changes": {
-      "20260703": 0.03,
-      "20260709": 0.04,
-      "20260717": 0.01,
-      "20260724": -0.04,
-      "20260731": 0.0,
-      "20260807": 0.0
-    },
-    "latest_change": 0.0,
-    "total_change": 0.04,
-    "last_week_hold_pct": 56.23,
-    "close_price": 25.45,
-    "price_change": 0.15
-  },
-  {
-    "rank": 12,
     "stock_code": "8923",
     "stock_name": "時報",
     "is_taiwan50": false,
@@ -250,43 +228,43 @@
     "threshold_code": 32,
     "threshold_shares": 0,
     "weekly_changes": {
-      "20260703": 0.0,
       "20260709": 0.0,
       "20260717": 0.03,
       "20260724": 0.0,
       "20260731": 0.0,
-      "20260807": 0.0
+      "20260807": 0.0,
+      "20260814": 0.0
     },
     "latest_change": 0.0,
     "total_change": 0.03,
     "last_week_hold_pct": 82.33,
-    "close_price": 18.8,
-    "price_change": 0.1
+    "close_price": 18.7,
+    "price_change": -0.15
   },
   {
-    "rank": 13,
+    "rank": 12,
     "stock_code": "6596",
     "stock_name": "寬宏藝術",
     "is_taiwan50": false,
     "category": "櫃文化創意",
-    "threshold_code": 10,
-    "threshold_shares": 1000,
+    "threshold_code": 31,
+    "threshold_shares": 400,
     "weekly_changes": {
-      "20260703": 0.0,
       "20260709": 0.0,
       "20260717": 0.0,
       "20260724": 0.04,
       "20260731": 0.0,
-      "20260807": -0.01
+      "20260807": -0.01,
+      "20260814": 0.0
     },
-    "latest_change": -0.01,
+    "latest_change": 0.0,
     "total_change": 0.03,
     "last_week_hold_pct": 26.85,
-    "close_price": 89.8,
-    "price_change": 0.7
+    "close_price": 93.9,
+    "price_change": -0.4
   },
   {
-    "rank": 14,
+    "rank": 13,
     "stock_code": "6542",
     "stock_name": "隆中",
     "is_taiwan50": false,
@@ -294,43 +272,43 @@
     "threshold_code": 32,
     "threshold_shares": 0,
     "weekly_changes": {
-      "20260703": 0.01,
       "20260709": 0.01,
       "20260717": 0.0,
       "20260724": 0.0,
       "20260731": 0.0,
-      "20260807": 0.0
+      "20260807": 0.0,
+      "20260814": 0.0
     },
     "latest_change": 0.0,
-    "total_change": 0.02,
+    "total_change": 0.01,
     "last_week_hold_pct": 84.73,
-    "close_price": 47.3,
-    "price_change": -1.45
+    "close_price": 44.55,
+    "price_change": -1.8
   },
   {
-    "rank": 15,
-    "stock_code": "6144",
-    "stock_name": "得利影",
+    "rank": 14,
+    "stock_code": "8450",
+    "stock_name": "霹靂",
     "is_taiwan50": false,
     "category": "櫃文化創意",
     "threshold_code": 32,
     "threshold_shares": 0,
     "weekly_changes": {
-      "20260703": 0.0,
       "20260709": 0.0,
       "20260717": 0.0,
       "20260724": 0.0,
       "20260731": 0.0,
-      "20260807": 0.0
+      "20260807": 0.0,
+      "20260814": 0.0
     },
     "latest_change": 0.0,
     "total_change": 0.0,
-    "last_week_hold_pct": 89.56,
-    "close_price": 13.2,
-    "price_change": 0.0
+    "last_week_hold_pct": 58.34,
+    "close_price": 15.2,
+    "price_change": 0.15
   },
   {
-    "rank": 16,
+    "rank": 15,
     "stock_code": "3629",
     "stock_name": "地心引力",
     "is_taiwan50": false,
@@ -338,21 +316,21 @@
     "threshold_code": 32,
     "threshold_shares": 0,
     "weekly_changes": {
-      "20260703": 0.0,
       "20260709": 0.0,
       "20260717": 0.0,
       "20260724": 0.0,
       "20260731": 0.0,
-      "20260807": 0.0
+      "20260807": 0.0,
+      "20260814": 0.0
     },
     "latest_change": 0.0,
     "total_change": 0.0,
     "last_week_hold_pct": 86.9,
-    "close_price": 13.5,
-    "price_change": -1.25
+    "close_price": 14.15,
+    "price_change": 0.9
   },
   {
-    "rank": 17,
+    "rank": 16,
     "stock_code": "4946",
     "stock_name": "辣椒",
     "is_taiwan50": false,
@@ -360,21 +338,21 @@
     "threshold_code": 32,
     "threshold_shares": 0,
     "weekly_changes": {
-      "20260703": 0.0,
       "20260709": 0.0,
       "20260717": 0.0,
       "20260724": 0.0,
       "20260731": 0.0,
-      "20260807": 0.0
+      "20260807": 0.0,
+      "20260814": 0.0
     },
     "latest_change": 0.0,
     "total_change": 0.0,
     "last_week_hold_pct": 42.59,
-    "close_price": 83.7,
-    "price_change": 4.7
+    "close_price": 81.0,
+    "price_change": 0.5
   },
   {
-    "rank": 18,
+    "rank": 17,
     "stock_code": "6482",
     "stock_name": "弘煜科",
     "is_taiwan50": false,
@@ -382,21 +360,21 @@
     "threshold_code": 32,
     "threshold_shares": 0,
     "weekly_changes": {
-      "20260703": 0.0,
       "20260709": 0.0,
       "20260717": 0.0,
       "20260724": 0.0,
       "20260731": 0.0,
-      "20260807": 0.0
+      "20260807": 0.0,
+      "20260814": 0.0
     },
     "latest_change": 0.0,
     "total_change": 0.0,
     "last_week_hold_pct": 67.6,
-    "close_price": 27.8,
-    "price_change": 0.3
+    "close_price": 27.75,
+    "price_change": -0.15
   },
   {
-    "rank": 19,
+    "rank": 18,
     "stock_code": "3064",
     "stock_name": "泰偉",
     "is_taiwan50": false,
@@ -404,12 +382,12 @@
     "threshold_code": 32,
     "threshold_shares": 0,
     "weekly_changes": {
-      "20260703": 0.0,
       "20260709": 0.0,
       "20260717": 0.0,
       "20260724": 0.0,
       "20260731": 0.0,
-      "20260807": 0.0
+      "20260807": 0.0,
+      "20260814": 0.0
     },
     "latest_change": 0.0,
     "total_change": 0.0,
@@ -418,51 +396,117 @@
     "price_change": 0.0
   },
   {
+    "rank": 19,
+    "stock_code": "3083",
+    "stock_name": "網龍",
+    "is_taiwan50": false,
+    "category": "櫃文化創意",
+    "threshold_code": 20,
+    "threshold_shares": 0,
+    "weekly_changes": {
+      "20260709": 0.04,
+      "20260717": 0.01,
+      "20260724": -0.04,
+      "20260731": 0.0,
+      "20260807": 0.0,
+      "20260814": -0.03
+    },
+    "latest_change": -0.03,
+    "total_change": -0.02,
+    "last_week_hold_pct": 56.2,
+    "close_price": 23.75,
+    "price_change": -0.35
+  },
+  {
     "rank": 20,
+    "stock_code": "6144",
+    "stock_name": "得利影",
+    "is_taiwan50": false,
+    "category": "櫃文化創意",
+    "threshold_code": 20,
+    "threshold_shares": 0,
+    "weekly_changes": {
+      "20260709": 0.0,
+      "20260717": 0.0,
+      "20260724": 0.0,
+      "20260731": 0.0,
+      "20260807": 0.0,
+      "20260814": -0.02
+    },
+    "latest_change": -0.02,
+    "total_change": -0.02,
+    "last_week_hold_pct": 89.54,
+    "close_price": 13.8,
+    "price_change": 0.2
+  },
+  {
+    "rank": 21,
     "stock_code": "2926",
     "stock_name": "誠品生活",
     "is_taiwan50": false,
     "category": "櫃文化創意",
-    "threshold_code": 30,
+    "threshold_code": 31,
     "threshold_shares": 400,
     "weekly_changes": {
-      "20260703": 0.01,
       "20260709": -0.06,
       "20260717": -0.02,
       "20260724": 0.04,
       "20260731": 0.05,
-      "20260807": -0.03
+      "20260807": -0.03,
+      "20260814": -0.02
     },
-    "latest_change": -0.03,
-    "total_change": -0.01,
-    "last_week_hold_pct": 74.54,
-    "close_price": 30.4,
-    "price_change": -0.1
+    "latest_change": -0.02,
+    "total_change": -0.04,
+    "last_week_hold_pct": 74.52,
+    "close_price": 30.0,
+    "price_change": -0.35
   },
   {
-    "rank": 21,
-    "stock_code": "6101",
-    "stock_name": "寬魚國際",
+    "rank": 22,
+    "stock_code": "3546",
+    "stock_name": "宇峻",
     "is_taiwan50": false,
     "category": "櫃文化創意",
     "threshold_code": 10,
     "threshold_shares": 1000,
     "weekly_changes": {
-      "20260703": -0.68,
-      "20260709": -0.19,
-      "20260717": -0.09,
-      "20260724": 0.81,
-      "20260731": 0.25,
-      "20260807": -0.23
+      "20260709": -1.03,
+      "20260717": 0.54,
+      "20260724": -0.07,
+      "20260731": 0.31,
+      "20260807": 0.04,
+      "20260814": -0.01
     },
-    "latest_change": -0.23,
-    "total_change": -0.13,
-    "last_week_hold_pct": 87.88,
-    "close_price": 35.65,
-    "price_change": 0.05
+    "latest_change": -0.01,
+    "total_change": -0.22,
+    "last_week_hold_pct": 34.02,
+    "close_price": 73.6,
+    "price_change": 0.0
   },
   {
-    "rank": 22,
+    "rank": 23,
+    "stock_code": "5478",
+    "stock_name": "智冠",
+    "is_taiwan50": false,
+    "category": "櫃文化創意",
+    "threshold_code": 10,
+    "threshold_shares": 1000,
+    "weekly_changes": {
+      "20260709": 0.0,
+      "20260717": -0.03,
+      "20260724": -0.01,
+      "20260731": 0.01,
+      "20260807": -0.01,
+      "20260814": -0.2
+    },
+    "latest_change": -0.2,
+    "total_change": -0.24,
+    "last_week_hold_pct": 79.37,
+    "close_price": 99.3,
+    "price_change": -0.6
+  },
+  {
+    "rank": 24,
     "stock_code": "7584",
     "stock_name": "樂意",
     "is_taiwan50": false,
@@ -470,84 +514,40 @@
     "threshold_code": 32,
     "threshold_shares": 0,
     "weekly_changes": {
-      "20260703": 0.0,
       "20260709": 0.0,
       "20260717": -0.45,
       "20260724": 0.0,
       "20260731": 0.0,
-      "20260807": 0.0
+      "20260807": 0.0,
+      "20260814": 0.0
     },
     "latest_change": 0.0,
     "total_change": -0.45,
     "last_week_hold_pct": 71.23,
-    "close_price": 25.35,
-    "price_change": -0.15
+    "close_price": 26.75,
+    "price_change": 0.25
   },
   {
-    "rank": 23,
+    "rank": 25,
     "stock_code": "3086",
     "stock_name": "華義",
-    "is_taiwan50": false,
-    "category": "櫃文化創意",
-    "threshold_code": 31,
-    "threshold_shares": 400,
-    "weekly_changes": {
-      "20260703": -0.02,
-      "20260709": -0.16,
-      "20260717": -0.2,
-      "20260724": -0.04,
-      "20260731": -0.24,
-      "20260807": 0.01
-    },
-    "latest_change": 0.01,
-    "total_change": -0.65,
-    "last_week_hold_pct": 85.33,
-    "close_price": 27.15,
-    "price_change": -0.45
-  },
-  {
-    "rank": 24,
-    "stock_code": "3546",
-    "stock_name": "宇峻",
     "is_taiwan50": false,
     "category": "櫃文化創意",
     "threshold_code": 30,
     "threshold_shares": 400,
     "weekly_changes": {
-      "20260703": -0.58,
-      "20260709": -1.03,
-      "20260717": 0.54,
-      "20260724": -0.07,
-      "20260731": 0.31,
-      "20260807": 0.04
-    },
-    "latest_change": 0.04,
-    "total_change": -0.79,
-    "last_week_hold_pct": 34.03,
-    "close_price": 74.6,
-    "price_change": -0.7
-  },
-  {
-    "rank": 25,
-    "stock_code": "8450",
-    "stock_name": "霹靂",
-    "is_taiwan50": false,
-    "category": "櫃文化創意",
-    "threshold_code": 32,
-    "threshold_shares": 0,
-    "weekly_changes": {
-      "20260703": -1.01,
-      "20260709": 0.0,
-      "20260717": 0.0,
-      "20260724": 0.0,
-      "20260731": 0.0,
-      "20260807": 0.0
+      "20260709": -0.16,
+      "20260717": -0.2,
+      "20260724": -0.04,
+      "20260731": -0.24,
+      "20260807": 0.01,
+      "20260814": 0.0
     },
     "latest_change": 0.0,
-    "total_change": -1.01,
-    "last_week_hold_pct": 58.34,
-    "close_price": 15.1,
-    "price_change": 0.4
+    "total_change": -0.63,
+    "last_week_hold_pct": 85.33,
+    "close_price": 26.5,
+    "price_change": -0.3
   },
   {
     "rank": 26,
@@ -555,20 +555,20 @@
     "stock_name": "琉園",
     "is_taiwan50": false,
     "category": "櫃文化創意",
-    "threshold_code": 30,
+    "threshold_code": 31,
     "threshold_shares": 400,
     "weekly_changes": {
-      "20260703": 0.05,
       "20260709": -1.86,
       "20260717": -0.05,
       "20260724": 0.22,
       "20260731": 0.28,
-      "20260807": -0.58
+      "20260807": -0.58,
+      "20260814": 0.0
     },
-    "latest_change": -0.58,
-    "total_change": -1.94,
+    "latest_change": 0.0,
+    "total_change": -1.99,
     "last_week_hold_pct": 72.99,
-    "close_price": 23.55,
-    "price_change": 0.25
+    "close_price": 24.15,
+    "price_change": 0.0
   }
 ]
