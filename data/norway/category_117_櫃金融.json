@@ -1,28 +1,6 @@
 [
   {
     "rank": 1,
-    "stock_code": "6026",
-    "stock_name": "福邦證",
-    "is_taiwan50": false,
-    "category": "櫃金融",
-    "threshold_code": 40,
-    "threshold_shares": 200,
-    "weekly_changes": {
-      "20260709": 0.89,
-      "20260717": -0.14,
-      "20260724": -0.02,
-      "20260731": -0.36,
-      "20260807": 0.22,
-      "20260814": 0.22
-    },
-    "latest_change": 0.22,
-    "total_change": 0.81,
-    "last_week_hold_pct": 49.73,
-    "close_price": 14.65,
-    "price_change": 0.15
-  },
-  {
-    "rank": 2,
     "stock_code": "5878",
     "stock_name": "台名",
     "is_taiwan50": false,
@@ -30,149 +8,193 @@
     "threshold_code": 32,
     "threshold_shares": 0,
     "weekly_changes": {
-      "20260709": -0.04,
       "20260717": 0.48,
       "20260724": 0.0,
       "20260731": 0.0,
       "20260807": 0.0,
-      "20260814": 0.0
+      "20260814": 0.0,
+      "20260821": 0.0
     },
     "latest_change": 0.0,
-    "total_change": 0.44,
+    "total_change": 0.48,
     "last_week_hold_pct": 72.37,
-    "close_price": 38.5,
-    "price_change": -0.1
+    "close_price": 38.55,
+    "price_change": 0.05
   },
   {
-    "rank": 3,
+    "rank": 2,
     "stock_code": "6020",
     "stock_name": "大展證",
     "is_taiwan50": false,
     "category": "櫃金融",
-    "threshold_code": 31,
+    "threshold_code": 30,
     "threshold_shares": 400,
     "weekly_changes": {
-      "20260709": 0.01,
       "20260717": 0.05,
       "20260724": 0.01,
       "20260731": 0.04,
       "20260807": 0.02,
-      "20260814": 0.13
+      "20260814": 0.13,
+      "20260821": 0.02
     },
-    "latest_change": 0.13,
-    "total_change": 0.26,
-    "last_week_hold_pct": 96.89,
-    "close_price": 21.0,
-    "price_change": 0.35
+    "latest_change": 0.02,
+    "total_change": 0.27,
+    "last_week_hold_pct": 96.91,
+    "close_price": 20.7,
+    "price_change": 0.3
+  },
+  {
+    "rank": 3,
+    "stock_code": "6026",
+    "stock_name": "福邦證",
+    "is_taiwan50": false,
+    "category": "櫃金融",
+    "threshold_code": 41,
+    "threshold_shares": 0,
+    "weekly_changes": {
+      "20260717": -0.14,
+      "20260724": -0.02,
+      "20260731": -0.36,
+      "20260807": 0.22,
+      "20260814": 0.22,
+      "20260821": 0.26
+    },
+    "latest_change": 0.26,
+    "total_change": 0.18,
+    "last_week_hold_pct": 49.99,
+    "close_price": 14.8,
+    "price_change": 0.15
   },
   {
     "rank": 4,
+    "stock_code": "6028",
+    "stock_name": "公勝保經",
+    "is_taiwan50": false,
+    "category": "櫃金融",
+    "threshold_code": 41,
+    "threshold_shares": 0,
+    "weekly_changes": {
+      "20260717": 0.01,
+      "20260724": 0.03,
+      "20260731": 0.08,
+      "20260807": 0.0,
+      "20260814": 0.0,
+      "20260821": 0.04
+    },
+    "latest_change": 0.04,
+    "total_change": 0.16,
+    "last_week_hold_pct": 64.63,
+    "close_price": 98.1,
+    "price_change": -1.4
+  },
+  {
+    "rank": 5,
     "stock_code": "6021",
     "stock_name": "美好證",
     "is_taiwan50": false,
     "category": "櫃金融",
-    "threshold_code": 31,
+    "threshold_code": 30,
     "threshold_shares": 400,
     "weekly_changes": {
-      "20260709": 0.0,
       "20260717": 0.01,
       "20260724": -0.1,
       "20260731": 0.13,
       "20260807": 0.0,
-      "20260814": 0.02
+      "20260814": 0.02,
+      "20260821": 0.01
     },
-    "latest_change": 0.02,
-    "total_change": 0.06,
-    "last_week_hold_pct": 90.45,
-    "close_price": 37.05,
-    "price_change": 0.1
-  },
-  {
-    "rank": 5,
-    "stock_code": "6015",
-    "stock_name": "宏遠證",
-    "is_taiwan50": false,
-    "category": "櫃金融",
-    "threshold_code": 30,
-    "threshold_shares": 400,
-    "weekly_changes": {
-      "20260709": 0.22,
-      "20260717": -0.48,
-      "20260724": -0.21,
-      "20260731": -0.21,
-      "20260807": 0.2,
-      "20260814": 0.17
-    },
-    "latest_change": 0.17,
-    "total_change": -0.31,
-    "last_week_hold_pct": 49.79,
-    "close_price": 16.45,
-    "price_change": 0.5
+    "latest_change": 0.01,
+    "total_change": 0.07,
+    "last_week_hold_pct": 90.46,
+    "close_price": 38.45,
+    "price_change": 2.1
   },
   {
     "rank": 6,
-    "stock_code": "6016",
-    "stock_name": "康和證",
-    "is_taiwan50": false,
-    "category": "櫃金融",
-    "threshold_code": 30,
-    "threshold_shares": 400,
-    "weekly_changes": {
-      "20260709": 0.15,
-      "20260717": -0.13,
-      "20260724": -0.43,
-      "20260731": -0.43,
-      "20260807": 0.02,
-      "20260814": -0.05
-    },
-    "latest_change": -0.05,
-    "total_change": -0.87,
-    "last_week_hold_pct": 50.69,
-    "close_price": 20.15,
-    "price_change": 0.05
-  },
-  {
-    "rank": 7,
-    "stock_code": "6023",
-    "stock_name": "元大期貨",
-    "is_taiwan50": false,
-    "category": "櫃金融",
-    "threshold_code": 31,
-    "threshold_shares": 400,
-    "weekly_changes": {
-      "20260709": 0.15,
-      "20260717": -0.45,
-      "20260724": -0.31,
-      "20260731": 0.12,
-      "20260807": -0.25,
-      "20260814": -0.18
-    },
-    "latest_change": -0.18,
-    "total_change": -0.92,
-    "last_week_hold_pct": 85.44,
-    "close_price": 84.6,
-    "price_change": -0.6
-  },
-  {
-    "rank": 8,
     "stock_code": "5864",
     "stock_name": "致和證",
     "is_taiwan50": false,
     "category": "櫃金融",
-    "threshold_code": 31,
+    "threshold_code": 50,
     "threshold_shares": 400,
     "weekly_changes": {
-      "20260709": -0.83,
       "20260717": -0.12,
       "20260724": -0.14,
       "20260731": -0.23,
       "20260807": -0.55,
-      "20260814": 0.09
+      "20260814": 0.09,
+      "20260821": 0.65
+    },
+    "latest_change": 0.65,
+    "total_change": -0.3,
+    "last_week_hold_pct": 68.06,
+    "close_price": 34.3,
+    "price_change": 0.3
+  },
+  {
+    "rank": 7,
+    "stock_code": "6015",
+    "stock_name": "宏遠證",
+    "is_taiwan50": false,
+    "category": "櫃金融",
+    "threshold_code": 10,
+    "threshold_shares": 1000,
+    "weekly_changes": {
+      "20260717": -0.48,
+      "20260724": -0.21,
+      "20260731": -0.21,
+      "20260807": 0.2,
+      "20260814": 0.17,
+      "20260821": 0.15
+    },
+    "latest_change": 0.15,
+    "total_change": -0.38,
+    "last_week_hold_pct": 49.94,
+    "close_price": 15.9,
+    "price_change": 0.15
+  },
+  {
+    "rank": 8,
+    "stock_code": "6016",
+    "stock_name": "康和證",
+    "is_taiwan50": false,
+    "category": "櫃金融",
+    "threshold_code": 31,
+    "threshold_shares": 400,
+    "weekly_changes": {
+      "20260717": -0.13,
+      "20260724": -0.43,
+      "20260731": -0.43,
+      "20260807": 0.02,
+      "20260814": -0.05,
+      "20260821": 0.09
     },
     "latest_change": 0.09,
-    "total_change": -1.78,
-    "last_week_hold_pct": 67.41,
-    "close_price": 34.2,
+    "total_change": -0.93,
+    "last_week_hold_pct": 50.78,
+    "close_price": 19.6,
+    "price_change": 0.25
+  },
+  {
+    "rank": 9,
+    "stock_code": "6023",
+    "stock_name": "元大期貨",
+    "is_taiwan50": false,
+    "category": "櫃金融",
+    "threshold_code": 30,
+    "threshold_shares": 400,
+    "weekly_changes": {
+      "20260717": -0.45,
+      "20260724": -0.31,
+      "20260731": 0.12,
+      "20260807": -0.25,
+      "20260814": -0.18,
+      "20260821": -0.31
+    },
+    "latest_change": -0.31,
+    "total_change": -1.38,
+    "last_week_hold_pct": 85.13,
+    "close_price": 82.8,
     "price_change": 0.3
   }
 ]

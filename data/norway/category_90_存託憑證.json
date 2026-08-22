@@ -5,46 +5,24 @@
     "stock_name": "22康師傅-DR",
     "is_taiwan50": false,
     "category": "存託憑證",
-    "threshold_code": 31,
+    "threshold_code": 30,
     "threshold_shares": 400,
     "weekly_changes": {
-      "20260709": -0.13,
       "20260717": -0.28,
       "20260724": 0.32,
       "20260731": 1.42,
       "20260807": -0.11,
-      "20260814": 1.4
+      "20260814": 1.4,
+      "20260821": 1.23
     },
-    "latest_change": 1.4,
-    "total_change": 2.62,
-    "last_week_hold_pct": 27.91,
-    "close_price": 27.05,
-    "price_change": 0.5
+    "latest_change": 1.23,
+    "total_change": 3.98,
+    "last_week_hold_pct": 29.14,
+    "close_price": 27.35,
+    "price_change": -0.85
   },
   {
     "rank": 2,
-    "stock_code": "9108",
-    "stock_name": "61神州-DR",
-    "is_taiwan50": false,
-    "category": "存託憑證",
-    "threshold_code": 30,
-    "threshold_shares": 400,
-    "weekly_changes": {
-      "20260709": -0.04,
-      "20260717": -0.26,
-      "20260724": 1.52,
-      "20260731": 0.0,
-      "20260807": 1.25,
-      "20260814": 0.0
-    },
-    "latest_change": 0.0,
-    "total_change": 2.47,
-    "last_week_hold_pct": 37.6,
-    "close_price": 3.97,
-    "price_change": 0.02
-  },
-  {
-    "rank": 3,
     "stock_code": "9105",
     "stock_name": "泰金寶-DR",
     "is_taiwan50": false,
@@ -52,21 +30,65 @@
     "threshold_code": 50,
     "threshold_shares": 400,
     "weekly_changes": {
-      "20260709": 0.05,
       "20260717": 0.28,
       "20260724": 1.18,
       "20260731": 0.1,
       "20260807": 0.38,
-      "20260814": 0.4
+      "20260814": 0.4,
+      "20260821": 0.41
     },
-    "latest_change": 0.4,
-    "total_change": 2.39,
-    "last_week_hold_pct": 25.77,
-    "close_price": 8.61,
-    "price_change": 0.31
+    "latest_change": 0.41,
+    "total_change": 2.75,
+    "last_week_hold_pct": 26.18,
+    "close_price": 8.42,
+    "price_change": 0.07
+  },
+  {
+    "rank": 3,
+    "stock_code": "9108",
+    "stock_name": "61神州-DR",
+    "is_taiwan50": false,
+    "category": "存託憑證",
+    "threshold_code": 31,
+    "threshold_shares": 400,
+    "weekly_changes": {
+      "20260717": -0.26,
+      "20260724": 1.52,
+      "20260731": 0.0,
+      "20260807": 1.25,
+      "20260814": 0.0,
+      "20260821": 0.19
+    },
+    "latest_change": 0.19,
+    "total_change": 2.7,
+    "last_week_hold_pct": 37.79,
+    "close_price": 3.85,
+    "price_change": 0.05
   },
   {
     "rank": 4,
+    "stock_code": "9116",
+    "stock_name": "08明輝-DR",
+    "is_taiwan50": false,
+    "category": "存託憑證",
+    "threshold_code": 30,
+    "threshold_shares": 400,
+    "weekly_changes": {
+      "20260717": 0.14,
+      "20260724": 0.11,
+      "20260731": 0.57,
+      "20260807": 0.08,
+      "20260814": 0.2,
+      "20260821": -0.01
+    },
+    "latest_change": -0.01,
+    "total_change": 1.09,
+    "last_week_hold_pct": 30.74,
+    "close_price": 2.74,
+    "price_change": 0.0
+  },
+  {
+    "rank": 5,
     "stock_code": "9120",
     "stock_name": "00晨訊科-DR",
     "is_taiwan50": false,
@@ -74,65 +96,21 @@
     "threshold_code": 10,
     "threshold_shares": 1000,
     "weekly_changes": {
-      "20260709": 0.81,
       "20260717": 0.89,
       "20260724": -0.46,
       "20260731": 0.18,
       "20260807": 0.16,
-      "20260814": 0.07
+      "20260814": 0.07,
+      "20260821": 0.02
     },
-    "latest_change": 0.07,
-    "total_change": 1.65,
-    "last_week_hold_pct": 34.96,
-    "close_price": 2.63,
-    "price_change": -0.01
-  },
-  {
-    "rank": 5,
-    "stock_code": "9116",
-    "stock_name": "08明輝-DR",
-    "is_taiwan50": false,
-    "category": "存託憑證",
-    "threshold_code": 31,
-    "threshold_shares": 400,
-    "weekly_changes": {
-      "20260709": 0.07,
-      "20260717": 0.14,
-      "20260724": 0.11,
-      "20260731": 0.57,
-      "20260807": 0.08,
-      "20260814": 0.2
-    },
-    "latest_change": 0.2,
-    "total_change": 1.17,
-    "last_week_hold_pct": 30.75,
-    "close_price": 2.63,
-    "price_change": 0.03
+    "latest_change": 0.02,
+    "total_change": 0.86,
+    "last_week_hold_pct": 34.98,
+    "close_price": 2.6,
+    "price_change": -0.04
   },
   {
     "rank": 6,
-    "stock_code": "9136",
-    "stock_name": "巨騰-DR",
-    "is_taiwan50": false,
-    "category": "存託憑證",
-    "threshold_code": 31,
-    "threshold_shares": 400,
-    "weekly_changes": {
-      "20260709": 0.48,
-      "20260717": 0.73,
-      "20260724": -0.34,
-      "20260731": 0.41,
-      "20260807": -0.33,
-      "20260814": -0.16
-    },
-    "latest_change": -0.16,
-    "total_change": 0.79,
-    "last_week_hold_pct": 67.85,
-    "close_price": 11.5,
-    "price_change": -0.05
-  },
-  {
-    "rank": 7,
     "stock_code": "9103",
     "stock_name": "美德醫療-DR",
     "is_taiwan50": false,
@@ -140,43 +118,43 @@
     "threshold_code": 50,
     "threshold_shares": 400,
     "weekly_changes": {
-      "20260709": 0.2,
       "20260717": -0.11,
       "20260724": 0.34,
       "20260731": -0.11,
       "20260807": 0.17,
-      "20260814": 0.22
+      "20260814": 0.22,
+      "20260821": 0.27
     },
-    "latest_change": 0.22,
-    "total_change": 0.71,
-    "last_week_hold_pct": 12.0,
-    "close_price": 5.16,
+    "latest_change": 0.27,
+    "total_change": 0.78,
+    "last_week_hold_pct": 12.27,
+    "close_price": 5.25,
     "price_change": 0.04
   },
   {
-    "rank": 8,
+    "rank": 7,
     "stock_code": "9116",
     "stock_name": "22泰聚亨-DR",
     "is_taiwan50": false,
     "category": "存託憑證",
-    "threshold_code": 31,
+    "threshold_code": 50,
     "threshold_shares": 400,
     "weekly_changes": {
-      "20260709": 0.03,
       "20260717": 0.19,
       "20260724": 0.09,
       "20260731": 0.06,
       "20260807": -0.08,
-      "20260814": 0.01
+      "20260814": 0.01,
+      "20260821": 0.12
     },
-    "latest_change": 0.01,
-    "total_change": 0.3,
-    "last_week_hold_pct": 52.04,
-    "close_price": 3.52,
-    "price_change": 0.0
+    "latest_change": 0.12,
+    "total_change": 0.39,
+    "last_week_hold_pct": 52.16,
+    "close_price": 3.69,
+    "price_change": 0.09
   },
   {
-    "rank": 9,
+    "rank": 8,
     "stock_code": "9118",
     "stock_name": "68同方友友-DR",
     "is_taiwan50": false,
@@ -184,18 +162,40 @@
     "threshold_code": 10,
     "threshold_shares": 1000,
     "weekly_changes": {
-      "20260709": -0.35,
       "20260717": -0.11,
       "20260724": 0.05,
       "20260731": 0.2,
       "20260807": 0.17,
-      "20260814": 0.02
+      "20260814": 0.02,
+      "20260821": -0.3
     },
-    "latest_change": 0.02,
-    "total_change": -0.02,
-    "last_week_hold_pct": 36.01,
-    "close_price": 1.16,
-    "price_change": -0.02
+    "latest_change": -0.3,
+    "total_change": 0.03,
+    "last_week_hold_pct": 35.71,
+    "close_price": 1.17,
+    "price_change": 0.0
+  },
+  {
+    "rank": 9,
+    "stock_code": "9136",
+    "stock_name": "巨騰-DR",
+    "is_taiwan50": false,
+    "category": "存託憑證",
+    "threshold_code": 30,
+    "threshold_shares": 400,
+    "weekly_changes": {
+      "20260717": 0.73,
+      "20260724": -0.34,
+      "20260731": 0.41,
+      "20260807": -0.33,
+      "20260814": -0.16,
+      "20260821": -0.44
+    },
+    "latest_change": -0.44,
+    "total_change": -0.13,
+    "last_week_hold_pct": 67.41,
+    "close_price": 11.25,
+    "price_change": 0.1
   },
   {
     "rank": 10,
@@ -203,20 +203,20 @@
     "stock_name": "越南控-DR",
     "is_taiwan50": false,
     "category": "存託憑證",
-    "threshold_code": 31,
+    "threshold_code": 50,
     "threshold_shares": 400,
     "weekly_changes": {
-      "20260709": 0.1,
       "20260717": 0.09,
       "20260724": 0.05,
       "20260731": 0.02,
       "20260807": -0.33,
-      "20260814": 0.01
+      "20260814": 0.01,
+      "20260821": 0.02
     },
-    "latest_change": 0.01,
-    "total_change": -0.06,
-    "last_week_hold_pct": 43.81,
-    "close_price": 3.11,
-    "price_change": 0.03
+    "latest_change": 0.02,
+    "total_change": -0.14,
+    "last_week_hold_pct": 43.83,
+    "close_price": null,
+    "price_change": null
   }
 ]
