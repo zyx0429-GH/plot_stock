@@ -5,65 +5,65 @@
     "stock_name": "台泥",
     "is_taiwan50": false,
     "category": "水泥",
-    "threshold_code": 30,
-    "threshold_shares": 400,
+    "threshold_code": 10,
+    "threshold_shares": 1000,
     "weekly_changes": {
-      "20260717": -0.05,
       "20260724": 0.5,
       "20260731": 0.51,
       "20260807": 0.14,
       "20260814": 0.26,
-      "20260821": 0.2
+      "20260821": 0.2,
+      "20260828": -0.25
     },
-    "latest_change": 0.2,
-    "total_change": 1.56,
-    "last_week_hold_pct": 56.56,
-    "close_price": 24.85,
-    "price_change": 0.05
+    "latest_change": -0.25,
+    "total_change": 1.36,
+    "last_week_hold_pct": 56.31,
+    "close_price": 24.3,
+    "price_change": 0.2
   },
   {
     "rank": 2,
-    "stock_code": "1109",
-    "stock_name": "信大",
-    "is_taiwan50": false,
-    "category": "水泥",
-    "threshold_code": 31,
-    "threshold_shares": 400,
-    "weekly_changes": {
-      "20260717": 0.03,
-      "20260724": 0.15,
-      "20260731": 0.02,
-      "20260807": 0.15,
-      "20260814": 0.03,
-      "20260821": 0.2
-    },
-    "latest_change": 0.2,
-    "total_change": 0.58,
-    "last_week_hold_pct": 79.93,
-    "close_price": 13.55,
-    "price_change": 0.05
-  },
-  {
-    "rank": 3,
-    "stock_code": "1104",
-    "stock_name": "環泥",
+    "stock_code": "1102",
+    "stock_name": "亞泥",
     "is_taiwan50": false,
     "category": "水泥",
     "threshold_code": 30,
     "threshold_shares": 400,
     "weekly_changes": {
-      "20260717": 0.09,
-      "20260724": 0.04,
-      "20260731": 0.34,
-      "20260807": -0.29,
-      "20260814": 0.21,
-      "20260821": -0.11
+      "20260724": 0.01,
+      "20260731": 0.3,
+      "20260807": -0.08,
+      "20260814": -0.43,
+      "20260821": 0.48,
+      "20260828": 0.26
     },
-    "latest_change": -0.11,
-    "total_change": 0.28,
-    "last_week_hold_pct": 73.13,
-    "close_price": 26.85,
-    "price_change": 0.05
+    "latest_change": 0.26,
+    "total_change": 0.54,
+    "last_week_hold_pct": 81.68,
+    "close_price": 34.55,
+    "price_change": -0.55
+  },
+  {
+    "rank": 3,
+    "stock_code": "1109",
+    "stock_name": "信大",
+    "is_taiwan50": false,
+    "category": "水泥",
+    "threshold_code": 30,
+    "threshold_shares": 400,
+    "weekly_changes": {
+      "20260724": 0.15,
+      "20260731": 0.02,
+      "20260807": 0.15,
+      "20260814": 0.03,
+      "20260821": 0.2,
+      "20260828": -0.04
+    },
+    "latest_change": -0.04,
+    "total_change": 0.51,
+    "last_week_hold_pct": 79.89,
+    "close_price": 13.5,
+    "price_change": -0.1
   },
   {
     "rank": 4,
@@ -71,21 +71,21 @@
     "stock_name": "東泥",
     "is_taiwan50": false,
     "category": "水泥",
-    "threshold_code": 30,
+    "threshold_code": 31,
     "threshold_shares": 400,
     "weekly_changes": {
-      "20260717": 0.16,
       "20260724": -0.03,
       "20260731": 0.02,
       "20260807": -0.07,
       "20260814": 0.25,
-      "20260821": -0.13
+      "20260821": -0.13,
+      "20260828": 0.06
     },
-    "latest_change": -0.13,
-    "total_change": 0.2,
-    "last_week_hold_pct": 94.12,
-    "close_price": 16.1,
-    "price_change": 0.1
+    "latest_change": 0.06,
+    "total_change": 0.1,
+    "last_week_hold_pct": 94.18,
+    "close_price": 15.95,
+    "price_change": 0.0
   },
   {
     "rank": 5,
@@ -93,43 +93,43 @@
     "stock_name": "嘉泥",
     "is_taiwan50": false,
     "category": "水泥",
-    "threshold_code": 30,
-    "threshold_shares": 400,
+    "threshold_code": 10,
+    "threshold_shares": 1000,
     "weekly_changes": {
-      "20260717": -0.04,
       "20260724": -0.02,
       "20260731": 0.21,
       "20260807": -0.06,
       "20260814": 0.02,
-      "20260821": 0.01
+      "20260821": 0.01,
+      "20260828": -0.07
     },
-    "latest_change": 0.01,
-    "total_change": 0.12,
-    "last_week_hold_pct": 80.45,
-    "close_price": 13.3,
-    "price_change": 0.1
+    "latest_change": -0.07,
+    "total_change": 0.09,
+    "last_week_hold_pct": 80.38,
+    "close_price": 13.15,
+    "price_change": -0.05
   },
   {
     "rank": 6,
-    "stock_code": "1102",
-    "stock_name": "亞泥",
+    "stock_code": "1104",
+    "stock_name": "環泥",
     "is_taiwan50": false,
     "category": "水泥",
-    "threshold_code": 31,
-    "threshold_shares": 400,
+    "threshold_code": 10,
+    "threshold_shares": 1000,
     "weekly_changes": {
-      "20260717": -0.73,
-      "20260724": 0.01,
-      "20260731": 0.3,
-      "20260807": -0.08,
-      "20260814": -0.43,
-      "20260821": 0.48
+      "20260724": 0.04,
+      "20260731": 0.34,
+      "20260807": -0.29,
+      "20260814": 0.21,
+      "20260821": -0.11,
+      "20260828": -0.14
     },
-    "latest_change": 0.48,
-    "total_change": -0.45,
-    "last_week_hold_pct": 81.42,
-    "close_price": 34.95,
-    "price_change": 0.25
+    "latest_change": -0.14,
+    "total_change": 0.05,
+    "last_week_hold_pct": 72.99,
+    "close_price": 26.45,
+    "price_change": -0.15
   },
   {
     "rank": 7,
@@ -137,20 +137,20 @@
     "stock_name": "幸福",
     "is_taiwan50": false,
     "category": "水泥",
-    "threshold_code": 31,
+    "threshold_code": 50,
     "threshold_shares": 400,
     "weekly_changes": {
-      "20260717": -0.63,
       "20260724": -0.31,
       "20260731": 0.17,
       "20260807": -0.07,
       "20260814": -0.66,
-      "20260821": -0.09
+      "20260821": -0.09,
+      "20260828": 0.09
     },
-    "latest_change": -0.09,
-    "total_change": -1.59,
-    "last_week_hold_pct": 78.64,
-    "close_price": 11.8,
+    "latest_change": 0.09,
+    "total_change": -0.87,
+    "last_week_hold_pct": 78.73,
+    "close_price": 11.75,
     "price_change": 0.0
   }
 ]

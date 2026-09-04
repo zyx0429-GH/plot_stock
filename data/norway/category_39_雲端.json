@@ -5,21 +5,21 @@
     "stock_name": "浪凡",
     "is_taiwan50": false,
     "category": "雲端",
-    "threshold_code": 31,
+    "threshold_code": 30,
     "threshold_shares": 400,
     "weekly_changes": {
-      "20260717": 0.7,
       "20260724": -1.1,
       "20260731": -0.39,
       "20260807": 1.41,
       "20260814": 0.66,
-      "20260821": 0.89
+      "20260821": 0.89,
+      "20260828": -0.42
     },
-    "latest_change": 0.89,
-    "total_change": 2.17,
-    "last_week_hold_pct": 50.48,
-    "close_price": 48.1,
-    "price_change": 0.75
+    "latest_change": -0.42,
+    "total_change": 1.05,
+    "last_week_hold_pct": 50.06,
+    "close_price": 48.3,
+    "price_change": 0.25
   },
   {
     "rank": 2,
@@ -27,21 +27,21 @@
     "stock_name": "富邦媒",
     "is_taiwan50": false,
     "category": "雲端",
-    "threshold_code": 30,
-    "threshold_shares": 400,
+    "threshold_code": 10,
+    "threshold_shares": 1000,
     "weekly_changes": {
-      "20260717": -0.02,
       "20260724": 0.28,
       "20260731": -0.11,
       "20260807": 0.1,
       "20260814": 0.16,
-      "20260821": 0.01
+      "20260821": 0.01,
+      "20260828": -0.14
     },
-    "latest_change": 0.01,
-    "total_change": 0.42,
-    "last_week_hold_pct": 81.55,
-    "close_price": 250.5,
-    "price_change": -3.5
+    "latest_change": -0.14,
+    "total_change": 0.3,
+    "last_week_hold_pct": 81.41,
+    "close_price": 250.0,
+    "price_change": -5.5
   },
   {
     "rank": 3,
@@ -49,21 +49,21 @@
     "stock_name": "愛爾達-創",
     "is_taiwan50": false,
     "category": "雲端",
-    "threshold_code": 31,
+    "threshold_code": 30,
     "threshold_shares": 400,
     "weekly_changes": {
-      "20260717": 0.0,
       "20260724": 0.05,
       "20260731": 0.01,
       "20260807": 0.03,
       "20260814": 0.0,
-      "20260821": 0.05
+      "20260821": 0.05,
+      "20260828": 0.0
     },
-    "latest_change": 0.05,
+    "latest_change": 0.0,
     "total_change": 0.14,
     "last_week_hold_pct": 55.91,
-    "close_price": 70.9,
-    "price_change": 0.3
+    "close_price": 71.9,
+    "price_change": 0.5
   },
   {
     "rank": 4,
@@ -71,21 +71,21 @@
     "stock_name": "微程式",
     "is_taiwan50": false,
     "category": "雲端",
-    "threshold_code": 30,
-    "threshold_shares": 400,
+    "threshold_code": 21,
+    "threshold_shares": 0,
     "weekly_changes": {
-      "20260717": 0.0,
       "20260724": 0.0,
       "20260731": 0.0,
       "20260807": -0.01,
       "20260814": 0.13,
-      "20260821": 0.0
+      "20260821": 0.0,
+      "20260828": 0.0
     },
     "latest_change": 0.0,
     "total_change": 0.12,
     "last_week_hold_pct": 60.82,
-    "close_price": 61.1,
-    "price_change": 0.0
+    "close_price": 62.8,
+    "price_change": 0.8
   },
   {
     "rank": 5,
@@ -93,21 +93,21 @@
     "stock_name": "現觀科",
     "is_taiwan50": false,
     "category": "雲端",
-    "threshold_code": 41,
-    "threshold_shares": 0,
+    "threshold_code": 30,
+    "threshold_shares": 400,
     "weekly_changes": {
-      "20260717": 0.01,
       "20260724": 0.04,
       "20260731": 0.0,
       "20260807": 0.0,
       "20260814": 0.0,
-      "20260821": 0.04
+      "20260821": 0.04,
+      "20260828": 0.0
     },
-    "latest_change": 0.04,
-    "total_change": 0.09,
+    "latest_change": 0.0,
+    "total_change": 0.08,
     "last_week_hold_pct": 57.85,
-    "close_price": 70.9,
-    "price_change": -1.1
+    "close_price": 81.2,
+    "price_change": 5.9
   },
   {
     "rank": 6,
@@ -115,65 +115,65 @@
     "stock_name": "伊雲谷",
     "is_taiwan50": false,
     "category": "雲端",
-    "threshold_code": 32,
+    "threshold_code": 41,
     "threshold_shares": 0,
     "weekly_changes": {
-      "20260717": 0.0,
       "20260724": 0.66,
       "20260731": -0.63,
       "20260807": 0.0,
       "20260814": 0.0,
-      "20260821": 0.0
+      "20260821": 0.0,
+      "20260828": 0.03
     },
-    "latest_change": 0.0,
-    "total_change": 0.03,
-    "last_week_hold_pct": 48.16,
-    "close_price": 61.1,
-    "price_change": -0.1
+    "latest_change": 0.03,
+    "total_change": 0.06,
+    "last_week_hold_pct": 48.19,
+    "close_price": 62.3,
+    "price_change": 0.8
   },
   {
     "rank": 7,
-    "stock_code": "7765",
-    "stock_name": "中華資安",
+    "stock_code": "7722",
+    "stock_name": "LINEPAY",
     "is_taiwan50": false,
     "category": "雲端",
-    "threshold_code": 30,
+    "threshold_code": 50,
     "threshold_shares": 400,
     "weekly_changes": {
-      "20260717": -0.01,
       "20260724": 0.01,
-      "20260731": -0.01,
-      "20260807": 0.0,
-      "20260814": 1.01,
-      "20260821": -1.05
+      "20260731": 0.03,
+      "20260807": 0.01,
+      "20260814": -0.15,
+      "20260821": -0.08,
+      "20260828": 0.21
     },
-    "latest_change": -1.05,
-    "total_change": -0.05,
-    "last_week_hold_pct": 60.72,
-    "close_price": 224.0,
-    "price_change": -1.0
+    "latest_change": 0.21,
+    "total_change": 0.03,
+    "last_week_hold_pct": 85.02,
+    "close_price": 290.0,
+    "price_change": 2.0
   },
   {
     "rank": 8,
-    "stock_code": "7722",
-    "stock_name": "LINEPAY",
+    "stock_code": "7765",
+    "stock_name": "中華資安",
     "is_taiwan50": false,
     "category": "雲端",
     "threshold_code": 31,
     "threshold_shares": 400,
     "weekly_changes": {
-      "20260717": 0.04,
       "20260724": 0.01,
-      "20260731": 0.03,
-      "20260807": 0.01,
-      "20260814": -0.15,
-      "20260821": -0.08
+      "20260731": -0.01,
+      "20260807": 0.0,
+      "20260814": 1.01,
+      "20260821": -1.05,
+      "20260828": 0.0
     },
-    "latest_change": -0.08,
-    "total_change": -0.14,
-    "last_week_hold_pct": 84.81,
-    "close_price": 285.0,
-    "price_change": 3.5
+    "latest_change": 0.0,
+    "total_change": -0.04,
+    "last_week_hold_pct": 60.72,
+    "close_price": 224.0,
+    "price_change": -1.5
   },
   {
     "rank": 9,
@@ -181,108 +181,108 @@
     "stock_name": "資拓宏宇",
     "is_taiwan50": false,
     "category": "雲端",
-    "threshold_code": 30,
+    "threshold_code": 31,
     "threshold_shares": 400,
     "weekly_changes": {
-      "20260717": 0.0,
       "20260724": 0.0,
       "20260731": -0.17,
       "20260807": -0.01,
       "20260814": 0.0,
-      "20260821": -0.01
+      "20260821": -0.01,
+      "20260828": 0.0
     },
-    "latest_change": -0.01,
+    "latest_change": 0.0,
     "total_change": -0.19,
     "last_week_hold_pct": 74.25,
-    "close_price": 35.95,
-    "price_change": -0.05
+    "close_price": 35.9,
+    "price_change": -0.35
   },
   {
     "rank": 10,
-    "stock_code": "6902",
-    "stock_name": "GOGOLOOK",
-    "is_taiwan50": false,
-    "category": "雲端",
-    "threshold_code": 10,
-    "threshold_shares": 1000,
-    "weekly_changes": {
-      "20260717": -0.14,
-      "20260724": -0.18,
-      "20260731": -0.03,
-      "20260807": 0.04,
-      "20260814": -0.03,
-      "20260821": -0.17
-    },
-    "latest_change": -0.17,
-    "total_change": -0.51,
-    "last_week_hold_pct": 70.75,
-    "close_price": 126.5,
-    "price_change": 0.0
-  },
-  {
-    "rank": 11,
-    "stock_code": "7823",
-    "stock_name": "奧義賽博-KY創",
-    "is_taiwan50": false,
-    "category": "雲端",
-    "threshold_code": 30,
-    "threshold_shares": 400,
-    "weekly_changes": {
-      "20260717": -0.3,
-      "20260724": -0.06,
-      "20260731": 0.01,
-      "20260807": 0.01,
-      "20260814": 0.11,
-      "20260821": -1.01
-    },
-    "latest_change": -1.01,
-    "total_change": -1.24,
-    "last_week_hold_pct": 72.2,
-    "close_price": 84.0,
-    "price_change": 0.0
-  },
-  {
-    "rank": 12,
-    "stock_code": "3130",
-    "stock_name": "一零四",
-    "is_taiwan50": false,
-    "category": "雲端",
-    "threshold_code": 10,
-    "threshold_shares": 1000,
-    "weekly_changes": {
-      "20260717": -0.9,
-      "20260724": -2.04,
-      "20260731": 1.08,
-      "20260807": -0.16,
-      "20260814": -0.6,
-      "20260821": -1.12
-    },
-    "latest_change": -1.12,
-    "total_change": -3.74,
-    "last_week_hold_pct": 56.3,
-    "close_price": 213.5,
-    "price_change": 1.5
-  },
-  {
-    "rank": 13,
     "stock_code": "7835",
     "stock_name": "永悅健康-創",
     "is_taiwan50": false,
     "category": "雲端",
-    "threshold_code": 32,
+    "threshold_code": 20,
     "threshold_shares": 0,
     "weekly_changes": {
-      "20260717": 0.0,
       "20260724": 0.0,
       "20260731": 0.0,
       "20260807": 0.0,
       "20260814": 0.0,
-      "20260821": 0.0
+      "20260821": 0.0,
+      "20260828": -0.22
     },
-    "latest_change": 0.0,
-    "total_change": 0.0,
-    "last_week_hold_pct": 70.63,
-    "close_price": 20.65,
-    "price_change": -0.05
+    "latest_change": -0.22,
+    "total_change": -0.22,
+    "last_week_hold_pct": 70.41,
+    "close_price": 25.4,
+    "price_change": 2.3
+  },
+  {
+    "rank": 11,
+    "stock_code": "6902",
+    "stock_name": "GOGOLOOK",
+    "is_taiwan50": false,
+    "category": "雲端",
+    "threshold_code": 31,
+    "threshold_shares": 400,
+    "weekly_changes": {
+      "20260724": -0.18,
+      "20260731": -0.03,
+      "20260807": 0.04,
+      "20260814": -0.03,
+      "20260821": -0.17,
+      "20260828": -0.14
+    },
+    "latest_change": -0.14,
+    "total_change": -0.51,
+    "last_week_hold_pct": 70.61,
+    "close_price": 129.5,
+    "price_change": 2.5
+  },
+  {
+    "rank": 12,
+    "stock_code": "7823",
+    "stock_name": "奧義賽博-KY創",
+    "is_taiwan50": false,
+    "category": "雲端",
+    "threshold_code": 31,
+    "threshold_shares": 400,
+    "weekly_changes": {
+      "20260724": -0.06,
+      "20260731": 0.01,
+      "20260807": 0.01,
+      "20260814": 0.11,
+      "20260821": -1.01,
+      "20260828": 0.22
+    },
+    "latest_change": 0.22,
+    "total_change": -0.72,
+    "last_week_hold_pct": 72.42,
+    "close_price": 83.4,
+    "price_change": -0.1
+  },
+  {
+    "rank": 13,
+    "stock_code": "3130",
+    "stock_name": "一零四",
+    "is_taiwan50": false,
+    "category": "雲端",
+    "threshold_code": 31,
+    "threshold_shares": 400,
+    "weekly_changes": {
+      "20260724": -2.04,
+      "20260731": 1.08,
+      "20260807": -0.16,
+      "20260814": -0.6,
+      "20260821": -1.12,
+      "20260828": -0.26
+    },
+    "latest_change": -0.26,
+    "total_change": -3.1,
+    "last_week_hold_pct": 56.04,
+    "close_price": 209.0,
+    "price_change": -1.5
   }
 ]
