@@ -1,66 +1,18 @@
 {
   "source": "norway.twsthr.info/StockHoldersTopWeek.aspx",
-  "fetched_at": "2026-08-22T13:08:19.655472",
+  "fetched_at": "2026-09-05T13:01:38.589499",
   "thresholds": {
     "200": {
       "stocks": [
         {
-          "code": "3092",
-          "name": "鴻碩",
-          "market": "上市",
-          "industry": "電子零組件",
-          "price": 24.0,
-          "change_pct": "+0.10%",
-          "big_holder_pct": "37.90%",
-          "wow_pct": "+0.07%",
-          "streak": "↑2週",
-          "rank_change": "",
-          "signals": [],
-          "rank": 1
-        },
-        {
-          "code": "1570",
-          "name": "力肯",
-          "market": "上市",
-          "industry": "櫃電機",
-          "price": 33.45,
-          "change_pct": "+0.40%",
-          "big_holder_pct": "56.00%",
-          "wow_pct": "+0.06%",
-          "streak": "↑4週",
-          "rank_change": "",
-          "signals": [
-            "連增3"
-          ],
-          "rank": 2
-        },
-        {
-          "code": "4198",
-          "name": "欣大健康",
-          "market": "上市",
-          "industry": "櫃生技醫療",
-          "price": 40.95,
-          "change_pct": "-1.95%",
-          "big_holder_pct": "81.63%",
-          "wow_pct": "+0.05%",
-          "streak": "↑2週",
-          "rank_change": "",
-          "signals": [
-            "高度集中",
-            "法人同向",
-            "量價背離"
-          ],
-          "rank": 3
-        },
-        {
-          "code": "2734",
-          "name": "易飛網",
-          "market": "上市",
-          "industry": "櫃觀光",
-          "price": 14.95,
-          "change_pct": "-0.05%",
-          "big_holder_pct": "37.79%",
-          "wow_pct": "+0.04%",
+          "code": "9105",
+          "name": "泰金寶-DR",
+          "market": "上櫃",
+          "industry": "存託憑證",
+          "price": 8.35,
+          "change_pct": "-0.03%",
+          "big_holder_pct": "26.59%",
+          "wow_pct": "+0.41%",
           "streak": "↑6週",
           "rank_change": "",
           "signals": [
@@ -68,44 +20,226 @@
             "量價背離",
             "久盤吸籌"
           ],
+          "rank": 1
+        },
+        {
+          "code": "8070",
+          "name": "長華",
+          "market": "上櫃",
+          "industry": "電子通路",
+          "price": 51.4,
+          "change_pct": "+0.70%",
+          "big_holder_pct": "73.65%",
+          "wow_pct": "+0.21%",
+          "streak": "↑2週",
+          "rank_change": "",
+          "signals": [
+            "法人同向"
+          ],
+          "rank": 2
+        },
+        {
+          "code": "6198",
+          "name": "瑞築",
+          "market": "上櫃",
+          "industry": "櫃營建",
+          "price": 19.4,
+          "change_pct": "-0.25%",
+          "big_holder_pct": "94.59%",
+          "wow_pct": "+0.12%",
+          "streak": "↑3週",
+          "rank_change": "",
+          "signals": [
+            "高度集中",
+            "流動性風險",
+            "法人同向",
+            "連增3",
+            "量價背離"
+          ],
+          "rank": 3
+        },
+        {
+          "code": "5230",
+          "name": "雷笛克光學",
+          "market": "上市",
+          "industry": "櫃光電",
+          "price": 17.75,
+          "change_pct": "-0.25%",
+          "big_holder_pct": "25.99%",
+          "wow_pct": "+0.11%",
+          "streak": "↑2週",
+          "rank_change": "",
+          "signals": [
+            "量價背離"
+          ],
           "rank": 4
         },
         {
-          "code": "2221",
-          "name": "大甲",
+          "code": "4583",
+          "name": "台灣精銳",
           "market": "上市",
-          "industry": "櫃其他",
-          "price": 57.6,
-          "change_pct": "+3.30%",
-          "big_holder_pct": "66.15%",
-          "wow_pct": "+0.03%",
+          "industry": "電機",
+          "price": 467.0,
+          "change_pct": "-1.50%",
+          "big_holder_pct": "86.07%",
+          "wow_pct": "+0.10%",
           "streak": "↑2週",
           "rank_change": "",
-          "signals": [],
+          "signals": [
+            "高度集中",
+            "法人同向",
+            "量價背離"
+          ],
           "rank": 5
         },
         {
-          "code": "1591",
-          "name": "駿吉-KY",
+          "code": "1233",
+          "name": "天仁",
           "market": "上市",
-          "industry": "櫃電機",
-          "price": 36.3,
-          "change_pct": "+0.60%",
-          "big_holder_pct": "20.36%",
-          "wow_pct": "+0.03%",
-          "streak": "↑2週",
+          "industry": "食品",
+          "price": 28.9,
+          "change_pct": "+0.45%",
+          "big_holder_pct": "75.69%",
+          "wow_pct": "+0.07%",
+          "streak": "↑6週",
           "rank_change": "",
-          "signals": [],
+          "signals": [
+            "高度集中",
+            "法人同向",
+            "連增5",
+            "久盤吸籌"
+          ],
           "rank": 6
         },
         {
-          "code": "1506",
-          "name": "正道",
+          "code": "9950",
+          "name": "萬國通",
+          "market": "上櫃",
+          "industry": "櫃塑膠",
+          "price": 10.35,
+          "change_pct": "+0.00%",
+          "big_holder_pct": "83.70%",
+          "wow_pct": "+0.06%",
+          "streak": "↑4週",
+          "rank_change": "",
+          "signals": [
+            "高度集中",
+            "法人同向",
+            "連增3"
+          ],
+          "rank": 7
+        },
+        {
+          "code": "2114",
+          "name": "鑫永銓",
           "market": "上市",
-          "industry": "電機",
-          "price": 10.3,
-          "change_pct": "+0.05%",
-          "big_holder_pct": "77.26%",
+          "industry": "橡膠",
+          "price": 89.0,
+          "change_pct": "-0.60%",
+          "big_holder_pct": "65.36%",
+          "wow_pct": "+0.03%",
+          "streak": "↑3週",
+          "rank_change": "",
+          "signals": [
+            "連增3",
+            "量價背離"
+          ],
+          "rank": 8
+        },
+        {
+          "code": "3499",
+          "name": "環天科",
+          "market": "上市",
+          "industry": "櫃通信網路",
+          "price": 12.55,
+          "change_pct": "+0.10%",
+          "big_holder_pct": "44.21%",
+          "wow_pct": "+0.03%",
+          "streak": "↑6週",
+          "rank_change": "",
+          "signals": [
+            "連增5",
+            "久盤吸籌"
+          ],
+          "rank": 9
+        },
+        {
+          "code": "3555",
+          "name": "博士旺",
+          "market": "上市",
+          "industry": "櫃半導體",
+          "price": 184.0,
+          "change_pct": "+9.50%",
+          "big_holder_pct": "80.48%",
+          "wow_pct": "+0.03%",
+          "streak": "↑2週",
+          "rank_change": "",
+          "signals": [
+            "高波動警示",
+            "高度集中",
+            "法人同向"
+          ],
+          "rank": 10
+        },
+        {
+          "code": "2596",
+          "name": "綠意",
+          "market": "上市",
+          "industry": "櫃營建",
+          "price": 34.75,
+          "change_pct": "+0.00%",
+          "big_holder_pct": "71.95%",
+          "wow_pct": "+0.03%",
+          "streak": "↑2週",
+          "rank_change": "",
+          "signals": [
+            "法人同向"
+          ],
+          "rank": 11
+        },
+        {
+          "code": "4994",
+          "name": "傳奇",
+          "market": "上市",
+          "industry": "資訊服務",
+          "price": 83.8,
+          "change_pct": "-1.70%",
+          "big_holder_pct": "86.22%",
+          "wow_pct": "+0.02%",
+          "streak": "↑2週",
+          "rank_change": "",
+          "signals": [
+            "高度集中",
+            "法人同向",
+            "量價背離"
+          ],
+          "rank": 12
+        },
+        {
+          "code": "9110",
+          "name": "越南控-DR",
+          "market": "上櫃",
+          "industry": "存託憑證",
+          "price": 3.1,
+          "change_pct": "-0.04%",
+          "big_holder_pct": "43.85%",
+          "wow_pct": "+0.02%",
+          "streak": "↑3週",
+          "rank_change": "",
+          "signals": [
+            "連增3",
+            "量價背離"
+          ],
+          "rank": 13
+        },
+        {
+          "code": "6843",
+          "name": "進典",
+          "market": "上櫃",
+          "industry": "櫃電機",
+          "price": 40.3,
+          "change_pct": "+1.10%",
+          "big_holder_pct": "76.74%",
           "wow_pct": "+0.02%",
           "streak": "↑2週",
           "rank_change": "",
@@ -113,66 +247,44 @@
             "高度集中",
             "法人同向"
           ],
-          "rank": 7
+          "rank": 14
         },
         {
-          "code": "6958",
-          "name": "日盛台駿",
-          "market": "上櫃",
-          "industry": "其他",
-          "price": 17.75,
-          "change_pct": "+0.15%",
-          "big_holder_pct": "94.18%",
-          "wow_pct": "+0.01%",
+          "code": "5310",
+          "name": "天剛",
+          "market": "上市",
+          "industry": "櫃資訊服務",
+          "price": 25.0,
+          "change_pct": "+0.25%",
+          "big_holder_pct": "56.98%",
+          "wow_pct": "+0.02%",
           "streak": "↑2週",
           "rank_change": "",
-          "signals": [
-            "高度集中",
-            "流動性風險",
-            "法人同向"
-          ],
-          "rank": 8
+          "signals": [],
+          "rank": 15
         },
         {
-          "code": "2035",
-          "name": "唐榮公司",
+          "code": "1220",
+          "name": "台榮",
           "market": "上市",
-          "industry": "櫃鋼鐵",
-          "price": 27.5,
-          "change_pct": "+0.50%",
-          "big_holder_pct": "96.72%",
-          "wow_pct": "+0.01%",
-          "streak": "↑2週",
-          "rank_change": "",
-          "signals": [
-            "高度集中",
-            "流動性風險",
-            "法人同向"
-          ],
-          "rank": 9
-        },
-        {
-          "code": "4188",
-          "name": "安克",
-          "market": "上市",
-          "industry": "櫃生技醫療",
-          "price": 11.0,
-          "change_pct": "+1.00%",
-          "big_holder_pct": "54.32%",
+          "industry": "食品",
+          "price": 10.9,
+          "change_pct": "+0.00%",
+          "big_holder_pct": "67.65%",
           "wow_pct": "+0.01%",
           "streak": "↑2週",
           "rank_change": "",
           "signals": [],
-          "rank": 10
+          "rank": 16
         },
         {
-          "code": "8059",
-          "name": "凱碩",
+          "code": "6504",
+          "name": "南六",
           "market": "上櫃",
-          "industry": "櫃通信網路",
-          "price": 13.5,
+          "industry": "其他",
+          "price": 37.85,
           "change_pct": "-0.15%",
-          "big_holder_pct": "72.98%",
+          "big_holder_pct": "70.67%",
           "wow_pct": "+0.01%",
           "streak": "↑2週",
           "rank_change": "",
@@ -180,2357 +292,578 @@
             "法人同向",
             "量價背離"
           ],
-          "rank": 11
-        },
-        {
-          "code": "2901",
-          "name": "欣欣",
-          "market": "上市",
-          "industry": "貿易百貨",
-          "price": 24.0,
-          "change_pct": "+0.10%",
-          "big_holder_pct": "79.17%",
-          "wow_pct": "+0.00%",
-          "streak": "",
-          "rank_change": "",
-          "signals": [
-            "高度集中"
-          ],
-          "rank": 12
-        },
-        {
-          "code": "9927",
-          "name": "泰銘",
-          "market": "上櫃",
-          "industry": "其他",
-          "price": 69.3,
-          "change_pct": "-0.10%",
-          "big_holder_pct": "58.92%",
-          "wow_pct": "+0.00%",
-          "streak": "",
-          "rank_change": "",
-          "signals": [],
-          "rank": 13
-        },
-        {
-          "code": "1731",
-          "name": "美吾華",
-          "market": "上市",
-          "industry": "生技醫療業",
-          "price": 21.2,
-          "change_pct": "+0.40%",
-          "big_holder_pct": "55.69%",
-          "wow_pct": "+0.00%",
-          "streak": "",
-          "rank_change": "",
-          "signals": [],
-          "rank": 14
-        },
-        {
-          "code": "6552",
-          "name": "易華電",
-          "market": "上櫃",
-          "industry": "半導體",
-          "price": 24.85,
-          "change_pct": "+0.00%",
-          "big_holder_pct": "58.38%",
-          "wow_pct": "+0.00%",
-          "streak": "",
-          "rank_change": "",
-          "signals": [],
-          "rank": 15
-        },
-        {
-          "code": "2429",
-          "name": "銘旺科",
-          "market": "上市",
-          "industry": "光電",
-          "price": 31.95,
-          "change_pct": "-0.75%",
-          "big_holder_pct": "48.40%",
-          "wow_pct": "+0.00%",
-          "streak": "",
-          "rank_change": "",
-          "signals": [],
-          "rank": 16
-        },
-        {
-          "code": "6674",
-          "name": "鋐寶科技",
-          "market": "上櫃",
-          "industry": "通信網路",
-          "price": 16.3,
-          "change_pct": "+0.20%",
-          "big_holder_pct": "84.28%",
-          "wow_pct": "+0.00%",
-          "streak": "",
-          "rank_change": "",
-          "signals": [
-            "高度集中"
-          ],
           "rank": 17
         },
         {
-          "code": "3296",
-          "name": "勝德",
+          "code": "1735",
+          "name": "日勝化",
           "market": "上市",
-          "industry": "電子零組件",
-          "price": 24.0,
-          "change_pct": "+0.30%",
-          "big_holder_pct": "76.74%",
-          "wow_pct": "+0.00%",
-          "streak": "",
+          "industry": "化學",
+          "price": 20.9,
+          "change_pct": "+0.00%",
+          "big_holder_pct": "78.40%",
+          "wow_pct": "+0.01%",
+          "streak": "↑2週",
           "rank_change": "",
           "signals": [
-            "高度集中"
+            "高度集中",
+            "法人同向"
           ],
           "rank": 18
         },
         {
-          "code": "6743",
-          "name": "安普新",
+          "code": "6856",
+          "name": "鑫傳",
           "market": "上櫃",
-          "industry": "其他電子",
-          "price": 25.2,
-          "change_pct": "+0.10%",
-          "big_holder_pct": "63.09%",
+          "industry": "櫃文化創意",
+          "price": 42.55,
+          "change_pct": "+0.55%",
+          "big_holder_pct": "83.59%",
+          "wow_pct": "+0.01%",
+          "streak": "↑2週",
+          "rank_change": "",
+          "signals": [
+            "高度集中",
+            "法人同向"
+          ],
+          "rank": 19
+        },
+        {
+          "code": "6486",
+          "name": "互動",
+          "market": "上櫃",
+          "industry": "櫃通信網路",
+          "price": 77.4,
+          "change_pct": "+0.00%",
+          "big_holder_pct": "43.11%",
+          "wow_pct": "+0.01%",
+          "streak": "↑2週",
+          "rank_change": "",
+          "signals": [],
+          "rank": 20
+        },
+        {
+          "code": "6662",
+          "name": "樂斯科",
+          "market": "上櫃",
+          "industry": "櫃生技醫療",
+          "price": 29.75,
+          "change_pct": "+0.55%",
+          "big_holder_pct": "47.66%",
+          "wow_pct": "+0.01%",
+          "streak": "↑2週",
+          "rank_change": "",
+          "signals": [],
+          "rank": 21
+        },
+        {
+          "code": "3523",
+          "name": "迎輝",
+          "market": "上市",
+          "industry": "櫃光電",
+          "price": 15.4,
+          "change_pct": "+0.00%",
+          "big_holder_pct": "83.41%",
+          "wow_pct": "+0.01%",
+          "streak": "↑2週",
+          "rank_change": "",
+          "signals": [
+            "高度集中",
+            "法人同向"
+          ],
+          "rank": 22
+        },
+        {
+          "code": "6767",
+          "name": "台微醫",
+          "market": "上櫃",
+          "industry": "櫃生技醫療",
+          "price": 24.3,
+          "change_pct": "-0.30%",
+          "big_holder_pct": "59.27%",
+          "wow_pct": "+0.01%",
+          "streak": "↑2週",
+          "rank_change": "",
+          "signals": [
+            "量價背離"
+          ],
+          "rank": 23
+        },
+        {
+          "code": "6733",
+          "name": "博晟生醫",
+          "market": "上櫃",
+          "industry": "櫃生技醫療",
+          "price": 26.9,
+          "change_pct": "+1.05%",
+          "big_holder_pct": "48.71%",
+          "wow_pct": "+0.01%",
+          "streak": "↑2週",
+          "rank_change": "",
+          "signals": [],
+          "rank": 24
+        },
+        {
+          "code": "5007",
+          "name": "三星",
+          "market": "上市",
+          "industry": "鋼鐵",
+          "price": 56.4,
+          "change_pct": "+0.50%",
+          "big_holder_pct": "87.72%",
+          "wow_pct": "+0.00%",
+          "streak": "",
+          "rank_change": "",
+          "signals": [
+            "高度集中"
+          ],
+          "rank": 25
+        },
+        {
+          "code": "4581",
+          "name": "光隆精密-KY",
+          "market": "上市",
+          "industry": "汽車",
+          "price": 47.9,
+          "change_pct": "-0.30%",
+          "big_holder_pct": "62.77%",
           "wow_pct": "+0.00%",
           "streak": "",
           "rank_change": "",
           "signals": [],
-          "rank": 19
+          "rank": 26
         },
         {
-          "code": "6807",
-          "name": "峰源-KY",
+          "code": "7705",
+          "name": "三商餐飲",
           "market": "上櫃",
-          "industry": "居家",
-          "price": 38.0,
-          "change_pct": "-0.20%",
-          "big_holder_pct": "82.61%",
+          "industry": "觀光",
+          "price": 30.5,
+          "change_pct": "-0.40%",
+          "big_holder_pct": "68.86%",
+          "wow_pct": "+0.00%",
+          "streak": "",
+          "rank_change": "",
+          "signals": [],
+          "rank": 27
+        },
+        {
+          "code": "6655",
+          "name": "科定",
+          "market": "上櫃",
+          "industry": "其他",
+          "price": 116.0,
+          "change_pct": "-1.00%",
+          "big_holder_pct": "86.18%",
           "wow_pct": "+0.00%",
           "streak": "",
           "rank_change": "",
           "signals": [
             "高度集中"
           ],
-          "rank": 20
+          "rank": 28
         },
         {
-          "code": "2235",
-          "name": "謚源",
+          "code": "9929",
+          "name": "秋雨",
+          "market": "上櫃",
+          "industry": "其他",
+          "price": 11.3,
+          "change_pct": "+0.10%",
+          "big_holder_pct": "88.09%",
+          "wow_pct": "+0.00%",
+          "streak": "",
+          "rank_change": "",
+          "signals": [
+            "高度集中"
+          ],
+          "rank": 29
+        },
+        {
+          "code": "1732",
+          "name": "毛寶",
           "market": "上市",
-          "industry": "櫃電機",
-          "price": 27.05,
-          "change_pct": "-0.30%",
-          "big_holder_pct": "83.91%",
+          "industry": "化學",
+          "price": 26.7,
+          "change_pct": "+0.20%",
+          "big_holder_pct": "46.40%",
+          "wow_pct": "+0.00%",
+          "streak": "",
+          "rank_change": "",
+          "signals": [],
+          "rank": 30
+        },
+        {
+          "code": "3021",
+          "name": "鴻名",
+          "market": "上市",
+          "industry": "電子零組件",
+          "price": 20.3,
+          "change_pct": "-0.25%",
+          "big_holder_pct": "70.97%",
+          "wow_pct": "+0.00%",
+          "streak": "",
+          "rank_change": "",
+          "signals": [],
+          "rank": 31
+        },
+        {
+          "code": "8467",
+          "name": "波力-KY",
+          "market": "上櫃",
+          "industry": "運動",
+          "price": 93.4,
+          "change_pct": "-0.40%",
+          "big_holder_pct": "82.02%",
           "wow_pct": "+0.00%",
           "streak": "",
           "rank_change": "",
           "signals": [
             "高度集中"
           ],
-          "rank": 21
+          "rank": 32
         },
         {
-          "code": "6596",
-          "name": "寬宏藝術",
+          "code": "8478",
+          "name": "東哥遊艇",
           "market": "上櫃",
-          "industry": "櫃文化創意",
-          "price": 95.4,
-          "change_pct": "+1.50%",
+          "industry": "運動",
+          "price": 141.5,
+          "change_pct": "-3.00%",
+          "big_holder_pct": "75.66%",
+          "wow_pct": "+0.00%",
+          "streak": "",
+          "rank_change": "",
+          "signals": [
+            "高度集中"
+          ],
+          "rank": 33
+        },
+        {
+          "code": "6418",
+          "name": "詠昇",
+          "market": "上櫃",
+          "industry": "櫃電子零組件",
+          "price": 37.85,
+          "change_pct": "+0.70%",
+          "big_holder_pct": "57.46%",
+          "wow_pct": "+0.00%",
+          "streak": "",
+          "rank_change": "",
+          "signals": [],
+          "rank": 34
+        },
+        {
+          "code": "5601",
+          "name": "台聯櫃",
+          "market": "上市",
+          "industry": "櫃航運",
+          "price": 30.5,
+          "change_pct": "+0.00%",
+          "big_holder_pct": "79.77%",
+          "wow_pct": "+0.00%",
+          "streak": "",
+          "rank_change": "",
+          "signals": [
+            "高度集中"
+          ],
+          "rank": 35
+        },
+        {
+          "code": "3178",
+          "name": "公準",
+          "market": "上市",
+          "industry": "櫃半導體",
+          "price": 62.5,
+          "change_pct": "+2.20%",
+          "big_holder_pct": "65.80%",
+          "wow_pct": "+0.00%",
+          "streak": "",
+          "rank_change": "",
+          "signals": [],
+          "rank": 36
+        },
+        {
+          "code": "3122",
+          "name": "笙泉",
+          "market": "上市",
+          "industry": "櫃半導體",
+          "price": 25.85,
+          "change_pct": "+0.15%",
           "big_holder_pct": "26.85%",
           "wow_pct": "+0.00%",
           "streak": "",
           "rank_change": "",
           "signals": [],
-          "rank": 22
-        },
-        {
-          "code": "7547",
-          "name": "碩網",
-          "market": "上櫃",
-          "industry": "雲端",
-          "price": 53.1,
-          "change_pct": "+0.00%",
-          "big_holder_pct": "73.12%",
-          "wow_pct": "+0.00%",
-          "streak": "",
-          "rank_change": "",
-          "signals": [],
-          "rank": 23
-        },
-        {
-          "code": "6855",
-          "name": "數泓科",
-          "market": "上櫃",
-          "industry": "櫃其他電子",
-          "price": 114.0,
-          "change_pct": "+1.00%",
-          "big_holder_pct": "61.35%",
-          "wow_pct": "+0.00%",
-          "streak": "",
-          "rank_change": "",
-          "signals": [],
-          "rank": 24
-        },
-        {
-          "code": "4728",
-          "name": "雙美",
-          "market": "上市",
-          "industry": "櫃生技醫療",
-          "price": 0.0,
-          "change_pct": "+0.00%",
-          "big_holder_pct": "84.50%",
-          "wow_pct": "+0.00%",
-          "streak": "",
-          "rank_change": "",
-          "signals": [
-            "高度集中"
-          ],
-          "rank": 25
-        },
-        {
-          "code": "7723",
-          "name": "築間",
-          "market": "上櫃",
-          "industry": "櫃觀光",
-          "price": 19.2,
-          "change_pct": "+0.15%",
-          "big_holder_pct": "56.47%",
-          "wow_pct": "+0.00%",
-          "streak": "",
-          "rank_change": "",
-          "signals": [],
-          "rank": 26
-        },
-        {
-          "code": "8102",
-          "name": "傑霖科技",
-          "market": "上櫃",
-          "industry": "櫃半導體",
-          "price": 70.2,
-          "change_pct": "+1.20%",
-          "big_holder_pct": "39.56%",
-          "wow_pct": "+0.00%",
-          "streak": "",
-          "rank_change": "",
-          "signals": [],
-          "rank": 27
-        },
-        {
-          "code": "4171",
-          "name": "瑞基",
-          "market": "上市",
-          "industry": "櫃農業科技",
-          "price": 17.25,
-          "change_pct": "+0.20%",
-          "big_holder_pct": "32.75%",
-          "wow_pct": "+0.00%",
-          "streak": "",
-          "rank_change": "",
-          "signals": [],
-          "rank": 28
-        },
-        {
-          "code": "6291",
-          "name": "沛亨",
-          "market": "上櫃",
-          "industry": "櫃半導體",
-          "price": 388.5,
-          "change_pct": "+10.00%",
-          "big_holder_pct": "62.85%",
-          "wow_pct": "+0.00%",
-          "streak": "",
-          "rank_change": "",
-          "signals": [
-            "高波動警示"
-          ],
-          "rank": 29
-        },
-        {
-          "code": "6637",
-          "name": "醫影",
-          "market": "上櫃",
-          "industry": "櫃生技醫療",
-          "price": 62.0,
-          "change_pct": "+0.10%",
-          "big_holder_pct": "59.23%",
-          "wow_pct": "+0.00%",
-          "streak": "",
-          "rank_change": "",
-          "signals": [],
-          "rank": 30
-        },
-        {
-          "code": "2745",
-          "name": "五福",
-          "market": "上市",
-          "industry": "櫃觀光",
-          "price": 89.7,
-          "change_pct": "+1.40%",
-          "big_holder_pct": "51.28%",
-          "wow_pct": "+0.00%",
-          "streak": "",
-          "rank_change": "",
-          "signals": [],
-          "rank": 31
-        },
-        {
-          "code": "6903",
-          "name": "巨漢",
-          "market": "上櫃",
-          "industry": "櫃其他電子",
-          "price": 307.0,
-          "change_pct": "-4.50%",
-          "big_holder_pct": "68.09%",
-          "wow_pct": "+0.00%",
-          "streak": "",
-          "rank_change": "",
-          "signals": [],
-          "rank": 32
-        },
-        {
-          "code": "5546",
-          "name": "永固-KY",
-          "market": "上市",
-          "industry": "營建",
-          "price": 14.0,
-          "change_pct": "+0.40%",
-          "big_holder_pct": "84.58%",
-          "wow_pct": "-0.01%",
-          "streak": "",
-          "rank_change": "",
-          "signals": [
-            "高度集中",
-            "量價背離"
-          ],
-          "rank": 33
-        },
-        {
-          "code": "7799",
-          "name": "禾榮科",
-          "market": "上櫃",
-          "industry": "生技醫療業",
-          "price": 358.5,
-          "change_pct": "-21.00%",
-          "big_holder_pct": "78.93%",
-          "wow_pct": "-0.05%",
-          "streak": "",
-          "rank_change": "",
-          "signals": [
-            "高波動警示",
-            "高度集中"
-          ],
-          "rank": 34
-        },
-        {
-          "code": "8289",
-          "name": "泰藝",
-          "market": "上櫃",
-          "industry": "櫃電子零組件",
-          "price": 46.45,
-          "change_pct": "+0.45%",
-          "big_holder_pct": "42.82%",
-          "wow_pct": "-0.05%",
-          "streak": "",
-          "rank_change": "",
-          "signals": [
-            "量價背離"
-          ],
-          "rank": 35
-        }
-      ],
-      "count": 35,
-      "stats": {
-        "nUp": 11,
-        "nDown": 3,
-        "nFlat": 21,
-        "nAll": 35,
-        "nCt": 0,
-        "nAccel": 0,
-        "nNewG": 0,
-        "nStreak5": 1
-      }
-    },
-    "400": {
-      "stocks": [
-        {
-          "code": "6176",
-          "name": "瑞儀",
-          "market": "上櫃",
-          "industry": "光電",
-          "price": null,
-          "change_pct": "+0.00%",
-          "big_holder_pct": "100.00%",
-          "wow_pct": "+53.82%",
-          "streak": "↑1週",
-          "rank_change": "",
-          "signals": [
-            "高度集中",
-            "流動性風險",
-            "法人同向",
-            "事件驅動",
-            "籌碼回補"
-          ],
-          "rank": 1
-        },
-        {
-          "code": "3490",
-          "name": "單井",
-          "market": "上市",
-          "industry": "櫃光電",
-          "price": 53.9,
-          "change_pct": "+4.75%",
-          "big_holder_pct": "27.57%",
-          "wow_pct": "+11.84%",
-          "streak": "↑1週",
-          "rank_change": "",
-          "signals": [
-            "事件驅動",
-            "籌碼回補"
-          ],
-          "rank": 2
-        },
-        {
-          "code": "1815",
-          "name": "富喬",
-          "market": "上市",
-          "industry": "櫃電子零組件",
-          "price": 112.0,
-          "change_pct": "+5.00%",
-          "big_holder_pct": "41.31%",
-          "wow_pct": "+8.14%",
-          "streak": "↑1週",
-          "rank_change": "",
-          "signals": [
-            "事件驅動",
-            "籌碼回補"
-          ],
-          "rank": 3
-        },
-        {
-          "code": "3441",
-          "name": "聯一光電",
-          "market": "上市",
-          "industry": "櫃光電",
-          "price": 107.0,
-          "change_pct": "+9.70%",
-          "big_holder_pct": "29.78%",
-          "wow_pct": "+7.70%",
-          "streak": "↑1週",
-          "rank_change": "",
-          "signals": [
-            "高波動警示",
-            "事件驅動",
-            "籌碼回補"
-          ],
-          "rank": 4
-        },
-        {
-          "code": "6492",
-          "name": "生華科",
-          "market": "上櫃",
-          "industry": "櫃生技醫療",
-          "price": 34.8,
-          "change_pct": "-2.90%",
-          "big_holder_pct": "39.46%",
-          "wow_pct": "+7.55%",
-          "streak": "↑3週",
-          "rank_change": "",
-          "signals": [
-            "連增3",
-            "加速",
-            "量價背離"
-          ],
-          "rank": 5
-        },
-        {
-          "code": "3498",
-          "name": "陽程",
-          "market": "上市",
-          "industry": "櫃其他電子",
-          "price": 192.0,
-          "change_pct": "+8.50%",
-          "big_holder_pct": "57.36%",
-          "wow_pct": "+7.12%",
-          "streak": "↑2週",
-          "rank_change": "",
-          "signals": [
-            "高波動警示",
-            "加速",
-            "事件驅動"
-          ],
-          "rank": 6
-        },
-        {
-          "code": "6214",
-          "name": "精誠",
-          "market": "上櫃",
-          "industry": "資訊服務",
-          "price": 179.5,
-          "change_pct": "-0.50%",
-          "big_holder_pct": "62.83%",
-          "wow_pct": "+5.35%",
-          "streak": "↑2週",
-          "rank_change": "NEW",
-          "signals": [
-            "加速",
-            "事件驅動",
-            "量價背離",
-            "新進榜"
-          ],
-          "rank": 7
-        },
-        {
-          "code": "2426",
-          "name": "鼎元",
-          "market": "上市",
-          "industry": "光電",
-          "price": 82.2,
-          "change_pct": "+7.40%",
-          "big_holder_pct": "47.43%",
-          "wow_pct": "+4.72%",
-          "streak": "↑2週",
-          "rank_change": "",
-          "signals": [
-            "加速",
-            "事件驅動"
-          ],
-          "rank": 8
-        },
-        {
-          "code": "2634",
-          "name": "漢翔",
-          "market": "上市",
-          "industry": "航運",
-          "price": 69.3,
-          "change_pct": "-3.00%",
-          "big_holder_pct": "55.70%",
-          "wow_pct": "+3.78%",
-          "streak": "↑3週",
-          "rank_change": "",
-          "signals": [
-            "連增3",
-            "加速",
-            "逆買",
-            "量價背離"
-          ],
-          "rank": 9
-        },
-        {
-          "code": "1294",
-          "name": "漢田生技",
-          "market": "上市",
-          "industry": "櫃食品",
-          "price": 56.0,
-          "change_pct": "+0.30%",
-          "big_holder_pct": "60.05%",
-          "wow_pct": "+3.71%",
-          "streak": "↑2週",
-          "rank_change": "",
-          "signals": [
-            "加速",
-            "事件驅動"
-          ],
-          "rank": 10
-        },
-        {
-          "code": "8105",
-          "name": "凌巨",
-          "market": "上櫃",
-          "industry": "光電",
-          "price": null,
-          "change_pct": "+0.00%",
-          "big_holder_pct": "64.67%",
-          "wow_pct": "+3.46%",
-          "streak": "↑3週",
-          "rank_change": "",
-          "signals": [
-            "連增3",
-            "加速"
-          ],
-          "rank": 11
-        },
-        {
-          "code": "2609",
-          "name": "陽明",
-          "market": "上市",
-          "industry": "航運",
-          "price": 64.0,
-          "change_pct": "+3.70%",
-          "big_holder_pct": "61.18%",
-          "wow_pct": "+3.43%",
-          "streak": "↑5週",
-          "rank_change": "",
-          "signals": [
-            "連增5",
-            "加速",
-            "內外共振"
-          ],
-          "rank": 12
-        },
-        {
-          "code": "2755",
-          "name": "揚秦",
-          "market": "上市",
-          "industry": "櫃觀光",
-          "price": 102.5,
-          "change_pct": "+0.50%",
-          "big_holder_pct": "66.76%",
-          "wow_pct": "+3.37%",
-          "streak": "↑1週",
-          "rank_change": "",
-          "signals": [
-            "事件驅動",
-            "籌碼回補"
-          ],
-          "rank": 13
-        },
-        {
-          "code": "3455",
-          "name": "由田",
-          "market": "上市",
-          "industry": "櫃光電",
-          "price": 235.5,
-          "change_pct": "-7.50%",
-          "big_holder_pct": "33.55%",
-          "wow_pct": "+3.23%",
-          "streak": "↑3週",
-          "rank_change": "",
-          "signals": [
-            "連增3",
-            "加速",
-            "逆買",
-            "量價背離"
-          ],
-          "rank": 14
-        },
-        {
-          "code": "4931",
-          "name": "新盛力",
-          "market": "上市",
-          "industry": "櫃電腦週邊",
-          "price": 280.0,
-          "change_pct": "+7.00%",
-          "big_holder_pct": "40.26%",
-          "wow_pct": "+2.76%",
-          "streak": "↑3週",
-          "rank_change": "",
-          "signals": [
-            "連增3",
-            "內外共振"
-          ],
-          "rank": 15
-        },
-        {
-          "code": "6672",
-          "name": "騰輝電子-KY",
-          "market": "上櫃",
-          "industry": "電子零組件",
-          "price": 267.5,
-          "change_pct": "-20.00%",
-          "big_holder_pct": "31.53%",
-          "wow_pct": "+2.63%",
-          "streak": "↑1週",
-          "rank_change": "",
-          "signals": [
-            "高波動警示",
-            "逆買",
-            "量價背離",
-            "籌碼回補"
-          ],
-          "rank": 16
-        },
-        {
-          "code": "2603",
-          "name": "長榮",
-          "market": "上市",
-          "industry": "航運",
-          "price": 251.5,
-          "change_pct": "+5.50%",
-          "big_holder_pct": "75.07%",
-          "wow_pct": "+2.54%",
-          "streak": "↑6週",
-          "rank_change": "",
-          "signals": [
-            "高度集中",
-            "法人同向",
-            "連增5",
-            "加速",
-            "內外共振"
-          ],
-          "rank": 17
-        },
-        {
-          "code": "2364",
-          "name": "倫飛",
-          "market": "上市",
-          "industry": "電腦週邊",
-          "price": 80.8,
-          "change_pct": "-1.30%",
-          "big_holder_pct": "59.17%",
-          "wow_pct": "+2.48%",
-          "streak": "↑2週",
-          "rank_change": "",
-          "signals": [
-            "量價背離"
-          ],
-          "rank": 18
-        },
-        {
-          "code": "1727",
-          "name": "中華化",
-          "market": "上市",
-          "industry": "化學",
-          "price": 90.2,
-          "change_pct": "-1.40%",
-          "big_holder_pct": "56.44%",
-          "wow_pct": "+2.29%",
-          "streak": "↑1週",
-          "rank_change": "",
-          "signals": [
-            "量價背離",
-            "籌碼回補"
-          ],
-          "rank": 19
-        },
-        {
-          "code": "6538",
-          "name": "倉和",
-          "market": "上櫃",
-          "industry": "櫃電子零組件",
-          "price": 196.5,
-          "change_pct": "+2.50%",
-          "big_holder_pct": "47.31%",
-          "wow_pct": "+2.15%",
-          "streak": "↑3週",
-          "rank_change": "",
-          "signals": [
-            "連增3",
-            "內外共振"
-          ],
-          "rank": 20
-        },
-        {
-          "code": "6226",
-          "name": "光鼎",
-          "market": "上櫃",
-          "industry": "光電",
-          "price": 21.2,
-          "change_pct": "-0.80%",
-          "big_holder_pct": "19.74%",
-          "wow_pct": "+2.05%",
-          "streak": "↑1週",
-          "rank_change": "",
-          "signals": [
-            "量價背離",
-            "籌碼回補"
-          ],
-          "rank": 21
-        },
-        {
-          "code": "4971",
-          "name": "IET-KY",
-          "market": "上市",
-          "industry": "櫃半導體",
-          "price": 588.0,
-          "change_pct": "+8.00%",
-          "big_holder_pct": "46.29%",
-          "wow_pct": "+1.85%",
-          "streak": "↑1週",
-          "rank_change": "",
-          "signals": [
-            "高波動警示",
-            "籌碼回補"
-          ],
-          "rank": 22
-        },
-        {
-          "code": "3037",
-          "name": "欣興",
-          "market": "上市",
-          "industry": "電子零組件",
-          "price": 1085.0,
-          "change_pct": "-55.00%",
-          "big_holder_pct": "77.51%",
-          "wow_pct": "+1.80%",
-          "streak": "↑3週",
-          "rank_change": "",
-          "signals": [
-            "高波動警示",
-            "高度集中",
-            "法人同向",
-            "連增3",
-            "加速",
-            "逆買",
-            "量價背離"
-          ],
-          "rank": 23
-        },
-        {
-          "code": "6727",
-          "name": "亞泰金屬",
-          "market": "上櫃",
-          "industry": "櫃電子零組件",
-          "price": 443.0,
-          "change_pct": "-17.00%",
-          "big_holder_pct": "24.58%",
-          "wow_pct": "+1.79%",
-          "streak": "↑1週",
-          "rank_change": "",
-          "signals": [
-            "高波動警示",
-            "逆買",
-            "量價背離",
-            "籌碼回補"
-          ],
-          "rank": 24
-        },
-        {
-          "code": "3043",
-          "name": "科風",
-          "market": "上市",
-          "industry": "其他電子",
-          "price": 21.0,
-          "change_pct": "-0.25%",
-          "big_holder_pct": "19.63%",
-          "wow_pct": "+1.73%",
-          "streak": "↑1週",
-          "rank_change": "",
-          "signals": [
-            "量價背離",
-            "籌碼回補"
-          ],
-          "rank": 25
-        },
-        {
-          "code": "3625",
-          "name": "西勝",
-          "market": "上市",
-          "industry": "櫃電腦週邊",
-          "price": 11.1,
-          "change_pct": "-0.65%",
-          "big_holder_pct": "47.28%",
-          "wow_pct": "+1.73%",
-          "streak": "↑4週",
-          "rank_change": "",
-          "signals": [
-            "連增3",
-            "加速",
-            "量價背離"
-          ],
-          "rank": 26
-        },
-        {
-          "code": "3356",
-          "name": "奇偶",
-          "market": "上市",
-          "industry": "光電",
-          "price": 63.2,
-          "change_pct": "+0.40%",
-          "big_holder_pct": "36.84%",
-          "wow_pct": "+1.64%",
-          "streak": "↑6週",
-          "rank_change": "",
-          "signals": [
-            "連增5",
-            "久盤吸籌"
-          ],
-          "rank": 27
-        },
-        {
-          "code": "6706",
-          "name": "惠特",
-          "market": "上櫃",
-          "industry": "光電",
-          "price": 116.5,
-          "change_pct": "-0.50%",
-          "big_holder_pct": "28.39%",
-          "wow_pct": "+1.61%",
-          "streak": "↑3週",
-          "rank_change": "",
-          "signals": [
-            "連增3",
-            "加速",
-            "量價背離"
-          ],
-          "rank": 28
-        },
-        {
-          "code": "2729",
-          "name": "瓦城",
-          "market": "上市",
-          "industry": "櫃觀光",
-          "price": 161.0,
-          "change_pct": "+0.50%",
-          "big_holder_pct": "68.74%",
-          "wow_pct": "+1.60%",
-          "streak": "↑1週",
-          "rank_change": "NEW",
-          "signals": [
-            "新進榜"
-          ],
-          "rank": 29
-        },
-        {
-          "code": "2615",
-          "name": "萬海",
-          "market": "上市",
-          "industry": "航運",
-          "price": 124.5,
-          "change_pct": "+11.00%",
-          "big_holder_pct": "89.06%",
-          "wow_pct": "+1.58%",
-          "streak": "↑6週",
-          "rank_change": "",
-          "signals": [
-            "高波動警示",
-            "高度集中",
-            "法人同向",
-            "連增5",
-            "加速",
-            "內外共振"
-          ],
-          "rank": 30
-        },
-        {
-          "code": "6225",
-          "name": "天瀚",
-          "market": "上櫃",
-          "industry": "光電",
-          "price": 64.7,
-          "change_pct": "+5.80%",
-          "big_holder_pct": "71.29%",
-          "wow_pct": "+1.58%",
-          "streak": "↑2週",
-          "rank_change": "",
-          "signals": [
-            "法人同向"
-          ],
-          "rank": 31
-        },
-        {
-          "code": "3406",
-          "name": "玉晶光",
-          "market": "上市",
-          "industry": "光電",
-          "price": 652.0,
-          "change_pct": "+2.00%",
-          "big_holder_pct": "55.34%",
-          "wow_pct": "+1.56%",
-          "streak": "↑3週",
-          "rank_change": "",
-          "signals": [
-            "連增3",
-            "加速",
-            "內外共振"
-          ],
-          "rank": 32
-        },
-        {
-          "code": "6108",
-          "name": "競國",
-          "market": "上櫃",
-          "industry": "電子零組件",
-          "price": 25.95,
-          "change_pct": "-0.05%",
-          "big_holder_pct": "55.90%",
-          "wow_pct": "+1.49%",
-          "streak": "↑2週",
-          "rank_change": "",
-          "signals": [
-            "量價背離"
-          ],
-          "rank": 33
-        },
-        {
-          "code": "3489",
-          "name": "森寶",
-          "market": "上市",
-          "industry": "櫃營建",
-          "price": 22.2,
-          "change_pct": "+0.50%",
-          "big_holder_pct": "81.12%",
-          "wow_pct": "+1.49%",
-          "streak": "↑4週",
-          "rank_change": "",
-          "signals": [
-            "高度集中",
-            "法人同向",
-            "連增3"
-          ],
-          "rank": 34
-        },
-        {
-          "code": "3587",
-          "name": "閎康",
-          "market": "上市",
-          "industry": "櫃其他電子",
-          "price": 244.0,
-          "change_pct": "+0.50%",
-          "big_holder_pct": "32.84%",
-          "wow_pct": "+1.39%",
-          "streak": "↑1週",
-          "rank_change": "",
-          "signals": [
-            "籌碼回補"
-          ],
-          "rank": 35
-        },
-        {
-          "code": "1295",
-          "name": "生合",
-          "market": "上市",
-          "industry": "櫃食品",
-          "price": 45.55,
-          "change_pct": "-0.05%",
-          "big_holder_pct": "57.92%",
-          "wow_pct": "+1.37%",
-          "streak": "↑2週",
-          "rank_change": "NEW",
-          "signals": [
-            "加速",
-            "量價背離",
-            "新進榜"
-          ],
-          "rank": 36
-        },
-        {
-          "code": "6207",
-          "name": "雷科",
-          "market": "上櫃",
-          "industry": "櫃電子零組件",
-          "price": 103.5,
-          "change_pct": "+0.50%",
-          "big_holder_pct": "20.37%",
-          "wow_pct": "+1.36%",
-          "streak": "↑2週",
-          "rank_change": "",
-          "signals": [],
           "rank": 37
         },
         {
-          "code": "3169",
-          "name": "亞信",
+          "code": "3114",
+          "name": "好德",
           "market": "上市",
-          "industry": "櫃半導體",
-          "price": 101.5,
-          "change_pct": "+1.50%",
-          "big_holder_pct": "37.02%",
-          "wow_pct": "+1.31%",
-          "streak": "↑1週",
+          "industry": "櫃電子零組件",
+          "price": 33.9,
+          "change_pct": "+0.10%",
+          "big_holder_pct": "51.80%",
+          "wow_pct": "+0.00%",
+          "streak": "",
           "rank_change": "",
-          "signals": [
-            "籌碼回補"
-          ],
+          "signals": [],
           "rank": 38
         },
         {
-          "code": "1709",
-          "name": "和益",
-          "market": "上市",
-          "industry": "化學",
-          "price": 33.3,
-          "change_pct": "+3.00%",
-          "big_holder_pct": "71.54%",
-          "wow_pct": "+1.30%",
-          "streak": "↑6週",
+          "code": "8928",
+          "name": "鉅明",
+          "market": "上櫃",
+          "industry": "運動",
+          "price": 24.2,
+          "change_pct": "-0.15%",
+          "big_holder_pct": "49.18%",
+          "wow_pct": "+0.00%",
+          "streak": "",
           "rank_change": "",
-          "signals": [
-            "法人同向",
-            "連增5",
-            "內外共振"
-          ],
+          "signals": [],
           "rank": 39
         },
         {
-          "code": "2061",
-          "name": "風青",
+          "code": "4535",
+          "name": "至興",
           "market": "上市",
-          "industry": "櫃電器電纜",
-          "price": 50.1,
-          "change_pct": "+0.35%",
-          "big_holder_pct": "49.53%",
-          "wow_pct": "+1.26%",
-          "streak": "↑1週",
+          "industry": "櫃電機",
+          "price": 28.8,
+          "change_pct": "+0.00%",
+          "big_holder_pct": "77.47%",
+          "wow_pct": "+0.00%",
+          "streak": "",
           "rank_change": "",
           "signals": [
-            "籌碼回補"
+            "高度集中"
           ],
           "rank": 40
         },
         {
-          "code": "9103",
-          "name": "22康師傅-DR",
+          "code": "8444",
+          "name": "綠河-KY",
           "market": "上櫃",
-          "industry": "存託憑證",
-          "price": 27.35,
-          "change_pct": "-0.85%",
-          "big_holder_pct": "29.14%",
-          "wow_pct": "+1.23%",
-          "streak": "↑2週",
+          "industry": "櫃其他",
+          "price": 5.09,
+          "change_pct": "+0.46%",
+          "big_holder_pct": "85.96%",
+          "wow_pct": "+0.00%",
+          "streak": "",
           "rank_change": "",
           "signals": [
-            "量價背離"
+            "高度集中"
           ],
           "rank": 41
         },
         {
-          "code": "1336",
-          "name": "台翰",
+          "code": "5344",
+          "name": "立衛",
           "market": "上市",
-          "industry": "櫃電子零組件",
-          "price": 16.9,
-          "change_pct": "-0.35%",
-          "big_holder_pct": "52.49%",
-          "wow_pct": "+1.21%",
-          "streak": "↑3週",
+          "industry": "櫃半導體",
+          "price": 13.55,
+          "change_pct": "+0.05%",
+          "big_holder_pct": "75.60%",
+          "wow_pct": "+0.00%",
+          "streak": "",
           "rank_change": "",
           "signals": [
-            "連增3",
-            "加速",
-            "量價背離"
+            "高度集中"
           ],
           "rank": 42
         },
         {
-          "code": "8103",
-          "name": "瀚荃",
-          "market": "上櫃",
-          "industry": "電子零組件",
-          "price": 94.0,
-          "change_pct": "+2.10%",
-          "big_holder_pct": "42.39%",
-          "wow_pct": "+1.20%",
-          "streak": "↑1週",
+          "code": "4584",
+          "name": "君帆",
+          "market": "上市",
+          "industry": "櫃電機",
+          "price": 39.4,
+          "change_pct": "-0.05%",
+          "big_holder_pct": "80.09%",
+          "wow_pct": "+0.00%",
+          "streak": "",
           "rank_change": "",
           "signals": [
-            "籌碼回補"
+            "高度集中"
           ],
           "rank": 43
         },
         {
-          "code": "6270",
-          "name": "倍微",
+          "code": "6144",
+          "name": "得利影",
           "market": "上櫃",
-          "industry": "櫃電子通路",
-          "price": 29.85,
-          "change_pct": "-0.30%",
-          "big_holder_pct": "42.19%",
-          "wow_pct": "+1.17%",
-          "streak": "↑2週",
+          "industry": "櫃文化創意",
+          "price": 13.1,
+          "change_pct": "-0.10%",
+          "big_holder_pct": "89.54%",
+          "wow_pct": "+0.00%",
+          "streak": "",
           "rank_change": "",
           "signals": [
-            "加速",
-            "量價背離"
+            "高度集中"
           ],
           "rank": 44
         },
         {
-          "code": "6426",
-          "name": "統新",
+          "code": "6884",
+          "name": "海柏特",
           "market": "上櫃",
-          "industry": "通信網路",
-          "price": 241.0,
-          "change_pct": "-9.00%",
-          "big_holder_pct": "43.59%",
-          "wow_pct": "+1.15%",
-          "streak": "↑2週",
+          "industry": "櫃資訊服務",
+          "price": 30.2,
+          "change_pct": "+0.00%",
+          "big_holder_pct": "73.02%",
+          "wow_pct": "+0.00%",
+          "streak": "",
           "rank_change": "",
-          "signals": [
-            "高波動警示",
-            "逆買",
-            "量價背離"
-          ],
+          "signals": [],
           "rank": 45
         },
         {
-          "code": "2486",
-          "name": "一詮",
-          "market": "上市",
-          "industry": "光電",
-          "price": 243.5,
-          "change_pct": "-7.50%",
-          "big_holder_pct": "40.93%",
-          "wow_pct": "+1.12%",
-          "streak": "↑1週",
+          "code": "6221",
+          "name": "晉泰",
+          "market": "上櫃",
+          "industry": "櫃資訊服務",
+          "price": 21.7,
+          "change_pct": "+0.00%",
+          "big_holder_pct": "74.53%",
+          "wow_pct": "+0.00%",
+          "streak": "",
           "rank_change": "",
-          "signals": [
-            "逆買",
-            "量價背離",
-            "籌碼回補"
-          ],
+          "signals": [],
           "rank": 46
         },
         {
-          "code": "1319",
-          "name": "東陽",
+          "code": "3379",
+          "name": "彬台",
           "market": "上市",
-          "industry": "汽車",
-          "price": 82.8,
-          "change_pct": "-0.20%",
-          "big_holder_pct": "80.15%",
-          "wow_pct": "+1.11%",
-          "streak": "↑2週",
+          "industry": "櫃電機",
+          "price": 29.25,
+          "change_pct": "-0.55%",
+          "big_holder_pct": "27.41%",
+          "wow_pct": "+0.00%",
+          "streak": "",
           "rank_change": "",
-          "signals": [
-            "高度集中",
-            "法人同向",
-            "加速",
-            "量價背離"
-          ],
+          "signals": [],
           "rank": 47
         },
         {
-          "code": "5608",
-          "name": "四維航",
+          "code": "4503",
+          "name": "金雨",
           "market": "上市",
-          "industry": "航運",
-          "price": 18.75,
-          "change_pct": "+1.70%",
-          "big_holder_pct": "29.71%",
-          "wow_pct": "+1.11%",
-          "streak": "↑4週",
+          "industry": "櫃電機",
+          "price": 25.45,
+          "change_pct": "-0.80%",
+          "big_holder_pct": "62.83%",
+          "wow_pct": "+0.00%",
+          "streak": "",
           "rank_change": "",
-          "signals": [
-            "連增3",
-            "加速"
-          ],
+          "signals": [],
           "rank": 48
         },
         {
-          "code": "3229",
-          "name": "晟鈦",
+          "code": "1580",
+          "name": "新麥",
           "market": "上市",
-          "industry": "電子零組件",
-          "price": 61.8,
-          "change_pct": "+4.90%",
-          "big_holder_pct": "71.39%",
-          "wow_pct": "+1.11%",
-          "streak": "↑1週",
+          "industry": "櫃電機",
+          "price": 106.5,
+          "change_pct": "-0.50%",
+          "big_holder_pct": "38.67%",
+          "wow_pct": "+0.00%",
+          "streak": "",
           "rank_change": "",
-          "signals": [
-            "法人同向",
-            "籌碼回補"
-          ],
+          "signals": [],
           "rank": 49
         },
         {
-          "code": "4114",
-          "name": "健喬",
-          "market": "上市",
-          "industry": "櫃生技醫療",
-          "price": 30.55,
-          "change_pct": "-0.70%",
-          "big_holder_pct": "44.37%",
-          "wow_pct": "+1.09%",
-          "streak": "↑2週",
+          "code": "8227",
+          "name": "巨有科技",
+          "market": "上櫃",
+          "industry": "櫃半導體",
+          "price": 161.0,
+          "change_pct": "+1.00%",
+          "big_holder_pct": "26.19%",
+          "wow_pct": "+0.00%",
+          "streak": "",
           "rank_change": "",
-          "signals": [
-            "加速",
-            "量價背離"
-          ],
+          "signals": [],
           "rank": 50
         },
         {
-          "code": "3026",
-          "name": "禾伸堂",
-          "market": "上市",
-          "industry": "電子零組件",
-          "price": 639.0,
-          "change_pct": "-71.00%",
-          "big_holder_pct": "56.54%",
-          "wow_pct": "+1.08%",
-          "streak": "↑1週",
+          "code": "6907",
+          "name": "雅特力-KY",
+          "market": "上櫃",
+          "industry": "櫃半導體",
+          "price": 186.0,
+          "change_pct": "+0.00%",
+          "big_holder_pct": "65.64%",
+          "wow_pct": "+0.00%",
+          "streak": "",
           "rank_change": "",
-          "signals": [
-            "高波動警示",
-            "逆買",
-            "量價背離",
-            "籌碼回補"
-          ],
+          "signals": [],
           "rank": 51
         },
         {
-          "code": "6716",
-          "name": "應廣",
+          "code": "8410",
+          "name": "森田",
           "market": "上櫃",
-          "industry": "櫃半導體",
-          "price": 133.0,
-          "change_pct": "+0.00%",
-          "big_holder_pct": "38.33%",
-          "wow_pct": "+1.06%",
-          "streak": "↑5週",
+          "industry": "櫃電腦週邊",
+          "price": 30.5,
+          "change_pct": "+0.10%",
+          "big_holder_pct": "56.94%",
+          "wow_pct": "-0.01%",
+          "streak": "",
           "rank_change": "",
           "signals": [
-            "連增5",
-            "久盤吸籌"
+            "量價背離"
           ],
           "rank": 52
         },
         {
-          "code": "4536",
-          "name": "拓凱",
-          "market": "上市",
-          "industry": "運動",
-          "price": 172.0,
-          "change_pct": "+1.50%",
-          "big_holder_pct": "57.11%",
-          "wow_pct": "+1.05%",
-          "streak": "↑1週",
+          "code": "6931",
+          "name": "青松健康",
+          "market": "上櫃",
+          "industry": "生技醫療業",
+          "price": 41.4,
+          "change_pct": "-0.10%",
+          "big_holder_pct": "69.40%",
+          "wow_pct": "-0.03%",
+          "streak": "",
           "rank_change": "",
-          "signals": [
-            "籌碼回補"
-          ],
+          "signals": [],
           "rank": 53
         },
         {
-          "code": "1587",
-          "name": "吉茂",
-          "market": "上市",
-          "industry": "汽車",
-          "price": 24.3,
-          "change_pct": "+0.20%",
-          "big_holder_pct": "46.42%",
-          "wow_pct": "+1.04%",
-          "streak": "↑1週",
-          "rank_change": "NEW",
+          "code": "8931",
+          "name": "大汽電",
+          "market": "上櫃",
+          "industry": "櫃油電燃氣",
+          "price": 41.1,
+          "change_pct": "-0.05%",
+          "big_holder_pct": "81.45%",
+          "wow_pct": "-0.03%",
+          "streak": "",
+          "rank_change": "",
           "signals": [
-            "籌碼回補",
-            "新進榜"
+            "高度集中"
           ],
           "rank": 54
-        },
-        {
-          "code": "4977",
-          "name": "眾達-KY",
-          "market": "上市",
-          "industry": "通信網路",
-          "price": 150.5,
-          "change_pct": "-6.00%",
-          "big_holder_pct": "21.21%",
-          "wow_pct": "+1.03%",
-          "streak": "↑2週",
-          "rank_change": "",
-          "signals": [
-            "逆買",
-            "量價背離"
-          ],
-          "rank": 55
-        },
-        {
-          "code": "6796",
-          "name": "晉弘",
-          "market": "上櫃",
-          "industry": "生技醫療業",
-          "price": 65.3,
-          "change_pct": "+2.80%",
-          "big_holder_pct": "48.45%",
-          "wow_pct": "+1.02%",
-          "streak": "↑2週",
-          "rank_change": "NEW",
-          "signals": [
-            "加速",
-            "新進榜"
-          ],
-          "rank": 56
-        },
-        {
-          "code": "3665",
-          "name": "貿聯-KY",
-          "market": "上市",
-          "industry": "其他電子",
-          "price": 2275.0,
-          "change_pct": "+25.00%",
-          "big_holder_pct": "63.25%",
-          "wow_pct": "+1.00%",
-          "streak": "↑4週",
-          "rank_change": "",
-          "signals": [
-            "高波動警示",
-            "連增3",
-            "加速",
-            "內外共振"
-          ],
-          "rank": 57
-        },
-        {
-          "code": "3535",
-          "name": "晶彩科",
-          "market": "上市",
-          "industry": "光電",
-          "price": 86.8,
-          "change_pct": "-1.20%",
-          "big_holder_pct": "27.75%",
-          "wow_pct": "+0.99%",
-          "streak": "↑3週",
-          "rank_change": "",
-          "signals": [
-            "連增3",
-            "加速",
-            "量價背離"
-          ],
-          "rank": 58
-        },
-        {
-          "code": "6510",
-          "name": "精測",
-          "market": "上櫃",
-          "industry": "櫃半導體",
-          "price": 2650.0,
-          "change_pct": "-110.00%",
-          "big_holder_pct": "54.22%",
-          "wow_pct": "+0.99%",
-          "streak": "↑5週",
-          "rank_change": "",
-          "signals": [
-            "高波動警示",
-            "連增5",
-            "逆買",
-            "量價背離",
-            "久盤吸籌"
-          ],
-          "rank": 59
-        },
-        {
-          "code": "5498",
-          "name": "凱崴",
-          "market": "上市",
-          "industry": "櫃電子零組件",
-          "price": 50.4,
-          "change_pct": "-0.30%",
-          "big_holder_pct": "35.62%",
-          "wow_pct": "+0.98%",
-          "streak": "↑2週",
-          "rank_change": "",
-          "signals": [
-            "加速",
-            "量價背離"
-          ],
-          "rank": 60
-        },
-        {
-          "code": "6173",
-          "name": "信昌電",
-          "market": "上櫃",
-          "industry": "櫃電子零組件",
-          "price": 212.0,
-          "change_pct": "-9.00%",
-          "big_holder_pct": "64.29%",
-          "wow_pct": "+0.98%",
-          "streak": "↑1週",
-          "rank_change": "",
-          "signals": [
-            "高波動警示",
-            "逆買",
-            "量價背離",
-            "籌碼回補"
-          ],
-          "rank": 61
-        },
-        {
-          "code": "3339",
-          "name": "泰谷",
-          "market": "上市",
-          "industry": "櫃光電",
-          "price": 38.15,
-          "change_pct": "+0.20%",
-          "big_holder_pct": "27.12%",
-          "wow_pct": "+0.97%",
-          "streak": "↑1週",
-          "rank_change": "",
-          "signals": [
-            "籌碼回補"
-          ],
-          "rank": 62
-        },
-        {
-          "code": "1733",
-          "name": "五鼎",
-          "market": "上市",
-          "industry": "生技醫療業",
-          "price": 32.25,
-          "change_pct": "+0.15%",
-          "big_holder_pct": "43.55%",
-          "wow_pct": "+0.96%",
-          "streak": "↑2週",
-          "rank_change": "NEW",
-          "signals": [
-            "加速",
-            "新進榜"
-          ],
-          "rank": 63
-        },
-        {
-          "code": "6224",
-          "name": "聚鼎",
-          "market": "上櫃",
-          "industry": "電子零組件",
-          "price": 75.4,
-          "change_pct": "+3.30%",
-          "big_holder_pct": "37.88%",
-          "wow_pct": "+0.96%",
-          "streak": "↑1週",
-          "rank_change": "",
-          "signals": [
-            "籌碼回補"
-          ],
-          "rank": 64
-        },
-        {
-          "code": "1784",
-          "name": "訊聯",
-          "market": "上市",
-          "industry": "櫃生技醫療",
-          "price": 61.4,
-          "change_pct": "-0.10%",
-          "big_holder_pct": "28.85%",
-          "wow_pct": "+0.96%",
-          "streak": "↑1週",
-          "rank_change": "",
-          "signals": [
-            "量價背離",
-            "籌碼回補"
-          ],
-          "rank": 65
-        },
-        {
-          "code": "3234",
-          "name": "光環",
-          "market": "上市",
-          "industry": "櫃通信網路",
-          "price": 151.0,
-          "change_pct": "+0.00%",
-          "big_holder_pct": "33.97%",
-          "wow_pct": "+0.95%",
-          "streak": "↑3週",
-          "rank_change": "",
-          "signals": [
-            "連增3"
-          ],
-          "rank": 66
-        },
-        {
-          "code": "6104",
-          "name": "創惟",
-          "market": "上櫃",
-          "industry": "櫃半導體",
-          "price": 95.3,
-          "change_pct": "+1.90%",
-          "big_holder_pct": "19.19%",
-          "wow_pct": "+0.95%",
-          "streak": "↑2週",
-          "rank_change": "",
-          "signals": [
-            "加速"
-          ],
-          "rank": 67
-        },
-        {
-          "code": "3150",
-          "name": "鈺寶-創",
-          "market": "上市",
-          "industry": "半導體",
-          "price": 17.15,
-          "change_pct": "-0.15%",
-          "big_holder_pct": "55.82%",
-          "wow_pct": "+0.94%",
-          "streak": "↑1週",
-          "rank_change": "NEW",
-          "signals": [
-            "量價背離",
-            "新進榜"
-          ],
-          "rank": 68
-        },
-        {
-          "code": "1558",
-          "name": "伸興",
-          "market": "上市",
-          "industry": "電機",
-          "price": 100.0,
-          "change_pct": "-3.00%",
-          "big_holder_pct": "37.20%",
-          "wow_pct": "+0.92%",
-          "streak": "↑6週",
-          "rank_change": "",
-          "signals": [
-            "連增5",
-            "加速",
-            "逆買",
-            "量價背離",
-            "久盤吸籌"
-          ],
-          "rank": 69
-        },
-        {
-          "code": "2851",
-          "name": "中再保",
-          "market": "上市",
-          "industry": "金融",
-          "price": 47.1,
-          "change_pct": "+2.90%",
-          "big_holder_pct": "71.52%",
-          "wow_pct": "+0.91%",
-          "streak": "↑2週",
-          "rank_change": "",
-          "signals": [
-            "法人同向",
-            "加速"
-          ],
-          "rank": 70
-        },
-        {
-          "code": "6278",
-          "name": "台表科",
-          "market": "上櫃",
-          "industry": "光電",
-          "price": 187.0,
-          "change_pct": "+7.00%",
-          "big_holder_pct": "60.96%",
-          "wow_pct": "+0.91%",
-          "streak": "↑1週",
-          "rank_change": "",
-          "signals": [
-            "籌碼回補"
-          ],
-          "rank": 71
-        },
-        {
-          "code": "5493",
-          "name": "三聯",
-          "market": "上市",
-          "industry": "櫃其他電子",
-          "price": 78.5,
-          "change_pct": "-0.40%",
-          "big_holder_pct": "44.81%",
-          "wow_pct": "+0.91%",
-          "streak": "↑2週",
-          "rank_change": "NEW",
-          "signals": [
-            "加速",
-            "量價背離",
-            "新進榜"
-          ],
-          "rank": 72
-        },
-        {
-          "code": "6165",
-          "name": "浪凡",
-          "market": "上櫃",
-          "industry": "雲端",
-          "price": 48.1,
-          "change_pct": "+0.75%",
-          "big_holder_pct": "50.48%",
-          "wow_pct": "+0.89%",
-          "streak": "↑3週",
-          "rank_change": "",
-          "signals": [
-            "連增3"
-          ],
-          "rank": 73
-        },
-        {
-          "code": "2611",
-          "name": "志信",
-          "market": "上市",
-          "industry": "航運",
-          "price": 17.2,
-          "change_pct": "+1.20%",
-          "big_holder_pct": "48.88%",
-          "wow_pct": "+0.87%",
-          "streak": "↑6週",
-          "rank_change": "",
-          "signals": [
-            "連增5",
-            "加速",
-            "久盤吸籌"
-          ],
-          "rank": 74
-        },
-        {
-          "code": "6735",
-          "name": "美達科技",
-          "market": "上櫃",
-          "industry": "櫃其他電子",
-          "price": 62.3,
-          "change_pct": "-1.20%",
-          "big_holder_pct": "49.49%",
-          "wow_pct": "+0.87%",
-          "streak": "↑1週",
-          "rank_change": "NEW",
-          "signals": [
-            "量價背離",
-            "籌碼回補",
-            "新進榜"
-          ],
-          "rank": 75
-        },
-        {
-          "code": "4764",
-          "name": "雙鍵",
-          "market": "上市",
-          "industry": "化學",
-          "price": 219.0,
-          "change_pct": "+8.00%",
-          "big_holder_pct": "75.58%",
-          "wow_pct": "+0.86%",
-          "streak": "↑1週",
-          "rank_change": "",
-          "signals": [
-            "高波動警示",
-            "高度集中",
-            "法人同向",
-            "籌碼回補"
-          ],
-          "rank": 76
-        },
-        {
-          "code": "8477",
-          "name": "創業家",
-          "market": "上櫃",
-          "industry": "雲端",
-          "price": 15.65,
-          "change_pct": "+0.00%",
-          "big_holder_pct": "83.45%",
-          "wow_pct": "+0.85%",
-          "streak": "↑3週",
-          "rank_change": "",
-          "signals": [
-            "高度集中",
-            "法人同向",
-            "連增3"
-          ],
-          "rank": 77
-        },
-        {
-          "code": "3484",
-          "name": "崧騰",
-          "market": "上市",
-          "industry": "櫃電子零組件",
-          "price": 49.9,
-          "change_pct": "-0.80%",
-          "big_holder_pct": "32.01%",
-          "wow_pct": "+0.85%",
-          "streak": "↑1週",
-          "rank_change": "",
-          "signals": [
-            "量價背離",
-            "籌碼回補"
-          ],
-          "rank": 78
-        },
-        {
-          "code": "3306",
-          "name": "鼎天",
-          "market": "上市",
-          "industry": "櫃通信網路",
-          "price": 44.75,
-          "change_pct": "+0.10%",
-          "big_holder_pct": "48.54%",
-          "wow_pct": "+0.85%",
-          "streak": "↑2週",
-          "rank_change": "",
-          "signals": [
-            "加速"
-          ],
-          "rank": 79
-        },
-        {
-          "code": "6175",
-          "name": "立敦",
-          "market": "上櫃",
-          "industry": "櫃電子零組件",
-          "price": 74.1,
-          "change_pct": "-0.60%",
-          "big_holder_pct": "61.68%",
-          "wow_pct": "+0.84%",
-          "streak": "↑1週",
-          "rank_change": "",
-          "signals": [
-            "量價背離",
-            "籌碼回補"
-          ],
-          "rank": 80
-        },
-        {
-          "code": "3592",
-          "name": "瑞鼎",
-          "market": "上市",
-          "industry": "半導體",
-          "price": 223.5,
-          "change_pct": "+0.00%",
-          "big_holder_pct": "37.53%",
-          "wow_pct": "+0.83%",
-          "streak": "↑3週",
-          "rank_change": "",
-          "signals": [
-            "連增3",
-            "加速"
-          ],
-          "rank": 81
-        },
-        {
-          "code": "1713",
-          "name": "國化",
-          "market": "上市",
-          "industry": "化學",
-          "price": 44.7,
-          "change_pct": "+0.00%",
-          "big_holder_pct": "74.42%",
-          "wow_pct": "+0.82%",
-          "streak": "↑3週",
-          "rank_change": "",
-          "signals": [
-            "法人同向",
-            "連增3",
-            "加速"
-          ],
-          "rank": 82
-        },
-        {
-          "code": "4976",
-          "name": "佳凌",
-          "market": "上市",
-          "industry": "光電",
-          "price": 38.0,
-          "change_pct": "-0.15%",
-          "big_holder_pct": "30.21%",
-          "wow_pct": "+0.82%",
-          "streak": "↑3週",
-          "rank_change": "",
-          "signals": [
-            "連增3",
-            "加速",
-            "量價背離"
-          ],
-          "rank": 83
-        },
-        {
-          "code": "6269",
-          "name": "台郡",
-          "market": "上櫃",
-          "industry": "電子零組件",
-          "price": 62.4,
-          "change_pct": "-1.20%",
-          "big_holder_pct": "32.37%",
-          "wow_pct": "+0.82%",
-          "streak": "↑3週",
-          "rank_change": "",
-          "signals": [
-            "連增3",
-            "量價背離"
-          ],
-          "rank": 84
-        },
-        {
-          "code": "6741",
-          "name": "91APP*-KY",
-          "market": "上櫃",
-          "industry": "雲端",
-          "price": 54.5,
-          "change_pct": "-0.50%",
-          "big_holder_pct": "69.94%",
-          "wow_pct": "+0.82%",
-          "streak": "↑2週",
-          "rank_change": "",
-          "signals": [
-            "加速",
-            "量價背離"
-          ],
-          "rank": 85
-        },
-        {
-          "code": "2542",
-          "name": "興富發",
-          "market": "上市",
-          "industry": "營建",
-          "price": 48.8,
-          "change_pct": "+0.50%",
-          "big_holder_pct": "65.97%",
-          "wow_pct": "+0.81%",
-          "streak": "↑6週",
-          "rank_change": "",
-          "signals": [
-            "連增5",
-            "久盤吸籌"
-          ],
-          "rank": 86
-        },
-        {
-          "code": "6472",
-          "name": "保瑞",
-          "market": "上櫃",
-          "industry": "生技醫療業",
-          "price": 455.0,
-          "change_pct": "+9.50%",
-          "big_holder_pct": "57.64%",
-          "wow_pct": "+0.81%",
-          "streak": "↑2週",
-          "rank_change": "",
-          "signals": [
-            "高波動警示"
-          ],
-          "rank": 87
-        },
-        {
-          "code": "5201",
-          "name": "凱衛",
-          "market": "上市",
-          "industry": "櫃資訊服務",
-          "price": 26.7,
-          "change_pct": "+0.00%",
-          "big_holder_pct": "57.98%",
-          "wow_pct": "+0.81%",
-          "streak": "↑1週",
-          "rank_change": "",
-          "signals": [
-            "籌碼回補"
-          ],
-          "rank": 88
-        },
-        {
-          "code": "2636",
-          "name": "台驊控股",
-          "market": "上市",
-          "industry": "航運",
-          "price": 73.3,
-          "change_pct": "+2.10%",
-          "big_holder_pct": "43.18%",
-          "wow_pct": "+0.80%",
-          "streak": "↑4週",
-          "rank_change": "",
-          "signals": [
-            "連增3",
-            "內外共振"
-          ],
-          "rank": 89
-        },
-        {
-          "code": "3138",
-          "name": "耀登",
-          "market": "上市",
-          "industry": "通信網路",
-          "price": 93.5,
-          "change_pct": "-1.90%",
-          "big_holder_pct": "28.85%",
-          "wow_pct": "+0.80%",
-          "streak": "↑1週",
-          "rank_change": "NEW",
-          "signals": [
-            "量價背離",
-            "新進榜"
-          ],
-          "rank": 90
-        },
-        {
-          "code": "6243",
-          "name": "迅杰",
-          "market": "上櫃",
-          "industry": "半導體",
-          "price": 42.05,
-          "change_pct": "-0.80%",
-          "big_holder_pct": "21.64%",
-          "wow_pct": "+0.79%",
-          "streak": "↑1週",
-          "rank_change": "NEW",
-          "signals": [
-            "量價背離",
-            "新進榜"
-          ],
-          "rank": 91
-        },
-        {
-          "code": "8446",
-          "name": "華研",
-          "market": "上櫃",
-          "industry": "櫃文化創意",
-          "price": 85.2,
-          "change_pct": "+0.40%",
-          "big_holder_pct": "51.10%",
-          "wow_pct": "+0.79%",
-          "streak": "↑3週",
-          "rank_change": "",
-          "signals": [
-            "連增3",
-            "加速"
-          ],
-          "rank": 92
-        },
-        {
-          "code": "6829",
-          "name": "千附精密",
-          "market": "上櫃",
-          "industry": "櫃半導體",
-          "price": 210.0,
-          "change_pct": "-4.00%",
-          "big_holder_pct": "67.99%",
-          "wow_pct": "+0.79%",
-          "streak": "↑1週",
-          "rank_change": "",
-          "signals": [
-            "逆買",
-            "量價背離",
-            "籌碼回補"
-          ],
-          "rank": 93
-        },
-        {
-          "code": "4163",
-          "name": "鐿鈦",
-          "market": "上市",
-          "industry": "櫃生技醫療",
-          "price": 142.0,
-          "change_pct": "-2.50%",
-          "big_holder_pct": "70.31%",
-          "wow_pct": "+0.79%",
-          "streak": "↑1週",
-          "rank_change": "",
-          "signals": [
-            "法人同向",
-            "量價背離",
-            "籌碼回補"
-          ],
-          "rank": 94
-        },
-        {
-          "code": "9912",
-          "name": "偉聯",
-          "market": "上櫃",
-          "industry": "電腦週邊",
-          "price": 12.9,
-          "change_pct": "-0.05%",
-          "big_holder_pct": "62.85%",
-          "wow_pct": "+0.78%",
-          "streak": "↑1週",
-          "rank_change": "",
-          "signals": [
-            "量價背離",
-            "籌碼回補"
-          ],
-          "rank": 95
-        },
-        {
-          "code": "2392",
-          "name": "正崴",
-          "market": "上市",
-          "industry": "電子零組件",
-          "price": 41.6,
-          "change_pct": "+1.00%",
-          "big_holder_pct": "49.98%",
-          "wow_pct": "+0.78%",
-          "streak": "↑3週",
-          "rank_change": "",
-          "signals": [
-            "連增3"
-          ],
-          "rank": 96
-        },
-        {
-          "code": "1795",
-          "name": "美時",
-          "market": "上市",
-          "industry": "生技醫療業",
-          "price": 196.5,
-          "change_pct": "+1.50%",
-          "big_holder_pct": "57.99%",
-          "wow_pct": "+0.77%",
-          "streak": "↑3週",
-          "rank_change": "",
-          "signals": [
-            "連增3",
-            "加速"
-          ],
-          "rank": 97
-        },
-        {
-          "code": "1714",
-          "name": "和桐",
-          "market": "上市",
-          "industry": "化學",
-          "price": 17.0,
-          "change_pct": "+0.00%",
-          "big_holder_pct": "53.85%",
-          "wow_pct": "+0.76%",
-          "streak": "↑1週",
-          "rank_change": "",
-          "signals": [
-            "籌碼回補"
-          ],
-          "rank": 98
-        },
-        {
-          "code": "3529",
-          "name": "力旺",
-          "market": "上市",
-          "industry": "櫃半導體",
-          "price": 2155.0,
-          "change_pct": "-55.00%",
-          "big_holder_pct": "48.97%",
-          "wow_pct": "+0.76%",
-          "streak": "↑1週",
-          "rank_change": "",
-          "signals": [
-            "高波動警示",
-            "逆買",
-            "量價背離",
-            "籌碼回補"
-          ],
-          "rank": 99
-        },
-        {
-          "code": "2313",
-          "name": "華通",
-          "market": "上市",
-          "industry": "電子零組件",
-          "price": 213.5,
-          "change_pct": "-4.00%",
-          "big_holder_pct": "59.22%",
-          "wow_pct": "+0.75%",
-          "streak": "↑1週",
-          "rank_change": "",
-          "signals": [
-            "逆買",
-            "量價背離",
-            "籌碼回補"
-          ],
-          "rank": 100
         }
       ],
-      "count": 1367,
+      "count": 54,
       "stats": {
-        "nUp": 735,
-        "nDown": 523,
-        "nFlat": 109,
-        "nAll": 1367,
+        "nUp": 24,
+        "nDown": 3,
+        "nFlat": 27,
+        "nAll": 54,
         "nCt": 0,
-        "nAccel": 176,
-        "nNewG": 27,
-        "nStreak5": 66
+        "nAccel": 0,
+        "nNewG": 0,
+        "nStreak5": 3
       }
     },
-    "1000": {
+    "400": {
       "stocks": [
-        {
-          "code": "3706",
-          "name": "神達",
-          "market": "上市",
-          "industry": "電腦週邊",
-          "price": 90.0,
-          "change_pct": "-0.10%",
-          "big_holder_pct": "56.93%",
-          "wow_pct": "+0.61%",
-          "streak": "↑3週",
-          "rank_change": "",
-          "signals": [
-            "連增3",
-            "量價背離"
-          ],
-          "rank": 1
-        },
-        {
-          "code": "3029",
-          "name": "零壹",
-          "market": "上市",
-          "industry": "資訊服務",
-          "price": 111.0,
-          "change_pct": "-0.50%",
-          "big_holder_pct": "42.30%",
-          "wow_pct": "+0.34%",
-          "streak": "↑3週",
-          "rank_change": "",
-          "signals": [
-            "連增3",
-            "量價背離"
-          ],
-          "rank": 2
-        },
-        {
-          "code": "3024",
-          "name": "憶聲",
-          "market": "上市",
-          "industry": "光電",
-          "price": 13.85,
-          "change_pct": "+0.15%",
-          "big_holder_pct": "50.51%",
-          "wow_pct": "+0.27%",
-          "streak": "↑4週",
-          "rank_change": "",
-          "signals": [
-            "連增3"
-          ],
-          "rank": 3
-        },
-        {
-          "code": "2357",
-          "name": "華碩",
-          "market": "上市",
-          "industry": "電腦週邊",
-          "price": 921.0,
-          "change_pct": "+8.00%",
-          "big_holder_pct": "74.85%",
-          "wow_pct": "+0.24%",
-          "streak": "↑6週",
-          "rank_change": "",
-          "signals": [
-            "高波動警示",
-            "法人同向",
-            "連增5",
-            "內外共振"
-          ],
-          "rank": 4
-        },
-        {
-          "code": "3520",
-          "name": "華盈",
-          "market": "上市",
-          "industry": "櫃電子零組件",
-          "price": 18.6,
-          "change_pct": "+0.60%",
-          "big_holder_pct": "40.60%",
-          "wow_pct": "+0.19%",
-          "streak": "↑5週",
-          "rank_change": "",
-          "signals": [
-            "連增5",
-            "久盤吸籌"
-          ],
-          "rank": 5
-        },
-        {
-          "code": "6015",
-          "name": "宏遠證",
-          "market": "上櫃",
-          "industry": "櫃金融",
-          "price": 15.9,
-          "change_pct": "+0.15%",
-          "big_holder_pct": "49.94%",
-          "wow_pct": "+0.15%",
-          "streak": "↑3週",
-          "rank_change": "",
-          "signals": [
-            "連增3"
-          ],
-          "rank": 6
-        },
-        {
-          "code": "5516",
-          "name": "雙喜",
-          "market": "上市",
-          "industry": "櫃營建",
-          "price": 12.05,
-          "change_pct": "+0.40%",
-          "big_holder_pct": "70.94%",
-          "wow_pct": "+0.13%",
-          "streak": "↑3週",
-          "rank_change": "",
-          "signals": [
-            "法人同向",
-            "連增3"
-          ],
-          "rank": 7
-        },
-        {
-          "code": "3226",
-          "name": "龍鋒",
-          "market": "上市",
-          "industry": "櫃電機",
-          "price": 52.6,
-          "change_pct": "+0.10%",
-          "big_holder_pct": "87.16%",
-          "wow_pct": "+0.13%",
-          "streak": "↑4週",
-          "rank_change": "",
-          "signals": [
-            "高度集中",
-            "法人同向",
-            "連增3"
-          ],
-          "rank": 8
-        },
-        {
-          "code": "5284",
-          "name": "jpp-KY",
-          "market": "上市",
-          "industry": "其他",
-          "price": 334.5,
-          "change_pct": "+16.50%",
-          "big_holder_pct": "57.02%",
-          "wow_pct": "+0.12%",
-          "streak": "↑3週",
-          "rank_change": "",
-          "signals": [
-            "高波動警示",
-            "連增3",
-            "內外共振"
-          ],
-          "rank": 9
-        },
-        {
-          "code": "2022",
-          "name": "聚亨",
-          "market": "上市",
-          "industry": "鋼鐵",
-          "price": 7.77,
-          "change_pct": "+0.01%",
-          "big_holder_pct": "40.51%",
-          "wow_pct": "+0.11%",
-          "streak": "↑4週",
-          "rank_change": "",
-          "signals": [
-            "連增3"
-          ],
-          "rank": 10
-        },
-        {
-          "code": "1313",
-          "name": "聯成",
-          "market": "上市",
-          "industry": "塑膠",
-          "price": 11.95,
-          "change_pct": "+0.40%",
-          "big_holder_pct": "68.08%",
-          "wow_pct": "+0.10%",
-          "streak": "↑3週",
-          "rank_change": "",
-          "signals": [
-            "連增3"
-          ],
-          "rank": 11
-        },
-        {
-          "code": "4995",
-          "name": "晶達",
-          "market": "上市",
-          "industry": "櫃光電",
-          "price": 48.85,
-          "change_pct": "+0.35%",
-          "big_holder_pct": "67.32%",
-          "wow_pct": "+0.09%",
-          "streak": "↑3週",
-          "rank_change": "",
-          "signals": [
-            "連增3"
-          ],
-          "rank": 12
-        },
-        {
-          "code": "6438",
-          "name": "迅得",
-          "market": "上櫃",
-          "industry": "其他電子",
-          "price": 144.0,
-          "change_pct": "+0.50%",
-          "big_holder_pct": "32.64%",
-          "wow_pct": "+0.08%",
-          "streak": "↑3週",
-          "rank_change": "",
-          "signals": [
-            "連增3"
-          ],
-          "rank": 13
-        },
         {
           "code": "4747",
           "name": "強生製藥",
@@ -2538,1337 +871,1688 @@
           "industry": "櫃生技醫療",
           "price": null,
           "change_pct": "+0.00%",
-          "big_holder_pct": "66.42%",
-          "wow_pct": "+0.07%",
-          "streak": "↑3週",
-          "rank_change": "",
-          "signals": [
-            "連增3"
-          ],
-          "rank": 14
-        },
-        {
-          "code": "6756",
-          "name": "威鋒電子",
-          "market": "上櫃",
-          "industry": "半導體",
-          "price": 98.4,
-          "change_pct": "+1.20%",
-          "big_holder_pct": "62.28%",
-          "wow_pct": "+0.06%",
-          "streak": "↑6週",
-          "rank_change": "",
-          "signals": [
-            "連增5",
-            "久盤吸籌"
-          ],
-          "rank": 15
-        },
-        {
-          "code": "3653",
-          "name": "健策",
-          "market": "上市",
-          "industry": "電子零組件",
-          "price": 5395.0,
-          "change_pct": "-205.00%",
-          "big_holder_pct": "71.87%",
-          "wow_pct": "+0.06%",
-          "streak": "↑6週",
-          "rank_change": "",
-          "signals": [
-            "高波動警示",
-            "法人同向",
-            "連增5",
-            "逆買",
-            "量價背離",
-            "久盤吸籌"
-          ],
-          "rank": 16
-        },
-        {
-          "code": "6578",
-          "name": "達邦蛋白",
-          "market": "上櫃",
-          "industry": "櫃農業科技",
-          "price": 18.45,
-          "change_pct": "+0.55%",
-          "big_holder_pct": "63.89%",
-          "wow_pct": "+0.05%",
-          "streak": "↑6週",
-          "rank_change": "",
-          "signals": [
-            "連增5",
-            "久盤吸籌"
-          ],
-          "rank": 17
-        },
-        {
-          "code": "8240",
-          "name": "華宏",
-          "market": "上櫃",
-          "industry": "櫃光電",
-          "price": 42.2,
-          "change_pct": "+0.10%",
-          "big_holder_pct": "54.53%",
-          "wow_pct": "+0.05%",
-          "streak": "↑6週",
-          "rank_change": "",
-          "signals": [
-            "連增5",
-            "久盤吸籌"
-          ],
-          "rank": 18
-        },
-        {
-          "code": "1517",
-          "name": "利奇",
-          "market": "上市",
-          "industry": "電機",
-          "price": 11.6,
-          "change_pct": "+0.15%",
-          "big_holder_pct": "49.19%",
-          "wow_pct": "+0.04%",
-          "streak": "↑3週",
-          "rank_change": "",
-          "signals": [
-            "連增3"
-          ],
-          "rank": 19
-        },
-        {
-          "code": "1907",
-          "name": "永豐餘",
-          "market": "上市",
-          "industry": "造紙",
-          "price": 31.2,
-          "change_pct": "+0.75%",
-          "big_holder_pct": "85.34%",
-          "wow_pct": "+0.04%",
-          "streak": "↑6週",
+          "big_holder_pct": "100.00%",
+          "wow_pct": "+33.58%",
+          "streak": "↑4週",
           "rank_change": "",
           "signals": [
             "高度集中",
+            "流動性風險",
             "法人同向",
-            "連增5",
-            "久盤吸籌"
+            "連增3",
+            "加速"
           ],
-          "rank": 20
+          "rank": 1
         },
         {
-          "code": "6782",
-          "name": "視陽",
+          "code": "6226",
+          "name": "光鼎",
           "market": "上櫃",
-          "industry": "生技醫療業",
-          "price": 202.0,
-          "change_pct": "-2.00%",
-          "big_holder_pct": "48.37%",
-          "wow_pct": "+0.04%",
+          "industry": "光電",
+          "price": 34.0,
+          "change_pct": "+3.05%",
+          "big_holder_pct": "28.75%",
+          "wow_pct": "+9.01%",
+          "streak": "↑2週",
+          "rank_change": "",
+          "signals": [
+            "加速",
+            "事件驅動"
+          ],
+          "rank": 2
+        },
+        {
+          "code": "3163",
+          "name": "波若威",
+          "market": "上市",
+          "industry": "櫃通信網路",
+          "price": 754.0,
+          "change_pct": "-22.00%",
+          "big_holder_pct": "37.33%",
+          "wow_pct": "+8.50%",
+          "streak": "↑2週",
+          "rank_change": "",
+          "signals": [
+            "高波動警示",
+            "加速",
+            "逆買",
+            "事件驅動",
+            "量價背離"
+          ],
+          "rank": 3
+        },
+        {
+          "code": "1815",
+          "name": "富喬",
+          "market": "上市",
+          "industry": "櫃電子零組件",
+          "price": 125.5,
+          "change_pct": "+9.00%",
+          "big_holder_pct": "49.47%",
+          "wow_pct": "+8.16%",
+          "streak": "↑2週",
+          "rank_change": "",
+          "signals": [
+            "高波動警示",
+            "事件驅動"
+          ],
+          "rank": 4
+        },
+        {
+          "code": "4939",
+          "name": "亞電",
+          "market": "上市",
+          "industry": "櫃電子零組件",
+          "price": 92.8,
+          "change_pct": "+6.20%",
+          "big_holder_pct": "42.75%",
+          "wow_pct": "+7.48%",
+          "streak": "↑1週",
+          "rank_change": "",
+          "signals": [
+            "事件驅動",
+            "籌碼回補"
+          ],
+          "rank": 5
+        },
+        {
+          "code": "2426",
+          "name": "鼎元",
+          "market": "上市",
+          "industry": "光電",
+          "price": 96.1,
+          "change_pct": "-0.50%",
+          "big_holder_pct": "53.42%",
+          "wow_pct": "+5.99%",
           "streak": "↑3週",
           "rank_change": "",
           "signals": [
             "連增3",
+            "量價背離"
+          ],
+          "rank": 6
+        },
+        {
+          "code": "6016",
+          "name": "康和證",
+          "market": "上櫃",
+          "industry": "櫃金融",
+          "price": 21.35,
+          "change_pct": "+1.00%",
+          "big_holder_pct": "56.26%",
+          "wow_pct": "+5.48%",
+          "streak": "↑2週",
+          "rank_change": "",
+          "signals": [
+            "加速",
+            "事件驅動"
+          ],
+          "rank": 7
+        },
+        {
+          "code": "2464",
+          "name": "盟立",
+          "market": "上市",
+          "industry": "其他電子",
+          "price": 190.0,
+          "change_pct": "-21.00%",
+          "big_holder_pct": "55.85%",
+          "wow_pct": "+5.13%",
+          "streak": "↑1週",
+          "rank_change": "",
+          "signals": [
+            "高波動警示",
+            "逆買",
+            "事件驅動",
+            "量價背離",
+            "籌碼回補"
+          ],
+          "rank": 8
+        },
+        {
+          "code": "8103",
+          "name": "瀚荃",
+          "market": "上櫃",
+          "industry": "電子零組件",
+          "price": 108.5,
+          "change_pct": "-5.50%",
+          "big_holder_pct": "47.23%",
+          "wow_pct": "+4.84%",
+          "streak": "↑2週",
+          "rank_change": "",
+          "signals": [
+            "加速",
+            "逆買",
+            "事件驅動",
+            "量價背離"
+          ],
+          "rank": 9
+        },
+        {
+          "code": "3105",
+          "name": "穩懋",
+          "market": "上市",
+          "industry": "櫃半導體",
+          "price": 439.0,
+          "change_pct": "-6.50%",
+          "big_holder_pct": "53.53%",
+          "wow_pct": "+4.10%",
+          "streak": "↑1週",
+          "rank_change": "",
+          "signals": [
+            "逆買",
+            "事件驅動",
+            "量價背離",
+            "籌碼回補"
+          ],
+          "rank": 10
+        },
+        {
+          "code": "3260",
+          "name": "威剛",
+          "market": "上市",
+          "industry": "櫃半導體",
+          "price": 412.0,
+          "change_pct": "-3.50%",
+          "big_holder_pct": "36.88%",
+          "wow_pct": "+4.02%",
+          "streak": "↑1週",
+          "rank_change": "",
+          "signals": [
+            "逆買",
+            "事件驅動",
+            "量價背離",
+            "籌碼回補"
+          ],
+          "rank": 11
+        },
+        {
+          "code": "4167",
+          "name": "松瑞藥",
+          "market": "上市",
+          "industry": "櫃生技醫療",
+          "price": 20.0,
+          "change_pct": "-0.15%",
+          "big_holder_pct": "45.89%",
+          "wow_pct": "+3.82%",
+          "streak": "↑2週",
+          "rank_change": "",
+          "signals": [
+            "加速",
+            "事件驅動",
+            "量價背離"
+          ],
+          "rank": 12
+        },
+        {
+          "code": "2351",
+          "name": "順德",
+          "market": "上市",
+          "industry": "半導體",
+          "price": 239.5,
+          "change_pct": "-0.50%",
+          "big_holder_pct": "75.65%",
+          "wow_pct": "+3.70%",
+          "streak": "↑2週",
+          "rank_change": "",
+          "signals": [
+            "高度集中",
+            "法人同向",
+            "加速",
+            "事件驅動",
+            "量價背離"
+          ],
+          "rank": 13
+        },
+        {
+          "code": "4979",
+          "name": "華星光",
+          "market": "上市",
+          "industry": "櫃通信網路",
+          "price": 610.0,
+          "change_pct": "-7.00%",
+          "big_holder_pct": "45.61%",
+          "wow_pct": "+3.69%",
+          "streak": "↑1週",
+          "rank_change": "",
+          "signals": [
+            "逆買",
+            "事件驅動",
+            "量價背離",
+            "籌碼回補"
+          ],
+          "rank": 14
+        },
+        {
+          "code": "3406",
+          "name": "玉晶光",
+          "market": "上市",
+          "industry": "光電",
+          "price": 917.0,
+          "change_pct": "+83.00%",
+          "big_holder_pct": "58.80%",
+          "wow_pct": "+3.46%",
+          "streak": "↑4週",
+          "rank_change": "",
+          "signals": [
+            "高波動警示",
+            "連增3",
+            "加速",
+            "內外共振"
+          ],
+          "rank": 15
+        },
+        {
+          "code": "8358",
+          "name": "金居",
+          "market": "上櫃",
+          "industry": "櫃電子零組件",
+          "price": 543.0,
+          "change_pct": "+49.00%",
+          "big_holder_pct": "41.03%",
+          "wow_pct": "+3.35%",
+          "streak": "↑1週",
+          "rank_change": "",
+          "signals": [
+            "高波動警示",
+            "事件驅動",
+            "籌碼回補"
+          ],
+          "rank": 16
+        },
+        {
+          "code": "3376",
+          "name": "新日興",
+          "market": "上市",
+          "industry": "電子零組件",
+          "price": 217.0,
+          "change_pct": "+7.00%",
+          "big_holder_pct": "46.62%",
+          "wow_pct": "+3.19%",
+          "streak": "↑1週",
+          "rank_change": "",
+          "signals": [
+            "事件驅動",
+            "籌碼回補"
+          ],
+          "rank": 17
+        },
+        {
+          "code": "3543",
+          "name": "州巧",
+          "market": "上市",
+          "industry": "光電",
+          "price": 54.5,
+          "change_pct": "+4.90%",
+          "big_holder_pct": "51.14%",
+          "wow_pct": "+3.15%",
+          "streak": "↑1週",
+          "rank_change": "",
+          "signals": [
+            "事件驅動",
+            "籌碼回補"
+          ],
+          "rank": 18
+        },
+        {
+          "code": "3324",
+          "name": "雙鴻",
+          "market": "上市",
+          "industry": "櫃其他電子",
+          "price": 1140.0,
+          "change_pct": "+80.00%",
+          "big_holder_pct": "49.64%",
+          "wow_pct": "+2.91%",
+          "streak": "↑1週",
+          "rank_change": "",
+          "signals": [
+            "高波動警示",
+            "籌碼回補"
+          ],
+          "rank": 19
+        },
+        {
+          "code": "8033",
+          "name": "雷虎",
+          "market": "上櫃",
+          "industry": "其他",
+          "price": 189.5,
+          "change_pct": "-9.50%",
+          "big_holder_pct": "33.74%",
+          "wow_pct": "+2.74%",
+          "streak": "↑1週",
+          "rank_change": "",
+          "signals": [
+            "高波動警示",
+            "逆買",
+            "量價背離",
+            "籌碼回補"
+          ],
+          "rank": 20
+        },
+        {
+          "code": "8111",
+          "name": "立卅卅",
+          "market": "上櫃",
+          "industry": "櫃光電",
+          "price": 62.4,
+          "change_pct": "-2.00%",
+          "big_holder_pct": "38.20%",
+          "wow_pct": "+2.65%",
+          "streak": "↑2週",
+          "rank_change": "",
+          "signals": [
+            "加速",
             "量價背離"
           ],
           "rank": 21
         },
         {
-          "code": "4737",
-          "name": "華廣",
+          "code": "3374",
+          "name": "精材",
           "market": "上市",
-          "industry": "生技醫療業",
-          "price": 57.0,
-          "change_pct": "-0.30%",
-          "big_holder_pct": "62.35%",
-          "wow_pct": "+0.04%",
-          "streak": "↑6週",
+          "industry": "櫃半導體",
+          "price": 386.0,
+          "change_pct": "+35.00%",
+          "big_holder_pct": "60.84%",
+          "wow_pct": "+2.63%",
+          "streak": "↑1週",
           "rank_change": "",
           "signals": [
-            "連增5",
-            "量價背離",
-            "久盤吸籌"
+            "高波動警示",
+            "籌碼回補"
           ],
           "rank": 22
         },
         {
-          "code": "6668",
-          "name": "中揚光",
+          "code": "6269",
+          "name": "台郡",
           "market": "上櫃",
-          "industry": "光電",
-          "price": 36.4,
-          "change_pct": "+0.20%",
-          "big_holder_pct": "53.62%",
-          "wow_pct": "+0.04%",
-          "streak": "↑3週",
+          "industry": "電子零組件",
+          "price": 75.0,
+          "change_pct": "+2.10%",
+          "big_holder_pct": "34.97%",
+          "wow_pct": "+2.60%",
+          "streak": "↑4週",
           "rank_change": "",
           "signals": [
-            "連增3"
+            "連增3",
+            "加速",
+            "內外共振"
           ],
           "rank": 23
         },
         {
-          "code": "6570",
-          "name": "維田",
+          "code": "6840",
+          "name": "東研信超",
           "market": "上櫃",
-          "industry": "櫃電腦週邊",
-          "price": 52.6,
-          "change_pct": "-2.40%",
-          "big_holder_pct": "46.00%",
-          "wow_pct": "+0.04%",
-          "streak": "↑5週",
+          "industry": "櫃其他電子",
+          "price": 98.4,
+          "change_pct": "+0.10%",
+          "big_holder_pct": "52.74%",
+          "wow_pct": "+2.49%",
+          "streak": "↑1週",
           "rank_change": "",
           "signals": [
-            "連增5",
-            "量價背離",
-            "久盤吸籌"
+            "籌碼回補"
           ],
           "rank": 24
         },
         {
-          "code": "4120",
-          "name": "友華",
+          "code": "3363",
+          "name": "上詮",
           "market": "上市",
-          "industry": "櫃生技醫療",
-          "price": 47.9,
-          "change_pct": "+0.40%",
-          "big_holder_pct": "71.51%",
-          "wow_pct": "+0.04%",
-          "streak": "↑6週",
+          "industry": "櫃通信網路",
+          "price": 701.0,
+          "change_pct": "-3.00%",
+          "big_holder_pct": "42.51%",
+          "wow_pct": "+2.46%",
+          "streak": "↑2週",
           "rank_change": "",
           "signals": [
-            "法人同向",
-            "連增5",
-            "久盤吸籌"
+            "加速",
+            "逆買",
+            "量價背離"
           ],
           "rank": 25
         },
         {
-          "code": "2331",
-          "name": "精英",
+          "code": "3504",
+          "name": "揚明光",
           "market": "上市",
-          "industry": "電腦週邊",
-          "price": 19.8,
-          "change_pct": "-0.15%",
-          "big_holder_pct": "59.02%",
-          "wow_pct": "+0.03%",
-          "streak": "↑3週",
+          "industry": "光電",
+          "price": 89.5,
+          "change_pct": "-4.60%",
+          "big_holder_pct": "67.96%",
+          "wow_pct": "+2.41%",
+          "streak": "↑4週",
           "rank_change": "",
           "signals": [
             "連增3",
+            "加速",
+            "逆買",
             "量價背離"
           ],
           "rank": 26
         },
         {
-          "code": "3213",
-          "name": "茂訊",
+          "code": "3490",
+          "name": "單井",
           "market": "上市",
-          "industry": "櫃電腦週邊",
-          "price": 128.0,
-          "change_pct": "-3.00%",
-          "big_holder_pct": "32.10%",
-          "wow_pct": "+0.03%",
-          "streak": "↑4週",
+          "industry": "櫃光電",
+          "price": 50.3,
+          "change_pct": "-3.70%",
+          "big_holder_pct": "29.96%",
+          "wow_pct": "+2.39%",
+          "streak": "↑2週",
           "rank_change": "",
           "signals": [
-            "連增3",
             "逆買",
             "量價背離"
           ],
           "rank": 27
         },
         {
-          "code": "6508",
-          "name": "惠光",
-          "market": "上櫃",
-          "industry": "櫃農業科技",
-          "price": 26.2,
-          "change_pct": "-0.30%",
-          "big_holder_pct": "61.92%",
-          "wow_pct": "+0.03%",
-          "streak": "↑6週",
+          "code": "5425",
+          "name": "台半",
+          "market": "上市",
+          "industry": "櫃半導體",
+          "price": 96.3,
+          "change_pct": "+1.10%",
+          "big_holder_pct": "37.16%",
+          "wow_pct": "+2.32%",
+          "streak": "↑1週",
           "rank_change": "",
           "signals": [
-            "連增5",
-            "量價背離",
-            "久盤吸籌"
+            "籌碼回補"
           ],
           "rank": 28
         },
         {
-          "code": "8176",
-          "name": "智捷",
-          "market": "上櫃",
+          "code": "3234",
+          "name": "光環",
+          "market": "上市",
           "industry": "櫃通信網路",
-          "price": 9.95,
-          "change_pct": "+0.00%",
-          "big_holder_pct": "32.74%",
-          "wow_pct": "+0.03%",
-          "streak": "↑6週",
+          "price": 181.5,
+          "change_pct": "+1.50%",
+          "big_holder_pct": "36.26%",
+          "wow_pct": "+2.29%",
+          "streak": "↑4週",
           "rank_change": "",
           "signals": [
-            "連增5",
-            "久盤吸籌"
+            "連增3",
+            "加速"
           ],
           "rank": 29
         },
         {
-          "code": "3078",
-          "name": "僑威",
+          "code": "2491",
+          "name": "吉祥全",
           "market": "上市",
-          "industry": "櫃電子零組件",
-          "price": 54.5,
-          "change_pct": "+1.00%",
-          "big_holder_pct": "38.17%",
-          "wow_pct": "+0.03%",
-          "streak": "↑4週",
+          "industry": "光電",
+          "price": 56.4,
+          "change_pct": "+5.10%",
+          "big_holder_pct": "74.89%",
+          "wow_pct": "+2.18%",
+          "streak": "↑1週",
           "rank_change": "",
           "signals": [
-            "連增3"
+            "法人同向",
+            "籌碼回補"
           ],
           "rank": 30
         },
         {
-          "code": "2207",
-          "name": "和泰車",
-          "market": "上市",
-          "industry": "汽車",
-          "price": 518.0,
-          "change_pct": "+10.00%",
-          "big_holder_pct": "89.78%",
-          "wow_pct": "+0.02%",
-          "streak": "↑4週",
-          "rank_change": "",
+          "code": "6240",
+          "name": "松崗",
+          "market": "上櫃",
+          "industry": "櫃資訊服務",
+          "price": 23.0,
+          "change_pct": "+0.15%",
+          "big_holder_pct": "84.92%",
+          "wow_pct": "+2.09%",
+          "streak": "↑2週",
+          "rank_change": "NEW",
           "signals": [
-            "高波動警示",
             "高度集中",
             "法人同向",
-            "連增3",
-            "內外共振"
+            "加速",
+            "新進榜"
           ],
           "rank": 31
         },
         {
-          "code": "2855",
-          "name": "統一證",
-          "market": "上市",
-          "industry": "金融",
-          "price": 47.1,
-          "change_pct": "+0.45%",
-          "big_holder_pct": "76.04%",
-          "wow_pct": "+0.02%",
-          "streak": "↑3週",
+          "code": "6278",
+          "name": "台表科",
+          "market": "上櫃",
+          "industry": "光電",
+          "price": 201.5,
+          "change_pct": "-4.50%",
+          "big_holder_pct": "63.02%",
+          "wow_pct": "+2.06%",
+          "streak": "↑2週",
           "rank_change": "",
           "signals": [
-            "高度集中",
-            "法人同向",
-            "連增3"
+            "加速",
+            "逆買",
+            "量價背離"
           ],
           "rank": 32
         },
         {
-          "code": "9120",
-          "name": "00晨訊科-DR",
+          "code": "6224",
+          "name": "聚鼎",
           "market": "上櫃",
-          "industry": "存託憑證",
-          "price": 2.6,
-          "change_pct": "-0.04%",
-          "big_holder_pct": "34.98%",
-          "wow_pct": "+0.02%",
-          "streak": "↑4週",
+          "industry": "電子零組件",
+          "price": 74.5,
+          "change_pct": "-1.70%",
+          "big_holder_pct": "39.82%",
+          "wow_pct": "+1.94%",
+          "streak": "↑2週",
           "rank_change": "",
           "signals": [
-            "連增3",
+            "加速",
             "量價背離"
           ],
           "rank": 33
         },
         {
-          "code": "5523",
-          "name": "豐謙",
+          "code": "5392",
+          "name": "能率",
           "market": "上市",
-          "industry": "櫃營建",
-          "price": 30.35,
-          "change_pct": "+0.00%",
-          "big_holder_pct": "92.42%",
-          "wow_pct": "+0.02%",
-          "streak": "↑6週",
-          "rank_change": "",
-          "signals": [
-            "高度集中",
-            "流動性風險",
-            "法人同向",
-            "連增5",
-            "久盤吸籌"
-          ],
-          "rank": 34
-        },
-        {
-          "code": "1777",
-          "name": "生泰",
-          "market": "上市",
-          "industry": "櫃生技醫療",
-          "price": 74.1,
-          "change_pct": "+0.10%",
-          "big_holder_pct": "59.82%",
-          "wow_pct": "+0.02%",
-          "streak": "↑5週",
-          "rank_change": "",
-          "signals": [
-            "連增5",
-            "久盤吸籌"
-          ],
-          "rank": 35
-        },
-        {
-          "code": "1468",
-          "name": "昶和",
-          "market": "上市",
-          "industry": "紡織",
-          "price": 13.25,
-          "change_pct": "+0.15%",
-          "big_holder_pct": "97.57%",
-          "wow_pct": "+0.01%",
-          "streak": "↑3週",
-          "rank_change": "",
-          "signals": [
-            "高度集中",
-            "流動性風險",
-            "法人同向",
-            "連增3"
-          ],
-          "rank": 36
-        },
-        {
-          "code": "4557",
-          "name": "永新-KY",
-          "market": "上市",
-          "industry": "汽車",
-          "price": 52.3,
-          "change_pct": "+0.70%",
-          "big_holder_pct": "43.75%",
-          "wow_pct": "+0.01%",
-          "streak": "↑3週",
-          "rank_change": "",
-          "signals": [
-            "連增3"
-          ],
-          "rank": 37
-        },
-        {
-          "code": "4169",
-          "name": "泰宗",
-          "market": "上市",
-          "industry": "生技醫療業",
-          "price": 163.0,
-          "change_pct": "-0.50%",
-          "big_holder_pct": "54.08%",
-          "wow_pct": "+0.01%",
+          "industry": "櫃光電",
+          "price": 48.3,
+          "change_pct": "+1.20%",
+          "big_holder_pct": "38.14%",
+          "wow_pct": "+1.91%",
           "streak": "↑4週",
           "rank_change": "",
           "signals": [
             "連增3",
+            "加速"
+          ],
+          "rank": 34
+        },
+        {
+          "code": "3339",
+          "name": "泰谷",
+          "market": "上市",
+          "industry": "櫃光電",
+          "price": 43.0,
+          "change_pct": "+1.30%",
+          "big_holder_pct": "28.96%",
+          "wow_pct": "+1.84%",
+          "streak": "↑2週",
+          "rank_change": "",
+          "signals": [
+            "加速"
+          ],
+          "rank": 35
+        },
+        {
+          "code": "8271",
+          "name": "宇瞻",
+          "market": "上櫃",
+          "industry": "半導體",
+          "price": 232.5,
+          "change_pct": "-1.50%",
+          "big_holder_pct": "45.51%",
+          "wow_pct": "+1.81%",
+          "streak": "↑1週",
+          "rank_change": "",
+          "signals": [
+            "量價背離",
+            "籌碼回補"
+          ],
+          "rank": 36
+        },
+        {
+          "code": "6805",
+          "name": "富世達",
+          "market": "上櫃",
+          "industry": "電子零組件",
+          "price": 2345.0,
+          "change_pct": "+120.00%",
+          "big_holder_pct": "63.27%",
+          "wow_pct": "+1.80%",
+          "streak": "↑2週",
+          "rank_change": "",
+          "signals": [
+            "高波動警示",
+            "加速"
+          ],
+          "rank": 37
+        },
+        {
+          "code": "2313",
+          "name": "華通",
+          "market": "上市",
+          "industry": "電子零組件",
+          "price": 241.0,
+          "change_pct": "-3.00%",
+          "big_holder_pct": "61.01%",
+          "wow_pct": "+1.79%",
+          "streak": "↑2週",
+          "rank_change": "",
+          "signals": [
+            "加速",
+            "逆買",
             "量價背離"
           ],
           "rank": 38
         },
         {
-          "code": "4139",
-          "name": "馬光-KY",
+          "code": "1595",
+          "name": "川寶",
           "market": "上市",
-          "industry": "櫃生技醫療",
-          "price": 36.0,
-          "change_pct": "-3.25%",
-          "big_holder_pct": "69.10%",
-          "wow_pct": "+0.01%",
-          "streak": "↑6週",
-          "rank_change": "",
+          "industry": "櫃半導體",
+          "price": 66.0,
+          "change_pct": "+0.70%",
+          "big_holder_pct": "48.41%",
+          "wow_pct": "+1.73%",
+          "streak": "↑4週",
+          "rank_change": "NEW",
           "signals": [
-            "連增5",
-            "逆買",
-            "量價背離",
-            "久盤吸籌"
+            "連增3",
+            "加速",
+            "新進榜"
           ],
           "rank": 39
         },
         {
-          "code": "3597",
-          "name": "映興",
+          "code": "6782",
+          "name": "視陽",
+          "market": "上櫃",
+          "industry": "生技醫療業",
+          "price": 241.5,
+          "change_pct": "-2.00%",
+          "big_holder_pct": "50.07%",
+          "wow_pct": "+1.70%",
+          "streak": "↑4週",
+          "rank_change": "NEW",
+          "signals": [
+            "連增3",
+            "加速",
+            "量價背離",
+            "新進榜"
+          ],
+          "rank": 40
+        },
+        {
+          "code": "2606",
+          "name": "裕民",
           "market": "上市",
-          "industry": "櫃電子零組件",
-          "price": 26.65,
-          "change_pct": "-0.45%",
-          "big_holder_pct": "64.48%",
-          "wow_pct": "+0.01%",
+          "industry": "航運",
+          "price": 72.2,
+          "change_pct": "-2.10%",
+          "big_holder_pct": "78.27%",
+          "wow_pct": "+1.68%",
+          "streak": "↑4週",
+          "rank_change": "",
+          "signals": [
+            "高度集中",
+            "法人同向",
+            "連增3",
+            "加速",
+            "量價背離"
+          ],
+          "rank": 41
+        },
+        {
+          "code": "2612",
+          "name": "中航",
+          "market": "上市",
+          "industry": "航運",
+          "price": 60.2,
+          "change_pct": "-1.80%",
+          "big_holder_pct": "75.96%",
+          "wow_pct": "+1.61%",
+          "streak": "↑2週",
+          "rank_change": "",
+          "signals": [
+            "高度集中",
+            "法人同向",
+            "加速",
+            "量價背離"
+          ],
+          "rank": 42
+        },
+        {
+          "code": "6771",
+          "name": "平和環保-創",
+          "market": "上櫃",
+          "industry": "綠能",
+          "price": 41.0,
+          "change_pct": "-0.75%",
+          "big_holder_pct": "42.46%",
+          "wow_pct": "+1.60%",
+          "streak": "↑1週",
+          "rank_change": "NEW",
+          "signals": [
+            "量價背離",
+            "籌碼回補",
+            "新進榜"
+          ],
+          "rank": 43
+        },
+        {
+          "code": "4442",
+          "name": "竣邦-KY",
+          "market": "上市",
+          "industry": "櫃紡織",
+          "price": 51.4,
+          "change_pct": "+0.00%",
+          "big_holder_pct": "75.98%",
+          "wow_pct": "+1.59%",
+          "streak": "↑1週",
+          "rank_change": "",
+          "signals": [
+            "高度集中",
+            "法人同向",
+            "籌碼回補"
+          ],
+          "rank": 44
+        },
+        {
+          "code": "6214",
+          "name": "精誠",
+          "market": "上櫃",
+          "industry": "資訊服務",
+          "price": 181.0,
+          "change_pct": "-1.50%",
+          "big_holder_pct": "64.41%",
+          "wow_pct": "+1.58%",
           "streak": "↑3週",
           "rank_change": "",
           "signals": [
             "連增3",
             "量價背離"
           ],
-          "rank": 40
-        },
-        {
-          "code": "5276",
-          "name": "達輝-KY",
-          "market": "上市",
-          "industry": "櫃其他",
-          "price": 19.95,
-          "change_pct": "+0.55%",
-          "big_holder_pct": "88.32%",
-          "wow_pct": "+0.01%",
-          "streak": "↑6週",
-          "rank_change": "",
-          "signals": [
-            "高度集中",
-            "法人同向",
-            "連增5",
-            "久盤吸籌"
-          ],
-          "rank": 41
-        },
-        {
-          "code": "4402",
-          "name": "郡都開發",
-          "market": "上市",
-          "industry": "櫃紡織",
-          "price": 14.8,
-          "change_pct": "+0.00%",
-          "big_holder_pct": "65.99%",
-          "wow_pct": "+0.01%",
-          "streak": "↑3週",
-          "rank_change": "",
-          "signals": [
-            "連增3"
-          ],
-          "rank": 42
-        },
-        {
-          "code": "2023",
-          "name": "燁輝",
-          "market": "上市",
-          "industry": "鋼鐵",
-          "price": 13.95,
-          "change_pct": "-0.05%",
-          "big_holder_pct": "79.38%",
-          "wow_pct": "+0.00%",
-          "streak": "",
-          "rank_change": "",
-          "signals": [
-            "高度集中"
-          ],
-          "rank": 43
-        },
-        {
-          "code": "8429",
-          "name": "金麗-KY",
-          "market": "上櫃",
-          "industry": "貿易百貨",
-          "price": 6.06,
-          "change_pct": "+0.03%",
-          "big_holder_pct": "42.18%",
-          "wow_pct": "+0.00%",
-          "streak": "",
-          "rank_change": "",
-          "signals": [],
-          "rank": 44
-        },
-        {
-          "code": "6526",
-          "name": "達發",
-          "market": "上櫃",
-          "industry": "半導體",
-          "price": 572.0,
-          "change_pct": "-13.00%",
-          "big_holder_pct": "78.67%",
-          "wow_pct": "+0.00%",
-          "streak": "",
-          "rank_change": "",
-          "signals": [
-            "高波動警示",
-            "高度集中"
-          ],
           "rank": 45
         },
         {
-          "code": "6419",
-          "name": "京晨科",
+          "code": "7402",
+          "name": "邑錡",
           "market": "上櫃",
           "industry": "櫃光電",
-          "price": 163.0,
-          "change_pct": "+2.00%",
-          "big_holder_pct": "40.53%",
-          "wow_pct": "+0.00%",
-          "streak": "",
-          "rank_change": "",
-          "signals": [],
+          "price": 112.5,
+          "change_pct": "-5.00%",
+          "big_holder_pct": "35.91%",
+          "wow_pct": "+1.54%",
+          "streak": "↑1週",
+          "rank_change": "NEW",
+          "signals": [
+            "逆買",
+            "量價背離",
+            "籌碼回補",
+            "新進榜"
+          ],
           "rank": 46
         },
         {
-          "code": "3191",
-          "name": "雲嘉南",
+          "code": "4927",
+          "name": "泰鼎-KY",
           "market": "上市",
-          "industry": "櫃電子零組件",
-          "price": 17.9,
-          "change_pct": "+0.10%",
-          "big_holder_pct": "54.29%",
-          "wow_pct": "+0.00%",
-          "streak": "",
+          "industry": "電子零組件",
+          "price": 43.0,
+          "change_pct": "+2.55%",
+          "big_holder_pct": "26.39%",
+          "wow_pct": "+1.51%",
+          "streak": "↑2週",
           "rank_change": "",
-          "signals": [],
+          "signals": [
+            "加速"
+          ],
           "rank": 47
         },
         {
-          "code": "4907",
-          "name": "富宇",
+          "code": "3484",
+          "name": "崧騰",
           "market": "上市",
-          "industry": "櫃營建",
-          "price": 47.7,
-          "change_pct": "+0.50%",
-          "big_holder_pct": "85.46%",
-          "wow_pct": "+0.00%",
-          "streak": "",
+          "industry": "櫃電子零組件",
+          "price": 50.3,
+          "change_pct": "-0.40%",
+          "big_holder_pct": "33.46%",
+          "wow_pct": "+1.45%",
+          "streak": "↑2週",
           "rank_change": "",
           "signals": [
-            "高度集中"
+            "加速",
+            "量價背離"
           ],
           "rank": 48
         },
         {
-          "code": "6804",
-          "name": "明係",
-          "market": "上櫃",
-          "industry": "運動",
-          "price": 18.4,
-          "change_pct": "-0.35%",
-          "big_holder_pct": "62.84%",
-          "wow_pct": "+0.00%",
-          "streak": "",
+          "code": "3441",
+          "name": "聯一光電",
+          "market": "上市",
+          "industry": "櫃光電",
+          "price": 130.0,
+          "change_pct": "-7.50%",
+          "big_holder_pct": "31.21%",
+          "wow_pct": "+1.43%",
+          "streak": "↑2週",
           "rank_change": "",
-          "signals": [],
+          "signals": [
+            "逆買",
+            "量價背離"
+          ],
           "rank": 49
         },
         {
-          "code": "6811",
-          "name": "宏卅硌穈T",
-          "market": "上櫃",
-          "industry": "雲端",
-          "price": 226.0,
-          "change_pct": "+0.00%",
-          "big_holder_pct": "65.47%",
-          "wow_pct": "+0.00%",
-          "streak": "",
+          "code": "2030",
+          "name": "彰源",
+          "market": "上市",
+          "industry": "鋼鐵",
+          "price": 22.8,
+          "change_pct": "-0.20%",
+          "big_holder_pct": "53.61%",
+          "wow_pct": "+1.42%",
+          "streak": "↑5週",
           "rank_change": "",
-          "signals": [],
+          "signals": [
+            "連增5",
+            "加速",
+            "量價背離",
+            "久盤吸籌"
+          ],
           "rank": 50
         },
         {
-          "code": "7713",
-          "name": "威力德生醫",
-          "market": "上櫃",
-          "industry": "櫃生技醫療",
-          "price": 73.0,
-          "change_pct": "+1.90%",
-          "big_holder_pct": "84.79%",
-          "wow_pct": "+0.00%",
-          "streak": "",
+          "code": "2305",
+          "name": "全友",
+          "market": "上市",
+          "industry": "電腦週邊",
+          "price": 29.0,
+          "change_pct": "-0.45%",
+          "big_holder_pct": "63.75%",
+          "wow_pct": "+1.38%",
+          "streak": "↑1週",
           "rank_change": "",
           "signals": [
-            "高度集中"
+            "量價背離",
+            "籌碼回補"
           ],
           "rank": 51
         },
         {
-          "code": "6732",
-          "name": "昇佳電子",
+          "code": "6168",
+          "name": "宏齊",
           "market": "上櫃",
-          "industry": "櫃半導體",
-          "price": 151.5,
-          "change_pct": "+1.00%",
-          "big_holder_pct": "49.46%",
-          "wow_pct": "+0.00%",
-          "streak": "",
+          "industry": "光電",
+          "price": 28.85,
+          "change_pct": "-0.80%",
+          "big_holder_pct": "47.34%",
+          "wow_pct": "+1.38%",
+          "streak": "↑3週",
           "rank_change": "",
-          "signals": [],
+          "signals": [
+            "連增3",
+            "加速",
+            "量價背離"
+          ],
           "rank": 52
         },
         {
-          "code": "8935",
-          "name": "邦泰",
-          "market": "上櫃",
-          "industry": "櫃其他",
-          "price": 17.9,
-          "change_pct": "+0.15%",
-          "big_holder_pct": "50.80%",
-          "wow_pct": "+0.00%",
-          "streak": "",
+          "code": "1727",
+          "name": "中華化",
+          "market": "上市",
+          "industry": "化學",
+          "price": 98.1,
+          "change_pct": "+1.20%",
+          "big_holder_pct": "57.80%",
+          "wow_pct": "+1.36%",
+          "streak": "↑2週",
           "rank_change": "",
           "signals": [],
           "rank": 53
         },
         {
-          "code": "2883",
-          "name": "凱基金",
-          "market": "上市",
-          "industry": "金融",
-          "price": 31.55,
-          "change_pct": "+1.15%",
-          "big_holder_pct": "68.56%",
-          "wow_pct": "-0.01%",
-          "streak": "",
-          "rank_change": "",
+          "code": "7712",
+          "name": "博盛半導體",
+          "market": "上櫃",
+          "industry": "櫃半導體",
+          "price": 160.0,
+          "change_pct": "+4.00%",
+          "big_holder_pct": "53.59%",
+          "wow_pct": "+1.35%",
+          "streak": "↑1週",
+          "rank_change": "NEW",
           "signals": [
-            "量價背離"
+            "籌碼回補",
+            "新進榜"
           ],
           "rank": 54
         },
         {
-          "code": "8089",
-          "name": "康全電訊",
-          "market": "上櫃",
-          "industry": "櫃通信網路",
-          "price": 17.95,
-          "change_pct": "-0.10%",
-          "big_holder_pct": "41.64%",
-          "wow_pct": "-0.01%",
-          "streak": "",
-          "rank_change": "",
-          "signals": [],
+          "code": "3230",
+          "name": "錦明",
+          "market": "上市",
+          "industry": "櫃光電",
+          "price": 46.35,
+          "change_pct": "-1.00%",
+          "big_holder_pct": "53.99%",
+          "wow_pct": "+1.35%",
+          "streak": "↑2週",
+          "rank_change": "NEW",
+          "signals": [
+            "加速",
+            "量價背離",
+            "新進榜"
+          ],
           "rank": 55
         },
         {
-          "code": "6122",
-          "name": "擎邦",
+          "code": "6870",
+          "name": "騰雲",
           "market": "上櫃",
-          "industry": "櫃電機",
-          "price": 47.9,
-          "change_pct": "+0.15%",
-          "big_holder_pct": "31.17%",
-          "wow_pct": "-0.01%",
-          "streak": "",
+          "industry": "雲端",
+          "price": 255.5,
+          "change_pct": "+2.00%",
+          "big_holder_pct": "75.54%",
+          "wow_pct": "+1.34%",
+          "streak": "↑3週",
           "rank_change": "",
           "signals": [
-            "量價背離"
+            "高度集中",
+            "法人同向",
+            "連增3",
+            "加速",
+            "內外共振"
           ],
           "rank": 56
         },
         {
-          "code": "2640",
-          "name": "大車隊",
-          "market": "上市",
-          "industry": "雲端",
-          "price": 155.5,
-          "change_pct": "+0.00%",
-          "big_holder_pct": "73.78%",
-          "wow_pct": "-0.01%",
-          "streak": "",
+          "code": "6138",
+          "name": "茂達",
+          "market": "上櫃",
+          "industry": "櫃半導體",
+          "price": 297.0,
+          "change_pct": "+1.50%",
+          "big_holder_pct": "47.44%",
+          "wow_pct": "+1.32%",
+          "streak": "↑1週",
           "rank_change": "",
-          "signals": [],
+          "signals": [
+            "籌碼回補"
+          ],
           "rank": 57
         },
         {
-          "code": "6752",
-          "name": "叡揚",
-          "market": "上櫃",
-          "industry": "櫃資訊服務",
-          "price": 100.5,
-          "change_pct": "+0.50%",
-          "big_holder_pct": "47.74%",
-          "wow_pct": "-0.01%",
-          "streak": "",
+          "code": "2465",
+          "name": "麗臺",
+          "market": "上市",
+          "industry": "電腦週邊",
+          "price": 95.0,
+          "change_pct": "-0.40%",
+          "big_holder_pct": "41.79%",
+          "wow_pct": "+1.30%",
+          "streak": "↑1週",
           "rank_change": "",
           "signals": [
-            "量價背離"
+            "量價背離",
+            "籌碼回補"
           ],
           "rank": 58
         },
         {
-          "code": "1799",
-          "name": "易威",
+          "code": "1608",
+          "name": "華榮",
           "market": "上市",
-          "industry": "櫃生技醫療",
-          "price": 30.2,
-          "change_pct": "+0.20%",
-          "big_holder_pct": "66.29%",
-          "wow_pct": "-0.01%",
-          "streak": "",
+          "industry": "電器電纜",
+          "price": 37.85,
+          "change_pct": "-0.35%",
+          "big_holder_pct": "66.68%",
+          "wow_pct": "+1.29%",
+          "streak": "↑1週",
           "rank_change": "",
           "signals": [
-            "量價背離"
+            "量價背離",
+            "籌碼回補"
           ],
           "rank": 59
         },
         {
-          "code": "2547",
-          "name": "日勝生",
-          "market": "上市",
-          "industry": "營建",
-          "price": 10.25,
-          "change_pct": "+0.05%",
-          "big_holder_pct": "70.93%",
-          "wow_pct": "-0.02%",
-          "streak": "",
-          "rank_change": "",
+          "code": "7747",
+          "name": "昕奇雲端",
+          "market": "上櫃",
+          "industry": "雲端",
+          "price": 113.5,
+          "change_pct": "-0.50%",
+          "big_holder_pct": "79.87%",
+          "wow_pct": "+1.29%",
+          "streak": "↑3週",
+          "rank_change": "NEW",
           "signals": [
-            "量價背離"
+            "高度集中",
+            "法人同向",
+            "連增3",
+            "加速",
+            "量價背離",
+            "新進榜"
           ],
           "rank": 60
         },
         {
-          "code": "3494",
-          "name": "誠研",
-          "market": "上市",
-          "industry": "電腦週邊",
-          "price": 7.1,
-          "change_pct": "+0.01%",
-          "big_holder_pct": "61.57%",
-          "wow_pct": "-0.02%",
-          "streak": "",
+          "code": "6913",
+          "name": "鴻呈",
+          "market": "上櫃",
+          "industry": "櫃電子零組件",
+          "price": 159.0,
+          "change_pct": "+1.00%",
+          "big_holder_pct": "58.09%",
+          "wow_pct": "+1.28%",
+          "streak": "↑3週",
           "rank_change": "",
           "signals": [
-            "量價背離"
+            "連增3",
+            "加速"
           ],
           "rank": 61
         },
         {
-          "code": "3002",
-          "name": "歐格",
+          "code": "4303",
+          "name": "信立",
           "market": "上市",
-          "industry": "電腦週邊",
-          "price": 17.0,
-          "change_pct": "+0.20%",
-          "big_holder_pct": "64.92%",
-          "wow_pct": "-0.02%",
-          "streak": "",
+          "industry": "櫃塑膠",
+          "price": 39.0,
+          "change_pct": "-3.10%",
+          "big_holder_pct": "21.69%",
+          "wow_pct": "+1.27%",
+          "streak": "↑4週",
           "rank_change": "",
           "signals": [
+            "連增3",
+            "加速",
+            "逆買",
             "量價背離"
           ],
           "rank": 62
         },
         {
-          "code": "3622",
-          "name": "洋華",
+          "code": "2455",
+          "name": "全新",
           "market": "上市",
-          "industry": "光電",
-          "price": 49.8,
-          "change_pct": "+1.10%",
-          "big_holder_pct": "59.31%",
-          "wow_pct": "-0.02%",
-          "streak": "",
+          "industry": "通信網路",
+          "price": 434.0,
+          "change_pct": "+1.00%",
+          "big_holder_pct": "52.34%",
+          "wow_pct": "+1.25%",
+          "streak": "↑1週",
           "rank_change": "",
           "signals": [
-            "量價背離"
+            "籌碼回補"
           ],
           "rank": 63
         },
         {
-          "code": "2349",
-          "name": "錸德",
+          "code": "2392",
+          "name": "正崴",
           "market": "上市",
-          "industry": "光電",
-          "price": 11.0,
-          "change_pct": "-0.15%",
-          "big_holder_pct": "28.99%",
-          "wow_pct": "-0.02%",
-          "streak": "",
+          "industry": "電子零組件",
+          "price": 44.5,
+          "change_pct": "-2.15%",
+          "big_holder_pct": "51.22%",
+          "wow_pct": "+1.24%",
+          "streak": "↑4週",
           "rank_change": "",
-          "signals": [],
+          "signals": [
+            "連增3",
+            "加速",
+            "量價背離"
+          ],
           "rank": 64
+        },
+        {
+          "code": "4540",
+          "name": "全球傳動",
+          "market": "上市",
+          "industry": "電機",
+          "price": 60.2,
+          "change_pct": "-1.20%",
+          "big_holder_pct": "32.54%",
+          "wow_pct": "+1.23%",
+          "streak": "↑3週",
+          "rank_change": "",
+          "signals": [
+            "連增3",
+            "加速",
+            "量價背離"
+          ],
+          "rank": 65
+        },
+        {
+          "code": "1711",
+          "name": "永光",
+          "market": "上市",
+          "industry": "化學",
+          "price": 43.9,
+          "change_pct": "+0.40%",
+          "big_holder_pct": "44.96%",
+          "wow_pct": "+1.23%",
+          "streak": "↑1週",
+          "rank_change": "",
+          "signals": [
+            "籌碼回補"
+          ],
+          "rank": 66
         },
         {
           "code": "4912",
           "name": "聯德控股-KY",
           "market": "上市",
           "industry": "電子零組件",
-          "price": 91.1,
-          "change_pct": "-0.40%",
-          "big_holder_pct": "51.40%",
-          "wow_pct": "-0.02%",
-          "streak": "",
-          "rank_change": "",
-          "signals": [],
-          "rank": 65
-        },
-        {
-          "code": "4506",
-          "name": "崇友",
-          "market": "上市",
-          "industry": "櫃電機",
-          "price": 123.0,
-          "change_pct": "+0.00%",
-          "big_holder_pct": "80.68%",
-          "wow_pct": "-0.02%",
-          "streak": "",
-          "rank_change": "",
+          "price": 99.2,
+          "change_pct": "+1.00%",
+          "big_holder_pct": "52.61%",
+          "wow_pct": "+1.21%",
+          "streak": "↑1週",
+          "rank_change": "NEW",
           "signals": [
-            "高度集中"
+            "籌碼回補",
+            "新進榜"
           ],
-          "rank": 66
-        },
-        {
-          "code": "8066",
-          "name": "來思達",
-          "market": "上櫃",
-          "industry": "居家",
-          "price": 14.7,
-          "change_pct": "+0.00%",
-          "big_holder_pct": "38.75%",
-          "wow_pct": "-0.02%",
-          "streak": "",
-          "rank_change": "",
-          "signals": [],
           "rank": 67
         },
         {
-          "code": "1726",
-          "name": "永記",
-          "market": "上市",
-          "industry": "化學",
-          "price": 77.8,
-          "change_pct": "+0.30%",
-          "big_holder_pct": "85.50%",
-          "wow_pct": "-0.03%",
-          "streak": "",
+          "code": "6642",
+          "name": "富致",
+          "market": "上櫃",
+          "industry": "櫃電子零組件",
+          "price": 82.7,
+          "change_pct": "+0.50%",
+          "big_holder_pct": "58.62%",
+          "wow_pct": "+1.19%",
+          "streak": "↑2週",
           "rank_change": "",
           "signals": [
-            "高度集中",
-            "量價背離"
+            "加速"
           ],
           "rank": 68
         },
         {
-          "code": "4148",
-          "name": "全宇生技-KY",
+          "code": "3221",
+          "name": "台嘉碩",
           "market": "上市",
-          "industry": "生技醫療業",
-          "price": 31.9,
-          "change_pct": "-0.10%",
-          "big_holder_pct": "79.53%",
-          "wow_pct": "-0.03%",
-          "streak": "",
+          "industry": "櫃通信網路",
+          "price": 48.8,
+          "change_pct": "-0.45%",
+          "big_holder_pct": "26.12%",
+          "wow_pct": "+1.19%",
+          "streak": "↑4週",
           "rank_change": "",
           "signals": [
-            "高度集中"
+            "連增3",
+            "加速",
+            "量價背離"
           ],
           "rank": 69
         },
         {
-          "code": "2301",
-          "name": "光寶科",
-          "market": "上市",
-          "industry": "電腦週邊",
-          "price": 261.0,
-          "change_pct": "-6.00%",
-          "big_holder_pct": "81.56%",
-          "wow_pct": "-0.03%",
-          "streak": "",
+          "code": "6658",
+          "name": "聯策",
+          "market": "上櫃",
+          "industry": "其他電子",
+          "price": 166.5,
+          "change_pct": "-4.50%",
+          "big_holder_pct": "42.87%",
+          "wow_pct": "+1.18%",
+          "streak": "↑1週",
           "rank_change": "",
           "signals": [
-            "高度集中"
+            "逆買",
+            "量價背離",
+            "籌碼回補"
           ],
           "rank": 70
         },
         {
-          "code": "3605",
-          "name": "宏致",
+          "code": "3006",
+          "name": "晶豪科",
           "market": "上市",
-          "industry": "電子零組件",
-          "price": 108.5,
-          "change_pct": "-1.50%",
-          "big_holder_pct": "68.59%",
-          "wow_pct": "-0.03%",
-          "streak": "",
+          "industry": "半導體",
+          "price": 269.5,
+          "change_pct": "-4.50%",
+          "big_holder_pct": "59.91%",
+          "wow_pct": "+1.17%",
+          "streak": "↑1週",
           "rank_change": "",
-          "signals": [],
+          "signals": [
+            "逆買",
+            "量價背離",
+            "籌碼回補"
+          ],
           "rank": 71
         },
         {
-          "code": "3465",
-          "name": "進泰電子",
-          "market": "上市",
-          "industry": "櫃其他電子",
-          "price": 29.4,
-          "change_pct": "+0.00%",
-          "big_holder_pct": "67.93%",
-          "wow_pct": "-0.03%",
-          "streak": "",
+          "code": "6116",
+          "name": "彩晶",
+          "market": "上櫃",
+          "industry": "光電",
+          "price": 14.5,
+          "change_pct": "-0.35%",
+          "big_holder_pct": "43.28%",
+          "wow_pct": "+1.16%",
+          "streak": "↑2週",
           "rank_change": "",
-          "signals": [],
+          "signals": [
+            "加速",
+            "量價背離"
+          ],
           "rank": 72
         },
         {
-          "code": "4580",
-          "name": "捷流閥業",
+          "code": "2421",
+          "name": "建準",
           "market": "上市",
-          "industry": "櫃電機",
-          "price": 78.7,
-          "change_pct": "+0.10%",
-          "big_holder_pct": "49.47%",
-          "wow_pct": "-0.03%",
-          "streak": "",
+          "industry": "電子零組件",
+          "price": 163.5,
+          "change_pct": "+4.00%",
+          "big_holder_pct": "60.32%",
+          "wow_pct": "+1.16%",
+          "streak": "↑2週",
           "rank_change": "",
           "signals": [
-            "量價背離"
+            "加速"
           ],
           "rank": 73
         },
         {
-          "code": "2751",
-          "name": "王座",
+          "code": "2481",
+          "name": "強茂",
           "market": "上市",
-          "industry": "櫃觀光",
-          "price": 54.3,
-          "change_pct": "+0.90%",
-          "big_holder_pct": "60.32%",
-          "wow_pct": "-0.03%",
-          "streak": "",
+          "industry": "半導體",
+          "price": 154.0,
+          "change_pct": "+7.50%",
+          "big_holder_pct": "57.26%",
+          "wow_pct": "+1.14%",
+          "streak": "↑1週",
           "rank_change": "",
           "signals": [
-            "量價背離"
+            "籌碼回補"
           ],
           "rank": 74
         },
         {
-          "code": "6934",
-          "name": "心誠鎂",
-          "market": "上櫃",
-          "industry": "生技醫療業",
-          "price": 72.0,
-          "change_pct": "-0.20%",
-          "big_holder_pct": "66.13%",
-          "wow_pct": "-0.04%",
-          "streak": "",
+          "code": "2609",
+          "name": "陽明",
+          "market": "上市",
+          "industry": "航運",
+          "price": 56.2,
+          "change_pct": "-1.70%",
+          "big_holder_pct": "62.26%",
+          "wow_pct": "+1.08%",
+          "streak": "↑6週",
           "rank_change": "",
-          "signals": [],
+          "signals": [
+            "連增5",
+            "量價背離",
+            "久盤吸籌"
+          ],
           "rank": 75
         },
         {
-          "code": "6123",
-          "name": "上奇",
-          "market": "上櫃",
-          "industry": "櫃資訊服務",
-          "price": 43.1,
-          "change_pct": "+0.15%",
-          "big_holder_pct": "43.29%",
-          "wow_pct": "-0.04%",
-          "streak": "",
+          "code": "3625",
+          "name": "西勝",
+          "market": "上市",
+          "industry": "櫃電腦週邊",
+          "price": 12.3,
+          "change_pct": "-0.15%",
+          "big_holder_pct": "48.36%",
+          "wow_pct": "+1.08%",
+          "streak": "↑5週",
           "rank_change": "",
           "signals": [
-            "量價背離"
+            "連增5",
+            "量價背離",
+            "久盤吸籌"
           ],
           "rank": 76
         },
         {
-          "code": "6895",
-          "name": "宏碩系統",
-          "market": "上櫃",
-          "industry": "櫃半導體",
-          "price": 134.0,
-          "change_pct": "+6.50%",
-          "big_holder_pct": "61.28%",
-          "wow_pct": "-0.04%",
-          "streak": "",
+          "code": "3550",
+          "name": "聯穎",
+          "market": "上市",
+          "industry": "電子零組件",
+          "price": 24.3,
+          "change_pct": "+0.40%",
+          "big_holder_pct": "43.14%",
+          "wow_pct": "+1.06%",
+          "streak": "↑2週",
           "rank_change": "",
           "signals": [
-            "量價背離"
+            "加速"
           ],
           "rank": 77
         },
         {
-          "code": "6561",
-          "name": "是方",
-          "market": "上櫃",
-          "industry": "櫃通信網路",
-          "price": 324.5,
-          "change_pct": "+1.50%",
-          "big_holder_pct": "73.05%",
-          "wow_pct": "-0.04%",
-          "streak": "",
+          "code": "3362",
+          "name": "先進光",
+          "market": "上市",
+          "industry": "櫃光電",
+          "price": 199.5,
+          "change_pct": "-5.00%",
+          "big_holder_pct": "60.29%",
+          "wow_pct": "+1.05%",
+          "streak": "↑1週",
           "rank_change": "",
           "signals": [
-            "量價背離"
+            "逆買",
+            "量價背離",
+            "籌碼回補"
           ],
           "rank": 78
         },
         {
-          "code": "2516",
-          "name": "新建",
-          "market": "上市",
-          "industry": "營建",
-          "price": 14.35,
-          "change_pct": "+0.30%",
-          "big_holder_pct": "72.70%",
-          "wow_pct": "-0.05%",
-          "streak": "",
+          "code": "8147",
+          "name": "正淩",
+          "market": "上櫃",
+          "industry": "櫃電子零組件",
+          "price": 124.0,
+          "change_pct": "-1.50%",
+          "big_holder_pct": "47.16%",
+          "wow_pct": "+1.05%",
+          "streak": "↑2週",
           "rank_change": "",
           "signals": [
+            "加速",
             "量價背離"
           ],
           "rank": 79
         },
         {
-          "code": "2882",
-          "name": "國泰金",
-          "market": "上市",
-          "industry": "金融",
-          "price": 100.5,
-          "change_pct": "+2.80%",
-          "big_holder_pct": "85.68%",
-          "wow_pct": "-0.05%",
-          "streak": "",
+          "code": "8261",
+          "name": "富鼎",
+          "market": "上櫃",
+          "industry": "半導體",
+          "price": 187.5,
+          "change_pct": "+2.50%",
+          "big_holder_pct": "44.57%",
+          "wow_pct": "+1.03%",
+          "streak": "↑1週",
           "rank_change": "",
           "signals": [
-            "高度集中",
-            "量價背離"
+            "籌碼回補"
           ],
           "rank": 80
         },
         {
-          "code": "4195",
-          "name": "基米-創",
-          "market": "上市",
-          "industry": "生技醫療業",
-          "price": 14.25,
-          "change_pct": "+0.00%",
-          "big_holder_pct": "38.72%",
-          "wow_pct": "-0.05%",
-          "streak": "",
+          "code": "6104",
+          "name": "創惟",
+          "market": "上櫃",
+          "industry": "櫃半導體",
+          "price": 99.3,
+          "change_pct": "-3.20%",
+          "big_holder_pct": "20.22%",
+          "wow_pct": "+1.03%",
+          "streak": "↑3週",
           "rank_change": "",
-          "signals": [],
+          "signals": [
+            "連增3",
+            "逆買",
+            "量價背離"
+          ],
           "rank": 81
         },
         {
-          "code": "2362",
-          "name": "藍天",
+          "code": "1519",
+          "name": "華城",
           "market": "上市",
-          "industry": "電腦週邊",
-          "price": 47.35,
-          "change_pct": "+0.00%",
-          "big_holder_pct": "80.75%",
-          "wow_pct": "-0.05%",
-          "streak": "",
+          "industry": "電機",
+          "price": 755.0,
+          "change_pct": "-15.00%",
+          "big_holder_pct": "73.83%",
+          "wow_pct": "+1.01%",
+          "streak": "↑1週",
           "rank_change": "",
           "signals": [
-            "高度集中"
+            "高波動警示",
+            "法人同向",
+            "逆買",
+            "量價背離",
+            "籌碼回補"
           ],
           "rank": 82
         },
         {
-          "code": "4905",
-          "name": "台聯電",
-          "market": "上市",
-          "industry": "櫃生技醫療",
-          "price": 89.6,
-          "change_pct": "-0.70%",
-          "big_holder_pct": "81.65%",
-          "wow_pct": "-0.05%",
-          "streak": "",
+          "code": "6290",
+          "name": "良維",
+          "market": "上櫃",
+          "industry": "櫃電子零組件",
+          "price": 248.0,
+          "change_pct": "-2.50%",
+          "big_holder_pct": "37.29%",
+          "wow_pct": "+0.99%",
+          "streak": "↑1週",
           "rank_change": "",
           "signals": [
-            "高度集中"
+            "量價背離",
+            "籌碼回補"
           ],
           "rank": 83
         },
         {
-          "code": "6275",
-          "name": "元山",
-          "market": "上櫃",
-          "industry": "櫃電子零組件",
-          "price": 43.8,
-          "change_pct": "-0.40%",
-          "big_holder_pct": "29.54%",
-          "wow_pct": "-0.05%",
-          "streak": "",
+          "code": "5314",
+          "name": "世紀",
+          "market": "上市",
+          "industry": "櫃其他",
+          "price": 34.2,
+          "change_pct": "-3.80%",
+          "big_holder_pct": "40.84%",
+          "wow_pct": "+0.98%",
+          "streak": "↑1週",
           "rank_change": "",
-          "signals": [],
+          "signals": [
+            "逆買",
+            "量價背離",
+            "籌碼回補"
+          ],
           "rank": 84
         },
         {
-          "code": "1806",
-          "name": "冠軍",
+          "code": "2344",
+          "name": "華邦電",
           "market": "上市",
-          "industry": "玻璃",
-          "price": 8.06,
-          "change_pct": "+0.04%",
-          "big_holder_pct": "74.45%",
-          "wow_pct": "-0.06%",
-          "streak": "",
+          "industry": "半導體",
+          "price": 181.5,
+          "change_pct": "-4.50%",
+          "big_holder_pct": "70.67%",
+          "wow_pct": "+0.96%",
+          "streak": "↑2週",
           "rank_change": "",
           "signals": [
+            "法人同向",
+            "逆買",
             "量價背離"
           ],
           "rank": 85
         },
         {
-          "code": "2704",
-          "name": "國賓",
+          "code": "4991",
+          "name": "環宇-KY",
           "market": "上市",
-          "industry": "觀光",
-          "price": 46.5,
-          "change_pct": "+0.00%",
-          "big_holder_pct": "88.39%",
-          "wow_pct": "-0.06%",
-          "streak": "",
+          "industry": "櫃半導體",
+          "price": 520.0,
+          "change_pct": "-18.00%",
+          "big_holder_pct": "51.86%",
+          "wow_pct": "+0.96%",
+          "streak": "↑1週",
           "rank_change": "",
           "signals": [
-            "高度集中"
+            "高波動警示",
+            "逆買",
+            "量價背離",
+            "籌碼回補"
           ],
           "rank": 86
         },
         {
-          "code": "2838",
-          "name": "聯邦銀",
+          "code": "4542",
+          "name": "科嶠",
           "market": "上市",
-          "industry": "金融",
-          "price": 20.35,
-          "change_pct": "+0.20%",
-          "big_holder_pct": "90.49%",
-          "wow_pct": "-0.06%",
-          "streak": "",
+          "industry": "櫃電子零組件",
+          "price": 286.0,
+          "change_pct": "+17.00%",
+          "big_holder_pct": "50.03%",
+          "wow_pct": "+0.94%",
+          "streak": "↑1週",
           "rank_change": "",
           "signals": [
-            "高度集中",
-            "流動性風險",
-            "量價背離"
+            "高波動警示",
+            "籌碼回補"
           ],
           "rank": 87
         },
         {
-          "code": "6272",
-          "name": "驊陞",
+          "code": "6969",
+          "name": "成信實業*-創",
           "market": "上櫃",
-          "industry": "電子零組件",
-          "price": 23.6,
-          "change_pct": "+0.20%",
-          "big_holder_pct": "51.28%",
-          "wow_pct": "-0.06%",
-          "streak": "",
-          "rank_change": "",
+          "industry": "綠能",
+          "price": 35.15,
+          "change_pct": "+0.35%",
+          "big_holder_pct": "54.04%",
+          "wow_pct": "+0.93%",
+          "streak": "↑1週",
+          "rank_change": "NEW",
           "signals": [
-            "量價背離"
+            "籌碼回補",
+            "新進榜"
           ],
           "rank": 88
         },
         {
-          "code": "6417",
-          "name": "韋僑",
+          "code": "6547",
+          "name": "高端疫苗",
           "market": "上櫃",
-          "industry": "櫃通信網路",
-          "price": 109.5,
-          "change_pct": "+0.50%",
-          "big_holder_pct": "67.82%",
-          "wow_pct": "-0.06%",
-          "streak": "",
+          "industry": "櫃生技醫療",
+          "price": 65.0,
+          "change_pct": "+1.90%",
+          "big_holder_pct": "36.63%",
+          "wow_pct": "+0.93%",
+          "streak": "↑1週",
           "rank_change": "",
           "signals": [
-            "量價背離"
+            "籌碼回補"
           ],
           "rank": 89
         },
         {
-          "code": "5603",
-          "name": "陸海",
+          "code": "1717",
+          "name": "長興",
           "market": "上市",
-          "industry": "櫃航運",
-          "price": 15.4,
-          "change_pct": "+0.80%",
-          "big_holder_pct": "54.70%",
-          "wow_pct": "-0.06%",
-          "streak": "",
+          "industry": "化學",
+          "price": 77.7,
+          "change_pct": "+1.90%",
+          "big_holder_pct": "66.78%",
+          "wow_pct": "+0.90%",
+          "streak": "↑1週",
           "rank_change": "",
           "signals": [
-            "量價背離"
+            "籌碼回補"
           ],
           "rank": 90
         },
         {
-          "code": "4545",
-          "name": "銘鈺",
-          "market": "上市",
-          "industry": "電子零組件",
-          "price": 32.15,
-          "change_pct": "+0.15%",
-          "big_holder_pct": "72.74%",
-          "wow_pct": "-0.07%",
-          "streak": "",
+          "code": "6127",
+          "name": "九豪",
+          "market": "上櫃",
+          "industry": "櫃電子零組件",
+          "price": 50.8,
+          "change_pct": "-0.10%",
+          "big_holder_pct": "23.39%",
+          "wow_pct": "+0.90%",
+          "streak": "↑2週",
           "rank_change": "",
           "signals": [
+            "加速",
             "量價背離"
           ],
           "rank": 91
         },
         {
-          "code": "6189",
-          "name": "豐藝",
-          "market": "上櫃",
-          "industry": "電子通路",
-          "price": 48.1,
-          "change_pct": "-0.05%",
-          "big_holder_pct": "35.06%",
-          "wow_pct": "-0.08%",
-          "streak": "",
+          "code": "2009",
+          "name": "第一銅",
+          "market": "上市",
+          "industry": "鋼鐵",
+          "price": 41.3,
+          "change_pct": "-0.50%",
+          "big_holder_pct": "59.14%",
+          "wow_pct": "+0.89%",
+          "streak": "↑1週",
           "rank_change": "",
-          "signals": [],
+          "signals": [
+            "量價背離",
+            "籌碼回補"
+          ],
           "rank": 92
         },
         {
-          "code": "5355",
-          "name": "佳總",
-          "market": "上市",
-          "industry": "櫃電子零組件",
-          "price": 5.98,
-          "change_pct": "-0.02%",
-          "big_holder_pct": "70.48%",
-          "wow_pct": "-0.08%",
-          "streak": "",
+          "code": "7842",
+          "name": "天能綠電",
+          "market": "上櫃",
+          "industry": "綠能",
+          "price": 101.5,
+          "change_pct": "-3.50%",
+          "big_holder_pct": "68.30%",
+          "wow_pct": "+0.89%",
+          "streak": "↑2週",
           "rank_change": "",
-          "signals": [],
+          "signals": [
+            "逆買",
+            "量價背離"
+          ],
           "rank": 93
         },
         {
-          "code": "6535",
-          "name": "順藥",
-          "market": "上櫃",
-          "industry": "櫃生技醫療",
-          "price": 80.9,
-          "change_pct": "-0.30%",
-          "big_holder_pct": "64.58%",
-          "wow_pct": "-0.08%",
-          "streak": "",
+          "code": "4967",
+          "name": "十銓",
+          "market": "上市",
+          "industry": "半導體",
+          "price": 273.5,
+          "change_pct": "-2.00%",
+          "big_holder_pct": "20.66%",
+          "wow_pct": "+0.88%",
+          "streak": "↑1週",
           "rank_change": "",
-          "signals": [],
+          "signals": [
+            "量價背離",
+            "籌碼回補"
+          ],
           "rank": 94
         },
         {
-          "code": "2891",
-          "name": "中信金",
-          "market": "上市",
-          "industry": "金融",
-          "price": 65.0,
-          "change_pct": "+1.60%",
-          "big_holder_pct": "81.78%",
-          "wow_pct": "-0.09%",
-          "streak": "",
-          "rank_change": "",
+          "code": "6668",
+          "name": "中揚光",
+          "market": "上櫃",
+          "industry": "光電",
+          "price": 44.6,
+          "change_pct": "+1.65%",
+          "big_holder_pct": "54.50%",
+          "wow_pct": "+0.88%",
+          "streak": "↑4週",
+          "rank_change": "NEW",
           "signals": [
-            "高度集中",
-            "量價背離"
+            "連增3",
+            "加速",
+            "新進榜"
           ],
           "rank": 95
         },
         {
-          "code": "2388",
-          "name": "威盛",
-          "market": "上市",
-          "industry": "半導體",
-          "price": 73.9,
-          "change_pct": "+0.50%",
-          "big_holder_pct": "71.52%",
-          "wow_pct": "-0.09%",
-          "streak": "",
+          "code": "8299",
+          "name": "群聯",
+          "market": "上櫃",
+          "industry": "櫃半導體",
+          "price": 2150.0,
+          "change_pct": "-5.00%",
+          "big_holder_pct": "42.43%",
+          "wow_pct": "+0.88%",
+          "streak": "↑1週",
           "rank_change": "",
           "signals": [
-            "量價背離"
+            "逆買",
+            "量價背離",
+            "籌碼回補"
           ],
           "rank": 96
         },
@@ -3877,57 +2561,1720 @@
           "name": "鴻準",
           "market": "上市",
           "industry": "其他電子",
-          "price": 60.2,
-          "change_pct": "+0.00%",
-          "big_holder_pct": "47.83%",
-          "wow_pct": "-0.09%",
-          "streak": "",
+          "price": 63.9,
+          "change_pct": "-0.50%",
+          "big_holder_pct": "48.70%",
+          "wow_pct": "+0.87%",
+          "streak": "↑1週",
           "rank_change": "",
-          "signals": [],
+          "signals": [
+            "量價背離",
+            "籌碼回補"
+          ],
           "rank": 97
         },
         {
-          "code": "6548",
-          "name": "長科",
+          "code": "6148",
+          "name": "驊宏資",
+          "market": "上櫃",
+          "industry": "櫃資訊服務",
+          "price": 28.3,
+          "change_pct": "+0.05%",
+          "big_holder_pct": "36.08%",
+          "wow_pct": "+0.87%",
+          "streak": "↑1週",
+          "rank_change": "NEW",
+          "signals": [
+            "新進榜"
+          ],
+          "rank": 98
+        },
+        {
+          "code": "8042",
+          "name": "金山電",
+          "market": "上櫃",
+          "industry": "櫃電子零組件",
+          "price": 109.0,
+          "change_pct": "+4.50%",
+          "big_holder_pct": "65.03%",
+          "wow_pct": "+0.87%",
+          "streak": "↑1週",
+          "rank_change": "",
+          "signals": [
+            "籌碼回補"
+          ],
+          "rank": 99
+        },
+        {
+          "code": "5321",
+          "name": "美而快",
+          "market": "上市",
+          "industry": "雲端",
+          "price": 85.0,
+          "change_pct": "+0.00%",
+          "big_holder_pct": "60.58%",
+          "wow_pct": "+0.86%",
+          "streak": "↑1週",
+          "rank_change": "",
+          "signals": [
+            "籌碼回補"
+          ],
+          "rank": 100
+        }
+      ],
+      "count": 1359,
+      "stats": {
+        "nUp": 759,
+        "nDown": 493,
+        "nFlat": 107,
+        "nAll": 1359,
+        "nCt": 0,
+        "nAccel": 161,
+        "nNewG": 21,
+        "nStreak5": 65
+      }
+    },
+    "1000": {
+      "stocks": [
+        {
+          "code": "6538",
+          "name": "倉和",
+          "market": "上櫃",
+          "industry": "櫃電子零組件",
+          "price": 200.0,
+          "change_pct": "-22.00%",
+          "big_holder_pct": "48.70%",
+          "wow_pct": "+1.39%",
+          "streak": "↑4週",
+          "rank_change": "",
+          "signals": [
+            "高波動警示",
+            "連增3",
+            "逆買",
+            "量價背離"
+          ],
+          "rank": 1
+        },
+        {
+          "code": "3489",
+          "name": "森寶",
+          "market": "上市",
+          "industry": "櫃營建",
+          "price": 23.05,
+          "change_pct": "-0.05%",
+          "big_holder_pct": "81.98%",
+          "wow_pct": "+0.86%",
+          "streak": "↑5週",
+          "rank_change": "",
+          "signals": [
+            "高度集中",
+            "法人同向",
+            "連增5",
+            "量價背離",
+            "久盤吸籌"
+          ],
+          "rank": 2
+        },
+        {
+          "code": "6426",
+          "name": "統新",
+          "market": "上櫃",
+          "industry": "通信網路",
+          "price": 263.5,
+          "change_pct": "+4.00%",
+          "big_holder_pct": "44.12%",
+          "wow_pct": "+0.53%",
+          "streak": "↑3週",
+          "rank_change": "",
+          "signals": [
+            "連增3",
+            "內外共振"
+          ],
+          "rank": 3
+        },
+        {
+          "code": "1416",
+          "name": "廣豐",
+          "market": "上市",
+          "industry": "其他",
+          "price": 11.8,
+          "change_pct": "+0.00%",
+          "big_holder_pct": "56.49%",
+          "wow_pct": "+0.48%",
+          "streak": "↑4週",
+          "rank_change": "",
+          "signals": [
+            "連增3"
+          ],
+          "rank": 4
+        },
+        {
+          "code": "3013",
+          "name": "晟銘電",
+          "market": "上市",
+          "industry": "電腦週邊",
+          "price": 89.5,
+          "change_pct": "+1.60%",
+          "big_holder_pct": "46.70%",
+          "wow_pct": "+0.48%",
+          "streak": "↑5週",
+          "rank_change": "",
+          "signals": [
+            "連增5",
+            "久盤吸籌"
+          ],
+          "rank": 5
+        },
+        {
+          "code": "6108",
+          "name": "競國",
+          "market": "上櫃",
+          "industry": "電子零組件",
+          "price": 25.7,
+          "change_pct": "+1.90%",
+          "big_holder_pct": "56.29%",
+          "wow_pct": "+0.39%",
+          "streak": "↑3週",
+          "rank_change": "",
+          "signals": [
+            "連增3"
+          ],
+          "rank": 6
+        },
+        {
+          "code": "9103",
+          "name": "22康師傅-DR",
+          "market": "上櫃",
+          "industry": "存託憑證",
+          "price": 25.7,
+          "change_pct": "+0.00%",
+          "big_holder_pct": "29.52%",
+          "wow_pct": "+0.38%",
+          "streak": "↑3週",
+          "rank_change": "",
+          "signals": [
+            "連增3"
+          ],
+          "rank": 7
+        },
+        {
+          "code": "6163",
+          "name": "華電網",
+          "market": "上櫃",
+          "industry": "櫃資訊服務",
+          "price": 43.3,
+          "change_pct": "-0.20%",
+          "big_holder_pct": "44.26%",
+          "wow_pct": "+0.33%",
+          "streak": "↑4週",
+          "rank_change": "",
+          "signals": [
+            "連增3",
+            "量價背離"
+          ],
+          "rank": 8
+        },
+        {
+          "code": "5515",
+          "name": "建國",
+          "market": "上市",
+          "industry": "營建",
+          "price": 52.5,
+          "change_pct": "-0.10%",
+          "big_holder_pct": "71.58%",
+          "wow_pct": "+0.32%",
+          "streak": "↑4週",
+          "rank_change": "",
+          "signals": [
+            "法人同向",
+            "連增3",
+            "量價背離"
+          ],
+          "rank": 9
+        },
+        {
+          "code": "3029",
+          "name": "零壹",
+          "market": "上市",
+          "industry": "資訊服務",
+          "price": 111.5,
+          "change_pct": "-0.50%",
+          "big_holder_pct": "42.61%",
+          "wow_pct": "+0.31%",
+          "streak": "↑4週",
+          "rank_change": "",
+          "signals": [
+            "連增3",
+            "量價背離"
+          ],
+          "rank": 10
+        },
+        {
+          "code": "2070",
+          "name": "精湛",
+          "market": "上市",
+          "industry": "櫃電機",
+          "price": 67.1,
+          "change_pct": "-1.20%",
+          "big_holder_pct": "62.28%",
+          "wow_pct": "+0.19%",
+          "streak": "↑3週",
+          "rank_change": "",
+          "signals": [
+            "連增3",
+            "量價背離"
+          ],
+          "rank": 11
+        },
+        {
+          "code": "6213",
+          "name": "聯茂",
+          "market": "上櫃",
+          "industry": "電子零組件",
+          "price": 582.0,
+          "change_pct": "+19.00%",
+          "big_holder_pct": "68.95%",
+          "wow_pct": "+0.16%",
+          "streak": "↑4週",
+          "rank_change": "",
+          "signals": [
+            "高波動警示",
+            "連增3",
+            "內外共振"
+          ],
+          "rank": 12
+        },
+        {
+          "code": "8422",
+          "name": "可寧衛",
+          "market": "上櫃",
+          "industry": "綠能",
+          "price": 27.1,
+          "change_pct": "+0.10%",
+          "big_holder_pct": "38.19%",
+          "wow_pct": "+0.15%",
+          "streak": "↑4週",
+          "rank_change": "",
+          "signals": [
+            "連增3"
+          ],
+          "rank": 13
+        },
+        {
+          "code": "7820",
+          "name": "立盈",
+          "market": "上櫃",
+          "industry": "綠能",
+          "price": 121.0,
+          "change_pct": "-1.00%",
+          "big_holder_pct": "76.73%",
+          "wow_pct": "+0.15%",
+          "streak": "↑3週",
+          "rank_change": "",
+          "signals": [
+            "高度集中",
+            "法人同向",
+            "連增3",
+            "量價背離"
+          ],
+          "rank": 14
+        },
+        {
+          "code": "9933",
+          "name": "中鼎",
+          "market": "上櫃",
+          "industry": "其他",
+          "price": 40.6,
+          "change_pct": "-1.00%",
+          "big_holder_pct": "63.01%",
+          "wow_pct": "+0.12%",
+          "streak": "↑3週",
+          "rank_change": "",
+          "signals": [
+            "連增3",
+            "量價背離"
+          ],
+          "rank": 15
+        },
+        {
+          "code": "3226",
+          "name": "龍鋒",
+          "market": "上市",
+          "industry": "櫃電機",
+          "price": 53.1,
+          "change_pct": "+0.10%",
+          "big_holder_pct": "87.26%",
+          "wow_pct": "+0.10%",
+          "streak": "↑5週",
+          "rank_change": "",
+          "signals": [
+            "高度集中",
+            "法人同向",
+            "連增5",
+            "久盤吸籌"
+          ],
+          "rank": 16
+        },
+        {
+          "code": "1904",
+          "name": "正隆",
+          "market": "上市",
+          "industry": "造紙",
+          "price": 25.15,
+          "change_pct": "-0.30%",
+          "big_holder_pct": "68.24%",
+          "wow_pct": "+0.09%",
+          "streak": "↑3週",
+          "rank_change": "",
+          "signals": [
+            "連增3",
+            "量價背離"
+          ],
+          "rank": 17
+        },
+        {
+          "code": "3706",
+          "name": "神達",
+          "market": "上市",
+          "industry": "電腦週邊",
+          "price": 92.1,
+          "change_pct": "+0.70%",
+          "big_holder_pct": "57.02%",
+          "wow_pct": "+0.09%",
+          "streak": "↑4週",
+          "rank_change": "",
+          "signals": [
+            "連增3"
+          ],
+          "rank": 18
+        },
+        {
+          "code": "2353",
+          "name": "宏卅卅",
+          "market": "上市",
+          "industry": "電腦週邊",
+          "price": 30.85,
+          "change_pct": "-0.35%",
+          "big_holder_pct": "37.56%",
+          "wow_pct": "+0.08%",
+          "streak": "↑4週",
+          "rank_change": "",
+          "signals": [
+            "連增3",
+            "量價背離"
+          ],
+          "rank": 19
+        },
+        {
+          "code": "6276",
+          "name": "安鈦克",
+          "market": "上櫃",
+          "industry": "櫃電腦週邊",
+          "price": 20.25,
+          "change_pct": "+0.05%",
+          "big_holder_pct": "51.01%",
+          "wow_pct": "+0.08%",
+          "streak": "↑5週",
+          "rank_change": "",
+          "signals": [
+            "連增5",
+            "久盤吸籌"
+          ],
+          "rank": 20
+        },
+        {
+          "code": "2357",
+          "name": "華碩",
+          "market": "上市",
+          "industry": "電腦週邊",
+          "price": 965.0,
+          "change_pct": "-3.00%",
+          "big_holder_pct": "74.92%",
+          "wow_pct": "+0.07%",
+          "streak": "↑6週",
+          "rank_change": "",
+          "signals": [
+            "法人同向",
+            "連增5",
+            "逆買",
+            "量價背離",
+            "久盤吸籌"
+          ],
+          "rank": 21
+        },
+        {
+          "code": "1337",
+          "name": "再生-KY",
+          "market": "上市",
+          "industry": "塑膠",
+          "price": 4.67,
+          "change_pct": "-0.06%",
+          "big_holder_pct": "47.84%",
+          "wow_pct": "+0.06%",
+          "streak": "↑3週",
+          "rank_change": "",
+          "signals": [
+            "連增3",
+            "量價背離"
+          ],
+          "rank": 22
+        },
+        {
+          "code": "6534",
+          "name": "正瀚-創",
+          "market": "上櫃",
+          "industry": "生技醫療業",
+          "price": 91.2,
+          "change_pct": "-1.00%",
+          "big_holder_pct": "83.84%",
+          "wow_pct": "+0.06%",
+          "streak": "↑4週",
+          "rank_change": "",
+          "signals": [
+            "高度集中",
+            "法人同向",
+            "連增3",
+            "量價背離"
+          ],
+          "rank": 23
+        },
+        {
+          "code": "3024",
+          "name": "憶聲",
+          "market": "上市",
+          "industry": "光電",
+          "price": 14.65,
+          "change_pct": "+0.05%",
+          "big_holder_pct": "50.57%",
+          "wow_pct": "+0.06%",
+          "streak": "↑5週",
+          "rank_change": "",
+          "signals": [
+            "連增5",
+            "久盤吸籌"
+          ],
+          "rank": 24
+        },
+        {
+          "code": "2423",
+          "name": "固緯",
+          "market": "上市",
+          "industry": "其他電子",
+          "price": 74.6,
+          "change_pct": "-1.50%",
+          "big_holder_pct": "76.21%",
+          "wow_pct": "+0.06%",
+          "streak": "↑3週",
+          "rank_change": "",
+          "signals": [
+            "高度集中",
+            "法人同向",
+            "連增3",
+            "量價背離"
+          ],
+          "rank": 25
+        },
+        {
+          "code": "3317",
+          "name": "尼克森",
+          "market": "上市",
+          "industry": "櫃半導體",
+          "price": 66.7,
+          "change_pct": "+0.00%",
+          "big_holder_pct": "31.71%",
+          "wow_pct": "+0.06%",
+          "streak": "↑3週",
+          "rank_change": "",
+          "signals": [
+            "連增3"
+          ],
+          "rank": 26
+        },
+        {
+          "code": "4183",
+          "name": "福永生技",
+          "market": "上市",
+          "industry": "櫃生技醫療",
+          "price": 14.0,
+          "change_pct": "+0.00%",
+          "big_holder_pct": "62.63%",
+          "wow_pct": "+0.06%",
+          "streak": "↑6週",
+          "rank_change": "",
+          "signals": [
+            "連增5",
+            "久盤吸籌"
+          ],
+          "rank": 27
+        },
+        {
+          "code": "6877",
+          "name": "鏵友益",
+          "market": "上櫃",
+          "industry": "櫃其他電子",
+          "price": 116.5,
+          "change_pct": "+0.50%",
+          "big_holder_pct": "74.32%",
+          "wow_pct": "+0.06%",
+          "streak": "↑3週",
+          "rank_change": "",
+          "signals": [
+            "法人同向",
+            "連增3"
+          ],
+          "rank": 28
+        },
+        {
+          "code": "3056",
+          "name": "富華新",
+          "market": "上市",
+          "industry": "營建",
+          "price": 14.2,
+          "change_pct": "-0.20%",
+          "big_holder_pct": "33.22%",
+          "wow_pct": "+0.05%",
+          "streak": "↑5週",
+          "rank_change": "",
+          "signals": [
+            "連增5",
+            "量價背離",
+            "久盤吸籌"
+          ],
+          "rank": 29
+        },
+        {
+          "code": "1783",
+          "name": "和康生",
+          "market": "上市",
+          "industry": "生技醫療業",
+          "price": 40.7,
+          "change_pct": "+0.00%",
+          "big_holder_pct": "64.36%",
+          "wow_pct": "+0.05%",
+          "streak": "↑3週",
+          "rank_change": "",
+          "signals": [
+            "連增3"
+          ],
+          "rank": 30
+        },
+        {
+          "code": "5324",
+          "name": "士開",
+          "market": "上市",
+          "industry": "櫃營建",
+          "price": 12.3,
+          "change_pct": "+0.00%",
+          "big_holder_pct": "80.63%",
+          "wow_pct": "+0.05%",
+          "streak": "↑3週",
+          "rank_change": "",
+          "signals": [
+            "高度集中",
+            "法人同向",
+            "連增3"
+          ],
+          "rank": 31
+        },
+        {
+          "code": "2115",
+          "name": "六暉-KY",
+          "market": "上市",
+          "industry": "汽車",
+          "price": 23.9,
+          "change_pct": "+0.05%",
+          "big_holder_pct": "70.87%",
+          "wow_pct": "+0.04%",
+          "streak": "↑4週",
+          "rank_change": "",
+          "signals": [
+            "法人同向",
+            "連增3"
+          ],
+          "rank": 32
+        },
+        {
+          "code": "8443",
+          "name": "阿瘦",
+          "market": "上櫃",
+          "industry": "貿易百貨",
+          "price": 11.25,
+          "change_pct": "-0.15%",
+          "big_holder_pct": "69.14%",
+          "wow_pct": "+0.04%",
+          "streak": "↑3週",
+          "rank_change": "",
+          "signals": [
+            "連增3",
+            "量價背離"
+          ],
+          "rank": 33
+        },
+        {
+          "code": "6215",
+          "name": "和椿",
+          "market": "上櫃",
+          "industry": "其他電子",
+          "price": 98.4,
+          "change_pct": "+0.20%",
+          "big_holder_pct": "32.42%",
+          "wow_pct": "+0.04%",
+          "streak": "↑4週",
+          "rank_change": "",
+          "signals": [
+            "連增3"
+          ],
+          "rank": 34
+        },
+        {
+          "code": "3265",
+          "name": "台星科",
+          "market": "上市",
+          "industry": "櫃半導體",
+          "price": 186.5,
+          "change_pct": "+10.00%",
+          "big_holder_pct": "67.64%",
+          "wow_pct": "+0.04%",
+          "streak": "↑4週",
+          "rank_change": "",
+          "signals": [
+            "高波動警示",
+            "連增3",
+            "內外共振"
+          ],
+          "rank": 35
+        },
+        {
+          "code": "8047",
+          "name": "星雲",
+          "market": "上櫃",
+          "industry": "櫃其他電子",
+          "price": 44.0,
+          "change_pct": "+0.10%",
+          "big_holder_pct": "82.15%",
+          "wow_pct": "+0.04%",
+          "streak": "↑6週",
+          "rank_change": "",
+          "signals": [
+            "高度集中",
+            "法人同向",
+            "連增5",
+            "久盤吸籌"
+          ],
+          "rank": 36
+        },
+        {
+          "code": "1760",
+          "name": "寶齡富錦",
+          "market": "上市",
+          "industry": "生技醫療業",
+          "price": 58.3,
+          "change_pct": "-0.30%",
+          "big_holder_pct": "43.03%",
+          "wow_pct": "+0.03%",
+          "streak": "↑3週",
+          "rank_change": "",
+          "signals": [
+            "連增3",
+            "量價背離"
+          ],
+          "rank": 37
+        },
+        {
+          "code": "6128",
+          "name": "上福",
+          "market": "上櫃",
+          "industry": "電腦週邊",
+          "price": 20.3,
+          "change_pct": "+0.05%",
+          "big_holder_pct": "60.02%",
+          "wow_pct": "+0.03%",
+          "streak": "↑6週",
+          "rank_change": "",
+          "signals": [
+            "連增5",
+            "久盤吸籌"
+          ],
+          "rank": 38
+        },
+        {
+          "code": "8477",
+          "name": "創業家",
+          "market": "上櫃",
+          "industry": "雲端",
+          "price": 15.45,
+          "change_pct": "+0.00%",
+          "big_holder_pct": "83.48%",
+          "wow_pct": "+0.03%",
+          "streak": "↑4週",
+          "rank_change": "",
+          "signals": [
+            "高度集中",
+            "法人同向",
+            "連增3"
+          ],
+          "rank": 39
+        },
+        {
+          "code": "6494",
+          "name": "九齊",
           "market": "上櫃",
           "industry": "櫃半導體",
-          "price": 69.1,
-          "change_pct": "-1.50%",
-          "big_holder_pct": "87.62%",
-          "wow_pct": "-0.09%",
+          "price": 54.9,
+          "change_pct": "+0.10%",
+          "big_holder_pct": "16.64%",
+          "wow_pct": "+0.03%",
+          "streak": "↑3週",
+          "rank_change": "",
+          "signals": [
+            "連增3"
+          ],
+          "rank": 40
+        },
+        {
+          "code": "4420",
+          "name": "光明",
+          "market": "上市",
+          "industry": "櫃紡織",
+          "price": 36.8,
+          "change_pct": "+0.10%",
+          "big_holder_pct": "60.15%",
+          "wow_pct": "+0.03%",
+          "streak": "↑3週",
+          "rank_change": "",
+          "signals": [
+            "連增3"
+          ],
+          "rank": 41
+        },
+        {
+          "code": "1216",
+          "name": "統一",
+          "market": "上市",
+          "industry": "食品",
+          "price": 75.7,
+          "change_pct": "-1.40%",
+          "big_holder_pct": "89.84%",
+          "wow_pct": "+0.02%",
+          "streak": "↑3週",
+          "rank_change": "",
+          "signals": [
+            "高度集中",
+            "法人同向",
+            "連增3",
+            "量價背離"
+          ],
+          "rank": 42
+        },
+        {
+          "code": "1446",
+          "name": "宏和",
+          "market": "上市",
+          "industry": "紡織",
+          "price": 13.65,
+          "change_pct": "+0.05%",
+          "big_holder_pct": "66.02%",
+          "wow_pct": "+0.02%",
+          "streak": "↑3週",
+          "rank_change": "",
+          "signals": [
+            "連增3"
+          ],
+          "rank": 43
+        },
+        {
+          "code": "2331",
+          "name": "精英",
+          "market": "上市",
+          "industry": "電腦週邊",
+          "price": 19.7,
+          "change_pct": "-0.10%",
+          "big_holder_pct": "59.04%",
+          "wow_pct": "+0.02%",
+          "streak": "↑4週",
+          "rank_change": "",
+          "signals": [
+            "連增3",
+            "量價背離"
+          ],
+          "rank": 44
+        },
+        {
+          "code": "6776",
+          "name": "展卅眥篕卅",
+          "market": "上櫃",
+          "industry": "電子通路",
+          "price": 53.2,
+          "change_pct": "+0.00%",
+          "big_holder_pct": "66.71%",
+          "wow_pct": "+0.02%",
+          "streak": "↑3週",
+          "rank_change": "",
+          "signals": [
+            "連增3"
+          ],
+          "rank": 45
+        },
+        {
+          "code": "6233",
+          "name": "旺玖",
+          "market": "上櫃",
+          "industry": "櫃半導體",
+          "price": 21.8,
+          "change_pct": "+0.00%",
+          "big_holder_pct": "28.44%",
+          "wow_pct": "+0.02%",
+          "streak": "↑5週",
+          "rank_change": "",
+          "signals": [
+            "連增5",
+            "久盤吸籌"
+          ],
+          "rank": 46
+        },
+        {
+          "code": "4120",
+          "name": "友華",
+          "market": "上市",
+          "industry": "櫃生技醫療",
+          "price": 47.35,
+          "change_pct": "-0.45%",
+          "big_holder_pct": "71.53%",
+          "wow_pct": "+0.02%",
+          "streak": "↑6週",
+          "rank_change": "",
+          "signals": [
+            "法人同向",
+            "連增5",
+            "量價背離",
+            "久盤吸籌"
+          ],
+          "rank": 47
+        },
+        {
+          "code": "3666",
+          "name": "光耀",
+          "market": "上市",
+          "industry": "櫃光電",
+          "price": 25.1,
+          "change_pct": "-0.15%",
+          "big_holder_pct": "83.38%",
+          "wow_pct": "+0.02%",
+          "streak": "↑6週",
+          "rank_change": "",
+          "signals": [
+            "高度集中",
+            "法人同向",
+            "連增5",
+            "量價背離",
+            "久盤吸籌"
+          ],
+          "rank": 48
+        },
+        {
+          "code": "1324",
+          "name": "地球",
+          "market": "上市",
+          "industry": "塑膠",
+          "price": 10.25,
+          "change_pct": "+0.05%",
+          "big_holder_pct": "66.25%",
+          "wow_pct": "+0.01%",
+          "streak": "↑3週",
+          "rank_change": "",
+          "signals": [
+            "連增3"
+          ],
+          "rank": 49
+        },
+        {
+          "code": "3346",
+          "name": "麗清",
+          "market": "上市",
+          "industry": "汽車",
+          "price": 20.0,
+          "change_pct": "-0.15%",
+          "big_holder_pct": "26.88%",
+          "wow_pct": "+0.01%",
+          "streak": "↑3週",
+          "rank_change": "",
+          "signals": [
+            "連增3",
+            "量價背離"
+          ],
+          "rank": 50
+        },
+        {
+          "code": "8442",
+          "name": "威宏-KY",
+          "market": "上櫃",
+          "industry": "其他",
+          "price": 45.3,
+          "change_pct": "-0.80%",
+          "big_holder_pct": "71.70%",
+          "wow_pct": "+0.01%",
+          "streak": "↑5週",
+          "rank_change": "",
+          "signals": [
+            "法人同向",
+            "連增5",
+            "量價背離",
+            "久盤吸籌"
+          ],
+          "rank": 51
+        },
+        {
+          "code": "4106",
+          "name": "雃博",
+          "market": "上市",
+          "industry": "生技醫療業",
+          "price": 24.4,
+          "change_pct": "-0.10%",
+          "big_holder_pct": "51.02%",
+          "wow_pct": "+0.01%",
+          "streak": "↑4週",
+          "rank_change": "",
+          "signals": [
+            "連增3",
+            "量價背離"
+          ],
+          "rank": 52
+        },
+        {
+          "code": "6508",
+          "name": "惠光",
+          "market": "上櫃",
+          "industry": "櫃農業科技",
+          "price": 26.0,
+          "change_pct": "-0.30%",
+          "big_holder_pct": "61.93%",
+          "wow_pct": "+0.01%",
+          "streak": "↑6週",
+          "rank_change": "",
+          "signals": [
+            "連增5",
+            "量價背離",
+            "久盤吸籌"
+          ],
+          "rank": 53
+        },
+        {
+          "code": "6609",
+          "name": "瀧澤科",
+          "market": "上櫃",
+          "industry": "櫃電機",
+          "price": 39.85,
+          "change_pct": "-0.40%",
+          "big_holder_pct": "57.87%",
+          "wow_pct": "+0.01%",
+          "streak": "↑6週",
+          "rank_change": "",
+          "signals": [
+            "連增5",
+            "量價背離",
+            "久盤吸籌"
+          ],
+          "rank": 54
+        },
+        {
+          "code": "4523",
+          "name": "永彰",
+          "market": "上市",
+          "industry": "櫃電機",
+          "price": 24.05,
+          "change_pct": "+0.00%",
+          "big_holder_pct": "59.95%",
+          "wow_pct": "+0.01%",
+          "streak": "↑5週",
+          "rank_change": "",
+          "signals": [
+            "連增5",
+            "久盤吸籌"
+          ],
+          "rank": 55
+        },
+        {
+          "code": "4806",
+          "name": "桂田文創",
+          "market": "上市",
+          "industry": "櫃文化創意",
+          "price": 9.18,
+          "change_pct": "-0.03%",
+          "big_holder_pct": "89.08%",
+          "wow_pct": "+0.01%",
+          "streak": "↑5週",
+          "rank_change": "",
+          "signals": [
+            "高度集中",
+            "法人同向",
+            "連增5",
+            "量價背離",
+            "久盤吸籌"
+          ],
+          "rank": 56
+        },
+        {
+          "code": "6154",
+          "name": "順發",
+          "market": "上櫃",
+          "industry": "櫃電子通路",
+          "price": 14.05,
+          "change_pct": "+0.10%",
+          "big_holder_pct": "63.36%",
+          "wow_pct": "+0.01%",
+          "streak": "↑4週",
+          "rank_change": "",
+          "signals": [
+            "連增3"
+          ],
+          "rank": 57
+        },
+        {
+          "code": "5220",
+          "name": "萬達光電",
+          "market": "上市",
+          "industry": "櫃光電",
+          "price": 20.05,
+          "change_pct": "+0.00%",
+          "big_holder_pct": "44.65%",
+          "wow_pct": "+0.01%",
+          "streak": "↑3週",
+          "rank_change": "",
+          "signals": [
+            "連增3"
+          ],
+          "rank": 58
+        },
+        {
+          "code": "1218",
+          "name": "泰山",
+          "market": "上市",
+          "industry": "食品",
+          "price": 14.55,
+          "change_pct": "-0.05%",
+          "big_holder_pct": "67.23%",
+          "wow_pct": "+0.00%",
+          "streak": "",
+          "rank_change": "",
+          "signals": [],
+          "rank": 59
+        },
+        {
+          "code": "9928",
+          "name": "中視",
+          "market": "上櫃",
+          "industry": "其他",
+          "price": 17.95,
+          "change_pct": "+0.00%",
+          "big_holder_pct": "75.16%",
+          "wow_pct": "+0.00%",
           "streak": "",
           "rank_change": "",
           "signals": [
             "高度集中"
           ],
-          "rank": 98
+          "rank": 60
         },
         {
-          "code": "6794",
-          "name": "向榮生技",
-          "market": "上櫃",
+          "code": "3164",
+          "name": "景岳",
+          "market": "上市",
           "industry": "生技醫療業",
-          "price": 71.8,
-          "change_pct": "+1.00%",
-          "big_holder_pct": "78.93%",
-          "wow_pct": "-0.10%",
+          "price": 16.15,
+          "change_pct": "+0.15%",
+          "big_holder_pct": "55.28%",
+          "wow_pct": "+0.00%",
+          "streak": "",
+          "rank_change": "",
+          "signals": [],
+          "rank": 61
+        },
+        {
+          "code": "6928",
+          "name": "攸泰科技",
+          "market": "上櫃",
+          "industry": "電腦週邊",
+          "price": 47.6,
+          "change_pct": "-0.90%",
+          "big_holder_pct": "79.70%",
+          "wow_pct": "+0.00%",
+          "streak": "",
+          "rank_change": "",
+          "signals": [
+            "高度集中"
+          ],
+          "rank": 62
+        },
+        {
+          "code": "6225",
+          "name": "天瀚",
+          "market": "上櫃",
+          "industry": "光電",
+          "price": 59.5,
+          "change_pct": "-6.50%",
+          "big_holder_pct": "71.29%",
+          "wow_pct": "+0.00%",
+          "streak": "",
+          "rank_change": "",
+          "signals": [],
+          "rank": 63
+        },
+        {
+          "code": "4942",
+          "name": "嘉彰",
+          "market": "上市",
+          "industry": "光電",
+          "price": 33.25,
+          "change_pct": "+0.10%",
+          "big_holder_pct": "62.40%",
+          "wow_pct": "+0.00%",
+          "streak": "",
+          "rank_change": "",
+          "signals": [],
+          "rank": 64
+        },
+        {
+          "code": "6570",
+          "name": "維田",
+          "market": "上櫃",
+          "industry": "櫃電腦週邊",
+          "price": 51.7,
+          "change_pct": "-1.10%",
+          "big_holder_pct": "46.00%",
+          "wow_pct": "+0.00%",
+          "streak": "",
+          "rank_change": "",
+          "signals": [],
+          "rank": 65
+        },
+        {
+          "code": "6574",
+          "name": "霈方",
+          "market": "上櫃",
+          "industry": "櫃生技醫療",
+          "price": 120.5,
+          "change_pct": "-1.50%",
+          "big_holder_pct": "79.58%",
+          "wow_pct": "+0.00%",
+          "streak": "",
+          "rank_change": "",
+          "signals": [
+            "高度集中"
+          ],
+          "rank": 66
+        },
+        {
+          "code": "6788",
+          "name": "華景電",
+          "market": "上櫃",
+          "industry": "櫃半導體",
+          "price": 368.5,
+          "change_pct": "+1.50%",
+          "big_holder_pct": "24.44%",
+          "wow_pct": "+0.00%",
+          "streak": "",
+          "rank_change": "",
+          "signals": [],
+          "rank": 67
+        },
+        {
+          "code": "6169",
+          "name": "昱泉",
+          "market": "上櫃",
+          "industry": "櫃文化創意",
+          "price": 12.65,
+          "change_pct": "-0.05%",
+          "big_holder_pct": "31.00%",
+          "wow_pct": "+0.00%",
+          "streak": "",
+          "rank_change": "",
+          "signals": [],
+          "rank": 68
+        },
+        {
+          "code": "6020",
+          "name": "大展證",
+          "market": "上櫃",
+          "industry": "櫃金融",
+          "price": 20.85,
+          "change_pct": "+0.15%",
+          "big_holder_pct": "96.91%",
+          "wow_pct": "+0.00%",
+          "streak": "",
+          "rank_change": "",
+          "signals": [
+            "高度集中",
+            "流動性風險"
+          ],
+          "rank": 69
+        },
+        {
+          "code": "8440",
+          "name": "綠電",
+          "market": "上櫃",
+          "industry": "綠能",
+          "price": 20.55,
+          "change_pct": "-0.10%",
+          "big_holder_pct": "32.75%",
+          "wow_pct": "+0.00%",
+          "streak": "",
+          "rank_change": "",
+          "signals": [],
+          "rank": 70
+        },
+        {
+          "code": "4432",
+          "name": "銘旺實",
+          "market": "上市",
+          "industry": "櫃紡織",
+          "price": 15.7,
+          "change_pct": "+0.00%",
+          "big_holder_pct": "55.39%",
+          "wow_pct": "+0.00%",
+          "streak": "",
+          "rank_change": "",
+          "signals": [],
+          "rank": 71
+        },
+        {
+          "code": "3597",
+          "name": "映興",
+          "market": "上市",
+          "industry": "櫃電子零組件",
+          "price": 26.4,
+          "change_pct": "+0.05%",
+          "big_holder_pct": "64.48%",
+          "wow_pct": "+0.00%",
+          "streak": "",
+          "rank_change": "",
+          "signals": [],
+          "rank": 72
+        },
+        {
+          "code": "6294",
+          "name": "智基",
+          "market": "上櫃",
+          "industry": "櫃文化創意",
+          "price": 28.85,
+          "change_pct": "+0.00%",
+          "big_holder_pct": "37.28%",
+          "wow_pct": "+0.00%",
+          "streak": "",
+          "rank_change": "",
+          "signals": [],
+          "rank": 73
+        },
+        {
+          "code": "3684",
+          "name": "榮昌",
+          "market": "上市",
+          "industry": "櫃通信網路",
+          "price": 54.5,
+          "change_pct": "+0.50%",
+          "big_holder_pct": "59.43%",
+          "wow_pct": "+0.00%",
+          "streak": "",
+          "rank_change": "",
+          "signals": [],
+          "rank": 74
+        },
+        {
+          "code": "1468",
+          "name": "昶和",
+          "market": "上市",
+          "industry": "紡織",
+          "price": 13.3,
+          "change_pct": "+0.00%",
+          "big_holder_pct": "97.56%",
+          "wow_pct": "-0.01%",
+          "streak": "",
+          "rank_change": "",
+          "signals": [
+            "高度集中",
+            "流動性風險"
+          ],
+          "rank": 75
+        },
+        {
+          "code": "8463",
+          "name": "潤泰材",
+          "market": "上櫃",
+          "industry": "其他",
+          "price": 21.5,
+          "change_pct": "+0.05%",
+          "big_holder_pct": "82.22%",
+          "wow_pct": "-0.01%",
           "streak": "",
           "rank_change": "",
           "signals": [
             "高度集中",
             "量價背離"
           ],
+          "rank": 76
+        },
+        {
+          "code": "2397",
+          "name": "友通",
+          "market": "上市",
+          "industry": "電腦週邊",
+          "price": 62.8,
+          "change_pct": "-1.00%",
+          "big_holder_pct": "69.07%",
+          "wow_pct": "-0.01%",
+          "streak": "",
+          "rank_change": "",
+          "signals": [],
+          "rank": 77
+        },
+        {
+          "code": "7757",
+          "name": "金色三麥",
+          "market": "上櫃",
+          "industry": "櫃觀光",
+          "price": 88.7,
+          "change_pct": "-0.30%",
+          "big_holder_pct": "59.31%",
+          "wow_pct": "-0.01%",
+          "streak": "",
+          "rank_change": "",
+          "signals": [],
+          "rank": 78
+        },
+        {
+          "code": "2230",
+          "name": "泰茂",
+          "market": "上市",
+          "industry": "居家",
+          "price": 23.0,
+          "change_pct": "-0.45%",
+          "big_holder_pct": "46.51%",
+          "wow_pct": "-0.01%",
+          "streak": "",
+          "rank_change": "",
+          "signals": [],
+          "rank": 79
+        },
+        {
+          "code": "4907",
+          "name": "富宇",
+          "market": "上市",
+          "industry": "櫃營建",
+          "price": 47.25,
+          "change_pct": "+0.55%",
+          "big_holder_pct": "85.45%",
+          "wow_pct": "-0.01%",
+          "streak": "",
+          "rank_change": "",
+          "signals": [
+            "高度集中",
+            "量價背離"
+          ],
+          "rank": 80
+        },
+        {
+          "code": "1599",
+          "name": "宏佳騰",
+          "market": "上市",
+          "industry": "櫃電機",
+          "price": 23.1,
+          "change_pct": "+0.10%",
+          "big_holder_pct": "65.16%",
+          "wow_pct": "-0.01%",
+          "streak": "",
+          "rank_change": "",
+          "signals": [
+            "量價背離"
+          ],
+          "rank": 81
+        },
+        {
+          "code": "3287",
+          "name": "廣寰科",
+          "market": "上市",
+          "industry": "櫃電腦週邊",
+          "price": 38.4,
+          "change_pct": "+1.55%",
+          "big_holder_pct": "58.67%",
+          "wow_pct": "-0.01%",
+          "streak": "",
+          "rank_change": "",
+          "signals": [
+            "量價背離"
+          ],
+          "rank": 82
+        },
+        {
+          "code": "4924",
+          "name": "欣厚-KY",
+          "market": "上市",
+          "industry": "綠能",
+          "price": 10.25,
+          "change_pct": "-0.05%",
+          "big_holder_pct": "70.88%",
+          "wow_pct": "-0.01%",
+          "streak": "",
+          "rank_change": "",
+          "signals": [],
+          "rank": 83
+        },
+        {
+          "code": "4609",
+          "name": "唐鋒",
+          "market": "上市",
+          "industry": "居家",
+          "price": 4.59,
+          "change_pct": "-0.03%",
+          "big_holder_pct": "76.22%",
+          "wow_pct": "-0.01%",
+          "streak": "",
+          "rank_change": "",
+          "signals": [
+            "高度集中"
+          ],
+          "rank": 84
+        },
+        {
+          "code": "6894",
+          "name": "衛司特",
+          "market": "上櫃",
+          "industry": "綠能",
+          "price": 350.5,
+          "change_pct": "+20.50%",
+          "big_holder_pct": "61.06%",
+          "wow_pct": "-0.01%",
+          "streak": "",
+          "rank_change": "",
+          "signals": [
+            "高波動警示",
+            "量價背離"
+          ],
+          "rank": 85
+        },
+        {
+          "code": "4304",
+          "name": "勝昱",
+          "market": "上市",
+          "industry": "櫃塑膠",
+          "price": 24.6,
+          "change_pct": "-0.05%",
+          "big_holder_pct": "81.90%",
+          "wow_pct": "-0.01%",
+          "streak": "",
+          "rank_change": "",
+          "signals": [
+            "高度集中"
+          ],
+          "rank": 86
+        },
+        {
+          "code": "3228",
+          "name": "金麗科",
+          "market": "上市",
+          "industry": "櫃半導體",
+          "price": 166.5,
+          "change_pct": "+12.50%",
+          "big_holder_pct": "24.32%",
+          "wow_pct": "-0.01%",
+          "streak": "",
+          "rank_change": "",
+          "signals": [
+            "高波動警示",
+            "量價背離"
+          ],
+          "rank": 87
+        },
+        {
+          "code": "6425",
+          "name": "易發",
+          "market": "上櫃",
+          "industry": "櫃電機",
+          "price": 65.2,
+          "change_pct": "+3.10%",
+          "big_holder_pct": "42.68%",
+          "wow_pct": "-0.01%",
+          "streak": "",
+          "rank_change": "",
+          "signals": [
+            "量價背離"
+          ],
+          "rank": 88
+        },
+        {
+          "code": "1309",
+          "name": "台達化",
+          "market": "上市",
+          "industry": "塑膠",
+          "price": 13.1,
+          "change_pct": "-0.30%",
+          "big_holder_pct": "46.41%",
+          "wow_pct": "-0.02%",
+          "streak": "",
+          "rank_change": "",
+          "signals": [],
+          "rank": 89
+        },
+        {
+          "code": "1615",
+          "name": "大山",
+          "market": "上市",
+          "industry": "電器電纜",
+          "price": 44.55,
+          "change_pct": "-0.45%",
+          "big_holder_pct": "80.47%",
+          "wow_pct": "-0.02%",
+          "streak": "",
+          "rank_change": "",
+          "signals": [
+            "高度集中"
+          ],
+          "rank": 90
+        },
+        {
+          "code": "2536",
+          "name": "宏普",
+          "market": "上市",
+          "industry": "營建",
+          "price": 20.8,
+          "change_pct": "-0.30%",
+          "big_holder_pct": "78.73%",
+          "wow_pct": "-0.02%",
+          "streak": "",
+          "rank_change": "",
+          "signals": [
+            "高度集中"
+          ],
+          "rank": 91
+        },
+        {
+          "code": "6937",
+          "name": "天虹",
+          "market": "上櫃",
+          "industry": "半導體",
+          "price": 292.5,
+          "change_pct": "+11.50%",
+          "big_holder_pct": "63.03%",
+          "wow_pct": "-0.02%",
+          "streak": "",
+          "rank_change": "",
+          "signals": [
+            "高波動警示",
+            "量價背離"
+          ],
+          "rank": 92
+        },
+        {
+          "code": "3516",
+          "name": "亞帝歐",
+          "market": "上市",
+          "industry": "櫃光電",
+          "price": 26.25,
+          "change_pct": "-0.20%",
+          "big_holder_pct": "77.72%",
+          "wow_pct": "-0.02%",
+          "streak": "",
+          "rank_change": "",
+          "signals": [
+            "高度集中"
+          ],
+          "rank": 93
+        },
+        {
+          "code": "8087",
+          "name": "麗升能源",
+          "market": "上櫃",
+          "industry": "綠能",
+          "price": 26.1,
+          "change_pct": "+0.00%",
+          "big_holder_pct": "57.72%",
+          "wow_pct": "-0.02%",
+          "streak": "",
+          "rank_change": "",
+          "signals": [],
+          "rank": 94
+        },
+        {
+          "code": "3325",
+          "name": "旭品",
+          "market": "上市",
+          "industry": "櫃電腦週邊",
+          "price": 11.25,
+          "change_pct": "+0.00%",
+          "big_holder_pct": "30.43%",
+          "wow_pct": "-0.02%",
+          "streak": "",
+          "rank_change": "",
+          "signals": [],
+          "rank": 95
+        },
+        {
+          "code": "6242",
+          "name": "立康",
+          "market": "上櫃",
+          "industry": "櫃生技醫療",
+          "price": 34.1,
+          "change_pct": "+0.10%",
+          "big_holder_pct": "63.70%",
+          "wow_pct": "-0.02%",
+          "streak": "",
+          "rank_change": "",
+          "signals": [
+            "量價背離"
+          ],
+          "rank": 96
+        },
+        {
+          "code": "3322",
+          "name": "建舜電",
+          "market": "上市",
+          "industry": "櫃電子零組件",
+          "price": 11.2,
+          "change_pct": "-0.05%",
+          "big_holder_pct": "35.36%",
+          "wow_pct": "-0.02%",
+          "streak": "",
+          "rank_change": "",
+          "signals": [],
+          "rank": 97
+        },
+        {
+          "code": "1338",
+          "name": "廣華-KY",
+          "market": "上市",
+          "industry": "汽車",
+          "price": 14.2,
+          "change_pct": "-0.15%",
+          "big_holder_pct": "44.05%",
+          "wow_pct": "-0.03%",
+          "streak": "",
+          "rank_change": "",
+          "signals": [],
+          "rank": 98
+        },
+        {
+          "code": "5213",
+          "name": "亞昕",
+          "market": "上市",
+          "industry": "櫃營建",
+          "price": 21.3,
+          "change_pct": "-0.05%",
+          "big_holder_pct": "86.29%",
+          "wow_pct": "-0.03%",
+          "streak": "",
+          "rank_change": "",
+          "signals": [
+            "高度集中"
+          ],
           "rank": 99
         },
         {
-          "code": "2419",
-          "name": "仲琦",
+          "code": "2643",
+          "name": "捷迅",
           "market": "上市",
-          "industry": "通信網路",
-          "price": 24.65,
-          "change_pct": "+0.15%",
-          "big_holder_pct": "65.04%",
-          "wow_pct": "-0.10%",
+          "industry": "櫃航運",
+          "price": 63.1,
+          "change_pct": "+0.60%",
+          "big_holder_pct": "63.99%",
+          "wow_pct": "-0.03%",
           "streak": "",
           "rank_change": "",
           "signals": [
@@ -3936,33 +4283,33 @@
           "rank": 100
         }
       ],
-      "count": 276,
+      "count": 277,
       "stats": {
-        "nUp": 42,
-        "nDown": 223,
-        "nFlat": 11,
-        "nAll": 276,
+        "nUp": 58,
+        "nDown": 203,
+        "nFlat": 16,
+        "nAll": 277,
         "nCt": 0,
         "nAccel": 0,
         "nNewG": 0,
-        "nStreak5": 16
+        "nStreak5": 18
       }
     }
   },
   "signal_counts": {
-    "連增3": 178,
-    "高度集中": 331,
-    "法人同向": 230,
-    "量價背離": 631,
-    "連增5": 83,
-    "久盤吸籌": 76,
-    "流動性風險": 32,
-    "高波動警示": 107,
-    "事件驅動": 9,
-    "籌碼回補": 263,
-    "加速": 176,
-    "新進榜": 27,
-    "逆買": 56,
-    "內外共振": 25
+    "連增5": 86,
+    "量價背離": 706,
+    "久盤吸籌": 86,
+    "法人同向": 244,
+    "高度集中": 330,
+    "流動性風險": 34,
+    "連增3": 182,
+    "高波動警示": 110,
+    "加速": 161,
+    "事件驅動": 15,
+    "逆買": 63,
+    "籌碼回補": 343,
+    "內外共振": 15,
+    "新進榜": 21
   }
 }
