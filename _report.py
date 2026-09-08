@@ -1,37 +1,53 @@
 import json
 import sys
 
-sys.stdout = open(sys.stdout.fileno(), mode='w', encoding='utf-8', buffering=1)
+sys.stdout = open('_report3.txt', 'w', encoding='utf-8')
 
-data = json.load(open('data/screened_data.json', encoding='utf-8'))
+with open('data/weekly_ranking.json', encoding='utf-8') as f:
+    data = json.load(f)
 
-dual981 = [s for s in data['screened'] if s.get('dual_certified')]
-dual982 = [s for s in data['screened'] if s.get('dual_certified_982a')]
-triple = [s for s in data['screened'] if s.get('triple_certified')]
+otc_stocks = []
+for th, info in data['thresholds'].items():
+    for s in info['stocks']:
+        if s.get('market') == '上櫃':
+            otc_stocks.append(s)
 
-print('=== 00981A Dual Certified ===')
-for s in dual981:
-    print(f"{s['stock_id']} {s['stock_name']} | 收{s['close']} | 漲{s['change_pct']}% | 外資{s['foreign_net']/10000:.0f}萬 | 融資{s['margin']['balance']}")
+print(f'OTC 上櫃股票共 {len(otc_stocks)} 档')
+print()
 
-print('\n=== 00982A Dual Certified ===')
-for s in dual982:
-    print(f"{s['stock_id']} {s['stock_name']} | 收{s['close']} | 漲{s['change_pct']}% | 外資{s['foreign_net']/10000:.0f}萬 | 融資{s['margin']['balance']}")
+if otc_stocks:
+    def wow_key(x):
+        v = x.get('wow_pct','0').replace('%','').replace('+','').replace('—','0')
+        try:
+            return float(v)
+        except:
+            return 0.0
+    otc_stocks_sorted = sorted(otc_stocks, key=wow_key, reverse=True)[:20]
+    print('=== OTC 上櫃大户周增幅 TOP20 ===')
+    for s in otc_stocks_sorted:
+        wow = s.get('wow_pct','—')
+        streak = s.get('streak','—')
+        signals = ','.join(s.get('signals',[]))
+        print(f"  {s['code']} {s['name']}: 大户={s.get('big_holder_pct','—')}, 周增={wow}, 连增={streak}, 信号=[{signals}]")
 
-print('\n=== Triple Certified ===')
-for s in triple:
-    print(f"{s['stock_id']} {s['stock_name']} | 收{s['close']} | 漲{s['change_pct']}% | 外資{s['foreign_net']/10000:.0f}萬")
+# 所有股票中大户>80%且周增>0.5%的
+print('\n=== 大户高度集中+周增显著 ===')
+all_stocks = []
+for th, info in data['thresholds'].items():
+    for s in info['stocks']:
+        all_stocks.append(s)
 
-print('\n=== Anomalies (外資淨賣超>500萬 或 漲跌>5%) ===')
-anomalies = []
-for s in data['screened']:
-    foreign_net = s['foreign_net']
-    change_pct = s['change_pct']
-    if foreign_net < -5000000 or abs(change_pct) > 5:
-        direction = "賣超" if foreign_net < 0 else "買超"
-        anomalies.append(f"{s['stock_id']} {s['stock_name']} | 收{s['close']} | 漲{change_pct}% | 外資{direction}{abs(foreign_net)/10000:.0f}萬 | 融資餘額{s['margin']['balance']}")
-        
-if anomalies:
-    for a in anomalies:
-        print(a)
-else:
-    print('無異常')
+def bh_key(x):
+    v = x.get('big_holder_pct','0').replace('%','')
+    try:
+        return float(v)
+    except:
+        return 0.0
+
+high_bh = [s for s in all_stocks if bh_key(s) >= 80]
+high_bh_sorted = sorted(high_bh, key=wow_key, reverse=True)[:15]
+for s in high_bh_sorted:
+    wow = s.get('wow_pct','—')
+    streak = s.get('streak','—')
+    signals = ','.join(s.get('signals',[]))
+    print(f"  {s['code']} {s['name']}: 大户={s.get('big_holder_pct','—')}, 周增={wow}, 连增={streak}, 信号=[{signals}]")
