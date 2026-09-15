@@ -202,9 +202,9 @@ body {
     .fbtn { padding: 4px 10px; font-size: 11px; }
 }
 
-/* ===== 容器 ===== */
+/* ===== 容器（依視窗全寬拉伸） ===== */
 .container {
-    max-width: 1400px;
+    max-width: 100%;
     margin: 0 auto;
     padding: 2rem;
 }
@@ -303,6 +303,7 @@ body {
 .data-table td {
     padding: 0.6rem 0.5rem;
     text-align: center;
+    white-space: nowrap;
     border-bottom: 1px solid var(--border);
     transition: background 0.2s;
     color: var(--text);

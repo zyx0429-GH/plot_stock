@@ -161,7 +161,7 @@ Chart.defaults.scale.ticks.color = 'var(--text-muted)';
         lines.append(f'<div class="container"><div class="header-info"><h1>📊 籌碼監控儀表板</h1><p class="subtitle">共 {total_stocks} 支個股｜產出 {self.data.get("update_time","")}</p></div>')
 
         # === 市場情緒指標儀表板 ===
-        lines.append('<div style="max-width:1400px;margin:10px auto;padding:0 20px;"><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:15px;margin-bottom:15px;">')
+        lines.append('<div style="width:100%;margin:10px 0;padding:0;"><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:15px;margin-bottom:15px;">')
         lines.append('<div class="mini-card"><div class="label">🎯 監控個股情緒</div><div id="marketSentiment" class="value sentiment-warn">計算中...</div><div style="font-size:0.75rem;color:var(--text-muted);margin-top:4px;">基於本頁監控個股</div></div>')
         lines.append('<div class="mini-card"><div class="label">📈 上漲家數</div><div id="advancingCount" class="value sentiment-up">--</div></div>')
         lines.append('<div class="mini-card"><div class="label">📉 下跌家數</div><div id="decliningCount" class="value sentiment-down">--</div></div>')

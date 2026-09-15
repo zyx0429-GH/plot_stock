@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+﻿#!/usr/bin/env python3
 """
 生成 docs/weekly_ranking.html — 大戶籌碼週排行榜 + 散點圖
 數據來源: fortune-fred.github.io/plot_stock/weekly_ranking.html
@@ -218,7 +218,7 @@ def generate_html(data):
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
 <style>
 /* ===== Weekly Ranking Page Styles ===== */
-.wr-header {{ max-width: 1400px; margin: 0 auto; padding: 20px; }}
+.wr-header {{ max-width: 100%; margin: 0 auto; padding: 20px; }}
 .wr-header h1 {{ font-size: 1.5em; margin-bottom: 5px; }}
 .wr-header .meta-bar {{ display: flex; align-items: center; gap: 12px; margin-top: 10px; font-size: 0.8em; color: var(--text-muted); flex-wrap: wrap; }}
 .wr-header .meta-bar .badge {{ padding: 3px 10px; border-radius: 12px; font-size: 0.75em; font-weight: 600; }}
@@ -227,14 +227,14 @@ def generate_html(data):
 .wr-header .meta-bar .badge.count {{ background: #fef3c7; color: #b45309; }}
 
 /* Signal Stats */
-.signal-stats {{ display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 10px; max-width: 1400px; margin: 0 auto; padding: 0 20px 20px; }}
+.signal-stats {{ display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 10px; max-width: 100%; margin: 0 auto; padding: 0 20px 20px; }}
 .stat-card {{ background: var(--card-bg); border: 1px solid var(--border); border-radius: 8px; padding: 12px; text-align: center; transition: transform 0.15s, box-shadow 0.15s; }}
 .stat-card:hover {{ transform: translateY(-2px); box-shadow: 0 4px 12px var(--shadow); }}
 .stat-name {{ font-size: 0.82em; color: var(--text-secondary); margin-bottom: 4px; }}
 .stat-count {{ font-size: 1.3em; font-weight: 700; }}
 
 /* Scatter Chart */
-.scatter-card {{ max-width: 1400px; margin: 0 auto 20px; padding: 0 20px; }}
+.scatter-card {{ max-width: 100%; margin: 0 auto 20px; padding: 0 20px; }}
 .scatter-card .card {{ padding: 20px; }}
 .scatter-card h2 {{ font-size: 1.2em; margin-bottom: 8px; }}
 .scatter-controls {{ display: flex; gap: 8px; margin-bottom: 12px; flex-wrap: wrap; }}
@@ -245,19 +245,19 @@ def generate_html(data):
 .chart-container {{ position: relative; height: 420px; width: 100%; }}
 
 /* Threshold Tabs */
-.thresh-tabs {{ display: flex; gap: 8px; max-width: 1400px; margin: 0 auto; padding: 0 20px 15px; }}
+.thresh-tabs {{ display: flex; gap: 8px; max-width: 100%; margin: 0 auto; padding: 0 20px 15px; }}
 .thresh-tab {{ padding: 8px 20px; border: 1px solid var(--border); border-radius: 6px; background: var(--card-bg); color: var(--text-muted); cursor: pointer; font-size: 0.9em; font-weight: 500; transition: all 0.2s; }}
 .thresh-tab:hover {{ border-color: var(--accent); color: var(--accent); }}
 .thresh-tab.active {{ background: var(--accent); color: #fff; border-color: var(--accent); }}
 
 /* Up/Down Tabs */
-.updown-tabs {{ display: flex; gap: 8px; max-width: 1400px; margin: 0 auto; padding: 0 20px 12px; }}
+.updown-tabs {{ display: flex; gap: 8px; max-width: 100%; margin: 0 auto; padding: 0 20px 12px; }}
 .ud-tab {{ padding: 6px 16px; border: 1px solid var(--border); border-radius: 6px; background: var(--card-bg); color: var(--text-muted); cursor: pointer; font-size: 0.85em; font-weight: 500; transition: all 0.2s; }}
 .ud-tab:hover {{ border-color: var(--accent); color: var(--accent); }}
 .ud-tab.active {{ background: var(--accent); color: #fff; border-color: var(--accent); }}
 
 /* Filters */
-.filter-bar {{ max-width: 1400px; margin: 0 auto; padding: 0 20px 15px; display: flex; flex-wrap: wrap; gap: 6px; }}
+.filter-bar {{ max-width: 100%; margin: 0 auto; padding: 0 20px 15px; display: flex; flex-wrap: wrap; gap: 6px; }}
 .filter-btn {{ padding: 5px 12px; border-radius: 20px; border: 1px solid var(--border); background: var(--card-bg); color: var(--text-secondary); font-size: 0.8em; cursor: pointer; transition: all 0.2s; }}
 .filter-btn:hover {{ border-color: var(--c); color: var(--c); }}
 .filter-btn.active {{ background: var(--c); color: #fff; border-color: var(--c); }}
@@ -265,7 +265,7 @@ def generate_html(data):
 .filter-clear:hover {{ color: var(--text); }}
 
 /* Panel */
-.threshold-panel {{ max-width: 1400px; margin: 0 auto; padding: 0 20px 20px; }}
+.threshold-panel {{ max-width: 100%; margin: 0 auto; padding: 0 20px 20px; }}
 .panel-header {{ display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; flex-wrap: wrap; gap: 8px; }}
 .panel-header h3 {{ font-size: 1.1em; color: var(--text); margin: 0; }}
 .mini-stats {{ display: flex; gap: 12px; font-size: 0.8em; color: var(--text-muted); flex-wrap: wrap; }}
