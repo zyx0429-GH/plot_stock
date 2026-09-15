@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env python3
+#!/usr/bin/env python3
 """
 生成 docs/weekly_ranking.html — 大戶籌碼週排行榜 + 散點圖
 數據來源: fortune-fred.github.io/plot_stock/weekly_ranking.html

@@ -169,10 +169,10 @@ Chart.defaults.scale.ticks.color = 'var(--text-muted)';
         lines.append('</div></div>')
 
         # === 各族群情緒儀表板 ===
-        lines.append('<div style="max-width:1400px;margin:10px auto;padding:0 20px;"><div class="card"><h3 style="margin:0 0 12px 0;">🎭 各族群情緒（基於監控個股）</h3><div id="sectorSentimentPanel" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;"><div style="color:var(--text-muted);text-align:center;padding:10px;">載入中...</div></div></div></div>')
+        lines.append('<div style="width:100%;margin:10px 0;padding:0;"><div class="card"><h3 style="margin:0 0 12px 0;">🎭 各族群情緒（基於監控個股）</h3><div id="sectorSentimentPanel" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;"><div style="color:var(--text-muted);text-align:center;padding:10px;">載入中...</div></div></div></div>')
 
         # === 族群輪動儀表板 ===
-        lines.append('<div style="max-width:1400px;margin:20px auto;padding:0 20px;"><div class="card">')
+        lines.append('<div style="width:100%;margin:20px 0;padding:0;"><div class="card">')
         lines.append('<h2 style="margin:0 0 15px 0;padding-bottom:10px;border-bottom:1px solid var(--border);">🔄 族群輪動儀表板 <span style="font-size:12px;color:var(--text-muted);font-weight:normal;">(按住 Shift + 點擊股票查看詳情)</span></h2>')
         lines.append('<div id="sectorRotationPanel" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:15px;"><div style="color:var(--text-muted);text-align:center;padding:20px;">載入中...</div></div>')
         lines.append('</div></div>')
