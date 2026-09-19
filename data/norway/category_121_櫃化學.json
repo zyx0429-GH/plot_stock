@@ -8,21 +8,65 @@
     "threshold_code": 31,
     "threshold_shares": 400,
     "weekly_changes": {
-      "20260724": -1.04,
-      "20260731": 2.32,
-      "20260807": -0.27,
       "20260814": 0.03,
       "20260821": -0.07,
-      "20260828": -0.01
+      "20260828": -0.01,
+      "20260904": 1.05,
+      "20260911": 0.12,
+      "20260918": 0.15
     },
-    "latest_change": -0.01,
-    "total_change": 0.96,
-    "last_week_hold_pct": 48.09,
-    "close_price": 42.4,
-    "price_change": 0.4
+    "latest_change": 0.15,
+    "total_change": 1.27,
+    "last_week_hold_pct": 49.41,
+    "close_price": 38.35,
+    "price_change": 0.5
   },
   {
     "rank": 2,
+    "stock_code": "4706",
+    "stock_name": "大恭",
+    "is_taiwan50": false,
+    "category": "櫃化學",
+    "threshold_code": 30,
+    "threshold_shares": 400,
+    "weekly_changes": {
+      "20260814": 0.36,
+      "20260821": 0.01,
+      "20260828": 0.11,
+      "20260904": 0.01,
+      "20260911": 0.35,
+      "20260918": 0.0
+    },
+    "latest_change": 0.0,
+    "total_change": 0.84,
+    "last_week_hold_pct": 82.97,
+    "close_price": 33.5,
+    "price_change": -0.2
+  },
+  {
+    "rank": 3,
+    "stock_code": "1742",
+    "stock_name": "台蠟",
+    "is_taiwan50": false,
+    "category": "櫃化學",
+    "threshold_code": 10,
+    "threshold_shares": 1000,
+    "weekly_changes": {
+      "20260814": -0.04,
+      "20260821": 0.03,
+      "20260828": -0.04,
+      "20260904": 0.12,
+      "20260911": 0.03,
+      "20260918": -0.01
+    },
+    "latest_change": -0.01,
+    "total_change": 0.09,
+    "last_week_hold_pct": 80.81,
+    "close_price": 17.55,
+    "price_change": 0.0
+  },
+  {
+    "rank": 4,
     "stock_code": "4768",
     "stock_name": "晶呈科技",
     "is_taiwan50": false,
@@ -30,87 +74,21 @@
     "threshold_code": 50,
     "threshold_shares": 400,
     "weekly_changes": {
-      "20260724": -0.02,
-      "20260731": -0.26,
-      "20260807": 0.93,
       "20260814": -0.56,
       "20260821": -0.05,
-      "20260828": 0.85
+      "20260828": 0.85,
+      "20260904": -0.14,
+      "20260911": -0.02,
+      "20260918": 0.01
     },
-    "latest_change": 0.85,
-    "total_change": 0.89,
-    "last_week_hold_pct": 35.21,
-    "close_price": 313.0,
-    "price_change": -16.0
-  },
-  {
-    "rank": 3,
-    "stock_code": "4711",
-    "stock_name": "永純",
-    "is_taiwan50": false,
-    "category": "櫃化學",
-    "threshold_code": 41,
-    "threshold_shares": 0,
-    "weekly_changes": {
-      "20260724": 0.0,
-      "20260731": 0.0,
-      "20260807": 0.0,
-      "20260814": 0.0,
-      "20260821": 0.0,
-      "20260828": 0.65
-    },
-    "latest_change": 0.65,
-    "total_change": 0.65,
-    "last_week_hold_pct": 60.67,
-    "close_price": 16.9,
-    "price_change": 0.1
-  },
-  {
-    "rank": 4,
-    "stock_code": "4772",
-    "stock_name": "台特化",
-    "is_taiwan50": false,
-    "category": "櫃化學",
-    "threshold_code": 30,
-    "threshold_shares": 400,
-    "weekly_changes": {
-      "20260724": 0.13,
-      "20260731": -0.55,
-      "20260807": 0.34,
-      "20260814": 0.01,
-      "20260821": 0.16,
-      "20260828": 0.14
-    },
-    "latest_change": 0.14,
-    "total_change": 0.23,
-    "last_week_hold_pct": 49.25,
-    "close_price": 265.0,
-    "price_change": -0.5
+    "latest_change": 0.01,
+    "total_change": 0.09,
+    "last_week_hold_pct": 35.06,
+    "close_price": 315.0,
+    "price_change": 6.5
   },
   {
     "rank": 5,
-    "stock_code": "4707",
-    "stock_name": "磐亞",
-    "is_taiwan50": false,
-    "category": "櫃化學",
-    "threshold_code": 10,
-    "threshold_shares": 1000,
-    "weekly_changes": {
-      "20260724": -0.04,
-      "20260731": -0.29,
-      "20260807": 0.32,
-      "20260814": 0.36,
-      "20260821": 0.12,
-      "20260828": -0.25
-    },
-    "latest_change": -0.25,
-    "total_change": 0.22,
-    "last_week_hold_pct": 71.77,
-    "close_price": 32.55,
-    "price_change": 0.35
-  },
-  {
-    "rank": 6,
     "stock_code": "4714",
     "stock_name": "永捷",
     "is_taiwan50": false,
@@ -118,21 +96,21 @@
     "threshold_code": 30,
     "threshold_shares": 400,
     "weekly_changes": {
-      "20260724": -0.26,
-      "20260731": -0.02,
-      "20260807": 0.35,
       "20260814": 0.06,
       "20260821": 0.18,
-      "20260828": -0.13
+      "20260828": -0.13,
+      "20260904": -0.13,
+      "20260911": 0.3,
+      "20260918": -0.26
     },
-    "latest_change": -0.13,
-    "total_change": 0.18,
-    "last_week_hold_pct": 29.21,
-    "close_price": 11.4,
-    "price_change": -0.4
+    "latest_change": -0.26,
+    "total_change": 0.02,
+    "last_week_hold_pct": 29.12,
+    "close_price": 12.1,
+    "price_change": 0.6
   },
   {
-    "rank": 7,
+    "rank": 6,
     "stock_code": "4754",
     "stock_name": "國碳科",
     "is_taiwan50": false,
@@ -140,21 +118,21 @@
     "threshold_code": 32,
     "threshold_shares": 0,
     "weekly_changes": {
-      "20260724": 0.0,
-      "20260731": 0.0,
-      "20260807": 0.0,
       "20260814": 0.0,
       "20260821": 0.0,
-      "20260828": 0.0
+      "20260828": 0.0,
+      "20260904": 0.0,
+      "20260911": 0.0,
+      "20260918": 0.0
     },
     "latest_change": 0.0,
     "total_change": 0.0,
     "last_week_hold_pct": 36.69,
-    "close_price": 38.75,
-    "price_change": 0.1
+    "close_price": 37.45,
+    "price_change": 0.05
   },
   {
-    "rank": 8,
+    "rank": 7,
     "stock_code": "3430",
     "stock_name": "奇鈦科",
     "is_taiwan50": false,
@@ -162,87 +140,131 @@
     "threshold_code": 32,
     "threshold_shares": 0,
     "weekly_changes": {
-      "20260724": 0.0,
-      "20260731": 0.0,
-      "20260807": 0.0,
       "20260814": 0.0,
       "20260821": 0.0,
-      "20260828": 0.0
+      "20260828": 0.0,
+      "20260904": 0.0,
+      "20260911": 0.0,
+      "20260918": 0.0
     },
     "latest_change": 0.0,
     "total_change": 0.0,
     "last_week_hold_pct": 33.47,
-    "close_price": 115.0,
-    "price_change": -1.5
+    "close_price": 103.5,
+    "price_change": 1.0
   },
   {
-    "rank": 9,
-    "stock_code": "4706",
-    "stock_name": "大恭",
-    "is_taiwan50": false,
-    "category": "櫃化學",
-    "threshold_code": 31,
-    "threshold_shares": 400,
-    "weekly_changes": {
-      "20260724": -0.59,
-      "20260731": 0.05,
-      "20260807": 0.0,
-      "20260814": 0.36,
-      "20260821": 0.01,
-      "20260828": 0.11
-    },
-    "latest_change": 0.11,
-    "total_change": -0.06,
-    "last_week_hold_pct": 82.61,
-    "close_price": 33.0,
-    "price_change": 0.0
-  },
-  {
-    "rank": 10,
-    "stock_code": "1742",
-    "stock_name": "台蠟",
+    "rank": 8,
+    "stock_code": "4711",
+    "stock_name": "永純",
     "is_taiwan50": false,
     "category": "櫃化學",
     "threshold_code": 30,
     "threshold_shares": 400,
     "weekly_changes": {
-      "20260724": -0.01,
-      "20260731": -0.29,
-      "20260807": 0.11,
-      "20260814": -0.04,
-      "20260821": 0.03,
-      "20260828": -0.04
+      "20260814": 0.0,
+      "20260821": 0.0,
+      "20260828": 0.65,
+      "20260904": -0.65,
+      "20260911": 0.0,
+      "20260918": -0.01
     },
-    "latest_change": -0.04,
-    "total_change": -0.24,
-    "last_week_hold_pct": 80.67,
-    "close_price": 17.75,
-    "price_change": 0.15
+    "latest_change": -0.01,
+    "total_change": -0.01,
+    "last_week_hold_pct": 60.01,
+    "close_price": 16.45,
+    "price_change": -0.05
+  },
+  {
+    "rank": 9,
+    "stock_code": "6509",
+    "stock_name": "聚和",
+    "is_taiwan50": false,
+    "category": "櫃化學",
+    "threshold_code": 10,
+    "threshold_shares": 1000,
+    "weekly_changes": {
+      "20260814": 0.3,
+      "20260821": -0.36,
+      "20260828": 0.04,
+      "20260904": 0.29,
+      "20260911": 0.1,
+      "20260918": -0.44
+    },
+    "latest_change": -0.44,
+    "total_change": -0.07,
+    "last_week_hold_pct": 36.89,
+    "close_price": 46.45,
+    "price_change": 0.6
+  },
+  {
+    "rank": 10,
+    "stock_code": "4772",
+    "stock_name": "台特化",
+    "is_taiwan50": false,
+    "category": "櫃化學",
+    "threshold_code": 40,
+    "threshold_shares": 200,
+    "weekly_changes": {
+      "20260814": 0.01,
+      "20260821": 0.16,
+      "20260828": 0.14,
+      "20260904": -0.3,
+      "20260911": -0.09,
+      "20260918": -0.09
+    },
+    "latest_change": -0.09,
+    "total_change": -0.17,
+    "last_week_hold_pct": 48.77,
+    "close_price": 250.0,
+    "price_change": 8.5
   },
   {
     "rank": 11,
-    "stock_code": "6509",
-    "stock_name": "聚和",
+    "stock_code": "4707",
+    "stock_name": "磐亞",
     "is_taiwan50": false,
     "category": "櫃化學",
     "threshold_code": 31,
     "threshold_shares": 400,
     "weekly_changes": {
-      "20260724": -0.7,
-      "20260731": -0.06,
-      "20260807": -0.07,
-      "20260814": 0.3,
-      "20260821": -0.36,
-      "20260828": 0.04
+      "20260814": 0.36,
+      "20260821": 0.12,
+      "20260828": -0.25,
+      "20260904": -0.32,
+      "20260911": -0.54,
+      "20260918": -0.15
     },
-    "latest_change": 0.04,
-    "total_change": -0.85,
-    "last_week_hold_pct": 36.94,
-    "close_price": 46.45,
-    "price_change": 1.0
+    "latest_change": -0.15,
+    "total_change": -0.78,
+    "last_week_hold_pct": 70.76,
+    "close_price": 28.0,
+    "price_change": 1.2
   },
   {
     "rank": 12,
+    "stock_code": "4721",
+    "stock_name": "美琪瑪",
+    "is_taiwan50": false,
+    "category": "櫃化學",
+    "threshold_code": 30,
+    "threshold_shares": 400,
+    "weekly_changes": {
+      "20260814": -0.64,
+      "20260821": -0.58,
+      "20260828": 0.28,
+      "20260904": -0.06,
+      "20260911": 0.12,
+      "20260918": 0.05
+    },
+    "latest_change": 0.05,
+    "total_change": -0.83,
+    "last_week_hold_pct": 33.5,
+    "close_price": 74.0,
+    "price_change": 0.9
+  },
+  {
+    "rank": 13,
     "stock_code": "4767",
     "stock_name": "誠泰科技",
     "is_taiwan50": false,
@@ -250,21 +272,21 @@
     "threshold_code": 31,
     "threshold_shares": 400,
     "weekly_changes": {
-      "20260724": 0.01,
-      "20260731": 0.0,
-      "20260807": 0.02,
       "20260814": 0.0,
       "20260821": -1.37,
-      "20260828": 0.01
+      "20260828": 0.01,
+      "20260904": 0.01,
+      "20260911": -0.01,
+      "20260918": 0.01
     },
     "latest_change": 0.01,
-    "total_change": -1.33,
-    "last_week_hold_pct": 62.75,
-    "close_price": 29.75,
-    "price_change": 1.05
+    "total_change": -1.35,
+    "last_week_hold_pct": 62.76,
+    "close_price": 28.0,
+    "price_change": -0.1
   },
   {
-    "rank": 13,
+    "rank": 14,
     "stock_code": "4716",
     "stock_name": "大立",
     "is_taiwan50": false,
@@ -272,39 +294,17 @@
     "threshold_code": 30,
     "threshold_shares": 400,
     "weekly_changes": {
-      "20260724": -0.39,
-      "20260731": 1.53,
-      "20260807": -0.1,
       "20260814": -2.84,
       "20260821": 0.01,
-      "20260828": -0.24
+      "20260828": -0.24,
+      "20260904": -1.61,
+      "20260911": 0.32,
+      "20260918": -0.06
     },
-    "latest_change": -0.24,
-    "total_change": -2.03,
-    "last_week_hold_pct": 34.81,
-    "close_price": 19.15,
-    "price_change": 1.7
-  },
-  {
-    "rank": 14,
-    "stock_code": "4721",
-    "stock_name": "美琪瑪",
-    "is_taiwan50": false,
-    "category": "櫃化學",
-    "threshold_code": 50,
-    "threshold_shares": 400,
-    "weekly_changes": {
-      "20260724": -0.41,
-      "20260731": -1.21,
-      "20260807": 0.38,
-      "20260814": -0.64,
-      "20260821": -0.58,
-      "20260828": 0.28
-    },
-    "latest_change": 0.28,
-    "total_change": -2.18,
-    "last_week_hold_pct": 33.39,
-    "close_price": 74.8,
-    "price_change": -0.2
+    "latest_change": -0.06,
+    "total_change": -4.42,
+    "last_week_hold_pct": 33.46,
+    "close_price": 17.0,
+    "price_change": 0.2
   }
 ]
