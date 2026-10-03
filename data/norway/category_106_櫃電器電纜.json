@@ -8,17 +8,17 @@
     "threshold_code": 31,
     "threshold_shares": 400,
     "weekly_changes": {
-      "20260814": -2.01,
-      "20260821": 1.26,
       "20260828": -0.55,
       "20260904": -0.01,
       "20260911": -1.36,
-      "20260918": -0.07
+      "20260918": -0.07,
+      "20260924": -0.32,
+      "20261002": -0.2
     },
-    "latest_change": -0.07,
-    "total_change": -2.74,
-    "last_week_hold_pct": 47.54,
-    "close_price": 52.4,
-    "price_change": 0.0
+    "latest_change": -0.2,
+    "total_change": -2.51,
+    "last_week_hold_pct": 47.02,
+    "close_price": 67.8,
+    "price_change": 6.1
   }
 ]
