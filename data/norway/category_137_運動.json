@@ -5,134 +5,90 @@
     "stock_name": "明係",
     "is_taiwan50": false,
     "category": "運動",
-    "threshold_code": 31,
-    "threshold_shares": 400,
+    "threshold_code": 21,
+    "threshold_shares": 0,
     "weekly_changes": {
-      "20260904": 0.95,
-      "20260911": 0.17,
       "20260918": 0.22,
       "20260924": 0.38,
       "20261002": 0.01,
-      "20261008": 0.14
+      "20261008": 0.14,
+      "20261016": 0.0,
+      "20261022": 0.0
     },
-    "latest_change": 0.14,
-    "total_change": 1.87,
+    "latest_change": 0.0,
+    "total_change": 0.75,
     "last_week_hold_pct": 64.77,
-    "close_price": null,
-    "price_change": null
+    "close_price": 16.4,
+    "price_change": -0.05
   },
   {
     "rank": 2,
-    "stock_code": "8938",
-    "stock_name": "明安",
-    "is_taiwan50": false,
-    "category": "運動",
-    "threshold_code": 10,
-    "threshold_shares": 1000,
-    "weekly_changes": {
-      "20260904": 0.1,
-      "20260911": 0.15,
-      "20260918": 0.2,
-      "20260924": 0.09,
-      "20261002": 0.0,
-      "20261008": -0.02
-    },
-    "latest_change": -0.02,
-    "total_change": 0.52,
-    "last_week_hold_pct": 57.77,
-    "close_price": null,
-    "price_change": null
-  },
-  {
-    "rank": 3,
-    "stock_code": "7811",
-    "stock_name": "民盛",
-    "is_taiwan50": false,
-    "category": "運動",
-    "threshold_code": 41,
-    "threshold_shares": 0,
-    "weekly_changes": {
-      "20260904": 0.03,
-      "20260911": 0.13,
-      "20260918": 0.06,
-      "20260924": 0.08,
-      "20261002": 0.08,
-      "20261008": 0.09
-    },
-    "latest_change": 0.09,
-    "total_change": 0.47,
-    "last_week_hold_pct": 73.54,
-    "close_price": null,
-    "price_change": null
-  },
-  {
-    "rank": 4,
     "stock_code": "9960",
     "stock_name": "邁達康",
     "is_taiwan50": false,
     "category": "運動",
-    "threshold_code": 10,
-    "threshold_shares": 1000,
+    "threshold_code": 31,
+    "threshold_shares": 400,
     "weekly_changes": {
-      "20260904": 0.0,
-      "20260911": 0.0,
       "20260918": -1.19,
       "20260924": 1.23,
       "20261002": 0.29,
-      "20261008": 0.07
+      "20261008": 0.07,
+      "20261016": 0.0,
+      "20261022": 0.19
     },
-    "latest_change": 0.07,
-    "total_change": 0.4,
-    "last_week_hold_pct": 78.17,
-    "close_price": null,
-    "price_change": null
+    "latest_change": 0.19,
+    "total_change": 0.59,
+    "last_week_hold_pct": 78.36,
+    "close_price": 40.3,
+    "price_change": -1.2
+  },
+  {
+    "rank": 3,
+    "stock_code": "8938",
+    "stock_name": "明安",
+    "is_taiwan50": false,
+    "category": "運動",
+    "threshold_code": 30,
+    "threshold_shares": 400,
+    "weekly_changes": {
+      "20260918": 0.2,
+      "20260924": 0.09,
+      "20261002": 0.0,
+      "20261008": -0.02,
+      "20261016": 0.34,
+      "20261022": -0.11
+    },
+    "latest_change": -0.11,
+    "total_change": 0.5,
+    "last_week_hold_pct": 58.0,
+    "close_price": 49.35,
+    "price_change": -0.1
+  },
+  {
+    "rank": 4,
+    "stock_code": "7811",
+    "stock_name": "民盛",
+    "is_taiwan50": false,
+    "category": "運動",
+    "threshold_code": 31,
+    "threshold_shares": 400,
+    "weekly_changes": {
+      "20260918": 0.06,
+      "20260924": 0.08,
+      "20261002": 0.08,
+      "20261008": 0.09,
+      "20261016": 0.06,
+      "20261022": 0.09
+    },
+    "latest_change": 0.09,
+    "total_change": 0.46,
+    "last_week_hold_pct": 73.69,
+    "close_price": 74.1,
+    "price_change": 0.3
   },
   {
     "rank": 5,
-    "stock_code": "8924",
-    "stock_name": "大田",
-    "is_taiwan50": false,
-    "category": "運動",
-    "threshold_code": 50,
-    "threshold_shares": 400,
-    "weekly_changes": {
-      "20260904": 0.03,
-      "20260911": 0.0,
-      "20260918": 0.07,
-      "20260924": -0.06,
-      "20261002": 0.02,
-      "20261008": 0.05
-    },
-    "latest_change": 0.05,
-    "total_change": 0.11,
-    "last_week_hold_pct": 38.89,
-    "close_price": null,
-    "price_change": null
-  },
-  {
-    "rank": 6,
-    "stock_code": "8933",
-    "stock_name": "愛地雅",
-    "is_taiwan50": false,
-    "category": "運動",
-    "threshold_code": 40,
-    "threshold_shares": 200,
-    "weekly_changes": {
-      "20260904": 0.17,
-      "20260911": -0.01,
-      "20260918": 0.0,
-      "20260924": -0.13,
-      "20261002": 0.0,
-      "20261008": 0.0
-    },
-    "latest_change": 0.0,
-    "total_change": 0.03,
-    "last_week_hold_pct": 52.86,
-    "close_price": null,
-    "price_change": null
-  },
-  {
-    "rank": 7,
     "stock_code": "1593",
     "stock_name": "祺驊",
     "is_taiwan50": false,
@@ -140,21 +96,21 @@
     "threshold_code": 32,
     "threshold_shares": 0,
     "weekly_changes": {
-      "20260904": 0.0,
-      "20260911": 0.0,
       "20260918": 0.0,
       "20260924": 0.0,
       "20261002": 0.0,
-      "20261008": 0.0
+      "20261008": 0.0,
+      "20261016": 0.0,
+      "20261022": 0.0
     },
     "latest_change": 0.0,
     "total_change": 0.0,
     "last_week_hold_pct": 50.05,
-    "close_price": null,
-    "price_change": null
+    "close_price": 31.35,
+    "price_change": -0.05
   },
   {
-    "rank": 8,
+    "rank": 6,
     "stock_code": "5348",
     "stock_name": "正能量智能",
     "is_taiwan50": false,
@@ -162,18 +118,62 @@
     "threshold_code": 32,
     "threshold_shares": 0,
     "weekly_changes": {
-      "20260904": 0.0,
-      "20260911": 0.0,
       "20260918": 0.0,
       "20260924": 0.0,
       "20261002": 0.0,
-      "20261008": 0.0
+      "20261008": 0.0,
+      "20261016": 0.0,
+      "20261022": 0.0
     },
     "latest_change": 0.0,
     "total_change": 0.0,
     "last_week_hold_pct": 53.13,
-    "close_price": null,
-    "price_change": null
+    "close_price": 0.0,
+    "price_change": 0.0
+  },
+  {
+    "rank": 7,
+    "stock_code": "8933",
+    "stock_name": "愛地雅",
+    "is_taiwan50": false,
+    "category": "運動",
+    "threshold_code": 30,
+    "threshold_shares": 400,
+    "weekly_changes": {
+      "20260918": 0.0,
+      "20260924": -0.13,
+      "20261002": 0.0,
+      "20261008": 0.0,
+      "20261016": 0.08,
+      "20261022": 0.0
+    },
+    "latest_change": 0.0,
+    "total_change": -0.05,
+    "last_week_hold_pct": 52.94,
+    "close_price": 4.41,
+    "price_change": -0.08
+  },
+  {
+    "rank": 8,
+    "stock_code": "8924",
+    "stock_name": "大田",
+    "is_taiwan50": false,
+    "category": "運動",
+    "threshold_code": 10,
+    "threshold_shares": 1000,
+    "weekly_changes": {
+      "20260918": 0.07,
+      "20260924": -0.06,
+      "20261002": 0.02,
+      "20261008": 0.05,
+      "20261016": -0.01,
+      "20261022": -0.65
+    },
+    "latest_change": -0.65,
+    "total_change": -0.58,
+    "last_week_hold_pct": 38.23,
+    "close_price": 44.9,
+    "price_change": -0.5
   },
   {
     "rank": 9,
@@ -181,21 +181,21 @@
     "stock_name": "鉅明",
     "is_taiwan50": false,
     "category": "運動",
-    "threshold_code": 30,
+    "threshold_code": 31,
     "threshold_shares": 400,
     "weekly_changes": {
-      "20260904": 0.05,
-      "20260911": 0.02,
       "20260918": -0.04,
       "20260924": -0.05,
       "20261002": 0.01,
-      "20261008": -0.07
+      "20261008": -0.07,
+      "20261016": -0.91,
+      "20261022": 0.0
     },
-    "latest_change": -0.07,
-    "total_change": -0.08,
-    "last_week_hold_pct": 49.1,
-    "close_price": null,
-    "price_change": null
+    "latest_change": 0.0,
+    "total_change": -1.06,
+    "last_week_hold_pct": 48.19,
+    "close_price": 21.35,
+    "price_change": -0.25
   },
   {
     "rank": 10,
@@ -206,12 +206,12 @@
     "threshold_code": 32,
     "threshold_shares": 0,
     "weekly_changes": {
-      "20260904": 0.0,
-      "20260911": 0.0,
       "20260918": 0.0,
       "20260924": 0.0,
       "20261002": 0.0,
-      "20261008": 0.0
+      "20261008": 0.0,
+      "20261016": 0.0,
+      "20261022": 0.0
     },
     "latest_change": 0.0,
     "total_change": 0.0,
