@@ -18,8 +18,8 @@
     "latest_change": 0.53,
     "total_change": 1.79,
     "last_week_hold_pct": 32.38,
-    "close_price": 9.59,
-    "price_change": -0.26
+    "close_price": 8.98,
+    "price_change": -0.22
   },
   {
     "rank": 2,
@@ -40,8 +40,8 @@
     "latest_change": -0.06,
     "total_change": 1.72,
     "last_week_hold_pct": 42.86,
-    "close_price": 8.51,
-    "price_change": -0.24
+    "close_price": 8.06,
+    "price_change": -0.18
   },
   {
     "rank": 3,
@@ -62,8 +62,8 @@
     "latest_change": 0.07,
     "total_change": 1.45,
     "last_week_hold_pct": 53.13,
-    "close_price": 12.5,
-    "price_change": -0.2
+    "close_price": 12.1,
+    "price_change": -0.25
   },
   {
     "rank": 4,
@@ -84,8 +84,8 @@
     "latest_change": -0.05,
     "total_change": 0.96,
     "last_week_hold_pct": 69.46,
-    "close_price": 12.2,
-    "price_change": -0.3
+    "close_price": 11.8,
+    "price_change": -0.35
   },
   {
     "rank": 5,
@@ -106,8 +106,8 @@
     "latest_change": -0.07,
     "total_change": 0.85,
     "last_week_hold_pct": 53.78,
-    "close_price": 13.75,
-    "price_change": -0.2
+    "close_price": 13.25,
+    "price_change": -0.4
   },
   {
     "rank": 6,
@@ -128,33 +128,11 @@
     "latest_change": -0.63,
     "total_change": 0.8,
     "last_week_hold_pct": 76.29,
-    "close_price": 73.8,
-    "price_change": -3.2
+    "close_price": 72.5,
+    "price_change": -1.4
   },
   {
     "rank": 7,
-    "stock_code": "1326",
-    "stock_name": "台化",
-    "is_taiwan50": false,
-    "category": "塑膠",
-    "threshold_code": 10,
-    "threshold_shares": 1000,
-    "weekly_changes": {
-      "20260918": -0.13,
-      "20260924": -0.22,
-      "20261002": 0.01,
-      "20261008": 0.82,
-      "20261016": 0.17,
-      "20261022": -0.08
-    },
-    "latest_change": -0.08,
-    "total_change": 0.57,
-    "last_week_hold_pct": 83.76,
-    "close_price": 73.0,
-    "price_change": -3.2
-  },
-  {
-    "rank": 8,
     "stock_code": "1309",
     "stock_name": "台達化",
     "is_taiwan50": false,
@@ -172,8 +150,30 @@
     "latest_change": 0.08,
     "total_change": 0.57,
     "last_week_hold_pct": 47.32,
-    "close_price": 13.55,
-    "price_change": -0.25
+    "close_price": 12.7,
+    "price_change": -0.3
+  },
+  {
+    "rank": 8,
+    "stock_code": "1326",
+    "stock_name": "台化",
+    "is_taiwan50": false,
+    "category": "塑膠",
+    "threshold_code": 10,
+    "threshold_shares": 1000,
+    "weekly_changes": {
+      "20260918": -0.13,
+      "20260924": -0.22,
+      "20261002": 0.01,
+      "20261008": 0.82,
+      "20261016": 0.17,
+      "20261022": -0.08
+    },
+    "latest_change": -0.08,
+    "total_change": 0.57,
+    "last_week_hold_pct": 83.76,
+    "close_price": 72.5,
+    "price_change": -1.9
   },
   {
     "rank": 9,
@@ -194,8 +194,8 @@
     "latest_change": 0.0,
     "total_change": 0.55,
     "last_week_hold_pct": 82.23,
-    "close_price": 74.4,
-    "price_change": 3.8
+    "close_price": 72.3,
+    "price_change": -0.2
   },
   {
     "rank": 10,
@@ -216,8 +216,8 @@
     "latest_change": -0.07,
     "total_change": 0.5,
     "last_week_hold_pct": 61.45,
-    "close_price": 12.65,
-    "price_change": -0.2
+    "close_price": 12.2,
+    "price_change": -0.3
   },
   {
     "rank": 11,
@@ -238,8 +238,8 @@
     "latest_change": 0.02,
     "total_change": 0.35,
     "last_week_hold_pct": 80.64,
-    "close_price": 31.0,
-    "price_change": 0.15
+    "close_price": 30.85,
+    "price_change": -0.55
   },
   {
     "rank": 12,
@@ -260,8 +260,8 @@
     "latest_change": 0.01,
     "total_change": 0.1,
     "last_week_hold_pct": 70.7,
-    "close_price": 21.5,
-    "price_change": -0.05
+    "close_price": 21.25,
+    "price_change": -0.35
   },
   {
     "rank": 13,
@@ -282,8 +282,8 @@
     "latest_change": -0.04,
     "total_change": 0.06,
     "last_week_hold_pct": 48.39,
-    "close_price": 26.85,
-    "price_change": -0.5
+    "close_price": 25.95,
+    "price_change": -0.85
   },
   {
     "rank": 14,
@@ -304,8 +304,8 @@
     "latest_change": 0.0,
     "total_change": 0.02,
     "last_week_hold_pct": 83.74,
-    "close_price": null,
-    "price_change": null
+    "close_price": 58.6,
+    "price_change": -0.1
   },
   {
     "rank": 15,
@@ -326,7 +326,7 @@
     "latest_change": 0.17,
     "total_change": -0.04,
     "last_week_hold_pct": 57.89,
-    "close_price": 14.55,
+    "close_price": 14.4,
     "price_change": -0.15
   },
   {
@@ -348,7 +348,7 @@
     "latest_change": -0.05,
     "total_change": -0.06,
     "last_week_hold_pct": 34.6,
-    "close_price": 4.98,
+    "close_price": 5.0,
     "price_change": -0.05
   },
   {
@@ -371,7 +371,7 @@
     "total_change": -0.08,
     "last_week_hold_pct": 70.51,
     "close_price": 34.95,
-    "price_change": 0.15
+    "price_change": -0.4
   },
   {
     "rank": 18,
@@ -392,8 +392,8 @@
     "latest_change": 0.03,
     "total_change": -0.13,
     "last_week_hold_pct": 86.44,
-    "close_price": 301.0,
-    "price_change": -19.5
+    "close_price": 296.0,
+    "price_change": -16.0
   },
   {
     "rank": 19,
@@ -414,8 +414,8 @@
     "latest_change": -0.15,
     "total_change": -0.4,
     "last_week_hold_pct": 47.03,
-    "close_price": 4.41,
-    "price_change": 0.03
+    "close_price": 4.05,
+    "price_change": -0.17
   },
   {
     "rank": 20,
@@ -436,8 +436,8 @@
     "latest_change": -1.06,
     "total_change": -0.51,
     "last_week_hold_pct": 59.78,
-    "close_price": 14.8,
-    "price_change": -0.55
+    "close_price": 13.85,
+    "price_change": -0.5
   },
   {
     "rank": 21,
@@ -458,7 +458,7 @@
     "latest_change": 0.0,
     "total_change": -0.59,
     "last_week_hold_pct": 65.7,
-    "close_price": 9.86,
-    "price_change": -0.04
+    "close_price": 9.72,
+    "price_change": -0.06
   }
 ]

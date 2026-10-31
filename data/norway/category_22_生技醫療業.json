@@ -18,8 +18,8 @@
     "latest_change": 0.01,
     "total_change": 3.07,
     "last_week_hold_pct": 63.37,
-    "close_price": 90.0,
-    "price_change": -0.3
+    "close_price": 89.0,
+    "price_change": -1.0
   },
   {
     "rank": 2,
@@ -40,8 +40,8 @@
     "latest_change": 2.08,
     "total_change": 2.99,
     "last_week_hold_pct": 54.64,
-    "close_price": 271.0,
-    "price_change": 1.0
+    "close_price": 264.0,
+    "price_change": -5.0
   },
   {
     "rank": 3,
@@ -62,8 +62,8 @@
     "latest_change": 0.82,
     "total_change": 2.03,
     "last_week_hold_pct": 67.75,
-    "close_price": 423.0,
-    "price_change": -8.0
+    "close_price": 419.0,
+    "price_change": -3.5
   },
   {
     "rank": 4,
@@ -84,8 +84,8 @@
     "latest_change": -0.01,
     "total_change": 1.09,
     "last_week_hold_pct": 50.24,
-    "close_price": 73.5,
-    "price_change": -0.5
+    "close_price": 73.0,
+    "price_change": -1.1
   },
   {
     "rank": 5,
@@ -106,8 +106,8 @@
     "latest_change": 0.0,
     "total_change": 0.81,
     "last_week_hold_pct": 84.63,
-    "close_price": 91.2,
-    "price_change": 0.2
+    "close_price": 91.6,
+    "price_change": -0.4
   },
   {
     "rank": 6,
@@ -128,8 +128,8 @@
     "latest_change": -0.23,
     "total_change": 0.75,
     "last_week_hold_pct": 50.28,
-    "close_price": 30.7,
-    "price_change": 0.0
+    "close_price": 30.55,
+    "price_change": -0.2
   },
   {
     "rank": 7,
@@ -150,8 +150,8 @@
     "latest_change": 0.56,
     "total_change": 0.73,
     "last_week_hold_pct": 45.15,
-    "close_price": 29.6,
-    "price_change": -0.25
+    "close_price": 29.0,
+    "price_change": -0.75
   },
   {
     "rank": 8,
@@ -172,8 +172,8 @@
     "latest_change": -0.4,
     "total_change": 0.61,
     "last_week_hold_pct": 63.45,
-    "close_price": 59.9,
-    "price_change": 2.9
+    "close_price": 65.6,
+    "price_change": 5.3
   },
   {
     "rank": 9,
@@ -194,8 +194,8 @@
     "latest_change": 0.2,
     "total_change": 0.59,
     "last_week_hold_pct": 69.83,
-    "close_price": 59.1,
-    "price_change": 0.2
+    "close_price": 59.7,
+    "price_change": -0.1
   },
   {
     "rank": 10,
@@ -216,8 +216,8 @@
     "latest_change": 0.02,
     "total_change": 0.51,
     "last_week_hold_pct": 70.59,
-    "close_price": 37.5,
-    "price_change": -0.35
+    "close_price": 37.3,
+    "price_change": -0.2
   },
   {
     "rank": 11,
@@ -238,8 +238,8 @@
     "latest_change": 0.0,
     "total_change": 0.47,
     "last_week_hold_pct": 71.33,
-    "close_price": 16.3,
-    "price_change": -0.1
+    "close_price": 15.1,
+    "price_change": 0.0
   },
   {
     "rank": 12,
@@ -260,33 +260,11 @@
     "latest_change": 0.37,
     "total_change": 0.4,
     "last_week_hold_pct": 56.87,
-    "close_price": 403.0,
-    "price_change": -10.5
+    "close_price": 379.0,
+    "price_change": -13.0
   },
   {
     "rank": 13,
-    "stock_code": "4169",
-    "stock_name": "泰宗",
-    "is_taiwan50": false,
-    "category": "生技醫療業",
-    "threshold_code": 10,
-    "threshold_shares": 1000,
-    "weekly_changes": {
-      "20260918": -0.18,
-      "20260924": 0.08,
-      "20261002": 0.67,
-      "20261008": 0.09,
-      "20261016": 0.06,
-      "20261022": -0.36
-    },
-    "latest_change": -0.36,
-    "total_change": 0.36,
-    "last_week_hold_pct": 54.71,
-    "close_price": 151.0,
-    "price_change": -5.0
-  },
-  {
-    "rank": 14,
     "stock_code": "4142",
     "stock_name": "國光生",
     "is_taiwan50": false,
@@ -304,8 +282,30 @@
     "latest_change": -0.33,
     "total_change": 0.36,
     "last_week_hold_pct": 40.83,
-    "close_price": 17.8,
-    "price_change": -0.1
+    "close_price": 17.2,
+    "price_change": -0.3
+  },
+  {
+    "rank": 14,
+    "stock_code": "4169",
+    "stock_name": "泰宗",
+    "is_taiwan50": false,
+    "category": "生技醫療業",
+    "threshold_code": 10,
+    "threshold_shares": 1000,
+    "weekly_changes": {
+      "20260918": -0.18,
+      "20260924": 0.08,
+      "20261002": 0.67,
+      "20261008": 0.09,
+      "20261016": 0.06,
+      "20261022": -0.36
+    },
+    "latest_change": -0.36,
+    "total_change": 0.36,
+    "last_week_hold_pct": 54.71,
+    "close_price": 140.0,
+    "price_change": -4.0
   },
   {
     "rank": 15,
@@ -326,8 +326,8 @@
     "latest_change": 0.85,
     "total_change": 0.35,
     "last_week_hold_pct": 36.32,
-    "close_price": 29.65,
-    "price_change": -0.1
+    "close_price": 27.95,
+    "price_change": -0.45
   },
   {
     "rank": 16,
@@ -348,8 +348,8 @@
     "latest_change": 0.07,
     "total_change": 0.34,
     "last_week_hold_pct": 39.09,
-    "close_price": 14.85,
-    "price_change": -0.3
+    "close_price": 14.6,
+    "price_change": -0.55
   },
   {
     "rank": 17,
@@ -370,33 +370,11 @@
     "latest_change": 0.02,
     "total_change": 0.34,
     "last_week_hold_pct": 61.86,
-    "close_price": 25.3,
+    "close_price": 24.6,
     "price_change": -0.2
   },
   {
     "rank": 18,
-    "stock_code": "6598",
-    "stock_name": "ABC-KY",
-    "is_taiwan50": false,
-    "category": "生技醫療業",
-    "threshold_code": 50,
-    "threshold_shares": 400,
-    "weekly_changes": {
-      "20260918": -0.07,
-      "20260924": -0.85,
-      "20261002": -0.33,
-      "20261008": 0.25,
-      "20261016": 0.26,
-      "20261022": 1.05
-    },
-    "latest_change": 1.05,
-    "total_change": 0.31,
-    "last_week_hold_pct": 54.07,
-    "close_price": 30.3,
-    "price_change": 0.0
-  },
-  {
-    "rank": 19,
     "stock_code": "7827",
     "stock_name": "漢康-KY創",
     "is_taiwan50": false,
@@ -414,8 +392,30 @@
     "latest_change": -0.08,
     "total_change": 0.31,
     "last_week_hold_pct": 79.56,
-    "close_price": 149.5,
-    "price_change": -1.0
+    "close_price": 135.5,
+    "price_change": -2.5
+  },
+  {
+    "rank": 19,
+    "stock_code": "6598",
+    "stock_name": "ABC-KY",
+    "is_taiwan50": false,
+    "category": "生技醫療業",
+    "threshold_code": 50,
+    "threshold_shares": 400,
+    "weekly_changes": {
+      "20260918": -0.07,
+      "20260924": -0.85,
+      "20261002": -0.33,
+      "20261008": 0.25,
+      "20261016": 0.26,
+      "20261022": 1.05
+    },
+    "latest_change": 1.05,
+    "total_change": 0.31,
+    "last_week_hold_pct": 54.07,
+    "close_price": 28.4,
+    "price_change": -0.7
   },
   {
     "rank": 20,
@@ -436,8 +436,8 @@
     "latest_change": -0.41,
     "total_change": 0.28,
     "last_week_hold_pct": 60.0,
-    "close_price": 206.5,
-    "price_change": -3.5
+    "close_price": 210.0,
+    "price_change": -2.0
   },
   {
     "rank": 21,
@@ -458,8 +458,8 @@
     "latest_change": -0.22,
     "total_change": 0.26,
     "last_week_hold_pct": 51.01,
-    "close_price": 27.0,
-    "price_change": -0.25
+    "close_price": 26.2,
+    "price_change": -0.7
   },
   {
     "rank": 22,
@@ -480,8 +480,8 @@
     "latest_change": 0.04,
     "total_change": 0.21,
     "last_week_hold_pct": 43.95,
-    "close_price": 13.65,
-    "price_change": -0.25
+    "close_price": 12.85,
+    "price_change": -0.55
   },
   {
     "rank": 23,
@@ -502,8 +502,8 @@
     "latest_change": -0.09,
     "total_change": 0.2,
     "last_week_hold_pct": 57.37,
-    "close_price": 172.5,
-    "price_change": -3.5
+    "close_price": 167.5,
+    "price_change": -5.0
   },
   {
     "rank": 24,
@@ -524,33 +524,11 @@
     "latest_change": 0.06,
     "total_change": 0.16,
     "last_week_hold_pct": 55.43,
-    "close_price": 17.05,
-    "price_change": 0.15
+    "close_price": 16.9,
+    "price_change": 0.0
   },
   {
     "rank": 25,
-    "stock_code": "4190",
-    "stock_name": "佐登-KY",
-    "is_taiwan50": false,
-    "category": "生技醫療業",
-    "threshold_code": 30,
-    "threshold_shares": 400,
-    "weekly_changes": {
-      "20260918": 0.07,
-      "20260924": 0.02,
-      "20261002": 0.0,
-      "20261008": 0.0,
-      "20261016": 0.02,
-      "20261022": 0.0
-    },
-    "latest_change": 0.0,
-    "total_change": 0.11,
-    "last_week_hold_pct": 66.71,
-    "close_price": 23.8,
-    "price_change": -0.2
-  },
-  {
-    "rank": 26,
     "stock_code": "1789",
     "stock_name": "神隆",
     "is_taiwan50": false,
@@ -568,33 +546,33 @@
     "latest_change": 0.04,
     "total_change": 0.11,
     "last_week_hold_pct": 77.11,
-    "close_price": 19.45,
-    "price_change": -0.15
+    "close_price": 20.0,
+    "price_change": 0.1
+  },
+  {
+    "rank": 26,
+    "stock_code": "4190",
+    "stock_name": "佐登-KY",
+    "is_taiwan50": false,
+    "category": "生技醫療業",
+    "threshold_code": 30,
+    "threshold_shares": 400,
+    "weekly_changes": {
+      "20260918": 0.07,
+      "20260924": 0.02,
+      "20261002": 0.0,
+      "20261008": 0.0,
+      "20261016": 0.02,
+      "20261022": 0.0
+    },
+    "latest_change": 0.0,
+    "total_change": 0.11,
+    "last_week_hold_pct": 66.71,
+    "close_price": 23.4,
+    "price_change": -0.2
   },
   {
     "rank": 27,
-    "stock_code": "6934",
-    "stock_name": "心誠鎂",
-    "is_taiwan50": false,
-    "category": "生技醫療業",
-    "threshold_code": 31,
-    "threshold_shares": 400,
-    "weekly_changes": {
-      "20260918": -0.12,
-      "20260924": -0.82,
-      "20261002": -0.31,
-      "20261008": 0.14,
-      "20261016": 0.02,
-      "20261022": 1.19
-    },
-    "latest_change": 1.19,
-    "total_change": 0.1,
-    "last_week_hold_pct": 66.1,
-    "close_price": 85.5,
-    "price_change": 0.3
-  },
-  {
-    "rank": 28,
     "stock_code": "4104",
     "stock_name": "佳醫",
     "is_taiwan50": false,
@@ -612,8 +590,30 @@
     "latest_change": 0.09,
     "total_change": 0.1,
     "last_week_hold_pct": 45.47,
-    "close_price": 73.2,
-    "price_change": -0.3
+    "close_price": 72.9,
+    "price_change": -0.4
+  },
+  {
+    "rank": 28,
+    "stock_code": "6934",
+    "stock_name": "心誠鎂",
+    "is_taiwan50": false,
+    "category": "生技醫療業",
+    "threshold_code": 31,
+    "threshold_shares": 400,
+    "weekly_changes": {
+      "20260918": -0.12,
+      "20260924": -0.82,
+      "20261002": -0.31,
+      "20261008": 0.14,
+      "20261016": 0.02,
+      "20261022": 1.19
+    },
+    "latest_change": 1.19,
+    "total_change": 0.1,
+    "last_week_hold_pct": 66.1,
+    "close_price": 82.6,
+    "price_change": -1.9
   },
   {
     "rank": 29,
@@ -634,33 +634,11 @@
     "latest_change": 0.02,
     "total_change": 0.06,
     "last_week_hold_pct": 79.4,
-    "close_price": 15.05,
-    "price_change": -1.25
+    "close_price": 13.6,
+    "price_change": -0.45
   },
   {
     "rank": 30,
-    "stock_code": "1731",
-    "stock_name": "美吾華",
-    "is_taiwan50": false,
-    "category": "生技醫療業",
-    "threshold_code": 41,
-    "threshold_shares": 0,
-    "weekly_changes": {
-      "20260918": 0.01,
-      "20260924": 0.0,
-      "20261002": 0.0,
-      "20261008": 0.0,
-      "20261016": 0.0,
-      "20261022": 0.01
-    },
-    "latest_change": 0.01,
-    "total_change": 0.02,
-    "last_week_hold_pct": 55.72,
-    "close_price": 21.1,
-    "price_change": 0.2
-  },
-  {
-    "rank": 31,
     "stock_code": "1760",
     "stock_name": "寶齡富錦",
     "is_taiwan50": false,
@@ -678,8 +656,30 @@
     "latest_change": 0.0,
     "total_change": 0.02,
     "last_week_hold_pct": 43.02,
-    "close_price": 51.7,
-    "price_change": -0.8
+    "close_price": 50.0,
+    "price_change": -1.8
+  },
+  {
+    "rank": 31,
+    "stock_code": "1731",
+    "stock_name": "美吾華",
+    "is_taiwan50": false,
+    "category": "生技醫療業",
+    "threshold_code": 41,
+    "threshold_shares": 0,
+    "weekly_changes": {
+      "20260918": 0.01,
+      "20260924": 0.0,
+      "20261002": 0.0,
+      "20261008": 0.0,
+      "20261016": 0.0,
+      "20261022": 0.01
+    },
+    "latest_change": 0.01,
+    "total_change": 0.02,
+    "last_week_hold_pct": 55.72,
+    "close_price": 21.0,
+    "price_change": -0.05
   },
   {
     "rank": 32,
@@ -700,33 +700,11 @@
     "latest_change": 0.0,
     "total_change": 0.01,
     "last_week_hold_pct": 76.22,
-    "close_price": 32.2,
-    "price_change": 0.25
+    "close_price": 32.05,
+    "price_change": -0.15
   },
   {
     "rank": 33,
-    "stock_code": "6796",
-    "stock_name": "晉弘",
-    "is_taiwan50": false,
-    "category": "生技醫療業",
-    "threshold_code": 32,
-    "threshold_shares": 0,
-    "weekly_changes": {
-      "20260918": 0.0,
-      "20260924": 0.0,
-      "20261002": 0.0,
-      "20261008": 0.0,
-      "20261016": 0.0,
-      "20261022": 0.0
-    },
-    "latest_change": 0.0,
-    "total_change": 0.0,
-    "last_week_hold_pct": 47.43,
-    "close_price": 51.0,
-    "price_change": -0.7
-  },
-  {
-    "rank": 34,
     "stock_code": "1783",
     "stock_name": "和康生",
     "is_taiwan50": false,
@@ -744,13 +722,13 @@
     "latest_change": -0.51,
     "total_change": 0.0,
     "last_week_hold_pct": 63.93,
-    "close_price": 36.4,
-    "price_change": 0.1
+    "close_price": 35.1,
+    "price_change": -1.0
   },
   {
-    "rank": 35,
-    "stock_code": "6666",
-    "stock_name": "羅麗芬-KY",
+    "rank": 34,
+    "stock_code": "6796",
+    "stock_name": "晉弘",
     "is_taiwan50": false,
     "category": "生技醫療業",
     "threshold_code": 32,
@@ -765,12 +743,12 @@
     },
     "latest_change": 0.0,
     "total_change": 0.0,
-    "last_week_hold_pct": 78.83,
-    "close_price": 40.5,
-    "price_change": -0.65
+    "last_week_hold_pct": 47.43,
+    "close_price": 51.5,
+    "price_change": -1.5
   },
   {
-    "rank": 36,
+    "rank": 35,
     "stock_code": "4133",
     "stock_name": "亞諾法",
     "is_taiwan50": false,
@@ -788,8 +766,30 @@
     "latest_change": 0.0,
     "total_change": 0.0,
     "last_week_hold_pct": 23.58,
-    "close_price": 20.6,
-    "price_change": -0.3
+    "close_price": 20.0,
+    "price_change": -0.5
+  },
+  {
+    "rank": 36,
+    "stock_code": "6666",
+    "stock_name": "羅麗芬-KY",
+    "is_taiwan50": false,
+    "category": "生技醫療業",
+    "threshold_code": 32,
+    "threshold_shares": 0,
+    "weekly_changes": {
+      "20260918": 0.0,
+      "20260924": 0.0,
+      "20261002": 0.0,
+      "20261008": 0.0,
+      "20261016": 0.0,
+      "20261022": 0.0
+    },
+    "latest_change": 0.0,
+    "total_change": 0.0,
+    "last_week_hold_pct": 78.83,
+    "close_price": 40.85,
+    "price_change": -0.7
   },
   {
     "rank": 37,
@@ -810,8 +810,8 @@
     "latest_change": 0.0,
     "total_change": -0.01,
     "last_week_hold_pct": 47.63,
-    "close_price": 52.9,
-    "price_change": -0.5
+    "close_price": 51.0,
+    "price_change": -0.6
   },
   {
     "rank": 38,
@@ -832,8 +832,8 @@
     "latest_change": 0.06,
     "total_change": -0.04,
     "last_week_hold_pct": 46.22,
-    "close_price": 33.6,
-    "price_change": -0.75
+    "close_price": 32.3,
+    "price_change": -1.1
   },
   {
     "rank": 39,
@@ -854,8 +854,8 @@
     "latest_change": 0.06,
     "total_change": -0.06,
     "last_week_hold_pct": 58.25,
-    "close_price": 49.7,
-    "price_change": 0.35
+    "close_price": 47.8,
+    "price_change": -1.2
   },
   {
     "rank": 40,
@@ -876,8 +876,8 @@
     "latest_change": 0.15,
     "total_change": -0.06,
     "last_week_hold_pct": 77.75,
-    "close_price": 17.55,
-    "price_change": 0.4
+    "close_price": 17.1,
+    "price_change": 0.1
   },
   {
     "rank": 41,
@@ -898,8 +898,8 @@
     "latest_change": -0.02,
     "total_change": -0.07,
     "last_week_hold_pct": 35.43,
-    "close_price": 33.6,
-    "price_change": 0.0
+    "close_price": 32.0,
+    "price_change": -0.6
   },
   {
     "rank": 42,
@@ -920,8 +920,8 @@
     "latest_change": 0.15,
     "total_change": -0.14,
     "last_week_hold_pct": 51.05,
-    "close_price": 131.5,
-    "price_change": 1.0
+    "close_price": 131.0,
+    "price_change": -1.5
   },
   {
     "rank": 43,
@@ -942,8 +942,8 @@
     "latest_change": 0.0,
     "total_change": -0.16,
     "last_week_hold_pct": 79.2,
-    "close_price": 30.35,
-    "price_change": -0.45
+    "close_price": 30.1,
+    "price_change": -0.5
   },
   {
     "rank": 44,
@@ -964,8 +964,8 @@
     "latest_change": 0.24,
     "total_change": -0.17,
     "last_week_hold_pct": 64.85,
-    "close_price": 57.0,
-    "price_change": 0.2
+    "close_price": 56.7,
+    "price_change": -0.2
   },
   {
     "rank": 45,
@@ -986,8 +986,8 @@
     "latest_change": -0.11,
     "total_change": -0.18,
     "last_week_hold_pct": 51.01,
-    "close_price": 39.7,
-    "price_change": -0.15
+    "close_price": 47.55,
+    "price_change": 4.3
   },
   {
     "rank": 46,
@@ -1008,8 +1008,8 @@
     "latest_change": 0.03,
     "total_change": -0.23,
     "last_week_hold_pct": 50.71,
-    "close_price": 23.85,
-    "price_change": 0.0
+    "close_price": 23.35,
+    "price_change": -0.55
   },
   {
     "rank": 47,
@@ -1030,8 +1030,8 @@
     "latest_change": 0.07,
     "total_change": -0.23,
     "last_week_hold_pct": 56.36,
-    "close_price": 1160.0,
-    "price_change": -15.0
+    "close_price": 1190.0,
+    "price_change": -50.0
   },
   {
     "rank": 48,
@@ -1052,7 +1052,7 @@
     "latest_change": -0.5,
     "total_change": -0.28,
     "last_week_hold_pct": 78.39,
-    "close_price": 68.6,
+    "close_price": 68.2,
     "price_change": -0.4
   },
   {
@@ -1074,8 +1074,8 @@
     "latest_change": -0.07,
     "total_change": -0.3,
     "last_week_hold_pct": 70.64,
-    "close_price": 30.25,
-    "price_change": -0.8
+    "close_price": 28.5,
+    "price_change": -1.4
   },
   {
     "rank": 50,
@@ -1096,8 +1096,8 @@
     "latest_change": -0.12,
     "total_change": -0.33,
     "last_week_hold_pct": 50.88,
-    "close_price": 79.1,
-    "price_change": -1.1
+    "close_price": 80.0,
+    "price_change": -1.2
   },
   {
     "rank": 51,
@@ -1118,8 +1118,8 @@
     "latest_change": 0.42,
     "total_change": -0.36,
     "last_week_hold_pct": 63.93,
-    "close_price": 31.1,
-    "price_change": -0.15
+    "close_price": 30.1,
+    "price_change": -0.4
   },
   {
     "rank": 52,
@@ -1140,8 +1140,8 @@
     "latest_change": 0.07,
     "total_change": -0.38,
     "last_week_hold_pct": 28.72,
-    "close_price": 11.85,
-    "price_change": 0.65
+    "close_price": 11.25,
+    "price_change": -0.1
   },
   {
     "rank": 53,
@@ -1162,8 +1162,8 @@
     "latest_change": -0.02,
     "total_change": -0.45,
     "last_week_hold_pct": 52.4,
-    "close_price": 33.65,
-    "price_change": 0.0
+    "close_price": 33.55,
+    "price_change": -0.25
   },
   {
     "rank": 54,
@@ -1184,8 +1184,8 @@
     "latest_change": -0.01,
     "total_change": -0.61,
     "last_week_hold_pct": 40.18,
-    "close_price": 46.15,
-    "price_change": -0.7
+    "close_price": 45.95,
+    "price_change": -0.55
   },
   {
     "rank": 55,
@@ -1206,8 +1206,8 @@
     "latest_change": 0.08,
     "total_change": -0.84,
     "last_week_hold_pct": 72.59,
-    "close_price": 73.8,
-    "price_change": -2.2
+    "close_price": 66.6,
+    "price_change": 1.2
   },
   {
     "rank": 56,
@@ -1228,8 +1228,8 @@
     "latest_change": -0.3,
     "total_change": -1.21,
     "last_week_hold_pct": 78.18,
-    "close_price": 430.5,
-    "price_change": -9.5
+    "close_price": 419.0,
+    "price_change": -18.5
   },
   {
     "rank": 57,
@@ -1250,8 +1250,8 @@
     "latest_change": -0.09,
     "total_change": -1.24,
     "last_week_hold_pct": 92.28,
-    "close_price": 37.7,
-    "price_change": -1.4
+    "close_price": 39.05,
+    "price_change": -1.75
   },
   {
     "rank": 58,
@@ -1272,8 +1272,8 @@
     "latest_change": 0.04,
     "total_change": -2.11,
     "last_week_hold_pct": 74.46,
-    "close_price": 15.45,
-    "price_change": -0.25
+    "close_price": 14.75,
+    "price_change": -0.45
   },
   {
     "rank": 59,
@@ -1294,8 +1294,8 @@
     "latest_change": -0.46,
     "total_change": -2.15,
     "last_week_hold_pct": 50.49,
-    "close_price": 85.2,
-    "price_change": -0.4
+    "close_price": 82.5,
+    "price_change": -1.0
   },
   {
     "rank": 60,
@@ -1317,7 +1317,7 @@
     "total_change": -2.63,
     "last_week_hold_pct": 40.69,
     "close_price": 16.8,
-    "price_change": -0.4
+    "price_change": -0.25
   },
   {
     "rank": 61,
@@ -1338,8 +1338,8 @@
     "latest_change": 0.0,
     "total_change": -2.76,
     "last_week_hold_pct": 48.56,
-    "close_price": 235.0,
-    "price_change": -12.0
+    "close_price": 213.5,
+    "price_change": -19.0
   },
   {
     "rank": 62,

@@ -18,8 +18,8 @@
     "latest_change": 0.0,
     "total_change": 0.61,
     "last_week_hold_pct": 75.33,
-    "close_price": 23.7,
-    "price_change": -0.55
+    "close_price": null,
+    "price_change": null
   },
   {
     "rank": 2,
@@ -40,8 +40,8 @@
     "latest_change": 0.02,
     "total_change": 0.46,
     "last_week_hold_pct": 78.73,
-    "close_price": 23.1,
-    "price_change": -0.5
+    "close_price": null,
+    "price_change": null
   },
   {
     "rank": 3,
@@ -62,8 +62,8 @@
     "latest_change": 0.0,
     "total_change": 0.02,
     "last_week_hold_pct": 60.25,
-    "close_price": 49.5,
-    "price_change": -0.1
+    "close_price": null,
+    "price_change": null
   },
   {
     "rank": 4,
@@ -106,8 +106,8 @@
     "latest_change": 0.0,
     "total_change": 0.0,
     "last_week_hold_pct": 47.21,
-    "close_price": 247.0,
-    "price_change": 0.5
+    "close_price": null,
+    "price_change": null
   },
   {
     "rank": 6,
@@ -128,8 +128,8 @@
     "latest_change": 0.0,
     "total_change": 0.0,
     "last_week_hold_pct": 55.79,
-    "close_price": 27.85,
-    "price_change": -0.35
+    "close_price": null,
+    "price_change": null
   },
   {
     "rank": 7,
@@ -150,8 +150,8 @@
     "latest_change": 0.0,
     "total_change": 0.0,
     "last_week_hold_pct": 66.79,
-    "close_price": 57.9,
-    "price_change": -0.4
+    "close_price": null,
+    "price_change": null
   },
   {
     "rank": 8,
@@ -172,8 +172,8 @@
     "latest_change": 0.0,
     "total_change": -0.01,
     "last_week_hold_pct": 66.39,
-    "close_price": 66.9,
-    "price_change": -0.2
+    "close_price": null,
+    "price_change": null
   },
   {
     "rank": 9,
@@ -194,8 +194,8 @@
     "latest_change": 0.19,
     "total_change": -0.14,
     "last_week_hold_pct": 73.38,
-    "close_price": 19.3,
-    "price_change": 0.05
+    "close_price": null,
+    "price_change": null
   },
   {
     "rank": 10,
@@ -216,7 +216,7 @@
     "latest_change": 0.0,
     "total_change": -0.59,
     "last_week_hold_pct": 57.36,
-    "close_price": 46.75,
-    "price_change": -0.3
+    "close_price": null,
+    "price_change": null
   }
 ]

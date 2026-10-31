@@ -18,8 +18,8 @@
     "latest_change": 0.01,
     "total_change": 3.1,
     "last_week_hold_pct": 60.39,
-    "close_price": 244.5,
-    "price_change": -3.5
+    "close_price": 238.0,
+    "price_change": 0.0
   },
   {
     "rank": 2,
@@ -40,8 +40,8 @@
     "latest_change": -0.41,
     "total_change": 1.53,
     "last_week_hold_pct": 56.21,
-    "close_price": 759.0,
-    "price_change": -12.0
+    "close_price": 749.0,
+    "price_change": -31.0
   },
   {
     "rank": 3,
@@ -62,8 +62,8 @@
     "latest_change": -0.01,
     "total_change": 1.04,
     "last_week_hold_pct": 43.93,
-    "close_price": 40.0,
-    "price_change": -0.3
+    "close_price": 39.6,
+    "price_change": -0.05
   },
   {
     "rank": 4,
@@ -84,7 +84,7 @@
     "latest_change": -0.08,
     "total_change": 0.8,
     "last_week_hold_pct": 72.65,
-    "close_price": 19.5,
+    "close_price": 19.4,
     "price_change": -0.4
   },
   {
@@ -106,8 +106,8 @@
     "latest_change": 0.29,
     "total_change": 0.62,
     "last_week_hold_pct": 55.39,
-    "close_price": 67.3,
-    "price_change": -3.5
+    "close_price": 63.2,
+    "price_change": -4.1
   },
   {
     "rank": 6,
@@ -128,8 +128,8 @@
     "latest_change": 1.17,
     "total_change": 0.44,
     "last_week_hold_pct": 62.06,
-    "close_price": 21.75,
-    "price_change": -0.25
+    "close_price": 20.65,
+    "price_change": -0.45
   },
   {
     "rank": 7,
@@ -150,8 +150,8 @@
     "latest_change": 0.52,
     "total_change": 0.4,
     "last_week_hold_pct": 38.7,
-    "close_price": 26.05,
-    "price_change": -0.05
+    "close_price": 24.7,
+    "price_change": -0.6
   },
   {
     "rank": 8,
@@ -172,8 +172,8 @@
     "latest_change": -0.2,
     "total_change": 0.4,
     "last_week_hold_pct": 82.54,
-    "close_price": 119.0,
-    "price_change": 0.5
+    "close_price": 121.5,
+    "price_change": -1.5
   },
   {
     "rank": 9,
@@ -194,8 +194,8 @@
     "latest_change": 0.0,
     "total_change": 0.05,
     "last_week_hold_pct": 90.07,
-    "close_price": 108.0,
-    "price_change": 0.0
+    "close_price": 109.5,
+    "price_change": -0.5
   },
   {
     "rank": 10,
@@ -216,33 +216,11 @@
     "latest_change": -0.15,
     "total_change": 0.03,
     "last_week_hold_pct": 69.77,
-    "close_price": 71.4,
-    "price_change": 0.1
+    "close_price": 70.6,
+    "price_change": -0.9
   },
   {
     "rank": 11,
-    "stock_code": "4582",
-    "stock_name": "聚恆-創",
-    "is_taiwan50": false,
-    "category": "綠能",
-    "threshold_code": 31,
-    "threshold_shares": 400,
-    "weekly_changes": {
-      "20260918": 0.03,
-      "20260924": 0.0,
-      "20261002": 0.0,
-      "20261008": 0.01,
-      "20261016": -0.03,
-      "20261022": 0.01
-    },
-    "latest_change": 0.01,
-    "total_change": 0.02,
-    "last_week_hold_pct": 55.07,
-    "close_price": 20.15,
-    "price_change": -0.2
-  },
-  {
-    "rank": 12,
     "stock_code": "6641",
     "stock_name": "基士德-KY",
     "is_taiwan50": false,
@@ -260,8 +238,30 @@
     "latest_change": 0.0,
     "total_change": 0.02,
     "last_week_hold_pct": 60.27,
-    "close_price": 16.7,
-    "price_change": -0.05
+    "close_price": 16.75,
+    "price_change": -0.15
+  },
+  {
+    "rank": 12,
+    "stock_code": "4582",
+    "stock_name": "聚恆-創",
+    "is_taiwan50": false,
+    "category": "綠能",
+    "threshold_code": 31,
+    "threshold_shares": 400,
+    "weekly_changes": {
+      "20260918": 0.03,
+      "20260924": 0.0,
+      "20261002": 0.0,
+      "20261008": 0.01,
+      "20261016": -0.03,
+      "20261022": 0.01
+    },
+    "latest_change": 0.01,
+    "total_change": 0.02,
+    "last_week_hold_pct": 55.07,
+    "close_price": 19.95,
+    "price_change": -0.3
   },
   {
     "rank": 13,
@@ -282,8 +282,8 @@
     "latest_change": 0.0,
     "total_change": 0.0,
     "last_week_hold_pct": 66.24,
-    "close_price": 67.4,
-    "price_change": 0.0
+    "close_price": 66.7,
+    "price_change": -0.8
   },
   {
     "rank": 14,
@@ -326,8 +326,8 @@
     "latest_change": 0.0,
     "total_change": -0.01,
     "last_week_hold_pct": 91.82,
-    "close_price": 35.55,
-    "price_change": 0.95
+    "close_price": 33.65,
+    "price_change": -1.8
   },
   {
     "rank": 16,
@@ -348,8 +348,8 @@
     "latest_change": 0.0,
     "total_change": -0.07,
     "last_week_hold_pct": 49.05,
-    "close_price": 75.6,
-    "price_change": 0.7
+    "close_price": 75.2,
+    "price_change": -0.8
   },
   {
     "rank": 17,
@@ -370,8 +370,8 @@
     "latest_change": -0.01,
     "total_change": -0.11,
     "last_week_hold_pct": 74.19,
-    "close_price": 124.0,
-    "price_change": 2.0
+    "close_price": 114.0,
+    "price_change": -6.5
   },
   {
     "rank": 18,
@@ -392,8 +392,8 @@
     "latest_change": 0.0,
     "total_change": -0.16,
     "last_week_hold_pct": 89.97,
-    "close_price": 58.1,
-    "price_change": -0.3
+    "close_price": 57.3,
+    "price_change": -0.7
   },
   {
     "rank": 19,
@@ -414,8 +414,8 @@
     "latest_change": 0.15,
     "total_change": -0.17,
     "last_week_hold_pct": 70.16,
-    "close_price": 66.8,
-    "price_change": 0.0
+    "close_price": 63.5,
+    "price_change": -3.2
   },
   {
     "rank": 20,
@@ -436,8 +436,8 @@
     "latest_change": -0.09,
     "total_change": -0.21,
     "last_week_hold_pct": 61.97,
-    "close_price": 57.4,
-    "price_change": -6.3
+    "close_price": 50.3,
+    "price_change": 0.3
   },
   {
     "rank": 21,
@@ -458,8 +458,8 @@
     "latest_change": -0.25,
     "total_change": -0.22,
     "last_week_hold_pct": 66.78,
-    "close_price": 37.6,
-    "price_change": -0.2
+    "close_price": 36.8,
+    "price_change": -0.7
   },
   {
     "rank": 22,
@@ -480,8 +480,8 @@
     "latest_change": -0.21,
     "total_change": -0.5,
     "last_week_hold_pct": 77.22,
-    "close_price": 59.0,
-    "price_change": -0.2
+    "close_price": 58.5,
+    "price_change": -0.3
   },
   {
     "rank": 23,
@@ -502,8 +502,8 @@
     "latest_change": 0.22,
     "total_change": -0.56,
     "last_week_hold_pct": 49.83,
-    "close_price": 95.3,
-    "price_change": 0.5
+    "close_price": 100.5,
+    "price_change": -3.5
   },
   {
     "rank": 24,
@@ -524,8 +524,8 @@
     "latest_change": -0.05,
     "total_change": -0.92,
     "last_week_hold_pct": 53.1,
-    "close_price": 27.5,
-    "price_change": -0.5
+    "close_price": 27.3,
+    "price_change": -0.75
   },
   {
     "rank": 25,
@@ -546,8 +546,8 @@
     "latest_change": -0.61,
     "total_change": -1.16,
     "last_week_hold_pct": 77.33,
-    "close_price": 68.7,
-    "price_change": -1.9
+    "close_price": 65.1,
+    "price_change": -2.6
   },
   {
     "rank": 26,
@@ -568,8 +568,8 @@
     "latest_change": -0.88,
     "total_change": -1.24,
     "last_week_hold_pct": 63.12,
-    "close_price": 104.0,
-    "price_change": 0.0
+    "close_price": 101.0,
+    "price_change": -1.0
   },
   {
     "rank": 27,
@@ -590,8 +590,8 @@
     "latest_change": -0.13,
     "total_change": -1.6,
     "last_week_hold_pct": 49.1,
-    "close_price": 1335.0,
-    "price_change": -80.0
+    "close_price": 1290.0,
+    "price_change": -40.0
   },
   {
     "rank": 28,
@@ -612,7 +612,7 @@
     "latest_change": -0.79,
     "total_change": -3.28,
     "last_week_hold_pct": 42.17,
-    "close_price": 26.3,
-    "price_change": 0.3
+    "close_price": 23.65,
+    "price_change": -1.15
   }
 ]

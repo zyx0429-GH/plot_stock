@@ -18,8 +18,8 @@
     "latest_change": -0.17,
     "total_change": 0.62,
     "last_week_hold_pct": 51.4,
-    "close_price": 15.3,
-    "price_change": -0.1
+    "close_price": null,
+    "price_change": null
   },
   {
     "rank": 2,
@@ -40,8 +40,8 @@
     "latest_change": -0.22,
     "total_change": 0.21,
     "last_week_hold_pct": 51.26,
-    "close_price": 22.0,
-    "price_change": -0.55
+    "close_price": null,
+    "price_change": null
   },
   {
     "rank": 3,
@@ -62,8 +62,8 @@
     "latest_change": -0.02,
     "total_change": 0.03,
     "last_week_hold_pct": 90.87,
-    "close_price": 53.4,
-    "price_change": -1.9
+    "close_price": null,
+    "price_change": null
   },
   {
     "rank": 4,
@@ -84,8 +84,8 @@
     "latest_change": 0.0,
     "total_change": 0.0,
     "last_week_hold_pct": 96.92,
-    "close_price": 20.6,
-    "price_change": -0.3
+    "close_price": null,
+    "price_change": null
   },
   {
     "rank": 5,
@@ -106,8 +106,8 @@
     "latest_change": -0.17,
     "total_change": -0.1,
     "last_week_hold_pct": 83.92,
-    "close_price": 82.1,
-    "price_change": -0.4
+    "close_price": null,
+    "price_change": null
   },
   {
     "rank": 6,
@@ -128,8 +128,8 @@
     "latest_change": -0.07,
     "total_change": -0.24,
     "last_week_hold_pct": 68.24,
-    "close_price": 36.3,
-    "price_change": -1.15
+    "close_price": null,
+    "price_change": null
   },
   {
     "rank": 7,
@@ -150,8 +150,8 @@
     "latest_change": -0.06,
     "total_change": -0.53,
     "last_week_hold_pct": 72.24,
-    "close_price": 36.25,
-    "price_change": -0.25
+    "close_price": null,
+    "price_change": null
   },
   {
     "rank": 8,
@@ -172,8 +172,8 @@
     "latest_change": -0.58,
     "total_change": -0.81,
     "last_week_hold_pct": 50.25,
-    "close_price": 17.15,
-    "price_change": -0.35
+    "close_price": null,
+    "price_change": null
   },
   {
     "rank": 9,
@@ -194,7 +194,7 @@
     "latest_change": 0.0,
     "total_change": -2.29,
     "last_week_hold_pct": 62.41,
-    "close_price": 107.5,
-    "price_change": 0.0
+    "close_price": null,
+    "price_change": null
   }
 ]

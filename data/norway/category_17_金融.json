@@ -18,8 +18,8 @@
     "latest_change": -0.13,
     "total_change": 1.27,
     "last_week_hold_pct": 72.33,
-    "close_price": 50.5,
-    "price_change": 0.2
+    "close_price": 49.3,
+    "price_change": 0.45
   },
   {
     "rank": 2,
@@ -40,7 +40,7 @@
     "latest_change": 0.16,
     "total_change": 0.73,
     "last_week_hold_pct": 68.47,
-    "close_price": 165.0,
+    "close_price": 168.0,
     "price_change": -0.5
   },
   {
@@ -62,8 +62,8 @@
     "latest_change": 0.16,
     "total_change": 0.66,
     "last_week_hold_pct": 75.84,
-    "close_price": 28.2,
-    "price_change": 0.2
+    "close_price": 29.0,
+    "price_change": 0.1
   },
   {
     "rank": 4,
@@ -84,8 +84,8 @@
     "latest_change": -0.26,
     "total_change": 0.62,
     "last_week_hold_pct": 77.56,
-    "close_price": 55.0,
-    "price_change": -0.6
+    "close_price": 54.4,
+    "price_change": -1.6
   },
   {
     "rank": 5,
@@ -106,8 +106,8 @@
     "latest_change": 0.04,
     "total_change": 0.54,
     "last_week_hold_pct": 72.72,
-    "close_price": 42.35,
-    "price_change": 1.05
+    "close_price": 44.6,
+    "price_change": 0.15
   },
   {
     "rank": 6,
@@ -128,8 +128,8 @@
     "latest_change": 0.07,
     "total_change": 0.53,
     "last_week_hold_pct": 89.18,
-    "close_price": 54.6,
-    "price_change": 0.8
+    "close_price": 54.5,
+    "price_change": 0.0
   },
   {
     "rank": 7,
@@ -150,8 +150,8 @@
     "latest_change": 0.09,
     "total_change": 0.37,
     "last_week_hold_pct": 82.25,
-    "close_price": 74.9,
-    "price_change": 0.1
+    "close_price": 75.8,
+    "price_change": 0.5
   },
   {
     "rank": 8,
@@ -172,33 +172,11 @@
     "latest_change": 0.09,
     "total_change": 0.33,
     "last_week_hold_pct": 74.79,
-    "close_price": 49.75,
-    "price_change": 0.55
+    "close_price": 49.05,
+    "price_change": 0.05
   },
   {
     "rank": 9,
-    "stock_code": "2801",
-    "stock_name": "彰銀",
-    "is_taiwan50": false,
-    "category": "金融",
-    "threshold_code": 30,
-    "threshold_shares": 400,
-    "weekly_changes": {
-      "20260918": 0.01,
-      "20260924": -0.09,
-      "20261002": -0.03,
-      "20261008": -0.02,
-      "20261016": 0.27,
-      "20261022": 0.17
-    },
-    "latest_change": 0.17,
-    "total_change": 0.31,
-    "last_week_hold_pct": 78.12,
-    "close_price": 29.9,
-    "price_change": 0.3
-  },
-  {
-    "rank": 10,
     "stock_code": "6005",
     "stock_name": "群益證",
     "is_taiwan50": false,
@@ -216,8 +194,30 @@
     "latest_change": -0.28,
     "total_change": 0.31,
     "last_week_hold_pct": 70.4,
-    "close_price": 30.6,
-    "price_change": -0.4
+    "close_price": 30.7,
+    "price_change": -0.55
+  },
+  {
+    "rank": 10,
+    "stock_code": "2801",
+    "stock_name": "彰銀",
+    "is_taiwan50": false,
+    "category": "金融",
+    "threshold_code": 30,
+    "threshold_shares": 400,
+    "weekly_changes": {
+      "20260918": 0.01,
+      "20260924": -0.09,
+      "20261002": -0.03,
+      "20261008": -0.02,
+      "20261016": 0.27,
+      "20261022": 0.17
+    },
+    "latest_change": 0.17,
+    "total_change": 0.31,
+    "last_week_hold_pct": 78.12,
+    "close_price": 30.7,
+    "price_change": 0.2
   },
   {
     "rank": 11,
@@ -238,8 +238,8 @@
     "latest_change": 0.1,
     "total_change": 0.3,
     "last_week_hold_pct": 83.69,
-    "close_price": 55.2,
-    "price_change": 1.6
+    "close_price": 54.8,
+    "price_change": 0.0
   },
   {
     "rank": 12,
@@ -260,8 +260,8 @@
     "latest_change": -0.04,
     "total_change": 0.27,
     "last_week_hold_pct": 83.25,
-    "close_price": 72.4,
-    "price_change": 1.1
+    "close_price": 72.6,
+    "price_change": -0.8
   },
   {
     "rank": 13,
@@ -283,7 +283,7 @@
     "total_change": 0.21,
     "last_week_hold_pct": 86.68,
     "close_price": 10.9,
-    "price_change": 0.0
+    "price_change": 0.05
   },
   {
     "rank": 14,
@@ -304,33 +304,11 @@
     "latest_change": 0.17,
     "total_change": 0.18,
     "last_week_hold_pct": 75.88,
-    "close_price": 13.3,
-    "price_change": 0.05
+    "close_price": 13.25,
+    "price_change": 0.0
   },
   {
     "rank": 15,
-    "stock_code": "2890",
-    "stock_name": "永豐金",
-    "is_taiwan50": false,
-    "category": "金融",
-    "threshold_code": 31,
-    "threshold_shares": 400,
-    "weekly_changes": {
-      "20260918": 0.13,
-      "20260924": -0.01,
-      "20261002": -0.02,
-      "20261008": 0.11,
-      "20261016": -0.04,
-      "20261022": 0.0
-    },
-    "latest_change": 0.0,
-    "total_change": 0.17,
-    "last_week_hold_pct": 81.32,
-    "close_price": 46.35,
-    "price_change": 0.95
-  },
-  {
-    "rank": 16,
     "stock_code": "2880",
     "stock_name": "華南金",
     "is_taiwan50": false,
@@ -348,8 +326,30 @@
     "latest_change": 0.03,
     "total_change": 0.17,
     "last_week_hold_pct": 82.24,
-    "close_price": 50.3,
-    "price_change": 0.5
+    "close_price": 50.4,
+    "price_change": 0.3
+  },
+  {
+    "rank": 16,
+    "stock_code": "2890",
+    "stock_name": "永豐金",
+    "is_taiwan50": false,
+    "category": "金融",
+    "threshold_code": 31,
+    "threshold_shares": 400,
+    "weekly_changes": {
+      "20260918": 0.13,
+      "20260924": -0.01,
+      "20261002": -0.02,
+      "20261008": 0.11,
+      "20261016": -0.04,
+      "20261022": 0.0
+    },
+    "latest_change": 0.0,
+    "total_change": 0.17,
+    "last_week_hold_pct": 81.32,
+    "close_price": 46.5,
+    "price_change": 0.05
   },
   {
     "rank": 17,
@@ -370,8 +370,8 @@
     "latest_change": 0.02,
     "total_change": 0.13,
     "last_week_hold_pct": 86.91,
-    "close_price": 158.5,
-    "price_change": 0.0
+    "close_price": 161.5,
+    "price_change": -0.5
   },
   {
     "rank": 18,
@@ -392,7 +392,7 @@
     "latest_change": 0.01,
     "total_change": 0.11,
     "last_week_hold_pct": 86.03,
-    "close_price": 113.5,
+    "close_price": 116.0,
     "price_change": -0.5
   },
   {
@@ -414,8 +414,8 @@
     "latest_change": 0.0,
     "total_change": 0.05,
     "last_week_hold_pct": 98.53,
-    "close_price": 15.4,
-    "price_change": 0.25
+    "close_price": 16.0,
+    "price_change": 0.05
   },
   {
     "rank": 20,
@@ -436,8 +436,8 @@
     "latest_change": 0.05,
     "total_change": 0.04,
     "last_week_hold_pct": 75.66,
-    "close_price": 42.1,
-    "price_change": 0.15
+    "close_price": 42.25,
+    "price_change": -0.15
   },
   {
     "rank": 21,
@@ -458,8 +458,8 @@
     "latest_change": 0.06,
     "total_change": -0.01,
     "last_week_hold_pct": 69.15,
-    "close_price": 37.75,
-    "price_change": -0.5
+    "close_price": 37.8,
+    "price_change": -0.7
   },
   {
     "rank": 22,
@@ -480,8 +480,8 @@
     "latest_change": -0.03,
     "total_change": -0.05,
     "last_week_hold_pct": 90.43,
-    "close_price": 20.5,
-    "price_change": 0.15
+    "close_price": 20.6,
+    "price_change": 0.1
   },
   {
     "rank": 23,
@@ -503,7 +503,7 @@
     "total_change": -0.06,
     "last_week_hold_pct": 59.04,
     "close_price": 18.6,
-    "price_change": 0.0
+    "price_change": -0.05
   },
   {
     "rank": 24,
@@ -524,33 +524,11 @@
     "latest_change": -0.05,
     "total_change": -0.07,
     "last_week_hold_pct": 69.55,
-    "close_price": 57.5,
+    "close_price": 58.5,
     "price_change": -0.2
   },
   {
     "rank": 25,
-    "stock_code": "2816",
-    "stock_name": "旺旺保",
-    "is_taiwan50": false,
-    "category": "金融",
-    "threshold_code": 50,
-    "threshold_shares": 400,
-    "weekly_changes": {
-      "20260918": -0.18,
-      "20260924": -0.08,
-      "20261002": -0.11,
-      "20261008": 0.04,
-      "20261016": 0.1,
-      "20261022": 0.11
-    },
-    "latest_change": 0.11,
-    "total_change": -0.12,
-    "last_week_hold_pct": 81.11,
-    "close_price": 42.15,
-    "price_change": -1.1
-  },
-  {
-    "rank": 26,
     "stock_code": "2836",
     "stock_name": "高雄銀",
     "is_taiwan50": false,
@@ -568,8 +546,30 @@
     "latest_change": -0.03,
     "total_change": -0.12,
     "last_week_hold_pct": 85.43,
-    "close_price": 12.0,
+    "close_price": 12.05,
     "price_change": 0.0
+  },
+  {
+    "rank": 26,
+    "stock_code": "2816",
+    "stock_name": "旺旺保",
+    "is_taiwan50": false,
+    "category": "金融",
+    "threshold_code": 50,
+    "threshold_shares": 400,
+    "weekly_changes": {
+      "20260918": -0.18,
+      "20260924": -0.08,
+      "20261002": -0.11,
+      "20261008": 0.04,
+      "20261016": 0.1,
+      "20261022": 0.11
+    },
+    "latest_change": 0.11,
+    "total_change": -0.12,
+    "last_week_hold_pct": 81.11,
+    "close_price": 41.55,
+    "price_change": -0.2
   },
   {
     "rank": 27,
@@ -590,8 +590,8 @@
     "latest_change": -0.33,
     "total_change": -0.17,
     "last_week_hold_pct": 69.04,
-    "close_price": 55.7,
-    "price_change": 0.0
+    "close_price": 56.0,
+    "price_change": -0.3
   },
   {
     "rank": 28,
@@ -612,8 +612,8 @@
     "latest_change": -0.22,
     "total_change": -0.32,
     "last_week_hold_pct": 65.49,
-    "close_price": 16.6,
-    "price_change": -0.05
+    "close_price": 16.75,
+    "price_change": 0.0
   },
   {
     "rank": 29,
@@ -634,8 +634,8 @@
     "latest_change": 0.14,
     "total_change": -0.38,
     "last_week_hold_pct": 60.45,
-    "close_price": 17.9,
-    "price_change": 0.0
+    "close_price": 18.05,
+    "price_change": 0.05
   },
   {
     "rank": 30,
@@ -656,8 +656,8 @@
     "latest_change": 0.09,
     "total_change": -0.56,
     "last_week_hold_pct": 71.86,
-    "close_price": 16.95,
-    "price_change": 0.05
+    "close_price": 17.15,
+    "price_change": -0.05
   },
   {
     "rank": 31,
@@ -678,33 +678,11 @@
     "latest_change": -0.09,
     "total_change": -0.67,
     "last_week_hold_pct": 66.07,
-    "close_price": 27.85,
+    "close_price": 28.1,
     "price_change": 0.0
   },
   {
     "rank": 32,
-    "stock_code": "2809",
-    "stock_name": "京城銀",
-    "is_taiwan50": false,
-    "category": "金融",
-    "threshold_code": 32,
-    "threshold_shares": 0,
-    "weekly_changes": {
-      "20260918": 0.0,
-      "20260924": 0.0,
-      "20261002": 0.0,
-      "20261008": 0.0,
-      "20261016": 0.0,
-      "20261022": 0.0
-    },
-    "latest_change": 0.0,
-    "total_change": 0.0,
-    "last_week_hold_pct": 0.0,
-    "close_price": null,
-    "price_change": null
-  },
-  {
-    "rank": 33,
     "stock_code": "2867",
     "stock_name": "三商壽",
     "is_taiwan50": false,
@@ -726,9 +704,31 @@
     "price_change": null
   },
   {
-    "rank": 34,
+    "rank": 33,
     "stock_code": "2888",
     "stock_name": "新光金",
+    "is_taiwan50": false,
+    "category": "金融",
+    "threshold_code": 32,
+    "threshold_shares": 0,
+    "weekly_changes": {
+      "20260918": 0.0,
+      "20260924": 0.0,
+      "20261002": 0.0,
+      "20261008": 0.0,
+      "20261016": 0.0,
+      "20261022": 0.0
+    },
+    "latest_change": 0.0,
+    "total_change": 0.0,
+    "last_week_hold_pct": 0.0,
+    "close_price": null,
+    "price_change": null
+  },
+  {
+    "rank": 34,
+    "stock_code": "2809",
+    "stock_name": "京城銀",
     "is_taiwan50": false,
     "category": "金融",
     "threshold_code": 32,
