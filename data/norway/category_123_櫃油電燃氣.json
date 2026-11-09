@@ -1,90 +1,90 @@
 [
   {
     "rank": 1,
-    "stock_code": "8931",
-    "stock_name": "大汽電",
-    "is_taiwan50": false,
-    "category": "櫃油電燃氣",
-    "threshold_code": 10,
-    "threshold_shares": 1000,
-    "weekly_changes": {
-      "20260918": 0.61,
-      "20260924": -0.05,
-      "20261002": -0.07,
-      "20261008": 0.08,
-      "20261016": 0.04,
-      "20261022": 0.02
-    },
-    "latest_change": 0.02,
-    "total_change": 0.63,
-    "last_week_hold_pct": 82.1,
-    "close_price": null,
-    "price_change": null
-  },
-  {
-    "rank": 2,
     "stock_code": "8917",
     "stock_name": "欣泰",
     "is_taiwan50": false,
     "category": "櫃油電燃氣",
-    "threshold_code": 32,
-    "threshold_shares": 0,
+    "threshold_code": 30,
+    "threshold_shares": 400,
     "weekly_changes": {
-      "20260918": -0.02,
-      "20260924": 0.01,
       "20261002": 0.0,
       "20261008": 0.0,
       "20261016": 0.0,
-      "20261022": 0.0
+      "20261022": 0.0,
+      "20261030": 0.24,
+      "20261106": 0.03
     },
-    "latest_change": 0.0,
-    "total_change": -0.01,
-    "last_week_hold_pct": 82.66,
-    "close_price": null,
-    "price_change": null
+    "latest_change": 0.03,
+    "total_change": 0.27,
+    "last_week_hold_pct": 82.93,
+    "close_price": 51.0,
+    "price_change": -0.7
+  },
+  {
+    "rank": 2,
+    "stock_code": "8931",
+    "stock_name": "大汽電",
+    "is_taiwan50": false,
+    "category": "櫃油電燃氣",
+    "threshold_code": 50,
+    "threshold_shares": 400,
+    "weekly_changes": {
+      "20261002": -0.07,
+      "20261008": 0.08,
+      "20261016": 0.04,
+      "20261022": 0.02,
+      "20261030": 0.07,
+      "20261106": 0.12
+    },
+    "latest_change": 0.12,
+    "total_change": 0.26,
+    "last_week_hold_pct": 82.29,
+    "close_price": 41.3,
+    "price_change": -0.15
   },
   {
     "rank": 3,
-    "stock_code": "8908",
-    "stock_name": "欣雄",
+    "stock_code": "8927",
+    "stock_name": "北基",
     "is_taiwan50": false,
     "category": "櫃油電燃氣",
-    "threshold_code": 41,
-    "threshold_shares": 0,
+    "threshold_code": 50,
+    "threshold_shares": 400,
     "weekly_changes": {
-      "20260918": 0.03,
-      "20260924": 0.03,
-      "20261002": -0.12,
+      "20261002": 0.05,
       "20261008": 0.0,
-      "20261016": 0.0,
-      "20261022": 0.01
+      "20261016": -0.13,
+      "20261022": -0.02,
+      "20261030": 0.0,
+      "20261106": 0.04
     },
-    "latest_change": 0.01,
-    "total_change": -0.05,
-    "last_week_hold_pct": 89.08,
-    "close_price": 39.6,
-    "price_change": -0.75
+    "latest_change": 0.04,
+    "total_change": -0.06,
+    "last_week_hold_pct": 83.66,
+    "close_price": 14.95,
+    "price_change": 0.0
   },
   {
     "rank": 4,
-    "stock_code": "8927",
-    "stock_name": "北基",
+    "stock_code": "8908",
+    "stock_name": "欣雄",
     "is_taiwan50": false,
     "category": "櫃油電燃氣",
     "threshold_code": 31,
     "threshold_shares": 400,
     "weekly_changes": {
-      "20260918": -0.06,
-      "20260924": 0.09,
-      "20261002": 0.05,
+      "20261002": -0.12,
       "20261008": 0.0,
-      "20261016": -0.13,
-      "20261022": -0.02
+      "20261016": 0.0,
+      "20261022": 0.01,
+      "20261030": -0.01,
+      "20261106": 0.0
     },
-    "latest_change": -0.02,
-    "total_change": -0.07,
-    "last_week_hold_pct": 83.62,
-    "close_price": null,
-    "price_change": null
+    "latest_change": 0.0,
+    "total_change": -0.12,
+    "last_week_hold_pct": 89.07,
+    "close_price": 38.85,
+    "price_change": -0.35
   }
 ]
