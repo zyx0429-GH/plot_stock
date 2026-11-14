@@ -1,47 +1,47 @@
 [
   {
     "rank": 1,
+    "stock_code": "6148",
+    "stock_name": "驊宏資",
+    "is_taiwan50": false,
+    "category": "櫃資訊服務",
+    "threshold_code": 31,
+    "threshold_shares": 400,
+    "weekly_changes": {
+      "20261008": 0.0,
+      "20261016": 0.87,
+      "20261022": 0.05,
+      "20261030": 0.08,
+      "20261106": 0.05,
+      "20261113": 3.6
+    },
+    "latest_change": 3.6,
+    "total_change": 4.65,
+    "last_week_hold_pct": 40.77,
+    "close_price": 58.1,
+    "price_change": 5.2
+  },
+  {
+    "rank": 2,
     "stock_code": "4953",
     "stock_name": "緯致",
     "is_taiwan50": false,
     "category": "櫃資訊服務",
-    "threshold_code": 30,
+    "threshold_code": 31,
     "threshold_shares": 400,
     "weekly_changes": {
-      "20261002": -0.63,
       "20261008": -1.15,
       "20261016": 1.03,
       "20261022": 1.33,
       "20261030": 3.85,
-      "20261106": -1.18
+      "20261106": -1.18,
+      "20261113": 0.52
     },
-    "latest_change": -1.18,
-    "total_change": 3.25,
-    "last_week_hold_pct": 49.28,
-    "close_price": 109.0,
-    "price_change": -2.5
-  },
-  {
-    "rank": 2,
-    "stock_code": "5202",
-    "stock_name": "力新",
-    "is_taiwan50": false,
-    "category": "櫃資訊服務",
-    "threshold_code": 50,
-    "threshold_shares": 400,
-    "weekly_changes": {
-      "20261002": -0.01,
-      "20261008": 0.02,
-      "20261016": 0.52,
-      "20261022": -0.44,
-      "20261030": -0.01,
-      "20261106": 2.46
-    },
-    "latest_change": 2.46,
-    "total_change": 2.54,
-    "last_week_hold_pct": 55.4,
-    "close_price": 18.3,
-    "price_change": 1.65
+    "latest_change": 0.52,
+    "total_change": 4.4,
+    "last_week_hold_pct": 49.8,
+    "close_price": 119.0,
+    "price_change": 6.5
   },
   {
     "rank": 3,
@@ -49,21 +49,21 @@
     "stock_name": "大世科",
     "is_taiwan50": false,
     "category": "櫃資訊服務",
-    "threshold_code": 30,
+    "threshold_code": 31,
     "threshold_shares": 400,
     "weekly_changes": {
-      "20261002": -0.07,
       "20261008": 0.0,
       "20261016": 0.51,
       "20261022": 0.08,
       "20261030": 2.0,
-      "20261106": -0.13
+      "20261106": -0.13,
+      "20261113": 0.66
     },
-    "latest_change": -0.13,
-    "total_change": 2.39,
-    "last_week_hold_pct": 84.16,
-    "close_price": 148.5,
-    "price_change": -3.5
+    "latest_change": 0.66,
+    "total_change": 3.12,
+    "last_week_hold_pct": 84.82,
+    "close_price": 182.0,
+    "price_change": 16.5
   },
   {
     "rank": 4,
@@ -71,68 +71,112 @@
     "stock_name": "大綜",
     "is_taiwan50": false,
     "category": "櫃資訊服務",
-    "threshold_code": 30,
+    "threshold_code": 31,
     "threshold_shares": 400,
     "weekly_changes": {
-      "20261002": -0.15,
       "20261008": -0.11,
       "20261016": 1.52,
       "20261022": 0.92,
       "20261030": 1.18,
-      "20261106": -1.2
+      "20261106": -1.2,
+      "20261113": 0.6
     },
-    "latest_change": -1.2,
-    "total_change": 2.16,
-    "last_week_hold_pct": 56.97,
-    "close_price": 290.5,
-    "price_change": -4.5
+    "latest_change": 0.6,
+    "total_change": 2.91,
+    "last_week_hold_pct": 57.57,
+    "close_price": 313.0,
+    "price_change": -13.0
   },
   {
     "rank": 5,
-    "stock_code": "6593",
-    "stock_name": "台灣銘板",
+    "stock_code": "5202",
+    "stock_name": "力新",
     "is_taiwan50": false,
     "category": "櫃資訊服務",
     "threshold_code": 30,
     "threshold_shares": 400,
     "weekly_changes": {
-      "20261002": 0.02,
-      "20261008": 0.03,
-      "20261016": -0.01,
-      "20261022": 0.09,
-      "20261030": 1.36,
-      "20261106": 0.35
+      "20261008": 0.02,
+      "20261016": 0.52,
+      "20261022": -0.44,
+      "20261030": -0.01,
+      "20261106": 2.46,
+      "20261113": -0.11
     },
-    "latest_change": 0.35,
-    "total_change": 1.84,
-    "last_week_hold_pct": 47.85,
-    "close_price": 30.9,
-    "price_change": -0.4
+    "latest_change": -0.11,
+    "total_change": 2.44,
+    "last_week_hold_pct": 55.29,
+    "close_price": 20.35,
+    "price_change": 0.95
   },
   {
     "rank": 6,
+    "stock_code": "6751",
+    "stock_name": "智聯服務",
+    "is_taiwan50": false,
+    "category": "櫃資訊服務",
+    "threshold_code": 50,
+    "threshold_shares": 400,
+    "weekly_changes": {
+      "20261008": 0.02,
+      "20261016": 0.02,
+      "20261022": 0.0,
+      "20261030": 0.0,
+      "20261106": 0.02,
+      "20261113": 2.1
+    },
+    "latest_change": 2.1,
+    "total_change": 2.16,
+    "last_week_hold_pct": 66.99,
+    "close_price": 103.0,
+    "price_change": -2.5
+  },
+  {
+    "rank": 7,
+    "stock_code": "8272",
+    "stock_name": "全景軟體",
+    "is_taiwan50": false,
+    "category": "櫃資訊服務",
+    "threshold_code": 31,
+    "threshold_shares": 400,
+    "weekly_changes": {
+      "20261008": 0.0,
+      "20261016": 0.0,
+      "20261022": 0.0,
+      "20261030": -0.05,
+      "20261106": -0.12,
+      "20261113": 2.14
+    },
+    "latest_change": 2.14,
+    "total_change": 1.97,
+    "last_week_hold_pct": 40.03,
+    "close_price": 109.0,
+    "price_change": 9.5
+  },
+  {
+    "rank": 8,
     "stock_code": "5310",
     "stock_name": "天剛",
     "is_taiwan50": false,
     "category": "櫃資訊服務",
-    "threshold_code": 30,
-    "threshold_shares": 400,
+    "threshold_code": 10,
+    "threshold_shares": 1000,
     "weekly_changes": {
-      "20261002": 0.0,
       "20261008": 0.08,
       "20261016": 0.26,
       "20261022": 0.0,
       "20261030": 0.74,
-      "20261106": 0.17
+      "20261106": 0.17,
+      "20261113": 0.05
     },
-    "latest_change": 0.17,
-    "total_change": 1.25,
-    "last_week_hold_pct": 58.36,
-    "close_price": 23.3,
-    "price_change": -0.6
+    "latest_change": 0.05,
+    "total_change": 1.3,
+    "last_week_hold_pct": 58.41,
+    "close_price": 24.0,
+    "price_change": 0.35
   },
   {
-    "rank": 7,
+    "rank": 9,
     "stock_code": "6874",
     "stock_name": "倍力",
     "is_taiwan50": false,
@@ -140,106 +184,62 @@
     "threshold_code": 50,
     "threshold_shares": 400,
     "weekly_changes": {
-      "20261002": -0.01,
       "20261008": 0.01,
       "20261016": 4.16,
       "20261022": -2.82,
       "20261030": -0.06,
-      "20261106": -0.03
+      "20261106": -0.03,
+      "20261113": 0.04
     },
-    "latest_change": -0.03,
-    "total_change": 1.25,
-    "last_week_hold_pct": 54.87,
-    "close_price": 68.1,
-    "price_change": -4.2
+    "latest_change": 0.04,
+    "total_change": 1.3,
+    "last_week_hold_pct": 54.91,
+    "close_price": 75.3,
+    "price_change": 5.5
   },
   {
-    "rank": 8,
-    "stock_code": "5201",
-    "stock_name": "凱衛",
-    "is_taiwan50": false,
-    "category": "櫃資訊服務",
-    "threshold_code": 50,
-    "threshold_shares": 400,
-    "weekly_changes": {
-      "20261002": 0.22,
-      "20261008": 0.64,
-      "20261016": -0.38,
-      "20261022": -0.17,
-      "20261030": 0.03,
-      "20261106": 0.81
-    },
-    "latest_change": 0.81,
-    "total_change": 1.15,
-    "last_week_hold_pct": 57.77,
-    "close_price": 25.5,
-    "price_change": 0.0
-  },
-  {
-    "rank": 9,
+    "rank": 10,
     "stock_code": "6231",
     "stock_name": "系微",
     "is_taiwan50": false,
     "category": "櫃資訊服務",
-    "threshold_code": 30,
+    "threshold_code": 31,
     "threshold_shares": 400,
     "weekly_changes": {
-      "20261002": 0.01,
       "20261008": 1.09,
       "20261016": 0.1,
       "20261022": -0.16,
       "20261030": 0.28,
-      "20261106": -0.2
+      "20261106": -0.2,
+      "20261113": 0.19
     },
-    "latest_change": -0.2,
-    "total_change": 1.12,
-    "last_week_hold_pct": 34.03,
-    "close_price": 188.5,
-    "price_change": -8.5
-  },
-  {
-    "rank": 10,
-    "stock_code": "6240",
-    "stock_name": "松崗",
-    "is_taiwan50": false,
-    "category": "櫃資訊服務",
-    "threshold_code": 10,
-    "threshold_shares": 1000,
-    "weekly_changes": {
-      "20261002": 0.14,
-      "20261008": 0.07,
-      "20261016": 0.36,
-      "20261022": 1.07,
-      "20261030": -0.27,
-      "20261106": -0.3
-    },
-    "latest_change": -0.3,
-    "total_change": 1.07,
-    "last_week_hold_pct": 86.61,
-    "close_price": 26.2,
-    "price_change": -2.6
+    "latest_change": 0.19,
+    "total_change": 1.3,
+    "last_week_hold_pct": 34.22,
+    "close_price": 205.0,
+    "price_change": 18.5
   },
   {
     "rank": 11,
-    "stock_code": "6148",
-    "stock_name": "驊宏資",
+    "stock_code": "5201",
+    "stock_name": "凱衛",
     "is_taiwan50": false,
     "category": "櫃資訊服務",
     "threshold_code": 30,
     "threshold_shares": 400,
     "weekly_changes": {
-      "20261002": 0.0,
-      "20261008": 0.0,
-      "20261016": 0.87,
-      "20261022": 0.05,
-      "20261030": 0.08,
-      "20261106": 0.05
+      "20261008": 0.64,
+      "20261016": -0.38,
+      "20261022": -0.17,
+      "20261030": 0.03,
+      "20261106": 0.81,
+      "20261113": 0.31
     },
-    "latest_change": 0.05,
-    "total_change": 1.05,
-    "last_week_hold_pct": 37.17,
-    "close_price": 42.9,
-    "price_change": -0.5
+    "latest_change": 0.31,
+    "total_change": 1.24,
+    "last_week_hold_pct": 58.08,
+    "close_price": 28.2,
+    "price_change": 0.4
   },
   {
     "rank": 12,
@@ -247,134 +247,112 @@
     "stock_name": "普鴻",
     "is_taiwan50": false,
     "category": "櫃資訊服務",
-    "threshold_code": 30,
+    "threshold_code": 31,
     "threshold_shares": 400,
     "weekly_changes": {
-      "20261002": -0.02,
       "20261008": 0.1,
       "20261016": 0.42,
       "20261022": -0.04,
       "20261030": -0.01,
-      "20261106": -0.08
+      "20261106": -0.08,
+      "20261113": 0.01
     },
-    "latest_change": -0.08,
-    "total_change": 0.37,
-    "last_week_hold_pct": 57.25,
-    "close_price": 80.4,
-    "price_change": -8.9
+    "latest_change": 0.01,
+    "total_change": 0.4,
+    "last_week_hold_pct": 57.26,
+    "close_price": 90.3,
+    "price_change": 6.9
   },
   {
     "rank": 13,
-    "stock_code": "6751",
-    "stock_name": "智聯服務",
+    "stock_code": "5410",
+    "stock_name": "國眾",
     "is_taiwan50": false,
     "category": "櫃資訊服務",
-    "threshold_code": 41,
-    "threshold_shares": 0,
+    "threshold_code": 10,
+    "threshold_shares": 1000,
     "weekly_changes": {
-      "20261002": 0.06,
-      "20261008": 0.02,
-      "20261016": 0.02,
-      "20261022": 0.0,
-      "20261030": 0.0,
-      "20261106": 0.02
+      "20261008": -0.01,
+      "20261016": -0.31,
+      "20261022": -0.48,
+      "20261030": 0.67,
+      "20261106": 0.34,
+      "20261113": -0.07
     },
-    "latest_change": 0.02,
-    "total_change": 0.12,
-    "last_week_hold_pct": 64.89,
-    "close_price": 72.4,
-    "price_change": 6.5
+    "latest_change": -0.07,
+    "total_change": 0.14,
+    "last_week_hold_pct": 33.79,
+    "close_price": 33.4,
+    "price_change": 1.25
   },
   {
     "rank": 14,
-    "stock_code": "6697",
-    "stock_name": "東捷資訊",
+    "stock_code": "5403",
+    "stock_name": "中菲",
     "is_taiwan50": false,
     "category": "櫃資訊服務",
     "threshold_code": 20,
     "threshold_shares": 0,
     "weekly_changes": {
-      "20261002": 0.06,
-      "20261008": 0.0,
-      "20261016": 0.0,
-      "20261022": 0.0,
-      "20261030": 0.0,
-      "20261106": -0.01
-    },
-    "latest_change": -0.01,
-    "total_change": 0.05,
-    "last_week_hold_pct": 66.81,
-    "close_price": 54.9,
-    "price_change": -2.1
-  },
-  {
-    "rank": 15,
-    "stock_code": "5403",
-    "stock_name": "中菲",
-    "is_taiwan50": false,
-    "category": "櫃資訊服務",
-    "threshold_code": 40,
-    "threshold_shares": 200,
-    "weekly_changes": {
-      "20261002": -0.07,
       "20261008": 0.03,
       "20261016": 0.05,
       "20261022": 0.0,
       "20261030": 0.02,
-      "20261106": 0.02
+      "20261106": 0.02,
+      "20261113": 0.01
     },
-    "latest_change": 0.02,
-    "total_change": 0.05,
-    "last_week_hold_pct": 47.21,
-    "close_price": 84.9,
-    "price_change": -1.2
+    "latest_change": 0.01,
+    "total_change": 0.13,
+    "last_week_hold_pct": 47.22,
+    "close_price": 89.7,
+    "price_change": 1.2
   },
   {
-    "rank": 16,
-    "stock_code": "3570",
-    "stock_name": "大塚",
-    "is_taiwan50": false,
-    "category": "櫃資訊服務",
-    "threshold_code": 32,
-    "threshold_shares": 0,
-    "weekly_changes": {
-      "20261002": 0.0,
-      "20261008": 0.0,
-      "20261016": 0.03,
-      "20261022": 0.0,
-      "20261030": 0.0,
-      "20261106": 0.0
-    },
-    "latest_change": 0.0,
-    "total_change": 0.03,
-    "last_week_hold_pct": 54.07,
-    "close_price": 154.5,
-    "price_change": -4.5
-  },
-  {
-    "rank": 17,
+    "rank": 15,
     "stock_code": "6791",
     "stock_name": "虎門科技",
     "is_taiwan50": false,
     "category": "櫃資訊服務",
-    "threshold_code": 32,
+    "threshold_code": 41,
     "threshold_shares": 0,
     "weekly_changes": {
-      "20261002": 0.0,
       "20261008": 0.03,
       "20261016": 0.0,
       "20261022": 0.0,
       "20261030": 0.0,
-      "20261106": 0.0
+      "20261106": 0.0,
+      "20261113": 0.04
     },
-    "latest_change": 0.0,
-    "total_change": 0.03,
-    "last_week_hold_pct": 74.32,
-    "close_price": 84.6,
-    "price_change": -1.4
+    "latest_change": 0.04,
+    "total_change": 0.07,
+    "last_week_hold_pct": 74.36,
+    "close_price": 93.6,
+    "price_change": 5.6
   },
   {
-    "rank": 18,
+    "rank": 16,
+    "stock_code": "6516",
+    "stock_name": "勤崴國際",
+    "is_taiwan50": false,
+    "category": "櫃資訊服務",
+    "threshold_code": 31,
+    "threshold_shares": 400,
+    "weekly_changes": {
+      "20261008": 0.01,
+      "20261016": -0.01,
+      "20261022": 0.05,
+      "20261030": 0.0,
+      "20261106": -0.07,
+      "20261113": 0.08
+    },
+    "latest_change": 0.08,
+    "total_change": 0.06,
+    "last_week_hold_pct": 53.48,
+    "close_price": 58.0,
+    "price_change": 2.4
+  },
+  {
+    "rank": 17,
     "stock_code": "7819",
     "stock_name": "精誠金融",
     "is_taiwan50": false,
@@ -382,43 +360,87 @@
     "threshold_code": 32,
     "threshold_shares": 0,
     "weekly_changes": {
-      "20261002": 0.0,
       "20261008": 0.03,
       "20261016": 0.0,
       "20261022": 0.0,
       "20261030": 0.0,
-      "20261106": 0.0
+      "20261106": 0.0,
+      "20261113": 0.0
     },
     "latest_change": 0.0,
     "total_change": 0.03,
     "last_week_hold_pct": 59.17,
-    "close_price": 37.1,
-    "price_change": -2.2
+    "close_price": 40.0,
+    "price_change": 0.9
   },
   {
-    "rank": 19,
+    "rank": 18,
     "stock_code": "8416",
     "stock_name": "實威",
     "is_taiwan50": false,
     "category": "櫃資訊服務",
-    "threshold_code": 21,
+    "threshold_code": 41,
     "threshold_shares": 0,
     "weekly_changes": {
-      "20261002": 0.01,
       "20261008": 0.0,
       "20261016": 0.0,
       "20261022": 0.01,
       "20261030": 0.0,
-      "20261106": 0.0
+      "20261106": 0.0,
+      "20261113": 0.02
+    },
+    "latest_change": 0.02,
+    "total_change": 0.03,
+    "last_week_hold_pct": 77.17,
+    "close_price": 175.5,
+    "price_change": 4.5
+  },
+  {
+    "rank": 19,
+    "stock_code": "3570",
+    "stock_name": "大塚",
+    "is_taiwan50": false,
+    "category": "櫃資訊服務",
+    "threshold_code": 32,
+    "threshold_shares": 0,
+    "weekly_changes": {
+      "20261008": 0.0,
+      "20261016": 0.03,
+      "20261022": 0.0,
+      "20261030": 0.0,
+      "20261106": 0.0,
+      "20261113": 0.0
     },
     "latest_change": 0.0,
-    "total_change": 0.02,
-    "last_week_hold_pct": 77.15,
-    "close_price": 164.0,
-    "price_change": -3.0
+    "total_change": 0.03,
+    "last_week_hold_pct": 54.07,
+    "close_price": 204.5,
+    "price_change": 18.5
   },
   {
     "rank": 20,
+    "stock_code": "6884",
+    "stock_name": "海柏特",
+    "is_taiwan50": false,
+    "category": "櫃資訊服務",
+    "threshold_code": 32,
+    "threshold_shares": 0,
+    "weekly_changes": {
+      "20261008": 0.0,
+      "20261016": 0.0,
+      "20261022": 0.0,
+      "20261030": 0.0,
+      "20261106": 0.0,
+      "20261113": 0.0
+    },
+    "latest_change": 0.0,
+    "total_change": 0.0,
+    "last_week_hold_pct": 73.02,
+    "close_price": 32.0,
+    "price_change": 0.5
+  },
+  {
+    "rank": 21,
     "stock_code": "5211",
     "stock_name": "蒙恬",
     "is_taiwan50": false,
@@ -426,21 +448,21 @@
     "threshold_code": 32,
     "threshold_shares": 0,
     "weekly_changes": {
-      "20261002": 0.0,
       "20261008": 0.0,
       "20261016": 0.0,
       "20261022": 0.0,
       "20261030": 0.0,
-      "20261106": 0.0
+      "20261106": 0.0,
+      "20261113": 0.0
     },
     "latest_change": 0.0,
     "total_change": 0.0,
     "last_week_hold_pct": 47.97,
-    "close_price": 17.95,
-    "price_change": -1.6
+    "close_price": 18.45,
+    "price_change": 0.45
   },
   {
-    "rank": 21,
+    "rank": 22,
     "stock_code": "8284",
     "stock_name": "三竹",
     "is_taiwan50": false,
@@ -448,21 +470,21 @@
     "threshold_code": 32,
     "threshold_shares": 0,
     "weekly_changes": {
-      "20261002": 0.0,
       "20261008": 0.0,
       "20261016": 0.0,
       "20261022": 0.0,
       "20261030": 0.0,
-      "20261106": 0.0
+      "20261106": 0.0,
+      "20261113": 0.0
     },
     "latest_change": 0.0,
     "total_change": 0.0,
     "last_week_hold_pct": 64.42,
-    "close_price": 66.0,
-    "price_change": -0.2
+    "close_price": 65.6,
+    "price_change": 0.0
   },
   {
-    "rank": 22,
+    "rank": 23,
     "stock_code": "6404",
     "stock_name": "通訊-KY",
     "is_taiwan50": false,
@@ -470,12 +492,12 @@
     "threshold_code": 32,
     "threshold_shares": 0,
     "weekly_changes": {
-      "20261002": 0.0,
       "20261008": 0.0,
       "20261016": 0.0,
       "20261022": 0.0,
       "20261030": 0.0,
-      "20261106": 0.0
+      "20261106": 0.0,
+      "20261113": 0.0
     },
     "latest_change": 0.0,
     "total_change": 0.0,
@@ -484,70 +506,48 @@
     "price_change": null
   },
   {
-    "rank": 23,
-    "stock_code": "6884",
-    "stock_name": "海柏特",
+    "rank": 24,
+    "stock_code": "3158",
+    "stock_name": "嘉實",
     "is_taiwan50": false,
     "category": "櫃資訊服務",
     "threshold_code": 32,
     "threshold_shares": 0,
     "weekly_changes": {
-      "20261002": 0.0,
       "20261008": 0.0,
       "20261016": 0.0,
-      "20261022": 0.0,
+      "20261022": -0.02,
       "20261030": 0.0,
-      "20261106": 0.0
+      "20261106": 0.0,
+      "20261113": 0.0
     },
     "latest_change": 0.0,
-    "total_change": 0.0,
-    "last_week_hold_pct": 73.02,
-    "close_price": 30.4,
-    "price_change": -0.8
-  },
-  {
-    "rank": 24,
-    "stock_code": "5410",
-    "stock_name": "國眾",
-    "is_taiwan50": false,
-    "category": "櫃資訊服務",
-    "threshold_code": 30,
-    "threshold_shares": 400,
-    "weekly_changes": {
-      "20261002": -0.22,
-      "20261008": -0.01,
-      "20261016": -0.31,
-      "20261022": -0.48,
-      "20261030": 0.67,
-      "20261106": 0.34
-    },
-    "latest_change": 0.34,
-    "total_change": -0.01,
-    "last_week_hold_pct": 33.86,
-    "close_price": 32.35,
-    "price_change": -0.55
+    "total_change": -0.02,
+    "last_week_hold_pct": 36.08,
+    "close_price": 83.5,
+    "price_change": 1.1
   },
   {
     "rank": 25,
-    "stock_code": "6516",
-    "stock_name": "勤崴國際",
+    "stock_code": "6697",
+    "stock_name": "東捷資訊",
     "is_taiwan50": false,
     "category": "櫃資訊服務",
     "threshold_code": 10,
     "threshold_shares": 1000,
     "weekly_changes": {
-      "20261002": 0.0,
-      "20261008": 0.01,
-      "20261016": -0.01,
-      "20261022": 0.05,
+      "20261008": 0.0,
+      "20261016": 0.0,
+      "20261022": 0.0,
       "20261030": 0.0,
-      "20261106": -0.07
+      "20261106": -0.01,
+      "20261113": -0.03
     },
-    "latest_change": -0.07,
-    "total_change": -0.02,
-    "last_week_hold_pct": 53.4,
-    "close_price": 50.8,
-    "price_change": 0.0
+    "latest_change": -0.03,
+    "total_change": -0.04,
+    "last_week_hold_pct": 66.78,
+    "close_price": 80.6,
+    "price_change": 7.3
   },
   {
     "rank": 26,
@@ -555,153 +555,153 @@
     "stock_name": "凌網",
     "is_taiwan50": false,
     "category": "櫃資訊服務",
-    "threshold_code": 32,
+    "threshold_code": 20,
     "threshold_shares": 0,
     "weekly_changes": {
-      "20261002": 0.0,
       "20261008": 0.0,
       "20261016": -0.03,
       "20261022": 0.0,
       "20261030": 0.0,
-      "20261106": 0.0
+      "20261106": 0.0,
+      "20261113": -0.01
     },
-    "latest_change": 0.0,
-    "total_change": -0.03,
-    "last_week_hold_pct": 78.38,
-    "close_price": 48.4,
-    "price_change": 0.65
+    "latest_change": -0.01,
+    "total_change": -0.04,
+    "last_week_hold_pct": 78.37,
+    "close_price": 51.6,
+    "price_change": 2.1
   },
   {
     "rank": 27,
-    "stock_code": "3158",
-    "stock_name": "嘉實",
-    "is_taiwan50": false,
-    "category": "櫃資訊服務",
-    "threshold_code": 40,
-    "threshold_shares": 200,
-    "weekly_changes": {
-      "20261002": -0.01,
-      "20261008": 0.0,
-      "20261016": 0.0,
-      "20261022": -0.02,
-      "20261030": 0.0,
-      "20261106": 0.0
-    },
-    "latest_change": 0.0,
-    "total_change": -0.03,
-    "last_week_hold_pct": 36.08,
-    "close_price": 81.4,
-    "price_change": -1.6
-  },
-  {
-    "rank": 28,
     "stock_code": "6752",
     "stock_name": "叡揚",
-    "is_taiwan50": false,
-    "category": "櫃資訊服務",
-    "threshold_code": 50,
-    "threshold_shares": 400,
-    "weekly_changes": {
-      "20261002": 0.0,
-      "20261008": -0.09,
-      "20261016": 0.02,
-      "20261022": -0.12,
-      "20261030": 0.0,
-      "20261106": 0.04
-    },
-    "latest_change": 0.04,
-    "total_change": -0.15,
-    "last_week_hold_pct": 47.63,
-    "close_price": 83.6,
-    "price_change": -9.2
-  },
-  {
-    "rank": 29,
-    "stock_code": "8272",
-    "stock_name": "全景軟體",
-    "is_taiwan50": false,
-    "category": "櫃資訊服務",
-    "threshold_code": 10,
-    "threshold_shares": 1000,
-    "weekly_changes": {
-      "20261002": 0.0,
-      "20261008": 0.0,
-      "20261016": 0.0,
-      "20261022": 0.0,
-      "20261030": -0.05,
-      "20261106": -0.12
-    },
-    "latest_change": -0.12,
-    "total_change": -0.17,
-    "last_week_hold_pct": 37.89,
-    "close_price": 88.3,
-    "price_change": -4.4
-  },
-  {
-    "rank": 30,
-    "stock_code": "6221",
-    "stock_name": "晉泰",
-    "is_taiwan50": false,
-    "category": "櫃資訊服務",
-    "threshold_code": 10,
-    "threshold_shares": 1000,
-    "weekly_changes": {
-      "20261002": 0.0,
-      "20261008": 0.22,
-      "20261016": 0.11,
-      "20261022": -0.01,
-      "20261030": -0.13,
-      "20261106": -0.4
-    },
-    "latest_change": -0.4,
-    "total_change": -0.21,
-    "last_week_hold_pct": 74.17,
-    "close_price": 37.55,
-    "price_change": -1.3
-  },
-  {
-    "rank": 31,
-    "stock_code": "5210",
-    "stock_name": "寶碩",
-    "is_taiwan50": false,
-    "category": "櫃資訊服務",
-    "threshold_code": 31,
-    "threshold_shares": 400,
-    "weekly_changes": {
-      "20261002": 0.01,
-      "20261008": 0.01,
-      "20261016": 0.18,
-      "20261022": 0.73,
-      "20261030": -0.6,
-      "20261106": -0.54
-    },
-    "latest_change": -0.54,
-    "total_change": -0.21,
-    "last_week_hold_pct": 48.64,
-    "close_price": 29.85,
-    "price_change": 0.35
-  },
-  {
-    "rank": 32,
-    "stock_code": "6123",
-    "stock_name": "上奇",
     "is_taiwan50": false,
     "category": "櫃資訊服務",
     "threshold_code": 30,
     "threshold_shares": 400,
     "weekly_changes": {
-      "20261002": 0.0,
+      "20261008": -0.09,
+      "20261016": 0.02,
+      "20261022": -0.12,
+      "20261030": 0.0,
+      "20261106": 0.04,
+      "20261113": 0.02
+    },
+    "latest_change": 0.02,
+    "total_change": -0.13,
+    "last_week_hold_pct": 47.65,
+    "close_price": 92.5,
+    "price_change": 4.2
+  },
+  {
+    "rank": 28,
+    "stock_code": "5210",
+    "stock_name": "寶碩",
+    "is_taiwan50": false,
+    "category": "櫃資訊服務",
+    "threshold_code": 50,
+    "threshold_shares": 400,
+    "weekly_changes": {
+      "20261008": 0.01,
+      "20261016": 0.18,
+      "20261022": 0.73,
+      "20261030": -0.6,
+      "20261106": -0.54,
+      "20261113": 0.09
+    },
+    "latest_change": 0.09,
+    "total_change": -0.13,
+    "last_week_hold_pct": 48.73,
+    "close_price": 29.7,
+    "price_change": 0.15
+  },
+  {
+    "rank": 29,
+    "stock_code": "6221",
+    "stock_name": "晉泰",
+    "is_taiwan50": false,
+    "category": "櫃資訊服務",
+    "threshold_code": 31,
+    "threshold_shares": 400,
+    "weekly_changes": {
+      "20261008": 0.22,
+      "20261016": 0.11,
+      "20261022": -0.01,
+      "20261030": -0.13,
+      "20261106": -0.4,
+      "20261113": -0.06
+    },
+    "latest_change": -0.06,
+    "total_change": -0.27,
+    "last_week_hold_pct": 74.11,
+    "close_price": 43.35,
+    "price_change": 0.45
+  },
+  {
+    "rank": 30,
+    "stock_code": "6593",
+    "stock_name": "台灣銘板",
+    "is_taiwan50": false,
+    "category": "櫃資訊服務",
+    "threshold_code": 10,
+    "threshold_shares": 1000,
+    "weekly_changes": {
+      "20261008": 0.03,
+      "20261016": -0.01,
+      "20261022": 0.09,
+      "20261030": 1.36,
+      "20261106": 0.35,
+      "20261113": -2.35
+    },
+    "latest_change": -2.35,
+    "total_change": -0.53,
+    "last_week_hold_pct": 45.5,
+    "close_price": 30.4,
+    "price_change": 0.05
+  },
+  {
+    "rank": 31,
+    "stock_code": "6123",
+    "stock_name": "上奇",
+    "is_taiwan50": false,
+    "category": "櫃資訊服務",
+    "threshold_code": 31,
+    "threshold_shares": 400,
+    "weekly_changes": {
       "20261008": -0.05,
       "20261016": 0.01,
       "20261022": -0.01,
       "20261030": 0.01,
-      "20261106": -0.54
+      "20261106": -0.54,
+      "20261113": 0.01
     },
-    "latest_change": -0.54,
-    "total_change": -0.58,
-    "last_week_hold_pct": 43.33,
-    "close_price": 40.05,
-    "price_change": -1.2
+    "latest_change": 0.01,
+    "total_change": -0.57,
+    "last_week_hold_pct": 43.34,
+    "close_price": 40.65,
+    "price_change": 0.2
+  },
+  {
+    "rank": 32,
+    "stock_code": "6240",
+    "stock_name": "松崗",
+    "is_taiwan50": false,
+    "category": "櫃資訊服務",
+    "threshold_code": 10,
+    "threshold_shares": 1000,
+    "weekly_changes": {
+      "20261008": 0.07,
+      "20261016": 0.36,
+      "20261022": 1.07,
+      "20261030": -0.27,
+      "20261106": -0.3,
+      "20261113": -1.87
+    },
+    "latest_change": -1.87,
+    "total_change": -0.94,
+    "last_week_hold_pct": 84.74,
+    "close_price": 29.25,
+    "price_change": 1.95
   },
   {
     "rank": 33,
@@ -709,64 +709,64 @@
     "stock_name": "華電網",
     "is_taiwan50": false,
     "category": "櫃資訊服務",
-    "threshold_code": 10,
-    "threshold_shares": 1000,
+    "threshold_code": 31,
+    "threshold_shares": 400,
     "weekly_changes": {
-      "20261002": 0.01,
       "20261008": 0.27,
       "20261016": -0.32,
       "20261022": 0.28,
       "20261030": -0.77,
-      "20261106": -0.78
+      "20261106": -0.78,
+      "20261113": -0.37
     },
-    "latest_change": -0.78,
-    "total_change": -1.31,
-    "last_week_hold_pct": 42.69,
-    "close_price": 32.75,
-    "price_change": -3.55
+    "latest_change": -0.37,
+    "total_change": -1.69,
+    "last_week_hold_pct": 42.32,
+    "close_price": 41.65,
+    "price_change": 3.75
   },
   {
     "rank": 34,
-    "stock_code": "7767",
-    "stock_name": "仁大資訊",
-    "is_taiwan50": false,
-    "category": "櫃資訊服務",
-    "threshold_code": 30,
-    "threshold_shares": 400,
-    "weekly_changes": {
-      "20261002": 0.05,
-      "20261008": 0.01,
-      "20261016": 0.07,
-      "20261022": 0.0,
-      "20261030": 0.01,
-      "20261106": -2.58
-    },
-    "latest_change": -2.58,
-    "total_change": -2.44,
-    "last_week_hold_pct": 69.21,
-    "close_price": 47.35,
-    "price_change": -5.25
-  },
-  {
-    "rank": 35,
     "stock_code": "6140",
     "stock_name": "訊達電腦",
     "is_taiwan50": false,
     "category": "櫃資訊服務",
-    "threshold_code": 30,
+    "threshold_code": 31,
     "threshold_shares": 400,
     "weekly_changes": {
-      "20261002": 0.07,
       "20261008": -0.2,
       "20261016": -0.07,
       "20261022": -0.86,
       "20261030": -0.17,
-      "20261106": -1.91
+      "20261106": -1.91,
+      "20261113": 0.8
     },
-    "latest_change": -1.91,
-    "total_change": -3.14,
-    "last_week_hold_pct": 41.86,
-    "close_price": 22.7,
-    "price_change": -0.8
+    "latest_change": 0.8,
+    "total_change": -2.41,
+    "last_week_hold_pct": 42.66,
+    "close_price": 31.7,
+    "price_change": 2.85
+  },
+  {
+    "rank": 35,
+    "stock_code": "7767",
+    "stock_name": "仁大資訊",
+    "is_taiwan50": false,
+    "category": "櫃資訊服務",
+    "threshold_code": 31,
+    "threshold_shares": 400,
+    "weekly_changes": {
+      "20261008": 0.01,
+      "20261016": 0.07,
+      "20261022": 0.0,
+      "20261030": 0.01,
+      "20261106": -2.58,
+      "20261113": -0.31
+    },
+    "latest_change": -0.31,
+    "total_change": -2.8,
+    "last_week_hold_pct": 68.9,
+    "close_price": 59.7,
+    "price_change": 5.4
   }
 ]

@@ -5,21 +5,21 @@
     "stock_name": "騰雲",
     "is_taiwan50": false,
     "category": "雲端",
-    "threshold_code": 30,
+    "threshold_code": 31,
     "threshold_shares": 400,
     "weekly_changes": {
-      "20261002": 0.39,
       "20261008": 2.53,
       "20261016": -0.11,
       "20261022": -0.44,
       "20261030": 0.44,
-      "20261106": -0.17
+      "20261106": -0.17,
+      "20261113": 1.0
     },
-    "latest_change": -0.17,
-    "total_change": 2.64,
-    "last_week_hold_pct": 75.62,
-    "close_price": 371.5,
-    "price_change": -41.0
+    "latest_change": 1.0,
+    "total_change": 3.25,
+    "last_week_hold_pct": 76.62,
+    "close_price": 498.0,
+    "price_change": 6.0
   },
   {
     "rank": 2,
@@ -27,65 +27,65 @@
     "stock_name": "智通",
     "is_taiwan50": true,
     "category": "雲端",
-    "threshold_code": 30,
-    "threshold_shares": 400,
+    "threshold_code": 10,
+    "threshold_shares": 1000,
     "weekly_changes": {
-      "20261002": 0.11,
       "20261008": 0.27,
       "20261016": 1.04,
       "20261022": -0.04,
       "20261030": 0.16,
-      "20261106": 0.07
+      "20261106": 0.07,
+      "20261113": -0.06
     },
-    "latest_change": 0.07,
-    "total_change": 1.61,
-    "last_week_hold_pct": 80.53,
-    "close_price": 73.0,
-    "price_change": -5.6
+    "latest_change": -0.06,
+    "total_change": 1.44,
+    "last_week_hold_pct": 80.47,
+    "close_price": 76.9,
+    "price_change": 2.1
   },
   {
     "rank": 3,
-    "stock_code": "8044",
-    "stock_name": "網家",
+    "stock_code": "6690",
+    "stock_name": "安卅硌穈T",
     "is_taiwan50": false,
     "category": "雲端",
     "threshold_code": 31,
     "threshold_shares": 400,
     "weekly_changes": {
-      "20261002": 0.17,
+      "20261008": -0.03,
+      "20261016": 0.0,
+      "20261022": 0.0,
+      "20261030": 0.0,
+      "20261106": -0.05,
+      "20261113": 1.29
+    },
+    "latest_change": 1.29,
+    "total_change": 1.21,
+    "last_week_hold_pct": 60.92,
+    "close_price": 212.0,
+    "price_change": 19.0
+  },
+  {
+    "rank": 4,
+    "stock_code": "8044",
+    "stock_name": "網家",
+    "is_taiwan50": false,
+    "category": "雲端",
+    "threshold_code": 30,
+    "threshold_shares": 400,
+    "weekly_changes": {
       "20261008": -0.09,
       "20261016": 0.61,
       "20261022": -0.01,
       "20261030": -0.44,
-      "20261106": 0.58
+      "20261106": 0.58,
+      "20261113": -0.26
     },
-    "latest_change": 0.58,
-    "total_change": 0.82,
-    "last_week_hold_pct": 61.48,
-    "close_price": 21.3,
-    "price_change": -0.9
-  },
-  {
-    "rank": 4,
-    "stock_code": "5321",
-    "stock_name": "美而快",
-    "is_taiwan50": false,
-    "category": "雲端",
-    "threshold_code": 50,
-    "threshold_shares": 400,
-    "weekly_changes": {
-      "20261002": 0.81,
-      "20261008": 0.12,
-      "20261016": 0.1,
-      "20261022": -0.69,
-      "20261030": 0.0,
-      "20261106": 0.2
-    },
-    "latest_change": 0.2,
-    "total_change": 0.54,
-    "last_week_hold_pct": 61.35,
-    "close_price": 55.8,
-    "price_change": 2.8
+    "latest_change": -0.26,
+    "total_change": 0.39,
+    "last_week_hold_pct": 61.22,
+    "close_price": 23.35,
+    "price_change": 0.7
   },
   {
     "rank": 5,
@@ -93,68 +93,24 @@
     "stock_name": "尚凡",
     "is_taiwan50": true,
     "category": "雲端",
-    "threshold_code": 31,
+    "threshold_code": 30,
     "threshold_shares": 400,
     "weekly_changes": {
-      "20261002": 0.05,
       "20261008": 0.04,
       "20261016": 0.09,
       "20261022": 0.14,
       "20261030": -0.04,
-      "20261106": 0.11
+      "20261106": 0.11,
+      "20261113": -0.02
     },
-    "latest_change": 0.11,
-    "total_change": 0.39,
-    "last_week_hold_pct": 83.33,
-    "close_price": 24.1,
+    "latest_change": -0.02,
+    "total_change": 0.32,
+    "last_week_hold_pct": 83.31,
+    "close_price": 24.65,
     "price_change": 0.25
   },
   {
     "rank": 6,
-    "stock_code": "6865",
-    "stock_name": "偉康科技",
-    "is_taiwan50": false,
-    "category": "雲端",
-    "threshold_code": 32,
-    "threshold_shares": 0,
-    "weekly_changes": {
-      "20261002": 0.19,
-      "20261008": 0.0,
-      "20261016": 0.0,
-      "20261022": 0.0,
-      "20261030": 0.0,
-      "20261106": 0.0
-    },
-    "latest_change": 0.0,
-    "total_change": 0.19,
-    "last_week_hold_pct": 50.89,
-    "close_price": 32.7,
-    "price_change": -3.6
-  },
-  {
-    "rank": 7,
-    "stock_code": "8477",
-    "stock_name": "創業家",
-    "is_taiwan50": false,
-    "category": "雲端",
-    "threshold_code": 41,
-    "threshold_shares": 0,
-    "weekly_changes": {
-      "20261002": 0.01,
-      "20261008": 0.01,
-      "20261016": 0.0,
-      "20261022": 0.0,
-      "20261030": 0.0,
-      "20261106": 0.11
-    },
-    "latest_change": 0.11,
-    "total_change": 0.13,
-    "last_week_hold_pct": 83.65,
-    "close_price": 12.1,
-    "price_change": -0.25
-  },
-  {
-    "rank": 8,
     "stock_code": "7747",
     "stock_name": "昕奇雲端",
     "is_taiwan50": false,
@@ -162,84 +118,128 @@
     "threshold_code": 50,
     "threshold_shares": 400,
     "weekly_changes": {
-      "20261002": 0.01,
       "20261008": 0.0,
       "20261016": 0.0,
       "20261022": 0.02,
       "20261030": 0.03,
-      "20261106": 0.05
+      "20261106": 0.05,
+      "20261113": 0.15
     },
-    "latest_change": 0.05,
-    "total_change": 0.11,
-    "last_week_hold_pct": 80.07,
-    "close_price": 104.0,
-    "price_change": -3.0
+    "latest_change": 0.15,
+    "total_change": 0.25,
+    "last_week_hold_pct": 80.22,
+    "close_price": 112.0,
+    "price_change": 2.0
   },
   {
-    "rank": 9,
-    "stock_code": "6236",
-    "stock_name": "中湛",
+    "rank": 7,
+    "stock_code": "8477",
+    "stock_name": "創業家",
+    "is_taiwan50": false,
+    "category": "雲端",
+    "threshold_code": 30,
+    "threshold_shares": 400,
+    "weekly_changes": {
+      "20261008": 0.01,
+      "20261016": 0.0,
+      "20261022": 0.0,
+      "20261030": 0.0,
+      "20261106": 0.11,
+      "20261113": 0.0
+    },
+    "latest_change": 0.0,
+    "total_change": 0.12,
+    "last_week_hold_pct": 83.65,
+    "close_price": 12.3,
+    "price_change": 0.0
+  },
+  {
+    "rank": 8,
+    "stock_code": "6910",
+    "stock_name": "德鴻",
     "is_taiwan50": false,
     "category": "雲端",
     "threshold_code": 41,
     "threshold_shares": 0,
     "weekly_changes": {
-      "20261002": 0.0,
       "20261008": 0.0,
       "20261016": 0.0,
       "20261022": 0.0,
       "20261030": 0.0,
-      "20261106": 0.01
+      "20261106": 0.0,
+      "20261113": 0.1
     },
-    "latest_change": 0.01,
+    "latest_change": 0.1,
+    "total_change": 0.1,
+    "last_week_hold_pct": 57.2,
+    "close_price": 25.6,
+    "price_change": 2.1
+  },
+  {
+    "rank": 9,
+    "stock_code": "8472",
+    "stock_name": "納維康",
+    "is_taiwan50": false,
+    "category": "雲端",
+    "threshold_code": 41,
+    "threshold_shares": 0,
+    "weekly_changes": {
+      "20261008": 0.0,
+      "20261016": 0.0,
+      "20261022": 0.0,
+      "20261030": 0.0,
+      "20261106": 0.0,
+      "20261113": 0.05
+    },
+    "latest_change": 0.05,
+    "total_change": 0.05,
+    "last_week_hold_pct": 63.1,
+    "close_price": 63.9,
+    "price_change": 5.8
+  },
+  {
+    "rank": 10,
+    "stock_code": "6763",
+    "stock_name": "綠界科技",
+    "is_taiwan50": true,
+    "category": "雲端",
+    "threshold_code": 31,
+    "threshold_shares": 400,
+    "weekly_changes": {
+      "20261008": 0.02,
+      "20261016": 0.01,
+      "20261022": -0.47,
+      "20261030": 0.23,
+      "20261106": 0.02,
+      "20261113": 0.23
+    },
+    "latest_change": 0.23,
+    "total_change": 0.04,
+    "last_week_hold_pct": 61.56,
+    "close_price": 37.15,
+    "price_change": 2.0
+  },
+  {
+    "rank": 11,
+    "stock_code": "6236",
+    "stock_name": "中湛",
+    "is_taiwan50": false,
+    "category": "雲端",
+    "threshold_code": 30,
+    "threshold_shares": 400,
+    "weekly_changes": {
+      "20261008": 0.0,
+      "20261016": 0.0,
+      "20261022": 0.0,
+      "20261030": 0.0,
+      "20261106": 0.01,
+      "20261113": 0.0
+    },
+    "latest_change": 0.0,
     "total_change": 0.01,
     "last_week_hold_pct": 92.75,
     "close_price": 0.0,
     "price_change": 0.0
-  },
-  {
-    "rank": 10,
-    "stock_code": "6997",
-    "stock_name": "博弘",
-    "is_taiwan50": false,
-    "category": "雲端",
-    "threshold_code": 32,
-    "threshold_shares": 0,
-    "weekly_changes": {
-      "20261002": 0.0,
-      "20261008": 0.0,
-      "20261016": 0.0,
-      "20261022": 0.0,
-      "20261030": 0.0,
-      "20261106": 0.0
-    },
-    "latest_change": 0.0,
-    "total_change": 0.0,
-    "last_week_hold_pct": 82.27,
-    "close_price": 0.0,
-    "price_change": 0.0
-  },
-  {
-    "rank": 11,
-    "stock_code": "7714",
-    "stock_name": "創泓科技",
-    "is_taiwan50": false,
-    "category": "雲端",
-    "threshold_code": 32,
-    "threshold_shares": 0,
-    "weekly_changes": {
-      "20261002": 0.0,
-      "20261008": 0.0,
-      "20261016": 0.0,
-      "20261022": 0.0,
-      "20261030": 0.0,
-      "20261106": 0.0
-    },
-    "latest_change": 0.0,
-    "total_change": 0.0,
-    "last_week_hold_pct": 66.65,
-    "close_price": 133.5,
-    "price_change": -2.5
   },
   {
     "rank": 12,
@@ -250,65 +250,21 @@
     "threshold_code": 32,
     "threshold_shares": 0,
     "weekly_changes": {
-      "20261002": 0.0,
       "20261008": 0.0,
       "20261016": 0.0,
       "20261022": 0.0,
       "20261030": 0.0,
-      "20261106": 0.0
+      "20261106": 0.0,
+      "20261113": 0.0
     },
     "latest_change": 0.0,
     "total_change": 0.0,
     "last_week_hold_pct": 72.51,
-    "close_price": 42.6,
-    "price_change": -0.35
+    "close_price": 40.1,
+    "price_change": -1.45
   },
   {
     "rank": 13,
-    "stock_code": "6925",
-    "stock_name": "意藍",
-    "is_taiwan50": false,
-    "category": "雲端",
-    "threshold_code": 31,
-    "threshold_shares": 400,
-    "weekly_changes": {
-      "20261002": 0.0,
-      "20261008": 0.0,
-      "20261016": 0.0,
-      "20261022": 2.58,
-      "20261030": -2.58,
-      "20261106": 0.0
-    },
-    "latest_change": 0.0,
-    "total_change": 0.0,
-    "last_week_hold_pct": 58.04,
-    "close_price": 105.0,
-    "price_change": -4.5
-  },
-  {
-    "rank": 14,
-    "stock_code": "8472",
-    "stock_name": "納維康",
-    "is_taiwan50": false,
-    "category": "雲端",
-    "threshold_code": 32,
-    "threshold_shares": 0,
-    "weekly_changes": {
-      "20261002": 0.0,
-      "20261008": 0.0,
-      "20261016": 0.0,
-      "20261022": 0.0,
-      "20261030": 0.0,
-      "20261106": 0.0
-    },
-    "latest_change": 0.0,
-    "total_change": 0.0,
-    "last_week_hold_pct": 63.05,
-    "close_price": 49.0,
-    "price_change": -5.4
-  },
-  {
-    "rank": 15,
     "stock_code": "7547",
     "stock_name": "碩網",
     "is_taiwan50": false,
@@ -316,21 +272,21 @@
     "threshold_code": 32,
     "threshold_shares": 0,
     "weekly_changes": {
-      "20261002": 0.0,
       "20261008": 0.0,
       "20261016": 0.0,
       "20261022": 0.0,
       "20261030": 0.0,
-      "20261106": 0.0
+      "20261106": 0.0,
+      "20261113": 0.0
     },
     "latest_change": 0.0,
     "total_change": 0.0,
     "last_week_hold_pct": 73.12,
-    "close_price": 50.9,
-    "price_change": -5.5
+    "close_price": 53.3,
+    "price_change": 3.1
   },
   {
-    "rank": 16,
+    "rank": 14,
     "stock_code": "2949",
     "stock_name": "欣新網",
     "is_taiwan50": false,
@@ -338,21 +294,21 @@
     "threshold_code": 32,
     "threshold_shares": 0,
     "weekly_changes": {
-      "20261002": 0.0,
       "20261008": 0.0,
       "20261016": 0.0,
       "20261022": 0.0,
       "20261030": 0.0,
-      "20261106": 0.0
+      "20261106": 0.0,
+      "20261113": 0.0
     },
     "latest_change": 0.0,
     "total_change": 0.0,
     "last_week_hold_pct": 81.78,
-    "close_price": 62.1,
-    "price_change": -1.7
+    "close_price": 59.5,
+    "price_change": 0.0
   },
   {
-    "rank": 17,
+    "rank": 15,
     "stock_code": "3687",
     "stock_name": "歐買尬",
     "is_taiwan50": false,
@@ -360,40 +316,84 @@
     "threshold_code": 32,
     "threshold_shares": 0,
     "weekly_changes": {
-      "20261002": 0.0,
       "20261008": 0.0,
       "20261016": 0.0,
       "20261022": 0.0,
       "20261030": 0.0,
-      "20261106": 0.0
+      "20261106": 0.0,
+      "20261113": 0.0
     },
     "latest_change": 0.0,
     "total_change": 0.0,
     "last_week_hold_pct": 37.34,
-    "close_price": 50.1,
-    "price_change": -4.0
+    "close_price": 51.9,
+    "price_change": 0.1
   },
   {
-    "rank": 18,
-    "stock_code": "6910",
-    "stock_name": "德鴻",
+    "rank": 16,
+    "stock_code": "6865",
+    "stock_name": "偉康科技",
     "is_taiwan50": false,
     "category": "雲端",
     "threshold_code": 32,
     "threshold_shares": 0,
     "weekly_changes": {
-      "20261002": 0.0,
       "20261008": 0.0,
       "20261016": 0.0,
       "20261022": 0.0,
       "20261030": 0.0,
-      "20261106": 0.0
+      "20261106": 0.0,
+      "20261113": 0.0
     },
     "latest_change": 0.0,
     "total_change": 0.0,
-    "last_week_hold_pct": 57.1,
-    "close_price": 22.6,
-    "price_change": -1.6
+    "last_week_hold_pct": 50.89,
+    "close_price": 37.7,
+    "price_change": 3.4
+  },
+  {
+    "rank": 17,
+    "stock_code": "6997",
+    "stock_name": "博弘",
+    "is_taiwan50": false,
+    "category": "雲端",
+    "threshold_code": 32,
+    "threshold_shares": 0,
+    "weekly_changes": {
+      "20261008": 0.0,
+      "20261016": 0.0,
+      "20261022": 0.0,
+      "20261030": 0.0,
+      "20261106": 0.0,
+      "20261113": 0.0
+    },
+    "latest_change": 0.0,
+    "total_change": 0.0,
+    "last_week_hold_pct": 82.27,
+    "close_price": 69.3,
+    "price_change": -0.1
+  },
+  {
+    "rank": 18,
+    "stock_code": "7714",
+    "stock_name": "創泓科技",
+    "is_taiwan50": false,
+    "category": "雲端",
+    "threshold_code": 32,
+    "threshold_shares": 0,
+    "weekly_changes": {
+      "20261008": 0.0,
+      "20261016": 0.0,
+      "20261022": 0.0,
+      "20261030": 0.0,
+      "20261106": 0.0,
+      "20261113": 0.0
+    },
+    "latest_change": 0.0,
+    "total_change": 0.0,
+    "last_week_hold_pct": 66.65,
+    "close_price": 154.5,
+    "price_change": 10.0
   },
   {
     "rank": 19,
@@ -401,21 +401,21 @@
     "stock_name": "威聯通",
     "is_taiwan50": false,
     "category": "雲端",
-    "threshold_code": 40,
-    "threshold_shares": 200,
+    "threshold_code": 32,
+    "threshold_shares": 0,
     "weekly_changes": {
-      "20261002": 0.0,
       "20261008": 0.0,
       "20261016": 0.0,
       "20261022": -0.04,
       "20261030": 0.0,
-      "20261106": 0.0
+      "20261106": 0.0,
+      "20261113": 0.0
     },
     "latest_change": 0.0,
     "total_change": -0.04,
     "last_week_hold_pct": 73.09,
-    "close_price": 396.5,
-    "price_change": -23.5
+    "close_price": 396.0,
+    "price_change": 5.5
   },
   {
     "rank": 20,
@@ -423,68 +423,90 @@
     "stock_name": "大車隊",
     "is_taiwan50": false,
     "category": "雲端",
-    "threshold_code": 31,
+    "threshold_code": 30,
     "threshold_shares": 400,
     "weekly_changes": {
-      "20261002": -0.03,
       "20261008": -0.01,
       "20261016": -0.01,
       "20261022": 0.05,
       "20261030": -0.12,
-      "20261106": 0.06
+      "20261106": 0.06,
+      "20261113": -0.06
     },
-    "latest_change": 0.06,
-    "total_change": -0.06,
-    "last_week_hold_pct": 73.59,
-    "close_price": 132.0,
-    "price_change": -1.0
+    "latest_change": -0.06,
+    "total_change": -0.09,
+    "last_week_hold_pct": 73.53,
+    "close_price": 135.5,
+    "price_change": 5.0
   },
   {
     "rank": 21,
-    "stock_code": "6690",
-    "stock_name": "安卅硌穈T",
+    "stock_code": "6925",
+    "stock_name": "意藍",
     "is_taiwan50": false,
-    "category": "雲端",
-    "threshold_code": 20,
-    "threshold_shares": 0,
-    "weekly_changes": {
-      "20261002": 0.0,
-      "20261008": -0.03,
-      "20261016": 0.0,
-      "20261022": 0.0,
-      "20261030": 0.0,
-      "20261106": -0.05
-    },
-    "latest_change": -0.05,
-    "total_change": -0.08,
-    "last_week_hold_pct": 59.63,
-    "close_price": 183.0,
-    "price_change": 1.0
-  },
-  {
-    "rank": 22,
-    "stock_code": "6763",
-    "stock_name": "綠界科技",
-    "is_taiwan50": true,
     "category": "雲端",
     "threshold_code": 30,
     "threshold_shares": 400,
     "weekly_changes": {
-      "20261002": 0.0,
-      "20261008": 0.02,
-      "20261016": 0.01,
-      "20261022": -0.47,
-      "20261030": 0.23,
-      "20261106": 0.02
+      "20261008": 0.0,
+      "20261016": 0.0,
+      "20261022": 2.58,
+      "20261030": -2.58,
+      "20261106": 0.0,
+      "20261113": -0.17
     },
-    "latest_change": 0.02,
-    "total_change": -0.19,
-    "last_week_hold_pct": 61.33,
-    "close_price": 36.05,
-    "price_change": -1.0
+    "latest_change": -0.17,
+    "total_change": -0.17,
+    "last_week_hold_pct": 57.87,
+    "close_price": 106.5,
+    "price_change": 9.3
+  },
+  {
+    "rank": 22,
+    "stock_code": "5321",
+    "stock_name": "美而快",
+    "is_taiwan50": false,
+    "category": "雲端",
+    "threshold_code": 30,
+    "threshold_shares": 400,
+    "weekly_changes": {
+      "20261008": 0.12,
+      "20261016": 0.1,
+      "20261022": -0.69,
+      "20261030": 0.0,
+      "20261106": 0.2,
+      "20261113": -0.01
+    },
+    "latest_change": -0.01,
+    "total_change": -0.28,
+    "last_week_hold_pct": 61.34,
+    "close_price": 57.0,
+    "price_change": 2.1
   },
   {
     "rank": 23,
+    "stock_code": "6741",
+    "stock_name": "91APP*-KY",
+    "is_taiwan50": false,
+    "category": "雲端",
+    "threshold_code": 10,
+    "threshold_shares": 1000,
+    "weekly_changes": {
+      "20261008": -0.16,
+      "20261016": -0.22,
+      "20261022": -0.4,
+      "20261030": 0.45,
+      "20261106": -0.12,
+      "20261113": -0.22
+    },
+    "latest_change": -0.22,
+    "total_change": -0.67,
+    "last_week_hold_pct": 68.91,
+    "close_price": 43.0,
+    "price_change": 1.65
+  },
+  {
+    "rank": 24,
     "stock_code": "3085",
     "stock_name": "新零售",
     "is_taiwan50": false,
@@ -492,62 +514,40 @@
     "threshold_code": 32,
     "threshold_shares": 0,
     "weekly_changes": {
-      "20261002": 0.0,
       "20261008": 10.34,
       "20261016": -11.04,
       "20261022": 0.0,
       "20261030": 0.0,
-      "20261106": 0.0
+      "20261106": 0.0,
+      "20261113": 0.0
     },
     "latest_change": 0.0,
     "total_change": -0.7,
     "last_week_hold_pct": 88.96,
-    "close_price": 0.0,
-    "price_change": 0.0
+    "close_price": 15.0,
+    "price_change": 0.3
   },
   {
-    "rank": 24,
+    "rank": 25,
     "stock_code": "7738",
     "stock_name": "東聯互動",
     "is_taiwan50": false,
     "category": "雲端",
-    "threshold_code": 31,
+    "threshold_code": 30,
     "threshold_shares": 400,
     "weekly_changes": {
-      "20261002": -0.01,
       "20261008": -0.08,
       "20261016": -0.16,
       "20261022": -0.2,
       "20261030": -0.62,
-      "20261106": 0.12
+      "20261106": 0.12,
+      "20261113": 0.09
     },
-    "latest_change": 0.12,
-    "total_change": -0.95,
-    "last_week_hold_pct": 56.78,
-    "close_price": 156.0,
-    "price_change": -4.5
-  },
-  {
-    "rank": 25,
-    "stock_code": "5287",
-    "stock_name": "數字",
-    "is_taiwan50": false,
-    "category": "雲端",
-    "threshold_code": 31,
-    "threshold_shares": 400,
-    "weekly_changes": {
-      "20261002": -0.13,
-      "20261008": -0.22,
-      "20261016": -0.41,
-      "20261022": -0.02,
-      "20261030": -0.1,
-      "20261106": -0.09
-    },
-    "latest_change": -0.09,
-    "total_change": -0.97,
-    "last_week_hold_pct": 56.82,
-    "close_price": 125.0,
-    "price_change": -3.5
+    "latest_change": 0.09,
+    "total_change": -0.85,
+    "last_week_hold_pct": 56.87,
+    "close_price": 160.5,
+    "price_change": 4.5
   },
   {
     "rank": 26,
@@ -555,42 +555,42 @@
     "stock_name": "宏卅硌穈T",
     "is_taiwan50": false,
     "category": "雲端",
-    "threshold_code": 31,
+    "threshold_code": 30,
     "threshold_shares": 400,
     "weekly_changes": {
-      "20261002": -0.3,
       "20261008": -0.15,
       "20261016": 0.1,
       "20261022": 0.11,
       "20261030": -0.99,
-      "20261106": 0.02
+      "20261106": 0.02,
+      "20261113": 0.01
     },
-    "latest_change": 0.02,
-    "total_change": -1.21,
-    "last_week_hold_pct": 65.64,
-    "close_price": 226.5,
-    "price_change": -0.5
+    "latest_change": 0.01,
+    "total_change": -0.9,
+    "last_week_hold_pct": 65.65,
+    "close_price": 248.5,
+    "price_change": 13.0
   },
   {
     "rank": 27,
-    "stock_code": "6741",
-    "stock_name": "91APP*-KY",
+    "stock_code": "5287",
+    "stock_name": "數字",
     "is_taiwan50": false,
     "category": "雲端",
     "threshold_code": 30,
     "threshold_shares": 400,
     "weekly_changes": {
-      "20261002": -0.79,
-      "20261008": -0.16,
-      "20261016": -0.22,
-      "20261022": -0.4,
-      "20261030": 0.45,
-      "20261106": -0.12
+      "20261008": -0.22,
+      "20261016": -0.41,
+      "20261022": -0.02,
+      "20261030": -0.1,
+      "20261106": -0.09,
+      "20261113": -0.13
     },
-    "latest_change": -0.12,
-    "total_change": -1.24,
-    "last_week_hold_pct": 69.13,
-    "close_price": 43.75,
-    "price_change": -1.25
+    "latest_change": -0.13,
+    "total_change": -0.97,
+    "last_week_hold_pct": 56.69,
+    "close_price": 126.5,
+    "price_change": 0.5
   }
 ]
