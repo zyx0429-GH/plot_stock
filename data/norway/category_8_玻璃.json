@@ -5,21 +5,21 @@
     "stock_name": "台玻",
     "is_taiwan50": false,
     "category": "玻璃",
-    "threshold_code": 50,
+    "threshold_code": 30,
     "threshold_shares": 400,
     "weekly_changes": {
-      "20261008": 1.94,
       "20261016": -0.65,
       "20261022": -0.16,
       "20261030": -0.39,
       "20261106": 0.88,
-      "20261113": 9.51
+      "20261113": 9.51,
+      "20261120": -3.75
     },
-    "latest_change": 9.51,
-    "total_change": 11.13,
-    "last_week_hold_pct": 87.46,
-    "close_price": 85.1,
-    "price_change": 3.4
+    "latest_change": -3.75,
+    "total_change": 5.44,
+    "last_week_hold_pct": 83.71,
+    "close_price": 52.9,
+    "price_change": -5.8
   },
   {
     "rank": 2,
@@ -30,18 +30,18 @@
     "threshold_code": 10,
     "threshold_shares": 1000,
     "weekly_changes": {
-      "20261008": -0.02,
       "20261016": -0.13,
       "20261022": -0.01,
       "20261030": 0.41,
       "20261106": 0.39,
-      "20261113": 0.2
+      "20261113": 0.2,
+      "20261120": 0.08
     },
-    "latest_change": 0.2,
-    "total_change": 0.84,
-    "last_week_hold_pct": 63.19,
-    "close_price": 21.1,
-    "price_change": 0.4
+    "latest_change": 0.08,
+    "total_change": 0.94,
+    "last_week_hold_pct": 63.27,
+    "close_price": 16.55,
+    "price_change": -1.65
   },
   {
     "rank": 3,
@@ -49,21 +49,21 @@
     "stock_name": "中釉",
     "is_taiwan50": false,
     "category": "玻璃",
-    "threshold_code": 50,
+    "threshold_code": 30,
     "threshold_shares": 400,
     "weekly_changes": {
-      "20261008": -0.55,
       "20261016": 0.58,
       "20261022": 1.07,
       "20261030": -1.01,
       "20261106": -0.61,
-      "20261113": 0.97
+      "20261113": 0.97,
+      "20261120": -0.44
     },
-    "latest_change": 0.97,
-    "total_change": 0.45,
-    "last_week_hold_pct": 48.15,
-    "close_price": 45.1,
-    "price_change": 1.6
+    "latest_change": -0.44,
+    "total_change": 0.56,
+    "last_week_hold_pct": 47.71,
+    "close_price": 29.7,
+    "price_change": -3.25
   },
   {
     "rank": 4,
@@ -71,21 +71,21 @@
     "stock_name": "冠軍",
     "is_taiwan50": false,
     "category": "玻璃",
-    "threshold_code": 50,
+    "threshold_code": 30,
     "threshold_shares": 400,
     "weekly_changes": {
-      "20261008": -0.13,
       "20261016": 0.01,
       "20261022": 0.14,
       "20261030": 0.0,
       "20261106": 0.01,
-      "20261113": 0.25
+      "20261113": 0.25,
+      "20261120": -0.1
     },
-    "latest_change": 0.25,
-    "total_change": 0.28,
-    "last_week_hold_pct": 75.03,
-    "close_price": 7.32,
-    "price_change": 0.0
+    "latest_change": -0.1,
+    "total_change": 0.31,
+    "last_week_hold_pct": 74.93,
+    "close_price": 6.43,
+    "price_change": -0.44
   },
   {
     "rank": 5,
@@ -93,20 +93,20 @@
     "stock_name": "凱撒衛",
     "is_taiwan50": false,
     "category": "玻璃",
-    "threshold_code": 31,
-    "threshold_shares": 400,
+    "threshold_code": 40,
+    "threshold_shares": 200,
     "weekly_changes": {
-      "20261008": 0.0,
       "20261016": 0.0,
       "20261022": -0.01,
       "20261030": 0.0,
       "20261106": -0.01,
-      "20261113": 0.0
+      "20261113": 0.0,
+      "20261120": 0.0
     },
     "latest_change": 0.0,
     "total_change": -0.02,
     "last_week_hold_pct": 64.98,
-    "close_price": 40.0,
-    "price_change": -0.1
+    "close_price": 39.35,
+    "price_change": -0.95
   }
 ]

@@ -1,47 +1,47 @@
 [
   {
     "rank": 1,
-    "stock_code": "4171",
-    "stock_name": "瑞基",
-    "is_taiwan50": false,
-    "category": "櫃農業科技",
-    "threshold_code": 41,
-    "threshold_shares": 0,
-    "weekly_changes": {
-      "20261008": 0.0,
-      "20261016": -0.22,
-      "20261022": -0.01,
-      "20261030": 0.0,
-      "20261106": 0.0,
-      "20261113": 0.69
-    },
-    "latest_change": 0.69,
-    "total_change": 0.46,
-    "last_week_hold_pct": 33.19,
-    "close_price": 15.2,
-    "price_change": 0.0
-  },
-  {
-    "rank": 2,
     "stock_code": "6508",
     "stock_name": "惠光",
     "is_taiwan50": false,
     "category": "櫃農業科技",
-    "threshold_code": 31,
+    "threshold_code": 50,
     "threshold_shares": 400,
     "weekly_changes": {
-      "20261008": 0.03,
       "20261016": 0.07,
       "20261022": 0.04,
       "20261030": 0.12,
       "20261106": 0.05,
-      "20261113": 0.09
+      "20261113": 0.09,
+      "20261120": 0.18
     },
-    "latest_change": 0.09,
-    "total_change": 0.4,
-    "last_week_hold_pct": 63.77,
-    "close_price": 27.65,
-    "price_change": 0.5
+    "latest_change": 0.18,
+    "total_change": 0.55,
+    "last_week_hold_pct": 63.95,
+    "close_price": 25.0,
+    "price_change": -1.0
+  },
+  {
+    "rank": 2,
+    "stock_code": "4171",
+    "stock_name": "瑞基",
+    "is_taiwan50": false,
+    "category": "櫃農業科技",
+    "threshold_code": 30,
+    "threshold_shares": 400,
+    "weekly_changes": {
+      "20261016": -0.22,
+      "20261022": -0.01,
+      "20261030": 0.0,
+      "20261106": 0.0,
+      "20261113": 0.69,
+      "20261120": 0.02
+    },
+    "latest_change": 0.02,
+    "total_change": 0.48,
+    "last_week_hold_pct": 33.21,
+    "close_price": 12.2,
+    "price_change": -1.1
   },
   {
     "rank": 3,
@@ -49,21 +49,21 @@
     "stock_name": "達邦蛋白",
     "is_taiwan50": false,
     "category": "櫃農業科技",
-    "threshold_code": 30,
+    "threshold_code": 31,
     "threshold_shares": 400,
     "weekly_changes": {
-      "20261008": 0.03,
       "20261016": 0.0,
       "20261022": 0.04,
       "20261030": 0.04,
       "20261106": 0.06,
-      "20261113": 0.02
+      "20261113": 0.02,
+      "20261120": 0.06
     },
-    "latest_change": 0.02,
-    "total_change": 0.19,
-    "last_week_hold_pct": 64.75,
-    "close_price": 16.6,
-    "price_change": -0.1
+    "latest_change": 0.06,
+    "total_change": 0.22,
+    "last_week_hold_pct": 64.81,
+    "close_price": 14.85,
+    "price_change": -0.75
   },
   {
     "rank": 4,
@@ -71,20 +71,20 @@
     "stock_name": "茂生農經",
     "is_taiwan50": false,
     "category": "櫃農業科技",
-    "threshold_code": 50,
+    "threshold_code": 30,
     "threshold_shares": 400,
     "weekly_changes": {
-      "20261008": 0.1,
       "20261016": -0.02,
       "20261022": -0.01,
       "20261030": -0.02,
       "20261106": -0.01,
-      "20261113": 0.0
+      "20261113": 0.0,
+      "20261120": -0.02
     },
-    "latest_change": 0.0,
-    "total_change": 0.04,
-    "last_week_hold_pct": 69.63,
-    "close_price": 54.0,
-    "price_change": 0.0
+    "latest_change": -0.02,
+    "total_change": -0.08,
+    "last_week_hold_pct": 69.61,
+    "close_price": 50.3,
+    "price_change": -1.4
   }
 ]

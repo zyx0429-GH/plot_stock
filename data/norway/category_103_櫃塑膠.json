@@ -5,21 +5,21 @@
     "stock_name": "信立",
     "is_taiwan50": false,
     "category": "櫃塑膠",
-    "threshold_code": 30,
-    "threshold_shares": 400,
+    "threshold_code": 10,
+    "threshold_shares": 1000,
     "weekly_changes": {
-      "20261008": 0.0,
       "20261016": -0.43,
       "20261022": -0.1,
       "20261030": -0.31,
       "20261106": 1.05,
-      "20261113": 0.86
+      "20261113": 0.86,
+      "20261120": 0.33
     },
-    "latest_change": 0.86,
-    "total_change": 1.07,
-    "last_week_hold_pct": 21.1,
-    "close_price": 27.95,
-    "price_change": 0.3
+    "latest_change": 0.33,
+    "total_change": 1.4,
+    "last_week_hold_pct": 21.43,
+    "close_price": 21.0,
+    "price_change": -1.85
   },
   {
     "rank": 2,
@@ -27,21 +27,21 @@
     "stock_name": "萬國通",
     "is_taiwan50": false,
     "category": "櫃塑膠",
-    "threshold_code": 30,
+    "threshold_code": 31,
     "threshold_shares": 400,
     "weekly_changes": {
-      "20261008": -0.05,
       "20261016": 0.0,
       "20261022": 0.4,
       "20261030": -0.11,
       "20261106": 0.04,
-      "20261113": 0.02
+      "20261113": 0.02,
+      "20261120": 0.05
     },
-    "latest_change": 0.02,
-    "total_change": 0.3,
-    "last_week_hold_pct": 84.23,
-    "close_price": 10.0,
-    "price_change": 0.03
+    "latest_change": 0.05,
+    "total_change": 0.4,
+    "last_week_hold_pct": 84.28,
+    "close_price": 9.39,
+    "price_change": -0.1
   },
   {
     "rank": 3,
@@ -49,21 +49,21 @@
     "stock_name": "勝昱",
     "is_taiwan50": false,
     "category": "櫃塑膠",
-    "threshold_code": 21,
+    "threshold_code": 20,
     "threshold_shares": 0,
     "weekly_changes": {
-      "20261008": 0.0,
       "20261016": 0.01,
       "20261022": -0.02,
       "20261030": 0.04,
       "20261106": 0.0,
-      "20261113": 0.0
+      "20261113": 0.0,
+      "20261120": -0.01
     },
-    "latest_change": 0.0,
-    "total_change": 0.03,
-    "last_week_hold_pct": 81.02,
-    "close_price": 16.55,
-    "price_change": 0.05
+    "latest_change": -0.01,
+    "total_change": 0.02,
+    "last_week_hold_pct": 81.01,
+    "close_price": 14.0,
+    "price_change": -1.4
   },
   {
     "rank": 4,
@@ -74,17 +74,17 @@
     "threshold_code": 32,
     "threshold_shares": 0,
     "weekly_changes": {
-      "20261008": 0.0,
       "20261016": 0.0,
       "20261022": 0.0,
       "20261030": 0.0,
       "20261106": 0.0,
-      "20261113": 0.0
+      "20261113": 0.0,
+      "20261120": 0.0
     },
     "latest_change": 0.0,
     "total_change": 0.0,
     "last_week_hold_pct": 84.75,
-    "close_price": 40.6,
-    "price_change": -1.0
+    "close_price": 39.9,
+    "price_change": -0.7
   }
 ]
