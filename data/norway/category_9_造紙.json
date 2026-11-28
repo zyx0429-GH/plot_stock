@@ -1,113 +1,113 @@
 [
   {
     "rank": 1,
-    "stock_code": "1907",
-    "stock_name": "永豐餘",
-    "is_taiwan50": false,
-    "category": "造紙",
-    "threshold_code": 20,
-    "threshold_shares": 0,
-    "weekly_changes": {
-      "20261016": 0.08,
-      "20261022": -0.02,
-      "20261030": 0.01,
-      "20261106": 0.04,
-      "20261113": 0.04,
-      "20261120": 0.01
-    },
-    "latest_change": 0.01,
-    "total_change": 0.16,
-    "last_week_hold_pct": 85.77,
-    "close_price": 25.45,
-    "price_change": -1.35
-  },
-  {
-    "rank": 2,
     "stock_code": "1906",
     "stock_name": "寶隆",
-    "is_taiwan50": false,
-    "category": "造紙",
-    "threshold_code": 30,
-    "threshold_shares": 400,
-    "weekly_changes": {
-      "20261016": 0.03,
-      "20261022": 0.0,
-      "20261030": 0.01,
-      "20261106": 0.02,
-      "20261113": 0.03,
-      "20261120": -0.01
-    },
-    "latest_change": -0.01,
-    "total_change": 0.08,
-    "last_week_hold_pct": 74.38,
-    "close_price": 9.01,
-    "price_change": -0.71
-  },
-  {
-    "rank": 3,
-    "stock_code": "1905",
-    "stock_name": "華紙",
-    "is_taiwan50": false,
-    "category": "造紙",
-    "threshold_code": 30,
-    "threshold_shares": 400,
-    "weekly_changes": {
-      "20261016": 0.08,
-      "20261022": 0.05,
-      "20261030": -0.01,
-      "20261106": -0.01,
-      "20261113": 0.02,
-      "20261120": -0.1
-    },
-    "latest_change": -0.1,
-    "total_change": 0.03,
-    "last_week_hold_pct": 71.07,
-    "close_price": 9.97,
-    "price_change": -0.48
-  },
-  {
-    "rank": 4,
-    "stock_code": "1904",
-    "stock_name": "正隆",
-    "is_taiwan50": false,
-    "category": "造紙",
-    "threshold_code": 10,
-    "threshold_shares": 1000,
-    "weekly_changes": {
-      "20261016": 0.31,
-      "20261022": -0.03,
-      "20261030": 0.0,
-      "20261106": 0.15,
-      "20261113": -0.05,
-      "20261120": -0.51
-    },
-    "latest_change": -0.51,
-    "total_change": -0.13,
-    "last_week_hold_pct": 68.27,
-    "close_price": 19.1,
-    "price_change": -1.05
-  },
-  {
-    "rank": 5,
-    "stock_code": "6790",
-    "stock_name": "永豐實",
     "is_taiwan50": false,
     "category": "造紙",
     "threshold_code": 31,
     "threshold_shares": 400,
     "weekly_changes": {
-      "20261016": 0.0,
+      "20261022": 0.0,
+      "20261030": 0.01,
+      "20261106": 0.02,
+      "20261113": 0.03,
+      "20261120": -0.01,
+      "20261127": 0.07
+    },
+    "latest_change": 0.07,
+    "total_change": 0.12,
+    "last_week_hold_pct": 74.45,
+    "close_price": 9.37,
+    "price_change": 0.29
+  },
+  {
+    "rank": 2,
+    "stock_code": "1905",
+    "stock_name": "華紙",
+    "is_taiwan50": false,
+    "category": "造紙",
+    "threshold_code": 31,
+    "threshold_shares": 400,
+    "weekly_changes": {
+      "20261022": 0.05,
+      "20261030": -0.01,
+      "20261106": -0.01,
+      "20261113": 0.02,
+      "20261120": -0.1,
+      "20261127": 0.08
+    },
+    "latest_change": 0.08,
+    "total_change": 0.03,
+    "last_week_hold_pct": 71.15,
+    "close_price": 10.1,
+    "price_change": 0.0
+  },
+  {
+    "rank": 3,
+    "stock_code": "1907",
+    "stock_name": "永豐餘",
+    "is_taiwan50": false,
+    "category": "造紙",
+    "threshold_code": 10,
+    "threshold_shares": 1000,
+    "weekly_changes": {
+      "20261022": -0.02,
+      "20261030": 0.01,
+      "20261106": 0.04,
+      "20261113": 0.04,
+      "20261120": 0.01,
+      "20261127": -0.09
+    },
+    "latest_change": -0.09,
+    "total_change": -0.01,
+    "last_week_hold_pct": 85.68,
+    "close_price": 25.6,
+    "price_change": 0.2
+  },
+  {
+    "rank": 4,
+    "stock_code": "6790",
+    "stock_name": "永豐實",
+    "is_taiwan50": false,
+    "category": "造紙",
+    "threshold_code": 40,
+    "threshold_shares": 200,
+    "weekly_changes": {
       "20261022": 0.01,
       "20261030": 0.0,
       "20261106": 0.04,
       "20261113": -0.2,
-      "20261120": 0.0
+      "20261120": 0.0,
+      "20261127": 0.0
     },
     "latest_change": 0.0,
     "total_change": -0.15,
     "last_week_hold_pct": 78.45,
-    "close_price": 35.6,
-    "price_change": -0.55
+    "close_price": 35.9,
+    "price_change": 0.15
+  },
+  {
+    "rank": 5,
+    "stock_code": "1903",
+    "stock_name": "士紙",
+    "is_taiwan50": false,
+    "category": "造紙",
+    "threshold_code": 31,
+    "threshold_shares": 400,
+    "weekly_changes": {
+      "20261022": -0.11,
+      "20261030": 0.0,
+      "20261106": 0.0,
+      "20261113": -0.03,
+      "20261120": -0.44,
+      "20261127": 0.16
+    },
+    "latest_change": 0.16,
+    "total_change": -0.42,
+    "last_week_hold_pct": 80.99,
+    "close_price": 41.6,
+    "price_change": 1.45
   },
   {
     "rank": 6,
@@ -115,42 +115,42 @@
     "stock_name": "榮成",
     "is_taiwan50": false,
     "category": "造紙",
-    "threshold_code": 10,
-    "threshold_shares": 1000,
+    "threshold_code": 31,
+    "threshold_shares": 400,
     "weekly_changes": {
-      "20261016": 0.07,
       "20261022": 0.04,
       "20261030": 0.0,
       "20261106": 0.0,
       "20261113": -0.12,
-      "20261120": -0.33
+      "20261120": -0.33,
+      "20261127": -0.07
     },
-    "latest_change": -0.33,
-    "total_change": -0.34,
-    "last_week_hold_pct": 67.57,
-    "close_price": 8.07,
-    "price_change": -0.51
+    "latest_change": -0.07,
+    "total_change": -0.48,
+    "last_week_hold_pct": 67.5,
+    "close_price": 8.22,
+    "price_change": 0.01
   },
   {
     "rank": 7,
-    "stock_code": "1903",
-    "stock_name": "士紙",
+    "stock_code": "1904",
+    "stock_name": "正隆",
     "is_taiwan50": false,
     "category": "造紙",
-    "threshold_code": 10,
-    "threshold_shares": 1000,
+    "threshold_code": 31,
+    "threshold_shares": 400,
     "weekly_changes": {
-      "20261016": 0.11,
-      "20261022": -0.11,
+      "20261022": -0.03,
       "20261030": 0.0,
-      "20261106": 0.0,
-      "20261113": -0.03,
-      "20261120": -0.44
+      "20261106": 0.15,
+      "20261113": -0.05,
+      "20261120": -0.51,
+      "20261127": -0.07
     },
-    "latest_change": -0.44,
-    "total_change": -0.47,
-    "last_week_hold_pct": 80.83,
-    "close_price": 41.0,
-    "price_change": -2.55
+    "latest_change": -0.07,
+    "total_change": -0.51,
+    "last_week_hold_pct": 68.2,
+    "close_price": 19.95,
+    "price_change": 0.0
   }
 ]

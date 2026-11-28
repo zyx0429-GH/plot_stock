@@ -5,65 +5,65 @@
     "stock_name": "正德",
     "is_taiwan50": false,
     "category": "櫃航運",
-    "threshold_code": 50,
+    "threshold_code": 30,
     "threshold_shares": 400,
     "weekly_changes": {
-      "20261016": 0.03,
       "20261022": -0.02,
       "20261030": 0.05,
       "20261106": 0.24,
       "20261113": 0.26,
-      "20261120": 0.32
+      "20261120": 0.32,
+      "20261127": 0.22
     },
-    "latest_change": 0.32,
-    "total_change": 0.88,
-    "last_week_hold_pct": 29.13,
-    "close_price": 13.95,
-    "price_change": -0.9
+    "latest_change": 0.22,
+    "total_change": 1.07,
+    "last_week_hold_pct": 29.35,
+    "close_price": 14.8,
+    "price_change": -0.15
   },
   {
     "rank": 2,
-    "stock_code": "5609",
-    "stock_name": "中菲行",
+    "stock_code": "5603",
+    "stock_name": "陸海",
     "is_taiwan50": false,
     "category": "櫃航運",
     "threshold_code": 30,
     "threshold_shares": 400,
     "weekly_changes": {
-      "20261016": 0.02,
-      "20261022": 0.04,
-      "20261030": 0.01,
-      "20261106": -0.08,
-      "20261113": 0.34,
-      "20261120": 0.05
-    },
-    "latest_change": 0.05,
-    "total_change": 0.38,
-    "last_week_hold_pct": 53.38,
-    "close_price": 74.6,
-    "price_change": -1.8
-  },
-  {
-    "rank": 3,
-    "stock_code": "5603",
-    "stock_name": "陸海",
-    "is_taiwan50": false,
-    "category": "櫃航運",
-    "threshold_code": 50,
-    "threshold_shares": 400,
-    "weekly_changes": {
-      "20261016": -0.13,
       "20261022": -0.05,
       "20261030": 0.0,
       "20261106": 0.0,
       "20261113": 0.05,
-      "20261120": 0.46
+      "20261120": 0.46,
+      "20261127": -0.04
     },
-    "latest_change": 0.46,
-    "total_change": 0.33,
-    "last_week_hold_pct": 54.09,
-    "close_price": 12.5,
-    "price_change": -1.2
+    "latest_change": -0.04,
+    "total_change": 0.42,
+    "last_week_hold_pct": 54.05,
+    "close_price": 13.1,
+    "price_change": 0.15
+  },
+  {
+    "rank": 3,
+    "stock_code": "5609",
+    "stock_name": "中菲行",
+    "is_taiwan50": false,
+    "category": "櫃航運",
+    "threshold_code": 10,
+    "threshold_shares": 1000,
+    "weekly_changes": {
+      "20261022": 0.04,
+      "20261030": 0.01,
+      "20261106": -0.08,
+      "20261113": 0.34,
+      "20261120": 0.05,
+      "20261127": 0.02
+    },
+    "latest_change": 0.02,
+    "total_change": 0.38,
+    "last_week_hold_pct": 53.4,
+    "close_price": 76.9,
+    "price_change": 0.5
   },
   {
     "rank": 4,
@@ -71,21 +71,21 @@
     "stock_name": "昱臺國際",
     "is_taiwan50": false,
     "category": "櫃航運",
-    "threshold_code": 10,
-    "threshold_shares": 1000,
+    "threshold_code": 31,
+    "threshold_shares": 400,
     "weekly_changes": {
-      "20261016": 0.0,
       "20261022": 0.0,
       "20261030": 0.0,
       "20261106": 0.12,
       "20261113": 0.1,
-      "20261120": 0.0
+      "20261120": 0.0,
+      "20261127": 0.01
     },
-    "latest_change": 0.0,
-    "total_change": 0.22,
-    "last_week_hold_pct": 82.84,
-    "close_price": 0.0,
-    "price_change": 0.0
+    "latest_change": 0.01,
+    "total_change": 0.23,
+    "last_week_hold_pct": 82.85,
+    "close_price": 22.95,
+    "price_change": 0.2
   },
   {
     "rank": 5,
@@ -93,21 +93,21 @@
     "stock_name": "捷迅",
     "is_taiwan50": false,
     "category": "櫃航運",
-    "threshold_code": 31,
+    "threshold_code": 50,
     "threshold_shares": 400,
     "weekly_changes": {
-      "20261016": 0.02,
       "20261022": 0.02,
       "20261030": 0.02,
       "20261106": 0.0,
       "20261113": -0.01,
-      "20261120": 0.0
+      "20261120": 0.0,
+      "20261127": 0.04
     },
-    "latest_change": 0.0,
-    "total_change": 0.05,
-    "last_week_hold_pct": 64.07,
-    "close_price": 63.5,
-    "price_change": -2.3
+    "latest_change": 0.04,
+    "total_change": 0.07,
+    "last_week_hold_pct": 64.11,
+    "close_price": 67.3,
+    "price_change": 0.3
   },
   {
     "rank": 6,
@@ -115,20 +115,20 @@
     "stock_name": "台聯櫃",
     "is_taiwan50": false,
     "category": "櫃航運",
-    "threshold_code": 21,
+    "threshold_code": 20,
     "threshold_shares": 0,
     "weekly_changes": {
-      "20261016": -0.02,
       "20261022": 0.0,
       "20261030": -0.01,
       "20261106": 0.0,
       "20261113": -0.01,
-      "20261120": -0.01
+      "20261120": -0.01,
+      "20261127": -0.03
     },
-    "latest_change": -0.01,
-    "total_change": -0.05,
-    "last_week_hold_pct": 79.66,
-    "close_price": 33.0,
-    "price_change": 0.0
+    "latest_change": -0.03,
+    "total_change": -0.06,
+    "last_week_hold_pct": 79.63,
+    "close_price": 33.5,
+    "price_change": -0.5
   }
 ]
